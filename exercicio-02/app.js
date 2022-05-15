@@ -176,7 +176,7 @@ episodes--
 - Exiba a "allEpisodes" no console.
 */
 const allEpisodes = 'O nº de episódios é: NUMERO_DE_EPISODIOS'
-console.log(allEpisodes.replace('NUMERO_DE_EPISODIOS', `${episodes}`))
+//console.log(allEpisodes.replace('NUMERO_DE_EPISODIOS', episodes))
 
 
 
