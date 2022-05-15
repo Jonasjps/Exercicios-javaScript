@@ -188,8 +188,8 @@ const allEpisodes = 'O nº de episódios é: NUMERO_DE_EPISODIOS'
 - Não use template strings.
 */
 
-// const bookMessage = ''O Conto da Aia' é um dos livros mais vendidos da década.'
-// console.log(bookMessage)
+const bookMessage = '\'O Conto da Aia\' é um dos livros mais vendidos da década.'
+ //console.log(bookMessage)
 
 /*
 21 - Comente o console.log acima (e a const bookMessage caso não tenha descoberto a resolução), e,
@@ -202,6 +202,7 @@ const allEpisodes = 'O nº de episódios é: NUMERO_DE_EPISODIOS'
 */
 
 const name = 'walter white'
+let newName =  
 
 /*
 22 - Comente o console.log acima, e,
