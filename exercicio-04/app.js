@@ -73,7 +73,7 @@ const typeSentence = `O tipo de dado que a const "isRandomTVShowIncluded" armaze
 */
 const numberToCheck = 39
 
-console.log(`A string que a "typeSentence" armazena tem mais de ${numberToCheck} ${String(typeSentence.length > numberToCheck).replace('t','T')}.`)
+// console.log(`A string que a "typeSentence" armazena tem mais de ${numberToCheck} caracteres ${String(typeSentence.length > numberToCheck).replace('t','T')}.`)
 
 /*
   06 - Comente o console.log() acima e:
@@ -86,6 +86,8 @@ console.log(`A string que a "typeSentence" armazena tem mais de ${numberToCheck}
 */
 
 const falsyValues = [0, "", false, '', ``, null, undefined, NaN]
+
+console.log(`Todos os ${falsyValues.length} itens do array "falsyValues" são falsy. Inclusive o ${falsyValues[2]}.`)
 
 /*
   07 - Comente o console.log() acima e:
