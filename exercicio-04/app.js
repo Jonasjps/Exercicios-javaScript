@@ -87,7 +87,7 @@ const numberToCheck = 39
 
 const falsyValues = [0, "", false, '', ``, null, undefined, NaN]
 
-console.log(`Todos os ${falsyValues.length} itens do array "falsyValues" são falsy. Inclusive o ${falsyValues[2]}.`)
+//console.log(`Todos os ${falsyValues.length} itens do array "falsyValues" são falsy. Inclusive o ${falsyValues[2]}.`)
 
 /*
   07 - Comente o console.log() acima e:
@@ -97,7 +97,10 @@ console.log(`Todos os ${falsyValues.length} itens do array "falsyValues" são fa
     em boolean.
   - Você sabe por que essa conversão resultou em true?
 */
+ const crazyOperation = null + 1
+ const crazyConversion = Boolean(crazyOperation)
 
+ //console.log(crazyConversion) //o resultado deu true porque null é interpretado pelo javascript como 0
 
 
 /*
