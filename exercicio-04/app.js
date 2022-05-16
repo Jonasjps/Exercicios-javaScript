@@ -1,5 +1,5 @@
 /*
-  01 - Suba o seu servidor local e:
+01 - Suba o seu servidor local e:
 
   - Armazene em uma constante "my3FavoriteTVShows" suas 3 séries favoritas;
   - Se você não assiste séries, armazene seus 3 filmes favoritos;
@@ -11,8 +11,9 @@
   - Exiba a frase no console.
 
   "Minhas 3 séries favoritas são: SÉRIE_01, SÉRIE_02 e SÉRIE_03."
-*/
 
+*/
+  
 
 
 /*
