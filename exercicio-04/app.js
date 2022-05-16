@@ -116,7 +116,10 @@ const falsyValues = [0, "", false, '', ``, null, undefined, NaN]
   é: BOOLEAN."
 */
 
+const ages = [31, 82, 61, 11];
+const agesSum = ages[0] + ages[2];
 
+console.log(`A soma entre o 1º e o 3º item de "ages" é menor ou igual a 92. Essa afirmação é: ${agesSum <= 92}.`)
 
 /*
   09 - Comente o console.log() acima e:
