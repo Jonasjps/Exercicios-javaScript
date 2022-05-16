@@ -13,8 +13,9 @@
   "Minhas 3 séries favoritas são: SÉRIE_01, SÉRIE_02 e SÉRIE_03."
 
 */
-const my3FavoriteTVShows = ['Eu sou a Lenda', ' 007 Casino Royale', ' 007 Sem tempo para Morre']
-const sentence = `Meus 3 filmes favoritos são: ${my3FavoriteTVShows}.`
+const my3FavoriteTVShows = ['Eu sou a Lenda', '007 Casino Royale', 'tempo 007 Sem para Morre']
+const sentence = `Meus 3 filmes favoritos são: ${my3FavoriteTVShows.join(', ')}.`
+  .replace(', t', ' e T' )
 
 //console.log(sentence) 
 
@@ -25,7 +26,7 @@ const sentence = `Meus 3 filmes favoritos são: ${my3FavoriteTVShows}.`
     possui 3 itens.
 */
 
-//console.log(my3FavoriteTVShows === 3)
+//console.log(my3FavoriteTVShows.length === 3)
 
 /*
   03 - Comente o console.log() acima e:
@@ -39,7 +40,7 @@ const sentence = `Meus 3 filmes favoritos são: ${my3FavoriteTVShows}.`
 
 const randomTVShow = 'Watchmen'
 
-const isRandomTVShowIncluded = randomTVShow.includes('007 Casino Royale')
+const isRandomTVShowIncluded = my3FavoriteTVShows.includes(randomTVShow)
 
 //console.log(isRandomTVShowIncluded)
 
@@ -70,9 +71,9 @@ const typeSentence = `O tipo de dado que a const "isRandomTVShowIncluded" armaze
   "A string que a "typeSentence" armazena tem mais de NÚMERO_DE_CARACTERES  
   caracteres? BOOLEAN."
 */
+const numberToCheck = 39
 
-const frase = `A string que a "typeSentence" armazena tem mais de NÚMERO_DE_CARACTERES caracteres? BOOLEAN.`
-
+console.log(`A string que a "typeSentence" armazena tem mais de ${numberToCheck} ${String(typeSentence.length > numberToCheck).replace('t','T')}.`)
 
 /*
   06 - Comente o console.log() acima e:
