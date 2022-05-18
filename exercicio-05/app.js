@@ -20,15 +20,23 @@
     4
     5
 */
+let arrayNumbers = [0, 1, 2, 3, 4, 5]
 
+let i = 0
 
+while (i < 6) {
+  //console.log(arrayNumbers[i] )
+  i++
+}
 
 /*
   02 - Comente a declaração da let e o loop acima e:
 
   - Utilizando um for loop, faça o mesmo que foi pedido no exercício 01.
 */
-
+for (let c = 0; c < 6; c++) {
+  //console.log(arrayNumbers[c])
+}
 
 
 /*
