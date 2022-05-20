@@ -71,9 +71,12 @@ for (let x = 1; x < 11; x++){
 
 const cities = ['São Paulo', 'Rio de Janeiro', 'Minas Gerais']
 let upperCaseCities = []
-for (let x = 0; x < cities; x++) {
-  console.log(upperCaseCities[upperCaseCities])    
+for (upperCaseCities = 0; upperCaseCities < cities.length; upperCaseCities++) {
+  // console.log(upperCaseCities)
+           
 }
+// console.log(cities)
+
 
 /*
   05 - Comente o console.log acima e:
@@ -85,7 +88,9 @@ for (let x = 0; x < cities; x++) {
 */
 
 const names = ['João Grilo', 'Chicó', 'Rosinha']
-
+ for (let x = 0; x < names; x++) {
+console.log(`${names.length}`)
+}
 /*
   06 - Comente o console.log acima e:
 
