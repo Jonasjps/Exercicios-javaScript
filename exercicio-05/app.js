@@ -50,7 +50,7 @@ for (let c = 0; c < 6; c++) {
   "Esta é a Xª vez que esta frase é exibida no console."
 */
 for (let x = 1; x < 11; x++){
-  // console.log(`Esta é a ${x}ª vez que esta frase é exibida no console`)
+   //console.log(`Esta é a ${x}ª vez que esta frase é exibida no console`)
 }
 
 // let x = 1;
@@ -70,9 +70,9 @@ for (let x = 1; x < 11; x++){
 */
 
 const cities = ['São Paulo', 'Rio de Janeiro', 'Minas Gerais']
-
-for (let upperCaseCities = 0; upperCaseCities < cities; upperCaseCities++ ) {
-  console.log(upperCaseCities)    
+let upperCaseCities = []
+for (let x = 0; x < cities; x++) {
+  console.log(upperCaseCities[upperCaseCities])    
 }
 
 /*
