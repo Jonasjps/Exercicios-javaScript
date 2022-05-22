@@ -76,7 +76,7 @@ for (let i = 0; i < cities.length; i++ ) {
            
 }
 
-console.log(upperCaseCities)
+//console.log(upperCaseCities)
 
 
 /*
@@ -89,9 +89,13 @@ console.log(upperCaseCities)
 */
 
 const names = ['João Grilo', 'Chicó', 'Rosinha']
- for (let x = 0; x < names; x++) {
-//console.log(`${names.length}`)
+
+let HTMLTemplate = '' 
+
+for (let x = 0; x < names.length; x++) {
+HTMLTemplate += `<li>${names[x]}</li>`
 }
+console.log(HTMLTemplate)
 /*
   06 - Comente o console.log acima e:
 
