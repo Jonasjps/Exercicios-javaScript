@@ -24,8 +24,8 @@ let arrayNumbers = [0, 1, 2, 3, 4, 5]
 
 let i = 0
 
-while (i < 6) {
-  //console.log(arrayNumbers[i] )
+while (i <= 5) {
+  //console.log(i)
   i++
 }
 
@@ -34,8 +34,8 @@ while (i < 6) {
 
   - Utilizando um for loop, faça o mesmo que foi pedido no exercício 01.
 */
-for (let c = 0; c < 6; c++) {
-  //console.log(arrayNumbers[c])
+for (let c = 0; c <= 5; c++) {
+  //console.log(c)
 }
 
 
@@ -49,8 +49,8 @@ for (let c = 0; c < 6; c++) {
 
   "Esta é a Xª vez que esta frase é exibida no console."
 */
-for (let x = 1; x < 11; x++){
-   //console.log(`Esta é a ${x}ª vez que esta frase é exibida no console`)
+for (let x = 1; x <= 10; x++){
+   console.log(`Esta é a ${x}ª vez que esta frase é exibida no console`)
 }
 
 // let x = 1;
@@ -72,7 +72,7 @@ for (let x = 1; x < 11; x++){
 const cities = ['São Paulo', 'Rio de Janeiro', 'Minas Gerais']
 let upperCaseCities = []
 for (upperCaseCities = 0; upperCaseCities < cities.length; upperCaseCities++) {
-   console.log(upperCaseCities)
+   //console.log(upperCaseCities)
            
 }
 // console.log(cities)
@@ -89,7 +89,7 @@ for (upperCaseCities = 0; upperCaseCities < cities.length; upperCaseCities++) {
 
 const names = ['João Grilo', 'Chicó', 'Rosinha']
  for (let x = 0; x < names; x++) {
-console.log(`${names.length}`)
+//console.log(`${names.length}`)
 }
 /*
   06 - Comente o console.log acima e:
