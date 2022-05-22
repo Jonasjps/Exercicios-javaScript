@@ -48,9 +48,19 @@ for ( let c = 0; c <= 5; c++) {
   - "X" deve começar em 1 na 1ª exibição da frase e em 10 na última;
   - Exiba a frase 10x no console.
 
-  "Esta é a Xª vez que esta frase é exibida no console."
+  "Esta é a Xª vez que esta frase é exibida no console;."
 */
 
+for (let c = 1; c <= 10; c++) {
+  console.log(`Esta é a ${c}ª vez que esta frase é exibida no console`)
+}
+
+// let c = 1
+
+// while ( c <= 10) {
+//   console.log(`Esta é a ${c}ª vez que esta frase é exibida no console`)
+//   c++
+// }
 
 
 
