@@ -97,7 +97,13 @@ for (let c = 0; c < cities.length; c++) {
 
 const names = ['João Grilo', 'Chicó', 'Rosinha']
 
+HTMLTemplate = ''
 
+for (let c = 0; c < names.length; c++) {
+  HTMLTemplate += `<li>${names[c]}</li>`
+}
+
+//console.log(HTMLTemplate)
 /*
   06 - Comente o console.log acima e:
 
@@ -108,6 +114,15 @@ const names = ['João Grilo', 'Chicó', 'Rosinha']
 */
 
 const numbers = ['91', '5', '30', '97', '83', '31']
+
+let sum = 0
+
+for (let i = 0; i < numbers.length; i++) {
+sum += Number(numbers[i])
+}
+
+//console.log(sum === 337 )
+
 
 /*
   07 - Comente o console.log acima.
