@@ -20,23 +20,15 @@
     4
     5
 */
-let arrayNumbers = [0, 1, 2, 3, 4, 5]
 
-let i = 0
-
-while (i <= 5) {
-  //console.log(i)
-  i++
-}
 
 /*
   02 - Comente a declaração da let e o loop acima e:
 
   - Utilizando um for loop, faça o mesmo que foi pedido no exercício 01.
 */
-for (let c = 0; c <= 5; c++) {
-  //console.log(c)
-}
+
+
 
 
 /*
@@ -49,15 +41,9 @@ for (let c = 0; c <= 5; c++) {
 
   "Esta é a Xª vez que esta frase é exibida no console."
 */
-for (let x = 1; x <= 10; x++){
-   //console.log(`Esta é a ${x}ª vez que esta frase é exibida no console`)
-}
 
-// let x = 1;
-// while ( x < 11 ) {
-//   console.log(`Esta é a ${x}º vez que esta frase é exibida no console`)
-//   x++
-// }
+
+
 
 /*
   04 - Comente o loop acima e:
@@ -70,13 +56,7 @@ for (let x = 1; x <= 10; x++){
 */
 
 const cities = ['São Paulo', 'Rio de Janeiro', 'Minas Gerais']
-let upperCaseCities = []
-for (let i = 0; i < cities.length; i++ ) {
-   upperCaseCities.push(cities[i].toUpperCase())
-           
-}
 
-//console.log(upperCaseCities)
 
 
 /*
@@ -90,12 +70,7 @@ for (let i = 0; i < cities.length; i++ ) {
 
 const names = ['João Grilo', 'Chicó', 'Rosinha']
 
-let HTMLTemplate = '' 
 
-for (let x = 0; x < names.length; x++) {
-HTMLTemplate += `<li>${names[x]}</li>`
-}
-console.log(HTMLTemplate)
 /*
   06 - Comente o console.log acima e:
 
