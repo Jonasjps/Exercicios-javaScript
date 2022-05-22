@@ -20,12 +20,14 @@
     4
     5
 */
-let numero = 0
+// let number = 0 
 
-while (numero <= 5 ) {
-  //console.log(numero)
-  numero++
-}
+// while (number <= 5) {
+//   console.log(number)
+//   number++
+// }
+
+
 
 
 
@@ -34,10 +36,10 @@ while (numero <= 5 ) {
 
   - Utilizando um for loop, faça o mesmo que foi pedido no exercício 01.
 */
-for ( let c = 0; c <= 5; c++) {
-  //console.log(c)
-}
 
+// for (let i = 0; i <= 5; i++) {
+//   console.log(i)
+// }
 
 
 /*
@@ -49,19 +51,17 @@ for ( let c = 0; c <= 5; c++) {
   - Exiba a frase 10x no console.
 
   "Esta é a Xª vez que esta frase é exibida no console;."
-*/
-
-for (let c = 1; c <= 10; c++) {
-  //console.log(`Esta é a ${c}ª vez que esta frase é exibida no console`)
-}
+// */
+// for (let x = 1; x <= 10; x++) {
+//   console.log(`Esta é a ${x}ª vez que esta frase é exibida no console`)
+// }
 
 // let c = 1
 
-// while ( c <= 10) {
+// while (c <= 10) {
 //   console.log(`Esta é a ${c}ª vez que esta frase é exibida no console`)
 //   c++
 // }
-
 
 
 /*
@@ -76,13 +76,14 @@ for (let c = 1; c <= 10; c++) {
 
 const cities = ['São Paulo', 'Rio de Janeiro', 'Minas Gerais']
 
-let upperCaseCities = []
+// let upperCaseCities = []
 
-for (let c = 0; c < cities.length; c++) {
-  upperCaseCities.push(cities[c].toUpperCase())
-}
+// for (let i = 0; i < cities.length; i++) {
+//   upperCaseCities.push(cities[i].toUpperCase())
+// }
 
-//console.log(upperCaseCities)
+// console.log(upperCaseCities)
+
 
 
 
@@ -95,15 +96,15 @@ for (let c = 0; c < cities.length; c++) {
     <li>João Grilo</li><li>Chicó</li><li>Rosinha</li>
 */
 
-const names = ['João Grilo', 'Chicó', 'Rosinha']
+const names = ['João Grilo', 'Chicó', 'Rosinha','jonas']
 
-HTMLTemplate = ''
+templateHTML = ''
 
-for (let c = 0; c < names.length; c++) {
-  HTMLTemplate += `<li>${names[c]}</li>`
+for (let x = 0; x < names.length; x++) {
+templateHTML += `<li>${names[x]}</li>`
 }
 
-//console.log(HTMLTemplate)
+console.log(templateHTML)
 /*
   06 - Comente o console.log acima e:
 
@@ -115,13 +116,7 @@ for (let c = 0; c < names.length; c++) {
 
 const numbers = ['91', '5', '30', '97', '83', '31']
 
-let sum = 0
 
-for (let i = 0; i < numbers.length; i++) {
-sum += Number(numbers[i])
-}
-
-//console.log(sum === 337 )
 
 
 /*
@@ -149,12 +144,4 @@ const arrays = [
   [2, 8, 4]
 ]
 
-let arrayssum = 0
 
-for ( let x = 0; x < arrays.length; x++) {
-  for( let j = 0; j < arrays[x].length; j++){
-    arrayssum += arrays[x][j]
-  } 
-}
-
-// console.log(arrayssum)
