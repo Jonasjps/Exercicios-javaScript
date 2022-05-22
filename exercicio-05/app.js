@@ -157,4 +157,4 @@ for ( let x = 0; x < arrays.length; x++) {
   } 
 }
 
-console.log(arrayssum)
+// console.log(arrayssum)
