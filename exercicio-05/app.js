@@ -52,7 +52,7 @@ for ( let c = 0; c <= 5; c++) {
 */
 
 for (let c = 1; c <= 10; c++) {
-  console.log(`Esta é a ${c}ª vez que esta frase é exibida no console`)
+  //console.log(`Esta é a ${c}ª vez que esta frase é exibida no console`)
 }
 
 // let c = 1
@@ -75,6 +75,14 @@ for (let c = 1; c <= 10; c++) {
 */
 
 const cities = ['São Paulo', 'Rio de Janeiro', 'Minas Gerais']
+
+let upperCaseCities = []
+
+for (let c = 0; c < cities.length; c++) {
+  upperCaseCities.push(cities[c].toUpperCase())
+}
+
+//console.log(upperCaseCities)
 
 
 
