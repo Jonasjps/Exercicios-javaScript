@@ -98,13 +98,13 @@ const cities = ['São Paulo', 'Rio de Janeiro', 'Minas Gerais']
 
 const names = ['João Grilo', 'Chicó', 'Rosinha','jonas']
 
-templateHTML = ''
+// templateHTML = ''
 
-for (let x = 0; x < names.length; x++) {
-templateHTML += `<li>${names[x]}</li>`
-}
+// for (let x = 0; x < names.length; x++) {
+// templateHTML += `<li>${names[x]}</li>`
+// }
 
-console.log(templateHTML)
+// console.log(templateHTML)
 /*
   06 - Comente o console.log acima e:
 
@@ -116,8 +116,12 @@ console.log(templateHTML)
 
 const numbers = ['91', '5', '30', '97', '83', '31']
 
+// let sum = 0
 
-
+// for (let c = 0; c < numbers.length; c++) {
+//   sum += Number(numbers[c])
+// }
+// console.log(sum === 337)
 
 /*
   07 - Comente o console.log acima.
@@ -143,5 +147,10 @@ const arrays = [
   [8, 32, 16],
   [2, 8, 4]
 ]
-
-
+let arraySum = 0
+for (let c = 0; c < arrays.length; c++) {
+  for (let x = 0; x < arrays[c].length; x++) {
+   arraySum += arrays[c][x]
+  }
+}
+console.log(arraySum)
