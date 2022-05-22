@@ -20,6 +20,13 @@
     4
     5
 */
+let numero = 0
+
+while (numero <= 5 ) {
+  //console.log(numero)
+  numero++
+}
+
 
 
 /*
@@ -27,7 +34,9 @@
 
   - Utilizando um for loop, faça o mesmo que foi pedido no exercício 01.
 */
-
+for ( let c = 0; c <= 5; c++) {
+  //console.log(c)
+}
 
 
 
