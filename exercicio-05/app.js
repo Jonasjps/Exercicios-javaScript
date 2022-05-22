@@ -148,3 +148,13 @@ const arrays = [
   [8, 32, 16],
   [2, 8, 4]
 ]
+
+let arrayssum = 0
+
+for ( let x = 0; x < arrays.length; x++) {
+  for( let j = 0; j < arrays[x].length; j++){
+    arrayssum += arrays[x][j]
+  } 
+}
+
+console.log(arrayssum)
