@@ -147,10 +147,12 @@ const arrays = [
   [8, 32, 16],
   [2, 8, 4]
 ]
+
 let arraySum = 0
-for (let c = 0; c < arrays.length; c++) {
+
+for ( let c = 0; c < arrays.length; c++) {
   for (let x = 0; x < arrays[c].length; x++) {
-   arraySum += arrays[c][x]
+    arraySum += arrays[c][x]
   }
 }
 console.log(arraySum)
