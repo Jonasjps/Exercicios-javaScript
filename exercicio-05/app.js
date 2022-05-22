@@ -72,7 +72,7 @@ for (let x = 1; x < 11; x++){
 const cities = ['São Paulo', 'Rio de Janeiro', 'Minas Gerais']
 let upperCaseCities = []
 for (upperCaseCities = 0; upperCaseCities < cities.length; upperCaseCities++) {
-  // console.log(upperCaseCities)
+   console.log(upperCaseCities)
            
 }
 // console.log(cities)
