@@ -25,6 +25,13 @@
 
 const fruits = ['morango', 'banana', 'mamão']
 
+// if(fruits.length === 'morango') {
+//   console.log('A string abacaxi existe no array fruits')
+// }else if (fruits.length === 'pera') {
+//   console.log('A string pera existe no array fruits')
+// }else {
+//   console.log('Nem pera nem abacaxi existem no array fruits')
+// }
 /*
   02
 
@@ -37,7 +44,14 @@ const fruits = ['morango', 'banana', 'mamão']
   Obs.: tanto a expressão do lado esquerdo quanto a do lado direito do operador  
   lógico precisam ter a constante especificada. Exemplo: hour > x && hour < y.
 */
-
+const horas = new Date()
+if(horas < 12) {
+  console.log('BOM DIA')
+}else if(horas < 18) {
+  console.log('BOA TARDE')
+}else {
+  console.log('BOA NOITE')
+}
 /*
   03
 
