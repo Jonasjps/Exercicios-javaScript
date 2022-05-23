@@ -65,12 +65,12 @@ const fruits = ['morango', 'banana', 'mamão']
   - Agora, teste diferentes idades para se certificar que a condição do `if`  
     também está funcionando.
 */
-const idade = 27
-if(idade <= 7 || idade >= 65){
-  console.log('Para você, a entrada é grátis!')
-}else {
-  console.log('A entrada é R$ 30,00')
-}
+// const idade = 27
+// if(idade <= 7 || idade >= 65){
+//   console.log('Para você, a entrada é grátis!')
+// }else {
+//   console.log('A entrada é R$ 30,00')
+// }
 
 /*
   04
@@ -82,6 +82,7 @@ if(idade <= 7 || idade >= 65){
 */
 
 const numbers = [7, 92, 34, 46, 90, 25, 11, 3, 89, 76, 99]
+
 
 /*
   05
