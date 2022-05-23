@@ -27,13 +27,13 @@ const fruits = ['morango', 'banana',  'mamão']
 const frutas1 = fruits.includes('abacaxi')
 const frutas2 = fruits.includes('pera')
 
-if(frutas1) {
-  console.log('A string "abacaxi" existe no array  fruits.')
-}else if (frutas2) {
-  console.log('A string "pera" existe no array fruits.')
-}else {
-  console.log('Nem pera nem abacaxi existem no array "fruits".')
-}
+// if(frutas1) {
+//   console.log('A string "abacaxi" existe no array  fruits.')
+// }else if (frutas2) {
+//   console.log('A string "pera" existe no array fruits.')
+// }else {
+//   console.log('Nem pera nem abacaxi existem no array "fruits".')
+// }
 
 /*
   02
@@ -47,6 +47,20 @@ if(frutas1) {
   Obs.: tanto a expressão do lado esquerdo quanto a do lado direito do operador  
   lógico precisam ter a constante especificada. Exemplo: hour > x && hour < y.
 */
+const hora = 7
+let turno = ''
+let bomDia = hora > 6 && hora < 12
+let boaTarde = hora >= 12 && hora < 18
+ 
+
+
+if (bomDia) {
+console.log('BOM DIA!')
+}else if (boaTarde ) {
+  console.log('BOA TARDE!')
+}else {
+  console.log( 'BOA NOITE!')
+}
 
 /*
   03
