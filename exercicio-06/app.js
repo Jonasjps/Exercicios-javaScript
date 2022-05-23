@@ -23,15 +23,18 @@
     "Nem pera nem abacaxi existem no array "fruits".".
 */
 
-const fruits = ['morango', 'banana', 'mamão']
+const fruits = ['morango', 'banana',  'mamão']
+const frutas1 = fruits.includes('abacaxi')
+const frutas2 = fruits.includes('pera')
 
-// if(fruits.length === 'morango') {
-//   console.log('A string abacaxi existe no array fruits')
-// }else if (fruits.length === 'pera') {
-//   console.log('A string pera existe no array fruits')
-// }else {
-//   console.log('Nem pera nem abacaxi existem no array fruits')
-// }
+if(frutas1) {
+  console.log('A string "abacaxi" existe no array  fruits.')
+}else if (frutas2) {
+  console.log('A string "pera" existe no array fruits.')
+}else {
+  console.log('Nem pera nem abacaxi existem no array "fruits".')
+}
+
 /*
   02
 
@@ -44,14 +47,7 @@ const fruits = ['morango', 'banana', 'mamão']
   Obs.: tanto a expressão do lado esquerdo quanto a do lado direito do operador  
   lógico precisam ter a constante especificada. Exemplo: hour > x && hour < y.
 */
-// const horas = new Date()
-// if(horas < 12) {
-//   console.log('BOM DIA')
-// }else if(horas < 18) {
-//   console.log('BOA TARDE')
-// }else {
-//   console.log('BOA NOITE')
-// }
+
 /*
   03
 
@@ -65,12 +61,7 @@ const fruits = ['morango', 'banana', 'mamão']
   - Agora, teste diferentes idades para se certificar que a condição do `if`  
     também está funcionando.
 */
-// const idade = 27
-// if(idade <= 7 || idade >= 65){
-//   console.log('Para você, a entrada é grátis!')
-// }else {
-//   console.log('A entrada é R$ 30,00')
-// }
+
 
 /*
   04
@@ -82,6 +73,7 @@ const fruits = ['morango', 'banana', 'mamão']
 */
 
 const numbers = [7, 92, 34, 46, 90, 25, 11, 3, 89, 76, 99]
+
 
 
 /*
