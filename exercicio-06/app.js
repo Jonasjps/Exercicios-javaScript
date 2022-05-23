@@ -54,13 +54,13 @@ let boaTarde = hora >= 12 && hora < 18
  
 
 
-if (bomDia) {
-console.log('BOM DIA!')
-}else if (boaTarde ) {
-  console.log('BOA TARDE!')
-}else {
-  console.log( 'BOA NOITE!')
-}
+// if (bomDia) {
+// console.log('BOM DIA!')
+// }else if (boaTarde ) {
+//   console.log('BOA TARDE!')
+// }else {
+//   console.log( 'BOA NOITE!')
+// }
 
 /*
   03
