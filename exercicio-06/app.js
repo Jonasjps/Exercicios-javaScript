@@ -44,14 +44,14 @@ const fruits = ['morango', 'banana', 'mamão']
   Obs.: tanto a expressão do lado esquerdo quanto a do lado direito do operador  
   lógico precisam ter a constante especificada. Exemplo: hour > x && hour < y.
 */
-const horas = new Date()
-if(horas < 12) {
-  console.log('BOM DIA')
-}else if(horas < 18) {
-  console.log('BOA TARDE')
-}else {
-  console.log('BOA NOITE')
-}
+// const horas = new Date()
+// if(horas < 12) {
+//   console.log('BOM DIA')
+// }else if(horas < 18) {
+//   console.log('BOA TARDE')
+// }else {
+//   console.log('BOA NOITE')
+// }
 /*
   03
 
@@ -65,6 +65,12 @@ if(horas < 12) {
   - Agora, teste diferentes idades para se certificar que a condição do `if`  
     também está funcionando.
 */
+const idade = 27
+if(idade <= 7 || idade >= 65){
+  console.log('Para você, a entrada é grátis!')
+}else {
+  console.log('A entrada é R$ 30,00')
+}
 
 /*
   04
