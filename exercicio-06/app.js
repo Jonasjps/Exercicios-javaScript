@@ -103,7 +103,7 @@ for (let i = 0; i < numbers.length; i++) {
     array.push(numbers[i])
   } 
 } 
-console.log(array)
+// console.log(array)
 
 /*
   05
@@ -119,7 +119,11 @@ console.log(array)
 */
 
 const crazyArray = [true, 869, 'oi', 71, false, 83, '35', true, 397, 'js', false]
-
+for(let c = 0; c < crazyArray.length; c++) {
+  if(crazyArray[c] ==='string'){
+    console.log(`O crazyArray tem ${} booleans, X números e X strings.`)
+  }
+}
 /*
   06
 
