@@ -119,11 +119,14 @@ for (let i = 0; i < numbers.length; i++) {
 */
 
 const crazyArray = [true, 869, 'oi', 71, false, 83, '35', true, 397, 'js', false]
+const valordaString = 0
+
 for(let c = 0; c < crazyArray.length; c++) {
-  if(crazyArray[c] ==='string'){
-    console.log(`O crazyArray tem ${} booleans, X números e X strings.`)
+  if(typeof crazyArray[c] ==='string'){
+    valordaString = (`O crazyArray tem ${valordaString} booleans, X números e X strings.`)
   }
 }
+console.log(valordaString)
 /*
   06
 
