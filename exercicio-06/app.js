@@ -123,11 +123,12 @@ const valordaString = 0
 const valordoNumber = 0
 
 for(let c = 0; c < crazyArray.length; c++) {
-  if(typeof crazyArray[c] ==='number'){
-    valordoNumber = `O crazyArray tem ${valordoNumber} booleans, X números e X strings.`
+  if(typeof crazyArray[c] === 'number'){
+    valordoNumber = typeof crazyArray
   }
+  console.log(`O crazyArray tem X booleans, ${valordoNumber} números e X strings.`)
 }
-console.log(crazyArray[c])
+
 /*
   06
 
