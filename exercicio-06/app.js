@@ -75,7 +75,16 @@ let boaTarde = hora >= 12 && hora < 18
   - Agora, teste diferentes idades para se certificar que a condição do `if`  
     também está funcionando.
 */
+const idade = 27
+const menorIdade = idade <= 7 
+const maiorIdade = idade >= 65
 
+
+if(menorIdade || maiorIdade ) {
+  // console.log('Para você, a entrada é grátis!')
+}else {
+  // console.log('A entrada é R$ 30,00.')
+}
 
 /*
   04
