@@ -96,8 +96,14 @@ if(menorIdade || maiorIdade ) {
 */
 
 const numbers = [7, 92, 34, 46, 90, 25, 11, 3, 89, 76, 99]
+let array = []
 
-
+for (let i = 0; i < numbers.length; i++) {
+  if( numbers[i] >= 11 && numbers[i] <= 90) {
+    array.push(numbers[i])
+  } 
+} 
+console.log(array)
 
 /*
   05
