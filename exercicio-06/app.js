@@ -32,7 +32,7 @@ if (frutas1) {
 }else if (frutas2) {
   console.log('A string "pera" existe no array fruits.')
 }else {
-  console.log('Nem pera nem abacaxi existem no array "fruits".')
+  // console.log('Nem pera nem abacaxi existem no array "fruits".')
 }
 
 
@@ -48,6 +48,17 @@ if (frutas1) {
   Obs.: tanto a expressão do lado esquerdo quanto a do lado direito do operador  
   lógico precisam ter a constante especificada. Exemplo: hour > x && hour < y.
 */
+const horaAtual = 18
+let matutino = horaAtual >= 6 && horaAtual <= 11
+let vespertino = horaAtual >= 12 && horaAtual <=17
+ 
+if(matutino) { 
+  console.log('BOM DIA!')
+}else if (vespertino) {
+  console.log('BOA TARDE!')
+}else {
+  console.log('BOA NOITE!')
+}
 
 /*
   03
