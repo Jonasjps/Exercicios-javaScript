@@ -119,15 +119,29 @@ for (let i = 0; i < numbers.length; i++) {
 */
 
 const crazyArray = [true, 869, 'oi', 71, false, 83, '35', true, 397, 'js', false]
-const valordaString = 0
-const valordoNumber = 0
+
+
+let valordeBoolean = 0
+let valordoNumber = 0
+let valordaString = 0
 
 for(let c = 0; c < crazyArray.length; c++) {
-  if(typeof crazyArray[c] === 'number'){
-    valordoNumber = typeof crazyArray
+  
+  const typeofItem = typeof crazyArray[c]
+  const  Numberarray = typeofItem  === 'number'
+  const  booleanarray = typeofItem === 'boolean'
+
+  if(Numberarray){
+    valordoNumber++
+  }else if (booleanarray) {
+    valordeBoolean++
+  }else {
+    valordaString++
   }
-  console.log(`O crazyArray tem X booleans, ${valordoNumber} números e X strings.`)
+  
 }
+
+console.log(`O crazyArray tem ${valordeBoolean} booleans, ${valordoNumber} números e ${valordaString} strings.`)
 
 /*
   06
