@@ -166,10 +166,14 @@ const numberImpar = []
 const numberpar = []
 
 for (let x = 0; x < randomNumbers.length; x++) {
-  if (randomNumbers[x] % 2 === 1 ) {
+  
+  const Impa = randomNumbers[x] % 2 === 1
+  const Par = randomNumbers[x] % 2 === 0 
+  
+  if (Impa) {
     numberImpar.push(randomNumbers[x])
-  }else if (randomNumbers[x] % 2 === 0) {
+  }else if (Par) {
     numberpar.push(randomNumbers[x])
   }
 }
-console.log(`Numeros ímpares: ${numberImpar}. Números pares: ${numberpar}.`)
+ console.log(`Numeros ímpares: ${numberImpar.join(', ').replace(', 3' , ' e 3')}. Números pares: ${numberpar.join(', ').replace(', 5', ' e 5')}.`)
