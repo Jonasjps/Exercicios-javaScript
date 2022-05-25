@@ -141,7 +141,7 @@ for(let c = 0; c < crazyArray.length; c++) {
   
 }
 
-console.log(`O crazyArray tem ${valordeBoolean} booleans, ${valordoNumber} números e ${valordaString} strings.`)
+// console.log(`O crazyArray tem ${valordeBoolean} booleans, ${valordoNumber} números e ${valordaString} strings.`)
 
 /*
   06
@@ -161,3 +161,15 @@ console.log(`O crazyArray tem ${valordeBoolean} booleans, ${valordoNumber} núme
 */
 
 const randomNumbers = [73, 4, 67, 10, 31, 58]
+
+const numberImpar = []
+const numberpar = []
+
+for (let x = 0; x < randomNumbers.length; x++) {
+  if (randomNumbers[x] % 2 === 1 ) {
+    numberImpar.push(randomNumbers[x])
+  }else if (randomNumbers[x] % 2 === 0) {
+    numberpar.push(randomNumbers[x])
+  }
+}
+console.log(`Numeros ímpares: ${numberImpar}. Números pares: ${numberpar}.`)
