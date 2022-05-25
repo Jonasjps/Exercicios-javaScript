@@ -99,7 +99,7 @@ for(let c = 0; c < numbers.length; c++) {
     numerosentre11e90.push(numbers[c])
   }
 }
-console.log(numerosentre11e90)
+// console.log(numerosentre11e90)
 /*
   05
 
@@ -114,10 +114,26 @@ console.log(numerosentre11e90)
 */
 
 const crazyArray = [true, 869, 'oi', 71, false, 83, '35', true, 397, 'js', false]
+let BooleanItem = 0
+let NumberItem = 0
+let StringItem = 0
 
+for (let i = 0; i < crazyArray.length; i++) {
+  
+  const typeofs = typeof crazyArray[i]
+  const booleans = typeofs === 'boolean'  
+  const numbers = typeofs === 'number'
+  
+  if (booleans){
+    BooleanItem++
+  }else if (numbers) {
+    NumberItem++
+  }else {
+    StringItem++
+  }
+}
+// console.log(`O crazyArray tem ${BooleanItem} booleans, ${NumberItem} números e ${StringItem} strings.`)
 
-
-// console.log(`O crazyArray tem ${valordeBoolean} booleans, ${valordoNumber} números e ${valordaString} strings.`)
 
 /*
   06
@@ -138,3 +154,20 @@ const crazyArray = [true, 869, 'oi', 71, false, 83, '35', true, 397, 'js', false
 
 const randomNumbers = [73, 4, 67, 10, 31, 58]
 
+let Impar = []
+let Par = []
+
+for (let j = 0; j < randomNumbers.length; j++) {
+  
+  const Impares = randomNumbers[j] % 2 === 1
+  const Pares = randomNumbers[j] % 2 === 0
+  
+  if (Impares) {
+    Impar.push(randomNumbers[j])
+  }else if (Pares) {
+    Par.push(randomNumbers[j])
+  }
+  
+}
+
+console.log(`Numeros ímpares: ${Impar.join(', ').replace(', 3' , ' e 3')}. Números pares: ${Par.join(', ').replace(', 5' , ' e 5')}.`)
