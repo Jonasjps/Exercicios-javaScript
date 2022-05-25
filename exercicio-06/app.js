@@ -24,16 +24,17 @@
 */
 
 const fruits = ['morango', 'banana',  'mamão']
-const frutas1 = fruits.includes('abacaxi')
-const frutas2 = fruits.includes('pera')
+let frutas1 = fruits.includes('abacaxi') 
+let frutas2 = fruits.includes('pera') 
 
-// if(frutas1) {
-//   console.log('A string "abacaxi" existe no array  fruits.')
-// }else if (frutas2) {
-//   console.log('A string "pera" existe no array fruits.')
-// }else {
-//   console.log('Nem pera nem abacaxi existem no array "fruits".')
-// }
+if (frutas1) {
+  console.log('A string "abacaxi" existe no array fruits.')
+}else if (frutas2) {
+  console.log('A string "pera" existe no array fruits.')
+}else {
+  console.log('Nem pera nem abacaxi existem no array "fruits".')
+}
+
 
 /*
   02
@@ -47,20 +48,6 @@ const frutas2 = fruits.includes('pera')
   Obs.: tanto a expressão do lado esquerdo quanto a do lado direito do operador  
   lógico precisam ter a constante especificada. Exemplo: hour > x && hour < y.
 */
-const hora = 7
-let turno = ''
-let bomDia = hora > 6 && hora < 12
-let boaTarde = hora >= 12 && hora < 18
- 
-
-
-// if (bomDia) {
-// console.log('BOM DIA!')
-// }else if (boaTarde ) {
-//   console.log('BOA TARDE!')
-// }else {
-//   console.log( 'BOA NOITE!')
-// }
 
 /*
   03
@@ -75,16 +62,6 @@ let boaTarde = hora >= 12 && hora < 18
   - Agora, teste diferentes idades para se certificar que a condição do `if`  
     também está funcionando.
 */
-const idade = 27
-const menorIdade = idade <= 7 
-const maiorIdade = idade >= 65
-
-
-if(menorIdade || maiorIdade ) {
-  // console.log('Para você, a entrada é grátis!')
-}else {
-  // console.log('A entrada é R$ 30,00.')
-}
 
 /*
   04
@@ -96,15 +73,6 @@ if(menorIdade || maiorIdade ) {
 */
 
 const numbers = [7, 92, 34, 46, 90, 25, 11, 3, 89, 76, 99]
-let array = []
-
-for (let i = 0; i < numbers.length; i++) {
-  if( numbers[i] >= 11 && numbers[i] <= 90) {
-    array.push(numbers[i])
-  } 
-} 
-// console.log(array)
-
 /*
   05
 
@@ -121,25 +89,6 @@ for (let i = 0; i < numbers.length; i++) {
 const crazyArray = [true, 869, 'oi', 71, false, 83, '35', true, 397, 'js', false]
 
 
-let valordeBoolean = 0
-let valordoNumber = 0
-let valordaString = 0
-
-for(let c = 0; c < crazyArray.length; c++) {
-  
-  const typeofItem = typeof crazyArray[c]
-  const  Numberarray = typeofItem  === 'number'
-  const  booleanarray = typeofItem === 'boolean'
-
-  if(Numberarray){
-    valordoNumber++
-  }else if (booleanarray) {
-    valordeBoolean++
-  }else {
-    valordaString++
-  }
-  
-}
 
 // console.log(`O crazyArray tem ${valordeBoolean} booleans, ${valordoNumber} números e ${valordaString} strings.`)
 
@@ -162,18 +111,3 @@ for(let c = 0; c < crazyArray.length; c++) {
 
 const randomNumbers = [73, 4, 67, 10, 31, 58]
 
-const numberImpar = []
-const numberpar = []
-
-for (let x = 0; x < randomNumbers.length; x++) {
-  
-  const Impa = randomNumbers[x] % 2 === 1
-  const Par = randomNumbers[x] % 2 === 0 
-  
-  if (Impa) {
-    numberImpar.push(randomNumbers[x])
-  }else if (Par) {
-    numberpar.push(randomNumbers[x])
-  }
-}
- console.log(`Numeros ímpares: ${numberImpar.join(', ').replace(', 3' , ' e 3')}. Números pares: ${numberpar.join(', ').replace(', 5', ' e 5')}.`)
