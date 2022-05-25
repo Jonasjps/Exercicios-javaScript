@@ -57,7 +57,7 @@ if(matutino) {
 }else if (vespertino) {
   console.log('BOA TARDE!')
 }else {
-  console.log('BOA NOITE!')
+  // console.log('BOA NOITE!')
 }
 
 /*
@@ -73,7 +73,13 @@ if(matutino) {
   - Agora, teste diferentes idades para se certificar que a condição do `if`  
     também está funcionando.
 */
+const idade = 65 
 
+if (idade <= 7 || idade >= 65 ) {
+  // console.log('Para você, a entrada é grátis!')
+}else {
+  // console.log('A entrada é R$ 50,00 reais')
+}
 /*
   04
 
@@ -84,6 +90,16 @@ if(matutino) {
 */
 
 const numbers = [7, 92, 34, 46, 90, 25, 11, 3, 89, 76, 99]
+let numerosentre11e90 = []
+
+for(let c = 0; c < numbers.length; c++) {
+  let numbers11a90 = numbers[c] >= 11 && numbers[c] <= 90
+  
+  if(numbers11a90){
+    numerosentre11e90.push(numbers[c])
+  }
+}
+console.log(numerosentre11e90)
 /*
   05
 
