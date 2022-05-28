@@ -94,11 +94,14 @@ const numbers = [7, 92, 34, 46, 90, 25, 11, 3, 89, 76, 99]
 let novoArray = []
 
 for (let c = 0; c < numbers.length; c++){
-  if(numbers[c] >= 11 && numbers[c] <= 90 ){
+
+  const numerosMaioresque11 = numbers[c] >= 11 
+  const numerosMenoresque90 = numbers[c] <= 90 
+
+  if(numerosMaioresque11 && numerosMenoresque90){
   novoArray.push(numbers[c])
   }
 }
-
 console.log(novoArray)
 /*
   05
