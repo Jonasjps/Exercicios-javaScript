@@ -5,7 +5,7 @@
   - O resultado exibido no console deve ser: false true.
 */
 
-console.log(!true, !false)
+//console.log(!true, !false)
 
 /*
   02
@@ -18,6 +18,11 @@ console.log(!true, !false)
 
 const animals = ['macaco', 'tucano', 'elefante', 'pavão', 'hipopótamo']
 
+if(animals.length !== 'leão') {
+ // console.log('Leão nao exeste no array')
+}else { 
+  console.log('Exeste Leão no array')
+}
 /*
   03
 
@@ -30,6 +35,16 @@ const animals = ['macaco', 'tucano', 'elefante', 'pavão', 'hipopótamo']
 */
 
 const randomNumbers = [59, 61, 73, 57, 35, 73, 21, 87, 43]
+
+
+for(let x = 0; x < randomNumbers.length;  x++){
+
+  if (randomNumbers[x] > 400){
+   break
+  }
+ // console.log(`A soma ultrapassou 400. Até aqui, o valor atual é RESULTADO_DA_SOMA.`)
+}
+
 
 /*
   04
