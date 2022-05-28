@@ -90,16 +90,16 @@ if (idade <= 7 || idade >= 65 ) {
 */
 
 const numbers = [7, 92, 34, 46, 90, 25, 11, 3, 89, 76, 99]
-let numerosentre11e90 = []
 
-for(let c = 0; c < numbers.length; c++) {
-  let numbers11a90 = numbers[c] >= 11 && numbers[c] <= 90
-  
-  if(numbers11a90){
-    numerosentre11e90.push(numbers[c])
+let novoArray = []
+
+for (let c = 0; c < numbers.length; c++){
+  if(numbers[c] >= 11 && numbers[c] <= 90 ){
+  novoArray.push(numbers[c])
   }
 }
-// console.log(numerosentre11e90)
+
+console.log(novoArray)
 /*
   05
 
@@ -167,4 +167,4 @@ for (let i = 0; i < randomNumbers.length; i++) {
 
 }
 
-console.log(`Numeros ímpares: ${Impar.join(', ').replace(', 3' , ' e 3')}. Números pares: ${Par.join(', ').replace(', 5' , ' e 5')}.`)
+// console.log(`Numeros ímpares: ${Impar.join(', ').replace(', 3' , ' e 3')}. Números pares: ${Par.join(', ').replace(', 5' , ' e 5')}.`)
