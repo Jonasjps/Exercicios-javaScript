@@ -36,14 +36,13 @@ if(animals.length !== 'leão') {
 
 const randomNumbers = [59, 61, 73, 57, 35, 73, 21, 87, 43]
 
-
-for(let x = 0; x < randomNumbers.length;  x++){
-
-  if (randomNumbers[x] > 400){
-   break
-  }
- // console.log(`A soma ultrapassou 400. Até aqui, o valor atual é RESULTADO_DA_SOMA.`)
+let numero = 0
+  
+if(randomNumbers[x] > 400) {
+  break
 }
+  console.log(`A soma ultrapassou 400. Até aqui, o valor atual é ${randomNumbers[x]}.`)
+
 
 
 /*
