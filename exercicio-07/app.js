@@ -39,7 +39,6 @@ const randomNumbers = [59, 61, 73, 57, 35, 73, 21, 87, 43]
 let numero = 0
   
 if(randomNumbers[x] > 400) {
-  break
 }
   console.log(`A soma ultrapassou 400. Até aqui, o valor atual é ${randomNumbers[x]}.`)
 
