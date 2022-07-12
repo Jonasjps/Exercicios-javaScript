@@ -21,7 +21,7 @@ const animals = ['macaco', 'tucano', 'elefante', 'pavão', 'hipopótamo']
 if(animals.length !== 'leão') {
  // console.log('Leão nao exeste no array')
 }else { 
-  console.log('Exeste Leão no array')
+  //console.log('Exeste Leão no array')
 }
 /*
   03
@@ -40,7 +40,7 @@ let numero = 0
   
 if(randomNumbers[x] > 400) {
 }
-  console.log(`A soma ultrapassou 400. Até aqui, o valor atual é ${randomNumbers[x]}.`)
+  //console.log(`A soma ultrapassou 400. Até aqui, o valor atual é ${randomNumbers[x]}.`)
 
 
 
