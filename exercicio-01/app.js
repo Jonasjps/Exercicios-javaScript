@@ -21,7 +21,7 @@ Utilize os espaços entre os comentários abaixo para executar os códigos dos
 exercícios. Inclusive o alert mencionado acima.
 */
 
-//alert('JS is Awesome')
+// alert('Js is Awesome')
 
 /*
 04 - Comente o alert que você escreveu acima, utilizando o comentário de uma linha.
@@ -32,20 +32,23 @@ exercícios. Inclusive o alert mencionado acima.
 dígitos. Ex.: 1930.
 */
 
+const myBirthYear = 1995
 
-const myBirthYear = 1995;
+// console.log(myBirthYear)
+
 
 /*
 06 - Declare uma const "currentYear", que recebe o ano atual, com 4 dígitos.
 */
+const currentYear = 2022
+// console.log(currentYear)
 
-const currentYear = 2022;
 
 /*
 07 - Exiba as const "myBirthYear" e "currentYear", lado a lado, no console do browser.
 */
 
-console.log(myBirthYear , currentYear)
+console.log(myBirthYear, currentYear)
 
 /*
 08 - Experimente.
@@ -55,9 +58,10 @@ Você pode utilizar o sinal de menos (-) entre os dois valores e verificar o que
 acontece. 
 - Exiba a "myAge" no console.
 */
+const myAge = currentYear - myBirthYear
 
-const myAge = currentYear - myBirthYear;
 console.log(myAge)
+
 
 /*
 09 - Antes do console.log abaixo, declare uma const "ten", que recebe o número  
@@ -71,8 +75,7 @@ Não se assuste com as crases e os cifrões. Conversaremos mais sobre operaçõe
 matemáticas e strings (textos) em breve =)
 */
 const ten = 10;
-console.log(`Em ${currentYear + ten}, estarei com ${myAge + ten} anos.`)
-
+console.log(`Em ${currentYear + ten} estarei com ${myAge + ten} anos.`)
 /*
 10 - Abra o site abaixo no browser e faça o seguinte:
 http://whathappenedinmybirthyear.com/
