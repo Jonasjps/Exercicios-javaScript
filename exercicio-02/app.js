@@ -106,14 +106,14 @@ const winterMessage = 'o inverno está chegando'
 - Exiba, no console, o index do caractere "v" da "winterMessage";
 */
 
-
+// console.log(winterMessage.lastIndexOf('v'))
 
 /*
 12 - Comente o console.log acima, e,
 - Exiba, no console, o index da última ocorrência do caractere "n" da "winterMessage".
 */
 
-
+// console.log(winterMessage.lastIndexOf('n'))
 
 /*
 13 - Comente o console.log acima, e,
@@ -123,6 +123,7 @@ const winterMessage = 'o inverno está chegando'
 
 const harryPotterAuthor = 'J.K. Rowling'
 
+// console.log(harryPotterAuthor.slice(0, 4))
 /*
 14 - Comente o console.log acima, e,
 - Após a const "bestMovie" (abaixo), declare uma constante "realBestMovie";
