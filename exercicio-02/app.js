@@ -134,13 +134,15 @@ para "Moonlight";
 
 const bestMovie = 'E o Oscar de melhor filme vai para: "La la land"!'
 
+const realBestMovie = 'E o Oscar de melhor filme vai para: "La la land"!'
+console.log(bestMovie)
+console.log(realBestMovie.replace('La la land', 'Moonlight'))
 
 /*
 15 - Comente o console.log acima, e,
 - Abaixo deste comentário, armazene o resto de 10 dividido por 3 em uma constante "reminder";
 - Exiba a reminder no console. O resultado deve ser 1;
 */
-const reminder = 10 % 3;
 
 
 
