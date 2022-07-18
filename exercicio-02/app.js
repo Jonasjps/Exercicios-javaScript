@@ -135,8 +135,8 @@ para "Moonlight";
 const bestMovie = 'E o Oscar de melhor filme vai para: "La la land"!'
 
 const realBestMovie = 'E o Oscar de melhor filme vai para: "La la land"!'
-console.log(bestMovie)
-console.log(realBestMovie.replace('La la land', 'Moonlight'))
+
+// console.log(realBestMovie.replace('La la land', 'Moonlight'))
 
 /*
 15 - Comente o console.log acima, e,
@@ -144,7 +144,9 @@ console.log(realBestMovie.replace('La la land', 'Moonlight'))
 - Exiba a reminder no console. O resultado deve ser 1;
 */
 
+const reminder = 10 % 3;
 
+// console.log(reminder)
 
 /*
 16 - Comente o console.log acima, e,
@@ -154,6 +156,9 @@ console.log(realBestMovie.replace('La la land', 'Moonlight'))
 */
 
 let episodes = 6
+episodes++
+
+// console.log(episodes)
 
 /*
 17 - Comente o console.log acima, e,
@@ -162,7 +167,9 @@ let episodes = 6
 - O valor exibido no console deve ser 6.
 */
 
+episodes--
 
+console.log(episodes)
 
 
 /*
