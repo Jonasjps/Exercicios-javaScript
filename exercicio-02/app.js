@@ -16,8 +16,7 @@
 Utilize os espaços entre os comentários abaixo para executar os códigos dos exercícios. Inclusive este.
 */
 
-
-// console.log('Grandes poderes trazem grandes responsabilidasdes.')
+// console.log('Grandes poderes trazem grandes responsabilidades. ')
 
 /*
 04 - Comente o console.log acima, e:
@@ -28,12 +27,13 @@ Utilize os espaços entre os comentários abaixo para executar os códigos dos e
 - Exiba a "myFavoriteTom" no console do browser.
 */
 const tom = 'Tom'
+
 const firstTom = 'Hanks'
-const secondTom = 'Cruise'
 
-const myFavoriteTom = tom + ' ' + secondTom;
+const secondTom = 'Cruise' 
 
-// console.log(myFavoriteTom)
+const myFavoriteTom = tom + ' ' + firstTom
+//  console.log(myFavoriteTom)
 
 /*
 05 - Comente o console.log acima, e:
@@ -44,7 +44,7 @@ const myFavoriteTom = tom + ' ' + secondTom;
 */
 const programmingLanguage = 'JavaScript'
 
-const js = programmingLanguage[0] + programmingLanguage[4];
+const js = programmingLanguage[0] + programmingLanguage[4]
 
 // console.log(js)
 
@@ -66,8 +66,6 @@ const mdn = mozilla[0] + mozilla[8] + mozilla[18]
 */
 
 // console.log(programmingLanguage.length)
-
-
 /*
 08 - Comente o console.log acima, e,
 - Exiba no console a última letra da string que a "randomWord" (abaixo) armazena, mas com a 
@@ -76,7 +74,7 @@ condição a seguir;
  última letra funcione para qualquer palavra que a "randomWord" receber;
 - Dica: utilize a propriedade ".length".
 */
-let randomWord = 'Jonas'
+let randomWord = 'Araponga'
 
 // console.log(randomWord[randomWord.length - 1])
 
@@ -99,14 +97,14 @@ const summerMessage = 'O VERÃO CHEGA NESTE FIM DE SEMANA'
 */
 
 const winterMessage = 'o inverno está chegando'
-
 // console.log(winterMessage.toUpperCase())
+
 /*
 11 - Comente o console.log acima, e,
 - Exiba, no console, o index do caractere "v" da "winterMessage";
 */
 
-// console.log(winterMessage.lastIndexOf('v'))
+// console.log(winterMessage.indexOf('v'))
 
 /*
 12 - Comente o console.log acima, e,
@@ -122,8 +120,8 @@ const winterMessage = 'o inverno está chegando'
 */
 
 const harryPotterAuthor = 'J.K. Rowling'
-
 // console.log(harryPotterAuthor.slice(0, 4))
+
 /*
 14 - Comente o console.log acima, e,
 - Após a const "bestMovie" (abaixo), declare uma constante "realBestMovie";
@@ -134,9 +132,8 @@ para "Moonlight";
 
 const bestMovie = 'E o Oscar de melhor filme vai para: "La la land"!'
 
-const realBestMovie = 'E o Oscar de melhor filme vai para: "La la land"!'
-
-// console.log(realBestMovie.replace('La la land', 'Moonlight'))
+const realBestMovie = bestMovie.replace('La la land', 'Moonligth')
+// console.log(realBestMovie)
 
 /*
 15 - Comente o console.log acima, e,
@@ -144,10 +141,9 @@ const realBestMovie = 'E o Oscar de melhor filme vai para: "La la land"!'
 - Exiba a reminder no console. O resultado deve ser 1;
 */
 
-const reminder = 10 % 3;
+const reminder = 10 % 3
 
 // console.log(reminder)
-
 /*
 16 - Comente o console.log acima, e,
 - Abaixo da let "episodes", incremente o valor dela em 1;
@@ -159,7 +155,6 @@ let episodes = 6
 episodes++
 
 // console.log(episodes)
-
 /*
 17 - Comente o console.log acima, e,
 - Decremente a let "episodes" em 1;
@@ -168,7 +163,6 @@ episodes++
 */
 
 episodes--
-
 // console.log(episodes)
 
 
@@ -180,7 +174,6 @@ episodes--
 episodes += 4
 
 // console.log(episodes)
-
 /*
 19 - Comente o console.log acima, e,
 - Abaixo deste comentário, armazene a string 'O nº de episódios é: NUMERO_DE_EPISÓDIOS' em uma constante "allEpisodes";
@@ -188,7 +181,7 @@ episodes += 4
 - Exiba a "allEpisodes" no console.
 */
 
-const allEpisodes = `O nº de episódios é: ${episodes}`
+const allEpisodes = 'O nº de episódios é: ' + episodes
 
 // console.log(allEpisodes)
 
@@ -202,7 +195,7 @@ const allEpisodes = `O nº de episódios é: ${episodes}`
 */
 
 const bookMessage = '\'O Conto da Aia\' é um dos livros mais vendidos da década.'
-//  console.log(bookMessage)
+// console.log(bookMessage)
 
 /*
 21 - Comente o console.log acima (e a const bookMessage caso não tenha descoberto a resolução), e,
@@ -216,9 +209,10 @@ const bookMessage = '\'O Conto da Aia\' é um dos livros mais vendidos da décad
 
 const name = 'walter white'
 
-let newName = 'walter white'
+const newName = name[0].toUpperCase() + name.slice(1, 7) + name[7].toUpperCase() + name.slice(8)
 
-// console.log(newName.replace('w', 'W').replace(' w', ' W'))
+// console.log(newName)
+
 /*
 22 - Comente o console.log acima, e,
 - Atribua à "newName" uma template string;
@@ -228,4 +222,4 @@ let newName = 'walter white'
 - Exiba a "newName" no console;
 */ 
 
-// console.log(`${newName.replace('w', 'W').replace(' w', ' W')}`)
+console.log(`${name[0].toUpperCase()}${name.slice(1,7)}${name[7].toUpperCase()}${name.slice(8)}`)
