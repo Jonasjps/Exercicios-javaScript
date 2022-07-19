@@ -169,7 +169,7 @@ episodes++
 
 episodes--
 
-console.log(episodes)
+// console.log(episodes)
 
 
 /*
@@ -177,7 +177,9 @@ console.log(episodes)
 - Utilize o operador addition assignment para atualizar o valor da let "episodes" para 10;
 - Após a atribuição, exiba a let "episodes" no console.
 */
+episodes += 4
 
+// console.log(episodes)
 
 /*
 19 - Comente o console.log acima, e,
@@ -186,7 +188,9 @@ console.log(episodes)
 - Exiba a "allEpisodes" no console.
 */
 
+const allEpisodes = `O nº de episódios é: ${episodes}`
 
+// console.log(allEpisodes)
 
 
 /*
@@ -197,8 +201,8 @@ console.log(episodes)
 - Não use template strings.
 */
 
-const bookMessage = 'O Conto da Aia é um dos livros mais vendidos da década.'
- //console.log(bookMessage)
+const bookMessage = '\'O Conto da Aia\' é um dos livros mais vendidos da década.'
+//  console.log(bookMessage)
 
 /*
 21 - Comente o console.log acima (e a const bookMessage caso não tenha descoberto a resolução), e,
