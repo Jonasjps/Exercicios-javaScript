@@ -216,8 +216,9 @@ const bookMessage = '\'O Conto da Aia\' é um dos livros mais vendidos da décad
 
 const name = 'walter white'
 
+let newName = 'walter white'
 
-
+// console.log(newName.replace('w', 'W').replace(' w', ' W'))
 /*
 22 - Comente o console.log acima, e,
 - Atribua à "newName" uma template string;
@@ -227,3 +228,4 @@ const name = 'walter white'
 - Exiba a "newName" no console;
 */ 
 
+// console.log(`${newName.replace('w', 'W').replace(' w', ' W')}`)
