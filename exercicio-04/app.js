@@ -61,8 +61,7 @@ const typeSentence = `O tipo de dado que a const "isRandomTVShowIncluded" armaze
   caracteres? BOOLEAN."
 */
 const caracteres = 39
-console.log(`A string que a "typeSentence" armazena tem mais de ${caracteres}  
-caracteres? ${typeSentence.length > 39}.`.replace(' t', ' T'))
+// console.log(`A string que a "typeSentence" armazena tem mais de ${caracteres} caracteres? ${String(typeSentence.length > 39).replace('t', 'T')}.`)
 /*
   06 - Comente o console.log() acima e:
 
@@ -73,6 +72,8 @@ caracteres? ${typeSentence.length > 39}.`.replace(' t', ' T'))
   BOOLEAN."
 */
 const falsyValues = [0, "", false, '', ``, null, undefined, NaN]
+// console.log(`Todos os ${falsyValues.length} itens do array "falsyValues" são falsy. Inclusive o  ${falsyValues[2]}.`)
+
 /*
   07 - Comente o console.log() acima e:
 
@@ -81,7 +82,9 @@ const falsyValues = [0, "", false, '', ``, null, undefined, NaN]
     em boolean.
   - Você sabe por que essa conversão resultou em true?
 */
-
+const crazyOperation = null + 1
+const crazyConversion = Boolean(crazyOperation)
+// console.log(crazyConversion)
 /*
   08 - Comente o console.log() acima e:
 
@@ -94,6 +97,9 @@ const falsyValues = [0, "", false, '', ``, null, undefined, NaN]
   "A soma entre o 1º e o 3º item de "ages" é menor ou igual a 92. Essa afirmação  
   é: BOOLEAN."
 */
+const ages = [31, 82, 61, 11]
+const agesSum = ages[0] + ages[2]
+// console.log(`A soma entre o 1º e o 3º item de "ages" é menor ou igual a 92. Essa afirmação  é: ${agesSum === 92}.`)
 
 /*
   09 - Comente o console.log() acima e:
@@ -103,7 +109,8 @@ const falsyValues = [0, "", false, '', ``, null, undefined, NaN]
   - Essa expressão deve resultar em false.
   - Exiba a "isNotAString" no console.
 */
-
+const isNotAString = typeof randomTVShow !== 'string'
+// console.log(isNotAString) 
 /*
   10 - Comente o console.log() acima e:
 
@@ -113,4 +120,4 @@ const falsyValues = [0, "", false, '', ``, null, undefined, NaN]
 */
 const evenNumbers = [0, 2, 4, 6, 8, 10]
 
-
+console.log(evenNumbers.indexOf(8) !==-1)
