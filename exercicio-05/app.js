@@ -124,3 +124,19 @@ for(let r = 0; r < numbers.length; r++){
 
   Dica: você pode colocar um loop dentro do outro, ou seja, aninhá-los. =)
 */
+
+const arrays = [
+  [4, 32, 8],
+  [64, 8, 32],
+  [8, 32, 16],
+  [2, 8, 4]
+]
+
+let soma = 0
+
+for(let c = 0; c < arrays.length; c++) {
+  for(let j = 0; j < arrays[c].length; j++) {
+    soma += arrays[c] [j]
+  }
+}
+// console.log(soma)
