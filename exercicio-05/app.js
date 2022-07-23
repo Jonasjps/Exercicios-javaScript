@@ -131,12 +131,11 @@ const arrays = [
   [8, 32, 16],
   [2, 8, 4]
 ]
-
-let soma = 0
+let soma = 0 
 
 for(let c = 0; c < arrays.length; c++) {
-  for(let j = 0; j < arrays[c].length; j++) {
-    soma += arrays[c] [j]
+  for(let i = 0; i < arrays[c].length; i++){
+    soma += arrays[c][i]
   }
 }
-// console.log(soma)
+console.log(soma)
