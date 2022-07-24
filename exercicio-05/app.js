@@ -20,21 +20,14 @@
     4
     5
 */
-let i = 0
 
-while (i < 6) {
-// console.log(i)
-  i++
-}
 
 /*
   02 - Comente a declaração da let e o loop acima e:
 
   - Utilizando um for loop, faça o mesmo que foi pedido no exercício 01.
 */
-for (let i= 0; i < 6; i++) {
-  // console.log(i)
-}
+
 
 /*
   03 - Comente o loop acima e:
@@ -47,15 +40,7 @@ for (let i= 0; i < 6; i++) {
   "Esta é a Xª vez que esta frase é exibida no console;."
 // */
 
-for (let c = 1; c < 11; c++) {
-  // console.log(`Esta é a ${c}ª vez que esta frase é exibida no console;.`)
-}
 
-// let j = 1
-// while (j < 11) {
-//   console.log(`Esta é a ${j}ª vez que esta frase é exibida no console;.`)
-//   j++
-// }
 
 /*
   04 - Comente o loop acima e:
@@ -69,12 +54,7 @@ for (let c = 1; c < 11; c++) {
 
 const cities = ['São Paulo', 'Rio de Janeiro', 'Minas Gerais']
  
-let upperCaseCities = []
 
-for(let c = 0; c < cities.length; c++){
-  upperCaseCities.push(cities[c].toUpperCase())
-}
-// console.log(upperCaseCities)
 /*
   05 - Comente o console.log acima e:
 
@@ -86,10 +66,7 @@ for(let c = 0; c < cities.length; c++){
 
 const names = ['João Grilo', 'Chicó', 'Rosinha','Maria']
 
-for(let c = 0; c < names.length; c++){
-  const templateHTML = `<li>${names[c]}</li>`
-  // console.log(templateHTML)
-}
+
 /*
   06 - Comente o console.log acima e:
 
@@ -101,12 +78,7 @@ for(let c = 0; c < names.length; c++){
 
 const numbers = ['91', '5', '30', '97', '83', '31']
 
-let sum = 0
 
-for(let r = 0; r < numbers.length; r++){
-  sum += Number(numbers[r]) 
-}
-// console.log(sum === 337)
 /*
   07 - Comente o console.log acima.
 
@@ -131,11 +103,3 @@ const arrays = [
   [8, 32, 16],
   [2, 8, 4]
 ]
-let soma = 0 
-
-for(let c = 0; c < arrays.length; c++) {
-  for(let i = 0; i < arrays[c].length; i++){
-    soma += arrays[c][i]
-  }
-}
-console.log(soma)
