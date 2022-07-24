@@ -21,6 +21,16 @@
     5
 */
 
+// for(let c= 0; c <= 5; c++){
+//   console.log(c)
+// }
+
+let n = 0 
+
+while(n <= 5) {
+  console.log(n)
+  n++
+}
 
 /*
   02 - Comente a declaração da let e o loop acima e:
