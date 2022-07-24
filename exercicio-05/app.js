@@ -28,7 +28,7 @@
 let n = 0 
 
 while(n <= 5) {
-  console.log(n)
+  // console.log(n)
   n++
 }
 
@@ -37,7 +37,9 @@ while(n <= 5) {
 
   - Utilizando um for loop, faça o mesmo que foi pedido no exercício 01.
 */
-
+for(let i = 0; i <= 5; i++){
+  // console.log(i)
+}
 
 /*
   03 - Comente o loop acima e:
@@ -49,7 +51,16 @@ while(n <= 5) {
 
   "Esta é a Xª vez que esta frase é exibida no console;."
 // */
+// let p = 1
 
+// while(p <= 10){
+//   console.log(`Esta é a ${p}ª vez que esta frase é exibida no console;.`)
+//   p++
+// }
+
+for(let c= 1; c <= 10; c++){
+  // console.log(`Esta é a ${c}ª vez que esta frase é exibida no console;.`)
+}
 
 
 /*
