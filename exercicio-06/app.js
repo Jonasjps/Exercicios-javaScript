@@ -85,18 +85,16 @@ if(idade <= 7 || idade >= 65){
   - O resultado deve ser: [34, 46, 90, 25, 11, 89, 76].
 */
 const numbers = [7, 92, 34, 46, 90, 25, 11, 3, 89, 76, 99]
-let novoArray = [] 
 
+let novoArray = []
 
-
-  for(let c = 0; c < numbers.length; c++){
-    if(numbers > 10 && numbers < 91){
-      novoArray.push(numbers[c])    
-        
-    }
-    
+for (let c = 0; c < numbers.length; c++){
+  if (numbers[c] > 10 && numbers[c] < 91) {
+    novoArray.push(numbers[c])
   }
-  console.log(novoArray)
+}
+// console.log(novoArray)
+
   
   
 
@@ -114,7 +112,21 @@ let novoArray = []
 */
 
 const crazyArray = [true, 869, 'oi', 71, false, 83, '35', true, 397, 'js', false]
+let arraybooleans = 0
+let arrayNumbers = 0
+let arrayString = 0
 
+for (let b = 0; b < crazyArray.length; b++) {
+  
+if (typeof crazyArray[b] === 'boolean'){
+  arraybooleans += 1
+} else if(typeof crazyArray[b] === 'number'){
+  arrayNumbers+= 1
+} else {
+  arrayString+= 1
+}
+}
+console.log(`O crazyArray tem ${arraybooleans} booleans, ${arrayNumbers} números e ${arrayString} strings.`)
 /*
   06
 
