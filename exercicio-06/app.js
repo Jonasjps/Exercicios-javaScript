@@ -25,7 +25,13 @@
 
 const fruits = ['morango', 'banana',  'mamão']
 
-
+if(fruits.includes('abacaxi')){
+  // console.log('A string \'abacaxi\' existe no array fruits')
+}else if(fruits.includes('pera')){
+  // console.log('A string \'pera\' existe no array fruits')
+}else{
+  // console.log('Nem pera nem abacaxi existem no array \'fruits\'')
+}
 
 /*
   02
@@ -39,6 +45,15 @@ const fruits = ['morango', 'banana',  'mamão']
   Obs.: tanto a expressão do lado esquerdo quanto a do lado direito do operador  
   lógico precisam ter a constante especificada. Exemplo: hour > x && hour < y.
 */
+const horaAtual = 12
+
+if(horaAtual >= 00 && horaAtual < 12){
+  console.log('BOM DIA =)')
+}else if(horaAtual > 11 && horaAtual < 18){
+  console.log('BOA TARDE =)')
+}else { 
+  console.log('BOA NOITE =)')
+}
 
 /*
   03
