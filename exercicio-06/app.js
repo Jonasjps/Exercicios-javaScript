@@ -45,14 +45,14 @@ if(fruits.includes('abacaxi')){
   Obs.: tanto a expressão do lado esquerdo quanto a do lado direito do operador  
   lógico precisam ter a constante especificada. Exemplo: hour > x && hour < y.
 */
-const horaAtual = 12
+const horaAtual = 21
 
 if(horaAtual >= 00 && horaAtual < 12){
-  console.log('BOM DIA =)')
+  // console.log('BOM DIA =)')
 }else if(horaAtual > 11 && horaAtual < 18){
-  console.log('BOA TARDE =)')
+  // console.log('BOA TARDE =)')
 }else { 
-  console.log('BOA NOITE =)')
+  // console.log('BOA NOITE =)')
 }
 
 /*
@@ -68,7 +68,13 @@ if(horaAtual >= 00 && horaAtual < 12){
   - Agora, teste diferentes idades para se certificar que a condição do `if`  
     também está funcionando.
 */
+const idade = 27
 
+if(idade <= 7 || idade >= 65){
+  // console.log('Para você a entrada é grátis!')
+}else{
+  // console.log('A entrada é R$ 30,00.')
+}
 
 /*
   04
@@ -78,8 +84,21 @@ if(horaAtual >= 00 && horaAtual < 12){
   - Exiba o novo array no console;
   - O resultado deve ser: [34, 46, 90, 25, 11, 89, 76].
 */
-
 const numbers = [7, 92, 34, 46, 90, 25, 11, 3, 89, 76, 99]
+let novoArray = [] 
+
+
+
+  for(let c = 0; c < numbers.length; c++){
+    if(numbers > 10 && numbers < 91){
+      novoArray.push(numbers[c])    
+        
+    }
+    
+  }
+  console.log(novoArray)
+  
+  
 
 /*
   05
