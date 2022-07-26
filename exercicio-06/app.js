@@ -25,13 +25,6 @@
 
 const fruits = ['morango', 'banana',  'mamão']
 
-if(fruits.includes('abacaxi')){
-  // console.log('A string \'abacaxi\' existe no array fruits')
-}else if(fruits.includes('pera')){
-  // console.log('A string \'pera\' existe no array fruits')
-}else{
-  // console.log('Nem pera nem abacaxi existem no array \'fruits\'')
-}
 
 /*
   02
@@ -45,15 +38,7 @@ if(fruits.includes('abacaxi')){
   Obs.: tanto a expressão do lado esquerdo quanto a do lado direito do operador  
   lógico precisam ter a constante especificada. Exemplo: hour > x && hour < y.
 */
-const horaAtual = 21
 
-if(horaAtual >= 00 && horaAtual < 12){
-  // console.log('BOM DIA =)')
-}else if(horaAtual > 11 && horaAtual < 18){
-  // console.log('BOA TARDE =)')
-}else { 
-  // console.log('BOA NOITE =)')
-}
 
 /*
   03
@@ -68,13 +53,7 @@ if(horaAtual >= 00 && horaAtual < 12){
   - Agora, teste diferentes idades para se certificar que a condição do `if`  
     também está funcionando.
 */
-const idade = 27
 
-if(idade <= 7 || idade >= 65){
-  // console.log('Para você a entrada é grátis!')
-}else{
-  // console.log('A entrada é R$ 30,00.')
-}
 
 /*
   04
@@ -86,14 +65,6 @@ if(idade <= 7 || idade >= 65){
 */
 const numbers = [7, 92, 34, 46, 90, 25, 11, 3, 89, 76, 99]
 
-let novoArray = []
-
-for (let c = 0; c < numbers.length; c++){
-  if (numbers[c] > 10 && numbers[c] < 91) {
-    novoArray.push(numbers[c])
-  }
-}
-// console.log(novoArray)
 
   
   
@@ -110,26 +81,7 @@ for (let c = 0; c < numbers.length; c++){
 
   "O crazyArray tem X booleans, X números e X strings."
 */
-
 const crazyArray = [true, 869, 'oi', 71, false, 83, '35', true, 397, 'js', false]
-let arraybooleans = 0
-let arrayNumbers = 0
-let arrayString = 0
-
-for (let b = 0; b < crazyArray.length; b++) {
-  
-const condiçãoBooleans = typeof crazyArray[b] === 'boolean'
-const condiçãoNumbers = typeof crazyArray[b] === 'number'
-
-if (condiçãoBooleans){
-  arraybooleans += 1
-} else if(condiçãoNumbers){
-  arrayNumbers+= 1
-} else {
-  arrayString+= 1
-}
-}
-// console.log(`O crazyArray tem ${arraybooleans} booleans, ${arrayNumbers} números e ${arrayString} strings.`)
 /*
   06
 
@@ -146,17 +98,4 @@ if (condiçãoBooleans){
 
   "Numeros ímpares: XX, XX e XX. Números pares: XX, XX e XX."
 */
-let pares = []
-let impares = []
 const randomNumbers = [73, 4, 67, 10, 31, 58]
-for(let i = 0; i < randomNumbers.length; i++){
-
-let numerosPares = randomNumbers[i] % 2 === 0
-
-if (numerosPares) {
-  pares.push(randomNumbers[i])
-} else {
-  impares.push(randomNumbers[i])
-}
-}
-console.log(`Numeros ímpares: ${impares.join(', ').replace(', 3', ' e 3')}. Números pares: ${pares.join(', ').replace(', 5', ' e 5')}.`)
