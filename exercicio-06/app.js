@@ -156,7 +156,7 @@ let pares = []
 for (let x = 0; x < randomNumbers.length; x++) {
 
  const numerosPares = randomNumbers[x] % 2 === 0
- const numerosImpares = randomNumbers[x] % 3 === 1
+ const numerosImpares = randomNumbers[x] % 2 === 1
   
  if (numerosPares) {
   pares.push(randomNumbers[x])
