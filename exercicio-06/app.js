@@ -121,7 +121,7 @@ let totaldeBooleans = 0
 for (let j = 0; j < crazyArray.length; j++) {
   
 const booleans = typeof crazyArray[j] === 'boolean'
-const numbers = typeof crazyArray[j] === 'number'
+const numbers =  typeof crazyArray[j] === 'number'
 
   if (booleans){
     totaldeBooleans += 1
@@ -131,7 +131,7 @@ const numbers = typeof crazyArray[j] === 'number'
     totaldeStrings += 1
   }
 }
-console.log(`O crazyArray tem ${totaldeBooleans} booleans, ${totaldeNumeros} números e ${totaldeStrings} strings.`)
+// console.log(`O crazyArray tem ${totaldeBooleans} booleans, ${totaldeNumeros} números e ${totaldeStrings} strings.`)
 /*
   06
 
@@ -149,3 +149,21 @@ console.log(`O crazyArray tem ${totaldeBooleans} booleans, ${totaldeNumeros} nú
   "Numeros ímpares: XX, XX e XX. Números pares: XX, XX e XX."
 */
 const randomNumbers = [73, 4, 67, 10, 31, 58]
+
+let impares = []
+let pares = []
+
+for (let x = 0; x < randomNumbers.length; x++) {
+
+ const numerosPares = randomNumbers[x] % 2 === 0
+ const numerosImpares = randomNumbers[x] % 3 === 1
+  
+ if (numerosPares) {
+  pares.push(randomNumbers[x])
+} else if (numerosImpares) {
+  impares.push(randomNumbers[x])
+}
+}
+// console.log(`Numeros ímpares: ${impares.join(', ').replace(', 3', ' e 3')} . Números pares: ${pares.join(', ').replace(', 5', ' e 5')}.`)
+
+
