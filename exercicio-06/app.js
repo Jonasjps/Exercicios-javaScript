@@ -23,16 +23,18 @@
     "Nem pera nem abacaxi existem no array "fruits".".
 */
 
-const fruits = ['abacaxi', 'pera', 'morango', 'banana',  'mamão']
+const fruits = ['pera','morango', 'abacaxi','banana',  'mamão']
 
-if (fruits.includes('abacaxi')){
+const itenAbacaxi = fruits.includes('abacaxi')
+const itenPera = fruits.includes('pera')
+
+if (itenAbacaxi){
   // console.log('A string "abacaxi" existe no array  fruits.')
-} else if (fruits.includes('pera')){
+} else if (itenPera) {
   // console.log('A string "pera" existe no array fruits.')
-} else{ 
+} else {
   // console.log('Nem pera nem abacaxi existem no array "fruits".')
 }
-
 
 /*
   02
@@ -46,16 +48,18 @@ if (fruits.includes('abacaxi')){
   Obs.: tanto a expressão do lado esquerdo quanto a do lado direito do operador  
   lógico precisam ter a constante especificada. Exemplo: hour > x && hour < y.
 */
-const horaAtual = 00
+const hour = 12
 
-if (horaAtual >= 00 && horaAtual < 12) {
-  // console.log('bom dia =)')
-} else if (horaAtual > 11 && horaAtual < 18){
-  // console.log('boa tarde =)')
+const Manha = hour >= 00 && hour < 12
+const Tarde = hour > 11 && hour < 18
+
+if (Manha) {
+  console.log('BOM DIA =)')
+} else if (Tarde) {
+  // console.log('BOA TARDE =)')
 } else {
-  // console.log('boa noite =)')
+  console.log('BOA NOITE =)')
 }
-
 /*
   03
 
@@ -69,13 +73,18 @@ if (horaAtual >= 00 && horaAtual < 12) {
   - Agora, teste diferentes idades para se certificar que a condição do `if`  
     também está funcionando.
 */
-const idade = 64
+const idade = 66
+let mensagem = ''
+const Idade7ouMenos = idade <= 7
+const Idade65ouMais = idade >= 65
 
-if (idade <= 7 || idade >= 65) {
-  // console.log('Para você, a entrada é grátis')
+if (Idade7ouMenos || Idade65ouMais) {
+  mensagem += 'Para você, a entrada é grátis!'
 } else {
-  // console.log('A entrada é R$ 30,00')
+  mensagem += 'A entrada é R$ 30,00'
 }
+
+console.log(mensagem)
 
 /*
   04
@@ -86,16 +95,6 @@ if (idade <= 7 || idade >= 65) {
   - O resultado deve ser: [34, 46, 90, 25, 11, 89, 76].
 */
 const numbers = [7, 92, 34, 46, 90, 25, 11, 3, 89, 76, 99]
-let novoArray = []
-
-for (let c = 0; c < numbers.length; c++){
-const numerosEntre11e90 = numbers[c] > 10 && numbers[c] < 91
-
-  if (numerosEntre11e90) {
-    novoArray.push(numbers[c])
-  }
-}
-// console.log(novoArray)
   
   
 
@@ -113,25 +112,6 @@ const numerosEntre11e90 = numbers[c] > 10 && numbers[c] < 91
 */
 const crazyArray = [true, 869, 'oi', 71, false, 83, '35', true, 397, 'js', false]
 
-let totaldeNumeros = 0
-let totaldeStrings = 0 
-let totaldeBooleans = 0
-
-
-for (let j = 0; j < crazyArray.length; j++) {
-  
-const booleans = typeof crazyArray[j] === 'boolean'
-const numbers =  typeof crazyArray[j] === 'number'
-
-  if (booleans){
-    totaldeBooleans += 1
-  } else if (numbers){
-    totaldeNumeros += 1
-  } else {
-    totaldeStrings += 1
-  }
-}
-// console.log(`O crazyArray tem ${totaldeBooleans} booleans, ${totaldeNumeros} números e ${totaldeStrings} strings.`)
 /*
   06
 
@@ -150,20 +130,5 @@ const numbers =  typeof crazyArray[j] === 'number'
 */
 const randomNumbers = [73, 4, 67, 10, 31, 58]
 
-let impares = []
-let pares = []
-
-for (let x = 0; x < randomNumbers.length; x++) {
-
- const numerosPares = randomNumbers[x] % 2 === 0
- const numerosImpares = randomNumbers[x] % 2 === 1
-  
- if (numerosPares) {
-  pares.push(randomNumbers[x])
-} else if (numerosImpares) {
-  impares.push(randomNumbers[x])
-}
-}
-// console.log(`Numeros ímpares: ${impares.join(', ').replace(', 3', ' e 3')} . Números pares: ${pares.join(', ').replace(', 5', ' e 5')}.`)
 
 
