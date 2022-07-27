@@ -84,7 +84,7 @@ if (Idade7ouMenos || Idade65ouMais) {
   mensagem += 'A entrada é R$ 30,00'
 }
 
-console.log(mensagem)
+// console.log(mensagem)
 
 /*
   04
@@ -96,8 +96,16 @@ console.log(mensagem)
 */
 const numbers = [7, 92, 34, 46, 90, 25, 11, 3, 89, 76, 99]
   
-  
+let NovoArray = []
+ 
+  for (let i = 0; i < numbers.length; i++) {
+    
+    const Numeros11a90 = numbers[i] > 10 && numbers[i] < 91
 
+    if (Numeros11a90) 
+    NovoArray.push(numbers[i])
+  }
+// console.log(NovoArray)
 /*
   05
 
