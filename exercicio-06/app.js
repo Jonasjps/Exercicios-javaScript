@@ -5,7 +5,7 @@
   - Após resolver cada exercício, tente reescrever partes do seu código para  
     deixá-lo mais legível.
     
-    Por exemplo, uma expressão typeof crazyArray[i] === 'boolean' pode ser  
+    Por exemplo, uma expressão typeofItens === 'boolean' pode ser  
     armazenada em uma constante "isItemABoolean".
 
     Falaremos mais sobre legibilidade na revisão destes exercícios =)
@@ -105,7 +105,7 @@ let NovoArray = []
     if (Numeros11a90) 
     NovoArray.push(numbers[i])
   }
-// console.log(NovoArray)
+//  console.log(NovoArray)
 /*
   05
 
@@ -119,7 +119,23 @@ let NovoArray = []
   "O crazyArray tem X booleans, X números e X strings."
 */
 const crazyArray = [true, 869, 'oi', 71, false, 83, '35', true, 397, 'js', false]
+let totalBooleans = 0
+let totalNumeros = 0
+let totalStrings = 0
+for (let i = 0; i < crazyArray.length; i++) {
+  const typeofItens = typeof crazyArray[i]
+  const ArrayBooleans = typeofItens === 'boolean'
+  const ArrayNumeros = typeofItens === 'number'
 
+  if(ArrayBooleans) {
+    totalBooleans++
+  } else if (ArrayNumeros) {
+    totalNumeros++
+  } else {
+    totalStrings++
+  }
+}
+// console.log(`O crazyArray tem ${totalBooleans} booleans, ${totalNumeros} números e ${totalStrings} strings.`)
 /*
   06
 
@@ -138,5 +154,22 @@ const crazyArray = [true, 869, 'oi', 71, false, 83, '35', true, 397, 'js', false
 */
 const randomNumbers = [73, 4, 67, 10, 31, 58]
 
+let pares = []
+ let impares = []
 
+ for (let c = 0; c < randomNumbers.length; c++) {
+  
+  const restoDaDivisão = randomNumbers[c] % 2 === 0
+  const number =  randomNumbers[c]
+  
+  if (restoDaDivisão) {
+    pares.push(number)
+  } else {
+    impares.push(number)
+  }
+}
+const metodos1 = impares.join(', ').replace(', 3', ' e 3')
+const metodos2 = pares.join(', ').replace(', 5', ' e 5')
+
+// console.log(`Numeros ímpares: ${metodos1}. Números pares: ${metodos2}.`)
 
