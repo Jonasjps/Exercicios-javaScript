@@ -119,6 +119,26 @@ let NovoArray = []
   "O crazyArray tem X booleans, X números e X strings."
 */
 const crazyArray = [true, 869, 'oi', 71, false, 83, '35', true, 397, 'js', false]
+
+let totalDeBooleans = 0
+let totalDeNumbers = 0
+let totalDeStrings = 0
+
+for (let c = 0; c < crazyArray.length; c++) {
+  
+  const typeofItens =  typeof crazyArray[c]
+  const booleans = typeofItens === 'boolean'
+  const Numbers =  typeofItens=== 'number'
+  
+  if (booleans) {
+    totalDeBooleans++
+  } else if (Numbers) {
+    totalDeNumbers++
+  } else {
+    totalDeStrings++
+  }
+}
+console.log(`O crazyArray tem ${totalDeBooleans} booleans, ${totalDeNumbers} números e ${totalDeStrings} strings.`)
 /*
   06
 
