@@ -157,5 +157,16 @@ for (let c = 0; c < crazyArray.length; c++) {
 */
 const randomNumbers = [73, 4, 67, 10, 31, 58]
 
+let Pares = []
+let impares = []
+for(let j = 0; j < randomNumbers.length; j++) {
+
+  if (randomNumbers[j] % 2 === 0) {
+    Pares.push(randomNumbers[j])
+  } else {
+    impares.push(randomNumbers[j])
+  }
+}
+console.log(`Numeros ímpares: ${impares}. Números pares: ${Pares}.`)
 
 
