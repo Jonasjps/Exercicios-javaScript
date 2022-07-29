@@ -138,7 +138,7 @@ for (let c = 0; c < crazyArray.length; c++) {
     totalDeStrings++
   }
 }
-console.log(`O crazyArray tem ${totalDeBooleans} booleans, ${totalDeNumbers} números e ${totalDeStrings} strings.`)
+// console.log(`O crazyArray tem ${totalDeBooleans} booleans, ${totalDeNumbers} números e ${totalDeStrings} strings.`)
 /*
   06
 
@@ -157,22 +157,5 @@ console.log(`O crazyArray tem ${totalDeBooleans} booleans, ${totalDeNumbers} nú
 */
 const randomNumbers = [73, 4, 67, 10, 31, 58]
 
-let pares = []
- let impares = []
 
- for (let c = 0; c < randomNumbers.length; c++) {
-  
-  const restoDaDivisão = randomNumbers[c] % 2 === 0
-  const number =  randomNumbers[c]
-  
-  if (restoDaDivisão) {
-    pares.push(number)
-  } else {
-    impares.push(number)
-  }
-}
-const metodos1 = impares.join(', ').replace(', 3', ' e 3')
-const metodos2 = pares.join(', ').replace(', 5', ' e 5')
-
-// console.log(`Numeros ímpares: ${metodos1}. Números pares: ${metodos2}.`)
 
