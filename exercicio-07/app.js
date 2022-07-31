@@ -41,9 +41,13 @@ const randomNumbers = [59, 61, 73, 57, 35, 73, 21, 87, 43]
 let total = 0
 
 for (let i = 0; i < randomNumbers.length; i++) {
+  if (total > 400) {
+    // console.log(`A soma ultrapassou 400. Até aqui, o valor atual é ${total}.`)
+  break
+  }
   total += randomNumbers[i] 
 }
-// console.log(`A soma ultrapassou 400. Até aqui, o valor atual é ${total}.`)
+// console.log(total)
 /*
   04
 
@@ -81,20 +85,7 @@ for (let j = 0; j < sentence.length; j++) {
 */
 
 const randomValues = [57, false, 'JS', [], true, 'HTML', 31, null, false, 'CSS', 97, true, 'Git', 11, 'sticker', false, 'GitHub', true, null]
-// let totalDeStrings = 0
-// for (let c = 0; c < randomValues.length; c++) {
-// 
-  // if (randomValues[c] === 'string') {
-// 
-      // break
-  // }
-  // console.log(randomValues[c])
-// }
-  // 
-// console.log(`3 informações sobre o array randomValues:
-// - As primeiras 4 strings são ${totalDeStrings};
-// - Até que as primeiras 4 strings fossem iteradas, XX booleans foram iterados;
-// - O array foi iterado por XX vezes.`)
+
 /*
   06
 
@@ -157,5 +148,5 @@ switch(a) {
     console.log(`O valor de "a" é ${a}`)
     break
   default:
-    console.log('O valor de "a" é qualquer número, exeto 0 e 1')
+    // console.log('O valor de "a" é qualquer número, exeto 0 e 1')
 }
