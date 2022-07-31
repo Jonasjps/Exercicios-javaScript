@@ -115,7 +115,7 @@ const randomValues = [57, false, 'JS', [], true, 'HTML', 31, null, false, 'CSS',
     da bebida além da que você escolheu.
 */
 
-const drinkType = 'Agua'
+const drinkType = 'cerveja'
 
 switch (drinkType){
   case 'Agua':
@@ -127,7 +127,7 @@ switch (drinkType){
   case 'suco':
     console.log('Bebida produzida do líquido extraído de frutos.')  
     break
-  default:
+  // default:
     console.log('Bebida desconhecida.')
   }
 
@@ -139,14 +139,23 @@ switch (drinkType){
     para testar o switch que você escreveu.
 */
 
-const a = 2
+const a = 3
 
 // if (a === 0) {
-//   console.log(`O valor de "a" é ${a}`)
+  // console.log(`O valor de "a" é ${a}`)
 // } else if (a === 1) {
-//   console.log(`O valor de "a" é ${a}`)
+  // console.log(`O valor de "a" é ${a}`)
 // } else {
-//   console.log('O valor de "a" é qualquer número, exceto 0 e 1')
+  // console.log('O valor de "a" é qualquer número, exceto 0 e 1')
 // }
 
-
+switch(a) {
+  case 0:
+    console.log(`O valor de "a" é ${a} `)
+    break
+  case 1:
+    console.log(`O valor de "a" é ${a}`)
+    break
+  default:
+    console.log('O valor de "a" é qualquer número, exeto 0 e 1')
+}
