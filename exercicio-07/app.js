@@ -5,8 +5,7 @@
   - O resultado exibido no console deve ser: false true.
 */
 
-// console.log(!true)
-// console.log(!false)
+console.log(true,false)
 /*
   02
 
@@ -18,13 +17,6 @@
 
 const animals = ['macaco', 'tucano', 'elefante', 'pavão', 'hipopótamo']
 
-const leão = animals !== 'leão'
-
-if (leão) {
-  // console.log('Leão não existe no array "animals"')
- } else {
-  console.log('Existe um leão no array animals')
- }
 
 /*
   03
@@ -38,16 +30,7 @@ if (leão) {
 */
 
 const randomNumbers = [59, 61, 73, 57, 35, 73, 21, 87, 43]
-let total = 0
 
-for (let i = 0; i < randomNumbers.length; i++) {
-  if (total > 400) {
-    // console.log(`A soma ultrapassou 400. Até aqui, o valor atual é ${total}.`)
-  break
-  }
-  total += randomNumbers[i] 
-}
-// console.log(total)
 /*
   04
 
@@ -60,13 +43,7 @@ for (let i = 0; i < randomNumbers.length; i++) {
 const sentence = ['A', 'certeza', 'dúvida', 'é', 'o', 'princípio', 'da', 'sabedoria.']
 
 
-for (let j = 0; j < sentence.length; j++) {
-  if (sentence[j] === 'certeza') {
-    continue
-  }
 
-  // console.log(sentence[j])
-}
 
 
 /*
@@ -85,40 +62,6 @@ for (let j = 0; j < sentence.length; j++) {
 */
 
 const randomValues = [57, false, 'JS', [], true, 'HTML', 31, null, false, 'CSS', 97, true, 'Git', 11, 'sticker', false, 'GitHub', true, null]
-
-let totalDeStrings = 0
-let totalDeBooleans = 0
-let totalDeIteração = 0
-let arrayDeStrings = []
-
-for (let i = 0; i < randomValues.length; i++) {
-  const arrayIterado = randomValues[i]
-  const ItemTypeOf = typeof arrayIterado 
-  const ItensString = ItemTypeOf  === 'string'
-  const ItemBoolean = ItemTypeOf  === 'boolean' 
-  
-  if (totalDeStrings === 4){
-      break
-    }
-    if (ItensString){
-      totalDeStrings++
-      arrayDeStrings.push(randomValues[i])
-    }
-    if (ItemBoolean) {
-      totalDeBooleans++
-    }
-  
-    totalDeIteração++
-}
-const AjuasteDeMetodo = arrayDeStrings[arrayDeStrings.length - 1]
-const AjusteDeNumeros = arrayDeStrings.join(', ').replace(`, ${AjuasteDeMetodo}`, ` e ${AjuasteDeMetodo}`)
-
-console.log(`3 informações sobre o array randomValues:
-  - As primeiras 4 strings são ${AjusteDeNumeros};
-  - Até que as primeiras 4 strings fossem iteradas, ${totalDeBooleans} booleans foram iterados;
-  - O array foi iterado por ${totalDeIteração} vezes.`)
-
-
 
 
 
@@ -146,19 +89,6 @@ console.log(`3 informações sobre o array randomValues:
 
 const drinkType = 'cerveja'
 
-switch (drinkType){
-  case 'Agua':
-    console.log('Substância química cujas moléculas são formadas por dois átomos de hidrogênio e um de oxigênio.')
-    break
-  case 'Refrigerante':
-    console.log('Bebida não alcoólica e não fermentada, fabricada industrialmente, à base de água mineral e açúcar.')  
-    break
-  case 'suco':
-    console.log('Bebida produzida do líquido extraído de frutos.')  
-    break
-  // default:
-    console.log('Bebida desconhecida.')
-  }
 
 /*
   07
@@ -178,13 +108,3 @@ const a = 3
   // console.log('O valor de "a" é qualquer número, exceto 0 e 1')
 // }
 
-switch(a) {
-  case 0:
-    console.log(`O valor de "a" é ${a} `)
-    break
-  case 1:
-    console.log(`O valor de "a" é ${a}`)
-    break
-  default:
-    // console.log('O valor de "a" é qualquer número, exeto 0 e 1')
-}
