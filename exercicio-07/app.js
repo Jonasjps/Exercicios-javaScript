@@ -92,37 +92,36 @@ let FraseString = []
 */
 
 const randomValues = [57, false, 'JS', [], true, 'HTML', 31, null, false, 'CSS', 97, true, 'Git', 11, 'sticker', false, 'GitHub', true, null]
-
+ 
 let totalDeStrings = 0
+let ArrayDeStrings = []
 let totalDeBooleans = 0
 let totalDeIteração = 0
-let arrayDeStrings = []
+for (let c = 0; c < randomValues.length; c++) {
+const arrayItens = randomValues[c]
+const typeofItens = typeof arrayItens
+const StringsItens = typeofItens === 'string'
+const BooleansItens = typeofItens === 'boolean'
 
-for (let i = 0; i < randomValues.length; i++) {
-  const arrayDeItens =  randomValues[i]
-  const ItemTypeOf = typeof arrayDeItens 
-  const ItensStrings =   arrayDeItens === 'string'
-  const itensBooleans =  arrayDeItens === 'boolean'
-  if (totalDeStrings === 4) {
+  if (totalDeStrings === 4){
     break
   }
-  if (ItensStrings) {
+  if (StringsItens) {
     totalDeStrings++
-    arrayDeStrings.push(randomValues[i])
+    ArrayDeStrings.push(randomValues[c])
   }
-  if (itensBooleans) {
+  if (BooleansItens) {
     totalDeBooleans++
   }
   totalDeIteração++
 }
-const AbreviaçãoDeExpressão = arrayDeStrings[arrayDeStrings.length - 1]
-const MetodoAjustado = arrayDeStrings.join(', ').replace(`, ${AbreviaçãoDeExpressão}`, ` e ${AbreviaçãoDeExpressão}`)
+const metodo = ArrayDeStrings[ArrayDeStrings.length -1]
+const metodoAjustado = ArrayDeStrings.join(', ').replace(`, ${metodo}`, ` e ${metodo}`)
 
-  console.log(`3 informações sobre o array randomValues:
-  - As primeiras 4 strings são ${MetodoAjustado};
+console.log(`3 informações sobre o array randomValues:
+  - As primeiras 4 strings são ${metodoAjustado};
   - Até que as primeiras 4 strings fossem iteradas, ${totalDeBooleans} booleans foram iterados;
   - O array foi iterado por ${totalDeIteração} vezes.`)
-
 
 
 /*
