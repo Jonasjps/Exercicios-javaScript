@@ -58,16 +58,20 @@ for (let c = 0; c < randomNumbers.length; c++) {
 */
 
 const sentence = ['A', 'certeza', 'dúvida', 'é', 'o', 'princípio', 'da', 'sabedoria.']
- let FraseString = []
+ 
+let FraseString = []
+ 
  for (let c = 0; c < sentence.length; c++) {
+  
   const fraseAjustada = sentence[c] === 'certeza'
+
   if (fraseAjustada) {
     continue
   }
 
   FraseString+= `${sentence[c]} `
 }
-console.log(FraseString)
+// console.log(FraseString)
 
 
 
@@ -89,7 +93,35 @@ console.log(FraseString)
 
 const randomValues = [57, false, 'JS', [], true, 'HTML', 31, null, false, 'CSS', 97, true, 'Git', 11, 'sticker', false, 'GitHub', true, null]
 
+let totalDeStrings = 0
+let totalDeBooleans = 0
+let totalDeIteração = 0
+let arrayDeStrings = []
 
+for (let i = 0; i < randomValues.length; i++) {
+  const arrayDeItens =  randomValues[i]
+  const ItemTypeOf = typeof arrayDeItens 
+  const ItensStrings =   arrayDeItens === 'string'
+  const itensBooleans =  arrayDeItens === 'boolean'
+  if (totalDeStrings === 4) {
+    break
+  }
+  if (ItensStrings) {
+    totalDeStrings++
+    arrayDeStrings.push(randomValues[i])
+  }
+  if (itensBooleans) {
+    totalDeBooleans++
+  }
+  totalDeIteração++
+}
+const AbreviaçãoDeExpressão = arrayDeStrings[arrayDeStrings.length - 1]
+const MetodoAjustado = arrayDeStrings.join(', ').replace(`, ${AbreviaçãoDeExpressão}`, ` e ${AbreviaçãoDeExpressão}`)
+
+  console.log(`3 informações sobre o array randomValues:
+  - As primeiras 4 strings são ${MetodoAjustado};
+  - Até que as primeiras 4 strings fossem iteradas, ${totalDeBooleans} booleans foram iterados;
+  - O array foi iterado por ${totalDeIteração} vezes.`)
 
 
 
@@ -113,7 +145,23 @@ const randomValues = [57, false, 'JS', [], true, 'HTML', 31, null, false, 'CSS',
     da bebida além da que você escolheu.
 */
 
-const drinkType = 'cerveja'
+const drinkType = 'refrigerante'
+
+switch (drinkType) {
+  case 'refrigerante': 
+  // console.log('Bebida não alcoólica e não fermentada, fabricada industrialmente, à base de água mineral e açúcar.')
+    break
+  case 'água':
+    console.log('Substância química cujas moléculas são formadas por dois átomos de hidrogênio e um de oxigênio.')
+    break
+  case 'suco':
+    console.log('Bebida produzida do líquido extraído de frutos.')
+    break
+  default:
+    console.log('Bebida desconhecida.')
+  
+  }
+
 
 
 /*
@@ -134,3 +182,16 @@ const a = 3
   // console.log('O valor de "a" é qualquer número, exceto 0 e 1')
 // }
 
+switch (a) {
+  case 0 : 
+  console.log(`O valor de "a" é ${a}`)
+  break
+  case 1 : 
+  console.log(`O valor de "a" é ${a}`)
+  break
+  default: 
+  // console.log('O valor de "a" é qualquer número, exceto 0 e 1')
+
+
+
+}
