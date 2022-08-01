@@ -86,6 +86,44 @@ for (let j = 0; j < sentence.length; j++) {
 
 const randomValues = [57, false, 'JS', [], true, 'HTML', 31, null, false, 'CSS', 97, true, 'Git', 11, 'sticker', false, 'GitHub', true, null]
 
+let totalDeStrings = 0
+let totalDeBooleans = 0
+let totalDeIteração = 0
+let arrayDeStrings = []
+
+for (let i = 0; i < randomValues.length; i++) {
+  const arrayIterado = randomValues[i]
+  const ItemTypeOf = typeof arrayIterado 
+  const ItensString = ItemTypeOf  === 'string'
+  const ItemBoolean = ItemTypeOf  === 'boolean' 
+  
+  if (totalDeStrings === 4){
+      break
+    }
+    if (ItensString){
+      totalDeStrings++
+      arrayDeStrings.push(randomValues[i])
+    }
+    if (ItemBoolean) {
+      totalDeBooleans++
+    }
+  
+    totalDeIteração++
+}
+const AjuasteDeMetodo = arrayDeStrings[arrayDeStrings.length - 1]
+const AjusteDeNumeros = arrayDeStrings.join(', ').replace(`, ${AjuasteDeMetodo}`, ` e ${AjuasteDeMetodo}`)
+
+console.log(`3 informações sobre o array randomValues:
+  - As primeiras 4 strings são ${AjusteDeNumeros};
+  - Até que as primeiras 4 strings fossem iteradas, ${totalDeBooleans} booleans foram iterados;
+  - O array foi iterado por ${totalDeIteração} vezes.`)
+
+
+
+
+
+
+
 /*
   06
 
