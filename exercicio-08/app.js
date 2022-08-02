@@ -13,7 +13,7 @@ function calculo(n1 = 2, n2 = 3 ) {
 
 const sum = calculo(10,10)
 
-console.log(sum) 
+// console.log(sum) 
 
 
 
@@ -24,7 +24,11 @@ console.log(sum)
     **function expression** que retorne o resultado da **divisão** entre esses  
     2 números.
 */
+const MinhaFunção = function (n1 = 2, n2 = 2) {
+  return result = n1 / n2
+}
 
+// console.log(MinhaFunção(8, 2))
 /*
   03
 
@@ -37,7 +41,15 @@ console.log(sum)
 
   "Esta é a Xª vez que essa string é exibida."
 */
-
+function fenix(nome) {
+  return `Ola ${nome}. `
+   
+}
+let resultado = ''
+for (let c = 0; c <= 7; c++){
+  resultado+= fenix('jonas')
+}
+console.log(resultado)
 /*
   04
 
