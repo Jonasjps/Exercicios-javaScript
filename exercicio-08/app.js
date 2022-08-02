@@ -6,7 +6,12 @@
   - Previna que esses parâmetros recebam undefined;
   - Exiba o resultado no console, sem inserir um console.log() dentro da função.
 */
-
+function sum(n1, n2) {
+ const soma = n1 * n2
+return
+}
+let resultado = soma(2, 4)  
+console.log(resultado)
 /*
   02
 

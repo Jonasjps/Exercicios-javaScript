@@ -98,6 +98,7 @@ let ArrayDeStrings = []
 let totalDeBooleans = 0
 let totalDeIteração = 0
 for (let c = 0; c < randomValues.length; c++) {
+
 const arrayItens = randomValues[c]
 const typeofItens = typeof arrayItens
 const StringsItens = typeofItens === 'string'
