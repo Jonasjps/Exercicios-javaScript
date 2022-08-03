@@ -6,15 +6,11 @@
   - Previna que esses parâmetros recebam undefined;
   - Exiba o resultado no console, sem inserir um console.log() dentro da função.
 */
-function calculo(n1 = 2, n2 = 3 ) {
-  const result = n1 * n2
-  return result
+function fenix(n1 = 0, n2 = 0){
+  return n1 * n2
 }
 
-const sum = calculo(10,10)
-
-// console.log(sum) 
-
+// console.log(fenix(10,2))
 
 
 /*
@@ -24,11 +20,11 @@ const sum = calculo(10,10)
     **function expression** que retorne o resultado da **divisão** entre esses  
     2 números.
 */
-const MinhaFunção = function (n1 = 2, n2 = 2) {
-  return result = n1 / n2
+const artemis = function (n1 = 0, n2 = 0) {
+  return n1 / n2
 }
 
-// console.log(MinhaFunção(8, 2))
+// console.log(artemis(20, 4))
 /*
   03
 
@@ -41,15 +37,13 @@ const MinhaFunção = function (n1 = 2, n2 = 2) {
 
   "Esta é a Xª vez que essa string é exibida."
 */
-function fenix(nome) {
-  return `Ola ${nome}. `
-   
+const Repetição = function (value = 'Esta é a frase que aparecera, caso a função seja invoca sem um argumento.') {
+  for (let i = 0; i < 7; i++) {
+    console.log(`Esta é a ${i + 1}ª vez que essa string é exibida.`)
+  }
 }
-let resultado = ''
-for (let c = 0; c <= 7; c++){
-  resultado+= fenix('jonas')
-}
-console.log(resultado)
+Repetição()
+
 /*
   04
 
@@ -62,6 +56,13 @@ console.log(resultado)
 */
 
 const millennialWords = ['lol', 'yolo', 'troll', 'stalkear', 'selfie', 'influencer', 'crush', 'fitness', 'hater', 'bae', 'random', 'kawaii', 'outfit', 'mood', 'fail']
+
+function StringsMaiusculas() {
+  let maiusculas = []
+  maiusculas.push(millennialWords)
+  return maiusculas
+}
+StringsMaiusculas()
 
 /*
   05
