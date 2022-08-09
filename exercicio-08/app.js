@@ -6,11 +6,14 @@
   - Previna que esses parâmetros recebam undefined;
   - Exiba o resultado no console, sem inserir um console.log() dentro da função.
 */
-// function fenix(n1 = 0, n2 = 0){
-// return n1 * n2
-// }
+// function myfunc (primeiro = 0, segundo = 0) {
+//   return primeiro * segundo
+// } 
+// const result = myfunc(3, 2)
 
-// console.log(fenix(10,2))
+// console.log(result)
+
+
 
 
 /*
@@ -20,11 +23,15 @@
     **function expression** que retorne o resultado da **divisão** entre esses  
     2 números.
 */
-// const artemis = function (n1 = 0, n2 = 0) {
-// return n1 / n2
-// }
+const double = function (numero1 = 0, numero2 = 0) {
+  return numero1 / numero2
 
-// console.log(artemis(20, 4))
+}
+const result = double(20, 4)
+console.log(result)
+
+
+
 /*
   03
 
@@ -37,14 +44,6 @@
 
   "Esta é a Xª vez que essa string é exibida."
 */
-const Repetição = function (value = 'Esta é a frase que aparecera, caso a função seja invoca sem um argumento.') {
-  console.log(value)  
-}
-for (let i = 0; i < 7; i++) {
-  Repetição(`Esta é a ${i + 1}ª vez que essa string é exibida.`)
-}
-
-Repetição()
 
 /*
   04
@@ -59,13 +58,6 @@ Repetição()
 
 const millennialWords = ['lol', 'yolo', 'troll', 'stalkear', 'selfie', 'influencer', 'crush', 'fitness', 'hater', 'bae', 'random', 'kawaii', 'outfit', 'mood', 'fail']
 
-// let newArray = []
-
-// const NovoArrayToUpperCase = function (array = []) {
-// for (let c = 0; c < array.length; c++)
-// newArray.push(millennialWords[c].toUpperCase())
-// } 
-// NovoArrayToUpperCase()
 /*
   05
 
