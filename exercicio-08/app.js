@@ -6,9 +6,9 @@
   - Previna que esses parâmetros recebam undefined;
   - Exiba o resultado no console, sem inserir um console.log() dentro da função.
 */
-function fenix(n1 = 0, n2 = 0){
-  return n1 * n2
-}
+// function fenix(n1 = 0, n2 = 0){
+// return n1 * n2
+// }
 
 // console.log(fenix(10,2))
 
@@ -20,9 +20,9 @@ function fenix(n1 = 0, n2 = 0){
     **function expression** que retorne o resultado da **divisão** entre esses  
     2 números.
 */
-const artemis = function (n1 = 0, n2 = 0) {
-  return n1 / n2
-}
+// const artemis = function (n1 = 0, n2 = 0) {
+// return n1 / n2
+// }
 
 // console.log(artemis(20, 4))
 /*
@@ -38,10 +38,12 @@ const artemis = function (n1 = 0, n2 = 0) {
   "Esta é a Xª vez que essa string é exibida."
 */
 const Repetição = function (value = 'Esta é a frase que aparecera, caso a função seja invoca sem um argumento.') {
-  for (let i = 0; i < 7; i++) {
-    console.log(`Esta é a ${i + 1}ª vez que essa string é exibida.`)
-  }
+  console.log(value)  
 }
+for (let i = 0; i < 7; i++) {
+  Repetição(`Esta é a ${i + 1}ª vez que essa string é exibida.`)
+}
+
 Repetição()
 
 /*
@@ -57,13 +59,13 @@ Repetição()
 
 const millennialWords = ['lol', 'yolo', 'troll', 'stalkear', 'selfie', 'influencer', 'crush', 'fitness', 'hater', 'bae', 'random', 'kawaii', 'outfit', 'mood', 'fail']
 
-function StringsMaiusculas() {
-  let maiusculas = []
-  maiusculas.push(millennialWords)
-  return maiusculas
-}
-StringsMaiusculas()
+// let newArray = []
 
+// const NovoArrayToUpperCase = function (array = []) {
+// for (let c = 0; c < array.length; c++)
+// newArray.push(millennialWords[c].toUpperCase())
+// } 
+// NovoArrayToUpperCase()
 /*
   05
 
