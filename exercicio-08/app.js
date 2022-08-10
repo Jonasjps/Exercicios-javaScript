@@ -23,12 +23,12 @@
     **function expression** que retorne o resultado da **divisão** entre esses  
     2 números.
 */
-const double = function (numero1 = 0, numero2 = 0) {
-  return numero1 / numero2
-
-}
-const result = double(20, 4)
-console.log(result)
+// const double = function (numero1 = 0, numero2 = 0) {
+  // return numero1 / numero2
+// 
+// }
+// const result = double(20, 4)
+// console.log(result)
 
 
 
@@ -44,11 +44,18 @@ console.log(result)
 
   "Esta é a Xª vez que essa string é exibida."
 */
+// const newfunc = function (value = 'Caso meu codigo não funcione essa mensagem vai aparecer'){
+  // console.log(value)
+// }
+
+// for (let i = 0; i < 7; i++){
+// newfunc(`Esta é a ${i + 1}ª vez que essa string é exibida.`)
+// }
 
 /*
   04
 
-  - Comente o código acima, de forma que a string não seja mais exibida no  
+  - Comente o código acima, de forma que a strino seja mais exibida no  
     console;
   - Implemente uma função que retorna um novo array com as strings do array  
     "millennialWords" em letras maiúsculas;
