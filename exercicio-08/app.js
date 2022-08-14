@@ -44,9 +44,9 @@
 
   "Esta é a Xª vez que essa string é exibida."
 */
-// const newfunc = function (value = 'Caso meu codigo não funcione essa mensagem vai aparecer'){
-  // console.log(value)
-// }
+const newfunc = function (value = 'Caso meu codigo não funcione essa mensagem vai aparecer'){
+  console.log(value)
+}
 
 // for (let i = 0; i < 7; i++){
 // newfunc(`Esta é a ${i + 1}ª vez que essa string é exibida.`)
@@ -64,6 +64,14 @@
 */
 
 const millennialWords = ['lol', 'yolo', 'troll', 'stalkear', 'selfie', 'influencer', 'crush', 'fitness', 'hater', 'bae', 'random', 'kawaii', 'outfit', 'mood', 'fail']
+let newArray = []
+
+const newArrayToUpperCase = function (array = []) {
+  for (let i = 0; i < array.length; i++){
+    newArray.push(array[i])
+  }
+}
+console.log(newArray)
 
 /*
   05
