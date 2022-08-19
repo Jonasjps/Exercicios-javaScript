@@ -55,7 +55,7 @@ const newfunc = function (value = 'Caso meu codigo não funcione essa mensagem v
 /*
   04
 
-  - Comente o código acima, de forma que a strino seja mais exibida no  
+  - Comente o código acima, de forma que a string não seja mais exibida no  
     console;
   - Implemente uma função que retorna um novo array com as strings do array  
     "millennialWords" em letras maiúsculas;
@@ -64,14 +64,15 @@ const newfunc = function (value = 'Caso meu codigo não funcione essa mensagem v
 */
 
 const millennialWords = ['lol', 'yolo', 'troll', 'stalkear', 'selfie', 'influencer', 'crush', 'fitness', 'hater', 'bae', 'random', 'kawaii', 'outfit', 'mood', 'fail']
-let newArray = []
 
-const newArrayToUpperCase = function (array = []) {
-  for (let i = 0; i < array.length; i++){
-    newArray.push(array[i])
-  }
+const NovoArrayToUpperCase = function (array = []) {
+let newArray = []
+for (let c = 0; c < array.length; c++) {
+  newArray.push(array[c].toUpperCase())
 }
-console.log(newArray)
+return newArray
+}
+// newfunc(NovoArrayToUpperCase(millennialWords))
 
 /*
   05
@@ -86,6 +87,15 @@ console.log(newArray)
 
 const randomNumbers = [-2, 93, 34, -1, 1, 93, 11, -7, 47, -3]
 
+const positivo = function(){
+  for (let j = 0; j < randomNumbers.length; j++) {
+    if (randomNumbers[randomNumbers[j].length -1]) {
+      `O array "randomNumbers" possui XX números, sendo XX positivos e XX negativos.`
+    }
+  }
+
+}
+console.log(positivo())
 /*
   06
 
