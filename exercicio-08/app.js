@@ -85,23 +85,28 @@ const NovoArrayToUpperCase = function (array = []) {
 */
 
 const randomNumbers = [-2, 93, 34, -1, 1, 93, 11, -7, 47, -3]
-let somar = 0
-let negativos = 0
+let TotalPositivos = 0
+let TotalNegativos = 0
 
-const positivo = function (numero = 0) {
+function NumerosPositivos(numero = 0) {
   return numero >= 1
 }
 
+for (let i = 0; i < randomNumbers.length; i ++) {
+ 
+  const Positivos = NumerosPositivos(randomNumbers[i])
 
-  for (let i = 0; i < randomNumbers.length; i ++) {
-    if(positivo(randomNumbers[i])) {
-      somar++
-    }else { 
-      negativos++
-    }
+  if(Positivos) {
+    TotalPositivos++
+  }else {
+    TotalNegativos++
   }
+}
+const total = randomNumbers.length
+console.log(`O array "randomNumbers" possui ${total} números, sendo ${TotalPositivos} positivos e ${TotalNegativos} negativos.`)
 
-console.log(`O array "randomNumbers" possui ${randomNumbers.length} números, sendo ${somar} positivos e ${negativos} negativos.`)
+
+
 /*
   06
 
