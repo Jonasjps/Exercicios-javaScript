@@ -64,13 +64,12 @@ const newfunc = function (value = 'Caso meu codigo não funcione essa mensagem v
 */
 
 const millennialWords = ['lol', 'yolo', 'troll', 'stalkear', 'selfie', 'influencer', 'crush', 'fitness', 'hater', 'bae', 'random', 'kawaii', 'outfit', 'mood', 'fail']
-
-const NovoArrayToUpperCase = function (array = []) {
 let newArray = []
-for (let c = 0; c < array.length; c++) {
-  newArray.push(array[c].toUpperCase())
-}
-return newArray
+const NovoArrayToUpperCase = function (array = []) {
+  for (let c = 0; c < array.length; c++) {
+    newArray.push(array[c].toUpperCase())
+  }
+  return newArray
 }
 // newfunc(NovoArrayToUpperCase(millennialWords))
 
@@ -86,16 +85,23 @@ return newArray
 */
 
 const randomNumbers = [-2, 93, 34, -1, 1, 93, 11, -7, 47, -3]
+let somar = 0
+let negativos = 0
 
-const positivo = function(){
-  for (let j = 0; j < randomNumbers.length; j++) {
-    if (randomNumbers[randomNumbers[j].length -1]) {
-      `O array "randomNumbers" possui XX números, sendo XX positivos e XX negativos.`
+const positivo = function (numero = 0) {
+  return numero >= 1
+}
+
+
+  for (let i = 0; i < randomNumbers.length; i ++) {
+    if(positivo(randomNumbers[i])) {
+      somar++
+    }else { 
+      negativos++
     }
   }
 
-}
-console.log(positivo())
+console.log(`O array "randomNumbers" possui ${randomNumbers.length} números, sendo ${somar} positivos e ${negativos} negativos.`)
 /*
   06
 
