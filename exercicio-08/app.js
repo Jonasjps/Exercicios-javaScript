@@ -103,7 +103,8 @@ for (let i = 0; i < randomNumbers.length; i ++) {
   }
 }
 const total = randomNumbers.length
-console.log(`O array "randomNumbers" possui ${total} números, sendo ${TotalPositivos} positivos e ${TotalNegativos} negativos.`)
+
+//  console.log(`O array "randomNumbers" possui ${total} números, sendo ${TotalPositivos} positivos e ${TotalNegativos} negativos.`)
 
 
 
@@ -117,7 +118,16 @@ console.log(`O array "randomNumbers" possui ${total} números, sendo ${TotalPosi
     função.
 */
 
-// getOddNumbers([83, 52, 31, 73, 98, 37, 61, 56, 12, 24, 35, 3, 34, 80, 42])
+
+let numerosNegativos = 0
+
+for (let c = 0; c < Numero.length; c ++) {
+  if (getOddNumbers % 2 === 1) {
+    numerosNegativos++
+  }
+}
+getOddNumbers([83, 52, 31, 73, 98, 37, 61, 56, 12, 24, 35, 3, 34, 80, 42])
+
 
 /*
   07
