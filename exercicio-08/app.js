@@ -6,13 +6,10 @@
   - Previna que esses parâmetros recebam undefined;
   - Exiba o resultado no console, sem inserir um console.log() dentro da função.
 */
-// function myfunc (primeiro = 0, segundo = 0) {
-//   return primeiro * segundo
-// } 
-// const result = myfunc(3, 2)
-
-// console.log(result)
-
+function Numeros (valor1 = 0, valor2 = 0) {
+  return valor1 * valor2
+}
+// console.log(Numeros(2,10))
 
 
 
@@ -23,13 +20,10 @@
     **function expression** que retorne o resultado da **divisão** entre esses  
     2 números.
 */
-// const double = function (numero1 = 0, numero2 = 0) {
-  // return numero1 / numero2
-// 
-// }
-// const result = double(20, 4)
-// console.log(result)
-
+const DivisãoDeDoisNumeros = function (n1, n2) {
+  return n1 / n2
+}
+// console.log(DivisãoDeDoisNumeros(100, 4))
 
 
 /*
@@ -44,13 +38,13 @@
 
   "Esta é a Xª vez que essa string é exibida."
 */
-const newfunc = function (value = 'Caso meu codigo não funcione essa mensagem vai aparecer'){
-  console.log(value)
-}
 
-// for (let i = 0; i < 7; i++){
-// newfunc(`Esta é a ${i + 1}ª vez que essa string é exibida.`)
-// }
+const string = function (resultado = 'Essa frase só vai aparecer se o código não funcionar'){
+  console.log(resultado)
+}
+for (let d = 0; d < 7; d++){
+// string(`Esta é a ${d + 1}ª vez que essa string é exibida.`)
+}
 
 /*
   04
@@ -64,15 +58,14 @@ const newfunc = function (value = 'Caso meu codigo não funcione essa mensagem v
 */
 
 const millennialWords = ['lol', 'yolo', 'troll', 'stalkear', 'selfie', 'influencer', 'crush', 'fitness', 'hater', 'bae', 'random', 'kawaii', 'outfit', 'mood', 'fail']
-let newArray = []
+let novoArray = []
 const NovoArrayToUpperCase = function (array = []) {
   for (let c = 0; c < array.length; c++) {
-    newArray.push(array[c].toUpperCase())
+    novoArray.push(array[c].toUpperCase())
   }
-  return newArray
+  return novoArray
 }
-// newfunc(NovoArrayToUpperCase(millennialWords))
-
+// string(NovoArrayToUpperCase(millennialWords))
 /*
   05
 
@@ -85,29 +78,23 @@ const NovoArrayToUpperCase = function (array = []) {
 */
 
 const randomNumbers = [-2, 93, 34, -1, 1, 93, 11, -7, 47, -3]
-let TotalPositivos = 0
-let TotalNegativos = 0
+let totalPsitivos = 0
+let totalNegativos = 0 
 
-function NumerosPositivos(numero = 0) {
+const positivo = function (numero = 0) {
   return numero >= 1
-}
+} 
+for (let d = 0; d < randomNumbers.length; d++) {
+ const NumerosPositivos = positivo(randomNumbers[d]) 
 
-for (let i = 0; i < randomNumbers.length; i ++) {
- 
-  const Positivos = NumerosPositivos(randomNumbers[i])
-
-  if(Positivos) {
-    TotalPositivos++
+  if (NumerosPositivos) {
+    totalPsitivos++
   }else {
-    TotalNegativos++
+    totalNegativos++
   }
 }
-const total = randomNumbers.length
-
-//  console.log(`O array "randomNumbers" possui ${total} números, sendo ${TotalPositivos} positivos e ${TotalNegativos} negativos.`)
-
-
-
+const totalDeNumeros = randomNumbers.length
+// console.log(`O array "randomNumbers" possui ${totalDeNumeros} números, sendo ${totalPsitivos} positivos e ${totalNegativos} negativos.`)
 /*
   06
 
@@ -117,18 +104,18 @@ const total = randomNumbers.length
   - Exiba o novo array no console, sem inserir um console.log() dentro da  
     função.
 */
-
-
-let numerosNegativos = 0
-
-for (let c = 0; c < Numero.length; c ++) {
-  if (getOddNumbers % 2 === 1) {
-    numerosNegativos++
-  }
+const getOddNumbers = function (numeros = []) {
+let impares = []
+for (let h = 0; h < numeros.length; h++) {
+  const numerosImpares = numeros[h] % 2 !== 0
+   
+  if (numerosImpares) {
+  impares.push(numeros[h])
+}  
 }
-getOddNumbers([83, 52, 31, 73, 98, 37, 61, 56, 12, 24, 35, 3, 34, 80, 42])
-
-
+return impares
+}
+// console.log(getOddNumbers([83, 52, 31, 73, 98, 37, 61, 56, 12, 24, 35, 3, 34, 80, 42]))
 /*
   07
 
@@ -165,3 +152,9 @@ const functions = [
   function () { return 'Índias' },
   function () { return 'Ocidentais.' }
 ]
+let frase = ''
+for (let m = 0; m < functions.length; m++) {
+  const todasAsfunções = `${functions[m]()} `
+  frase += todasAsfunções
+}
+console.log(frase)
