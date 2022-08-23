@@ -6,11 +6,11 @@
   - Previna que esses parâmetros recebam undefined;
   - Exiba o resultado no console, sem inserir um console.log() dentro da função.
 */
-function Numeros (valor1 = 0, valor2 = 0) {
+function doisNumeros (valor1 = 0, valor2 = 0) {
   return valor1 * valor2
 }
-// console.log(Numeros(2,10))
-
+let resultado = doisNumeros(4,10)
+// console.log(resultado)
 
 
 /*
@@ -20,11 +20,11 @@ function Numeros (valor1 = 0, valor2 = 0) {
     **function expression** que retorne o resultado da **divisão** entre esses  
     2 números.
 */
-const DivisãoDeDoisNumeros = function (n1, n2) {
+const DivisãoDeDoisNumeros = function (n1 = 0, n2 = 0){
   return n1 / n2
 }
-// console.log(DivisãoDeDoisNumeros(100, 4))
-
+let Divisão = DivisãoDeDoisNumeros(500, 4)
+// console.log(Divisão)
 
 /*
   03
@@ -38,14 +38,12 @@ const DivisãoDeDoisNumeros = function (n1, n2) {
 
   "Esta é a Xª vez que essa string é exibida."
 */
-
-const string = function (resultado = 'Essa frase só vai aparecer se o código não funcionar'){
-  console.log(resultado)
+const log = function (value = 'Éssa frase só vai aprecer se o código não funcionar!'){
+  console.log(value)
 }
-for (let d = 0; d < 7; d++){
-// string(`Esta é a ${d + 1}ª vez que essa string é exibida.`)
+for (let c = 0; c < 7; c++){
+  // log(`Esta é a ${c + 1}ª vez que essa string é exibida.`)
 }
-
 /*
   04
 
@@ -59,13 +57,13 @@ for (let d = 0; d < 7; d++){
 
 const millennialWords = ['lol', 'yolo', 'troll', 'stalkear', 'selfie', 'influencer', 'crush', 'fitness', 'hater', 'bae', 'random', 'kawaii', 'outfit', 'mood', 'fail']
 let novoArray = []
-const NovoArrayToUpperCase = function (array = []) {
-  for (let c = 0; c < array.length; c++) {
-    novoArray.push(array[c].toUpperCase())
+const ArrayToUpperCase = function (array = []){
+  for (let n = 0; n < array.length; n++){
+    novoArray.push(array[n].toUpperCase())
   }
   return novoArray
 }
-// string(NovoArrayToUpperCase(millennialWords))
+// log(ArrayToUpperCase(millennialWords))
 /*
   05
 
@@ -78,23 +76,23 @@ const NovoArrayToUpperCase = function (array = []) {
 */
 
 const randomNumbers = [-2, 93, 34, -1, 1, 93, 11, -7, 47, -3]
-let totalPsitivos = 0
-let totalNegativos = 0 
-
-const positivo = function (numero = 0) {
+let numerosPositivos = 0
+let numerosNegativos = 0
+const positive = function (numero = 0 ){
   return numero >= 1
-} 
-for (let d = 0; d < randomNumbers.length; d++) {
- const NumerosPositivos = positivo(randomNumbers[d]) 
+}
+for (let c = 0; c < randomNumbers.length; c++){
+ const Positivos = positive(randomNumbers[c]) % 2 !== 0
 
-  if (NumerosPositivos) {
-    totalPsitivos++
+  if (Positivos){
+    numerosPositivos++
   }else {
-    totalNegativos++
+    numerosNegativos++
   }
 }
 const totalDeNumeros = randomNumbers.length
-// console.log(`O array "randomNumbers" possui ${totalDeNumeros} números, sendo ${totalPsitivos} positivos e ${totalNegativos} negativos.`)
+
+// console.log(`O array "randomNumbers" possui ${totalDeNumeros} números, sendo ${numerosPositivos} positivos e ${numerosNegativos} negativos.`)
 /*
   06
 
@@ -105,17 +103,17 @@ const totalDeNumeros = randomNumbers.length
     função.
 */
 const getOddNumbers = function (numeros = []) {
-let impares = []
-for (let h = 0; h < numeros.length; h++) {
-  const numerosImpares = numeros[h] % 2 !== 0
-   
-  if (numerosImpares) {
-  impares.push(numeros[h])
-}  
+  let newArray = []
+  for (let v = 0; v < numeros.length; v++) {
+    const numerosImpares = numeros[v] % 2 !== 0
+
+    if (numerosImpares) {
+      newArray.push(numeros[v])
+    }
+  }
+  return newArray
 }
-return impares
-}
-// console.log(getOddNumbers([83, 52, 31, 73, 98, 37, 61, 56, 12, 24, 35, 3, 34, 80, 42]))
+//  console.log(getOddNumbers([83, 52, 31, 73, 98, 37, 61, 56, 12, 24, 35, 3, 34, 80, 42])) 
 /*
   07
 
@@ -153,8 +151,9 @@ const functions = [
   function () { return 'Ocidentais.' }
 ]
 let frase = ''
-for (let m = 0; m < functions.length; m++) {
-  const todasAsfunções = `${functions[m]()} `
-  frase += todasAsfunções
+for (let b = 0; b < functions.length; b++){
+const frasecompleta = `${functions[b]()} `
+
+  frase += frasecompleta
 }
-console.log(frase)
+// console.log(frase)
