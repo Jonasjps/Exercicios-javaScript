@@ -75,14 +75,22 @@ const doubleArray = (valor1, valor2) => {
 
 let doisArrays = doubleArray(['jonas','Pessoa'] , ['Vivi', 'Silva'])
 
-console.log(doisArrays)
+// console.log(doisArrays)
 /*
   07
 
   - Crie uma função que retorna o array passado como argumento em sua invocação,  
     mas com o último item removido.
 */
+const arrayPop = array  => array 
+  let remover = arrayPop([1, 2 , 3, 4, 6]) 
+  console.log(remover.pop())
+  console.log(remover)
+  
+  
 
+
+ 
 /*
   08
 
