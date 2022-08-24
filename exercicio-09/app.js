@@ -84,20 +84,20 @@ let doisArrays = doubleArray(['jonas','Pessoa'] , ['Vivi', 'Silva'])
 */
 const arrayPop = array  => array 
   let remover = arrayPop([1, 2 , 3, 4, 6]) 
-  console.log(remover.pop())
-  console.log(remover)
-  
-  
+  // console.log(remover.pop())
+  // console.log(remover)
 
 
- 
+
 /*
   08
 
   - Crie uma função que retorna se o valor passado como argumento em sua  
     invocação é null.
 */
-
+const funcNull = numero => numero
+let valor = funcNull(null)
+// console.log(valor)
 /*
   09
 
@@ -108,6 +108,11 @@ const arrayPop = array  => array
     argumento a função que exibe seu nome no console e veja se o nome realmente  
     foi exibido.
 */
+const função = callback => callback
+
+const nome = name => name
+// let noome = nome('Jonas')
+// console.log(função(nome('jonas')))
 
 /*
   10
