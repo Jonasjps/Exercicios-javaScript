@@ -70,7 +70,12 @@ let resultado = ArrayBoolean(array.includes('Jonas'))
   - Crie uma função que retorna a concatenação de 2 arrays, passados como  
     argumentos em sua invocação;
 */
+const doubleArray = (valor1, valor2) => {
+  return valor1.concat(valor2)}
 
+let doisArrays = doubleArray(['jonas','Pessoa'] , ['Vivi', 'Silva'])
+
+console.log(doisArrays)
 /*
   07
 
