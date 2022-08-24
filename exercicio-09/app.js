@@ -13,9 +13,14 @@
     valor no console.
 */
 
-function convertToString (value) {
-  return String(value)
-}
+// function convertToString (value) {
+//   return String(value)
+// }
+
+const convertToString = value => {
+  console.log(value)} 
+
+// convertToString('Jonas Pessoa')
 
 /*
   02
@@ -23,7 +28,8 @@ function convertToString (value) {
   - Crie uma função que retorne a quantidade de caracteres que uma string  
     recebida por parâmetro possui.
 */
-
+const newfunc = string => string.length
+// console.log(newfunc('Virginia')) 
 /*
   03
 
@@ -33,21 +39,31 @@ function convertToString (value) {
 
   "CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO"
 */
+const stringToLowerCase = frase => frase.toLowerCase()
 
+const frase = stringToLowerCase('CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO')  
+// console.log(frase)
 /*
+
   04
 
   - Crie uma função que recebe 2 parâmetros: um caractere e uma string;
   - Ao ser invocada, a função deve retornar o index do caractere na string.
 */
+const log = (caractere , string ) => string.indexOf(caractere)
 
+// console.log(log('n','jonas'))
 /*
   05
 
   - Crie uma função que, ao ser invocada, retorna um boolean indicando se o item  
     passado por argumento existe no array (também passado por argumento).
 */
+let array = ['Jonas', 'Vivi', 'Marley','Vanda']
 
+const ArrayBoolean = array => array 
+let resultado = ArrayBoolean(array.includes('Jonas'))
+// console.log(resultado)
 /*
   06
 
@@ -146,7 +162,7 @@ const review = [
 
 let paragraphs = ''
 
-section.innerHTML = paragraphs
+// section.innerHTML = paragraphs
 
 /*
   14
