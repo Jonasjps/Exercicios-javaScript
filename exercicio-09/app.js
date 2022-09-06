@@ -123,12 +123,12 @@ const nome = name => name
   - Faça com que a invocação da função descrita no 1º item deste exercício (10)  
     resulte no triplo de 33.
 */
+const funcCallback = (value, callback) => {
+ return callback(value)
+}
 
-
-
-
-
-
+const triplo = numero => numero * 3
+// console.log(funcCallback(50,triplo))
 
 /*
   11
@@ -141,6 +141,15 @@ const nome = name => name
 
 const numbers = [1, 2, 3]
 
+const informaçãoDoArray = (item, index, array) => {
+  const posição = index + 1
+  const arrayDeNumbers = array.join(', ')
+  const posiçãoDoItem = item
+
+  console.log(`O ${posição}º item do array [${arrayDeNumbers}] é ${posiçãoDoItem}.`)
+}
+
+numbers.forEach(informaçãoDoArray)
 /*
   12
 
