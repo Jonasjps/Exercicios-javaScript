@@ -74,7 +74,7 @@ const doubleArray = (valor1, valor2) => valor1.concat(valor2)
 
 let doisArrays = doubleArray(['jonas','Pessoa'] , ['Vivi', 'Silva'])
 
-console.log(doisArrays)
+// console.log(doisArrays)
 /*
   07
 
