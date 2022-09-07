@@ -146,7 +146,7 @@ const informaçãoDoArray = (item, index, array) => {
   const arrayDeNumbers = array.join(', ')
   const posiçãoDoItem = item
 
-  console.log(`O ${posição}º item do array [${arrayDeNumbers}] é ${posiçãoDoItem}.`)
+  // console.log(`O ${posição}º item do array [${arrayDeNumbers}] é ${posiçãoDoItem}.`)
 }
 
 numbers.forEach(informaçãoDoArray)
