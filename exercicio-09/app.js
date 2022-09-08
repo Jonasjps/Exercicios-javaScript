@@ -161,9 +161,13 @@ numbers.forEach(informaçãoDoArray)
 const letters = ['v', 'e', 'p']
 let lettersCopy = []
 
-for (let i = 0; i < letters.length; i++) {
-  lettersCopy.push(letters[i])
-}
+// for (let i = 0; i < letters.length; i++) {
+// lettersCopy.push(letters[i])
+// }
+letters.forEach(letter => {
+  lettersCopy.push(letter)
+})
+// console.log(lettersCopy)
 
 /*
   13
@@ -193,8 +197,11 @@ const review = [
 ]
 
 let paragraphs = ''
+review.forEach(paragraph => {
+  paragraphs += `<p>${paragraph}</p>`
+})
 
-// section.innerHTML = paragraphs
+section.innerHTML = paragraphs
 
 /*
   14
