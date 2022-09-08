@@ -224,22 +224,24 @@ section.innerHTML = paragraphs
     pessoas já mencionadas no início da mensagem).
 */
 const curtidasDeUsuarios = (nomes = []) => {
-const primeiroNome = nomes[0]
-const segundoNome = nomes[1]
-const terceiroNome = nomes[2]
-const totalRestante = nomes.length -2
 
-switch(nomes.length) {
-    case 0 :
-      return `Ninguém curtiu isso`
-    case 1 :
-      return `${primeiroNome} curtiu isso`
-    case 2 :
-      return `${primeiroNome} e ${segundoNome} curtiram isso`
-    case 3 : 
-      return `${primeiroNome}, ${segundoNome} e ${terceiroNome} curtiram isso`
+  const PrimeiroNome = nomes[0]
+  const SegundoNome = nomes[1]
+  const TerceiroNome = nomes[2]
+  const totalDeNomes = nomes.length - 2
+
+  switch(nomes.length) {
+    case 0:
+      return 'Ninguém curtiu isso'
+    case 1:
+      return `${PrimeiroNome} curtiu isso`
+    case 2: 
+      return `${PrimeiroNome}, ${SegundoNome} curtiram isso`
+    case 3: 
+      return `${PrimeiroNome}, ${SegundoNome} e ${TerceiroNome} curtiram isso`
     default:
-      return `${primeiroNome}, ${segundoNome} e mais ${totalRestante} pessoas curtiram isso` 
+      return `${PrimeiroNome}, ${SegundoNome} e mais ${totalDeNomes} pessoas curtiram isso`
     }
+    
 }
-console.log(curtidasDeUsuarios(['rafael', 'Jonas', 'Maria', 'João', 'jose']))
+console.log(curtidasDeUsuarios())
