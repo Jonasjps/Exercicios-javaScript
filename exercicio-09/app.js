@@ -197,10 +197,10 @@ const review = [
 ]
 
 let paragraphs = ''
-review.forEach(paragraph => {
-  paragraphs += `<p>${paragraph}</p>`
-})
 
+review.forEach(paragraph => {
+  // paragraphs += `<p>${paragraph}</p>`
+})
 section.innerHTML = paragraphs
 
 /*
@@ -215,7 +215,7 @@ section.innerHTML = paragraphs
   - Se o array conter apenas um nome, como "Rafael", por exemplo, a mensagem  
     retornada deve ser "Rafael curtiu isso";  
   - Se o array conter 2 nomes, a mensagem retornada deve ser  
-    "NOME_1 e NOME_2 curtiram isso";  
+    "${nomes[0]} e ${nomes[0]} curtiram isso";  
   - Se o array conter 3 nomes, a mensagem retornada deve ser  
     "NOME_1, NOME_2 e NOME_3 curtiram isso";  
   - Se o array conter 4 ou mais nomes, a mensagem retornada deve ser  
@@ -223,3 +223,23 @@ section.innerHTML = paragraphs
     pelo restante da quantidade de pessoas que curtiram o post (além das duas  
     pessoas já mencionadas no início da mensagem).
 */
+const curtidasDeUsuarios = (nomes = []) => {
+const primeiroNome = nomes[0]
+const segundoNome = nomes[1]
+const terceiroNome = nomes[2]
+const totalRestante = nomes.length -2
+
+switch(nomes.length) {
+    case 0 :
+      return `Ninguém curtiu isso`
+    case 1 :
+      return `${primeiroNome} curtiu isso`
+    case 2 :
+      return `${primeiroNome} e ${segundoNome} curtiram isso`
+    case 3 : 
+      return `${primeiroNome}, ${segundoNome} e ${terceiroNome} curtiram isso`
+    default:
+      return `${primeiroNome}, ${segundoNome} e mais ${totalRestante} pessoas curtiram isso` 
+    }
+}
+console.log(curtidasDeUsuarios(['rafael', 'Jonas', 'Maria', 'João', 'jose']))
