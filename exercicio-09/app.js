@@ -17,19 +17,16 @@
 //   return String(value)
 // }
 
-const convertToString = value => {
-  console.log(value)} 
-
-// convertToString('Jonas Pessoa')
-
+const convertToString = value => value
+// console.log(convertToString('Jonas Pessoa'))
 /*
   02
 
   - Crie uma função que retorne a quantidade de caracteres que uma string  
     recebida por parâmetro possui.
 */
-const newfunc = string => string.length
-// console.log(newfunc('Virginia')) 
+const totalCaractere = total => total.length
+// console.log(totalCaractere('Virginia')) 
 /*
   03
 
@@ -39,10 +36,8 @@ const newfunc = string => string.length
 
   "CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO"
 */
-const stringToLowerCase = frase => frase.toLowerCase()
-
-const frase = stringToLowerCase('CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO')  
-// console.log(frase)
+const letrasMinusculas = letras => letras.toLowerCase()
+// console.log(letrasMinusculas('CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO'))
 /*
 
   04
@@ -50,41 +45,26 @@ const frase = stringToLowerCase('CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM
   - Crie uma função que recebe 2 parâmetros: um caractere e uma string;
   - Ao ser invocada, a função deve retornar o index do caractere na string.
 */
-const log = (caractere , string ) => string.indexOf(caractere)
-
-// console.log(log('n','jonas'))
+const twoParametros = (caractere, string) =>  string.indexOf(caractere)
+// console.log(twoParametros('a', 'Jonas'))
 /*
   05
 
   - Crie uma função que, ao ser invocada, retorna um boolean indicando se o item  
     passado por argumento existe no array (também passado por argumento).
 */
-let array = ['Jonas', 'Vivi', 'Marley','Vanda']
-
-const ArrayBoolean = array => array 
-let resultado = ArrayBoolean(array.includes('Jonas'))
-// console.log(resultado)
 /*
   06
 
   - Crie uma função que retorna a concatenação de 2 arrays, passados como  
     argumentos em sua invocação;
 */
-const doubleArray = (valor1, valor2) => valor1.concat(valor2)
-
-let doisArrays = doubleArray(['jonas','Pessoa'] , ['Vivi', 'Silva'])
-
-// console.log(doisArrays)
 /*
   07
 
   - Crie uma função que retorna o array passado como argumento em sua invocação,  
     mas com o último item removido.
 */
-const arrayPop = array  => array 
-  let remover = arrayPop([1, 2 , 3, 4, 6]) 
-  // console.log(remover.pop())
-  // console.log(remover)
 
 
 
@@ -94,9 +74,6 @@ const arrayPop = array  => array
   - Crie uma função que retorna se o valor passado como argumento em sua  
     invocação é null.
 */
-const funcNull = numero => numero
-let valor = funcNull(null)
-// console.log(valor)
 /*
   09
 
@@ -107,11 +84,6 @@ let valor = funcNull(null)
     argumento a função que exibe seu nome no console e veja se o nome realmente  
     foi exibido.
 */
-const função = callback => callback
-
-const nome = name => name
-// let noome = nome('Jonas')
-// console.log(função(nome('jonas')))
 
 /*
   10
@@ -123,12 +95,7 @@ const nome = name => name
   - Faça com que a invocação da função descrita no 1º item deste exercício (10)  
     resulte no triplo de 33.
 */
-const funcCallback = (value, callback) => {
- return callback(value)
-}
 
-const triplo = numero => numero * 3
-// console.log(funcCallback(50,triplo))
 
 /*
   11
@@ -141,15 +108,7 @@ const triplo = numero => numero * 3
 
 const numbers = [1, 2, 3]
 
-const informaçãoDoArray = (item, index, array) => {
-  const posição = index + 1
-  const arrayDeNumbers = array.join(', ')
-  const posiçãoDoItem = item
 
-  // console.log(`O ${posição}º item do array [${arrayDeNumbers}] é ${posiçãoDoItem}.`)
-}
-
-numbers.forEach(informaçãoDoArray)
 /*
   12
 
@@ -164,9 +123,6 @@ let lettersCopy = []
 // for (let i = 0; i < letters.length; i++) {
 // lettersCopy.push(letters[i])
 // }
-letters.forEach(letter => {
-  lettersCopy.push(letter)
-})
 // console.log(lettersCopy)
 
 /*
@@ -198,10 +154,7 @@ const review = [
 
 let paragraphs = ''
 
-review.forEach(paragraph => {
-  // paragraphs += `<p>${paragraph}</p>`
-})
-section.innerHTML = paragraphs
+// section.innerHTML = paragraphs
 
 /*
   14
@@ -223,25 +176,3 @@ section.innerHTML = paragraphs
     pelo restante da quantidade de pessoas que curtiram o post (além das duas  
     pessoas já mencionadas no início da mensagem).
 */
-const curtidasDeUsuarios = (nomes = []) => {
-
-  const PrimeiroNome = nomes[0]
-  const SegundoNome = nomes[1]
-  const TerceiroNome = nomes[2]
-  const totalDeNomes = nomes.length - 2
-
-  switch(nomes.length) {
-    case 0:
-      return 'Ninguém curtiu isso'
-    case 1:
-      return `${PrimeiroNome} curtiu isso`
-    case 2: 
-      return `${PrimeiroNome}, ${SegundoNome} curtiram isso`
-    case 3: 
-      return `${PrimeiroNome}, ${SegundoNome} e ${TerceiroNome} curtiram isso`
-    default:
-      return `${PrimeiroNome}, ${SegundoNome} e mais ${totalDeNomes} pessoas curtiram isso`
-    }
-    
-}
-console.log(curtidasDeUsuarios())
