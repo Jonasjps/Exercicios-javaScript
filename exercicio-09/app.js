@@ -53,20 +53,32 @@ const twoParametros = (caractere, string) =>  string.indexOf(caractere)
   - Crie uma função que, ao ser invocada, retorna um boolean indicando se o item  
     passado por argumento existe no array (também passado por argumento).
 */
+let Name = ['Jonas', 'Vivi', 'Vanda', 'Marley']
+
+
+const nomes = (pessoa = 'Nenhum argumento foi passado') => pessoa
+// console.log(nomes(Name.includes('Vanda')))
+
 /*
   06
 
   - Crie uma função que retorna a concatenação de 2 arrays, passados como  
     argumentos em sua invocação;
 */
+const ConcatenandoArray = (array1, array2) => array1.concat(array2) 
+// console.log(ConcatenandoArray(['jonas','Vivi', 'Marley'], [1,2,3,4]))
+
 /*
   07
 
   - Crie uma função que retorna o array passado como argumento em sua invocação,  
     mas com o último item removido.
 */
+const removentoItem = remove => remove.pop()
 
+removentoItem(Name)
 
+// console.log(Name)
 
 /*
   08
@@ -74,6 +86,8 @@ const twoParametros = (caractere, string) =>  string.indexOf(caractere)
   - Crie uma função que retorna se o valor passado como argumento em sua  
     invocação é null.
 */
+const valorNull = (numero = null ) => numero 
+// console.log(valorNull())
 /*
   09
 
@@ -85,7 +99,17 @@ const twoParametros = (caractere, string) =>  string.indexOf(caractere)
     foi exibido.
 */
 
+const func = callback => callback 
+  func()
+
+function pessoa (){
+  console.log('Jonas')
+}
+
+ func(pessoa())
+
 /*
+
   10
 
   - Crie uma função que invoca uma função de callback recebida por parâmetro.  
