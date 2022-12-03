@@ -98,15 +98,15 @@ const valorNull = (numero = null ) => numero
     argumento a função que exibe seu nome no console e veja se o nome realmente  
     foi exibido.
 */
-
-const func = callback => callback 
-  func()
-
-function pessoa (){
-  console.log('Jonas')
+const invocaçãoDaFunção = callback => {
+  callback()
 }
 
- func(pessoa())
+const pessoa = () => {
+  console.log('Jonas Pessoa')
+}
+
+// invocaçãoDaFunção(pessoa)
 
 /*
 
@@ -120,7 +120,12 @@ function pessoa (){
     resulte no triplo de 33.
 */
 
+const fenix = callback => callback(33)
 
+
+const triplo = valor => valor * 3
+
+console.log(triplo(fenix))
 /*
   11
 
