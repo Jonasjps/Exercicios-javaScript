@@ -25,16 +25,7 @@
 
 const fruits = ['pera','morango', 'abacaxi','banana',  'mamão']
 
-const itenAbacaxi = fruits.includes('abacaxi')
-const itenPera = fruits.includes('pera')
 
-if (itenAbacaxi){
-  // console.log('A string "abacaxi" existe no array  fruits.')
-} else if (itenPera) {
-  // console.log('A string "pera" existe no array fruits.')
-} else {
-  // console.log('Nem pera nem abacaxi existem no array "fruits".')
-}
 
 /*
   02
@@ -48,18 +39,7 @@ if (itenAbacaxi){
   Obs.: tanto a expressão do lado esquerdo quanto a do lado direito do operador  
   lógico precisam ter a constante especificada. Exemplo: hour > x && hour < y.
 */
-const hour = 12
 
-const Manha = hour >= 00 && hour < 12
-const Tarde = hour > 11 && hour < 18
-
-if (Manha) {
-  console.log('BOM DIA =)')
-} else if (Tarde) {
-  // console.log('BOA TARDE =)')
-} else {
-  console.log('BOA NOITE =)')
-}
 /*
   03
 
@@ -73,18 +53,7 @@ if (Manha) {
   - Agora, teste diferentes idades para se certificar que a condição do `if`  
     também está funcionando.
 */
-const idade = 66
-let mensagem = ''
-const Idade7ouMenos = idade <= 7
-const Idade65ouMais = idade >= 65
 
-if (Idade7ouMenos || Idade65ouMais) {
-  mensagem += 'Para você, a entrada é grátis!'
-} else {
-  mensagem += 'A entrada é R$ 30,00'
-}
-
-// console.log(mensagem)
 
 /*
   04
@@ -96,16 +65,7 @@ if (Idade7ouMenos || Idade65ouMais) {
 */
 const numbers = [7, 92, 34, 46, 90, 25, 11, 3, 89, 76, 99]
   
-let NovoArray = []
- 
-  for (let i = 0; i < numbers.length; i++) {
-    
-    const Numeros11a90 = numbers[i] > 10 && numbers[i] < 91
 
-    if (Numeros11a90) 
-    NovoArray.push(numbers[i])
-  }
-//  console.log(NovoArray)
 /*
   05
 
@@ -120,25 +80,7 @@ let NovoArray = []
 */
 const crazyArray = [true, 869, 'oi', 71, false, 83, '35', true, 397, 'js', false]
 
-let totalDeBooleans = 0
-let totalDeNumbers = 0
-let totalDeStrings = 0
 
-for (let c = 0; c < crazyArray.length; c++) {
-  
-  const typeofItens =  typeof crazyArray[c]
-  const booleans = typeofItens === 'boolean'
-  const Numbers =  typeofItens=== 'number'
-  
-  if (booleans) {
-    totalDeBooleans++
-  } else if (Numbers) {
-    totalDeNumbers++
-  } else {
-    totalDeStrings++
-  }
-}
-// console.log(`O crazyArray tem ${totalDeBooleans} booleans, ${totalDeNumbers} números e ${totalDeStrings} strings.`)
 /*
   06
 
@@ -157,16 +99,6 @@ for (let c = 0; c < crazyArray.length; c++) {
 */
 const randomNumbers = [73, 4, 67, 10, 31, 58]
 
-let Pares = []
-let impares = []
-for(let j = 0; j < randomNumbers.length; j++) {
 
-  if (randomNumbers[j] % 2 === 0) {
-    Pares.push(randomNumbers[j])
-  } else {
-    impares.push(randomNumbers[j])
-  }
-}
-console.log(`Numeros ímpares: ${impares}. Números pares: ${Pares}.`)
 
 

@@ -13,20 +13,12 @@
     valor no console.
 */
 
-// function convertToString (value) {
-//   return String(value)
-// }
-
-const convertToString = value => value
-// console.log(convertToString('Jonas Pessoa'))
 /*
   02
 
   - Crie uma função que retorne a quantidade de caracteres que uma string  
     recebida por parâmetro possui.
 */
-const totalCaractere = total => total.length
-// console.log(totalCaractere('Virginia')) 
 /*
   03
 
@@ -36,8 +28,6 @@ const totalCaractere = total => total.length
 
   "CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO"
 */
-const letrasMinusculas = letras => letras.toLowerCase()
-// console.log(letrasMinusculas('CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO'))
 /*
 
   04
@@ -45,19 +35,12 @@ const letrasMinusculas = letras => letras.toLowerCase()
   - Crie uma função que recebe 2 parâmetros: um caractere e uma string;
   - Ao ser invocada, a função deve retornar o index do caractere na string.
 */
-const twoParametros = (caractere, string) =>  string.indexOf(caractere)
-// console.log(twoParametros('a', 'Jonas'))
 /*
   05
 
   - Crie uma função que, ao ser invocada, retorna um boolean indicando se o item  
     passado por argumento existe no array (também passado por argumento).
 */
-let Name = ['Jonas', 'Vivi', 'Vanda', 'Marley']
-
-
-const nomes = (pessoa = 'Nenhum argumento foi passado') => pessoa
-// console.log(nomes(Name.includes('Vanda')))
 
 /*
   06
@@ -65,8 +48,6 @@ const nomes = (pessoa = 'Nenhum argumento foi passado') => pessoa
   - Crie uma função que retorna a concatenação de 2 arrays, passados como  
     argumentos em sua invocação;
 */
-const ConcatenandoArray = (array1, array2) => array1.concat(array2) 
-// console.log(ConcatenandoArray(['jonas','Vivi', 'Marley'], [1,2,3,4]))
 
 /*
   07
@@ -74,11 +55,6 @@ const ConcatenandoArray = (array1, array2) => array1.concat(array2)
   - Crie uma função que retorna o array passado como argumento em sua invocação,  
     mas com o último item removido.
 */
-const removentoItem = remove => remove.pop()
-
-removentoItem(Name)
-
-// console.log(Name)
 
 /*
   08
@@ -86,8 +62,6 @@ removentoItem(Name)
   - Crie uma função que retorna se o valor passado como argumento em sua  
     invocação é null.
 */
-const valorNull = (numero = null ) => numero 
-// console.log(valorNull())
 /*
   09
 
@@ -98,15 +72,6 @@ const valorNull = (numero = null ) => numero
     argumento a função que exibe seu nome no console e veja se o nome realmente  
     foi exibido.
 */
-const invocaçãoDaFunção = callback => {
-  callback()
-}
-
-const pessoa = () => {
-  console.log('Jonas Pessoa')
-}
-
-// invocaçãoDaFunção(pessoa)
 
 /*
 
@@ -120,12 +85,6 @@ const pessoa = () => {
     resulte no triplo de 33.
 */
 
-const fenix = callback => callback(33)
-
-
-const triplo = valor => valor * 3
-
-console.log(triplo(fenix))
 /*
   11
 
@@ -135,7 +94,6 @@ console.log(triplo(fenix))
   "O Xº item do array [X, X, X] é X."
 */
 
-const numbers = [1, 2, 3]
 
 
 /*
@@ -146,13 +104,6 @@ const numbers = [1, 2, 3]
     criada.
 */
 
-const letters = ['v', 'e', 'p']
-let lettersCopy = []
-
-// for (let i = 0; i < letters.length; i++) {
-// lettersCopy.push(letters[i])
-// }
-// console.log(lettersCopy)
 
 /*
   13
@@ -172,7 +123,6 @@ let lettersCopy = []
   </article>
 */
 
-const section = document.querySelector('[data-js="section"]')
 
 const review = [
   'Eu sempre adorei o filme e quando descobri que tinha o livro também fiquei doido. Demorei um pouco mas acabei comprando e finalmente li \o/.',
@@ -181,9 +131,6 @@ const review = [
   'Recomendo esse livro pra quem curte uma boa história de ficção. Apesar de muita gente pensar que o livro não tem graça, porque o legal mesmo é ver o dinossauro no filme, com todos os efeitos especiais, eu digo pra deixar esse pensamento de lado, pois a história é tão bem contada e os detalhes são tão bem relatados, que você passa a fazer parte da história, e vive todas as emoções hahaha.'
 ]
 
-let paragraphs = ''
-
-// section.innerHTML = paragraphs
 
 /*
   14
