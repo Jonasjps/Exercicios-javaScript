@@ -15,7 +15,7 @@
 03 - Exiba a string 'Grandes poderes trazem grandes responsabilidades.' no console do browser.
 Utilize os espaços entre os comentários abaixo para executar os códigos dos exercícios. Inclusive este.
 */
-
+// console.log('Grandes poderes trazem grandes responsabilidades.')
 
 
 /*
@@ -26,7 +26,12 @@ Utilize os espaços entre os comentários abaixo para executar os códigos dos e
 - Declare uma constante "myFavoriteTom" que recebe nome, espaço, e sobrenome do Tom que você mais gosta;
 - Exiba a "myFavoriteTom" no console do browser.
 */
+const tom = 'Tom'
+const firstTom = 'Hanks'
+const secondTom = 'Cruise'
 
+const myFavoriteTom = tom +' '+secondTom
+// console.log(myFavoriteTom) 
 
 /*
 05 - Comente o console.log acima, e:
@@ -35,7 +40,9 @@ Utilize os espaços entre os comentários abaixo para executar os códigos dos e
 - As letras não devem ser digitadas manualmente;
 - Exiba a "js" no console do browser;
 */
-
+const programmingLanguage = 'JavaScript'
+const js = programmingLanguage[0] + programmingLanguage[4]
+console.log(js)
 
 /*
 06 - Comente o console.log acima, e,
@@ -48,7 +55,7 @@ const mozilla = 'Mozilla Developer Network'
 
 
 
-
+ 
 /*
 07 - Comente o console.log acima, e,
 - Exiba no console do browser a quantidade de caracteres que a constante "programmingLanguage" possui;
