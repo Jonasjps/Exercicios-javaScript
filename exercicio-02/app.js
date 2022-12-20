@@ -15,8 +15,7 @@
 03 - Exiba a string 'Grandes poderes trazem grandes responsabilidades.' no console do browser.
 Utilize os espaços entre os comentários abaixo para executar os códigos dos exercícios. Inclusive este.
 */
-// console.log('Grandes poderes trazem grandes responsabilidades.')
-
+// console.log('Grandes poderes trazem grades responsabilidades.')
 
 /*
 04 - Comente o console.log acima, e:
@@ -30,9 +29,8 @@ const tom = 'Tom'
 const firstTom = 'Hanks'
 const secondTom = 'Cruise'
 
-const myFavoriteTom = tom +' '+secondTom
-// console.log(myFavoriteTom) 
-
+const myFavoriteTom = tom + ' ' + firstTom
+// console.log(myFavoriteTom)
 /*
 05 - Comente o console.log acima, e:
 - Armazene a palavra 'JavaScript' em uma constante "programmingLanguage";
@@ -43,7 +41,6 @@ const myFavoriteTom = tom +' '+secondTom
 const programmingLanguage = 'JavaScript'
 const js = programmingLanguage[0] + programmingLanguage[4]
 // console.log(js)
-
 /*
 06 - Comente o console.log acima, e,
 - Armazene, em uma constante "mdn", a junção das letras iniciais das 3 palavras que a constante "mozilla" armazena;
@@ -53,13 +50,11 @@ const js = programmingLanguage[0] + programmingLanguage[4]
 const mozilla = 'Mozilla Developer Network'
 const mdn = mozilla[0] + mozilla[8] + mozilla[18]
 // console.log(mdn)
-
 /*
 07 - Comente o console.log acima, e,
 - Exiba no console do browser a quantidade de caracteres que a constante "programmingLanguage" possui;
 */
 // console.log(programmingLanguage.length)
-
 /*
 08 - Comente o console.log acima, e,
 - Exiba no console a última letra da string que a "randomWord" (abaixo) armazena, mas com a 
@@ -67,9 +62,8 @@ condição a seguir;
 - Ao invés de inserir manualmente a posição do último caractere, faça com que a obtenção da última letra funcione para qualquer palavra que a "randomWord" receber;
 - Dica: utilize a propriedade ".length".
 */
-let randomWord = 'Ovo'
-
-// console.log(randomWord[randomWord.length - 1])
+let randomWord = 'Jonas'
+// console.log(randomWord[randomWord.length -1])
 
 /*
 09 - Comente o console.log acima, e,
@@ -79,9 +73,8 @@ let randomWord = 'Ovo'
 */
 
 const summerMessage = 'O VERÃO CHEGA NESTE FIM DE SEMANA'
-//  console.log(summerMessage.toLowerCase())
 
-
+// console.log(summerMessage.toLowerCase())
 /*
 10 - Comente o console.log acima, e,
 - Exiba, no console, a string que "winterMessage" (abaixo) armazena, mas com todas as letras maiúsculas;
@@ -90,20 +83,17 @@ const summerMessage = 'O VERÃO CHEGA NESTE FIM DE SEMANA'
 */
 
 const winterMessage = 'o inverno está chegando'
-// console.log(winterMessage.toUpperCase())
- 
+//  console.log(summerMessage.toUpperCase())
 /*
 11 - Comente o console.log acima, e,
 - Exiba, no console, o index do caractere "v" da "winterMessage";
 */
-
 // console.log(winterMessage.indexOf('v'))
 
 /*
 12 - Comente o console.log acima, e,
 - Exiba, no console, o index da última ocorrência do caractere "n" da "winterMessage".
 */
-
 // console.log(winterMessage.lastIndexOf('n'))
 
 /*
@@ -113,7 +103,6 @@ const winterMessage = 'o inverno está chegando'
 */
 
 const harryPotterAuthor = 'J.K. Rowling'
-
 // console.log(harryPotterAuthor.slice(0,4))
 /*
 14 - Comente o console.log acima, e,
@@ -126,15 +115,13 @@ para "Moonlight";
 const bestMovie = 'E o Oscar de melhor filme vai para: "La la land"!'
 const realBestMovie = bestMovie.replace('La la land', 'Moonligth')
 // console.log(realBestMovie)
-
 /*
 15 - Comente o console.log acima, e,
 - Abaixo deste comentário, armazene o resto de 10 dividido por 3 em uma constante "reminder";
 - Exiba a reminder no console. O resultado deve ser 1;
 */
 const reminder = 10 % 3
-// console.log(reminder)
-
+// console.log(reminder) 
 /*
 16 - Comente o console.log acima, e,
 - Abaixo da let "episodes", incremente o valor dela em 1;
@@ -145,14 +132,12 @@ const reminder = 10 % 3
 let episodes = 6
 episodes++
 // console.log(episodes)
-
 /*
 17 - Comente o console.log acima, e,
 - Decremente a let "episodes" em 1;
 - Após o decremento, exiba a let "episodes" no console;
 - O valor exibido no console deve ser 6.
 */
-
 episodes--
 // console.log(episodes)
 
@@ -162,8 +147,7 @@ episodes--
 - Utilize o operador addition assignment para atualizar o valor da let "episodes" para 10;
 - Após a atribuição, exiba a let "episodes" no console.
 */
-
-episodes += 4
+episodes+=4
 // console.log(episodes)
 
 /*
@@ -173,12 +157,9 @@ episodes += 4
 - Exiba a "allEpisodes" no console.
 */
 
-const allEpisodes = `O nº de epsódios é: ${episodes}`
-// console.log(allEpisodes)
 
-
-
-
+const allEpisodes = 'O nº de episódios é: '+ episodes
+// console.log(allEpisodes) 
 /*
 20 - Comente o console.log acima, e,
 - Descomente a const "bookMessage" e o console.log abaixo;
@@ -187,7 +168,7 @@ const allEpisodes = `O nº de epsódios é: ${episodes}`
 - Não use template strings.
 */
 
-// const bookMessage = 'O \'Conto da Aia\' é um dos livros mais vendidos da década.'
+// const bookMessage = '\'O Conto da Aia\' é um dos livros mais vendidos da década.'
 // console.log(bookMessage)
 
 /*
@@ -201,8 +182,8 @@ const allEpisodes = `O nº de epsódios é: ${episodes}`
 */
 
 const name = 'walter white'
+let newName = name[0].toUpperCase() + name.slice(1,6) + ' ' +  name[7].toUpperCase() + name.slice(8)
 
-let newName = name.replace('w', 'W').replace('w', 'W') 
 // console.log(newName)
 
 
@@ -211,7 +192,8 @@ let newName = name.replace('w', 'W').replace('w', 'W')
 - Atribua à "newName" uma template string;
 - A template string deverá resultar no mesmo valor que a "newName" tinha anteriormente (nome e sobrenome com letras iniciais maiúsculas);
 - Não digite a nova string manualmente.
-- Não modifique a string da const "name";
+- Não modifique a string  da const "name";
 - Exiba a "newName" no console;
 */ 
-console.log(`${newName}`)
+newName = `${name[0].toUpperCase()}${name.slice(1,6)} ${name[7].toUpperCase()}${name.slice(8)}`
+console.log(newName)
