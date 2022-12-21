@@ -63,8 +63,7 @@ condição a seguir;
 - Dica: utilize a propriedade ".length".
 */
 let randomWord = 'Jonas'
-// console.log(randomWord[randomWord.length -1])
-
+console.log(randomWord[randomWord.length -1 ])
 /*
 09 - Comente o console.log acima, e,
 - Exiba, no console, a string que "summerMessage" (abaixo) armazena, mas com todas as letras minúsculas;
@@ -196,4 +195,4 @@ let newName = name[0].toUpperCase() + name.slice(1,6) + ' ' +  name[7].toUpperCa
 - Exiba a "newName" no console;
 */ 
 newName = `${name[0].toUpperCase()}${name.slice(1,6)} ${name[7].toUpperCase()}${name.slice(8)}`
-console.log(newName)
+ console.log(newName)
