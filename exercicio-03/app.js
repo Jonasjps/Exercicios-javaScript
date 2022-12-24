@@ -9,7 +9,7 @@
 /*
 02 - Armazene um array vazio em uma let "brazilianFoods";
 */
-
+let brazilianFoods = []
 
 /*
 03 - Use o método adequado para adicionar os 3 seguintes itens ao array:
@@ -20,7 +20,8 @@
 
 - Exiba a brazilianFoods no console.
 */
-
+brazilianFoods.push('Coxinha', null, 'Brigadeiro')
+// console.log(brazilianFoods)
 
 /*
 04 - Comente o console.log acima e:
@@ -30,7 +31,8 @@ array "brazilianFoods" (null) seja substituído por "Pão de Queijo";
 - Exiba apenas o 2º item desse array no console.
 */
 
-
+brazilianFoods[1] = 'Pão de Queijo'
+// console.log(brazilianFoods[1])
 
 /*
 05 - Comente o console.log acima e:
@@ -44,7 +46,8 @@ número diretamente;
 mas sem digitar os nomes das comidas diretamente;
 - Exiba a foodsInfo no console.
 */
-
+const foodsInfo = `Até aqui, o array "brazilianFoods" possui ${brazilianFoods.length} itens: ${brazilianFoods}. `.replace('o,', 'o e ')
+// console.log(foodsInfo)
 /*
 06 - Comente o console.log acima e:
 
@@ -56,7 +59,10 @@ itens "Lilica" e "Matilda";
 "maleDogNames" e "femaleDogNames";
 - Exiba a "dogNames" no console.
 */
-
+const maleDogNames = ['Chico', 'Zeca']
+const femaleDogNames = ['Lilica', 'Matilda']
+let dogNames = maleDogNames.concat(femaleDogNames)
+// console.log(dogNames)
 /*
 07 - Comente o console.log acima e:
 
@@ -65,7 +71,7 @@ itens "Lilica" e "Matilda";
 - Utilize o método adequado para fazer isso;
 - O resultado deve ser: "nome1, nome2, nome3, nome4".
 */
-
+// console.log(dogNames.join(', '))
 /*
 08 - Comente o console.log acima e:
 
@@ -78,7 +84,7 @@ utilizando o método adequado para isso;
 - O console deve continuar exibindo o último item do array, que  
 agora é "Lilica".
 */
-
+// console.log(dogNames[dogNames.length - 1])
 /*
 09 - Comente o console.log acima e:
 
@@ -90,9 +96,11 @@ apenas as letras iniciais dos nomes do array "dogNames";
 - Não digite as letras diretamente;
 - Exiba a "initials" no console.
 */
-
-//Nesse caso posso ultilizar tantos os colcheters para referênciar o indice do elemento do array como o método slice.
+dogNames.push('Nina')
+console.log(dogNames)
+const initials = `${dogNames[0][0]}${dogNames[1][0]}${dogNames[2][0]}${dogNames[3][0]}${dogNames[4][0]} `
 // console.log(initials)
+//Nesse caso posso ultilizar tantos os colcheters para referênciar o indice do elemento do array como o método slice.
 
 /*
 10 - Comente o console.log acima e:
