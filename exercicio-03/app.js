@@ -46,8 +46,8 @@ número diretamente;
 mas sem digitar os nomes das comidas diretamente;
 - Exiba a foodsInfo no console.
 */
-const foodsInfo = `Até aqui, o array "brazilianFoods" possui ${brazilianFoods.length} itens: ${brazilianFoods}. `.replace('o,', 'o e ')
-// console.log(foodsInfo)
+const foodsInfo = `Até aqui, o array "brazilianFoods" possui ${brazilianFoods.length} itens: ${brazilianFoods[0]},${brazilianFoods[1]} e ${brazilianFoods[2]}. `
+console.log(foodsInfo)
 /*
 06 - Comente o console.log acima e:
 
@@ -125,7 +125,7 @@ constante que você criou.
 'A SOBREMESA é um doce à base de coco, tradicional na América Latina e em Angola.'
 */
 // console.log(dogNames)
-const dessert = `${dogNames[0].slice(3)}${dogNames[2].slice(4)}${dogNames[4].slice(2)}`.replace('n', 'd')
+const dessert = `${dogNames[0].slice(3)}${dogNames[1].slice(2)}${dogNames[4].slice(2)}`.replace('n', 'd')
 // console.log(`A ${dessert} é um doce à base de coco, tradicional na América Latina e em Angola.`)
 /*
 12 - Comente o console.log acima e:
