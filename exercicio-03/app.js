@@ -97,7 +97,7 @@ apenas as letras iniciais dos nomes do array "dogNames";
 - Exiba a "initials" no console.
 */
 dogNames.push('Nina')
-console.log(dogNames)
+// console.log(dogNames)
 const initials = `${dogNames[0][0]}${dogNames[1][0]}${dogNames[2][0]}${dogNames[3][0]}${dogNames[4][0]} `
 // console.log(initials)
 //Nesse caso posso ultilizar tantos os colcheters para referênciar o indice do elemento do array como o método slice.
@@ -108,7 +108,7 @@ const initials = `${dogNames[0][0]}${dogNames[1][0]}${dogNames[2][0]}${dogNames[
 - Exiba a "initials" no console, mas com todas as letras minúsculas;
 - Utilize o método adequado para isso.
 */
-
+// console.log(initials.toLowerCase())
 /*
 11 - Comente o console.log acima e:
 
@@ -124,7 +124,9 @@ constante que você criou.
 
 'A SOBREMESA é um doce à base de coco, tradicional na América Latina e em Angola.'
 */
-
+// console.log(dogNames)
+const dessert = `${dogNames[0].slice(3)}${dogNames[2].slice(4)}${dogNames[4].slice(2)}`.replace('n', 'd')
+// console.log(`A ${dessert} é um doce à base de coco, tradicional na América Latina e em Angola.`)
 /*
 12 - Comente o console.log acima e:
 
@@ -137,4 +139,6 @@ elevado ao cubo, faça o 2º item do array receber todo o valor que ele
 já tem, mais 4;
 - Agora, o resultado exibido no console deve ser 729.
 */
- 
+ let oddNumbers = [3, 5, 7]
+ oddNumbers[1] += 4
+ console.log(oddNumbers[1]**3)
