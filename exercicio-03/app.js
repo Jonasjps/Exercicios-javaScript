@@ -141,4 +141,4 @@ já tem, mais 4;
 */
  let oddNumbers = [3, 5, 7]
  oddNumbers[1] += 4
- console.log(oddNumbers[1]**3)
+//  console.log(oddNumbers[1]**3)
