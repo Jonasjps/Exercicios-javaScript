@@ -24,7 +24,7 @@ const sentence = `Minhas 3 séries favoritas são: ${my3FavoriteTVShows}.`.repla
 */
 
 
-// console.log(my3FavoriteTVShows !== 3)
+//  console.log(my3FavoriteTVShows !== 3)
 /*
   03 - Comente o console.log() acima e:
 
@@ -63,7 +63,7 @@ const typeSentence = `O tipo de dado que a const "isRandomTVShowIncluded" armaze
   caracteres? BOOLEAN."
 */
 let totaldecaracteres = 39
-// console.log(`A string que a "typeSentence" armazena tem mais de ${totaldecaracteres} caracteres? ${typeSentence > String(totaldecaracteres) }.`.replace('? t', '? T'))
+console.log(`A string que a "typeSentence" armazena tem mais de ${totaldecaracteres} caracteres? ${String(typeSentence.length > totaldecaracteres).replace('t', 'T')}.`)
 /*
   06 - Comente o console.log() acima e:
 
@@ -75,7 +75,7 @@ let totaldecaracteres = 39
 */
 const falsyValues = [0, "", false, '', ``, null, undefined, NaN]
 
-// console.log(`Todos os ${falsyValues.length} itens do array "falsyValues" são falsy. Inclusive o  ${falsyValues[2]}.`)
+//  console.log(`Todos os ${falsyValues.length} itens do array "falsyValues" são falsy. Inclusive o  ${falsyValues[2]}.`)
 /*
   07 - Comente o console.log() acima e:
 
@@ -120,4 +120,4 @@ const isNotAString = randomTVShow !== randomTVShow
   - Não utilize o método includes desta vez.
 */
 const evenNumbers = [0, 2, 4, 6, 8, 10]
-// console.log(evenNumbers[4] === 8)
+// console.log(evenNumbers[4] === 8) 
