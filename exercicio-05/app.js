@@ -21,14 +21,21 @@
     5
 */
 
-
+// let c = 0
+// 
+// while(c <= 5) {
+// console.log(c)
+// c++
+// }
 
 /*
   02 - Comente a declaração da let e o loop acima e:
 
   - Utilizando um for loop, faça o mesmo que foi pedido no exercício 01.
 */
-
+for(let i = 0; i <= 5; i++) {
+  // console.log(i)
+}
 /*
   03 - Comente o loop acima e:
 
@@ -39,7 +46,15 @@
 
   "Esta é a Xª vez que esta frase é exibida no console;."
 // */
-
+// let b = 0
+// 
+// while( b < 10 ) {
+  // console.log(`Esta é a ${b + 1}ª vez que esta frase é exibida no console.`)
+// b++
+// }
+for ( let j = 0; j < 10; j ++ ) {
+  // console.log(`Esta é a ${j + 1}ª vez que esta frase é exibida no console.`)
+}
 
 /*
   04 - Comente o loop acima e:
@@ -52,6 +67,14 @@
 */
 
 const cities = ['São Paulo', 'Rio de Janeiro', 'Minas Gerais']
+
+let upperCaseCities = []
+
+for ( let c = 0; c < cities.length; c ++ ) {
+  cities.push(upperCaseCities)
+}
+console.log(cities)
+
 
 /*
   05 - Comente o console.log acima e:
