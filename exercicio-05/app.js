@@ -132,7 +132,7 @@ const arrays = [
   [64, 8, 32],
   [8, 32, 16],
   [2, 8, 4]
-]
+] 
 
 let somaDosArray = 0
 
