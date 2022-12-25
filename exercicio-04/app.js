@@ -86,7 +86,7 @@ const falsyValues = [0, "", false, '', ``, null, undefined, NaN]
 */
 const crazyOperation = null + 1
 const crazyConversion = crazyOperation === 1
-console.log(crazyConversion)
+// console.log(crazyConversion)
 /*
   08 - Comente o console.log() acima e:
 
@@ -99,7 +99,9 @@ console.log(crazyConversion)
   "A soma entre o 1º e o 3º item de "ages" é menor ou igual a 92. Essa afirmação  
   é: BOOLEAN."
 */
-
+const ages = [31, 82, 61, 11]
+const agesSum = ages[0] + ages[2]
+// console.log(`A soma entre o ${ages[0]} e o ${ages[2]} item de "ages" é menor ou igual a 92. Essa afirmação é: ${agesSum <= 92}.`)
 /*
   09 - Comente o console.log() acima e:
 
@@ -108,7 +110,8 @@ console.log(crazyConversion)
   - Essa expressão deve resultar em false.
   - Exiba a "isNotAString" no console.
 */
-
+const isNotAString = randomTVShow !== randomTVShow
+// console.log(isNotAString)
 /*
   10 - Comente o console.log() acima e:
 
@@ -117,3 +120,4 @@ console.log(crazyConversion)
   - Não utilize o método includes desta vez.
 */
 const evenNumbers = [0, 2, 4, 6, 8, 10]
+// console.log(evenNumbers[4] === 8)
