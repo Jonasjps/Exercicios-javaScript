@@ -49,7 +49,7 @@ if (abacaxi) {
   Obs.: tanto a expressão do lado esquerdo quanto a do lado direito do operador  
   lógico precisam ter a constante especificada. Exemplo: hour > x && hour < y.
 */
-const horaAtual = 16
+const horaAtual = 19
 
 const BomDia = horaAtual < 12
 const BoaTarde = horaAtual < 18
@@ -58,10 +58,10 @@ const BoaTarde = horaAtual < 18
 if (BomDia) {
   console.log('BOM DIA')
 }else if (BoaTarde) {
-  //  console.log('BOA TARDE')
+   console.log('BOA TARDE')
 }else {
-  console.log('BOA NOITE')
-}
+  // console.log('BOA NOITE')
+ }
 
 /*
   03
@@ -78,16 +78,15 @@ if (BomDia) {
 */
 const idade = 27
 
-const Sete = idade <= 7 
-const sessentaEcincoOuMais = idade >= 65
+const SeteOuSessentaEcinco = idade <= 7 || idade >= 65
+let mensagem = null
 
-if (Sete) {
-  console.log('Para voçê, a entrada é grátis!') 
-}else if (sessentaEcincoOuMais) {
-  console.log('Para voçê, a entrada é grátis!') 
+if (SeteOuSessentaEcinco) {
+  mensagem = 'Para voçê, a entrada é grátis!' 
 }else {
-  // console.log('A entrada é R$ 30,00.')
-}
+  mensagem = 'A entrada é R$ 30,00.'
+} 
+console.log(mensagem)
 
 /*
   04
@@ -103,10 +102,10 @@ let NovoArray = []
 
 for (let i = 0; i < numbers.length; i++) {
   
-  const MenorOuIgualAonze = numbers[i] >= 11
-  const MenorOuIgualAnoventa = numbers[i] <= 90
+  const number = numbers[i]
+  const MenorQue11eMaiorQue90 = number >= 11 && number <= 90
 
-  if (MenorOuIgualAonze && MenorOuIgualAnoventa) {
+  if (MenorQue11eMaiorQue90) {
     NovoArray.push(numbers[i])
   }
 }
@@ -163,20 +162,24 @@ for (let b = 0; b < crazyArray.length; b++) {
   "Numeros ímpares: XX, XX e XX. Números pares: XX, XX e XX."
 */
 const randomNumbers = [73, 4, 67, 10, 31, 58]
+
 let NumbersImpares = []
 let NumbersPares = []
+
 for (let c = 0; c < randomNumbers.length; c++) {
 
-const Impares = randomNumbers[c] % 2 === 1
+  const number = randomNumbers[c]
+  const Impares = number % 2 === 1
   
 if(Impares) {
-    NumbersImpares.push(randomNumbers[c])
+    NumbersImpares.push(number)
   }else { 
-    NumbersPares.push(randomNumbers[c])
+    NumbersPares.push(number)
   }
 }
 
-const Frase = `Numeros ímpares: ${NumbersImpares.join(', ')}. Números pares: ${NumbersPares.join(', ')}.`.replace('7,', '7 e').replace('0,', '0 e')
+const Impares = NumbersImpares.join(', ').replace('7,', '7 e')
+const Pares = NumbersPares.join(', ').replace('0,', '0 e')
 
-console.log(Frase)
+console.log(`Numeros ímpares: ${Impares}. Números pares: ${Pares}.`)
 
