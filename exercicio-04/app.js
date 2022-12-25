@@ -12,6 +12,10 @@
 
   "Minhas 3 séries favoritas são: SÉRIE_01, SÉRIE_02 e SÉRIE_03."
 */
+const my3FavoriteTVShows = ['Prison Breack', 'La casa de Papel', 'Lopin']
+
+const sentence = `Minhas 3 séries favoritas são: ${my3FavoriteTVShows}.`.replace('l,', 'l e ')
+// console.log(sentence)
 /*
   02 - Comente o console.log() acima e:
 
@@ -19,6 +23,8 @@
     possui 3 itens.
 */
 
+
+// console.log(my3FavoriteTVShows !== 3)
 /*
   03 - Comente o console.log() acima e:
 
@@ -29,7 +35,8 @@
   - Exiba no console o boolean que a "isRandomTVShowIncluded" recebeu.
 */
 const randomTVShow = 'Watchmen'
-
+const isRandomTVShowIncluded = my3FavoriteTVShows.includes(randomTVShow)
+// console.log(isRandomTVShowIncluded)
 /*
   04 - Comente o console.log() acima e:
 
@@ -40,6 +47,8 @@ const randomTVShow = 'Watchmen'
 
   "O tipo de dado que a const "isRandomTVShowIncluded" armazena é: TIPO_DE_DADO."
 */
+const typeSentence = `O tipo de dado que a const "isRandomTVShowIncluded" armazena é: ${typeof isRandomTVShowIncluded}.`
+// console.log(typeSentence)
 /*
   05 - Comente o console.log() acima e:
 
@@ -53,7 +62,8 @@ const randomTVShow = 'Watchmen'
   "A string que a "typeSentence" armazena tem mais de NÚMERO_DE_CARACTERES  
   caracteres? BOOLEAN."
 */
-
+let totaldecaracteres = 39
+// console.log(`A string que a "typeSentence" armazena tem mais de ${totaldecaracteres} caracteres? ${typeSentence > String(totaldecaracteres) }.`.replace('? t', '? T'))
 /*
   06 - Comente o console.log() acima e:
 
@@ -63,7 +73,9 @@ const randomTVShow = 'Watchmen'
   "Todos os NÚMERO_DE_ITENS itens do array "falsyValues" são falsy. Inclusive o  
   BOOLEAN."
 */
+const falsyValues = [0, "", false, '', ``, null, undefined, NaN]
 
+console.log(`Todos os NÚMERO_DE_ITENS itens do array "falsyValues" são falsy. Inclusive o  BOOLEAN.`)
 /*
   07 - Comente o console.log() acima e:
 
