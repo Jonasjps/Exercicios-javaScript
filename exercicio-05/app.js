@@ -71,9 +71,9 @@ const cities = ['São Paulo', 'Rio de Janeiro', 'Minas Gerais']
 let upperCaseCities = []
 
 for ( let c = 0; c < cities.length; c ++ ) {
-  cities.push(upperCaseCities)
+  upperCaseCities.push(cities[c].toUpperCase())
 }
-console.log(cities)
+// console.log(upperCaseCities)
 
 
 /*
@@ -84,7 +84,14 @@ console.log(cities)
   - O template deve ser exibido apenas uma vez no console e o resultado deve ser:
     <li>João Grilo</li><li>Chicó</li><li>Rosinha</li>
 */
-
+  const names = ['João Grilo', 'Chicó', 'Rosinha']
+  
+  let templateHTML = '' 
+  
+  for(let n = 0 ; n < names.length ; n ++ ) {
+    templateHTML += ` <li>${names[n]}</li>`
+  }
+  // console.log(templateHTML)
 /*
   06 - Comente o console.log acima e:
 
@@ -95,6 +102,13 @@ console.log(cities)
 */
 
 const numbers = ['91', '5', '30', '97', '83', '31']
+  
+let soma = 0
+
+  for ( let a = 0 ; a < numbers.length ; a ++ ) {
+    soma += Number(numbers[a])
+  }
+  // console.log(soma === 337)
 /*
   07 - Comente o console.log acima.
 
@@ -119,3 +133,12 @@ const arrays = [
   [8, 32, 16],
   [2, 8, 4]
 ]
+
+let somaDosArray = 0
+
+for ( let s = 0 ; s < arrays.length ; s ++ ) {
+  for ( let c = 0 ; c < arrays[s].length ; c ++ ) {
+    somaDosArray += arrays[s][c]
+  }
+}
+console.log(somaDosArray)
