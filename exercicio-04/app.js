@@ -75,7 +75,7 @@ let totaldecaracteres = 39
 */
 const falsyValues = [0, "", false, '', ``, null, undefined, NaN]
 
-console.log(`Todos os NÚMERO_DE_ITENS itens do array "falsyValues" são falsy. Inclusive o  BOOLEAN.`)
+// console.log(`Todos os ${falsyValues.length} itens do array "falsyValues" são falsy. Inclusive o  ${falsyValues[2]}.`)
 /*
   07 - Comente o console.log() acima e:
 
@@ -84,7 +84,9 @@ console.log(`Todos os NÚMERO_DE_ITENS itens do array "falsyValues" são falsy. 
     em boolean.
   - Você sabe por que essa conversão resultou em true?
 */
-
+const crazyOperation = null + 1
+const crazyConversion = crazyOperation === 1
+console.log(crazyConversion)
 /*
   08 - Comente o console.log() acima e:
 
