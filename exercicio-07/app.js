@@ -4,7 +4,7 @@
   - Inverta o valor dos booleans do console.log() abaixo;
   - O resultado exibido no console deve ser: false true.
 */
-
+console.log(true, false)
 
 /*
   02
