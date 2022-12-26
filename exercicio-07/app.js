@@ -4,7 +4,7 @@
   - Inverta o valor dos booleans do console.log() abaixo;
   - O resultado exibido no console deve ser: false true.
 */
-console.log(true, false)
+// console.log(!true, !false)
 
 /*
   02
@@ -17,6 +17,11 @@ console.log(true, false)
 
 const animals = ['macaco', 'tucano', 'elefante', 'pavão', 'hipopótamo']
 
+if (!animals.includes('leão')) {
+  // console.log('leão não existe no array animals.')
+} else {
+  console.log('Existe um leão no array animals')
+}
 
 /*
   03
@@ -31,7 +36,12 @@ const animals = ['macaco', 'tucano', 'elefante', 'pavão', 'hipopótamo']
 
 const randomNumbers = [59, 61, 73, 57, 35, 73, 21, 87, 43]
 
+let soma = 0
 
+for(let i = 0; i < randomNumbers.length; i++) {
+  soma += randomNumbers[i]
+}
+// console.log(`A soma ultrapassou 400. Até aqui, o valor atual é ${soma}.`)
 /*
   04
 
@@ -42,9 +52,15 @@ const randomNumbers = [59, 61, 73, 57, 35, 73, 21, 87, 43]
 */
 
 const sentence = ['A', 'certeza', 'dúvida', 'é', 'o', 'princípio', 'da', 'sabedoria.']
- 
 
+for (let c = 0; c < sentence.length; c++) {
+  if (sentence[c].includes('certeza')) {
+    
 
+    continue
+  }
+  // console.log(sentence[c])
+}
 
 
 
@@ -64,7 +80,19 @@ const sentence = ['A', 'certeza', 'dúvida', 'é', 'o', 'princípio', 'da', 'sab
 */
 
 const randomValues = [57, false, 'JS', [], true, 'HTML', 31, null, false, 'CSS', 97, true, 'Git', 11, 'sticker', false, 'GitHub', true, null]
- 
+
+let totalDeStrings = 0 
+let totalDeBooleans = 0
+for (let i = 0; i < randomValues.length; i++) {
+  if(randomValues[i] === 'Git'){
+    
+    break
+  }
+  console.log(`3 informações sobre o array randomValues:
+  - As primeiras 4 strings são ${randomValues[i]};
+  - Até que as primeiras 4 strings fossem iteradas, XX booleans foram iterados;
+  - O array foi iterado por XX vezes.`)
+ }
 
 
 
