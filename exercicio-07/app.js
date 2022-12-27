@@ -130,30 +130,31 @@ const stringsTotal = valorDasStrings.join(', ').replace(`, ${MetodoString}`, ` e
     fermentada, fabricada industrialmente, à base de água mineral e açúcar." 
     deve ser armazenada;
   - Se é suco, atribua a mensagem "Bebida produzida do líquido extraído de 
-    frutos.";
+    frutos.";'
   - Se nenhum desses 3 tipos de bebida der match, a variável deve armazenar 
     "Bebida desconhecida.";
   - Exiba a mensagem no console. Teste também as outras possibilidades de tipo  
     da bebida além da que você escolheu.
 */
 
-const drinkType = 'cerveja'
+const drinkType = 'água'
+let mensagen = null
 
 switch(drinkType) {
   case 'água': 
-    console.log('Substância química cujas moléculas são formadas por dois átomos de hidrogênio e um de oxigênio.')
+    mensagen = 'Substância química cujas moléculas são formadas por dois átomos de hidrogênio e um de oxigênio.' 
     break
-  case 'refrigerante': 
-    console.log('Bebida não alcoólica e não fermentada, fabricada industrialmente, à base de água mineral e açúcar.')  
+  case 'refrigerante':
+    mensagen = 'Bebida não alcoólica e não fermentada, fabricada industrialmente, à base de água mineral e açúcar.'
+    break  
+  case 'suco':
+    mensagen = 'Bebida produzida do líquido extraído de frutos.'
     break
-  case 'suco': 
-    console.log('Bebida produzida do líquido extraído de frutos.')
-  break
   default:
-    console.log('Bebida desconhecida.')
-  break   
-}
-
+    mensagen = 'Bebida desconhecida.'
+    break  
+  }
+// console.log(mensagen)
 
 
 
@@ -165,7 +166,7 @@ switch(drinkType) {
     para testar o switch que você escreveu.
 */
 
-const a = 3
+const a = 2
 
 // if (a === 0) {
   // console.log(`O valor de "a" é ${a}`)
@@ -174,4 +175,17 @@ const a = 3
 // } else {
   // console.log('O valor de "a" é qualquer número, exceto 0 e 1')
 // }
+const number = "a"
+const stringMensagen = 'O valor de'
 
+switch(a) {
+ 
+  case 0:
+    console.log(`${stringMensagen} ${number} é ${a}`)
+    break
+  case 1:
+    console.log(`${stringMensagen} ${number} é ${a}`)
+    break
+  default:
+    console.log(`${stringMensagen} ${number} é qualquer número, exceto 0 e 1`)  
+}
