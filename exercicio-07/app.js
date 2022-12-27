@@ -113,10 +113,10 @@ for (let i = 0; i < randomValues.length; i++) {
 const MetodoString = valorDasStrings[valorDasStrings.length - 1]
 const stringsTotal = valorDasStrings.join(', ').replace(`, ${MetodoString}`, ` e ${MetodoString}`)
 
-console.log(`3 informações sobre o array randomValues:
-  - As primeiras 4 strings são ${stringsTotal};
-  - Até que as primeiras 4 strings fossem iteradas, ${totalBooleans} booleans foram iterados;
-  - O array foi iterado por ${totalDeIterações} vezes.`)
+// console.log(`3 informações sobre o array randomValues:
+  // - As primeiras 4 strings são ${stringsTotal};
+  // - Até que as primeiras 4 strings fossem iteradas, ${totalBooleans} booleans foram iterados;
+  // - O array foi iterado por ${totalDeIterações} vezes.`)
 /*
   06
 
@@ -137,8 +137,22 @@ console.log(`3 informações sobre o array randomValues:
     da bebida além da que você escolheu.
 */
 
-//const drinkType = 'refrigerante'
+const drinkType = 'cerveja'
 
+switch(drinkType) {
+  case 'água': 
+    console.log('Substância química cujas moléculas são formadas por dois átomos de hidrogênio e um de oxigênio.')
+    break
+  case 'refrigerante': 
+    console.log('Bebida não alcoólica e não fermentada, fabricada industrialmente, à base de água mineral e açúcar.')  
+    break
+  case 'suco': 
+    console.log('Bebida produzida do líquido extraído de frutos.')
+  break
+  default:
+    console.log('Bebida desconhecida.')
+  break   
+}
 
 
 
