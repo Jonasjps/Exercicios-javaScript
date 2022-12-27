@@ -166,7 +166,7 @@ switch(drinkType) {
     para testar o switch que você escreveu.
 */
 
-const a = 2
+const number = 0
 
 // if (a === 0) {
   // console.log(`O valor de "a" é ${a}`)
@@ -175,17 +175,16 @@ const a = 2
 // } else {
   // console.log('O valor de "a" é qualquer número, exceto 0 e 1')
 // }
-const number = "a"
 const stringMensagen = 'O valor de'
 
-switch(a) {
+switch (number) {
  
   case 0:
-    console.log(`${stringMensagen} ${number} é ${a}`)
+    console.log(`${stringMensagen}  é ${number}`)
     break
   case 1:
-    console.log(`${stringMensagen} ${number} é ${a}`)
+    console.log(`${stringMensagen} é ${number}`)
     break
   default:
-    console.log(`${stringMensagen} ${number} é qualquer número, exceto 0 e 1`)  
+    console.log(`${stringMensagen} é qualquer número, exceto 0 e 1`)  
 }
