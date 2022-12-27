@@ -18,9 +18,9 @@
 const animals = ['macaco', 'tucano', 'elefante', 'pavão', 'hipopótamo']
 
 if (!animals.includes('leão')) {
-  // console.log('leão não existe no array animals.')
+  // console.log('Leão não existe no array animals.')
 } else {
-  console.log('Existe um leão no array animals')
+  console.log('Existe um leão no array animals.')
 }
 
 /*
@@ -36,12 +36,17 @@ if (!animals.includes('leão')) {
 
 const randomNumbers = [59, 61, 73, 57, 35, 73, 21, 87, 43]
 
-let soma = 0
+let valorTotal = 0
 
-for(let i = 0; i < randomNumbers.length; i++) {
-  soma += randomNumbers[i]
+for (let i = 0; i < randomNumbers.length; i++) {
+  if (valorTotal > 400) {
+    // console.log(`A soma ultrapassou 400. Até aqui, o valor atual é ${valorTotal}.`)
+    break
+  }
+  
+  valorTotal += randomNumbers[i]
 }
-// console.log(`A soma ultrapassou 400. Até aqui, o valor atual é ${soma}.`)
+// console.log(valorTotal)
 /*
   04
 
@@ -53,15 +58,16 @@ for(let i = 0; i < randomNumbers.length; i++) {
 
 const sentence = ['A', 'certeza', 'dúvida', 'é', 'o', 'princípio', 'da', 'sabedoria.']
 
+let fraseContinue = ''
+
 for (let c = 0; c < sentence.length; c++) {
-  if (sentence[c].includes('certeza')) {
-    
+ if (sentence[c] === 'certeza') {
+  continue
+ }
+  fraseContinue += `${sentence[c]} `
 
-    continue
-  }
-  // console.log(sentence[c])
 }
-
+// console.log(fraseContinue)
 
 
 /*
@@ -81,21 +87,35 @@ for (let c = 0; c < sentence.length; c++) {
 
 const randomValues = [57, false, 'JS', [], true, 'HTML', 31, null, false, 'CSS', 97, true, 'Git', 11, 'sticker', false, 'GitHub', true, null]
 
-let totalDeStrings = 0 
-let totalDeBooleans = 0
+let totalStrings = 0
+let valorDasStrings = []
+let totalBooleans = 0
+let totalDeIterações = 0
 for (let i = 0; i < randomValues.length; i++) {
-  if(randomValues[i] === 'Git'){
-    
+  
+  const itenTypeof = typeof randomValues[i]
+  const itensStrings = itenTypeof === 'string'
+  const itensBooleas = itenTypeof === 'boolean'
+  
+  if (totalStrings === 4) {
     break
   }
-  console.log(`3 informações sobre o array randomValues:
-  - As primeiras 4 strings são ${randomValues[i]};
-  - Até que as primeiras 4 strings fossem iteradas, XX booleans foram iterados;
-  - O array foi iterado por XX vezes.`)
- }
+  if (itensStrings) {
+    totalStrings++
+    valorDasStrings.push(randomValues[i])
+  }
+  if (itensBooleas) {
+    totalBooleans++
+  }
+  totalDeIterações++
+}
+const MetodoString = valorDasStrings[valorDasStrings.length - 1]
+const stringsTotal = valorDasStrings.join(', ').replace(`, ${MetodoString}`, ` e ${MetodoString}`)
 
-
-
+console.log(`3 informações sobre o array randomValues:
+  - As primeiras 4 strings são ${stringsTotal};
+  - Até que as primeiras 4 strings fossem iteradas, ${totalBooleans} booleans foram iterados;
+  - O array foi iterado por ${totalDeIterações} vezes.`)
 /*
   06
 
