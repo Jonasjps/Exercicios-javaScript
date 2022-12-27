@@ -91,6 +91,7 @@ let totalStrings = 0
 let valorDasStrings = []
 let totalBooleans = 0
 let totalDeIterações = 0
+
 for (let i = 0; i < randomValues.length; i++) {
   
   const itenTypeof = typeof randomValues[i]
