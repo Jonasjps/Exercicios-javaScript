@@ -89,33 +89,6 @@ for (let c = 0; c < sentence.length; c++) {
 
 const randomValues = [57, false, 'JS', [], true, 'HTML', 31, null, false, 'CSS', 97, true, 'Git', 11, 'sticker', false, 'GitHub', true, null]
 
-let totalstrings = 0
-let NovoArray = []
-let stringsBooleans = 0
-let totalIterações = 0
-
-for (let r = 0; r < randomValues.length; r++) {
-
-  const arrayDeValores = randomValues[r]
-  const typeDeclaração = typeof arrayDeValores
-  const typeString = typeDeclaração === 'string'
-  const typeBooleans = typeDeclaração === 'boolean'
-
-  if (totalstrings === 4) {
-    break
-  }
-  if (typeString) {
-    totalstrings++
-    NovoArray.push(arrayDeValores)
-  }
-  if (typeBooleans) {
-    stringsBooleans++
-  }
-  totalIterações++
-}
-
-const stringsMetodos = NovoArray[NovoArray.length - 1]
-const ArrayDeStrings = NovoArray.join(', ').replace(`, ${ stringsMetodos}`, ` e ${stringsMetodos}`)
 
 //  console.log(`3 informações sobre o array randomValues:
    // - As primeiras 4 strings são ${ArrayDeStrings};
@@ -176,7 +149,7 @@ switch (number) {
     console.log(`${NomeDaFrase} ${number}`)
     break
   case 1:
-    console.log(`${NomeDaFrase} ${number}`)
+    // console.log(`${NomeDaFrase} ${number}`)
     break
   default:
     console.log(`${NomeDaFrase} qualquer número, exceto 0 e 1`)
