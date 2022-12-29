@@ -37,7 +37,7 @@ const calcular = function (n1 = 0 , n2 = 0 ) {
 
   "Esta é a Xª vez que essa string é exibida."
 */
-const mensagem = function (value = 0 ) {
+const mensagem = function (value = 'Voçê deve passar um valor como argumeto dessa função. ' ) {
   console.log(value)
 }
 
@@ -56,12 +56,16 @@ for (let c = 1; c <= 7; c ++){
 */
 
 const millennialWords = ['lol', 'yolo', 'troll', 'stalkear', 'selfie', 'influencer', 'crush', 'fitness', 'hater', 'bae', 'random', 'kawaii', 'outfit', 'mood', 'fail']
-function stringtoupperCase(array = []) {
-  for (let i = 0; i < millennialWords.length; i++ ){
-    
+
+let ArrayToUpperCase = function (array = []) {
+  let Novoarray = []
+
+  for (let i = 0; i < array.length; i++) {
+    Novoarray.push(array[i].toUpperCase())
   }
+  return Novoarray
 }
-mensagem(stringtoupperCase)
+mensagem(ArrayToUpperCase(millennialWords))
 /*
   05
 
