@@ -7,6 +7,11 @@
   - Exiba o resultado no console, sem inserir um console.log() dentro da função.
 */
 
+function soma(primeiro = 0 , segundo = 0 ) {
+  console.log((primeiro * segundo))
+  return
+}
+// soma(5,5)
 
 /*
   02
@@ -15,7 +20,11 @@
     **function expression** que retorne o resultado da **divisão** entre esses  
     2 números.
 */
-
+const calcular = function (n1 = 0 , n2 = 0 ) {
+  console.log(n1 / n2)
+  return 
+}
+// calcular(40, 10)
 /*
   03
 
@@ -28,6 +37,13 @@
 
   "Esta é a Xª vez que essa string é exibida."
 */
+const mensagem = function (value = 0 ) {
+  console.log(value)
+}
+
+for (let c = 1; c <= 7; c ++){
+  // mensagem(`Esta é a ${c}ª vez que essa string é exibida.`)
+} 
 /*
   04
 
@@ -40,6 +56,12 @@
 */
 
 const millennialWords = ['lol', 'yolo', 'troll', 'stalkear', 'selfie', 'influencer', 'crush', 'fitness', 'hater', 'bae', 'random', 'kawaii', 'outfit', 'mood', 'fail']
+function stringtoupperCase(array = []) {
+  for (let i = 0; i < millennialWords.length; i++ ){
+    
+  }
+}
+mensagem(stringtoupperCase)
 /*
   05
 
