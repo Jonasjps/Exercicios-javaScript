@@ -89,6 +89,37 @@ for (let c = 0; c < sentence.length; c++) {
 
 const randomValues = [57, false, 'JS', [], true, 'HTML', 31, null, false, 'CSS', 97, true, 'Git', 11, 'sticker', false, 'GitHub', true, null]
 
+let totalStrings = 0
+let NovoArray = []
+let totalBooleans = 0
+let totalIterações = 0
+
+for (let i = 0; i < randomValues.length; i++) {
+
+  const valores = randomValues[i]
+  const typeDados = typeof valores
+  const valorString = typeDados === 'string'
+  const valorBoolean = typeDados === 'boolean'
+
+  if(totalStrings === 4) {
+    break
+  }
+  if (valorString) {
+    totalStrings++
+    NovoArray.push(valores)
+  }
+  if (valorBoolean) {
+    totalBooleans++
+  }
+  totalIterações++
+}
+const stringMetodos = NovoArray[NovoArray.length - 1]
+const stringsArray = NovoArray.join(', ').replace(`, ${stringMetodos}`, ` e ${stringMetodos}`)
+
+console.log(`3 informações sobre o array randomValues:
+  - As primeiras 4 strings são ${stringsArray};
+  - Até que as primeiras 4 strings fossem iteradas, ${totalBooleans} booleans foram iterados;
+  - O array foi iterado por ${totalIterações} vezes.`)
 
 /*
   06
