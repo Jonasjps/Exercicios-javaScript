@@ -90,10 +90,6 @@ for (let c = 0; c < sentence.length; c++) {
 const randomValues = [57, false, 'JS', [], true, 'HTML', 31, null, false, 'CSS', 97, true, 'Git', 11, 'sticker', false, 'GitHub', true, null]
 
 
-//  console.log(`3 informações sobre o array randomValues:
-   // - As primeiras 4 strings são ${ArrayDeStrings};
-   // - Até que as primeiras 4 strings fossem iteradas, ${stringsBooleans} booleans foram iterados;
-   // - O array foi iterado por ${totalIterações} vezes.`)
 /*
   06
 
