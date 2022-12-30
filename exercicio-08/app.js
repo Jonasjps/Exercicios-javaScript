@@ -93,7 +93,7 @@ for (let a = 0; a < randomNumbers.length; a++) {
       numberNegative++
     }
 }
-console.log(`O array "randomNumbers" possui ${randomNumbers.length} números, sendo ${numberPositive} positivos e ${numberNegative} negativos.`)
+// console.log(`O array "randomNumbers" possui ${randomNumbers.length} números, sendo ${numberPositive} positivos e ${numberNegative} negativos.`)
 /*
   06
 
@@ -103,6 +103,19 @@ console.log(`O array "randomNumbers" possui ${randomNumbers.length} números, se
   - Exiba o novo array no console, sem inserir um console.log() dentro da  
     função.
 */
+const getOddNumbers = function (numbers = []) {
+  
+  let ArrayNovo = []
+
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 === 1) {
+      ArrayNovo.push(numbers[i])
+    }
+  }
+  return ArrayNovo
+}
+ 
+log(getOddNumbers([83, 52, 31, 73, 98, 37, 61, 56, 12, 24, 35, 3, 34, 80, 42]))
 /*
   07
 
