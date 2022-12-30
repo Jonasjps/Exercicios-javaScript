@@ -6,10 +6,6 @@
   - Previna que esses parâmetros recebam undefined;
   - Exiba o resultado no console, sem inserir um console.log() dentro da função.
 */
-function multiplicação(numero1 = 0, numero2 = 0 ) {
-  return numero1 * numero2
-}
-// console.log(multiplicação(10,3))
 
 /*
   02
@@ -18,10 +14,6 @@ function multiplicação(numero1 = 0, numero2 = 0 ) {
     **function expression** que retorne o resultado da **divisão** entre esses  
     2 números.
 */
-let DoisNumeros = function (numeroUm = 0, numeroDois = 0 ) {
-  return numeroUm / numeroDois
-}
-// console.log(DoisNumeros(20, 3))
 /*
   03
 
@@ -34,12 +26,6 @@ let DoisNumeros = function (numeroUm = 0, numeroDois = 0 ) {
 
   "Esta é a Xª vez que essa string é exibida."
 */
-let log = function (value =  'Voçê deve passar um  valor para essa função!') {
-  console.log(value)
-}
-// for (let i = 0; i < 7; i++) {
-//   log(`Esta é a ${i + 1}ª vez que essa string é exibida.`)
-// }0
 /*
   04
 
@@ -52,21 +38,6 @@ let log = function (value =  'Voçê deve passar um  valor para essa função!')
 */
 
 const millennialWords = ['lol', 'yolo', 'troll', 'stalkear', 'selfie', 'influencer', 'crush', 'fitness', 'hater', 'bae', 'random', 'kawaii', 'outfit', 'mood', 'fail']
-let NovoArray = []
-
-let StringToUpperCase = function (array = []) {
-  
-  for (let c = 0; c < array.length; c++) {
-
-    const metodos = array[c].toUpperCase()
-    
-    NovoArray.push(metodos)
-  }
-  return NovoArray
-}
-const ValordaStringToUpperCase = StringToUpperCase(millennialWords)
-
-// log(ValordaStringToUpperCase)
 /*
   05
 
@@ -80,20 +51,6 @@ const ValordaStringToUpperCase = StringToUpperCase(millennialWords)
 
 const randomNumbers = [-2, 93, 34, -1, 1, 93, 11, -7, 47, -3]
 
-let isPositive = function (number = 0){
-  return number >= 0
-} 
-let numberPositive = 0
-let numberNegative = 0
-
-for (let a = 0; a < randomNumbers.length; a++) {
-    if (isPositive(randomNumbers[a])) {
-      numberPositive++
-    } else {
-      numberNegative++
-    }
-}
-// console.log(`O array "randomNumbers" possui ${randomNumbers.length} números, sendo ${numberPositive} positivos e ${numberNegative} negativos.`)
 /*
   06
 
@@ -103,19 +60,8 @@ for (let a = 0; a < randomNumbers.length; a++) {
   - Exiba o novo array no console, sem inserir um console.log() dentro da  
     função.
 */
-const getOddNumbers = function (numbers = []) {
-  
-  let ArrayNovo = []
-
-  for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] % 2 === 1) {
-      ArrayNovo.push(numbers[i])
-    }
-  }
-  return ArrayNovo
-}
  
-log(getOddNumbers([83, 52, 31, 73, 98, 37, 61, 56, 12, 24, 35, 3, 34, 80, 42]))
+// getOddNumbers([83, 52, 31, 73, 98, 37, 61, 56, 12, 24, 35, 3, 34, 80, 42])
 /*
   07
 
@@ -150,5 +96,5 @@ const functions = [
   function () { return 'Pequenas' },
   function () { return 'Antilhas,' },
   function () { return 'Índias' },
-  function () { return 'Ocidentais.' }
+  function () { return 'Ocidentais.'}
 ]
