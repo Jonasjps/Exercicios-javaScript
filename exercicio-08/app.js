@@ -52,7 +52,21 @@ let log = function (value =  'Voçê deve passar um  valor para essa função!')
 */
 
 const millennialWords = ['lol', 'yolo', 'troll', 'stalkear', 'selfie', 'influencer', 'crush', 'fitness', 'hater', 'bae', 'random', 'kawaii', 'outfit', 'mood', 'fail']
+let NovoArray = []
 
+let StringToUpperCase = function (array = []) {
+  
+  for (let c = 0; c < array.length; c++) {
+
+    const metodos = array[c].toUpperCase()
+    
+    NovoArray.push(metodos)
+  }
+  return NovoArray
+}
+const ValordaStringToUpperCase = StringToUpperCase(millennialWords)
+
+// log(ValordaStringToUpperCase)
 /*
   05
 
@@ -65,6 +79,21 @@ const millennialWords = ['lol', 'yolo', 'troll', 'stalkear', 'selfie', 'influenc
 */
 
 const randomNumbers = [-2, 93, 34, -1, 1, 93, 11, -7, 47, -3]
+
+let isPositive = function (number = 0){
+  return number >= 0
+} 
+let numberPositive = 0
+let numberNegative = 0
+
+for (let a = 0; a < randomNumbers.length; a++) {
+    if (isPositive(randomNumbers[a])) {
+      numberPositive++
+    } else {
+      numberNegative++
+    }
+}
+console.log(`O array "randomNumbers" possui ${randomNumbers.length} números, sendo ${numberPositive} positivos e ${numberNegative} negativos.`)
 /*
   06
 
