@@ -6,12 +6,10 @@
   - Previna que esses parâmetros recebam undefined;
   - Exiba o resultado no console, sem inserir um console.log() dentro da função.
 */
-
-function soma(primeiro = 0 , segundo = 0 ) {
-  console.log((primeiro * segundo))
-  return
+function multiplicação(numero1 = 0, numero2 = 0 ) {
+  return numero1 * numero2
 }
-// soma(5,5)
+// console.log(multiplicação(10,3))
 
 /*
   02
@@ -20,11 +18,10 @@ function soma(primeiro = 0 , segundo = 0 ) {
     **function expression** que retorne o resultado da **divisão** entre esses  
     2 números.
 */
-const calcular = function (n1 = 0 , n2 = 0 ) {
-  console.log(n1 / n2)
-  return 
+let DoisNumeros = function (numeroUm = 0, numeroDois = 0 ) {
+  return numeroUm / numeroDois
 }
-// calcular(40, 10)
+// console.log(DoisNumeros(20, 3))
 /*
   03
 
@@ -37,13 +34,12 @@ const calcular = function (n1 = 0 , n2 = 0 ) {
 
   "Esta é a Xª vez que essa string é exibida."
 */
-const mensagem = function (value = 'Voçê deve passar um valor como argumeto dessa função. ' ) {
+let log = function (value =  'Voçê deve passar um  valor para essa função!') {
   console.log(value)
 }
-
-for (let c = 1; c <= 7; c ++){
-  // mensagem(`Esta é a ${c}ª vez que essa string é exibida.`)
-} 
+// for (let i = 0; i < 7; i++) {
+//   log(`Esta é a ${i + 1}ª vez que essa string é exibida.`)
+// }0
 /*
   04
 
@@ -57,15 +53,6 @@ for (let c = 1; c <= 7; c ++){
 
 const millennialWords = ['lol', 'yolo', 'troll', 'stalkear', 'selfie', 'influencer', 'crush', 'fitness', 'hater', 'bae', 'random', 'kawaii', 'outfit', 'mood', 'fail']
 
-let ArrayToUpperCase = function (array = []) {
-  let Novoarray = []
-
-  for (let i = 0; i < array.length; i++) {
-    Novoarray.push(array[i].toUpperCase())
-  }
-  return Novoarray
-}
-mensagem(ArrayToUpperCase(millennialWords))
 /*
   05
 
