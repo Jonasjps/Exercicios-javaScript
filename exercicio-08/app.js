@@ -6,6 +6,11 @@
   - Previna que esses parâmetros recebam undefined;
   - Exiba o resultado no console, sem inserir um console.log() dentro da função.
 */
+function Multiplicação (numeroUm = 0,  numeroDois = 0) {
+  return numeroUm * numeroDois
+}
+// console.log(Multiplicação(15, 2)) 
+
 
 /*
   02
@@ -14,6 +19,11 @@
     **function expression** que retorne o resultado da **divisão** entre esses  
     2 números.
 */
+let Divisão = function (numeroUm = 0, numeroDois = 0) {
+  return numeroUm / numeroDois
+}
+
+// console.log(Divisão(40, 4))
 /*
   03
 
@@ -26,6 +36,15 @@
 
   "Esta é a Xª vez que essa string é exibida."
 */
+function log (value = 'Voçê precisa passar um valor como argumento dessa função!') {
+  console.log(value)  
+}
+for (let i = 0; i < 7; i++) {
+  
+  const iteração = i + 1
+
+  // log(`Esta é a ${iteração}ª vez que essa string é exibida.`)
+}
 /*
   04
 
@@ -38,6 +57,20 @@
 */
 
 const millennialWords = ['lol', 'yolo', 'troll', 'stalkear', 'selfie', 'influencer', 'crush', 'fitness', 'hater', 'bae', 'random', 'kawaii', 'outfit', 'mood', 'fail']
+
+let newArray = [] 
+
+let StringToUpperCase = function (array = []) {
+  
+  for (let c = 0; c < array.length; c++) {
+
+    const ArrayMaisculo = array[c].toUpperCase()
+
+    newArray.push(ArrayMaisculo)
+  }
+  return newArray
+} 
+// log(StringToUpperCase(millennialWords))
 /*
   05
 
@@ -51,6 +84,23 @@ const millennialWords = ['lol', 'yolo', 'troll', 'stalkear', 'selfie', 'influenc
 
 const randomNumbers = [-2, 93, 34, -1, 1, 93, 11, -7, 47, -3]
 
+let numberPositive = []
+let numberNegativo = []
+
+let isPositive = function (number = 0) {
+  return number >= 0
+}
+for (let i = 0; i < randomNumbers.length; i++){
+ 
+  const Positivo = isPositive(randomNumbers[i])
+ 
+  if (Positivo) {
+    numberPositive++
+  } else {
+    numberNegativo++
+  }
+}
+// console.log(`O array "randomNumbers" possui ${randomNumbers.length} números, sendo ${numberPositive} positivos e ${numberNegativo} negativos.`)
 /*
   06
 
@@ -60,8 +110,23 @@ const randomNumbers = [-2, 93, 34, -1, 1, 93, 11, -7, 47, -3]
   - Exiba o novo array no console, sem inserir um console.log() dentro da  
     função.
 */
+let newarray = []
  
-// getOddNumbers([83, 52, 31, 73, 98, 37, 61, 56, 12, 24, 35, 3, 34, 80, 42])
+let getOddNumbers = function (number = 0 ) {
+  for (let c = 0; c < number.length; c++){
+    
+    const negativos = number[c] % 2 === 1
+
+    if (negativos){
+      
+      const NumberArray = number[c]
+
+      newarray.push(NumberArray)
+    }
+  }
+  return newarray
+ }
+// log(getOddNumbers([83, 52, 31, 73, 98, 37, 61, 56, 12, 24, 35, 3, 34, 80, 42])) 
 /*
   07
 
@@ -98,3 +163,13 @@ const functions = [
   function () { return 'Índias' },
   function () { return 'Ocidentais.'}
 ]
+let Frase = ''
+
+for (let c = 0; c < functions.length; c++ ) {
+
+  const GrupoDeFunctions = functions[c]()
+
+  Frase += `${GrupoDeFunctions} `
+}
+
+// console.log(Frase)
