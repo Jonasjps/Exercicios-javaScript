@@ -67,6 +67,11 @@ const MetodoIncludes = ArrayBoolean(15,[1,4,7,15,20])
   - Crie uma função que retorna a concatenação de 2 arrays, passados como  
     argumentos em sua invocação;
 */
+const ArraysConcat = (arrayUm, arrayDois) => arrayUm.concat(arrayDois)
+
+const MetodoConcat = ArraysConcat(['Computador', 'Copo', 'fones'],['Smartphone', 'Android', 'Tablete'])
+
+// console.log(MetodoConcat)
 /*
   07
 
