@@ -16,17 +16,12 @@
 //   return String(value)
 // }
 
-const convertToString = value => String(value)
-// console.log(convertToString('Jonas Pessoa'))
 /*
   02
 
   - Crie uma função que retorne a quantidade de caracteres que uma string  
     recebida por parâmetro possui.
 */
-const QuantidadeDeCaracteres = value => value.length  
- 
-// console.log(QuantidadeDeCaracteres('Virginia'))
 /*
   03
 
@@ -36,9 +31,6 @@ const QuantidadeDeCaracteres = value => value.length
 
   "CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO"
 */
-const StringToLowerCase = metodo =>  metodo.toLowerCase()
-
-// console.log(StringToLowerCase('CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO'))
 
 /*
 
@@ -47,33 +39,19 @@ const StringToLowerCase = metodo =>  metodo.toLowerCase()
   - Crie uma função que recebe 2 parâmetros: um caractere e uma string;
   - Ao ser invocada, a função deve retornar o index do caractere na string.
 */
-const DoisParamentros = (caractere, string) => string.indexOf(caractere)
 
-const argumentosDaFunção = DoisParamentros('i','Virginia')
-
-// console.log(argumentosDaFunção)
 /*
   05
 
   - Crie uma função que, ao ser invocada, retorna um boolean indicando se o item  
     passado por argumento existe no array (também passado por argumento).
 */
-const MetodoIncludes = (string , array) =>  array.includes(string)
-
-const includes = MetodoIncludes('Marley',['Jonas','Virginia','Marley','Maria'])
-
-// console.log(includes)
 /*
   06
 
   - Crie uma função que retorna a concatenação de 2 arrays, passados como  
     argumentos em sua invocação;
 */
-const ArrayConcat = (arrayUm, arrayDois) => arrayUm.concat(arrayDois)
-
-const InvocaçãoDaFunção = ArrayConcat([1,2,3,4], [5,6,7,8])
-
-// console.log(InvocaçãoDaFunção)
 /*
   07
 
@@ -87,9 +65,6 @@ const InvocaçãoDaFunção = ArrayConcat([1,2,3,4], [5,6,7,8])
   - Crie uma função que retorna se o valor passado como argumento em sua  
     invocação é null.
 */
-const valueNull = (number = null) =>  number
-
-// console.log(valueNull())
 /*
   09
 
@@ -100,12 +75,6 @@ const valueNull = (number = null) =>  number
     argumento a função que exibe seu nome no console e veja se o nome realmente  
     foi exibido.
 */
-const funçãoDeCallback = callback =>   callback()
-
-const nome = () => {
-  console.log('Jonas pessoa')
-}
-// funçãoDeCallback(nome)
 
 /*
 
@@ -118,11 +87,6 @@ const nome = () => {
   - Faça com que a invocação da função descrita no 1º item deste exercício (10)  
     resulte no triplo de 33.
 */
-const hoje = callback => callback(3)
-
-const triplo = number => number * 33
-
-// console.log(hoje(triplo))
 /*
   11
 
@@ -134,11 +98,6 @@ const triplo = number => number * 33
 
 const numbers = [1, 2, 3]
 
-const mensagem = (number,indice,array) => {
-  console.log(`O ${number}º item do array ${array} é ${indice}.`)
-}
-
-// numbers.forEach(mensagem)
 
 /*
   12
@@ -150,14 +109,6 @@ const mensagem = (number,indice,array) => {
 const letters = ['v', 'e', 'p']
 
 let lettersCopy = []
-
-const ArrayForEach = (array) => {
-  lettersCopy.push(array)
-}
-
-letters.forEach(ArrayForEach)
-
-// console.log(lettersCopy)
 
 // for (let i = 0; i < letters.length; i++) {
 //   lettersCopy.push(letters[i])
@@ -189,14 +140,6 @@ const review = [
 ]
 const section = document.querySelector('[data-js="section"]')
 
-let HTMLtemplate = ''
-
-review.forEach(string => {
-  HTMLtemplate += `<p>${string}</p> ` 
-})
-
-section.innerHTML += HTMLtemplate
-
 /*
   14
 
@@ -217,12 +160,3 @@ section.innerHTML += HTMLtemplate
     pelo restante da quantidade de pessoas que curtiram o post (além das duas  
     pessoas já mencionadas no início da mensagem).
 */
-let social = (array = []) => {
-  
-  if (array > 0) {
-     'Ninguem curtiu isso'
-  } 
-  return array
-}
-
-// console.log(social())
