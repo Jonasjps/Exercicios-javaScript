@@ -16,14 +16,16 @@
 //   return String(value)
 // }
 const convertToString = value => value
-console.log(convertToString('Olá'))
+// console.log(convertToString('Olá'))
 /*
   02
 
   - Crie uma função que retorne a quantidade de caracteres que uma string  
     recebida por parâmetro possui.
 */
-const totalCaracteres = () => {}
+const totalCaracteres = string => string.length
+
+console.log(totalCaracteres('Pessoa')) 
 /*
   03
 
