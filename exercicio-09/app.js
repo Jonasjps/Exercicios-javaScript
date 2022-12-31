@@ -38,7 +38,7 @@ const stringToLowerCaser = value => value.toLowerCase()
 
 const Metodo = stringToLowerCaser('CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO')
 
-console.log(Metodo)
+// console.log(Metodo)
 /*
 
   04
@@ -46,7 +46,9 @@ console.log(Metodo)
   - Crie uma função que recebe 2 parâmetros: um caractere e uma string;
   - Ao ser invocada, a função deve retornar o index do caractere na string.
 */
+const StringIndexOf = (caractere, string) => string.indexOf(caractere) 
 
+// console.log(StringIndexOf('i','Paralelepipedo'))
 /*
   05
 
