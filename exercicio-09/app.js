@@ -48,13 +48,19 @@ const Metodo = stringToLowerCaser('CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO 
 */
 const StringIndexOf = (caractere, string) => string.indexOf(caractere) 
 
-// console.log(StringIndexOf('i','Paralelepipedo'))
+const MetodoIndexOf = StringIndexOf('i','Paralelepipedo')
+
+// console.log(MetodoIndexOf)
 /*
   05
 
-  - Crie uma função que, ao ser invocada, retorna um boolean indicando se o item  
-    passado por argumento existe no array (também passado por argumento).
+  - Crie uma função que, ao ser invocada, retorna um boolean indicando se o item  passado por argumento existe no array (também passado por argumento).
 */
+const ArrayBoolean = (number, array) => array.includes(number)
+ 
+const MetodoIncludes = ArrayBoolean(15,[1,4,7,15,20])
+
+// console.log(MetodoIncludes)
 /*
   06
 
