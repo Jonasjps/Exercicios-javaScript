@@ -25,17 +25,20 @@ const convertToString = value => value
 */
 const totalCaracteres = string => string.length
 
-console.log(totalCaracteres('Pessoa')) 
+// console.log(totalCaracteres('Pessoa')) 
 /*
   03
-
   - Crie uma função que retorne todos os caracteres de uma string em letras  
     minúsculas;  
   - Utilize a função para exibir a string abaixo no console.
 
   "CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO"
 */
+const stringToLowerCaser = value => value.toLowerCase() 
 
+const Metodo = stringToLowerCaser('CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO')
+
+console.log(Metodo)
 /*
 
   04
