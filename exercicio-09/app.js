@@ -12,13 +12,21 @@
   - Converta a função abaixo em uma arrow function e utilize-a para exibir um  
     valor no console.
 */
+// function convertToString (value) {
+//   return String(value)
+// }
 
+const convertToString = value => String(value)
+// console.log(convertToString('Jonas Pessoa'))
 /*
   02
 
   - Crie uma função que retorne a quantidade de caracteres que uma string  
     recebida por parâmetro possui.
 */
+const QuantidadeDeCaracteres = value => value.length  
+ 
+// console.log(QuantidadeDeCaracteres('Virginia'))
 /*
   03
 
@@ -28,6 +36,10 @@
 
   "CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO"
 */
+const StringToLowerCase = metodo =>  metodo.toLowerCase()
+
+// console.log(StringToLowerCase('CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO'))
+
 /*
 
   04
@@ -35,20 +47,33 @@
   - Crie uma função que recebe 2 parâmetros: um caractere e uma string;
   - Ao ser invocada, a função deve retornar o index do caractere na string.
 */
+const DoisParamentros = (caractere, string) => string.indexOf(caractere)
+
+const argumentosDaFunção = DoisParamentros('i','Virginia')
+
+// console.log(argumentosDaFunção)
 /*
   05
 
   - Crie uma função que, ao ser invocada, retorna um boolean indicando se o item  
     passado por argumento existe no array (também passado por argumento).
 */
+const MetodoIncludes = (string , array) =>  array.includes(string)
 
+const includes = MetodoIncludes('Marley',['Jonas','Virginia','Marley','Maria'])
+
+// console.log(includes)
 /*
   06
 
   - Crie uma função que retorna a concatenação de 2 arrays, passados como  
     argumentos em sua invocação;
 */
+const ArrayConcat = (arrayUm, arrayDois) => arrayUm.concat(arrayDois)
 
+const InvocaçãoDaFunção = ArrayConcat([1,2,3,4], [5,6,7,8])
+
+// console.log(InvocaçãoDaFunção)
 /*
   07
 
@@ -62,6 +87,9 @@
   - Crie uma função que retorna se o valor passado como argumento em sua  
     invocação é null.
 */
+const valueNull = (number = null) =>  number
+
+// console.log(valueNull())
 /*
   09
 
@@ -72,6 +100,12 @@
     argumento a função que exibe seu nome no console e veja se o nome realmente  
     foi exibido.
 */
+const funçãoDeCallback = callback =>   callback()
+
+const nome = () => {
+  console.log('Jonas pessoa')
+}
+// funçãoDeCallback(nome)
 
 /*
 
@@ -84,7 +118,11 @@
   - Faça com que a invocação da função descrita no 1º item deste exercício (10)  
     resulte no triplo de 33.
 */
+const hoje = callback => callback(3)
 
+const triplo = number => number * 33
+
+// console.log(hoje(triplo))
 /*
   11
 
@@ -94,7 +132,13 @@
   "O Xº item do array [X, X, X] é X."
 */
 
+const numbers = [1, 2, 3]
 
+const mensagem = (number,indice,array) => {
+  console.log(`O ${number}º item do array ${array} é ${indice}.`)
+}
+
+// numbers.forEach(mensagem)
 
 /*
   12
@@ -103,8 +147,21 @@
   - Após a conversão, verifique se a cópia do array lettersCopy realmente foi  
     criada.
 */
+const letters = ['v', 'e', 'p']
 
+let lettersCopy = []
 
+const ArrayForEach = (array) => {
+  lettersCopy.push(array)
+}
+
+letters.forEach(ArrayForEach)
+
+// console.log(lettersCopy)
+
+// for (let i = 0; i < letters.length; i++) {
+//   lettersCopy.push(letters[i])
+// }
 /*
   13
 
@@ -130,7 +187,15 @@ const review = [
   'Michael é um ótimo autor, esse sim pesquisa muito antes de escrever um livro, além da história que já prende sua atenção, ele fala bastante de genética (pra explicar como os dinossauros foram criados) e acaba falando um pouco de programação (informática), por causa dos programas avançados e modernos que o parque tinha. E isso foi uma das coisas que eu achei muito legal, ele explica as coisas com gráficos, tabelas, códigos ... enfim, o cara é foda hahaha.',
   'Recomendo esse livro pra quem curte uma boa história de ficção. Apesar de muita gente pensar que o livro não tem graça, porque o legal mesmo é ver o dinossauro no filme, com todos os efeitos especiais, eu digo pra deixar esse pensamento de lado, pois a história é tão bem contada e os detalhes são tão bem relatados, que você passa a fazer parte da história, e vive todas as emoções hahaha.'
 ]
+const section = document.querySelector('[data-js="section"]')
 
+let HTMLtemplate = ''
+
+review.forEach(string => {
+  HTMLtemplate += `<p>${string}</p> ` 
+})
+
+section.innerHTML += HTMLtemplate
 
 /*
   14
@@ -152,3 +217,12 @@ const review = [
     pelo restante da quantidade de pessoas que curtiram o post (além das duas  
     pessoas já mencionadas no início da mensagem).
 */
+let social = (array = []) => {
+  
+  if (array > 0) {
+     'Ninguem curtiu isso'
+  } 
+  return array
+}
+
+// console.log(social())
