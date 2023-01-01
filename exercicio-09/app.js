@@ -14,8 +14,8 @@
 // function convertToString (value) {
 //   return String(value)
 // }
-const convertToString = value => value
-
+const convertToString = value => String(value)
+ 
 // console.log(convertToString('Jonas'))
 /*
   02
@@ -92,26 +92,26 @@ const MetodoPop = ArrayPop([1,2,3,4])
   - Crie uma função que retorna se o valor passado como argumento em sua  
     invocação é null.
 */
-const StringNull = (string = null) => string
+const StringNull = string  => string === null
 
-// console.log(StringNull())
+// console.log(StringNull(null))
 /*
   09
 
   - Crie uma função que apenas invoca uma função de callback recebida por  
     parâmetro;
-  - Crie outra função que apenas exibe seu nome no console;
+   - Crie outra função que apenas exibe seu nome no console;
   - Invoque a função que recebe um callback por parâmetro, passando como  
     argumento a função que exibe seu nome no console e veja se o nome realmente  
     foi exibido.
 */
 const FunçãoCallback = callback => callback()
 
-const MeuNome = nome => {
- return nome = 'Jonas Pessoa'
+const MeuNome = () => {
+ console.log('Jonas Pessoa')
 }
-// console.log(FunçãoCallback(MeuNome)) 
-/*
+// FunçãoCallback(MeuNome) 
+/* 
 
   10
 
@@ -119,14 +119,13 @@ const MeuNome = nome => {
     A invocação da função recebida por parâmetro deve receber um valor como  
     argumento;
   - Crie uma função que retorna o triplo de um número recebido por parâmetro;
-  - Faça com que a invocação da função descrita no 1º item deste exercício (10)  
-    resulte no triplo de 33.
+  - Faça com que a invocação da função descrita no 1º item deste exercício (10)  resulte no triplo de 33.
 */
-const newFunc = callback => callback(33)
+const newFunc = (value,callback ) => callback(value)
 
 const triplo = number => number * 3
 
-// console.log(newFunc(triplo))
+// console.log(newFunc(33,triplo))
 /*
   11
 
@@ -137,8 +136,12 @@ const triplo = number => number * 3
 
 const numbers = [1, 2, 3]
 
-const MetodoForEach = (number, array, index) => {
-  console.log(`O ${number}º item do array ${index} é ${array}.`) 
+const MetodoForEach = (number, index, array ) => {
+  
+  const itemposition = index + 1
+  const item = array.join(', ') 
+
+  console.log(`O ${itemposition}º item do array [${item}] é ${number}.`) 
 }
 
 // numbers.forEach(MetodoForEach)
@@ -185,16 +188,11 @@ const section = document.querySelector('[data-js="section"]')
 
 let templateHTML = ''
 
-for (let i = 0; i < review.length; i++) {
-
-  const texto = review[i]
-
-  templateHTML += `<p>${texto}</p> `
+const mensagem = string => {
+  templateHTML += `<p>${string}</p>`
 }
-
-// section.innerHTML += templateHTML
-
-
+review.forEach(mensagem)
+section.innerHTML += templateHTML
 
 
 
@@ -218,7 +216,7 @@ for (let i = 0; i < review.length; i++) {
     pessoas já mencionadas no início da mensagem).
 */
 
-const totalLikes = (nomes) => {
+const totalLikes = (nomes = []) => {
  
   const nomesZero = nomes[0]
   const nomesUm = nomes[1]
@@ -227,21 +225,17 @@ const totalLikes = (nomes) => {
 
   switch(nomes.length) {
     case 0: 
-      console.log('Ninguem Curtiu isso')
-    return 
+      return 'Ninguem Curtiu isso'
     case 1:
-      console.log(`${nomesZero} curtiu isso`)
-      return
+      return `${nomesZero} curtiu isso`
     case 2:
-      console.log(`${nomesZero} e ${nomesUm} curtiram isso`)
-      return
+      return `${nomesZero} e ${nomesUm} curtiram isso`
     case 3:
-      console.log(`${nomesZero}, ${nomesUm} e ${nomesDois} curtiram isso`)
-      return
+      return `${nomesZero}, ${nomesUm} e ${nomesDois} curtiram isso`
     default:
-      console.log(`${nomesZero}, ${nomesUm} e mais ${totalnomes} pessoas curtiram isso`)  
+      return `${nomesZero}, ${nomesUm} e mais ${totalnomes} pessoas curtiram isso`
     }
 
 }
 
-// totalLikes(['Jonas','Virginia','Marley','Vanda','Guilherme'])
+console.log(totalLikes(['Jonas','Virginia','Marley','Vanda','Guilherme']))
