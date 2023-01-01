@@ -16,16 +16,19 @@
 //   return String(value)
 // }
 const convertToString = value => value
-// console.log(convertToString('Olá'))
+
+// console.log(convertToString('Ola'))
 /*
   02
 
   - Crie uma função que retorne a quantidade de caracteres que uma string  
     recebida por parâmetro possui.
 */
-const totalCaracteres = string => string.length
+const TotalCaractere = string => string.length
 
-// console.log(totalCaracteres('Pessoa')) 
+const PropriedadeLength = TotalCaractere('Jonas')
+
+// console.log(PropriedadeLength)
 /*
   03
   - Crie uma função que retorne todos os caracteres de uma string em letras  
@@ -34,11 +37,12 @@ const totalCaracteres = string => string.length
 
   "CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO"
 */
-const stringToLowerCaser = value => value.toLowerCase() 
+const StringToLowerCase = Frase => Frase.toLowerCase()
 
-const Metodo = stringToLowerCaser('CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO')
+const MetodoToLowerCase = 'CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO'
 
-// console.log(Metodo)
+// console.log(StringToLowerCase(MetodoToLowerCase))
+ 
 /*
 
   04
@@ -46,38 +50,23 @@ const Metodo = stringToLowerCaser('CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO 
   - Crie uma função que recebe 2 parâmetros: um caractere e uma string;
   - Ao ser invocada, a função deve retornar o index do caractere na string.
 */
-const StringIndexOf = (caractere, string) => string.indexOf(caractere) 
-
-const MetodoIndexOf = StringIndexOf('i','Paralelepipedo')
-
-// console.log(MetodoIndexOf)
 /*
   05
 
   - Crie uma função que, ao ser invocada, retorna um boolean indicando se o item  passado por argumento existe no array (também passado por argumento).
 */
-const ArrayBoolean = (number, array) => array.includes(number)
- 
-const MetodoIncludes = ArrayBoolean(15,[1,4,7,15,20])
-
-// console.log(MetodoIncludes)
 /*
   06
 
   - Crie uma função que retorna a concatenação de 2 arrays, passados como  
     argumentos em sua invocação;
 */
-const ArraysConcat = (arrayUm, arrayDois) => arrayUm.concat(arrayDois)
-
-const MetodoConcat = ArraysConcat(['Computador', 'Copo', 'fones'],['Smartphone', 'Android', 'Tablete'])
-
-// console.log(MetodoConcat)
 /*
   07
 
-  - Crie uma função que retorna o array passado como argumento em sua invocação,  
-    mas com o último item removido.
+  - Crie uma função que retorna o array passado como argumento em sua invocação, mas com o último item removido.
 */
+
 
 /*
   08
