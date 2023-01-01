@@ -105,7 +105,12 @@ const StringNull = (string = null) => string
     argumento a função que exibe seu nome no console e veja se o nome realmente  
     foi exibido.
 */
+const FunçãoCallback = callback => callback()
 
+const MeuNome = nome => {
+ return nome = 'Jonas Pessoa'
+}
+// console.log(FunçãoCallback(MeuNome)) 
 /*
 
   10
@@ -117,40 +122,50 @@ const StringNull = (string = null) => string
   - Faça com que a invocação da função descrita no 1º item deste exercício (10)  
     resulte no triplo de 33.
 */
+const newFunc = callback => callback(33)
+
+const triplo = number => number * 3
+
+// console.log(newFunc(triplo))
 /*
   11
 
-  - Utilizando um forEach, baseado no array "numbers", a cada iteração, exiba a  
-    mensagem abaixo no console, substituindo os "X" pelas informações corretas;
+  - Utilizando um forEach, baseado no array "numbers", a cada iteração, exiba a  mensagem abaixo no console, substituindo os "X" pelas informações corretas;
   
   "O Xº item do array [X, X, X] é X."
 */
 
 const numbers = [1, 2, 3]
 
+const MetodoForEach = (number, array, index) => {
+  console.log(`O ${number}º item do array ${index} é ${array}.`) 
+}
+
+// numbers.forEach(MetodoForEach)
 
 /*
   12
 
   - Converta o for loop abaixo em um forEach;
-  - Após a conversão, verifique se a cópia do array lettersCopy realmente foi  
-    criada.
+  - Após a conversão, verifique se a cópia do array lettersCopy realmente foi  criada.
 */
 const letters = ['v', 'e', 'p']
 
 let lettersCopy = []
 
-// for (let i = 0; i < letters.length; i++) {
+// for (let i = 0; i <p letters.length; i++) {
 //   lettersCopy.push(letters[i])
 // }
+letters.forEach((array) => {
+  lettersCopy.push(array)
+})
+// console.log(lettersCopy)
 /*
   13
 
   - Inclua o markup abaixo em seu index.html;
-  - Gere um template HTML com parágrafos. Cada parágrafo deve conter um item do  
-    array "review";
-  - Ao gerar o template, verifique no browser se os parágrafos foram incluídos  
-    dentro da section vazia do markup abaixo.
+  - Gere um template HTML com parágrafos. Cada parágrafo deve conter um item do  array "review";
+  - Ao gerar o template, verifique no browser se os parágrafos foram incluídos  dentro da section vazia do markup abaixo.
 
   <article>
     <header>
@@ -160,8 +175,6 @@ let lettersCopy = []
     <section data-js="section"></section>
   </article>
 */
-
-
 const review = [
   'Eu sempre adorei o filme e quando descobri que tinha o livro também fiquei doido. Demorei um pouco mas acabei comprando e finalmente li \o/.',
   'O primeiro filme foi baseado nesse livro, porém o livro (como sempre) é muito mais completo, com mais personagens, mais acontecimentos e até mesmo mais dinossauros. Na verdade nesse livro tem coisas do segundo e terceiro filme também, eles mudaram bastante nos filmes, acho que pra ficar mais comercial, e se o filme é bom, o livro é 100 vezes melhor.',
@@ -170,11 +183,25 @@ const review = [
 ]
 const section = document.querySelector('[data-js="section"]')
 
+let templateHTML = ''
+
+for (let i = 0; i < review.length; i++) {
+
+  const texto = review[i]
+
+  templateHTML += `<p>${texto}</p> `
+}
+
+// section.innerHTML += templateHTML
+
+
+
+
+
 /*
   14
 
-  - Implemente uma função que retorna uma string com a quantidade de pessoas que  
-    curtiram um post, conforme descrito a seguir;
+  - Implemente uma função que retorna uma string com a quantidade de pessoas que  curtiram um post, conforme descrito a seguir;
   - A função deve receber por parâmetro um array com os nomes das pessoas que  
     curtiram o post/vídeo/foto;  
   - Se o array recebido estiver vazio, a mensagem que a função deve retornar é  
@@ -190,3 +217,31 @@ const section = document.querySelector('[data-js="section"]')
     pelo restante da quantidade de pessoas que curtiram o post (além das duas  
     pessoas já mencionadas no início da mensagem).
 */
+
+const totalLikes = (nomes) => {
+ 
+  const nomesZero = nomes[0]
+  const nomesUm = nomes[1]
+  const nomesDois = nomes[2]
+  const totalnomes = nomes.length -2
+
+  switch(nomes.length) {
+    case 0: 
+      console.log('Ninguem Curtiu isso')
+    return 
+    case 1:
+      console.log(`${nomesZero} curtiu isso`)
+      return
+    case 2:
+      console.log(`${nomesZero} e ${nomesUm} curtiram isso`)
+      return
+    case 3:
+      console.log(`${nomesZero}, ${nomesUm} e ${nomesDois} curtiram isso`)
+      return
+    default:
+      console.log(`${nomesZero}, ${nomesUm} e mais ${totalnomes} pessoas curtiram isso`)  
+    }
+
+}
+
+// totalLikes(['Jonas','Virginia','Marley','Vanda','Guilherme'])
