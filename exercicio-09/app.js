@@ -50,6 +50,7 @@ const MetodoToLowerCase = 'CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO
   - Crie uma função que recebe 2 parâmetros: um caractere e uma string;
   - Ao ser invocada, a função deve retornar o index do caractere na string.
 */
+const StringIndexOf = (caractere, string) => string.indexOf() 
 /*
   05
 
