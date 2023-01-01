@@ -9,26 +9,26 @@
 /*
   01
 
-  - Converta a função abaixo em uma arrow function e utilize-a para exibir um  
-    valor no console.
+  - Converta a função abaixo em uma arrow function e utilize-a para exibir um  valor no console.
 */
 // function convertToString (value) {
 //   return String(value)
 // }
 const convertToString = value => value
 
-// console.log(convertToString('Ola'))
+// console.log(convertToString('Jonas'))
 /*
   02
 
   - Crie uma função que retorne a quantidade de caracteres que uma string  
     recebida por parâmetro possui.
 */
-const TotalCaractere = string => string.length
+const TotalLength = string => string.length
 
-const PropriedadeLength = TotalCaractere('Jonas')
+const PropriedadeLength = TotalLength('Marley') 
 
 // console.log(PropriedadeLength)
+
 /*
   03
   - Crie uma função que retorne todos os caracteres de uma string em letras  
@@ -37,12 +37,11 @@ const PropriedadeLength = TotalCaractere('Jonas')
 
   "CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO"
 */
-const StringToLowerCase = Frase => Frase.toLowerCase()
+const StringTolowerCase = mensagem => mensagem.toLowerCase()
 
-const MetodoToLowerCase = 'CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO'
-
-// console.log(StringToLowerCase(MetodoToLowerCase))
+const MetodoToLowerCase =  'CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO'
  
+// console.log(StringTolowerCase(MetodoToLowerCase) )
 /*
 
   04
@@ -50,31 +49,52 @@ const MetodoToLowerCase = 'CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO
   - Crie uma função que recebe 2 parâmetros: um caractere e uma string;
   - Ao ser invocada, a função deve retornar o index do caractere na string.
 */
-const StringIndexOf = (caractere, string) => string.indexOf() 
+const StringIndexOf = (caractere, string) => string.indexOf(caractere)
+
+const MetodoIndexOf = StringIndexOf('P','SmartPhone') 
+
+// console.log(MetodoIndexOf)
 /*
   05
-
   - Crie uma função que, ao ser invocada, retorna um boolean indicando se o item  passado por argumento existe no array (também passado por argumento).
 */
+const StringBoolean = (number, array) => array.includes(number)
+
+const MetodoIncludes = StringBoolean(7, [1,2,4,5,7,8,10])
+
+// console.log(MetodoIncludes)
 /*
   06
 
   - Crie uma função que retorna a concatenação de 2 arrays, passados como  
     argumentos em sua invocação;
 */
+const ArrayConcat = (arrayUm, arrayDois) => arrayUm.concat(arrayDois)
+
+const MetodoConcat = ArrayConcat(['Maria','José','Gustavo'], ['Guilherme', 'Fernando','Jeferson'])
+
+// console.log(MetodoConcat)
 /*
   07
 
   - Crie uma função que retorna o array passado como argumento em sua invocação, mas com o último item removido.
 */
+const ArrayPop = (array) => {
+  array.pop()
+  return array  
+}
+const MetodoPop = ArrayPop([1,2,3,4])
 
-
+// console.log(MetodoPop)
 /*
   08
 
   - Crie uma função que retorna se o valor passado como argumento em sua  
     invocação é null.
 */
+const StringNull = (string = null) => string
+
+// console.log(StringNull())
 /*
   09
 
