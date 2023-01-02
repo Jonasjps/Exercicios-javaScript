@@ -207,7 +207,7 @@ section.innerHTML += templateHTML
   - Se o array conter apenas um nome, como "Rafael", por exemplo, a mensagem  
     retornada deve ser "Rafael curtiu isso";  
   - Se o array conter 2 nomes, a mensagem retornada deve ser  
-    "${nomes[0]} e ${nomes[0]} curtiram isso";  
+    "NOME_1 e NOME_2 curtiram isso";  
   - Se o array conter 3 nomes, a mensagem retornada deve ser  
     "NOME_1, NOME_2 e NOME_3 curtiram isso";  
   - Se o array conter 4 ou mais nomes, a mensagem retornada deve ser  
@@ -216,26 +216,24 @@ section.innerHTML += templateHTML
     pessoas já mencionadas no início da mensagem).
 */
 
-const totalLikes = (nomes = []) => {
- 
+const TotalDeLikes = (nomes = []) => {
+
   const nomesZero = nomes[0]
   const nomesUm = nomes[1]
   const nomesDois = nomes[2]
-  const totalnomes = nomes.length -2
+  const totalDeNomes = nomes.length 
 
   switch(nomes.length) {
-    case 0: 
-      return 'Ninguem Curtiu isso'
+    case 0:
+      return 'Ninguem curtiu isso'
     case 1:
       return `${nomesZero} curtiu isso`
-    case 2:
+    case 2: 
       return `${nomesZero} e ${nomesUm} curtiram isso`
     case 3:
       return `${nomesZero}, ${nomesUm} e ${nomesDois} curtiram isso`
     default:
-      return `${nomesZero}, ${nomesUm} e mais ${totalnomes} pessoas curtiram isso`
-    }
-
+      return `${nomesZero}, ${nomesUm} e mais ${totalDeNomes} pessoas curtiram isso`
+  }
 }
-
-console.log(totalLikes(['Jonas','Virginia','Marley','Vanda','Guilherme']))
+console.log(TotalDeLikes(['Jonas','Maria','Thalita','Virginia','Marley']))
