@@ -42,6 +42,8 @@ const MetodoSoud = cat.sound()
   - Adicione 2 anos à idade do gato e exiba a idade atualizada no console.
 */
 
+  cat.age = 7
+  console.log(cat.age)
 /*
   04
 
