@@ -14,12 +14,12 @@ let cat = {
   name: 'Garfild',
   age: 5,
   color: 'Caramelo',
-  bestFriends : ['Tom', 'Alfredo', 'SnowBell'],
+  bestFriends : ['Tom','SnowBell'],
   sound: function () {
-    console.log('Miau')
+    return 'Miau'
   }
 }
-  console.log(cat)
+  // console.log(cat)
 /*
   02
 
@@ -28,7 +28,14 @@ let cat = {
 
   Até aqui, o objeto "cat" possui as seguintes propriedades e valores: "name", que recebeu "X", "age", que recebeu "X", "color", que recebeu "X", "bestFriends", que recebeu um array com os itens "X" e "X", e "sound", que recebeu uma função que retorna "X".
 */
+const propriedadeName = cat.name
+const propriedadeAge = cat.name
+const propriedadeColor = cat.color
+const propriedadeBestFriendUm = cat.bestFriends[1]
+const propriedadeBestFriendsDois = cat.bestFriends[2]
+const MetodoSoud = cat.sound()
 
+// console.log( `Até aqui, o objeto "cat" possui as seguintes propriedades e valores: "name", que recebeu "${propriedadeName}", "age", que recebeu "${propriedadeAge}", "color", que recebeu "${propriedadeColor}", "bestFriends", que recebeu um array com os itens "${propriedadeBestFriendUm}" e "${propriedadeBestFriendsDois}", e "sound", que recebeu uma função que retorna "${MetodoSoud}"`) 
 /*
   03
 
