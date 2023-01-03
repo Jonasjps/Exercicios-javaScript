@@ -43,7 +43,7 @@ const MetodoSoud = cat.sound()
 */
 
   cat.age = 7
-  console.log(cat.age)
+  // console.log(cat.age)
 /*
   04
 
@@ -51,8 +51,13 @@ const MetodoSoud = cat.sound()
   - Exiba o array de amigos no console para verificar se o novo amigo(a) foi  
     adicionado.
 */
+  function amigo() {
+   cat.bestFriends.push('shena') 
+ }
+amigo()
 
-/*
+// console.log(cat.bestFriends)
+ /*
   05
 
   - Crie uma função que adiciona mais uma cor à cor do gato;
@@ -60,7 +65,13 @@ const MetodoSoud = cat.sound()
   - Exiba a nova cor do gato no console, também utilizando a sintaxe de  
     colchetes.
 */
-
+let NovaCor = []
+function Cor() {
+  NovaCor += cat.color
+  return NovaCor
+}
+NovaCor
+console.log(Cor())
 /*
   06
 
