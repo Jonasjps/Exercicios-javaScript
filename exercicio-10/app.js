@@ -146,15 +146,14 @@ const funçãoObjetc =  (type) => {
     undefined: 'Representa um valor não-setado.',
     object: 'Arrays, Datas, Objetos literais, Funções, etc.'
   }
-  if (objeto === null){
+  if (type === 'null'){
     return objeto.null
   } 
-  if (objeto === 'undefined') {
+  if (type === 'undefined') {
     return objeto.undefined
   }
-  if (objeto === 'object') {
+  if (type === 'object') {
     return objeto.object
   }
-  return type
 }
-console.log(funçãoObjetc(undefined))
+console.log(funçãoObjetc('object'))
