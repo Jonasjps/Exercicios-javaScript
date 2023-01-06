@@ -125,8 +125,8 @@ const HyundaiIx35 = car === 'Hyundai iX35'
 }
 
 
-console.log(isAnSUV('Honda Civic'))
-console.log(isAnSUV('Ford EcoSport'))
+// console.log(isAnSUV('Honda Civic'))
+// console.log(isAnSUV('Ford EcoSport'))
 
 /*
   09
@@ -140,3 +140,21 @@ console.log(isAnSUV('Ford EcoSport'))
     propriedades, retorne a mensagem que a propriedade armazena;
   - Teste a função, exibindo no console a mensagem de cada propriedade.
 */
+const funçãoObjetc =  (type) => {
+  let objeto  = {
+    null: 'Seta, explicitamente, uma variável sem valor.',
+    undefined: 'Representa um valor não-setado.',
+    object: 'Arrays, Datas, Objetos literais, Funções, etc.'
+  }
+  if (objeto === null){
+    return objeto.null
+  } 
+  if (objeto === 'undefined') {
+    return objeto.undefined
+  }
+  if (objeto === 'object') {
+    return objeto.object
+  }
+  return type
+}
+console.log(funçãoObjetc(undefined))
