@@ -101,7 +101,7 @@ let dog = {
     return 'Au Au'
   }
 }
-console.log(`A soma das idades de ${cat.name} e ${dog.name} é ${cat.age + dog.age}.`)
+// console.log(`A soma das idades de ${cat.name} e ${dog.name} é ${cat.age + dog.age}.`)
 /*
   08
 
@@ -111,15 +111,22 @@ console.log(`A soma das idades de ${cat.name} e ${dog.name} é ${cat.age + dog.a
 */
 
 const isAnSUV = car => {
-  if (car === 'Honda HR-V' || car === 'Jeep Renegade' || car === 'Ford EcoSport' || car === 'Hyundai iX35') {
+
+const HondaHRV = car === 'Honda HR-V'
+const JeepRenegade =  car === 'Jeep Renegade'
+const FordEcoSport = car === 'Ford EcoSport'
+const HyundaiIx35 = car === 'Hyundai iX35'
+
+  if (HondaHRV || JeepRenegade || FordEcoSport || HyundaiIx35) {
     return true
   }
 
   return false
 }
 
-// console.log(isAnSUV('Honda Civic'))
-// console.log(isAnSUV('Ford EcoSport'))
+
+console.log(isAnSUV('Honda Civic'))
+console.log(isAnSUV('Ford EcoSport'))
 
 /*
   09
