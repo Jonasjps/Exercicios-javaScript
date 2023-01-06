@@ -71,15 +71,18 @@ function Cor() {
   return NovaCor
 }
 NovaCor
-console.log(Cor())
+// console.log(Cor())
+
 /*
   06
 
-  - Crie uma função que retorna um boolean indicando se um valor recebido por  
-    parâmetro é um objeto;
+  - Crie uma função que retorna um boolean indicando se um valor recebido por  parâmetro é um objeto;
   - Utilize a função para exibir no console se "cat" é um objeto.
 */
-
+function ValueBoolean(value) {
+  return typeof value === 'object'
+}
+// console.log(ValueBoolean(cat))
 /*
   07
 
@@ -89,7 +92,16 @@ console.log(Cor())
 
   "A soma das idades de NOME_DO_GATO e NOME_DO_CACHORRO é RESULTADO_DA_SOMA."
 */
+let dog = {
 
+  name: 'Marley',
+  age: 4,
+  bestFriends: ['katy','Bob'],
+  sound: function () {
+    return 'Au Au'
+  }
+}
+console.log(`A soma das idades de ${cat.name} e ${dog.name} é ${cat.age + dog.age}.`)
 /*
   08
 
