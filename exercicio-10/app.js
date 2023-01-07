@@ -156,4 +156,4 @@ const funçãoObjetc =  (type) => {
     return objeto.object
   }
 }
-console.log(funçãoObjetc('object'))
+console.log(funçãoObjetc('null'))
