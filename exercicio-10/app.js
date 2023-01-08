@@ -34,13 +34,16 @@ const AmigosUm = cat.bestFriends[0]
 const AmigosDois = cat.bestFriends[1]
 const Som = cat.sound()
 
-console.log(` Até aqui, o objeto "cat" possui as seguintes propriedades e valores: "name", que recebeu "${Nome}", "age", que recebeu "${Idade}", "color", que recebeu "${Cor}", "bestFriends", que recebeu um array com os itens "${AmigosUm}" e "${AmigosDois}", e "sound", que recebeu uma função que retorna "${Som}".`)
+// console.log(` Até aqui, o objeto "cat" possui as seguintes propriedades e valores: "name", que recebeu "${Nome}", "age", que recebeu "${Idade}", "color", que recebeu "${Cor}", "bestFriends", que recebeu um array com os itens "${AmigosUm}" e "${AmigosDois}", e "sound", que recebeu uma função que retorna "${Som}".`)
+
 /*
   03
-
   - Adicione 2 anos à idade do gato e exiba a idade atualizada no console.
 */
 
+cat.age = 8
+
+// console.log(cat.age)
 /*
   04
 
@@ -48,6 +51,13 @@ console.log(` Até aqui, o objeto "cat" possui as seguintes propriedades e valor
   - Exiba o array de amigos no console para verificar se o novo amigo(a) foi  
     adicionado.
 */
+let novoamigo = 'SnowBell'
+
+const AmigoPush = () => {
+  cat.bestFriends.push(novoamigo)
+  return cat.bestFriends
+}
+// console.log(AmigoPush())
 
  /*
   05
