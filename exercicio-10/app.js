@@ -9,7 +9,16 @@
     - sound, que é um método que retorna o miado do gato.
   - Exiba o objeto no console.
 */
-
+const cat = {
+  name: 'Alfredo',
+  age: 6,
+  color: 'Branco',
+  bestFriends: ['Garfild','Tom'],
+  sound: function() {
+    return `Miau`
+  }
+}
+// console.log(cat)
 /*
   02
 
