@@ -9,17 +9,6 @@
     - sound, que é um método que retorna o miado do gato.
   - Exiba o objeto no console.
 */
-let cat = {
-
-  name: 'Garfild',
-  age: 5,
-  color: 'Caramelo',
-  bestFriends : ['Tom','SnowBell'],
-  sound: function () {
-    return 'Miau'
-  }
-}
-  // console.log(cat)
 /*
   02
 
@@ -28,22 +17,11 @@ let cat = {
 
   Até aqui, o objeto "cat" possui as seguintes propriedades e valores: "name", que recebeu "X", "age", que recebeu "X", "color", que recebeu "X", "bestFriends", que recebeu um array com os itens "X" e "X", e "sound", que recebeu uma função que retorna "X".
 */
-const propriedadeName = cat.name
-const propriedadeAge = cat.name
-const propriedadeColor = cat.color
-const propriedadeBestFriendUm = cat.bestFriends[1]
-const propriedadeBestFriendsDois = cat.bestFriends[2]
-const MetodoSoud = cat.sound()
-
-// console.log( `Até aqui, o objeto "cat" possui as seguintes propriedades e valores: "name", que recebeu "${propriedadeName}", "age", que recebeu "${propriedadeAge}", "color", que recebeu "${propriedadeColor}", "bestFriends", que recebeu um array com os itens "${propriedadeBestFriendUm}" e "${propriedadeBestFriendsDois}", e "sound", que recebeu uma função que retorna "${MetodoSoud}"`) 
 /*
   03
 
   - Adicione 2 anos à idade do gato e exiba a idade atualizada no console.
 */
-
-  cat.age = 7
-  // console.log(cat.age)
 /*
   04
 
@@ -51,12 +29,6 @@ const MetodoSoud = cat.sound()
   - Exiba o array de amigos no console para verificar se o novo amigo(a) foi  
     adicionado.
 */
-  function amigo() {
-   cat.bestFriends.push('shena') 
- }
-amigo()
-
-// console.log(cat.bestFriends)
  /*
   05
 
@@ -65,13 +37,6 @@ amigo()
   - Exiba a nova cor do gato no console, também utilizando a sintaxe de  
     colchetes.
 */
-let NovaCor = []
-function Cor() {
-  NovaCor += cat.color
-  return NovaCor
-}
-NovaCor
-// console.log(Cor())
 
 /*
   06
@@ -79,10 +44,6 @@ NovaCor
   - Crie uma função que retorna um boolean indicando se um valor recebido por  parâmetro é um objeto;
   - Utilize a função para exibir no console se "cat" é um objeto.
 */
-function ValueBoolean(value) {
-  return typeof value === 'object'
-}
-// console.log(ValueBoolean(cat))
 /*
   07
 
@@ -92,16 +53,7 @@ function ValueBoolean(value) {
 
   "A soma das idades de NOME_DO_GATO e NOME_DO_CACHORRO é RESULTADO_DA_SOMA."
 */
-let dog = {
 
-  name: 'Marley',
-  age: 4,
-  bestFriends: ['katy','Bob'],
-  sound: function () {
-    return 'Au Au'
-  }
-}
-// console.log(`A soma das idades de ${cat.name} e ${dog.name} é ${cat.age + dog.age}.`)
 /*
   08
 
@@ -112,12 +64,7 @@ let dog = {
 
 const isAnSUV = car => {
 
-const HondaHRV = car === 'Honda HR-V'
-const JeepRenegade =  car === 'Jeep Renegade'
-const FordEcoSport = car === 'Ford EcoSport'
-const HyundaiIx35 = car === 'Hyundai iX35'
-
-  if (HondaHRV || JeepRenegade || FordEcoSport || HyundaiIx35) {
+  if (car === 'Honda HR-V'|| car === 'Jeep Renegade' || car === 'Ford EcoSport' || car === 'Hyundai iX35') {
     return true
   }
 
@@ -140,20 +87,3 @@ const HyundaiIx35 = car === 'Hyundai iX35'
     propriedades, retorne a mensagem que a propriedade armazena;
   - Teste a função, exibindo no console a mensagem de cada propriedade.
 */
-const funçãoObjetc =  (type) => {
-  let objeto  = {
-    null: 'Seta, explicitamente, uma variável sem valor.',
-    undefined: 'Representa um valor não-setado.',
-    object: 'Arrays, Datas, Objetos literais, Funções, etc.'
-  }
-  if (type === 'null'){
-    return objeto.null
-  } 
-  if (type === 'undefined') {
-    return objeto.undefined
-  }
-  if (type === 'object') {
-    return objeto.object
-  }
-}
-console.log(funçãoObjetc('null'))
