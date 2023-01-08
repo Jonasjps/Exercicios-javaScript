@@ -9,6 +9,7 @@
     - sound, que é um método que retorna o miado do gato.
   - Exiba o objeto no console.
 */
+
 /*
   02
 
@@ -17,11 +18,13 @@
 
   Até aqui, o objeto "cat" possui as seguintes propriedades e valores: "name", que recebeu "X", "age", que recebeu "X", "color", que recebeu "X", "bestFriends", que recebeu um array com os itens "X" e "X", e "sound", que recebeu uma função que retorna "X".
 */
+
 /*
   03
 
   - Adicione 2 anos à idade do gato e exiba a idade atualizada no console.
 */
+
 /*
   04
 
@@ -29,6 +32,7 @@
   - Exiba o array de amigos no console para verificar se o novo amigo(a) foi  
     adicionado.
 */
+
  /*
   05
 
@@ -44,6 +48,7 @@
   - Crie uma função que retorna um boolean indicando se um valor recebido por  parâmetro é um objeto;
   - Utilize a função para exibir no console se "cat" é um objeto.
 */
+
 /*
   07
 
