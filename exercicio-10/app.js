@@ -9,16 +9,6 @@
     - sound, que é um método que retorna o miado do gato.
   - Exiba o objeto no console.
 */
-const cat = {
-  name: 'Alfredo',
-  age: 6,
-  color: 'Branco',
-  bestFriends: ['Garfild','Tom'],
-  sound: function() {
-    return `Miau`
-  }
-}
-// console.log(cat)
 /*
   02
 
@@ -27,23 +17,13 @@ const cat = {
 
   Até aqui, o objeto "cat" possui as seguintes propriedades e valores: "name", que recebeu "X", "age", que recebeu "X", "color", que recebeu "X", "bestFriends", que recebeu um array com os itens "X" e "X", e "sound", que recebeu uma função que retorna "X".
 */
-const Nome =  cat.name
-const Idade = cat.age
-const Cor = cat.color
-const AmigosUm = cat.bestFriends[0]
-const AmigosDois = cat.bestFriends[1]
-const Som = cat.sound()
-
-// console.log(` Até aqui, o objeto "cat" possui as seguintes propriedades e valores: "name", que recebeu "${Nome}", "age", que recebeu "${Idade}", "color", que recebeu "${Cor}", "bestFriends", que recebeu um array com os itens "${AmigosUm}" e "${AmigosDois}", e "sound", que recebeu uma função que retorna "${Som}".`)
 
 /*
   03
   - Adicione 2 anos à idade do gato e exiba a idade atualizada no console.
 */
 
-cat.age = 8
 
-// console.log(cat.age)
 /*
   04
 
@@ -51,13 +31,6 @@ cat.age = 8
   - Exiba o array de amigos no console para verificar se o novo amigo(a) foi  
     adicionado.
 */
-let novoamigo = 'SnowBell'
-
-const AmigoPush = () => {
-  cat.bestFriends.push(novoamigo)
-  return cat.bestFriends
-}
-// console.log(AmigoPush())
 
  /*
   05
