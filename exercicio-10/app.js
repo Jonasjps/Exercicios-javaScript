@@ -27,7 +27,14 @@ const cat = {
 
   Até aqui, o objeto "cat" possui as seguintes propriedades e valores: "name", que recebeu "X", "age", que recebeu "X", "color", que recebeu "X", "bestFriends", que recebeu um array com os itens "X" e "X", e "sound", que recebeu uma função que retorna "X".
 */
+const Nome =  cat.name
+const Idade = cat.age
+const Cor = cat.color
+const AmigosUm = cat.bestFriends[0]
+const AmigosDois = cat.bestFriends[1]
+const Som = cat.sound()
 
+console.log(` Até aqui, o objeto "cat" possui as seguintes propriedades e valores: "name", que recebeu "${Nome}", "age", que recebeu "${Idade}", "color", que recebeu "${Cor}", "bestFriends", que recebeu um array com os itens "${AmigosUm}" e "${AmigosDois}", e "sound", que recebeu uma função que retorna "${Som}".`)
 /*
   03
 
