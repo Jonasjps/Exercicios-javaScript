@@ -37,6 +37,32 @@ cat.age += 2
 // console.log(cat.age)
 
 /*
+04
+  - Crie uma função que adiciona um amigo(a) no array de amigos do gato;
+  - Exiba o array de amigos no console para verificar se o novo amigo(a) foi  
+    adicionado.
+*/
+const NovoAmigo =  (item, object) => {
+   object.bestFriends.push(item)
+}
+NovoAmigo('Mel',cat)
+
+// console.log(cat.bestFriends)
+/*
+  05
+  - Crie uma função que adiciona mais uma cor à cor do gato;
+  - Utilize a sintaxe de colchetes para fazer isso;
+  - Exiba a nova cor do gato no console, também utilizando a sintaxe de  
+    colchetes.
+*/
+const NovaCor = () => {
+  cat['color'] += ` e Preto`
+}
+NovaCor()
+
+// console.log(cat.color)
+
+/*
   06
 
   - Crie uma função que retorna um boolean indicando se um valor recebido por  parâmetro é um objeto;
@@ -76,8 +102,8 @@ const isAnSUV = car => ArrayDeCars.includes(car)
 
 
 
-console.log(isAnSUV('Honda Civic'))
-console.log(isAnSUV('Ford EcoSport'))
+// console.log(isAnSUV('Honda Civic'))
+// console.log(isAnSUV('Ford EcoSport'))
 
 /*
   09
@@ -91,3 +117,14 @@ console.log(isAnSUV('Ford EcoSport'))
     propriedades, retorne a mensagem que a propriedade armazena;
   - Teste a função, exibindo no console a mensagem de cada propriedade.
 */
+const propriedades = type => {
+  let valores = {
+    null: 'Seta, explicitamente, uma variável sem valor.',
+    undefined: 'Representa um valor não-setado.',
+    object: 'Arrays, Datas, Objetos literais, Funções, etc.'
+  
+  }
+ return valores[type]
+}
+// console.log(propriedades('null'))
+
