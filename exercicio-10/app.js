@@ -32,24 +32,9 @@ const propriedadesCat = (cat) => `Até aqui, o objeto "cat" possui as seguintes 
   03
   - Adicione 2 anos à idade do gato e exiba a idade atualizada no console.
 */
+cat.age += 2
 
-
-/*
-  04
-
-  - Crie uma função que adiciona um amigo(a) no array de amigos do gato;
-  - Exiba o array de amigos no console para verificar se o novo amigo(a) foi  
-    adicionado.
-*/
-
- /*
-  05
-
-  - Crie uma função que adiciona mais uma cor à cor do gato;
-  - Utilize a sintaxe de colchetes para fazer isso;
-  - Exiba a nova cor do gato no console, também utilizando a sintaxe de  
-    colchetes.
-*/
+console.log(cat.age)
 
 /*
   06
