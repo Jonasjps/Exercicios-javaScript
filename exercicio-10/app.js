@@ -70,19 +70,14 @@ const catEdog = (cat, dog) => `A soma das idades de ${cat.name} e ${dog.name} é
     está funcionando corretamente. Mas ela pode ser melhorada;
   - Como você refatoraria esta função?
 */
+let ArrayDeCars = ['Honda HR-V','Jeep Renegade','Ford EcoSport','Hyundai iX35']
 
-const isAnSUV = car => {
-
-  if (car === 'Honda HR-V'|| car === 'Jeep Renegade' || car === 'Ford EcoSport' || car === 'Hyundai iX35') {
-    return true
-  }
-
-  return false
-}
+const isAnSUV = car => ArrayDeCars.includes(car) 
 
 
-// console.log(isAnSUV('Honda Civic'))
-// console.log(isAnSUV('Ford EcoSport'))
+
+console.log(isAnSUV('Honda Civic'))
+console.log(isAnSUV('Ford EcoSport'))
 
 /*
   09
