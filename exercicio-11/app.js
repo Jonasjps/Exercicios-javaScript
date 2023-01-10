@@ -57,7 +57,7 @@ const car = {
     return `${this.name} está disponível nas cores ${this.colors.join(', ').replace('l,','l e')}.`
   }
 }
-console.log(car.getColorsMensage())
+// console.log(car.isRunning)
 
 /*
   04
@@ -65,21 +65,23 @@ console.log(car.getColorsMensage())
   - Faça o carro andar e exiba no console se ele realmente está em movimento.
 */
 
+// console.log(car.run())
 /*
   05
 
   - Faça o carro parar e exiba no console se ele realmente está parado.
 */
-
+// console.log(car.stop())
 /*
   06
 
   - Exiba, no console, a mensagem com as cores do carro.
 */
-
+// console.log(car.colors)
 /*
   07
 
   - Exiba, no console, a mensagem "O carro é um MARCA_DO_CARRO NOME_DO_CARRO";
   - Utilize a notação de colchetes para acessar as propriedades do carro.
 */
+console.log(`O carro é um ${car['brand']} ${car['name']}`)
