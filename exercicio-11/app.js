@@ -5,7 +5,7 @@
   - Ela deve ter um escopo global.
   */
  const name = 'Jonas'
-console.log(name)
+// console.log(name)
  /*
   02
 
@@ -19,6 +19,11 @@ console.log(name)
     defined" será exibido no console;
   - Você sabe por que isso aconteceu?
 */
+function logAge() {
+  let idade = 27
+  console.log(idade)
+}
+// logAge()
 
 /*
   03
