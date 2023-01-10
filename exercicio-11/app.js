@@ -3,10 +3,10 @@
 
   - Declare uma constante que recebe o seu nome;
   - Ela deve ter um escopo global.
-*/
-const MeuNome = 'Jonas Pessoa'
-// console.log(MeuNome)
-/*
+  */
+ const name = 'Jonas'
+console.log(name)
+ /*
   02
 
   - Funções também são blocos de código;
@@ -19,11 +19,6 @@ const MeuNome = 'Jonas Pessoa'
     defined" será exibido no console;
   - Você sabe por que isso aconteceu?
 */
-function MinhaIdade() {
-  let Idade = 27
-  console.log(Idade)
-} 
-// MinhaIdade(Idade)
 
 /*
   03
@@ -42,25 +37,6 @@ function MinhaIdade() {
     - getColorsMessage, que é um método que retorna a mensagem  
       "O NOME_DO_CARRO está disponível nas cores COR_01, COR_02 e COR_03".
 */
-const car = {
-  name: 'Siena',
-  brand: 'Fiat',
-  colors: ['Vermelho','Azul','Cinza'],
-  isRunning: false,
-  run () {
-    this.isRunning = true
-  return `O ${this.name} está em movimento`
-  },
-  stop () {
-    this.isRunning = false
-    return `O ${this.name} está parado`
-  },
-  getColorsMensage () {
-    return `${this.name} está disponível nas cores ${this.colors.join(', ').replace(`, ${this.colors[this.colors.length - 1]}` ,  ` e ${this.colors[this.colors.length -1]}`)}.`
-  }
-}
-console.log(car.getColorsMensage())
-
 
 /*
   04
@@ -68,21 +44,16 @@ console.log(car.getColorsMensage())
   - Faça o carro andar e exiba no console se ele realmente está em movimento.
 */
 
-console.log(car.run())
-console.log(car.isRunning === true)
 /*
   05
 
   - Faça o carro parar e exiba no console se ele realmente está parado.
 */
-console.log(car.stop())
-console.log(car.isRunning === false)
 /*
   06
 
   - Exiba, no console, a mensagem com as cores do carro.
 */
-// console.log(car.colors)
 /*
   07
 
