@@ -23,7 +23,7 @@ function MinhaIdade() {
   let Idade = 27
   console.log(Idade)
 } 
-MinhaIdade(Idade)
+// MinhaIdade(Idade)
 
 /*
   03
@@ -42,7 +42,13 @@ MinhaIdade(Idade)
     - getColorsMessage, que é um método que retorna a mensagem  
       "O NOME_DO_CARRO está disponível nas cores COR_01, COR_02 e COR_03".
 */
-
+const car = {
+  name: 'Siena',
+  brand: 'Fiat',
+  colors: ['Vermelho','Azul','Cinza'],
+  isRunning: this.name === 0 
+}
+console.log(car.isRunning)
 /*
   04
 
