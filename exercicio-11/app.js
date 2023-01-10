@@ -4,7 +4,8 @@
   - Declare uma constante que recebe o seu nome;
   - Ela deve ter um escopo global.
 */
-
+const MeuNome = 'Jonas Pessoa'
+// console.log(MeuNome)
 /*
   02
 
@@ -18,6 +19,11 @@
     defined" será exibido no console;
   - Você sabe por que isso aconteceu?
 */
+function MinhaIdade() {
+  let Idade = 27
+  console.log(Idade)
+} 
+MinhaIdade(Idade)
 
 /*
   03
