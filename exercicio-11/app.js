@@ -52,9 +52,12 @@ const car = {
   },
   stop () {
     return `O ${this.name} está parado`
+  },
+  getColorsMensage () {
+    return `${this.name} está disponível nas cores ${this.colors.join(', ').replace('l,','l e')}.`
   }
 }
-console.log(car.run())
+console.log(car.getColorsMensage())
 
 /*
   04
