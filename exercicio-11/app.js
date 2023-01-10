@@ -46,9 +46,16 @@ const car = {
   name: 'Siena',
   brand: 'Fiat',
   colors: ['Vermelho','Azul','Cinza'],
-  isRunning: this.name === 0 
+  isRunning: this.name === 0,
+  run () {
+  return `O ${this.name} está em movimento`
+  },
+  stop () {
+    return `O ${this.name} está parado`
+  }
 }
-console.log(car.isRunning)
+console.log(car.run())
+
 /*
   04
 
