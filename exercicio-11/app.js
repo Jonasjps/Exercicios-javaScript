@@ -42,13 +42,27 @@ function logAge() {
     - getColorsMessage, que é um método que retorna a mensagem  
       "O NOME_DO_CARRO está disponível nas cores COR_01, COR_02 e COR_03".
 */
-
+let car = {
+  name: 'Onix',
+  brand: 'Chevrolet',
+  colors: ['Azul', 'Preto List','Prata Bari'],
+  isRunning: false,
+  run: function () {
+    this.isRunning = true
+    return `O ${this.name} está em movimento.`
+  },
+  stop: function () {
+    this.isRunning = false
+    return `O ${this.name} está parado`
+  }
+}
 /*
   04
 
   - Faça o carro andar e exiba no console se ele realmente está em movimento.
 */
-
+console.log(car.run())
+console.log(car.isRunning === true)
 /*
   05
 
