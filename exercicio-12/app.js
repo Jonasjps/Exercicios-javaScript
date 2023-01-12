@@ -125,4 +125,4 @@ const fourthNumber = 5.5
     aleatório de 0 à 10, incluindo 0 e 10.
 */
 let aleatório = Math.random()
-console.log(Math.round(aleatório * 10))
+// console.log(Math.round(aleatório * 10))
