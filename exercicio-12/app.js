@@ -64,7 +64,7 @@ const youtubeUser = {
     country: 'Brasil'
   }
 }
-// console.log(youtubeUser)
+console.log(youtubeUser.recentVideos)
 /*
   03
 
@@ -118,4 +118,4 @@ const fourthNumber = 5.5
     aleatório de 0 à 10, incluindo 0 e 10.
 */
 const randonNumber = Math.random()
-console.log(Math.round(randonNumber * 10))
+// console.log(Math.round(randonNumber * 10))
