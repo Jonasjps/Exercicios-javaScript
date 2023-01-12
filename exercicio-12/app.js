@@ -117,4 +117,5 @@ const fourthNumber = 5.5
   - A cada vez que o index.html for carregado, exiba no console um número  
     aleatório de 0 à 10, incluindo 0 e 10.
 */
-console.log(Math.round(Math.random(1 * 100)))
+const randonNumber = Math.random()
+console.log(Math.round(randonNumber * 10))
