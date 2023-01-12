@@ -11,6 +11,7 @@
   
   - Todos os filmes e diretores do array devem constar na lista.
 */
+
 const best2019Movies = [
   { title: 'Parasita', directedBy: 'Bong Joon-ho' },
   { title: 'Bacurau', directedBy: 'Kleber Mendonça Filho' },
@@ -25,7 +26,15 @@ const best2019Movies = [
   { title: 'Varda por Agnès', directedBy: 'Agnès Varda' },
   { title: 'A Vida Invisível', directedBy: 'Karim Aïnouz' }
 ]
+let mensage = 'Segundo o site Omelete, os melhores filmes de 2019 são:'
+
+best2019Movies.forEach(movie => {
+  mensage += `
+  - ${movie.title}, dirigido por ${movie.directedBy}`
+})
+// console.log(mensage)
 /*
+
   02
 
   - No objeto abaixo, implemente um método que exibe a seguinte mensagem no 
@@ -37,6 +46,7 @@ const best2019Movies = [
     Higher-order Functions | JavaScript
   
   - As 4 linhas da mensagem, podem ser exibidas separadamente.
+
 */
 
 const youtubeUser = {
@@ -57,46 +67,62 @@ const youtubeUser = {
       gitHub: 'https://github.com/Roger-Melo'
     },
     country: 'Brasil'
+  },
+  VideosRecent () {
+    
+    console.log(`Vídeos recentes de ${this.name}:`)
+    
+    const MeusVideos = value => {
+      console.log(value.title)
+    }
+
+    this.videos.recentVideos.forEach(MeusVideos)
   }
   
 }
+// youtubeUser.VideosRecent()
 /*
   03
 
   - Exiba o valor do PI no console.
 */
-
+// console.log(Math.PI)
 /*
   04
 
   - Arredonde o número que a constante abaixo armazena para 9 e exiba-o no  
     console.
 */
-
+const firstNumber = 8.3
+// console.log(Math.ceil(firstNumber))
 /*
   05
 
   - Arredonde o número que a constante abaixo armazena para 4, utilizando a  
     forma padrão, e exiba-o no console.
 */
-
+const secondNumber = 3.5
+// console.log(Math.round(secondNumber))
 /*
   06
 
   - Arredonde o número que a constante abaixo armazena para 8 e exiba-o no  
     console.
 */
-
+const thirdNumber = 8.9
+// console.log(Math.floor(thirdNumber))
 /*
   07
 
   - Exiba no console o número abaixo com a parte decimal removida.
 */
-
-
+const fourthNumber = 5.5
+// console.log(Math.trunc(fourthNumber))
 /*
   08
 
   - A cada vez que o index.html for carregado, exiba no console um número  
     aleatório de 0 à 10, incluindo 0 e 10.
 */
+let aleatório = Math.random()
+console.log(Math.round(aleatório * 10))
