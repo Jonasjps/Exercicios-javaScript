@@ -25,11 +25,13 @@ const best2019Movies = [
   { title: 'Varda por Agnès', directedBy: 'Agnès Varda' },
   { title: 'A Vida Invisível', directedBy: 'Karim Aïnouz' }
 ]
-// console.log('Segundo o site Omelete, os melhores filmes de 2019 são:')
+let mensage = 'Segundo o site Omelete, os melhores filmes de 2019 são:'
 
-best2019Movies.forEach(item => {
-  // console.log(`- ${item.title}, dirigido por ${item.directedBy}`)
+best2019Movies.forEach(value => {
+  mensage += `
+  - ${value.title}, dirigido por ${value.directedBy}`
 })
+console.log(mensage)
 /*
   02
 
@@ -62,9 +64,17 @@ const youtubeUser = {
       gitHub: 'https://github.com/Roger-Melo'
     },
     country: 'Brasil'
+  },
+  Mensagem () {
+    // console.log(`Vídeos recentes de ${this.name}:`)
+
+
+    this.videos.recentVideos.forEach(value => {
+      // console.log(value.title)
+    })
   }
 }
-console.log(youtubeUser.recentVideos)
+// console.log(youtubeUser.Mensagem())
 /*
   03
 
