@@ -11,7 +11,6 @@
   
   - Todos os filmes e diretores do array devem constar na lista.
 */
-
 const best2019Movies = [
   { title: 'Parasita', directedBy: 'Bong Joon-ho' },
   { title: 'Bacurau', directedBy: 'Kleber Mendonça Filho' },
@@ -26,6 +25,10 @@ const best2019Movies = [
   { title: 'Varda por Agnès', directedBy: 'Agnès Varda' },
   { title: 'A Vida Invisível', directedBy: 'Karim Aïnouz' }
 ]
+
+best2019Movies.forEach(item => {
+ console.log() item = `${best2019Movies.title}, dirigido por ${best2019Movies.directedBy}`
+})
 
 /*
   02
