@@ -25,11 +25,11 @@ const best2019Movies = [
   { title: 'Varda por Agnès', directedBy: 'Agnès Varda' },
   { title: 'A Vida Invisível', directedBy: 'Karim Aïnouz' }
 ]
+console.log('Segundo o site Omelete, os melhores filmes de 2019 são:')
 
 best2019Movies.forEach(item => {
- console.log() item = `${best2019Movies.title}, dirigido por ${best2019Movies.directedBy}`
+  console.log(`- ${item.title}, dirigido por ${item.directedBy}`)
 })
-
 /*
   02
 
