@@ -16,13 +16,12 @@ const getCatInfo = () => {
   return {nome:name, age:age, color:color}
    
 }
-console.log(`${getCatInfo().nome} é um gato ${getCatInfo().color} de ${getCatInfo().age} anos.`)
+// console.log(`${getCatInfo().nome} é um gato ${getCatInfo().color} de ${getCatInfo().age} anos.`)
 
 
 
 /*
   02
-
   - Adicione apenas duas linhas de código dentro da função "external" para  
     exibir no console a string que a const movie armazena, com todas as letras  
     maiúsculas.
@@ -33,9 +32,11 @@ const external = () => {
 
   const internal = () => {
     const extraInternal = () => {
-      console.log(movie.toUpperCase())
+      // console.log(movie.toUpperCase())
     }
+    extraInternal()
   }
+  internal()
 }
 
 external()
@@ -51,6 +52,10 @@ external()
 
 let randomNumbers = [3, 2, 1]
 
+ randomNumbers.reverse()
+
+// console.log(randomNumbers)
+
 /*
   04
 
@@ -64,6 +69,11 @@ let crazyArray = [
   function getMessage () { return 'hi' },
   [ 5, 96, 53  ]
 ]
+const result = crazyArray.shift()
+
+// console.log(crazyArray)
+
+// console.log(result)
 
 /*
   05
@@ -81,7 +91,9 @@ const dogs = [
   { name: 'Zequinha', age: 7, gender: 'Male', breed: 'Poodle' },
   { name: 'Xica', age: 6, gender: 'Female', breed: 'Chihuahua' }
 ]
+const DogsResult = dogs.find(dog => dog.name === 'Zequinha')
 
+// console.log(DogsResult)
 /*
   06
 
@@ -113,7 +125,8 @@ const dogs = [
     </article>
   </section>
 */
-
+const titlePrincipal = document.querySelector('.main-title')
+// console.log(titlePrincipal)
 /*
   07
 
@@ -121,3 +134,5 @@ const dogs = [
     página, através da classe deles;
   - Exiba esse NodeList no console.
 */
+const SecondTitle = document.querySelectorAll('.secondary-title')
+console.log(SecondTitle)
