@@ -12,12 +12,9 @@ const getCatInfo = () => {
   const name = 'Marcos'
   let age = 3
   const color = 'Cinza'  
-
-  return {nome:name, age:age, color:color}
-   
+  return {name: name, age: age, color: color}
 }
-// console.log(`${getCatInfo().nome} é um gato ${getCatInfo().color} de ${getCatInfo().age} anos.`)
-
+// console.log(`${getCatInfo().name} é um gato ${getCatInfo().color} de ${getCatInfo().age} anos.`)
 
 
 /*
@@ -51,9 +48,7 @@ external()
 */
 
 let randomNumbers = [3, 2, 1]
-
  randomNumbers.reverse()
-
 // console.log(randomNumbers)
 
 /*
@@ -69,12 +64,9 @@ let crazyArray = [
   function getMessage () { return 'hi' },
   [ 5, 96, 53  ]
 ]
-const result = crazyArray.shift()
-
+const resultShift = crazyArray.shift()
 // console.log(crazyArray)
-
-// console.log(result)
-
+// console.log(resultShift)
 /*
   05
 
@@ -91,9 +83,9 @@ const dogs = [
   { name: 'Zequinha', age: 7, gender: 'Male', breed: 'Poodle' },
   { name: 'Xica', age: 6, gender: 'Female', breed: 'Chihuahua' }
 ]
-const DogsResult = dogs.find(dog => dog.name === 'Zequinha')
+  const DogFind = dogs.find(Dog => Dog.name === 'Zequinha')
 
-// console.log(DogsResult)
+// console.log(DogFind)
 /*
   06
 
@@ -135,4 +127,4 @@ const titlePrincipal = document.querySelector('.main-title')
   - Exiba esse NodeList no console.
 */
 const SecondTitle = document.querySelectorAll('.secondary-title')
-console.log(SecondTitle)
+// console.log(SecondTitle)
