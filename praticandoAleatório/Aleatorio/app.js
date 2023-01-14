@@ -1,6 +1,18 @@
-// const h1 = document.querySelector('body > h1')
+const paragraph = document.querySelector('p')
 
-// console.log(h1)
+// paragraph.innerText = ' Novo texto criado'
 
-const paragrafos = document.querySelectorAll('div')
-console.log(paragrafos)
+// const paragraphs = document.querySelectorAll('p')
+// paragraphs.forEach((paragraph, index) => {
+// paragraph.innerText += ` Novo texto ${index + 1}`
+// })
+
+const div = document.querySelector('.content') 
+
+// div.innerHTML += '<h2>Novo Title</h2>'
+
+const people = ['Jonas','Luiz', 'Valdo','Michele']
+
+people.forEach(person => {
+  div.innerHTML +=  `<p>${person}</p>`
+})
