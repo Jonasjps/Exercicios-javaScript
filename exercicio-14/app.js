@@ -89,3 +89,4 @@ corpo.classList.toggle('body-background')
   - Se o link da página possuir uma classe "link", remova-a;
   - Não utilize o método remove() para fazer isso.
 */
+link.classList.toggle('link')
