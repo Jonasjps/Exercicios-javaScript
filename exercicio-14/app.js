@@ -4,8 +4,8 @@
   - Faça com que o texto do h1 do index.html seja exibido com todas as letras  
     maiúsculas.
 */
-
-
+const h1 = document.querySelector('h1')
+h1.innerHTML = '<h1>EXERCÍCIOS DA AULA 02 DA ETAPA 05</h1>'
 
 /*
   02
@@ -15,7 +15,10 @@
 */
 
 const numbers = [ 53, 24, 3, 8, 1, 6, 57, 80, 77, 98, 55 ]
-
+const ul = document.querySelector('ul')
+numbers.forEach(li => {
+  ul.innerHTML += `<li>${li}</li>`
+} )
 /*
   03
 
