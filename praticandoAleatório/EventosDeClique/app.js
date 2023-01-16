@@ -17,5 +17,5 @@ const button = document.querySelector('button')
 button.addEventListener('click', () => {
     const li = document.createElement('li')
     li.textContent = 'Novo item'
-    ul.append(li)
+    ul.prepend(li)//ou o método APPEND()
 })
