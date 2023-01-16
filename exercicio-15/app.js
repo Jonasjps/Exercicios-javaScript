@@ -27,7 +27,7 @@ const title = document.querySelector('h2')
   - Descubra quem é o próximo elemento irmão do h1 e exiba-o no console;
 */
 
-const h1 = document.querySelector('h1')
+// const h1 = document.querySelector('h1')
 
 // console.log(h1.nextElementSibling)
 
@@ -78,3 +78,8 @@ button.addEventListener('click', () => {
   - Se um clique no h1 acontecer, faça com que todos os elementos dentro do body 
     sejam removidos.
 */
+const h1 = document.querySelector('h1')
+const body = document.querySelector('body')
+h1.addEventListener('click', () => {
+  body.remove()
+})
