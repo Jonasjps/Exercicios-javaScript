@@ -5,5 +5,6 @@ const article = document.querySelector('article')
 // })
 
 const title = document.querySelector('h2')
+// console.log(title.parentElement)//Propriedade para saber o pai desse elemento.
 
-console.log(title.nextElementSibling)
+console.log(title.nextElementSibling)//Propriedade para saber o irmãon desse elemento.
