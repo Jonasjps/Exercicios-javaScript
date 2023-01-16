@@ -57,21 +57,19 @@ Array.from(ul.children).forEach(li => {
   - Cada nome deve estar dentro de uma li.
 */
 
-const videos = [{
-  name: 'Como o promise all funciona | JavaScript',
-  length: '00:01:52'
-}, {
-  name: 'Como refatorar um for loop | JavaScript',
-  length: '00:04:18'
-}, {
-  name: 'Como fazer requisições HTTP com o método fetch | JavaScript',
-  length: '00:02:55'
-}]
+const videos = [
+  { name: 'Como o promise all funciona | JavaScript',length: '00:01:52'},
+  { name: 'Como refatorar um for loop | JavaScript',length: '00:04:18'},
+  {name: 'Como fazer requisições HTTP com o método fetch | JavaScript',length: '00:02:55'}
+
+]
 
 const button = document.querySelector('button')
 button.addEventListener('click', () => {
   videos.forEach(video => {
-    
+    const li = document.createElement('li')
+    li.textContent = `${video.name}`
+    ul.append(li)
   })
 })
 /*
