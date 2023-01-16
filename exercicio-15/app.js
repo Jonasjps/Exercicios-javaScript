@@ -5,8 +5,11 @@
     uma classe 'video';
   - Exiba no console os elementos filhos da ul com a classe já inserida.
 */
-
-
+const ul = document.querySelector('.videos')
+Array.from(ul.children).forEach(li => {
+  li.classList.add('video')
+  // console.log(li)
+})
 
 /*
   02
@@ -14,7 +17,8 @@
   - Usando a propriedade adequada, descubra quem é o elemento pai do h2
     e exiba-o no console;
 */
-
+const title = document.querySelector('h2')
+// console.log(title.previousElementSibling)
 
 
 /*
