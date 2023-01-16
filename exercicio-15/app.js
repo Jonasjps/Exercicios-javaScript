@@ -27,7 +27,9 @@ const title = document.querySelector('h2')
   - Descubra quem é o próximo elemento irmão do h1 e exiba-o no console;
 */
 
+const h1 = document.querySelector('h1')
 
+// console.log(h1.nextElementSibling)
 
 /*
   04
