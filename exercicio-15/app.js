@@ -36,12 +36,22 @@ const titleH1 = document.querySelector('h1')
 
   - Descubra quem é o irmão anterior da ul e exiba-o no console;
 */
+// console.log(ul.previousElementSibling)
 /*
   05
 
   - Quando um clique acontecer em alguma das lis, faça com que a li clicada seja  
     exibida no console.
 */
+const lisForEach = li => {
+  li.addEventListener('click', eventoDeClickLi)
+}
+
+const eventoDeClickLi = event => {
+  console.log(event.target)
+}
+ 
+lis.forEach(lisForEach)
 
 /*
   06
