@@ -5,6 +5,16 @@
     uma classe 'video';
   - Exiba no console os elementos filhos da ul com a classe já inserida.
 */
+const ul = document.querySelector('ul')
+
+const lis = Array.from(ul.children)
+
+const classLis = li => {
+  li.classList.add('video')
+  console.log(li)
+}
+
+lis.forEach(classLis)
 /*
   02
 
