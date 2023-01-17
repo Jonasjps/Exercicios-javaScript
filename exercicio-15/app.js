@@ -23,12 +23,14 @@ lis.forEach(classNosFilhos)
 */
 const titleH2 = document.querySelector('h2')
 
-console.log(titleH2.parentElement)
+// console.log(titleH2.parentElement)
 /*
   03
 
   - Descubra quem é o próximo elemento irmão do h1 e exiba-o no console;
 */
+const titleH1 = document.querySelector('h1')
+// console.log(titleH1.nextElementSibling)
 /*
   04
 
