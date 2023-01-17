@@ -83,3 +83,7 @@ button.addEventListener('click', AddElementLis)
   - Se um clique no h1 acontecer, faça com que todos os elementos dentro do body 
     sejam removidos.
 */
+const body = document.body
+titleH1.addEventListener('click' , () => {
+  body.innerHTML = ''
+})
