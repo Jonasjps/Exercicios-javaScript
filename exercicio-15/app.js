@@ -50,7 +50,7 @@ const lisForEach = li => {
 const eventoDeClickLi = event => {
   console.log(event.target)
 }
- 
+
 lis.forEach(lisForEach)
 
 /*
@@ -66,7 +66,16 @@ const videos = [
   {name: 'Como fazer requisições HTTP com o método fetch | JavaScript',length: '00:02:55'}
 
 ]
+const ForEachVideos = ({name}) => {
+  ul.innerHTML += `<li>${name} </li>`
+}
 
+const AddElementLis =  () => {
+  videos.forEach(ForEachVideos)
+}
+
+const button = document.querySelector('button')
+button.addEventListener('click', AddElementLis)
 
 /*
   07
