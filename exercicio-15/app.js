@@ -43,7 +43,19 @@ const titleH1 = document.querySelector('h1')
   - Quando um clique acontecer em alguma das lis, faça com que a li clicada seja  
     exibida no console.
 */
+const LiForEach = li => {
+  li.addEventListener('click', eventoClick)
+}
 
+const eventoClick =  event => {
+  event.innerHTML 
+  // console.log(event.target)
+}
+lis.forEach(LiForEach)
+
+//  lis.addEventListener('click', () => {
+  // console.log('li clicada')
+//  })
 /*
   06
 
@@ -58,9 +70,23 @@ const videos = [
 
 ]
 
+const button = document.querySelector('button')
+
+videos.forEach(video => {
+  button.addEventListener('click', () => {
+    ul.innerHTML += `<li>${video.name}}</li>`
+    // console.log(video)
+
+  })
+})
+
 /*
   07
 
   - Se um clique no h1 acontecer, faça com que todos os elementos dentro do body 
     sejam removidos.
 */
+const body = document.body
+titleH1.addEventListener('click', () => {
+  body.innerHTML = ''
+})
