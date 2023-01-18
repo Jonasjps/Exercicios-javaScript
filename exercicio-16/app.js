@@ -55,14 +55,23 @@ div.addEventListener('click', () => {
     o texto que ela tem por 
     "Eixo X: COORDENADA_EIXO_X | Eixo Y: COORDENADA_EIXO_Y".
 */
+const divDois = document.querySelector('.egg')
 
+divDois.addEventListener('mousemove', event => {
+
+  divDois.textContent = `Eixo X: ${event.offsetX} |
+   Eixo Y: ${event.offsetY}`
+})
 /*
   06
 
   - Modifique a cor do ovo para "lightgoldenrodyellow" quando o botão for 
     clicado.
 */
-
+const button = document.querySelector('button')
+button.addEventListener('click', () => {
+ divDois.style.background = 'lightgoldenrodyellow'
+})
 /*
   07
 
