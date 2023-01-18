@@ -8,6 +8,9 @@
 const div = document.querySelector('div')
 const elementsInsideDiv = Array.from(div.children)
 const h2 = document.querySelector('h2')
+const egg = document.querySelector('.egg')
+const button = document.querySelector('button')
+
 
 elementsInsideDiv.forEach(element => {
   element.addEventListener('click', event => {
@@ -27,6 +30,13 @@ h2.addEventListener('copy', () => {
   console.log('Texto copiado, com sucesso!')
 })
 
+egg.addEventListener('mousemove', event => {
+  egg.textContent = ` Eixo X: ${event.offsetX} | Eixo Y: ${event.offsetY}`
+})
+
+button.addEventListener('click', () => {
+  egg.style.background = 'lightgoldenrodyellow'
+})
 
 /*
   02
