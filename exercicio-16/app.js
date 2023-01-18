@@ -92,3 +92,6 @@ const people = [
   { id: 8, name: 'Matheus Manucci', profession: 'Piloto' },
   { id: 9, name: 'Hamilton Silva', profession: 'Advogado' }
 ]
+const profissional = people.find(({ profession }) => profession ===  'Front-end developer')
+console.log(profissional)
+
