@@ -7,17 +7,17 @@
 
 const div = document.querySelector('div')
 const elementsInsideDiv = Array.from(div.children)
+const h2 = document.querySelector('h2')
 
 elementsInsideDiv.forEach(element => {
   element.addEventListener('click', event => {
     event.stopPropagation()
-    const metódo = element.textContent.toUpperCase()
-    console.log(`Clicou no ${metódo},filho da div.`)
+    h2.textContent = `Clicou no ${event.target.tagName.toLowerCase()},filho da div.`
   })
 })
 
 div.addEventListener('click', () => {
-  console.log('Clicou na div.')
+  h2.textContent = 'Clicou na div.'
 })
 
 /*
@@ -27,7 +27,7 @@ div.addEventListener('click', () => {
     exibida no console seja "Clicou no NOME_DA_TAG_COM_LETRAS_MINÚSCULAS, filho
     da div.".
 */
-
+ //Exercício feito acima.
 /*
   03
 
