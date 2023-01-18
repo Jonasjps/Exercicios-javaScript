@@ -23,6 +23,10 @@ div.addEventListener('click', () => {
   h2.textContent = 'Clicou na div.'
 })
 
+h2.addEventListener('copy', () => {
+  console.log('Texto copiado, com sucesso!')
+})
+
 
 /*
   02
