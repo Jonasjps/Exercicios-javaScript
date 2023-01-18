@@ -13,6 +13,7 @@ elementsInsideDiv.forEach(element => {
   element.addEventListener('click', event => {
     event.stopPropagation()
     h2.textContent = `Clicou no ${event.target.tagName.toLowerCase()},filho da div.`
+   
   })
 })
 
@@ -36,12 +37,16 @@ div.addEventListener('click', () => {
     filho da div, ao invés de ser exibida no console, seja inserida neste h2.
 */
 
+//ok
 /*
   04
 
   - Faça com que quando o texto do h2 for copiado, a mensagem "Texto copiado!"  
     seja exibida no console.
 */
+  h2.addEventListener('copy', () => {
+    console.log('texto copiado, com sucesso!')
+  })
 
 /*
   05
