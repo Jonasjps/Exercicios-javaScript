@@ -9,8 +9,10 @@ const div = document.querySelector('div')
 const elementsInsideDiv = Array.from(div.children)
 
 elementsInsideDiv.forEach(element => {
-  element.addEventListener('click', () => {
-    console.log('Clicou no filho da div.')
+  element.addEventListener('click', event => {
+    event.stopPropagation()
+    const metódo = element.textContent.toUpperCase()
+    console.log(`Clicou no ${metódo},filho da div.`)
   })
 })
 

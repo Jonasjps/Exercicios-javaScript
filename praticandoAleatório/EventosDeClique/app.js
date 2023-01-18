@@ -10,7 +10,7 @@ button.addEventListener('click', () => {
 })
 
 ul.addEventListener('click', event => {
-    clickedElement = event.target
+   const clickedElement = event.target
 
     if(clickedElement.tagName === 'LI') {
         clickedElement.remove()
