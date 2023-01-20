@@ -4,7 +4,18 @@
   - Faça com que ao clicar em um dos elementos dentro da div, a mensagem  
     'Clicou na div.' não seja exibida no console.
 */
+const div = document.querySelector('div')
+const elementsInsideDiv = Array.from(div.children)
 
+elementsInsideDiv.forEach(element => {
+  element.addEventListener('click', () => {
+    console.log('Clicou no filho da div.')
+  })
+})
+
+div.addEventListener('click', () => {
+  console.log('Clicou na div.')
+})
 
 /*
   02
