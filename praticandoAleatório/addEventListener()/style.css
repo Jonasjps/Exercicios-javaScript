@@ -1,0 +1,29 @@
+.cor {
+    padding:50px;
+    max-width: 70px;
+    background: blue;
+    margin: auto;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+}
+
+.amarelo {
+background: yellow;
+border: none;
+padding: 8px;
+color: black;
+font-weight: bold;
+border-radius: 7px;
+box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.563);
+}
+
+.verde {
+    background: green;
+border: none;
+padding: 8px;
+color: white;
+font-weight: bold;
+border-radius: 7px;
+box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.563);
+}
