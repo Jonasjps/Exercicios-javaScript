@@ -95,4 +95,9 @@ const people = [
   { id: 8, name: 'Matheus Manucci', profession: 'Piloto' },
   { id: 9, name: 'Hamilton Silva', profession: 'Advogado' }
 ]
-
+const Densenvolvedor = people.some(({profession}) =>
+ profession === 'Front-end developer')
+  
+if (Densenvolvedor){
+  console.log('O array people contém, no mínimo, um(a) Front-end developer.')
+}
