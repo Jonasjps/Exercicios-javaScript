@@ -12,7 +12,6 @@ const egg = document.querySelector('.egg')
 const button = document.querySelector('button')
 
 
-
 const clickedNaDiv =  ({target}) => {
   const tagElementDiv = target.tagName.toLowerCase()
   const condiçãoDaDiv = tagElementDiv === 'div'
@@ -96,10 +95,4 @@ const people = [
   { id: 8, name: 'Matheus Manucci', profession: 'Piloto' },
   { id: 9, name: 'Hamilton Silva', profession: 'Advogado' }
 ]
-const ProficionalFrontEndDeveloper = people.some(({profession}) => 
-profession === 'Front-end developer')
-
-if(ProficionalFrontEndDeveloper) {
-  console.log('O array people contém, no mínimo, um(a) Front-end developer.')
-}
 
