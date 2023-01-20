@@ -6,18 +6,34 @@
 */
 const div = document.querySelector('div')
 const elementsInsideDiv = Array.from(div.children)
+const h2 = document.querySelector('h2')
+const egg = document.querySelector('.egg')
+const button = document.querySelector('button')
 
 elementsInsideDiv.forEach(element => {
   element.addEventListener('click', event => {
     event.stopPropagation()
     const elementTargetTagName = event.target.tagName.toLowerCase()
-    console.log(`Clicou no ${elementTargetTagName},filho da div.`)
+    h2.textContent = `Clicou no ${elementTargetTagName},filho da div.`
   })
 })
 
 div.addEventListener('click', () => {
-  console.log('Clicou na div.')
+  h2.textContent = 'Clicou na div.'
 })
+
+h2.addEventListener('copy', () => {
+  console.log('Texto copiado com Sucesso')
+})
+
+egg.addEventListener('mousemove', event => {
+  egg.textContent = `Eixo X: ${event.offsetX} | Eixo Y: ${event.offsetY}`
+})
+
+button.addEventListener('click', () => {
+  egg.style.background = 'lightgoldenrodyellow'
+})
+
 
 /*
   02
@@ -74,5 +90,9 @@ const people = [
   { id: 8, name: 'Matheus Manucci', profession: 'Piloto' },
   { id: 9, name: 'Hamilton Silva', profession: 'Advogado' }
 ]
-
-
+const DesenvolvedorFrontEnd = people.some(({profession}) =>
+ profession === 'Front-end developer') 
+ 
+if(DesenvolvedorFrontEnd) {
+  console.log('O array people contém, no mínimo, um(a) Front-end developer.')
+}
