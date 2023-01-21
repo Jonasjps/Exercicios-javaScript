@@ -5,13 +5,19 @@
 */
 const form = document.querySelector('form')
 const input = document.querySelector('#input')
-const div = document.querySelector('.container')
 const paragraph = document.querySelector('p')
 
 
 form.addEventListener('submit', event => {
   event.preventDefault()
-  console.log(form.input.value)
+  const formulario = event.target.input.value 
+  const regex = /.{7}/
+
+  if(regex.test(formulario)){
+    console.log('O valor inserido no input é válido =)')
+    return
+  }
+  console.log('Valor inválido =(')
 })
 /*
   02
@@ -26,8 +32,10 @@ form.addEventListener('submit', event => {
   - Teste uma regex que dá match com a palavra "documentation" do parágrafo do  
     index.html;
   - Exiba no console o boolean no qual este teste resulta.
-*/
-const ExpressãoRegular = /[a-z]/
+// */
+// const palavra = 'documentation'
+// console.log(palavra.length)
+const ExpressãoRegular = /[a-z]{9}/
 const result = ExpressãoRegular.test(paragraph)
 
 // console.log(result)
@@ -39,10 +47,10 @@ const result = ExpressãoRegular.test(paragraph)
   - Teste se o match aconteceu e exiba o resultado no console.
 */
 const B99message = 'E o Terry Crews faz tudo, inclusive tocar a abertura de B99 na flauta'
-const ExReg = /[B-Z0-9]{3,}/
+const ExReg = /[A-Z0-9]{3,}/
 const TestanRegex = ExReg.test(B99message)
 
-// console.log(TestanRegex )
+// console.log(TestanRegex ) 
 
 
 /*
