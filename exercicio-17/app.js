@@ -27,10 +27,10 @@ form.addEventListener('submit', event => {
     index.html;
   - Exiba no console o boolean no qual este teste resulta.
 */
-const ExpressãoRegular = /[abc]/
+const ExpressãoRegular = /[a-z]/
 const result = ExpressãoRegular.test(paragraph)
 
-console.log(result)
+// console.log(result)
 /*
   04
 
@@ -38,8 +38,12 @@ console.log(result)
   - A regex não deve conter (literalmente) os caracteres B99;
   - Teste se o match aconteceu e exiba o resultado no console.
 */
-
 const B99message = 'E o Terry Crews faz tudo, inclusive tocar a abertura de B99 na flauta'
+const ExReg = /[B-Z0-9]{3,}/
+const TestanRegex = ExReg.test(B99message)
+
+// console.log(TestanRegex )
+
 
 /*
   05
@@ -48,7 +52,7 @@ const B99message = 'E o Terry Crews faz tudo, inclusive tocar a abertura de B99 
     resultado do teste entre a regex e a string exibido no console seja true.
 */
 
-const word = 'O que a NASA fotografou no dia do seu aniversário?'
+const word = 'NASA'
 const NASARegex = /^[A-Z]{4}$/
 const NASAResult = NASARegex.test(word)
 
