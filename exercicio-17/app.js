@@ -5,6 +5,10 @@
 */
 const form = document.querySelector('form')
 const input = document.querySelector('#input')
+const div = document.querySelector('.container')
+const paragraph = document.querySelector('p')
+
+
 form.addEventListener('submit', event => {
   event.preventDefault()
   console.log(form.input.value)
@@ -23,7 +27,10 @@ form.addEventListener('submit', event => {
     index.html;
   - Exiba no console o boolean no qual este teste resulta.
 */
+const ExpressãoRegular = /[abc]/
+const result = ExpressãoRegular.test(paragraph)
 
+console.log(result)
 /*
   04
 
@@ -45,7 +52,7 @@ const word = 'O que a NASA fotografou no dia do seu aniversário?'
 const NASARegex = /^[A-Z]{4}$/
 const NASAResult = NASARegex.test(word)
 
-console.log(NASAResult)
+// console.log(NASAResult)
 
 /*
   06
