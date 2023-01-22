@@ -6,17 +6,32 @@
 const form = document.querySelector('form')
 const p = document.querySelector('p')
 
-form.addEventListener('submit', event => {
-event.preventDefault()
-const inputForm = event.target.input.value
-const regexInput = /.{7,}/
 
-if(regexInput.test(inputForm)) {
-  console.log('O valor inserido no input é válido =)')
-  return
+const clearFocus = () => {
+  input.value = ''
+  input.focus()
 }
-console.log('Valor inválido =(')
-})
+
+const mensageLog = mensage => {
+  console.log(mensage)
+  clearFocus()
+}
+
+const formularioInput =  event => {
+  event.preventDefault()
+  const input = event.target.input.value
+  const regexInput = /[a-zA-Z0-9]{7,11}/
+  const testandoCondição = regexInput.test(input) 
+
+  if(testandoCondição) {
+    mensageLog('O valor inserido no input é válido =)')
+    return
+  }
+  
+  mensageLog('Valor inválido =(')
+}
+
+form.addEventListener('submit',formularioInput)
 /*
   02
 
