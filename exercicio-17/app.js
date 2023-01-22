@@ -19,9 +19,9 @@ const mensageLog = mensage => {
 
 const formularioInput =  event => {
   event.preventDefault()
-  const input = event.target.input.value
+  const input = event.target.input
   const regexInput = /[a-zA-Z0-9]{7,11}/
-  const testandoCondição = regexInput.test(input) 
+  const testandoCondição = regexInput.test(input.value) 
 
   if(testandoCondição) {
     mensageLog('O valor inserido no input é válido =)')
