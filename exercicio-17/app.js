@@ -3,6 +3,13 @@
 
   - No envio do form, faça com que a página não seja recarregada.
 */
+const form = document.querySelector('form')
+const p = document.querySelector('p')
+form.addEventListener('submit', event => {
+  event.preventDefault()
+  const inputForm = event.target.input.value
+  console.log(inputForm)
+})
 /*
   02
 
@@ -17,6 +24,9 @@
     index.html;
   - Exiba no console o boolean no qual este teste resulta.
 */
+const regexForm = /[documentation]/
+const result = regexForm.test(p)
+// console.log(result)
 /*
   04
 
@@ -25,6 +35,9 @@
   - Teste se o match aconteceu e exiba o resultado no console.
 */
 const B99message = 'E o Terry Crews faz tudo, inclusive tocar a abertura de B99 na flauta'
+const regexEx4 = /[A-Z0-9]{3,}/
+const resultRegex = regexEx4.test(B99message)
+console.log(resultRegex)
 /*
   05
 
