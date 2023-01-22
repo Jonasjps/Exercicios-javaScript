@@ -19,14 +19,21 @@
 */
 const input = document.querySelector('#username')
 const paragraph = document.createElement('p')
+const button = document.querySelector('button')
+
+// const claerFocus = () => {
+//   input.value = ''
+//   input.focus()
+// }
+const regex = /^[a-zA-Z]{6,}$/
+
 
 input.addEventListener('keyup', event => {
   event.preventDefault()
   const elementEvent = event.target.value
-  const regex = /^[a-zA-Z]{6,}$/
-  
   
   if(!regex.test(elementEvent)){
+   
     const metodos = input.insertAdjacentElement('afterend', paragraph)
     metodos.setAttribute('class', 'username-help-feedback')
     paragraph.textContent = 'O valor deve conter no mínimo 6 caracteres, com apenas letras maiúsculas e/ou minúsculas'
@@ -36,10 +43,20 @@ input.addEventListener('keyup', event => {
     const depoisGreen = input.insertAdjacentElement('afterend', paragraph)
     depoisGreen.setAttribute('class', 'username-success-feedback')
     paragraph.textContent = 'Username válido =)'  
-    
   }
-  
 })
+
+button.addEventListener('click', event => {
+  const eventInput = event.target.value
+
+  if(!regex.test(eventInput)) {
+    const abaixoDoButton = button.insertAdjacentElement('afterend',paragraph)
+    abaixoDoButton.setAttribute('class', 'username-success-feedback')
+    paragraph.textContent = 'Dados enviados =)'
+  
+  }
+})
+// claerFocus()
 /*
   02
 
