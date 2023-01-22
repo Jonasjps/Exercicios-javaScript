@@ -11,7 +11,7 @@ const paragraph = document.querySelector('p')
 form.addEventListener('submit', event => {
   event.preventDefault()
   const formulario = event.target.input.value 
-  const regex = /.{7}/
+  const regex = /^[a-zA-Z0-9]{7,11}$/
 
   if(regex.test(formulario)){
     console.log('O valor inserido no input é válido =)')
