@@ -1,6 +1,4 @@
-/*
-  Apenas 3 exercícios, mas que exigem um certo nível de conhecimento do que  
-  vimos até aqui =)
+/* Apenas 3 exercícios, mas que exigem um certo nível de conhecimento do que vimos até aqui =)
 */
 
 /*
@@ -11,8 +9,7 @@
     - No mínimo 6 caracteres;
     - Apenas letras maiúsculas e/ou minúsculas;
   - Se o valor inserido não é válido, exiba um parágrafo laranja abaixo do  
-    input com a seguinte mensagem: "O valor deve conter no mínimo 6 caracteres,  
-    com apenas letras maiúsculas e/ou minúsculas";
+    input com a seguinte mensagem: "O valor deve conter no mínimo 6 caracteres, com apenas letras maiúsculas e/ou minúsculas";
   - Se o valor é válido, o parágrafo deve ser verde e exibir a mensagem  
     "Username válido =)";
   - Use as classes disponíveis no arquivo style.css para colorir o parágrafo;
@@ -20,7 +17,29 @@
   
   Dica: pesquise pelo método "insertAdjacentElement", no MDN;
 */
+const input = document.querySelector('#username')
+const paragraph = document.createElement('p')
 
+input.addEventListener('keyup', event => {
+  event.preventDefault()
+  const elementEvent = event.target.value
+  const regex = /^[a-zA-Z]{6,}$/
+  
+  
+  if(!regex.test(elementEvent)){
+    const metodos = input.insertAdjacentElement('afterend', paragraph)
+    metodos.setAttribute('class', 'username-help-feedback')
+    paragraph.textContent = 'O valor deve conter no mínimo 6 caracteres, com apenas letras maiúsculas e/ou minúsculas'
+    return
+  }
+  if (regex.test(elementEvent)){
+    const depoisGreen = input.insertAdjacentElement('afterend', paragraph)
+    depoisGreen.setAttribute('class', 'username-success-feedback')
+    paragraph.textContent = 'Username válido =)'  
+    
+  }
+  
+})
 /*
   02
 

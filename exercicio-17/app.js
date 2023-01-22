@@ -24,13 +24,9 @@ const formularioInput = event => {
 
   if(testasndoCondição){
     mensageLog('O valor inserido no input é válido =)')
-
-    claerForm()
     return
   }
   mensageLog('Valor inválido =(')
-
-  claerForm()
 }
 
 form.addEventListener('submit', formularioInput)
