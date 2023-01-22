@@ -6,17 +6,21 @@
 const form = document.querySelector('form')
 const p = document.querySelector('p')
 
-form.addEventListener('submit', event => {
+
+const ObtendoOvalorDoForm =  event => {
   event.preventDefault()
   const textoInput = event.target.input.value
   const regexCondição = /[a-zA-Z0-9]{7,11}/
+  const testandoCondição = regexCondição.test(textoInput)
 
-  if(regexCondição.test(textoInput)){
+  if(testandoCondição){
     console.log('O valor inserido no input é válido =)')
     return
   }
   console.log('Valor inválido =(')
-})
+}
+
+form.addEventListener('submit',ObtendoOvalorDoForm)
 
 /*
   02
