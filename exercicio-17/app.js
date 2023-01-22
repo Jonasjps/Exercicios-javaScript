@@ -3,22 +3,8 @@
 
   - No envio do form, faça com que a página não seja recarregada.
 */
-const form = document.querySelector('form')
-const input = document.querySelector('#input')
-const paragraph = document.querySelector('p')
 
 
-form.addEventListener('submit', event => {
-  event.preventDefault()
-  const formulario = event.target.input.value 
-  const regex = /^[a-zA-Z0-9]{7,11}$/
-
-  if(regex.test(formulario)){
-    console.log('O valor inserido no input é válido =)')
-    return
-  }
-  console.log('Valor inválido =(')
-})
 /*
   02
 
@@ -32,13 +18,7 @@ form.addEventListener('submit', event => {
   - Teste uma regex que dá match com a palavra "documentation" do parágrafo do  
     index.html;
   - Exiba no console o boolean no qual este teste resulta.
-// */
-// const palavra = 'documentation'
-// console.log(palavra.length)
-const ExpressãoRegular = /[a-z]{9}/
-const result = ExpressãoRegular.test(paragraph)
-
-// console.log(result)
+*/
 /*
   04
 
@@ -47,10 +27,6 @@ const result = ExpressãoRegular.test(paragraph)
   - Teste se o match aconteceu e exiba o resultado no console.
 */
 const B99message = 'E o Terry Crews faz tudo, inclusive tocar a abertura de B99 na flauta'
-const ExReg = /[A-Z0-9]{3,}/
-const TestanRegex = ExReg.test(B99message)
-
-// console.log(TestanRegex ) 
 
 
 /*
@@ -60,7 +36,7 @@ const TestanRegex = ExReg.test(B99message)
     resultado do teste entre a regex e a string exibido no console seja true.
 */
 
-const word = 'NASA'
+const word = 'O que a NASA fotografou no dia do seu aniversário?'
 const NASARegex = /^[A-Z]{4}$/
 const NASAResult = NASARegex.test(word)
 
