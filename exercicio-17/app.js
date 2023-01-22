@@ -3,35 +3,6 @@
 
   - No envio do form, faça com que a página não seja recarregada.
 */
-const form = document.querySelector('form')
-const p = document.querySelector('p')
-
-const limpandoInput = () => {
-  input.value = ''
-  input.focus()
-  
-}
-const mensageInput = mensage => {
-  console.log(mensage)
-  limpandoInput()
-}
-
-const ObtendoOvalorDoForm =  event => {
-  event.preventDefault()
-
-  const input = event.target.input
-  const regexCondição = /[a-zA-Z0-9]{7,11}/
-  const testandoCondição = regexCondição.test(input.value)
-
-  if(testandoCondição) {
-    mensageInput('O valor inserido no input é válido =)')
-    return
-  }
-  mensageInput('Valor inválido =(')
-   
-}
-
-form.addEventListener('submit',ObtendoOvalorDoForm)
 
 /*
   02
@@ -47,9 +18,6 @@ form.addEventListener('submit',ObtendoOvalorDoForm)
     index.html;
   - Exiba no console o boolean no qual este teste resulta.
 */
-const testRegex = /[documentation]/
-const result = testRegex.test(p)
-// console.log(result)
 /*
   04
 
@@ -58,11 +26,6 @@ const result = testRegex.test(p)
   - Teste se o match aconteceu e exiba o resultado no console.
 */
 const B99message = 'E o Terry Crews faz tudo, inclusive tocar a abertura de B99 na flauta'
-const mensage = /[A-Z0-9]{3,}/
-
-const regexEx04 = mensage.test(B99message)
-
-// console.log(regexEx04)
 
 /*
   05
@@ -71,7 +34,7 @@ const regexEx04 = mensage.test(B99message)
     resultado do teste entre a regex e a string exibido no console seja true.
 */
 
-const word = 'NASA'
+const word = 'O que a NASA fotografou no dia do seu aniversário?'
 const NASARegex = /^[A-Z]{4}$/
 const NASAResult = NASARegex.test(word)
 
