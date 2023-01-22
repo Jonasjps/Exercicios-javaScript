@@ -3,7 +3,13 @@
 
   - No envio do form, faça com que a página não seja recarregada.
 */
+const form = document.querySelector('form')
 
+form.addEventListener('submit', event => {
+  event.preventDefault()
+  const textoInput = event.target.input.value
+  console.log(textoInput)
+})
 
 /*
   02
