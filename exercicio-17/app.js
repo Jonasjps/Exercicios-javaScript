@@ -4,11 +4,18 @@
   - No envio do form, faça com que a página não seja recarregada.
 */
 const form = document.querySelector('form')
+const p = document.querySelector('p')
 
 form.addEventListener('submit', event => {
   event.preventDefault()
   const textoInput = event.target.input.value
-  console.log(textoInput)
+  const regexCondição = /[a-zA-Z0-9]{7,11}/
+
+  if(regexCondição.test(textoInput)){
+    console.log('O valor inserido no input é válido =)')
+    return
+  }
+  console.log('Valor inválido =(')
 })
 
 /*
@@ -25,6 +32,9 @@ form.addEventListener('submit', event => {
     index.html;
   - Exiba no console o boolean no qual este teste resulta.
 */
+const testRegex = /[documentation]/
+const result = testRegex.test(p)
+// console.log(result)
 /*
   04
 
@@ -33,7 +43,11 @@ form.addEventListener('submit', event => {
   - Teste se o match aconteceu e exiba o resultado no console.
 */
 const B99message = 'E o Terry Crews faz tudo, inclusive tocar a abertura de B99 na flauta'
+const mensage = /[A-Z0-9]{3,}/
 
+const regexEx04 = mensage.test(B99message)
+
+// console.log(regexEx04)
 
 /*
   05
@@ -42,7 +56,7 @@ const B99message = 'E o Terry Crews faz tudo, inclusive tocar a abertura de B99 
     resultado do teste entre a regex e a string exibido no console seja true.
 */
 
-const word = 'O que a NASA fotografou no dia do seu aniversário?'
+const word = 'NASA'
 const NASARegex = /^[A-Z]{4}$/
 const NASAResult = NASARegex.test(word)
 
