@@ -9,8 +9,10 @@ form.addEventListener('keyup', event => {
     const regex = /^[a-zA-Z]{6,12}$/
 
     if(regex.test(valorDoInput)) {
+        input.setAttribute('class', 'verde')
         p.textContent = 'Valor valido =)'
         return
     }
+    input.setAttribute('class', 'vermelho')
     p.textContent = 'O valor inserido deve conter no minimo 6 letras =('
 })

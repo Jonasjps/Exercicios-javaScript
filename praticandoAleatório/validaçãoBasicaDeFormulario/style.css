@@ -26,10 +26,10 @@ button {
     padding: 4px;
 }
 
-#username {
+.verde {
     border: 2px solid green;
 }
 
-#username {
+.vermelho {
     border: 2px solid red;
 }
