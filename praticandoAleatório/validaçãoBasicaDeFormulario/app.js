@@ -1,18 +1,22 @@
 const form = document.querySelector('.signup-form')
-const p = document.querySelector('p')
+const p = document.createElement('p')
 const input = document.querySelector('input')
 
-form.addEventListener('keyup', event => {
+form.username.addEventListener('keyup', event => {
     event.preventDefault()
 
     const valorDoInput = event.target.value
     const regex = /^[a-zA-Z]{6,12}$/
 
     if(regex.test(valorDoInput)) {
-        input.setAttribute('class', 'verde')
-        p.textContent = 'Valor valido =)'
+        input.insertAdjacentElement('afterend',p)
+        form.username.setAttribute('class', 'verde')
+        
+        p.textContent = 'Nome valido. =)'
         return
     }
-    input.setAttribute('class', 'vermelho')
-    p.textContent = 'O valor inserido deve conter no minimo 6 letras =('
+    input.insertAdjacentElement('afterend',p)
+    form.username.setAttribute('class', 'vermelho')
+ 
+    p.textContent = 'Insira um Nome valido de no minimo 6 letras! =('
 })
