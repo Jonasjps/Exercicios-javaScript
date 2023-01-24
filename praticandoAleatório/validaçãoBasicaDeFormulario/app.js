@@ -22,7 +22,6 @@ form.addEventListener('submit', event => {
 form.username.addEventListener('keyup', event => {
     const isValidUsername = testeUserName(event.target.value)
 
-    console.log(event)
     if (isValidUsername) {
         form.username.setAttribute('class', 'success')
         return
