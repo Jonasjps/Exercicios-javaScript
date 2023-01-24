@@ -13,7 +13,7 @@ form {
     padding: 10px;
 }
 
-input {
+input,button {
     display: block;
     margin: 10px auto;
     padding: 4px;
@@ -22,16 +22,12 @@ input {
     
 }
 
-button {
-    display: block;
-    margin: 10px auto;
-    padding: 4px;
-}
 
-.verde {
+
+.success {
     border: 2px solid green;
 }
 
-.vermelho {
+.error {
     border: 2px solid red;
 }

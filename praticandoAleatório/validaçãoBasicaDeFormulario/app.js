@@ -1,22 +1,26 @@
 const form = document.querySelector('.signup-form')
-const p = document.createElement('p')
-const input = document.querySelector('input')
+const p = document.querySelector('.feedback')
 
-form.username.addEventListener('keyup', event => {
+const testeUserName = username => /^[a-zA-Z]{6,12}$/.test(username)
+
+form.addEventListener('submit', event => {
     event.preventDefault()
 
-    const valorDoInput = event.target.value
-    const regex = /^[a-zA-Z]{6,12}$/
+    const isValidUsername = testeUserName(event.target.username.value)
 
-    if(regex.test(valorDoInput)) {
-        input.insertAdjacentElement('afterend',p)
-        form.username.setAttribute('class', 'verde')
-        
-        p.textContent = 'Nome valido. =)'
+    if(isValidUsername) {
+        p.textContent = 'username válido =)'
         return
     }
-    input.insertAdjacentElement('afterend',p)
-    form.username.setAttribute('class', 'vermelho')
- 
-    p.textContent = 'Insira um Nome valido de no minimo 6 letras! =('
+    p.textContent = 'O username deve conter entre 6 e 12 caracteres e deve conter apenas letras.'
+})
+
+form.username.addEventListener('keyup', event => {
+    const isValidUsername = testeUserName(event.target.value)
+    
+    if(isValidUsername) {
+        form.username.setAttribute('class', 'success')
+        return
+    }
+    form.username.setAttribute('class','error')
 })
