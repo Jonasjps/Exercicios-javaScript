@@ -1,22 +1,32 @@
-const form = document.querySelector('.signup-form')
+const form = document.querySelector('form')
 const feedback = document.querySelector('.feedback')
 
-form.addEventListener('submit', event => {
+const testUserNameFunc = username => /^[a-zA-Z]{6,12}$/.test(username) 
+
+form.username.addEventListener('keyup', event => {
     event.preventDefault()
-    const username  = event.target.username.value
-    const usernameRegex = /^[a-zA-Z]{6,12}$/
-    const isAvalidad = usernameRegex.test(username)
+
+    const isAvalidad = testUserNameFunc(event.target.value)
     
     if(isAvalidad) {
         feedback.textContent = 'É valido! =)'
         return
     }
 
-    feedback.textContent = 'Não é valido =('
+    feedback.textContent = 'username invalo =('
     
 })
 
 form.username.addEventListener('keyup', event => {
-    const username = event.target.value
+    const isAvalidad = testUserNameFunc(event.target.value)
+
+    if(isAvalidad) {
+        form.username.setAttribute('class', 'success')
+        return
+    }
+
+    form.username.setAttribute('class', 'error')
+
+      
     
 })

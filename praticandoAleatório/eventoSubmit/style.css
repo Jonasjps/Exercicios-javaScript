@@ -18,3 +18,11 @@ input,button {
     margin: 10px auto;
     padding: 4px;
 }
+
+.success {
+    border: 2px solid green;
+}
+
+.error {
+    border: 2px solid red;
+}
