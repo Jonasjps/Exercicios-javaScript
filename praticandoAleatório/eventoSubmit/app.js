@@ -10,10 +10,12 @@ form.username.addEventListener('keyup', event => {
     
     if(isAvalidad) {
         feedback.textContent = 'É valido! =)'
+        feedback.style.color = 'green'
         return
     }
 
     feedback.textContent = 'username invalo =('
+    feedback.style.color = 'red'
     
 })
 
