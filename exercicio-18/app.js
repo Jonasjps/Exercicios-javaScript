@@ -17,6 +17,22 @@
   
   Dica: pesquise pelo método "insertAdjacentElement", no MDN;
 */
+const form = document.querySelector('form')
+const paragraph = document.querySelector('input')
+
+form.addEventListener('keyup', event => {
+  const regexUserName = /^[a-zA-Z]{6,}$/
+  const eventUserName = event.target.value
+  const testUserName = regexUserName.test(eventUserName)
+
+  if(testUserName) {
+    console.log('É valido!')
+    return
+  }
+  console.log('Não é valido!')
+})
+
+
 /*
   02
 
