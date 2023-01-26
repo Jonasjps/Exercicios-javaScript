@@ -18,18 +18,24 @@
   Dica: pesquise pelo método "insertAdjacentElement", no MDN;
 */
 const form = document.querySelector('form')
-const paragraph = document.querySelector('input')
+const input = document.querySelector('input')
+const paragraph = document.createElement('p')
 
 form.addEventListener('keyup', event => {
   const regexUserName = /^[a-zA-Z]{6,}$/
   const eventUserName = event.target.value
   const testUserName = regexUserName.test(eventUserName)
 
-  if(testUserName) {
-    console.log('É valido!')
+  if(!testUserName) {
+    input.insertAdjacentElement('afterend', paragraph )
+  console.log(event.value)
+    paragraph.textContent = 'O valor deve conter no mínimo 6 caracteres, com apenas letras maiúsculas e/ou minúsculas'
+    paragraph.setAttribute('class','username-help-feedback')
     return
   }
-  console.log('Não é valido!')
+  input.insertAdjacentElement('afterend', paragraph)
+  paragraph.textContent = 'Username válido =)'
+  paragraph.setAttribute('class',' username-success-feedback')
 })
 
 
