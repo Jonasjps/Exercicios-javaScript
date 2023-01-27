@@ -22,3 +22,10 @@
   margin-bottom: 2.5rem;
   color: green;
 }
+.vermelho {
+  border: 2px solid red;
+}
+
+.verde {
+  border: 2px solid green;
+}

@@ -28,7 +28,6 @@ form.addEventListener('keyup', event => {
 
   if(!testUserName) {
     input.insertAdjacentElement('afterend', paragraph )
-  console.log(event.value)
     paragraph.textContent = 'O valor deve conter no mínimo 6 caracteres, com apenas letras maiúsculas e/ou minúsculas'
     paragraph.setAttribute('class','username-help-feedback')
     return
