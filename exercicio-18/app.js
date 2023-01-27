@@ -64,7 +64,7 @@ form.addEventListener('submit', event => {
   }
   button.insertAdjacentElement('afterend', envioDeDados)
   envioDeDados.setAttribute('class', 'submit-help-feedback')
-  envioDeDados.textContent = 'Por favor, insira um username válido'
+  envioDeDados.textContent = 'Por favor, insira um username válido!'
 
 
 })
