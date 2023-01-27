@@ -21,10 +21,10 @@ const form = document.querySelector('form')
 const input = document.querySelector('input')
 const paragraph = document.createElement('p')
 
+const testRegexUserName = username => /^[a-zA-Z]{6,}$/.test(username) 
+
 form.addEventListener('keyup', event => {
-  const regexUserName = /^[a-zA-Z]{6,}$/
-  const eventUserName = event.target.value
-  const testUserName = regexUserName.test(eventUserName)
+  const testUserName = testRegexUserName(event.target.value)
 
   if(!testUserName) {
     input.insertAdjacentElement('afterend', paragraph )
@@ -49,7 +49,25 @@ form.addEventListener('keyup', event => {
   - Use as classes disponíveis no arquivo style.css para colorir o parágrafo;
   - Não insira o parágrafo manualmente no index.html.
 */
+const button = document.querySelector('button')
+const envioDeDados = document.createElement('p')
 
+form.addEventListener('submit', event => {
+  event.preventDefault()
+
+  const testUserName = testRegexUserName(event.target.username.value)
+  if(testUserName){
+    button.insertAdjacentElement('afterend', envioDeDados)
+    envioDeDados.setAttribute('class', 'submit-success-feedback')
+    envioDeDados.textContent = 'Dados enviados =)'
+    return
+  }
+  button.insertAdjacentElement('afterend', envioDeDados)
+  envioDeDados.setAttribute('class', 'submit-help-feedback')
+  envioDeDados.textContent = 'Por favor, insira um username válido'
+
+
+})
 /*
   03
 
