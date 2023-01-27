@@ -85,3 +85,15 @@ form.addEventListener('submit', event => {
         6;
     2) Pesquisar no MDN.
 */
+
+const some = (array = [], item) => {
+   console.log(array,item)
+}
+
+for(let i = 0; i < 3; i++) {
+  if(some([1,2,3], i > 2)) {
+     true
+  } else if(some([1,2,3], i === 0)) {
+    false
+  }
+}
