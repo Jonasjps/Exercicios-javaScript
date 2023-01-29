@@ -30,7 +30,7 @@ form.addEventListener('keyup', event => {
     input.insertAdjacentElement('afterend', paragraph )
     paragraph.textContent = 'O valor deve conter no mínimo 6 caracteres, com apenas letras maiúsculas e/ou minúsculas'
     paragraph.setAttribute('class','username-help-feedback')
-    return
+    return 
   }
   input.insertAdjacentElement('afterend', paragraph)
   paragraph.textContent = 'Username válido =)'
@@ -56,17 +56,17 @@ form.addEventListener('submit', event => {
   event.preventDefault()
 
   const testUserName = testRegexUserName(event.target.username.value)
-  if(testUserName){
+  if(!testUserName){
     button.insertAdjacentElement('afterend', envioDeDados)
-    envioDeDados.setAttribute('class', 'submit-success-feedback')
-    envioDeDados.textContent = 'Dados enviados =)'
+    envioDeDados.setAttribute('class', 'submit-help-feedback')
+    envioDeDados.textContent = 'Por favor, insira um username válido!'
+    
     return
   }
   button.insertAdjacentElement('afterend', envioDeDados)
-  envioDeDados.setAttribute('class', 'submit-help-feedback')
-  envioDeDados.textContent = 'Por favor, insira um username válido!'
-
-
+  envioDeDados.setAttribute('class', 'submit-success-feedback')
+  envioDeDados.textContent = 'Dados enviados =)'
+  
 })
 /*
   03
@@ -94,8 +94,7 @@ const some = (array, callback) => {
     
     if(callback(array[i])) {
      return true
-    }
-   
+    }   
   }
   return false
 }
