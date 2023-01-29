@@ -93,12 +93,11 @@ const some = (array, callback) => {
   for(let i = 0; i < array.length; i++) {
     
     if(callback(array[i])) {
-      return true
-    }    
-    if(callback(array[i])) {
-      return false
+     return true
     }
+   
   }
+  return false
 }
 console.log(some([1,2,3], item => item > 2))
 
