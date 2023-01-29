@@ -85,4 +85,17 @@ form.addEventListener('submit', event => {
         6;
     2) Pesquisar no MDN.
 */
+// function some (array = [], item = 0) {
+//   return array, item
+// }
+const some = (array, callback) => {
 
+  for(let i = 0; i < array.length; i++) {
+    return callback(array[i])
+  }
+}
+const result1 = some([1,2,3],item => item > 2)
+
+const result2 = some([1,2,3],item => item === 0)
+console.log(result1)
+console.log(result2)
