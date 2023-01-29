@@ -17,25 +17,6 @@
   
   Dica: pesquise pelo método "insertAdjacentElement", no MDN;
 */
-const form = document.querySelector('form')
-const input = document.querySelector('input')
-const paragraph = document.createElement('p')
-
-const testRegexUserName = username => /^[a-zA-Z]{6,}$/.test(username) 
-
-form.addEventListener('keyup', event => {
-  const testUserName = testRegexUserName(event.target.value)
-
-  if(!testUserName) {
-    input.insertAdjacentElement('afterend', paragraph )
-    paragraph.textContent = 'O valor deve conter no mínimo 6 caracteres, com apenas letras maiúsculas e/ou minúsculas'
-    paragraph.setAttribute('class','username-help-feedback')
-    return 
-  }
-  input.insertAdjacentElement('afterend', paragraph)
-  paragraph.textContent = 'Username válido =)'
-  paragraph.setAttribute('class',' username-success-feedback')
-})
 
 
 /*
@@ -49,25 +30,6 @@ form.addEventListener('keyup', event => {
   - Use as classes disponíveis no arquivo style.css para colorir o parágrafo;
   - Não insira o parágrafo manualmente no index.html.
 */
-const button = document.querySelector('button')
-const envioDeDados = document.createElement('p')
-
-form.addEventListener('submit', event => {
-  event.preventDefault()
-
-  const testUserName = testRegexUserName(event.target.username.value)
-  if(!testUserName){
-    button.insertAdjacentElement('afterend', envioDeDados)
-    envioDeDados.setAttribute('class', 'submit-help-feedback')
-    envioDeDados.textContent = 'Por favor, insira um username válido!'
-    
-    return
-  }
-  button.insertAdjacentElement('afterend', envioDeDados)
-  envioDeDados.setAttribute('class', 'submit-success-feedback')
-  envioDeDados.textContent = 'Dados enviados =)'
-  
-})
 /*
   03
 
@@ -85,25 +47,3 @@ form.addEventListener('submit', event => {
         6;
     2) Pesquisar no MDN.
 */
-// function some (array = [], item = 0) {
-//   return array, item
-// }
-const some = (array, callback) => {
-
-  for(let i = 0; i < array.length; i++) {
-    
-    if(callback(array[i])) {
-     return true
-    }   
-  }
-  return false
-}
-console.log(some([1,2,3], item => item > 2))
-
-console.log(some([1,3,5], item => item === 0))
-
-
-// const array = [1,2,3]
-
-// const result = array.some(item => item > 2)
-// console.log(result)
