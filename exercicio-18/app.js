@@ -91,11 +91,21 @@ form.addEventListener('submit', event => {
 const some = (array, callback) => {
 
   for(let i = 0; i < array.length; i++) {
-    return callback(array[i])
+    
+    if(callback(array[i])) {
+      return true
+    }    
+    if(callback(array[i])) {
+      return false
+    }
   }
 }
-const result1 = some([1,2,3],item => item > 2)
+console.log(some([1,2,3], item => item > 2))
 
-const result2 = some([1,2,3],item => item === 0)
-console.log(result1)
-console.log(result2)
+console.log(some([1,3,5], item => item === 0))
+
+
+// const array = [1,2,3]
+
+// const result = array.some(item => item > 2)
+// console.log(result)
