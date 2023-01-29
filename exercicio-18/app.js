@@ -17,7 +17,11 @@
   
   Dica: pesquise pelo método "insertAdjacentElement", no MDN;
 */
+const inputUsername = document.querySelector('#username')
 
+inputUsername.addEventListener('keyup', event => {
+console.log(event.target.value)
+})
 
 /*
   02
