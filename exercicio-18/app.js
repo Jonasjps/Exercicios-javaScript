@@ -19,8 +19,9 @@
 */
 const inputUsername = document.querySelector('#username')
 
+
 inputUsername.addEventListener('keyup', event => {
-console.log(event.target.value)
+const username = event.target.value
 })
 
 /*
