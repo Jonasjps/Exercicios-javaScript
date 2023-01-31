@@ -18,11 +18,13 @@
   Dica: pesquise pelo método "insertAdjacentElement", no MDN;
 */
 const inputUserName = document.querySelector('#username')
-const feedback = document.createElement('p')
+const form = document.querySelector('form')
+const button = document.querySelector('button')
+const usernameRegex = /^[a-zA-Z]{6,}$/
 
-inputUserName.addEventListener('keyup', event => {
+inputUserName.addEventListener('input', event => {
+  event.preventDefault()
   const username = event.target.value
-  const usernameRegex = /^[a-zA-Z]{6,}$/
   const testRegex = usernameRegex.test(username)
 
   if(testRegex) {
@@ -35,6 +37,30 @@ inputUserName.addEventListener('keyup', event => {
   feedback.setAttribute('class', 'username-help-feedback')
   inputUserName.insertAdjacentElement('afterend', feedback)
 })
+
+const feedback = document.createElement('p')
+const paragraph = document.createElement('p')
+
+
+form.addEventListener('submit', event => {
+  
+  const usernameEvent = inputUserName.value
+  const testDoSubmit = usernameRegex.test(usernameEvent)
+
+  if(testDoSubmit) {
+    paragraph.textContent = 'dados enviados!'
+    paragraph.setAttribute('class','submit-success-feedback')
+    button.insertAdjacentElement('afterend', paragraph)
+    return
+  }
+
+  paragraph.textContent = 'Por favor, insira um username válido!'
+  paragraph.setAttribute('class', 'submit-help-feedback')
+  button.insertAdjacentElement('afterend', paragraph)
+})
+
+
+
 /*
   02
 
