@@ -22,10 +22,17 @@ const form = document.querySelector('form')
 const feedback = document.createElement('p')
 const paragraph = document.createElement('p')
 const button = document.querySelector('button')
-
 const regexusername = /^[a-zA-Z]{6,}$/
 
-inputusername.addEventListener('keyup', event => {
+paragraph.setAttribute('data-feedback', 'submit-feedback')
+
+inputusername.addEventListener('input', event => {
+  const paragraphExiste = document.querySelector('[data-feedback="submit-feedback"]')
+
+  if(paragraphExiste) {
+    paragraph.remove()
+ }  
+ 
   const valueUsername = event.target.value
   const isValidUsername = regexusername.test(valueUsername)
   
