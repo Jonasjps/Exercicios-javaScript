@@ -18,12 +18,15 @@
   Dica: pesquise pelo método "insertAdjacentElement", no MDN;
 */
 const inputusername = document.querySelector('#username')
+const form = document.querySelector('form')
 const feedback = document.createElement('p')
+const paragraph = document.createElement('p')
+const button = document.querySelector('button')
+
+const regexusername = /^[a-zA-Z]{6,}$/
 
 inputusername.addEventListener('keyup', event => {
-  event.preventDefault()
   const valueUsername = event.target.value
-  const regexusername = /^[a-zA-Z]{6,}$/
   const isValidUsername = regexusername.test(valueUsername)
   
   if(!isValidUsername) {
@@ -36,8 +39,24 @@ inputusername.addEventListener('keyup', event => {
   feedback.textContent = 'Username válido =)'
   feedback.setAttribute('class', 'username-success-feedback')
   inputusername.insertAdjacentElement('afterend', feedback)
-  
 
+})
+
+form.addEventListener('submit', event => {
+  event.preventDefault()
+
+  const getUsername = inputusername.value
+
+  if(regexusername.test(getUsername)) {
+    paragraph.textContent = 'Dados enviados =)'
+    paragraph.setAttribute('class','submit-success-feedback')
+    button.insertAdjacentElement('afterend', paragraph)
+    return
+  }
+
+  paragraph.textContent = 'Por favor, insira um username válido!'
+  paragraph.setAttribute('class','submit-help-feedback')
+  button.insertAdjacentElement('afterend', paragraph)
 })
 /*
   02
@@ -50,6 +69,7 @@ inputusername.addEventListener('keyup', event => {
   - Use as classes disponíveis no arquivo style.css para colorir o parágrafo;
   - Não insira o parágrafo manualmente no index.html.
 */
+
 /*
   03
 
