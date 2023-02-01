@@ -36,6 +36,7 @@ inputusername.addEventListener('input', event => {
   const valueUsername = event.target.value
   const isValidUsername = regexusername.test(valueUsername)
   
+  
   if(!isValidUsername) {
     feedback.textContent = 'O valor deve conter no mínimo 6 caracteres, com apenas letras maiúsculas e/ou minúsculas'
     feedback.setAttribute('class', 'username-help-feedback')
