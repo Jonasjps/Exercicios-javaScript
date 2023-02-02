@@ -26,7 +26,7 @@ const regexusername = /^[a-zA-Z]{6,}$/
 
 paragraph.setAttribute('data-feedback', 'submit-feedback')
 
-const isValidElementUsername = (paragraphinf) => {
+const isValidElementUsername = paragraphinf => {
   const {paragraph,text,className,previousElemnt} = paragraphinf
   paragraph.textContent = text
   paragraph.setAttribute('class', className)
@@ -34,8 +34,15 @@ const isValidElementUsername = (paragraphinf) => {
   return
 }
 
+const isValidElementUsernameNotExist = feedbackinfo => {
+  const {feedback,text,className,previousElement} = feedbackinfo
+  feedback.textContent = text
+  feedback.setAttribute('class',className)
+  previousElement.insertAdjacentElement('afterend', feedback)
+  return
+}
 
-inputusername.addEventListener('input', event => {
+const inputEventLestener = event => {
   const paragraphExiste = document.querySelector('[data-feedback="submit-feedback"]')
   
   const paramentrosDaFuncFalse = {
@@ -58,8 +65,6 @@ inputusername.addEventListener('input', event => {
   
   const valueUsername = event.target.value
   const isValidUsername = regexusername.test(valueUsername)
-
-
   
   if(!isValidUsername) {
     isValidElementUsername(paramentrosDaFuncFalse)
@@ -67,28 +72,41 @@ inputusername.addEventListener('input', event => {
   }
   
  isValidElementUsername(paramentrosDaFuncTrue)
-  
-})
 
-form.addEventListener('submit', event => {
+}
+
+const usernameSubmit = event => {
   event.preventDefault()
 
   const getUsername = inputusername.value
-
-  if(regexusername.test(getUsername)) {
-    paragraph.textContent = 'Dados enviados =)'
-    paragraph.setAttribute('class','submit-success-feedback')
-    button.insertAdjacentElement('afterend', paragraph)
-    return
+  const isSuccessFeedback = {
+    feedback:paragraph ,
+    text: 'Dados enviados =)',
+    className: 'submit-success-feedback',
+    previousElement:button
   }
 
-  paragraph.textContent = 'Por favor, insira um username válido!'
-  paragraph.setAttribute('class','submit-help-feedback')
-  button.insertAdjacentElement('afterend', paragraph)
-})
+  const notIsUsernameValidError = {
+    feedback: paragraph,
+    text: 'Por favor, insira um username válido!',
+    className: 'submit-help-feedback',
+    previousElement: button
+   } 
+   const testUsername = regexusername.test(getUsername)
+
+  if(testUsername) {
+    isValidElementUsernameNotExist(isSuccessFeedback)
+    return
+  }
+  isValidElementUsernameNotExist(notIsUsernameValidError)
+  
+}
+
+inputusername.addEventListener('input', inputEventLestener )
+form.addEventListener('submit', usernameSubmit)
 /*
   02
-
+  
   - Valide o envio do form;
   - Se o username inserido no input é válido, no envio do form, exiba um  
     parágrafo verde abaixo do botão com a mensagem "Dados enviados =)";
