@@ -26,28 +26,48 @@ const regexusername = /^[a-zA-Z]{6,}$/
 
 paragraph.setAttribute('data-feedback', 'submit-feedback')
 
+const isValidElementUsername = (paragraphinf) => {
+  const {paragraph,text,className,previousElemnt} = paragraphinf
+  paragraph.textContent = text
+  paragraph.setAttribute('class', className)
+  previousElemnt.insertAdjacentElement('afterend', feedback)
+  return
+}
+
+
 inputusername.addEventListener('input', event => {
   const paragraphExiste = document.querySelector('[data-feedback="submit-feedback"]')
+  
+  const paramentrosDaFuncFalse = {
+    paragraph:feedback,
+    text:'O valor deve conter no mínimo 6 caracteres,com apenas letras maiúsculas e/ou minúsculas',
+    className:'username-help-feedback',
+    previousElemnt:inputusername
+  }
+
+  const paramentrosDaFuncTrue = {
+    paragraph: feedback,
+    text: 'Username válido =)',
+    className: 'username-success-feedback',
+    previousElemnt: inputusername
+  }
 
   if(paragraphExiste) {
     paragraph.remove()
- }  
- 
+  }  
+  
   const valueUsername = event.target.value
   const isValidUsername = regexusername.test(valueUsername)
-  
+
+
   
   if(!isValidUsername) {
-    feedback.textContent = 'O valor deve conter no mínimo 6 caracteres, com apenas letras maiúsculas e/ou minúsculas'
-    feedback.setAttribute('class', 'username-help-feedback')
-    inputusername.insertAdjacentElement('afterend', feedback)
+    isValidElementUsername(paramentrosDaFuncFalse)
     return
   }
-
-  feedback.textContent = 'Username válido =)'
-  feedback.setAttribute('class', 'username-success-feedback')
-  inputusername.insertAdjacentElement('afterend', feedback)
-
+  
+ isValidElementUsername(paramentrosDaFuncTrue)
+  
 })
 
 form.addEventListener('submit', event => {
