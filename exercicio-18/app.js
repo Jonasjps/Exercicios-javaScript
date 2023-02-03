@@ -96,7 +96,7 @@ const EnvioDoSubmit =  event => {
 }
 
 inputUsername.addEventListener('input',UsernameInput )
-form.addEventListener('submit', EnvioDoSubmit )
+form.addEventListener('submit', EnvioDoSubmit)
 
 /*
 02
@@ -126,4 +126,20 @@ form.addEventListener('submit', EnvioDoSubmit )
       - "Correção dos exercícios da aula 04 da etapa 05" - Aula 01-01 da etapa  
         6;
     2) Pesquisar no MDN.
+
 */
+const some = (array,func) => {
+
+  for(let c = 0; c < array.length; c++) {
+    if(func(array[c])) {
+    console.log(true)  
+      return
+    }
+  }
+  console.log(false)
+  
+}
+
+some([1,2,3], item => item > 2)
+some([1,3,5], item => item === 0)
+
