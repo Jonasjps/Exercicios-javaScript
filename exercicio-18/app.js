@@ -27,44 +27,80 @@ const regexUsername = /^[a-zA-Z]{6,}$/
 
 paragraph.setAttribute('data-feedback', 'submit-feedback')
 
-inputUsername.addEventListener('input', event => {
+const isValidUsernameTrueOffalse = paragraphonfo => {
+  const {paragraph,text, className, previousElement} = paragraphonfo
+  paragraph.textContent = text
+  paragraph.setAttribute('class', className)
+  previousElement.insertAdjacentElement('afterend', paragraph)
+  return
+}
+
+const isValidUsernameTrueOfFalseSubmit = feedbackinfo => {
+  const {feedback, text,className,previousElement} = feedbackinfo
+  feedback.textContent = text
+  feedback.setAttribute('class', className)
+  previousElement.insertAdjacentElement('afterend', feedback)
+  return
+}
+const UsernameInput = event => {
   const usernameValor = event.target.value
   const paragraphFeedback = document.querySelector('[data-feedback="submit-feedback"]')
   
   if(paragraphFeedback) {
     paragraphFeedback.remove()
   }
-  
-  if(!regexUsername.test(usernameValor)) {
-    feedback.textContent = 'O valor deve conter no mínimo 6 caracteres, com apenas letras maiúsculas e/ou minúsculas'
-    feedback.setAttribute('class', 'username-help-feedback')
-    inputUsername.insertAdjacentElement('afterend', feedback)
+  const usernamefalse = {
+    paragraph:feedback ,
+    text: 'O valor deve conter no mínimo 6 caracteres, com apenas letras maiúsculas e/ou minúsculas',
+    className: 'username-help-feedback',
+    previousElement: inputUsername
+  }
+  const usernameTrue = {
+    paragraph: feedback ,
+    text: 'Username válido =)',
+    className: 'username-success-feedback',
+    previousElement: inputUsername
+  }
+
+  const testRegex = regexUsername.test(usernameValor) 
+  if(!testRegex) {
+    isValidUsernameTrueOffalse(usernamefalse)
     return
   }
-  feedback.textContent = 'Username válido =)'
-  feedback.setAttribute('class', 'username-success-feedback')
-  inputUsername.insertAdjacentElement('afterend',feedback)
-})
-
-form.addEventListener('submit',  event => {
+  isValidUsernameTrueOffalse(usernameTrue)
+  
+}
+const EnvioDoSubmit =  event => {
   event.preventDefault()
   
   const usernameSubmit = inputUsername.value
-
+  
+  const usernameTrue = {
+    feedback: paragraph,
+    text: 'Dados enviados =)',
+    className: 'submit-success-feedback',
+    previousElement: button
+  }
+  
+  const usernamefalse =  {
+    feedback: paragraph,
+    text: 'Por favor, insira um username válido! =(',
+    className:'submit-help-feedback' ,
+    previousElement: button 
+  }
   if(regexUsername.test(usernameSubmit)) {
-    paragraph.textContent = 'Dados enviados =)'
-    paragraph.setAttribute('class', 'submit-success-feedback')
-    button.insertAdjacentElement('afterend', paragraph)
+    isValidUsernameTrueOfFalseSubmit(usernameTrue)
     return
   }
-  paragraph.textContent = 'Por favor, insira um username válido! =('
-  paragraph.setAttribute('class', 'submit-help-feedback' )
-  button.insertAdjacentElement('afterend',paragraph)
-})
+  isValidUsernameTrueOfFalseSubmit(usernamefalse)
+}
+
+inputUsername.addEventListener('input',UsernameInput )
+form.addEventListener('submit', EnvioDoSubmit )
 
 /*
-  02
-  
+02
+
   - Valide o envio do form;
   - Se o username inserido no input é válido, no envio do form, exiba um  
     parágrafo verde abaixo do botão com a mensagem "Dados enviados =)";
