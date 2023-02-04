@@ -131,13 +131,16 @@ form.addEventListener('submit', EnvioDoSubmit)
 const some = (array,func) => {
 
   for(let c = 0; c < array.length; c++) {
-    if(func(array[c])) {
-    console.log(true)  
+
+    const SimulandoMetódoSome = func(array[c]) 
+    
+    if(SimulandoMetódoSome) {
+      console.log(true)  
       return
     }
   }
   console.log(false)
-  
+
 }
 
 some([1,2,3], item => item > 2)
