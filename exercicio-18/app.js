@@ -23,9 +23,9 @@ const form = document.querySelector('form')
 const button = document.querySelector('button')
 const paragraph = document.createElement('p')
 
-const regexUsername = /^[a-zA-Z]{6,}$/
+const regexUsername = /^[a-zA-Z]{6,}$/ //corrigir fazendo uma finção
 
-paragraph.setAttribute('data-feedback', 'submit-feedback')
+paragraph.setAttribute('data-feedback', 'submit-feedback') 
 
 const isValidUsernameTrueOffalse = paragraphonfo => {
   const {paragraph,text, className, previousElement} = paragraphonfo
@@ -44,12 +44,13 @@ const isValidUsernameTrueOfFalseSubmit = feedbackinfo => {
 }
 const UsernameInput = event => {
   const usernameValor = event.target.value
+  
   const paragraphFeedback = document.querySelector('[data-feedback="submit-feedback"]')
   
-  if(paragraphFeedback) {
+  if(paragraphFeedback) { //corrigir refatorar em uma função
     paragraphFeedback.remove()
   }
-  const usernamefalse = {
+  const usernamefalse = { //organizar todos os objetos no topo do codigo.
     paragraph:feedback ,
     text: 'O valor deve conter no mínimo 6 caracteres, com apenas letras maiúsculas e/ou minúsculas',
     className: 'username-help-feedback',
@@ -62,7 +63,7 @@ const UsernameInput = event => {
     previousElement: inputUsername
   }
 
-  const testRegex = regexUsername.test(usernameValor) 
+  const testRegex = regexUsername.test(usernameValor) //corrigir criar uma função.
   if(!testRegex) {
     isValidUsernameTrueOffalse(usernamefalse)
     return
@@ -75,7 +76,7 @@ const EnvioDoSubmit =  event => {
   
   const usernameSubmit = inputUsername.value
   
-  const usernameTrue = {
+  const usernameTrue = {//organizar todos os objetos no topo do codigo!
     feedback: paragraph,
     text: 'Dados enviados =)',
     className: 'submit-success-feedback',
@@ -88,11 +89,11 @@ const EnvioDoSubmit =  event => {
     className:'submit-help-feedback' ,
     previousElement: button 
   }
-  if(regexUsername.test(usernameSubmit)) {
-    isValidUsernameTrueOfFalseSubmit(usernameTrue)
+  if(!regexUsername.test(usernameSubmit)) { //corrigir, adicionar expreção dentro de uma função.
+    isValidUsernameTrueOfFalseSubmit(usernamefalse)
     return
   }
-  isValidUsernameTrueOfFalseSubmit(usernamefalse)
+  isValidUsernameTrueOfFalseSubmit(usernameTrue)
 }
 
 inputUsername.addEventListener('input',UsernameInput )
@@ -135,8 +136,8 @@ const some = (array,func) => {
     const SimulandoMetódoSome = func(array[c]) 
     
     if(SimulandoMetódoSome) {
-      console.log(true)  
-      return
+      console.log(true) //remover esses console.log  
+      return //esse return deve retornar o boolean
     }
   }
   console.log(false)
