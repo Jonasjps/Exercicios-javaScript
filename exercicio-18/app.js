@@ -17,87 +17,6 @@
   
   Dica: pesquise pelo método "insertAdjacentElement", no MDN;
 */
-const inputUsername = document.querySelector('#username')
-const feedback = document.createElement('p')
-const form = document.querySelector('form')
-const button = document.querySelector('button')
-const paragraph = document.createElement('p')
-
-const regexUsername = /^[a-zA-Z]{6,}$/ //corrigir fazendo uma finção
-
-paragraph.setAttribute('data-feedback', 'submit-feedback') 
-
-const isValidUsernameTrueOffalse = paragraphonfo => {
-  const {paragraph,text, className, previousElement} = paragraphonfo
-  paragraph.textContent = text
-  paragraph.setAttribute('class', className)
-  previousElement.insertAdjacentElement('afterend', paragraph)
-  return
-}
-
-const isValidUsernameTrueOfFalseSubmit = feedbackinfo => {
-  const {feedback, text,className,previousElement} = feedbackinfo
-  feedback.textContent = text
-  feedback.setAttribute('class', className)
-  previousElement.insertAdjacentElement('afterend', feedback)
-  return
-}
-const UsernameInput = event => {
-  const usernameValor = event.target.value
-  
-  const paragraphFeedback = document.querySelector('[data-feedback="submit-feedback"]')
-  
-  if(paragraphFeedback) { //corrigir refatorar em uma função
-    paragraphFeedback.remove()
-  }
-  const usernamefalse = { //organizar todos os objetos no topo do codigo.
-    paragraph:feedback ,
-    text: 'O valor deve conter no mínimo 6 caracteres, com apenas letras maiúsculas e/ou minúsculas',
-    className: 'username-help-feedback',
-    previousElement: inputUsername
-  }
-  const usernameTrue = {
-    paragraph: feedback ,
-    text: 'Username válido =)',
-    className: 'username-success-feedback',
-    previousElement: inputUsername
-  }
-
-  const testRegex = regexUsername.test(usernameValor) //corrigir criar uma função.
-  if(!testRegex) {
-    isValidUsernameTrueOffalse(usernamefalse)
-    return
-  }
-  isValidUsernameTrueOffalse(usernameTrue)
-  
-}
-const EnvioDoSubmit =  event => {
-  event.preventDefault()
-  
-  const usernameSubmit = inputUsername.value
-  
-  const usernameTrue = {//organizar todos os objetos no topo do codigo!
-    feedback: paragraph,
-    text: 'Dados enviados =)',
-    className: 'submit-success-feedback',
-    previousElement: button
-  }
-  
-  const usernamefalse =  {
-    feedback: paragraph,
-    text: 'Por favor, insira um username válido! =(',
-    className:'submit-help-feedback' ,
-    previousElement: button 
-  }
-  if(!regexUsername.test(usernameSubmit)) { //corrigir, adicionar expreção dentro de uma função.
-    isValidUsernameTrueOfFalseSubmit(usernamefalse)
-    return
-  }
-  isValidUsernameTrueOfFalseSubmit(usernameTrue)
-}
-
-inputUsername.addEventListener('input',UsernameInput )
-form.addEventListener('submit', EnvioDoSubmit)
 
 /*
 02
@@ -129,21 +48,4 @@ form.addEventListener('submit', EnvioDoSubmit)
     2) Pesquisar no MDN.
 
 */
-const some = (array,func) => {
-
-  for(let c = 0; c < array.length; c++) {
-
-    const SimulandoMetódoSome = func(array[c]) 
-    
-    if(SimulandoMetódoSome) {
-      console.log(true) //remover esses console.log  
-      return //esse return deve retornar o boolean
-    }
-  }
-  console.log(false)
-
-}
-
-some([1,2,3], item => item > 2)
-some([1,3,5], item => item === 0)
 
