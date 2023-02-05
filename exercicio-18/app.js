@@ -134,6 +134,17 @@ form.addEventListener('submit',funcFormSubmit)
       - "Correção dos exercícios da aula 04 da etapa 05" - Aula 01-01 da etapa  
         6;
     2) Pesquisar no MDN.
-
 */
+const some = (array, callback) => {
+  for(let a = 0; a < array.length; a++) {
+   const funcCondição = callback(array[a]) 
+    if(funcCondição) {
+      return true
+    }
+  }
+  return false
+}
+console.log(some([1,2,3], item => item > 2))
+console.log(some([1,3,5], item => item === 0))
+
 
