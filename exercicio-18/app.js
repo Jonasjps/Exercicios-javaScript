@@ -138,6 +138,7 @@ form.addEventListener('submit',funcFormSubmit)
 const some = (array, callback) => {
   for(let a = 0; a < array.length; a++) {
    const funcCondição = callback(array[a]) 
+   
     if(funcCondição) {
       return true
     }
