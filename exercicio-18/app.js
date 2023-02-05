@@ -24,46 +24,7 @@ const button = document.querySelector('button')
 const feedback = document.createElement('p')
 const paragraph = document.createElement('p')
 
-const regexUsername = /^[a-zA-Z]{6,}$/
-
 paragraph.setAttribute('data-feedback','submit-feedback')
-
-const feedbackInputExist = feedbackifo => {
-  const {paragraph,text,className,parentSibling} = feedbackifo
-  paragraph.textContent = text
-  paragraph.setAttribute('class', className)
-  parentSibling.insertAdjacentElement('afterend',paragraph)
-  return
-}
-
-inputUsername.addEventListener('input', event => {
-  const valueUsername = event.target.value
-  const testUsername = regexUsername.test(valueUsername)
-  
-  const paragraphExist = document.querySelector('[data-feedback="submit-feedback"]')
-
-  if(paragraphExist) {
-    paragraph.remove()
-  }
-  const feedbackfalse = {
-    paragraph:feedback,
-    text:'O valor deve conter no mínimo 6 caracteres, com apenas letras maiúsculas e/ou minúsculas',
-    className:'username-help-feedback',
-    parentSibling:inputUsername
-  }  
-  const feedbackTrue = {
-    paragraph: feedback,
-    text: 'Username válido =)',
-    className: 'username-success-feedback',
-    parentSibling: inputUsername
-  }
-  if(!testUsername) {
-    feedbackInputExist(feedbackfalse)
-    return
-  }
-
-  feedbackInputExist(feedbackTrue)
-})
 
 const paragraphSubmitExist = paragraphifo => {
   const {feedback, text,className,parentSibling} = paragraphifo
@@ -73,32 +34,78 @@ const paragraphSubmitExist = paragraphifo => {
   return
 }
 
-form.addEventListener('submit', event => {
+const feedbackInputExist = feedbackifo => {
+  const {paragraph,text,className,parentSibling} = feedbackifo
+  paragraph.textContent = text
+  paragraph.setAttribute('class', className)
+  parentSibling.insertAdjacentElement('afterend',paragraph)
+  return
+}
+const paragraphfalse = {
+  feedback:paragraph,
+  text:'Por favor, insira um username válido!',
+  className:'submit-help-feedback',
+  parentSibling: button
+}
+
+const paragraphTrue = {
+  feedback:paragraph,
+  text:'Dados enviados =)',
+  className:'submit-success-feedback',
+  parentSibling: button 
+}
+
+const feedbackfalse = {
+  paragraph:feedback,
+  text:'O valor deve conter no mínimo 6 caracteres, com apenas letras maiúsculas e/ou minúsculas',
+  className:'username-help-feedback',
+  parentSibling:inputUsername
+}
+
+const feedbackTrue = {
+  paragraph: feedback,
+  text: 'Username válido =)',
+  className: 'username-success-feedback',
+  parentSibling: inputUsername
+}
+
+const paragraphDoInputExist = () => {
+  const paragraphExist = document.querySelector('[data-feedback="submit-feedback"]')
+
+  if(paragraphExist) {
+    paragraph.remove()
+  }  
+} 
+
+const testRegex = username => /^[a-zA-Z]{6,}$/.test(username)
+
+const funcInputUsername =  event => {
+  const valueUsername = event.target.value
+  const testUsername = testRegex(valueUsername)
+  
+  paragraphDoInputExist()
+ 
+  if(!testUsername) {
+    feedbackInputExist(feedbackfalse)
+    return
+  }
+  feedbackInputExist(feedbackTrue)
+}
+
+const funcFormSubmit =  event => {
   event.preventDefault()
   const usernameInputValue = inputUsername.value
+  const testUsername = testRegex(usernameInputValue)
   
-  const paragraphfalse = {
-    feedback:paragraph,
-    text:'Por favor, insira um username válido!',
-    className:'submit-help-feedback',
-    parentSibling: button
-  }
-  
-  const paragraphTrue = {
-    feedback:paragraph,
-    text:'Dados enviados =)',
-    className:'submit-success-feedback',
-    parentSibling: button 
-  }
-
-
-  if(!regexUsername.test(usernameInputValue)) {
+  if(!testUsername) {
     paragraphSubmitExist(paragraphfalse)
     return
   }
   paragraphSubmitExist(paragraphTrue)
+}
 
-})
+inputUsername.addEventListener('input',funcInputUsername)
+form.addEventListener('submit',funcFormSubmit)
 /*
 02
 
