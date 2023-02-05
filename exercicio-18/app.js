@@ -18,6 +18,7 @@
   Dica: pesquise pelo método "insertAdjacentElement", no MDN;
 */
 const inputUsername = document.querySelector('#username')
+const form = document.querySelector('form')
 const button = document.querySelector('button')
 
 const feedback = document.createElement('p')
@@ -26,6 +27,14 @@ const paragraph = document.createElement('p')
 const regexUsername = /^[a-zA-Z]{6,}$/
 
 paragraph.setAttribute('data-feedback','submit-feedback')
+
+const feedbackInputExist = feedbackifo => {
+  const {paragraph,text,className,parentSibling} = feedbackifo
+  paragraph.textContent = text
+  paragraph.setAttribute('class', className)
+  parentSibling.insertAdjacentElement('afterend',paragraph)
+  return
+}
 
 inputUsername.addEventListener('input', event => {
   const valueUsername = event.target.value
@@ -36,35 +45,58 @@ inputUsername.addEventListener('input', event => {
   if(paragraphExist) {
     paragraph.remove()
   }
-  
+  const feedbackfalse = {
+    paragraph:feedback,
+    text:'O valor deve conter no mínimo 6 caracteres, com apenas letras maiúsculas e/ou minúsculas',
+    className:'username-help-feedback',
+    parentSibling:inputUsername
+  }  
+  const feedbackTrue = {
+    paragraph: feedback,
+    text: 'Username válido =)',
+    className: 'username-success-feedback',
+    parentSibling: inputUsername
+  }
   if(!testUsername) {
-    feedback.textContent = 'O valor deve conter no mínimo 6 caracteres, com apenas letras maiúsculas e/ou minúsculas'
-    feedback.setAttribute('class', 'username-help-feedback')
-    inputUsername.insertAdjacentElement('afterend',feedback)
+    feedbackInputExist(feedbackfalse)
     return
   }
-    
- feedback.textContent = 'Username válido =)'
- feedback.setAttribute('class','username-success-feedback')
- inputUsername.insertAdjacentElement('afterend',feedback)
+
+  feedbackInputExist(feedbackTrue)
 })
 
-const form = document.querySelector('form')
+const paragraphSubmitExist = paragraphifo => {
+  const {feedback, text,className,parentSibling} = paragraphifo
+  feedback.textContent = text
+  feedback.setAttribute('class',className)
+  parentSibling.insertAdjacentElement('afterend',feedback)
+  return
+}
 
 form.addEventListener('submit', event => {
   event.preventDefault()
   const usernameInputValue = inputUsername.value
   
-  if(!regexUsername.test(usernameInputValue)) {
-    paragraph.textContent = 'Por favor, insira um username válido!'
-    paragraph.setAttribute('class','submit-help-feedback')
-    button.insertAdjacentElement('afterend',paragraph)
+  const paragraphfalse = {
+    feedback:paragraph,
+    text:'Por favor, insira um username válido!',
+    className:'submit-help-feedback',
+    parentSibling: button
+  }
+  
+  const paragraphTrue = {
+    feedback:paragraph,
+    text:'Dados enviados =)',
+    className:'submit-success-feedback',
+    parentSibling: button 
+  }
 
+
+  if(!regexUsername.test(usernameInputValue)) {
+    paragraphSubmitExist(paragraphfalse)
     return
   }
-  paragraph.textContent = 'Dados enviados =)'
-  paragraph.setAttribute('class','submit-success-feedback')
-  button.insertAdjacentElement('afterend',paragraph)
+  paragraphSubmitExist(paragraphTrue)
 
 })
 /*
