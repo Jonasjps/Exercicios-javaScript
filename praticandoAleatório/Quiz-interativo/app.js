@@ -20,7 +20,7 @@ form.addEventListener('submit', event => {
             score += 25
         }
     })
-    scroll(0,0)
+    scrollTo(0,0)
     let counter = 0
 
     const timer = setInterval(() => {
