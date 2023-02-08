@@ -22,17 +22,19 @@ setTimeout(() => {
   - Faça o contador do index.html funcionar;
   - O clique no botão "Parar contador" deve fazer com que o contador exiba 0.
 */
-const contador = document.querySelector('h1')
-const buttonContador = document.querySelector('button')
-
-contador.addEventListener('submit', event => {
-  event.preventDefault()
-  let score = 0
- setInterval(() => {
-  if(contador === 0  )  {
-    score++
-  } 
- },1000)
+const buttonInitCounter = document.querySelector('.button-init-counter')
+const buttonStopCounter = document.querySelector('.button-stop-counter')
+const contador = document.querySelector('.counter-container')
+let counter = 0
+buttonInitCounter.addEventListener('click', () => {
+  setInterval(() => {
+    contador.textContent = counter + 1
+      // counter++
+    
+  },1000)
+})
+buttonStopCounter.addEventListener('click', () => {
+  console.log('Para contador!')
 })
 
 
