@@ -10,7 +10,10 @@
   - Após um segundo e meio do carregamento da página, exiba no console a  
     mensagem "Um segundo e meio se passaram desde que a página foi carregada".
 */
-
+// const div = document.querySelector('.container')
+setTimeout(() => {
+  // console.log('Um segundo e meio se passaram desde que a página foi carregada')
+},1500)
 
 
 /* 
@@ -19,7 +22,18 @@
   - Faça o contador do index.html funcionar;
   - O clique no botão "Parar contador" deve fazer com que o contador exiba 0.
 */
+const contador = document.querySelector('h1')
+const buttonContador = document.querySelector('button')
 
+contador.addEventListener('submit', event => {
+  event.preventDefault()
+  let score = 0
+ setInterval(() => {
+  if(contador === 0  )  {
+    score++
+  } 
+ },1000)
+})
 
 
 /* 
