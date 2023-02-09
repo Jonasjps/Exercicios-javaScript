@@ -24,20 +24,21 @@ setTimeout(() => {
 */
 const buttonInitCounter = document.querySelector('.button-init-counter')
 const buttonStopCounter = document.querySelector('.button-stop-counter')
-const contador = document.querySelector('.counter-container')
+const counterContainer = document.querySelector('.counter-container')
+
 let counter = 0
+let timer = null
 buttonInitCounter.addEventListener('click', () => {
-  setInterval(() => {
-    contador.textContent = counter + 1
-      // counter++
-    
+   timer = setInterval(() => {
+    counterContainer.textContent = counter + 1 
+    counter++
   },1000)
 })
+
 buttonStopCounter.addEventListener('click', () => {
-  console.log('Para contador!')
+  clearInterval(timer)
+  counterContainer.textContent = 0
 })
-
-
 /* 
   04
 
