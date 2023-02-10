@@ -45,6 +45,7 @@ buttonInitCounter.addEventListener('click', () => {
 buttonStopCounter.addEventListener('click', () => {
   stopCounter()  
 })
+
 /* 
   04
 
