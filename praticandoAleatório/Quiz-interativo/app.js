@@ -1,4 +1,6 @@
 const form = document.querySelector('.quiz-form')
+const finalResult = document.querySelector('.result')
+
 
 const trueQuestions = ['D', 'D', 'D', 'D']
 
@@ -19,7 +21,10 @@ form.addEventListener('submit', event => {
          score += 25
       }
    })
-   console.log(score)
+   scrollTo(0,0)
+   finalResult.querySelector('span').textContent = `${score}%`
+   finalResult.classList.remove('d-none')
+
 })
 
 
