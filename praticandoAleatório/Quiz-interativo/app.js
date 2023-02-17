@@ -27,19 +27,18 @@ form.addEventListener('submit', event => {
          score += 25
       }
    })
-   
    finalResult.classList.remove('d-none')
    
-   let counter = 0
+   let counter = 0 
 
    const timer = setInterval(() => {
-     
+      
       if(counter === score) {
          clearInterval(timer)
       }
 
       finalResult.querySelector('span').textContent = `${counter++}%`
-   
-   }, 10)
+
+   }, 10) 
 })
 
