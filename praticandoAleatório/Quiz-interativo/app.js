@@ -14,6 +14,8 @@ form.addEventListener('submit', event => {
       form.inputQuestion3.value,
       form.inputQuestion4.value,
    ]
+
+   // scrollTo(0,0)
    scrollTo({
       top: 0,
       left: 0,
@@ -25,8 +27,19 @@ form.addEventListener('submit', event => {
          score += 25
       }
    })
-   finalResult.querySelector('span').textContent = `${score}%`
+   
    finalResult.classList.remove('d-none')
    
+   let counter = 0
+
+   const timer = setInterval(() => {
+     
+      if(counter === score) {
+         clearInterval(timer)
+      }
+
+      finalResult.querySelector('span').textContent = `${counter++}%`
+   
+   }, 10)
 })
 
