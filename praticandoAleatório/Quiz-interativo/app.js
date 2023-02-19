@@ -7,22 +7,19 @@ let score = 0
 
 const ObtendoRespostaDoUsuario = () => {
    let alternativas = []
-   for(let c = 0; c < trueQuestions.length; c++) {//mudar para um forEach pois é mais legivel.
-      const userAlternativas = form[`inputQuestion${c + 1}`].value
-      alternativas.push(userAlternativas)
-   }
-   // const questions = [
-   //    form.inputQuestion1.value,
-   //    form.inputQuestion2.value,
-   //    form.inputQuestion3.value,
-   //    form.inputQuestion4.value,
-   // ]
+  
+  trueQuestions.forEach((_,index)=> {
+      const obetendoAlternativas = form[`inputQuestion${index + 1}`].value
+      alternativas.push(obetendoAlternativas)
+  })
    return alternativas
 }
 
 const comparandoRespostas = (questions) => {
    questions.forEach((question, index) => {
-      if(question === trueQuestions[index]) {
+      const testandoRespostas = question === trueQuestions[index]
+
+      if(testandoRespostas) {
          score += 25
       }
    }) 
@@ -38,13 +35,13 @@ const rolagem = () => {
 
 const animaçãoFinalResult = ( ) => {
    finalResult.classList.remove('d-none')
-
    let counter  = 0
-
    const timer = setInterval(() => {
-      if( counter === score) {
+      const comparandoContadores = counter === score 
+      if( comparandoContadores) {
          clearInterval(timer)
       }
+
       finalResult.querySelector('span').textContent = `${counter++}%`
    }, 10)
 }
