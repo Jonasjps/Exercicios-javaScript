@@ -1,57 +1,39 @@
 const form = document.querySelector('.quiz-form')
 const finalResult = document.querySelector('.result')
 
-const trueQuestions = ['D', 'D', 'D', 'D']
 
-let score = 0
+const alternativasCorrect = ['D', 'D', 'D', 'D']
 
-const ObtendoRespostaDoUsuario = () => {
-   let alternativas = []
-  
-  trueQuestions.forEach((_,index)=> {
-      const obetendoAlternativas = form[`inputQuestion${index + 1}`].value
-      alternativas.push(obetendoAlternativas)
-  })
-   return alternativas
-}
+form.addEventListener('submit', event => {
+   event.preventDefault() 
+   
+   let score = 0
 
-const comparandoRespostas = (questions) => {
-   questions.forEach((question, index) => {
-      const testandoRespostas = question === trueQuestions[index]
-
-      if(testandoRespostas) {
+   const alternativas = [
+      form.inputQuestion1.value,
+      form.inputQuestion2.value,
+      form.inputQuestion3.value,
+      form.inputQuestion4.value,
+   ]
+   alternativas.forEach((alternativa,index) => {
+      if(alternativa === alternativasCorrect[index]) {
          score += 25
       }
-   }) 
-}
-
-const rolagem = () => {
-   scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth'
    })
-} 
-
-const animaçãoFinalResult = ( ) => {
    finalResult.classList.remove('d-none')
-   let counter  = 0
+
+   scrollTo(0,0)
+
+   let counter = 0 
+
    const timer = setInterval(() => {
-      const comparandoContadores = counter === score 
-      if( comparandoContadores) {
-         clearInterval(timer)
-      }
+     if(counter === score) {
+      clearInterval(timer)
+     }
+      finalResult.querySelector('span').textContent = `${counter}%`
+      counter++
 
-      finalResult.querySelector('span').textContent = `${counter++}%`
    }, 10)
-}
 
-const grunpFuncEventListener = event => {
-   event.preventDefault()
-   const questions = ObtendoRespostaDoUsuario()
-   comparandoRespostas(questions)
-   rolagem()
-   animaçãoFinalResult()
-}
-
-form.addEventListener('submit', grunpFuncEventListener)
+   
+})
