@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"> 
     <title>Meu-Quiz-Interativo</title>
 </head>
 <body>
-    <div class="intro py-4 	bg-success text-center">
+    <div class="intro py-4 bg-success text-center">
         <div class="container">
             <h2 class="text-light display-3 my-4">Quiz</h2>
         </div>
@@ -15,17 +15,123 @@
     <div class="quiz py-4 bg-dark">
         <div class="container">
             <h2 class="my-5 text-white">Voçê consegue se lembrar dos conceitos basicos do JavaScript?</h2>
+            <form class="quiz-form bg-ligth">
+                <div class="my-5">
+                    <p class="lead font-weight-normal text-success px-3 ">1. No JavaScript qual das variaveis abaixo não pode ser atualizada?</p>
+                    <div class="form-check my-2 text-white-50">
+                        <label class="form-check-label text-warning">
+                            <input type="radio" name="inputQuestion1" value="A" checked>
+                            let
+                        </label>
+                    </div>
+                    <div class="form-check my-2 text-white-50">
+                        <label class="form-check-label text-warning">
+                            <input type="radio" name="inputQuestion1" value="B">
+                            var
+                        </label>
+                    </div>
+                    <div class="form-check my-2 text-white-50">
+                        <label class="form-check-label text-warning">
+                            <input type="radio" name="inputQuestion1" value="C">
+                            const
+                        </label>
+                    </div>
+                    <div class="form-check my-2 text-white-50">
+                        <label class="form-check-label text-warning">
+                            <input type="radio" name="inputQuestion1" value="D">
+                            nenhuma das alternativas
+                        </label>
+                    </div>
+                </div>
+                <div class="my-5">
+                    <p class="lead font-weight-normal text-success px-3">2. Qual das funções abaixo é uma Arrow function?</p>
+                    <div class="form-check my-2 text-white-50">
+                        <label class="form-check-label text-warning">
+                            <input type="radio" name="inputQuestion2" value="A" checked>
+                            function show( ) = { }
+                        </label>
+                    </div>
+                    <div class="form-check my-2 text-white-50">
+                        <label class="form-check-label text-warning">
+                            <input type="radio" name="inputQuestion2" value="B">
+                            const stop = function( ) = { }
+                        </label>
+                    </div>
+                    <div class="form-check my-2 text-white-50">
+                        <label class="form-check-label text-warning">
+                            <input type="radio" name="inputQuestion2" value="C">
+                             ( ) => { }
+                        </label>
+                    </div>
+                    <div class="form-check my-2 text-white-50">
+                        <label class="form-check-label text-warning">
+                            <input type="radio" name="inputQuestion2" value="D">
+                            function( ) = { }
+                        </label>
+                    </div>
+                </div>
+                <div class="my-5">
+                    <p class="lead font-weight-normal text-success px-3">3. Qual método retorno o index do elemento que está sendo passado como argumento?</p>
+                    <div class="form-check my-2 text-white-50">
+                        <label class="form-check-label text-warning">
+                            <input type="radio" name="inputQuestion3" value="A" checked>
+                            lastIndexOf( )
+                        </label>
+                    </div>
+                    <div class="form-check my-2 text-white-50">
+                        <label class="form-check-label text-warning">
+                            <input type="radio" name="inputQuestion3" value="B">
+                            findIndexOf( )
+                        </label>
+                    </div>
+                    <div class="form-check my-2 text-white-50">
+                        <label class="form-check-label text-warning">
+                            <input type="radio" name="inputQuestion3" value="B">
+                            indexOf( )
+                        </label>
+                    </div>
+                    <div class="form-check my-2 text-white-50">
+                        <label class="form-check-label text-warning">
+                            <input type="radio" name="inputQuestion3" value="B">
+                            map( )
+                        </label>
+                    </div>
+                </div>
+                <div class="my-5">
+                    <p class="lead font-weight-normal text-success px-3">4. Da propriedade ClassList, qual método que tanto remove como adciona uma class?</p>
+                    <div class="form-check my-2 text-white-50">
+                        <label class="form-check-label text-warning">
+                            <input type="radio" name="inputQuestion4" value="A" checked>
+                            add( )
+                        </label>
+                    </div>
+                    <div class="form-check my-2 text-white-50">
+                        <label class="form-check-label text-warning">
+                            <input type="radio" name="inputQuestion4" value="B">
+                            toggle( )
+                        </label>
+                    </div>
+                    <div class="form-check my-2 text-white-50">
+                        <label class="form-check-label text-warning">
+                            <input type="radio" name="inputQuestion4" value="C">
+                            remove( )
+                        </label>
+                    </div>
+                    <div class="form-check my-2 text-white-50">
+                        <label class="form-check-label text-warning">
+                            <input type="radio" name="inputQuestion4" value="D">
+                            pop( )
+                        </label>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button class="btn bg-success text-light">Resultado</button>
+                </div>
+            </form>
         </div>
+        
     </div>
-    <form class="quiz-form text-light">
-        <div class="my-5"></div>
-        <div class="my-5"></div>
-        <div class="my-5"></div>
-        <div class="my-5"></div>
-        <div class="text-center">
-            <button class="btn bg-success text-light">Enviar</button>
-        </div>
-    </form>
+    
     
 </body>
 </html>
