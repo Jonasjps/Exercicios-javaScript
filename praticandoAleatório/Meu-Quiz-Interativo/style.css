@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+}
+
+button {
+ display: block;
+ margin: 20px auto;
+ background: rgb(3, 117, 3);
+ color: white;
+ border: 0;
+ border-radius: 4px;
+ cursor: pointer;
+ padding: 6px 10px;
+}
+
+.popup-wrapper {
+  display: none;
+  background: rgba(0, 0, 0, .5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.popup {
+ font-family: Arial;
+ text-align: center;
+ width: 100%;
+ max-width: 300px;
+ margin: 10% auto;
+ padding: 20px;
+ background:rgb(237, 237, 59);
+ position: relative;
+ border-radius: 7px;
+}
+h1 {
+    background-color: black;
+    color:  yellow;
+    border-radius: 50px;
+    padding: 4px;
+}
+.pontuação {
+    color: black;
+    font-weight: bolder;
+    font-size: 50px;
+}
+
+
+.popup-close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+} 
