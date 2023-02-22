@@ -61,11 +61,18 @@ form.addEventListener('submit', event => {
 })
 buttonGabarito.addEventListener('click',() => {
     popupGabarito.style.display = "block"
+
 } )
 
 buttonFinalGabarito.addEventListener('click',() => {
     popupGabarito.style.display = "none"
     popupWrapper.style.display = "none"
+
+    scrollTo({
+        top: 0,
+        lef: 0,
+        behavior: 'smooth'
+    })
 })
 
 popupGabarito.addEventListener('click', event => {
