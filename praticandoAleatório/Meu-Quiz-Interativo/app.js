@@ -4,6 +4,8 @@ const popupWrapper = document.querySelector('.popup-wrapper')
 const popupPontuação = document.querySelector('.pontuação')
 const paragraph = document.createElement('p')
 const tituloDoPopup = document.querySelector('.erro')
+const buttonGabarito = document.querySelector('.gabarito')
+const popupGabarito = document.querySelector('.popup-wrapper-gabarito')
 
 button.addEventListener('click', () => {
     popupWrapper.style.display = 'block'
@@ -11,7 +13,7 @@ button.addEventListener('click', () => {
 
 popupWrapper.addEventListener('click', event => {
     const classesDoPopup = event.target.classList[0]
-    const classNames = ['popup-close','popup-wrapper','gabarito']
+    const classNames = ['popup-close','popup-wrapper']
     const testandoClasses = classNames.some(className => className === classesDoPopup)
         
     if(testandoClasses){
@@ -38,12 +40,23 @@ form.addEventListener('submit', event => {
     alternativas.forEach((alternativa,index) => {
         if(alternativa === alternativasCorrects[index]) {
             score += 25        
-            popupPontuação.textContent = `${score}%`  
             popupPontuação.insertAdjacentElement('afterend',paragraph)
             paragraph.textContent = `Parabéns 😃👏🏽👏🏽`
-            return  
+           return 
         }
-        tituloDoPopup.textContent = `Tente novamente`
     })
-    
+
+    let counter = 0 
+
+    const timer = setInterval(() => {
+        if(counter === score) {
+            clearInterval(timer)
+        }
+        popupPontuação.textContent = `${counter++}%`  
+
+    }, 10)
+      
 })
+buttonGabarito.addEventListener('click',() => {
+    popupGabarito.style.display = "block"
+} )
