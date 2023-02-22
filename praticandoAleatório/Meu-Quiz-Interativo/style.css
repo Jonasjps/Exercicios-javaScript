@@ -92,3 +92,23 @@ h1 {
  cursor: pointer;
  padding: 6px 10px;
 }
+
+.letra {
+  color: yellow;
+  font-size: 30px;  
+}
+
+.opção {
+  color:white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.grupo-paragrafos {
+  background-color: black;
+  width: 200px;
+  margin: auto;
+  border-radius: 8px;
+}
+
+
