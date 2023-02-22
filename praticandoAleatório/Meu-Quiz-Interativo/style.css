@@ -105,7 +105,7 @@ h1 {
 }
 
 .grupo-paragrafos {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.733);
   width: 200px;
   margin: auto;
   border-radius: 8px;
