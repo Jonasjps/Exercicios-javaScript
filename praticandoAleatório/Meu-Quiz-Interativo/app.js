@@ -2,11 +2,12 @@ const form = document.querySelector('.quiz-form')
 const button = document.querySelector('.btn')
 const popupWrapper = document.querySelector('.popup-wrapper')
 const popupPontuação = document.querySelector('.pontuação')
-const paragraph = document.createElement('p')
 const tituloDoPopup = document.querySelector('.erro')
 const buttonGabarito = document.querySelector('.gabarito')
 const popupGabarito = document.querySelector('.popup-wrapper-gabarito')
 const buttonFinalGabarito = document.querySelector('.button-final-gabarito')
+
+const paragraph = document.createElement('p')
 
 button.addEventListener('click', () => {
     popupWrapper.style.display = 'block'
