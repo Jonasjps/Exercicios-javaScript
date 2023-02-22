@@ -6,6 +6,7 @@ const paragraph = document.createElement('p')
 const tituloDoPopup = document.querySelector('.erro')
 const buttonGabarito = document.querySelector('.gabarito')
 const popupGabarito = document.querySelector('.popup-wrapper-gabarito')
+const buttonFinalGabarito = document.querySelector('.button-final-gabarito')
 
 button.addEventListener('click', () => {
     popupWrapper.style.display = 'block'
@@ -60,3 +61,19 @@ form.addEventListener('submit', event => {
 buttonGabarito.addEventListener('click',() => {
     popupGabarito.style.display = "block"
 } )
+
+buttonFinalGabarito.addEventListener('click',() => {
+    popupGabarito.style.display = "none"
+    popupWrapper.style.display = "none"
+})
+
+popupGabarito.addEventListener('click', event => {
+    const classListDoDomToken = event.target.classList[0]
+    const classNamess = ['popup-close-gabarito','popup-wrapper-gabarito']
+    const testeDosPopupsGabarito = classNamess.some(className => className === classListDoDomToken)
+
+    if(testeDosPopupsGabarito){
+        popupGabarito.style.display = "none"
+        popupWrapper.style.display = "none"
+    }
+})
