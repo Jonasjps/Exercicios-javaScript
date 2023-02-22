@@ -1,6 +1,19 @@
 * {
     box-sizing: border-box;
 }
+.intro {
+  width: 500px ;
+  margin: auto;
+  border-radius: 100px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.quiz {
+  background: rgba(0, 0, 0, 0.671);
+}
+.lead {
+  color: white;
+}
 
 button {
  display: block;
@@ -29,13 +42,13 @@ button {
  max-width: 350px;
  margin: 10% auto;
  padding: 20px;
- background:rgb(237, 237, 59);
+ background:rgb(255, 193, 7);
  position: relative;
  border-radius: 7px;
 }
 h1 {
     background-color: black;
-    color:  yellow;
+    color: white;
     border-radius: 50px;
     padding: 4px;
 }
@@ -70,9 +83,12 @@ h1 {
  max-width: 350px;
  margin: 10% auto;
  padding: 20px;
- background:rgb(237, 237, 59);
+ background:rgb(255, 193, 7);
  position: relative;
  border-radius: 7px;
+}
+.container-quiz { 
+  border-radius: 10px;
 }
 
 .popup-close-gabarito {
@@ -107,6 +123,10 @@ h1 {
 .grupo-paragrafos {
   border: 1px solid black;
   border-radius: 5px;
+}
+
+.btn {
+  background: rgb(3, 144, 3);
 }
 
 
