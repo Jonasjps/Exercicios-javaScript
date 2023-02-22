@@ -94,21 +94,20 @@ h1 {
 }
 
 .letra {
-  color: yellow;
+  color: black;
   font-size: 30px;  
 }
 
 .opção {
-  color:white;
+  color:green;
   font-weight: bold;
   font-size: 20px;
 }
 
 .grupo-paragrafos {
-  background-color: rgba(0, 0, 0, 0.733);
-  width: 200px;
-  margin: auto;
-  border-radius: 8px;
+  border: 1px solid black;
+  border-radius: 5px;
 }
+
 
 
