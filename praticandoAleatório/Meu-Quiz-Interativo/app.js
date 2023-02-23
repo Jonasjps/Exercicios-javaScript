@@ -22,9 +22,7 @@ popupWrapper.addEventListener('click', event => {
         
     if(testandoClasses){
        popupWrapper.style.display = 'none'
-        
     }
-
 })
 
 const alternativasCorrects = ['C', 'C' ,'C' ,'B']
