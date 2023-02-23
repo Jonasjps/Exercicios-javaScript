@@ -9,6 +9,8 @@ const buttonFinalGabarito = document.querySelector('.button-final-gabarito')
 
 const paragraph = document.createElement('p')
 
+let score = 0
+
 button.addEventListener('click', () => {
     popupWrapper.style.display = 'block'
 })
@@ -27,27 +29,33 @@ popupWrapper.addEventListener('click', event => {
 
 const alternativasCorrects = ['C', 'C' ,'C' ,'B']
 
-form.addEventListener('submit', event => {
-    event.preventDefault()
-
-    let score = 0
-
-    const alternativas = [
-        form.inputQuestion1.value,
-        form.inputQuestion2.value,
-        form.inputQuestion3.value,
-        form.inputQuestion4.value,
-    ]
-
-    alternativas.forEach((alternativa,index) => {
-        if(alternativa === alternativasCorrects[index]) {
-            score += 25        
-            popupPontuação.insertAdjacentElement('afterend',paragraph)
-            paragraph.textContent = `Parabéns 😃👏🏽👏🏽`
-           return 
-        }
+const respostaDoUsuario = ( ) => {
+    let alternativas = []
+   alternativasCorrects.forEach((_,index) => {
+        const respostaUser = form[`inputQuestion${index + 1}`].value
+        alternativas.push(respostaUser)
     })
+    return alternativas    
+}
 
+const insertParagraph = () => {
+    popupPontuação.insertAdjacentElement('afterend',paragraph)
+    paragraph.textContent = `Parabéns 😃👏🏽👏🏽`
+}
+
+const getSoreTela = (alternativas) => {
+    alternativas.forEach((alternativa,index) => {
+        const testandoRespostas = alternativa === alternativasCorrects[index] 
+        if(testandoRespostas) {
+            score += 25        
+            insertParagraph()
+           return
+        }
+       
+    })
+}
+
+const ShowScore = () => {
     let counter = 0 
 
     const timer = setInterval(() => {
@@ -57,22 +65,36 @@ form.addEventListener('submit', event => {
         popupPontuação.textContent = `${counter++}%`  
 
     }, 10)
+}
+
+form.addEventListener('submit', event => {
+    event.preventDefault()
+
+    const alternativas = respostaDoUsuario()
+
+    getSoreTela(alternativas)
+    ShowScore()
       
 })
+
 buttonGabarito.addEventListener('click',() => {
     popupGabarito.style.display = "block"
 
 } )
 
-buttonFinalGabarito.addEventListener('click',() => {
-    popupGabarito.style.display = "none"
-    popupWrapper.style.display = "none"
-
+const RolandoAtela = () => {
     scrollTo({
         top: 0,
         lef: 0,
         behavior: 'smooth'
     })
+}
+
+buttonFinalGabarito.addEventListener('click',() => {
+    popupGabarito.style.display = "none"
+    popupWrapper.style.display = "none"
+
+    RolandoAtela()
 })
 
 popupGabarito.addEventListener('click', event => {
