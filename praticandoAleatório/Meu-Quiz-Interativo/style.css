@@ -13,12 +13,13 @@
 }
 .lead {
   color: white;
+  font-weight: 400;
 }
 
 button {
  display: block;
  margin: 20px auto;
- background: rgb(3, 117, 3);
+ background: rgb(3, 144, 3);
  color: white;
  border: 0;
  border-radius: 4px;
@@ -101,7 +102,7 @@ h1 {
 .button-final-gabarito {
   display: block;
  margin: 20px auto;
- background: rgb(3, 117, 3);
+ background:  rgb(3, 144, 3);
  color: white;
  border: 0;
  border-radius: 4px;
@@ -125,7 +126,7 @@ h1 {
   border-radius: 5px;
 }
 
-.btn {
+.result {
   background: rgb(3, 144, 3);
 }
 

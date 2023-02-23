@@ -1,5 +1,5 @@
 const form = document.querySelector('.quiz-form')
-const button = document.querySelector('.btn')
+const button = document.querySelector('.result')
 const popupWrapper = document.querySelector('.popup-wrapper')
 const popupPontuação = document.querySelector('.pontuação')
 const tituloDoPopup = document.querySelector('.erro')
