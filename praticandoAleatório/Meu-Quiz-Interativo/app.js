@@ -46,9 +46,8 @@ const getSoreTela = alternativas => {
         const testandoRespostas = alternativa === alternativasCorrects[index] 
         if(testandoRespostas) {
             score += 25        
-            insertParagraph()
-        
         }
+        insertParagraph()
        
     })
 }
