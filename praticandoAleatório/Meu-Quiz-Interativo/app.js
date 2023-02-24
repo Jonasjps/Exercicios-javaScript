@@ -9,6 +9,8 @@ const buttonFinalGabarito = document.querySelector('.button-final-gabarito')
 
 const paragraph = document.createElement('p')
 
+const alternativasCorrects = ['C', 'C' ,'C' ,'B']
+
 let score = 0
 
 button.addEventListener('click', () => {
@@ -25,7 +27,7 @@ popupWrapper.addEventListener('click', event => {
     }
 })
 
-const alternativasCorrects = ['C', 'C' ,'C' ,'B']
+
 
 const respostaDoUsuario = ( ) => {
     let alternativas = []
@@ -43,35 +45,41 @@ const insertParagraph = () => {
 
 const getSoreTela = alternativas => {
     alternativas.forEach((alternativa,index) => {
+       
         const testandoRespostas = alternativa === alternativasCorrects[index] 
         if(testandoRespostas) {
-            score += 25        
+           
+            score += 25   
+             
+            popupPontuação.textContent = `${score}%`
+            insertParagraph()
+        
         }
-        insertParagraph()
+        
        
     })
 }
 
-const ShowScore = () => {
-    let counter = 0 
+// const ShowScore = () => {
+//     let counter = 0 
 
-    const timer = setInterval(() => {
-        if(counter === score) {
-            clearInterval(timer)
+//     const timer = setInterval(() => {
+//         if(counter === score) {
+//             clearInterval(timer)
         
-        }
-        popupPontuação.textContent = `${counter++}%`  
+//         }
+//         popupPontuação.textContent = `${counter++}%`  
 
-    }, 10)
-}
+//     }, 10)
+// }
 
 form.addEventListener('submit', event => {
     event.preventDefault()
-
+    
     const alternativas = respostaDoUsuario()
 
     getSoreTela(alternativas)
-    ShowScore()
+    // ShowScore()
       
 })
 
