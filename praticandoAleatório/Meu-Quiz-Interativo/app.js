@@ -41,13 +41,13 @@ const insertParagraph = () => {
     paragraph.textContent = `Parabéns 😃👏🏽👏🏽`
 }
 
-const getSoreTela = (alternativas) => {
+const getSoreTela = alternativas => {
     alternativas.forEach((alternativa,index) => {
         const testandoRespostas = alternativa === alternativasCorrects[index] 
         if(testandoRespostas) {
             score += 25        
             insertParagraph()
-           return
+        
         }
        
     })
@@ -59,6 +59,7 @@ const ShowScore = () => {
     const timer = setInterval(() => {
         if(counter === score) {
             clearInterval(timer)
+        
         }
         popupPontuação.textContent = `${counter++}%`  
 

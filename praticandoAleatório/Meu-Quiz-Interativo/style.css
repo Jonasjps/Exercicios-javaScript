@@ -2,14 +2,12 @@
     box-sizing: border-box;
 }
 .intro {
-  width: 500px ;
+  width: 350px ;
   margin: auto;
   border-radius: 100px;
-  padding-top: 5px;
-  padding-bottom: 5px;
 }
 .quiz {
-  background: rgba(0, 0, 0, 0.671);
+  background: black;
 }
 .lead {
   color: white;
