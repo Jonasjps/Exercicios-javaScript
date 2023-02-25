@@ -44,34 +44,32 @@ const insertParagraph = () => {
 }
 
 const getSoreTela = alternativas => {
+     score = 0
     alternativas.forEach((alternativa,index) => {
-       
+      
         const testandoRespostas = alternativa === alternativasCorrects[index] 
         if(testandoRespostas) {
-           
             score += 25   
-             
-            popupPontuação.textContent = `${score}%`
-            insertParagraph()
-        
+            return
         }
-        
-       
     })
+    console.log(score)
+    popupPontuação.textContent = `${score}%`
+    insertParagraph()   
 }
 
-// const ShowScore = () => {
-//     let counter = 0 
+const ShowScore = () => {
+    let counter = 0 
 
-//     const timer = setInterval(() => {
-//         if(counter === score) {
-//             clearInterval(timer)
+    const timer = setInterval(() => {
+        if(counter === score) {
+            clearInterval(timer)
         
-//         }
-//         popupPontuação.textContent = `${counter++}%`  
+        }
+        popupPontuação.textContent = `${counter++}%`  
 
-//     }, 10)
-// }
+    }, 10)
+}
 
 form.addEventListener('submit', event => {
     event.preventDefault()
@@ -79,7 +77,7 @@ form.addEventListener('submit', event => {
     const alternativas = respostaDoUsuario()
 
     getSoreTela(alternativas)
-    // ShowScore()
+    ShowScore()
       
 })
 
