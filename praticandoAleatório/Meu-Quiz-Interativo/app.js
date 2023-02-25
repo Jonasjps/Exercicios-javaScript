@@ -49,13 +49,14 @@ const getSoreTela = alternativas => {
       
         const testandoRespostas = alternativa === alternativasCorrects[index] 
         if(testandoRespostas) {
-            score += 25   
-            return
+            score += 25    
+            insertParagraph()  
         }
+    
+        
     })
-    console.log(score)
     popupPontuação.textContent = `${score}%`
-    insertParagraph()   
+    
 }
 
 const ShowScore = () => {
