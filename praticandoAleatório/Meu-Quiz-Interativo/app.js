@@ -52,14 +52,12 @@ const getSoreTela = alternativas => {
             score += 25    
             insertParagraph()  
         }
-    
-        
     })
     popupPontuação.textContent = `${score}%`
-    
 }
 
 const ShowScore = () => {
+
     let counter = 0 
 
     const timer = setInterval(() => {
@@ -71,16 +69,6 @@ const ShowScore = () => {
 
     }, 10)
 }
-
-form.addEventListener('submit', event => {
-    event.preventDefault()
-    
-    const alternativas = respostaDoUsuario()
-
-    getSoreTela(alternativas)
-    ShowScore()
-      
-})
 
 buttonGabarito.addEventListener('click',() => {
     popupGabarito.style.display = "block"
@@ -112,3 +100,14 @@ popupGabarito.addEventListener('click', event => {
         popupWrapper.style.display = "none"
     }
 })
+const grupDeFuncDoListener =  event => {
+    event.preventDefault()
+    
+    const alternativas = respostaDoUsuario()
+
+    getSoreTela(alternativas)
+    ShowScore()
+      
+}
+
+form.addEventListener('submit',grupDeFuncDoListener)
