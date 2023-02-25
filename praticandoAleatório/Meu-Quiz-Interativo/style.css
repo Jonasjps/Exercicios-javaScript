@@ -3,23 +3,32 @@
 }
 .intro {
   width: 350px ;
+  background:#023535 ;
   margin: auto;
   border-radius: 100px;
 }
 .quiz {
-  background: black;
+  background: #0FC2C0;
 }
 .lead {
   color: white;
   font-weight: 400;
 }
+.background {
+  color: white;
+}
+
+.form-check-label {
+color: #023535;
+font-weight: 500;
+}
 
 button {
  display: block;
  margin: 20px auto;
- background: rgb(3, 144, 3);
+ background: #023535;
  color: white;
- border: 0;
+border: 0;
  border-radius: 4px;
  cursor: pointer;
  padding: 6px 10px;
@@ -41,18 +50,18 @@ button {
  max-width: 350px;
  margin: 10% auto;
  padding: 20px;
- background:rgb(255, 193, 7);
+ background: #0FC2C0;
  position: relative;
  border-radius: 7px;
 }
 h1 {
-    background-color: black;
+    background-color: #023535;
     color: white;
     border-radius: 50px;
     padding: 4px;
 }
 .pontuação {
-    color: black;
+    color: white;
     font-weight: bolder;
     font-size: 50px;
 }
@@ -63,6 +72,7 @@ h1 {
   top: 5px;
   right: 10px;
   cursor: pointer;
+  color: white;
 } 
 
 .popup-wrapper-gabarito {
@@ -82,7 +92,7 @@ h1 {
  max-width: 350px;
  margin: 10% auto;
  padding: 20px;
- background:rgb(255, 193, 7);
+ background: #0FC2C0;
  position: relative;
  border-radius: 7px;
 }
@@ -95,12 +105,13 @@ h1 {
   top: 5px;
   right: 10px;
   cursor: pointer;
+  color: white;
 }
 
 .button-final-gabarito {
   display: block;
  margin: 20px auto;
- background:  rgb(3, 144, 3);
+ background:  #023535;
  color: white;
  border: 0;
  border-radius: 4px;
@@ -109,12 +120,12 @@ h1 {
 }
 
 .letra {
-  color: black;
+  color: white;
   font-size: 30px;  
 }
 
 .opção {
-  color:green;
+  color:#023535;
   font-weight: bold;
   font-size: 20px;
 }
@@ -125,7 +136,7 @@ h1 {
 }
 
 .result {
-  background: rgb(3, 144, 3);
+  background: #023535;
 }
 
 
