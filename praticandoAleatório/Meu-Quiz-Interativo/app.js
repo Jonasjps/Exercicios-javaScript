@@ -9,6 +9,7 @@ const buttonFinalGabarito = document.querySelector('.button-final-gabarito')
 
 const paragraph = document.createElement('p')
 
+
 const alternativasCorrects = ['C', 'C' ,'C' ,'B']
 
 let score = 0
@@ -40,19 +41,60 @@ const respostaDoUsuario = ( ) => {
 
 const insertParagraph = () => {
     popupPontuação.insertAdjacentElement('afterend',paragraph)
+    paragraph.setAttribute('class', 'verde')
     paragraph.textContent = `Parabéns 😃👏🏽👏🏽`
 }
 
+const icrementandoPontuação = (testandoRespostas) => {
+    if(testandoRespostas) {
+        score += 25  
+    }
+}
+
+const zeroPontuação = () => {
+    const scoreIgualAzero = score === 0
+
+    if(scoreIgualAzero){
+        popupPontuação.insertAdjacentElement('afterend',paragraph)
+        paragraph.setAttribute('class', 'vermelho')
+        paragraph.textContent = 'Infelismente voçê não acertou nenhuma alternativa, tente novamente. =( '
+    }
+}
+
+const pontuaçãoIntermediaria = () => {
+    
+    const scoreMaiorQueZeroEMenorQueSemPontos = score > 0 && score < 100 
+    
+    if(scoreMaiorQueZeroEMenorQueSemPontos) {
+        popupPontuação.insertAdjacentElement('afterend',paragraph)
+        paragraph.setAttribute('class', 'laranja')
+        paragraph.textContent = 'Voçê está indo bem, mas pode se esforçar melhor na proxima! '
+        
+    }
+
+}
+
+const pontuaçãoIgualAsemPontos = () => {
+    const scoreIgualAsemPontos = score === 100
+    if(scoreIgualAsemPontos){
+        insertParagraph()  
+    }
+}
+
 const getSoreTela = alternativas => {
-     score = 0
+    score = 0
+    
     alternativas.forEach((alternativa,index) => {
-      
+
         const testandoRespostas = alternativa === alternativasCorrects[index] 
-        if(testandoRespostas) {
-            score += 25    
-            insertParagraph()  
-        }
+       
+        icrementandoPontuação(testandoRespostas)
+        zeroPontuação()
+        pontuaçãoIntermediaria()
+        pontuaçãoIgualAsemPontos()
+        
     })
+   
     popupPontuação.textContent = `${score}%`
 }
 

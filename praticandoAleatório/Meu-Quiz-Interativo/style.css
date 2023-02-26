@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
 }
+
 .intro {
   width: 350px ;
   background:#023535 ;
@@ -137,6 +138,18 @@ h1 {
 
 .result {
   background: #023535;
+}
+
+.vermelho {
+color: red;
+}
+
+.laranja {
+  color: orange;
+}
+
+.verde {
+  color: green;
 }
 
 
