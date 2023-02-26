@@ -6,6 +6,7 @@ const tituloDoPopup = document.querySelector('.erro')
 const buttonGabarito = document.querySelector('.gabarito')
 const popupGabarito = document.querySelector('.popup-wrapper-gabarito')
 const buttonFinalGabarito = document.querySelector('.button-final-gabarito')
+const FinalGabarito = document.querySelector('.final-gabarito')
 
 const paragraph = document.createElement('p')
 
@@ -125,8 +126,14 @@ const RolandoAtela = () => {
     })
 }
 
-buttonFinalGabarito.addEventListener('click',() => {
+FinalGabarito.addEventListener('click', () => {
     popupGabarito.style.display = "none"
+    popupWrapper.style.display = "none"
+
+    RolandoAtela()
+})
+
+buttonFinalGabarito.addEventListener('click',() => {
     popupWrapper.style.display = "none"
 
     RolandoAtela()

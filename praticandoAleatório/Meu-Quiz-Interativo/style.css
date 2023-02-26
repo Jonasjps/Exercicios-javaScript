@@ -24,16 +24,39 @@ color: #023535;
 font-weight: 500;
 }
 
-button {
+.gabarito{
  display: block;
  margin: 20px auto;
  background: #023535;
  color: white;
-border: 0;
+ border: 0;
+ border-radius: 4px;
+ cursor: pointer;
+ padding: 6px 10px;
+ margin-right:10px ;
+}
+.result {
+  display: block;
+ margin: 20px auto;
+ background: #023535;
+ color: white;
+ border: 0;
  border-radius: 4px;
  cursor: pointer;
  padding: 6px 10px;
 }
+
+.final-gabarito {
+  display: block;
+ margin: 20px auto;
+ background: #023535;
+ color: white;
+ border: 0;
+ border-radius: 4px;
+ cursor: pointer;
+ padding: 6px 10px;
+}
+
 
 .popup-wrapper {
   display: none;
@@ -118,6 +141,7 @@ h1 {
  border-radius: 4px;
  cursor: pointer;
  padding: 6px 10px;
+ margin-left: 10px;
 }
 
 .letra {
@@ -136,9 +160,6 @@ h1 {
   border-radius: 5px;
 }
 
-.result {
-  background: #023535;
-}
 
 .vermelho {
 color: red;
@@ -151,6 +172,10 @@ color: red;
 .verde {
   color: green;
 }
+#btn {
+  display: inline-block;
+}
+
 
 
 
