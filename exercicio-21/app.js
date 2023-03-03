@@ -9,7 +9,7 @@ const randomNumbers = [10, 30, 15, 25, 50, 40, 5]
 
 const inpares = randomNumbers.filter(numero => numero % 2 === 1 )
 
-console.log({randomNumbers, inpares})
+// console.log({randomNumbers, inpares})
 
 /*
   02
@@ -19,6 +19,12 @@ console.log({randomNumbers, inpares})
 
 const crazyNumbers = [937, 5, 395, 402, 501, 333, 502, 781, 3, 691]
 
+const MenorQue501 = crazyNumbers.filter(numero => {
+  if(numero < 501) {
+    return numero
+  }
+})
+console.log(MenorQue501)
 /*
   03
 
