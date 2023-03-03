@@ -24,7 +24,7 @@ const MenorQue501 = crazyNumbers.filter(numero => {
     return numero
   }
 })
-console.log(MenorQue501)
+// console.log(MenorQue501)
 /*
   03
 
@@ -33,6 +33,10 @@ console.log(MenorQue501)
 */
 
 const numbers = [5, 7, 3]
+
+const dobleResult = numbers.map(item => item ** 2)
+
+console.log(dobleResult)
 
 /*
   04
