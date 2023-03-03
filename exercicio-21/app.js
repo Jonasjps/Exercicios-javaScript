@@ -36,7 +36,7 @@ const numbers = [5, 7, 3]
 
 const dobleResult = numbers.map(item => item ** 2)
 
-console.log(dobleResult)
+// console.log(dobleResult)
 
 /*
   04
@@ -56,7 +56,10 @@ const cart = [
   { name: 'Resident Evil 2', price: 119.90 },
   { name: 'Death Stranding', price: 149.99 }
 ]
-
+const ListaJogos = cart.filter((jogo,index) => {
+ return jogo.name
+})
+console.log(ListaJogos)
 /*
   - Nome 1
   - Nome 2
