@@ -7,6 +7,10 @@
 
 const randomNumbers = [10, 30, 15, 25, 50, 40, 5]
 
+const inpares = randomNumbers.filter(numero => numero % 2 === 1 )
+
+console.log({randomNumbers, inpares})
+
 /*
   02
 
