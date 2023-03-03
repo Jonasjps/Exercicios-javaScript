@@ -19,12 +19,13 @@ const inpares = randomNumbers.filter(numero => numero % 2 === 1 )
 
 const crazyNumbers = [937, 5, 395, 402, 501, 333, 502, 781, 3, 691]
 
-const MenorQue501 = crazyNumbers.filter(numero => {
-  if(numero < 501) {
-    return numero
+const MenorQue501 = crazyNumbers.reduce((accumulador, crazyNumbers) => {
+  if(crazyNumbers < 501) {
+     accumulador += 1 
   }
-})
-// console.log(MenorQue501)
+  return accumulador
+},0)
+console.log(MenorQue501)
 /*
   03
 
@@ -59,7 +60,7 @@ const cart = [
 const ListaJogos = cart.filter((jogo,index) => {
  return jogo.name
 })
-console.log(ListaJogos)
+// console.log(ListaJogos)
 /*
   - Nome 1
   - Nome 2
