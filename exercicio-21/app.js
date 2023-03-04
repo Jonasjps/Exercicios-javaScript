@@ -25,7 +25,7 @@ const MenorQue501 = crazyNumbers.reduce((accumulador, crazyNumbers) => {
   }
   return accumulador
 },0)
-console.log(MenorQue501)
+// console.log(MenorQue501)
 /*
   03
 
@@ -57,10 +57,18 @@ const cart = [
   { name: 'Resident Evil 2', price: 119.90 },
   { name: 'Death Stranding', price: 149.99 }
 ]
-const ListaJogos = cart.filter((jogo,index) => {
- return jogo.name
+let games = []
+const namesGames = cart.filter((gamer) => {
+  games.push(gamer.name)
+  
 })
-// console.log(ListaJogos)
+
+games.forEach((index,array,gamer) => {
+  console.log(`- ${index} ${array +1} `)
+  
+})
+
+
 /*
   - Nome 1
   - Nome 2
