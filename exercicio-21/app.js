@@ -68,7 +68,6 @@ games.forEach((index,array,gamer) => {
   
 })
 
-
 /*
   - Nome 1
   - Nome 2
