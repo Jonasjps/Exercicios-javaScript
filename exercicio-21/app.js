@@ -62,7 +62,7 @@ const namesGames = cart.filter((gamer,index) => {
   const games = gamer.name
   listNamesGames += `- ${games} ${index + 1}\n` 
 })
-console.log(listNamesGames)
+// console.log(listNamesGames)
 
 // let games = []
 // const namesGames = cart.filter((gamer) => {
@@ -102,6 +102,14 @@ const tarantinoMovies = [
   { name: 'Kill Bill: Volume 1', release: 2003 }
 ]
 
+let filmesAbaixoDe2000 = []
+const filmesOfBottom2000 = tarantinoMovies.filter((filme) => {
+  if(filme.release < 2000) {
+    const filmes = filme.name
+   filmesAbaixoDe2000.push(filmes)
+  }
+})
+// console.log(filmesAbaixoDe2000)
 /*
   06
 
@@ -118,6 +126,11 @@ const tvShows = [
   { name: 'House M.D.', releaseYear: 2004 },
   { name: 'Watchmen', releaseYear: 2019 }
 ]
+
+const seriesNames = tvShows.map((serie) => serie.name)
+console.log(seriesNames)
+console.log(tvShows)
+
 
 /*
   07
