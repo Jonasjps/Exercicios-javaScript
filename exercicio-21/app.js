@@ -57,16 +57,23 @@ const cart = [
   { name: 'Resident Evil 2', price: 119.90 },
   { name: 'Death Stranding', price: 149.99 }
 ]
-let games = []
-const namesGames = cart.filter((gamer) => {
-  games.push(gamer.name)
-  
+let listNamesGames = ''
+const namesGames = cart.filter((gamer,index) => {
+  const games = gamer.name
+  listNamesGames += `- ${games} ${index + 1}\n` 
 })
+console.log(listNamesGames)
 
-games.forEach((index,array,gamer) => {
-  console.log(`- ${index} ${array +1} `)
-  
-})
+// let games = []
+// const namesGames = cart.filter((gamer) => {
+  // games.push(gamer.name)
+  // 
+// })
+// 
+// games.forEach((index,array,gamer) => {
+  // console.log(`- ${index} ${array +1} `)
+  // 
+// })
 
 /*
   - Nome 1
