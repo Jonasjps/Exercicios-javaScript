@@ -58,23 +58,23 @@ const cart = [
   { name: 'Death Stranding', price: 149.99 }
 ]
 let listNamesGames = ''
-const namesGames = cart.filter((gamer,index) => {
+const namesGames = cart.filter(gamer => {
   const games = gamer.name
-  listNamesGames += `- ${games} ${index + 1}\n` 
+  listNamesGames += `- ${games}\n` 
 })
-// console.log(listNamesGames)
+// console.log(listNamesGames) **refazer usando o método (reduce)**
 
 // let games = []
 // const namesGames = cart.filter((gamer) => {
-  // games.push(gamer.name)
-  // 
-// })
-// 
-// games.forEach((index,array,gamer) => {
-  // console.log(`- ${index} ${array +1} `)
-  // 
+//   games.push(gamer.name)
+  
 // })
 
+// games.forEach((array,index,gamer) => {
+//   console.log(`- ${array} `)
+  
+// })
+// 
 /*
   - Nome 1
   - Nome 2
@@ -105,11 +105,12 @@ const tarantinoMovies = [
 let filmesAbaixoDe2000 = []
 const filmesOfBottom2000 = tarantinoMovies.filter((filme) => {
   if(filme.release < 2000) {
-    const filmes = filme.name
-   filmesAbaixoDe2000.push(filmes)
-  }
+
+  //   const filmes = filme.name
+  //  filmesAbaixoDe2000.push(filmes)
+  }     
 })
-// console.log(filmesAbaixoDe2000)
+console.log(filmesAbaixoDe2000)
 /*
   06
 
@@ -127,9 +128,9 @@ const tvShows = [
   { name: 'Watchmen', releaseYear: 2019 }
 ]
 
-const seriesNames = tvShows.map((serie) => serie.name)
-console.log(seriesNames)
-console.log(tvShows)
+const seriesNames = tvShows.map(serie => serie.name)
+// console.log(seriesNames)
+// console.log(tvShows)
 
 
 /*
