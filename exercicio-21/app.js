@@ -7,9 +7,6 @@
 
 const randomNumbers = [10, 30, 15, 25, 50, 40, 5]
 
-const inpares = randomNumbers.filter(numero => numero % 2 === 1 )
-
-// console.log({randomNumbers, inpares})
 
 /*
   02
@@ -19,13 +16,6 @@ const inpares = randomNumbers.filter(numero => numero % 2 === 1 )
 
 const crazyNumbers = [937, 5, 395, 402, 501, 333, 502, 781, 3, 691]
 
-const MenorQue501 = crazyNumbers.reduce((accumulador, crazyNumbers) => {
-  if(crazyNumbers < 501) {
-     accumulador += 1 
-  }
-  return accumulador
-},0)
-// console.log(MenorQue501)
 /*
   03
 
@@ -35,9 +25,6 @@ const MenorQue501 = crazyNumbers.reduce((accumulador, crazyNumbers) => {
 
 const numbers = [5, 7, 3]
 
-const dobleResult = numbers.map(item => item ** 2)
-
-// console.log(dobleResult)
 
 /*
   04
@@ -57,24 +44,7 @@ const cart = [
   { name: 'Resident Evil 2', price: 119.90 },
   { name: 'Death Stranding', price: 149.99 }
 ]
-let listNamesGames = ''
-const namesGames = cart.filter(gamer => {
-  const games = gamer.name
-  listNamesGames += `- ${games}\n` 
-})
-// console.log(listNamesGames) **refazer usando o método (reduce)**
 
-// let games = []
-// const namesGames = cart.filter((gamer) => {
-//   games.push(gamer.name)
-  
-// })
-
-// games.forEach((array,index,gamer) => {
-//   console.log(`- ${array} `)
-  
-// })
-// 
 /*
   - Nome 1
   - Nome 2
@@ -102,15 +72,6 @@ const tarantinoMovies = [
   { name: 'Kill Bill: Volume 1', release: 2003 }
 ]
 
-let filmesAbaixoDe2000 = []
-const filmesOfBottom2000 = tarantinoMovies.filter((filme) => {
-  if(filme.release < 2000) {
-
-  //   const filmes = filme.name
-  //  filmesAbaixoDe2000.push(filmes)
-  }     
-})
-console.log(filmesAbaixoDe2000)
 /*
   06
 
@@ -128,9 +89,6 @@ const tvShows = [
   { name: 'Watchmen', releaseYear: 2019 }
 ]
 
-const seriesNames = tvShows.map(serie => serie.name)
-// console.log(seriesNames)
-// console.log(tvShows)
 
 
 /*
