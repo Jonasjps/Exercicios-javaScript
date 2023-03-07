@@ -37,7 +37,7 @@ const numbers = [5, 7, 3]
 
 const dobleNumbers = numbers.map(number => number ** 2)
 
-console.log(dobleNumbers)
+// console.log(dobleNumbers)
 
 /*
   04
@@ -57,7 +57,10 @@ const cart = [
   { name: 'Resident Evil 2', price: 119.90 },
   { name: 'Death Stranding', price: 149.99 }
 ]
-
+const gamesList = cart.reduce((accumulation, game) =>
+ accumulation +=  `- ${game.name}\n`,'')
+ 
+console.log(gamesList)
 /*
   - Nome 1
   - Nome 2
