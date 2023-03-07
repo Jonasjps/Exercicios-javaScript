@@ -19,6 +19,13 @@ const numbersImpares = randomNumbers.filter(number => number % 2 === 1)
 
 const crazyNumbers = [937, 5, 395, 402, 501, 333, 502, 781, 3, 691]
 
+const abaixoDe501 = crazyNumbers.reduce((accumulation, number) => {
+  if(number < 501) {
+    accumulation++
+  }
+  return accumulation
+},0)
+// console.log(abaixoDe501)
 /*
   03
 
@@ -28,6 +35,9 @@ const crazyNumbers = [937, 5, 395, 402, 501, 333, 502, 781, 3, 691]
 
 const numbers = [5, 7, 3]
 
+const dobleNumbers = numbers.map(number => number ** 2)
+
+console.log(dobleNumbers)
 
 /*
   04
