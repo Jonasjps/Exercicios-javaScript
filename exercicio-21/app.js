@@ -91,7 +91,7 @@ const tarantinoMovies = [
 
 const filmesAbaixoDe2000 = tarantinoMovies.filter(filme => filme.release < 2000)
 
-console.log(filmesAbaixoDe2000)
+// console.log(filmesAbaixoDe2000)
 
 /*
   06
@@ -110,7 +110,9 @@ const tvShows = [
   { name: 'Watchmen', releaseYear: 2019 }
 ]
 
+const series = tvShows.map(serie => serie.name)
 
+console.log(series)
 
 /*
   07
