@@ -57,16 +57,17 @@ const cart = [
   { name: 'Resident Evil 2', price: 119.90 },
   { name: 'Death Stranding', price: 149.99 }
 ]
-const gamesList = cart.reduce((accumulation, game) =>
- accumulation +=  `- ${game.name}\n`,'')
- 
-console.log(gamesList)
+
 /*
   - Nome 1
   - Nome 2
   - Nome 3
 */
 
+const gamesList = cart.reduce((accumulation, game) =>
+ accumulation +=  `- ${game.name}\n`,'')
+ 
+// console.log(gamesList)
 /*
   05
 
@@ -87,6 +88,10 @@ const tarantinoMovies = [
   { name: 'À Prova de Morte', release: 2007 },
   { name: 'Kill Bill: Volume 1', release: 2003 }
 ]
+
+const filmesAbaixoDe2000 = tarantinoMovies.filter(filme => filme.release < 2000)
+
+console.log(filmesAbaixoDe2000)
 
 /*
   06
