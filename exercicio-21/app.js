@@ -7,9 +7,7 @@
 
 const randomNumbers = [10, 30, 15, 25, 50, 40, 5]
 
-const numbersImpares = randomNumbers.filter(number => number % 2 === 1)
 
-// console.log(numbersImpares)
 
 /*
   02
@@ -19,15 +17,6 @@ const numbersImpares = randomNumbers.filter(number => number % 2 === 1)
 
 const crazyNumbers = [937, 5, 395, 402, 501, 333, 502, 781, 3, 691]
 
-const totalNumbersAbaixoDe501 = (accumulation, number) => {
-  if(number < 501) {
-    accumulation++
-  }
-  return accumulation
-}
-
-const abaixoDe501 = crazyNumbers.reduce(totalNumbersAbaixoDe501,0)
-// console.log(abaixoDe501)
 /*
   03
 
@@ -37,9 +26,6 @@ const abaixoDe501 = crazyNumbers.reduce(totalNumbersAbaixoDe501,0)
 
 const numbers = [5, 7, 3]
 
-const dobleNumbers = numbers.map(number => number ** 2)
-
-// console.log(dobleNumbers)
 
 /*
   04
@@ -65,12 +51,7 @@ const cart = [
   - Nome 2
   - Nome 3
 */
-const namesListGames = (accumulation, {name}) =>
-accumulation +=  `- ${name}\n`
 
-const gamesList = cart.reduce(namesListGames,'')
- 
-// console.log(gamesList)
 /*
   05
 
@@ -92,10 +73,6 @@ const tarantinoMovies = [
   { name: 'Kill Bill: Volume 1', release: 2003 }
 ]
 
-const filmesAbaixoDe2000 = tarantinoMovies.filter(({release}) => 
-  release < 2000)
-
-// console.log(filmesAbaixoDe2000)
 
 /*
   06
@@ -114,11 +91,8 @@ const tvShows = [
   { name: 'Watchmen', releaseYear: 2019 }
 ]
 
-const series = tvShows.map(({name}) => name)
 
-// console.log(series)
-
-/*
+ /*
   07
 
   - Observe os loops da sua versão do quiz e considere se, baseado no que foi  
