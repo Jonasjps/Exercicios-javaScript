@@ -6,15 +6,14 @@ let score = 0
 const alternativasCorrect = ['D', 'D', 'D', 'D']
 
 const getUserAnswers = () => {
-   let userAnswers = []
-   alternativasCorrect.forEach((_,index) => {
-      const iterando = form[`inputQuestion${index + 1}`].value
-      userAnswers.push(iterando)
-   })
-   return userAnswers
+   const userAnswers = alternativasCorrect.map((_,index) =>
+    form[`inputQuestion${index + 1}`].value)
+   
+    return userAnswers
 }
 
 const caulcularApontuação = (userAnswers) => {
+   score = 0
    userAnswers.forEach((userAnswer,index) => {
       const testandoAlternativasCorrect = userAnswer === alternativasCorrect[index] 
       if(testandoAlternativasCorrect) {
