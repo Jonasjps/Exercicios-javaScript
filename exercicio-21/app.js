@@ -63,9 +63,8 @@ const cart = [
   - Nome 3
 */
 
-const namesListGames = cart.reduce((accomulator, nome) => {
-  return `${accomulator} - ${nome.name}\n`
-},'')
+const namesListGames = cart.reduce((accomulator, {name}) => 
+  `${accomulator} - ${name}\n`,'')
 
 console.log(namesListGames)
 /*
@@ -89,6 +88,10 @@ const tarantinoMovies = [
   { name: 'Kill Bill: Volume 1', release: 2003 }
 ]
 
+const antesDoAno2000 = tarantinoMovies.filter(({release}) => release < 2000)
+
+console.log(antesDoAno2000)
+
 
 /*
   06
@@ -106,7 +109,9 @@ const tvShows = [
   { name: 'House M.D.', releaseYear: 2004 },
   { name: 'Watchmen', releaseYear: 2019 }
 ]
+const listNamesJogos = tvShows.map(({name}) => name)
 
+console.log(listNamesJogos)
 
  /*
   07
