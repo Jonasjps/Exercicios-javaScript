@@ -22,7 +22,7 @@ console.log(numbersImpares)
 const crazyNumbers = [937, 5, 395, 402, 501, 333, 502, 781, 3, 691]
 
 const abaixoDe501 = crazyNumbers.reduce((accomulator, number) => 
-  number < 501 ? ++accomulator : accomulator,0)
+  number < 501 ? ++accomulator : accomulator,0) //aqui usei o ternario que é um atalho do if
 
 console.log(abaixoDe501)
 
@@ -35,7 +35,9 @@ console.log(abaixoDe501)
 
 const numbers = [5, 7, 3]
 
+const dobleNumbers = numbers.map(number => number ** 2)
 
+console.log(dobleNumbers)
 /*
   04
 
@@ -61,6 +63,11 @@ const cart = [
   - Nome 3
 */
 
+const namesListGames = cart.reduce((accomulator, nome) => {
+  return `${accomulator} - ${nome.name}\n`
+},'')
+
+console.log(namesListGames)
 /*
   05
 
