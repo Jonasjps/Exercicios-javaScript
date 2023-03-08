@@ -92,7 +92,8 @@ const tarantinoMovies = [
   { name: 'Kill Bill: Volume 1', release: 2003 }
 ]
 
-const filmesAbaixoDe2000 = tarantinoMovies.filter(({release}) => release < 2000)
+const filmesAbaixoDe2000 = tarantinoMovies.filter(({release}) => 
+  release < 2000)
 
 // console.log(filmesAbaixoDe2000)
 
