@@ -7,7 +7,11 @@
 
 const randomNumbers = [10, 30, 15, 25, 50, 40, 5]
 
+const somenteNumerosImpares = number => number % 2 === 1
 
+const numbersImpares = randomNumbers.filter(somenteNumerosImpares)
+
+console.log(numbersImpares)
 
 /*
   02
@@ -16,6 +20,11 @@ const randomNumbers = [10, 30, 15, 25, 50, 40, 5]
 */
 
 const crazyNumbers = [937, 5, 395, 402, 501, 333, 502, 781, 3, 691]
+
+const abaixoDe501 = crazyNumbers.reduce((accomulator, number) => 
+  number < 501 ? ++accomulator : accomulator,0)
+
+console.log(abaixoDe501)
 
 /*
   03
