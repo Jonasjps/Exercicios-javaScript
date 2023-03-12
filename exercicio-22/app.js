@@ -148,10 +148,10 @@ console.log(DogIdadeAHumana)
     os nomes dos filmes na ul do index.html.
 */
 const ul = document.querySelector('.list-group')
-const filmesNoBwoser = topBrazilmovies.map((filme) => {
-   ul.innerHTML += `<li> ${filme.title}</li>` 
-}, '')
 
+const filmesNoBwoser = topBrazilmovies.map((filme) => {
+    ul.innerHTML += `<li> ${filme.title}</li>` 
+})
 /*
   10
   
