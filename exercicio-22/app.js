@@ -54,6 +54,9 @@ console.log(numberOrdemCrescente)
 
 const randomNumbers = [10, 5, 0, 40, 60, 10, 20, 70]
 
+const primeiroItemDoArray = randomNumbers.find(item => item > 50)
+
+console.log(primeiroItemDoArray)
 /*
   05
 
