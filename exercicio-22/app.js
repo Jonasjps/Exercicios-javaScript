@@ -137,6 +137,9 @@ const pets = [
   { name: 'Cristal', age: 3, gender: 'Female', type: 'Dog' },
   { name: 'Chico', age: 6, gender: 'Male', type: 'Dog' }
 ]
+const DogIdadeAHumana = pets.map(({type, age}) => type === 'Dog'? age * 7: age)
+console.log(DogIdadeAHumana)
+
 
 /*
   09
