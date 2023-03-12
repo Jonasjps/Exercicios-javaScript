@@ -28,6 +28,11 @@ const characters = [
   { id: 04, name: 'Mufasa' }
 ]
 
+const NumberObjectCrescente = characters.sort((number1, number2) =>
+  number1.id - number2.id
+)
+console.log(NumberObjectCrescente)
+
 /*
   03
 
@@ -38,6 +43,9 @@ const characters = [
 
 const numbers = [41, 15, 63, 349, 25, 22, 143, 64, 59, 291]
 
+const numberOrdemCrescente = numbers.sort((item1, item2) => item1 - item2)
+
+console.log(numberOrdemCrescente)
 /*
   04
 
