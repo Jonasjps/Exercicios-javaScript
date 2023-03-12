@@ -8,6 +8,11 @@
 
 const names = ['Caio', 'André', 'Dário']
 
+names.sort()
+
+console.log(names)
+
+
 /*
   02
 
