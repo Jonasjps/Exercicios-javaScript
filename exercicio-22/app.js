@@ -111,10 +111,10 @@ const topBrazilmovies = [
   { title: 'Os Vingadores', peopleAmount: 10968065, distributedBy: 'Disney' },
   { title: 'Dona Flor e Seus Dois Maridos', peopleAmount: 10735524, distributedBy: 'Embrafilme' }
 ]
-const totalDePeople = topBrazilmovies
-.reduce((accomulator, {distributedBy, peopleAmount}) => 
-    distributedBy === 'Disney'?
-     accomulator += peopleAmount : accomulator,0)
+const returnDoReduce = (accomulator, {distributedBy, peopleAmount}) =>
+   distributedBy === 'Disney'? accomulator += peopleAmount : accomulator
+   
+const totalDePeople = topBrazilmovies.reduce(returnDoReduce,0)
 
 console.log(totalDePeople)
 
