@@ -137,7 +137,10 @@ const pets = [
   { name: 'Cristal', age: 3, gender: 'Female', type: 'Dog' },
   { name: 'Chico', age: 6, gender: 'Male', type: 'Dog' }
 ]
-const DogIdadeAHumana = pets.map(({type, age}) => type === 'Dog'? age * 7: age)
+const retornoDomap =  ({type, age}) => type === 'Dog'? age * 7: age
+
+const DogIdadeAHumana = pets.map(retornoDomap)
+
 console.log(DogIdadeAHumana)
 
 
@@ -149,8 +152,8 @@ console.log(DogIdadeAHumana)
 */
 const ul = document.querySelector('.list-group')
 
-const filmesNoBwoser = topBrazilmovies.map((filme) => {
-    ul.innerHTML += `<li> ${filme.title}</li>` 
+const filmesNoBwoser = topBrazilmovies.map(({title}) => {
+    ul.innerHTML += `<li> ${title}</li>` 
 })
 /*
   10
