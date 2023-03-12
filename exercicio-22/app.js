@@ -67,6 +67,16 @@ console.log(primeiroItemDoArray)
 
 const people = ['Cauã', 'Alfredo', 'Bruno']
 
+const alfabéticaInvertida = people.sort((item1, item2) => {
+  if(item1 > item2) {
+   return -1
+  } else if (item1 < item2){
+   return 1
+  }
+  return 0
+ })
+console.log(alfabéticaInvertida)
+
 /*
   06
   
@@ -77,6 +87,11 @@ const people = ['Cauã', 'Alfredo', 'Bruno']
 
 const ingredients = ['vinho', 'tomate', 'cebola', 'cogumelo']
 
+const mensagem = ingredients.reduce((accomulator, item) => 
+  `${accomulator} ${item} cozido,`
+  .replace('la cozido', 'la cozida').replace('lo cozido,', 'lo cozido'),'')
+
+console.log(mensagem)
 /*
   07
   
@@ -96,9 +111,15 @@ const topBrazilmovies = [
   { title: 'Os Vingadores', peopleAmount: 10968065, distributedBy: 'Disney' },
   { title: 'Dona Flor e Seus Dois Maridos', peopleAmount: 10735524, distributedBy: 'Embrafilme' }
 ]
+const totalDePeople = topBrazilmovies
+.reduce((accomulator, {distributedBy, peopleAmount}) => 
+    distributedBy === 'Disney'?
+     accomulator += peopleAmount : accomulator,0)
+
+console.log(totalDePeople)
 
 /*
-  08
+  08 
   
   - Considerando o array abaixo, gere um array de cães;
   - Os cães, ao invés da idade original, devem conter sua "idade humana";
