@@ -9,7 +9,6 @@
 const names = ['Caio', 'André', 'Dário']
 const namesCopy = names.map(item => item).sort()
 
-
 console.log(namesCopy)
 console.log(names)
 
@@ -28,10 +27,10 @@ const characters = [
   { id: 04, name: 'Mufasa' }
 ]
 
-const NumberObjectCrescente = characters.sort((number1, number2) =>
-  number1.id - number2.id
+const NumberObjectCrescente = characters.map(item => item)
+.sort((number1, number2) => number1.id - number2.id
 )
-console.log(NumberObjectCrescente)
+console.log(NumberObjectCrescente, characters)
 
 /*
   03
