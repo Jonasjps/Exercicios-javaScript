@@ -153,9 +153,9 @@ console.log(DogIdadeAHumana)
 const ul = document.querySelector('.list-group')
 
 const filmesNoBwoser = topBrazilmovies.map(({title}) => {
-    ul.innerHTML += `<li> ${title}</li>` 
-})
-/*
+    ul.innerHTML += `<li> ${title}</li>`
+  })
+  /*
   10
   
   - Na sua versão do Quiz, teste se ao enviar o form pela 2ª vez consecutiva, a 
