@@ -42,9 +42,10 @@ console.log(NumberObjectCrescente, characters)
 
 const numbers = [41, 15, 63, 349, 25, 22, 143, 64, 59, 291]
 
-const numberOrdemCrescente = numbers.sort((item1, item2) => item1 - item2)
+const numberOrdemCrescente = numbers.map(number => number)
+  .sort((item1, item2) => item1 - item2)
 
-console.log(numberOrdemCrescente)
+console.log(numberOrdemCrescente, numbers)
 /*
   04
 
