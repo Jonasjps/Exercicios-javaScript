@@ -67,7 +67,7 @@ console.log(primeiroItemDoArray)
 
 const people = ['Cauã', 'Alfredo', 'Bruno']
 
-const alfabéticaInvertida = people.sort((item1, item2) => {
+const alfabéticaInvertida = people.map(nome => nome).sort((item1, item2) => {
   if(item1 > item2) {
    return -1
   } else if (item1 < item2){
@@ -75,7 +75,7 @@ const alfabéticaInvertida = people.sort((item1, item2) => {
   }
   return 0
  })
-console.log(alfabéticaInvertida)
+console.log(alfabéticaInvertida, people)
 
 /*
   06
