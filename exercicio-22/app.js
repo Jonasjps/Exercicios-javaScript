@@ -30,6 +30,7 @@ const characters = [
 const NumberObjectCrescente = characters.map(item => item)
 .sort((number1, number2) => number1.id - number2.id
 )
+//pesciso criar um novo objeto 
 console.log(NumberObjectCrescente, characters)
 
 /*
@@ -66,7 +67,7 @@ console.log(primeiroItemDoArray)
 */
 
 const people = ['Cauã', 'Alfredo', 'Bruno']
-
+//posso usar o método reverse() para inverte a ordem do array
 const alfabéticaInvertida = people.map(nome => nome).sort((item1, item2) => {
   if(item1 > item2) {
    return -1
@@ -113,7 +114,7 @@ const topBrazilmovies = [
 ]
 const returnDoReduce = (accomulator, {distributedBy, peopleAmount}) =>
    distributedBy === 'Disney'? accomulator += peopleAmount : accomulator
-   
+   //preciso usar o método filter para gerar um array apenas com os Disney
 const totalDePeople = topBrazilmovies.reduce(returnDoReduce,0)
 
 console.log(totalDePeople)
@@ -138,8 +139,9 @@ const pets = [
   { name: 'Chico', age: 6, gender: 'Male', type: 'Dog' }
 ]
 const retornoDomap =  ({type, age}) => type === 'Dog'? age * 7: age
-
+//usar o método filter para extrair apenas os Dogs
 const DogIdadeAHumana = pets.map(retornoDomap)
+
 
 console.log(DogIdadeAHumana)
 
