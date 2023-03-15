@@ -27,7 +27,12 @@ const characters = [
   { id: 01, name: 'Scar' },
   { id: 04, name: 'Mufasa' }
 ]
+const charactersCopy = characters.map(number => {
+  return {id: number.id, name: number.name}
+})
 
+charactersCopy.sort((number1, number2) => number1.id - number2.id)
+console.log(charactersCopy, characters)
 /*
   03
 
