@@ -7,10 +7,6 @@
 */
 
 const names = ['Caio', 'André', 'Dário']
-const namesCopy = names.map(item => item).sort()
-
-console.log(namesCopy)
-console.log(names)
 
 /*
   02
@@ -27,12 +23,6 @@ const characters = [
   { id: 04, name: 'Mufasa' }
 ]
 
-const NumberObjectCrescente = characters.map(item => item)
-.sort((number1, number2) => number1.id - number2.id
-)
-//pesciso criar um novo objeto 
-console.log(NumberObjectCrescente, characters)
-
 /*
   03
 
@@ -43,10 +33,6 @@ console.log(NumberObjectCrescente, characters)
 
 const numbers = [41, 15, 63, 349, 25, 22, 143, 64, 59, 291]
 
-const numberOrdemCrescente = numbers.map(number => number)
-  .sort((item1, item2) => item1 - item2)
-
-console.log(numberOrdemCrescente, numbers)
 /*
   04
 
@@ -55,9 +41,6 @@ console.log(numberOrdemCrescente, numbers)
 
 const randomNumbers = [10, 5, 0, 40, 60, 10, 20, 70]
 
-const primeiroItemDoArray = randomNumbers.find(item => item > 50)
-
-console.log(primeiroItemDoArray)
 /*
   05
 
@@ -67,16 +50,6 @@ console.log(primeiroItemDoArray)
 */
 
 const people = ['Cauã', 'Alfredo', 'Bruno']
-//posso usar o método reverse() para inverte a ordem do array
-const alfabéticaInvertida = people.map(nome => nome).sort((item1, item2) => {
-  if(item1 > item2) {
-   return -1
-  } else if (item1 < item2){
-   return 1
-  }
-  return 0
- })
-console.log(alfabéticaInvertida, people)
 
 /*
   06
@@ -88,11 +61,6 @@ console.log(alfabéticaInvertida, people)
 
 const ingredients = ['vinho', 'tomate', 'cebola', 'cogumelo']
 
-const mensagem = ingredients.reduce((accomulator, item) => 
-  `${accomulator} ${item} cozido,`
-  .replace('la cozido', 'la cozida').replace('lo cozido,', 'lo cozido'),'')
-
-console.log(mensagem)
 /*
   07
   
@@ -112,12 +80,6 @@ const topBrazilmovies = [
   { title: 'Os Vingadores', peopleAmount: 10968065, distributedBy: 'Disney' },
   { title: 'Dona Flor e Seus Dois Maridos', peopleAmount: 10735524, distributedBy: 'Embrafilme' }
 ]
-const returnDoReduce = (accomulator, {distributedBy, peopleAmount}) =>
-   distributedBy === 'Disney'? accomulator += peopleAmount : accomulator
-   //preciso usar o método filter para gerar um array apenas com os Disney
-const totalDePeople = topBrazilmovies.reduce(returnDoReduce,0)
-
-console.log(totalDePeople)
 
 /*
   08 
@@ -138,12 +100,6 @@ const pets = [
   { name: 'Cristal', age: 3, gender: 'Female', type: 'Dog' },
   { name: 'Chico', age: 6, gender: 'Male', type: 'Dog' }
 ]
-const retornoDomap =  ({type, age}) => type === 'Dog'? age * 7: age
-//usar o método filter para extrair apenas os Dogs
-const DogIdadeAHumana = pets.map(retornoDomap)
-
-
-console.log(DogIdadeAHumana)
 
 
 /*
@@ -152,11 +108,8 @@ console.log(DogIdadeAHumana)
   - Considerando o array topBrazilmovies, através do map ou do reduce, insira 
     os nomes dos filmes na ul do index.html.
 */
-const ul = document.querySelector('.list-group')
 
-const filmesNoBwoser = topBrazilmovies.map(({title}) => {
-    ul.innerHTML += `<li> ${title}</li>`
-  })
+console.log('oi')
   /*
   10
   
