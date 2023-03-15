@@ -42,7 +42,11 @@ console.log(charactersCopy, characters)
 */
 
 const numbers = [41, 15, 63, 349, 25, 22, 143, 64, 59, 291]
+const numberCopy = numbers.map(number => number)
 
+numberCopy.sort((item1, item2) => item1 - item2 )
+
+console.log(numberCopy, numbers)
 /*
   04
 
