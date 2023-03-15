@@ -8,6 +8,11 @@
 
 const names = ['Caio', 'André', 'Dário']
 
+const namesCopy = names.map(item => item)
+
+namesCopy.sort()
+
+console.log(names, namesCopy)
 /*
   02
 
@@ -109,7 +114,6 @@ const pets = [
     os nomes dos filmes na ul do index.html.
 */
 
-console.log('oi')
   /*
   10
   
