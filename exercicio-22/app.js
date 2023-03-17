@@ -55,6 +55,9 @@ console.log(numberCopy, numbers)
 
 const randomNumbers = [10, 5, 0, 40, 60, 10, 20, 70]
 
+const numberMaiorQue50 = randomNumbers.find(number => number > 50)
+
+console.log(numberMaiorQue50)
 /*
   05
 
@@ -65,6 +68,11 @@ const randomNumbers = [10, 5, 0, 40, 60, 10, 20, 70]
 
 const people = ['Cauã', 'Alfredo', 'Bruno']
 
+const peopleCopy = people.map(item => item)
+
+peopleCopy.sort()
+peopleCopy.reverse()
+console.log(peopleCopy)
 /*
   06
   
