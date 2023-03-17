@@ -73,7 +73,7 @@ const peopleCopy = people.map(item => item)
 peopleCopy.sort()
 peopleCopy.reverse()
 console.log(peopleCopy)
-/*
+/*\
   06
   
   - Através do array abaixo, gere a mensagem "vinho cozido, tomate cozido, 
@@ -83,6 +83,11 @@ console.log(peopleCopy)
 
 const ingredients = ['vinho', 'tomate', 'cebola', 'cogumelo']
 
+const ingredientsString = ingredients.reduce((acc, item) => {
+  return  `${acc} ${item} cozido,`
+},'')
+
+console.log(ingredientsString)
 /*
   07
   
