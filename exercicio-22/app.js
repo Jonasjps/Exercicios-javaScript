@@ -83,7 +83,12 @@ console.log(peopleCopy)
 
 const ingredients = ['vinho', 'tomate', 'cebola', 'cogumelo']
 
-const ingredientsString = ingredients.reduce((acc, item) => {
+const ingredientsString = ingredients.reduce((acc, item, index, array) => {
+  if(index === array.length -1){
+    return  `${acc} ${item} cozido`  
+  } else if(item[item.length - 1] === 'a') {
+    return  `${acc} ${item} cozida,`  
+  }
   return  `${acc} ${item} cozido,`
 },'')
 
