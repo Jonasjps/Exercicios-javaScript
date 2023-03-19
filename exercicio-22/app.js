@@ -86,6 +86,21 @@ console.log(people, peopleCopy)
 */
 
 const ingredients = ['vinho', 'tomate', 'cebola', 'cogumelo']
+const ingredientsCozidosMensage = ingredients.reduce((acc, item, index, array) => {
+
+ const alterandoNameCebola =  item[item.length - 1] === 'a'? 'cozida': 'cozido'  
+  
+  if(index === array.length -1) {
+    return acc + `${item} ${alterandoNameCebola}`
+
+  }
+  return acc + `${item} ${alterandoNameCebola}, `
+  
+},'')
+
+
+console.log(ingredientsCozidosMensage)
+
 
 /*
   07
