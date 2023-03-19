@@ -71,6 +71,12 @@ console.log(maiorQue50)
 
 const people = ['Cauã', 'Alfredo', 'Bruno']
 
+const peopleCopy = people.map(names => names)
+
+peopleCopy.sort()
+peopleCopy.reverse()
+
+console.log(people, peopleCopy)
 /*\
   06
   
