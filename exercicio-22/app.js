@@ -121,7 +121,12 @@ const topBrazilmovies = [
   { title: 'Os Vingadores', peopleAmount: 10968065, distributedBy: 'Disney' },
   { title: 'Dona Flor e Seus Dois Maridos', peopleAmount: 10735524, distributedBy: 'Embrafilme' }
 ]
+const peopleMoviesDisney = topBrazilmovies.filter(movie => movie.distributedBy === 'Disney')
 
+const totalPeopleMovieDisney = peopleMoviesDisney.reduce((acc, total) => {
+  return acc + total.peopleAmount
+}, 0)
+console.log(totalPeopleMovieDisney)
 /*
   08 
   
