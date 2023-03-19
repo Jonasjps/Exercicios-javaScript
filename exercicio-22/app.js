@@ -58,6 +58,9 @@ console.log(numbers, numbersCopy)
 
 const randomNumbers = [10, 5, 0, 40, 60, 10, 20, 70]
 
+const maiorQue50 = randomNumbers.find(number => number > 50)
+
+console.log(maiorQue50)
 /*
   05
 
