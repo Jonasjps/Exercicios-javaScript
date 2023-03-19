@@ -124,6 +124,7 @@ const topBrazilmovies = [
 const peopleMoviesDisney = topBrazilmovies.filter(movie => movie.distributedBy === 'Disney')
 
 const totalPeopleMovieDisney = peopleMoviesDisney.reduce((acc, total) => {
+  // console.log(`O acomulator recebeu: ${acc} + ${total.peopleAmount}`)
   return acc + total.peopleAmount
 }, 0)
 console.log(totalPeopleMovieDisney)
@@ -147,13 +148,30 @@ const pets = [
   { name: 'Chico', age: 6, gender: 'Male', type: 'Dog' }
 ]
 
+const petsDogs = pets
+  .filter(item => item.type === 'Dog')
+  .map(transform => ({
+    names: transform.name,
+    age: transform.age * 7,
+    gender: transform.gender, 
+    type: transform.type
+  }))
 
+console.log(petsDogs,pets)
 /*
   09
   
   - Considerando o array topBrazilmovies, através do map ou do reduce, insira 
     os nomes dos filmes na ul do index.html.
 */
+const ul = document.querySelector('.list-group')
+topBrazilmovies.reduce((acc, item) => {
+  ul.innerHTML += `<li>${acc ,item.title}</li> `
+}, '')
+
+//  topBrazilmovies.map(item => {
+//   ul.innerHTML += `<li>${item.title}</li>`
+//  })
 
   /*
   10
