@@ -7,12 +7,6 @@
 */
 
 const names = ['Caio', 'André', 'Dário']
-
-const namesCopy = names.map(item => item)
-
-namesCopy.sort()
-
-console.log(names, namesCopy)
 /*
   02
 
@@ -27,12 +21,7 @@ const characters = [
   { id: 01, name: 'Scar' },
   { id: 04, name: 'Mufasa' }
 ]
-const charactersCopy = characters.map(number => {
-  return {id: number.id, name: number.name}
-})
 
-charactersCopy.sort((number1, number2) => number1.id - number2.id)
-console.log(charactersCopy, characters)
 /*
   03
 
@@ -42,11 +31,6 @@ console.log(charactersCopy, characters)
 */
 
 const numbers = [41, 15, 63, 349, 25, 22, 143, 64, 59, 291]
-const numberCopy = numbers.map(number => number)
-
-numberCopy.sort((item1, item2) => item1 - item2 )
-
-console.log(numberCopy, numbers)
 /*
   04
 
@@ -55,9 +39,6 @@ console.log(numberCopy, numbers)
 
 const randomNumbers = [10, 5, 0, 40, 60, 10, 20, 70]
 
-const numberMaiorQue50 = randomNumbers.find(number => number > 50)
-
-console.log(numberMaiorQue50)
 /*
   05
 
@@ -68,11 +49,6 @@ console.log(numberMaiorQue50)
 
 const people = ['Cauã', 'Alfredo', 'Bruno']
 
-const peopleCopy = people.map(item => item)
-
-peopleCopy.sort()
-peopleCopy.reverse()
-console.log(peopleCopy)
 /*\
   06
   
@@ -83,16 +59,6 @@ console.log(peopleCopy)
 
 const ingredients = ['vinho', 'tomate', 'cebola', 'cogumelo']
 
-const ingredientsString = ingredients.reduce((acc, item, index, array) => {
-  if(index === array.length -1){
-    return  `${acc} ${item} cozido`  
-  } else if(item[item.length - 1] === 'a') {
-    return  `${acc} ${item} cozida,`  
-  }
-  return  `${acc} ${item} cozido,`
-},'')
-
-console.log(ingredientsString)
 /*
   07
   
