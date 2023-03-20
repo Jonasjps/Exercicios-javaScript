@@ -61,7 +61,16 @@ const people = ['Cauã', 'Alfredo', 'Bruno']
 */
 
 const ingredients = ['vinho', 'tomate', 'cebola', 'cogumelo']
+const ingredientsCozidoMensage = ingredients.reduce((acc, ingredient, index, array) => {
 
+  const ultimaLetraDaCebola = /[a]$/.test(ingredient) ? 'cozida': 'cozido'
+
+  if(index === array.length -1) {
+    return acc + `${ingredient} ${ultimaLetraDaCebola} ` 
+  }
+  return acc + `${ingredient} ${ultimaLetraDaCebola}, `
+}, '')
+console.log(ingredientsCozidoMensage)
 
 /*
   07
@@ -82,6 +91,12 @@ const topBrazilmovies = [
   { title: 'Os Vingadores', peopleAmount: 10968065, distributedBy: 'Disney' },
   { title: 'Dona Flor e Seus Dois Maridos', peopleAmount: 10735524, distributedBy: 'Embrafilme' }
 ]
+ const peopleMovieDisney = topBrazilmovies.filter(movie => movie.distributedBy === 'Disney')
+  
+  const totalDePeopleMovie = peopleMovieDisney.reduce((acc, item) => {
+    return acc + item.peopleAmount
+  },0)
+ console.log(totalDePeopleMovie)
 /*
   08 
   
