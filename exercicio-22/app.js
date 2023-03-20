@@ -52,6 +52,15 @@ const randomNumbers = [10, 5, 0, 40, 60, 10, 20, 70]
 
 const people = ['Cauã', 'Alfredo', 'Bruno']
 
+const peopleCopy = people.map(item => item)
+
+peopleCopy.sort()
+peopleCopy.reverse()
+
+console.log(peopleCopy, people)
+
+
+
 /*\
   06
   
