@@ -23,6 +23,15 @@ const characters = [
   { id: 04, name: 'Mufasa' }
 ]
 
+const reiLeão = characters.map((personagem) => {
+  return {id: personagem.id,  name: personagem.name }
+} )
+
+// reiLeão[1].name = 'Maria'
+
+reiLeão.sort((item1,item2) => item1.id - item2.id)
+
+console.log(reiLeão, characters)
 
 /*
   03
