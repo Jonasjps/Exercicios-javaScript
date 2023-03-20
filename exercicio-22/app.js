@@ -114,6 +114,9 @@ topBrazilmovies.map(movie => {
   ul.innerHTML += `<li>${movie.title}</li>`
 })
 
+// topBrazilmovies.reduce((acc, movie) => {
+//   ul.innerHTML += `<li>${acc, movie.title}</li>`
+// },'')
   /*
   10
   
