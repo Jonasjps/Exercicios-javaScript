@@ -8,11 +8,6 @@
 
 const names = ['Caio', 'André', 'Dário']
 
-const namesCopy = names.map(item => item)
-
-namesCopy.sort()
-
-console.log(namesCopy)
 /*
   02
 
@@ -27,12 +22,6 @@ const characters = [
   { id: 01, name: 'Scar' },
   { id: 04, name: 'Mufasa' }
 ]
-const charactersCopy = characters.map(character => {
-  return  {id: character.id, name: character.name}
-})
-charactersCopy.sort((item1, item2) => item1.id - item2.id)
-
-console.log(characters, charactersCopy)
 
 
 /*
@@ -45,11 +34,6 @@ console.log(characters, charactersCopy)
 
 const numbers = [41, 15, 63, 349, 25, 22, 143, 64, 59, 291]
 
-const numbersCopy = numbers.map(number => number)
-
-numbersCopy.sort((number1, number2) => number1 - number2)
-
-console.log(numbers, numbersCopy)
 /*
   04
 
@@ -58,9 +42,6 @@ console.log(numbers, numbersCopy)
 
 const randomNumbers = [10, 5, 0, 40, 60, 10, 20, 70]
 
-const maiorQue50 = randomNumbers.find(number => number > 50)
-
-console.log(maiorQue50)
 /*
   05
 
@@ -71,12 +52,6 @@ console.log(maiorQue50)
 
 const people = ['Cauã', 'Alfredo', 'Bruno']
 
-const peopleCopy = people.map(names => names)
-
-peopleCopy.sort()
-peopleCopy.reverse()
-
-console.log(people, peopleCopy)
 /*\
   06
   
@@ -86,20 +61,6 @@ console.log(people, peopleCopy)
 */
 
 const ingredients = ['vinho', 'tomate', 'cebola', 'cogumelo']
-const ingredientsCozidosMensage = ingredients.reduce((acc, item, index, array) => {
-
- const alterandoNameCebola =  item[item.length - 1] === 'a'? 'cozida': 'cozido'  
-  
-  if(index === array.length -1) {
-    return acc + `${item} ${alterandoNameCebola}`
-
-  }
-  return acc + `${item} ${alterandoNameCebola}, `
-  
-},'')
-
-
-console.log(ingredientsCozidosMensage)
 
 
 /*
@@ -121,13 +82,6 @@ const topBrazilmovies = [
   { title: 'Os Vingadores', peopleAmount: 10968065, distributedBy: 'Disney' },
   { title: 'Dona Flor e Seus Dois Maridos', peopleAmount: 10735524, distributedBy: 'Embrafilme' }
 ]
-const peopleMoviesDisney = topBrazilmovies.filter(movie => movie.distributedBy === 'Disney')
-
-const totalPeopleMovieDisney = peopleMoviesDisney.reduce((acc, total) => {
-  // console.log(`O acomulator recebeu: ${acc} + ${total.peopleAmount}`)
-  return acc + total.peopleAmount
-}, 0)
-console.log(totalPeopleMovieDisney)
 /*
   08 
   
@@ -148,16 +102,6 @@ const pets = [
   { name: 'Chico', age: 6, gender: 'Male', type: 'Dog' }
 ]
 
-const petsDogs = pets
-  .filter(item => item.type === 'Dog')
-  .map(transform => ({
-    names: transform.name,
-    age: transform.age * 7,
-    gender: transform.gender, 
-    type: transform.type
-  }))
-
-console.log(petsDogs,pets)
 /*
   09
   
@@ -165,13 +109,10 @@ console.log(petsDogs,pets)
     os nomes dos filmes na ul do index.html.
 */
 const ul = document.querySelector('.list-group')
-topBrazilmovies.reduce((acc, item) => {
-  ul.innerHTML += `<li>${acc ,item.title}</li> `
-}, '')
 
-//  topBrazilmovies.map(item => {
-//   ul.innerHTML += `<li>${item.title}</li>`
-//  })
+topBrazilmovies.map(movie => {
+  ul.innerHTML += `<li>${movie.title}</li>`
+})
 
   /*
   10
@@ -183,3 +124,4 @@ topBrazilmovies.reduce((acc, item) => {
     - Se isso está acontecendo, proponha uma solução para que o 2º submit não 
       considere a pontuação do envio anterior.
 */
+//ok
