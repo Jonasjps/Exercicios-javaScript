@@ -35,7 +35,7 @@ const reiLeão = characters.map((personagem) => {
 
 // reiLeão[1].name = 'Maria'
 
-reiLeão.sort((item1,item2) => item1.id - item2.id)
+reiLeão.sort((item1, item2) => item1.id - item2.id)
 
 console.log(reiLeão, characters)
 
@@ -97,8 +97,9 @@ const ingredients = ['vinho', 'tomate', 'cebola', 'cogumelo']
 const ingredientsCozidoMensage = ingredients.reduce((acc, ingredient, index, array) => {
 
   const ultimaLetraDaCebola = /[a]$/.test(ingredient) ? 'cozida': 'cozido'
+  const ultimoItemDoArray = index === array.length -1 
 
-  if(index === array.length -1) {
+  if(ultimoItemDoArray) {
     return acc + `${ingredient} ${ultimaLetraDaCebola} ` 
   }
   return acc + `${ingredient} ${ultimaLetraDaCebola}, `
@@ -124,7 +125,10 @@ const topBrazilmovies = [
   { title: 'Os Vingadores', peopleAmount: 10968065, distributedBy: 'Disney' },
   { title: 'Dona Flor e Seus Dois Maridos', peopleAmount: 10735524, distributedBy: 'Embrafilme' }
 ]
- const peopleMovieDisney = topBrazilmovies.filter(movie => movie.distributedBy === 'Disney')
+
+const extraindoAdisney = movie => movie.distributedBy === 'Disney'
+
+ const peopleMovieDisney = topBrazilmovies.filter(extraindoAdisney)
   
   const totalDePeopleMovie = peopleMovieDisney.reduce((acc, item) => {
     return acc + item.peopleAmount
@@ -151,7 +155,7 @@ const pets = [
 ]
 
 const petsDogs = pets
-.filter(pet => pet.type === 'Dog')
+.filter(({type}) => type === 'Dog')
 .map(dog => ({
   name: dog.name, 
   age: dog.age * 7, 
