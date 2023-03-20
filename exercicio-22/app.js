@@ -102,6 +102,17 @@ const pets = [
   { name: 'Chico', age: 6, gender: 'Male', type: 'Dog' }
 ]
 
+const petsDogs = pets
+.filter(pet => pet.type === 'Dog')
+.map(dog => ({
+  name: dog.name, 
+  age: dog.age * 7, 
+  gender: dog.gender, 
+  type: dog.type
+}))
+
+console.log(petsDogs,pets)
+
 /*
   09
   
