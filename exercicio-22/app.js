@@ -34,6 +34,11 @@ const characters = [
 
 const numbers = [41, 15, 63, 349, 25, 22, 143, 64, 59, 291]
 
+const numbersCopy = numbers.map(number => number) 
+
+numbersCopy.sort((number1, number2) => number1 - number2)
+
+console.log(numbersCopy, numbers)
 /*
   04
 
@@ -41,6 +46,10 @@ const numbers = [41, 15, 63, 349, 25, 22, 143, 64, 59, 291]
 */
 
 const randomNumbers = [10, 5, 0, 40, 60, 10, 20, 70]
+
+const numberMeiorQue50 = randomNumbers.find(number => number > 50) 
+ 
+console.log(numberMeiorQue50)
 
 /*
   05
