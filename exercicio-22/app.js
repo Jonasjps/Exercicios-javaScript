@@ -8,11 +8,9 @@
 
 const names = ['Caio', 'André', 'Dário']
 
-const namesCopy = names.map(item => item)
+const namesCopy = names.map(item => item).sort()
 
-namesCopy.sort()
-
-console.log(namesCopy, names)
+console.log(namesCopy)
 
 /*
   02
