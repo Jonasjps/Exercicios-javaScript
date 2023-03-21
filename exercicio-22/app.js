@@ -27,15 +27,11 @@ const characters = [
   { id: 04, name: 'Mufasa' }
 ]
 
-const reiLeão = characters.map((personagem) => {
-  return {id: personagem.id,  name: personagem.name }
-} )
+const reiLeão = characters
+  .map((personagem) => ({id: personagem.id,  name: personagem.name }))
+  .sort((item1, item2) => item1.id - item2.id)
 
-// reiLeão[1].name = 'Maria'
-
-reiLeão.sort((item1, item2) => item1.id - item2.id)
-
-console.log(reiLeão, characters)
+console.log(reiLeão)
 
 /*
   03
@@ -48,10 +44,9 @@ console.log(reiLeão, characters)
 const numbers = [41, 15, 63, 349, 25, 22, 143, 64, 59, 291]
 
 const numbersCopy = numbers.map(item => item) 
+  .sort((number1, number2) => number1 - number2)
 
-numbersCopy.sort((number1, number2) => number1 - number2)
-
-console.log(numbersCopy, numbers)
+console.log(numbersCopy)
 /*
   04
 
@@ -59,7 +54,6 @@ console.log(numbersCopy, numbers)
 */
 
 const randomNumbers = [10, 5, 0, 40, 60, 10, 20, 70]
-
 const numberMeiorQue50 = randomNumbers.find(number => number > 50) 
  
 console.log(numberMeiorQue50)
