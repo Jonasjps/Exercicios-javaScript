@@ -7,8 +7,9 @@
 */
 
 const names = ['Caio', 'André', 'Dário']
+const getItem = array => array.map(item => item)
 
-const namesCopy = names.map(item => item).sort()
+const namesCopy = getItem(names).sort()
 
 console.log(namesCopy)
 
@@ -43,7 +44,7 @@ console.log(reiLeão)
 
 const numbers = [41, 15, 63, 349, 25, 22, 143, 64, 59, 291]
 
-const numbersCopy = numbers.map(item => item) 
+const numbersCopy = getItem(numbers) 
   .sort((number1, number2) => number1 - number2)
 
 console.log(numbersCopy)
@@ -68,7 +69,7 @@ console.log(numberMeiorQue50)
 
 const people = ['Cauã', 'Alfredo', 'Bruno']
 
-const peopleCopy = people.map(item => item).sort().reverse()
+const peopleCopy = getItem(people).sort().reverse()
 
 console.log(peopleCopy)
 
