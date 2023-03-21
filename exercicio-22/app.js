@@ -68,12 +68,9 @@ console.log(numberMeiorQue50)
 
 const people = ['Cauã', 'Alfredo', 'Bruno']
 
-const peopleCopy = people.map(item => item)
+const peopleCopy = people.map(item => item).sort().reverse()
 
-peopleCopy.sort()
-peopleCopy.reverse()
-
-console.log(peopleCopy, people)
+console.log(peopleCopy)
 
 
 
@@ -88,13 +85,14 @@ console.log(peopleCopy, people)
 const ingredients = ['vinho', 'tomate', 'cebola', 'cogumelo']
 const ingredientsCozidoMensage = ingredients.reduce((acc, ingredient, index, array) => {
 
-  const ultimaLetraDaCebola = /[a]$/.test(ingredient) ? 'cozida': 'cozido'
+  const ultimaLetraDaCebola = /a$/.test(ingredient) ? 'cozida': 'cozido'
+  
   const ultimoItemDoArray = index === array.length -1 
 
-  if(ultimoItemDoArray) {
-    return acc + `${ingredient} ${ultimaLetraDaCebola} ` 
-  }
-  return acc + `${ingredient} ${ultimaLetraDaCebola}, `
+  const ingredientCozidos = acc + `${ingredient} ${ultimaLetraDaCebola} `
+
+  return ultimoItemDoArray ? ingredientCozidos: `${ingredientCozidos}, ` 
+  
 }, '')
 console.log(ingredientsCozidoMensage)
 
@@ -118,14 +116,12 @@ const topBrazilmovies = [
   { title: 'Dona Flor e Seus Dois Maridos', peopleAmount: 10735524, distributedBy: 'Embrafilme' }
 ]
 
-const extraindoAdisney = movie => movie.distributedBy === 'Disney'
 
- const peopleMovieDisney = topBrazilmovies.filter(extraindoAdisney)
-  
-  const totalDePeopleMovie = peopleMovieDisney.reduce((acc, item) => {
-    return acc + item.peopleAmount
-  },0)
- console.log(totalDePeopleMovie)
+ const peopleMovieDisney = topBrazilmovies
+  .filter(({distributedBy}) => distributedBy === 'Disney')
+  .reduce((acc, {peopleAmount}) =>  acc + peopleAmount, 0)
+
+ console.log(peopleMovieDisney)
 /*
   08 
   
