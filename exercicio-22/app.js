@@ -144,14 +144,9 @@ const pets = [
 
 const petsDogs = pets
 .filter(({type}) => type === 'Dog')
-.map(dog => ({
-  name: dog.name, 
-  age: dog.age * 7, 
-  gender: dog.gender, 
-  type: dog.type
-}))
+.map(({name, age, gender, type}) => ({ name, age: age * 7, gender, type }))
 
-console.log(petsDogs,pets)
+console.log(petsDogs)
 
 /*
   09
@@ -161,13 +156,15 @@ console.log(petsDogs,pets)
 */
 const ul = document.querySelector('.list-group')
 
-topBrazilmovies.map(movie => {
-  ul.innerHTML += `<li>${movie.title}</li>`
-})
+// topBrazilmovies.map(movie => {
+//   ul.innerHTML += `<li>${movie.title}</li>`
+// })
 
-// topBrazilmovies.reduce((acc, movie) => {
-//   ul.innerHTML += `<li>${acc, movie.title}</li>`
-// },'')
+const movie = topBrazilmovies.reduce((acc, {title}) =>
+ acc + `<li>${title}</li>`
+ ,'')
+
+ul.innerHTML = movie
   /*
   10
   
