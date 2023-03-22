@@ -30,7 +30,7 @@ const characters = [
 
 const reiLeão = characters
   .map((personagem) => ({id: personagem.id,  name: personagem.name }))
-  .sort((item1, item2) => item1.id - item2.id)
+  .sort(({id: item1}, {id:item2}) => item1 - item2)
 
 console.log(reiLeão)
 
