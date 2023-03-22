@@ -9,9 +9,11 @@ const getUserAnswers = () =>   alternativasCorrect.map((_, index) =>
    form[`inputQuestion${index + 1}`].value)
 
 
-
-const caulcularApontuação = (userAnswers) => {
+const zerandoPontação = () => {
    score = 0
+}
+const caulcularApontuação = (userAnswers) => {
+   
    userAnswers.forEach((userAnswer,index) => {
       const testandoAlternativasCorrect = userAnswer === alternativasCorrect[index] 
       if(testandoAlternativasCorrect) {
@@ -46,7 +48,8 @@ const grupDeFunc = event => {
    event.preventDefault()
    
    const userAswers = getUserAnswers()
-
+   
+   zerandoPontação()
    caulcularApontuação(userAswers)
    showPontuação()
    animandoPontuação()
