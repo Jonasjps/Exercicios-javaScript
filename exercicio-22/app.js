@@ -103,6 +103,13 @@ const topBrazilmovies = [
   { title: 'Os Vingadores', peopleAmount: 10968065, distributedBy: 'Disney' },
   { title: 'Dona Flor e Seus Dois Maridos', peopleAmount: 10735524, distributedBy: 'Embrafilme' }
 ]
+
+const peopleShowMovieDisney = topBrazilmovies
+  .filter(movie => movie.distributedBy === 'Disney')
+  .reduce((acc,item) => {
+  return acc + item.peopleAmount
+},0)
+console.log(peopleShowMovieDisney)
 /*
   08 
   
@@ -123,7 +130,15 @@ const pets = [
   { name: 'Chico', age: 6, gender: 'Male', type: 'Dog' }
 ]
 
-
+const petsDog = pets.filter(pet => pet.type === 'Dog')
+.map(item => 
+  ({
+    name: item.name, 
+    age: item.age * 7, 
+    gender: item.gender, 
+    type: item.type
+   }))
+console.log(petsDog,pets)
 /*
   09
   
