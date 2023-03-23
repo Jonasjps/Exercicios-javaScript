@@ -145,7 +145,13 @@ console.log(petsDog,pets)
   - Considerando o array topBrazilmovies, através do map ou do reduce, insira 
     os nomes dos filmes na ul do index.html.
 */
+const ul = document.querySelector('.list-group')
 
+const movie = topBrazilmovies.reduce((acc, movie) => {
+  return acc + `<li>${movie.title}</li>`
+}, '')
+
+ul.innerHTML = movie
   /*
   10
   
