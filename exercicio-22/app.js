@@ -7,11 +7,6 @@
 */
 
 const names = ['Caio', 'André', 'Dário']
-const getItem = array => array.map(item => item)
-
-const namesCopy = getItem(names).sort()
-
-console.log(namesCopy)
 
 /*
   02
@@ -28,12 +23,6 @@ const characters = [
   { id: 04, name: 'Mufasa' }
 ]
 
-const reiLeão = characters
-  .map((personagem) => ({id: personagem.id,  name: personagem.name }))
-  .sort(({id: item1}, {id:item2}) => item1 - item2)
-
-console.log(reiLeão)
-
 /*
   03
 
@@ -43,11 +32,6 @@ console.log(reiLeão)
 */
 
 const numbers = [41, 15, 63, 349, 25, 22, 143, 64, 59, 291]
-
-const numbersCopy = getItem(numbers) 
-  .sort((number1, number2) => number1 - number2)
-
-console.log(numbersCopy)
 /*
   04
 
@@ -55,9 +39,6 @@ console.log(numbersCopy)
 */
 
 const randomNumbers = [10, 5, 0, 40, 60, 10, 20, 70]
-const numberMeiorQue50 = randomNumbers.find(number => number > 50) 
- 
-console.log(numberMeiorQue50)
 
 /*
   05
@@ -69,9 +50,6 @@ console.log(numberMeiorQue50)
 
 const people = ['Cauã', 'Alfredo', 'Bruno']
 
-const peopleCopy = getItem(people).sort().reverse()
-
-console.log(peopleCopy)
 
 
 
@@ -84,18 +62,6 @@ console.log(peopleCopy)
 */
 
 const ingredients = ['vinho', 'tomate', 'cebola', 'cogumelo']
-const ingredientsCozidoMensage = ingredients.reduce((acc, ingredient, index, array) => {
-
-  const ultimaLetraDaCebola = /a$/.test(ingredient) ? 'cozida': 'cozido'
-  
-  const ultimoItemDoArray = index === array.length -1 
-
-  const ingredientCozidos = acc + `${ingredient} ${ultimaLetraDaCebola} `
-
-  return ultimoItemDoArray ? ingredientCozidos: `${ingredientCozidos}, ` 
-  
-}, '')
-console.log(ingredientsCozidoMensage)
 
 /*
   07
@@ -116,13 +82,6 @@ const topBrazilmovies = [
   { title: 'Os Vingadores', peopleAmount: 10968065, distributedBy: 'Disney' },
   { title: 'Dona Flor e Seus Dois Maridos', peopleAmount: 10735524, distributedBy: 'Embrafilme' }
 ]
-
-
- const peopleMovieDisney = topBrazilmovies
-  .filter(({distributedBy}) => distributedBy === 'Disney')
-  .reduce((acc, {peopleAmount}) =>  acc + peopleAmount, 0)
-
- console.log(peopleMovieDisney)
 /*
   08 
   
@@ -143,11 +102,6 @@ const pets = [
   { name: 'Chico', age: 6, gender: 'Male', type: 'Dog' }
 ]
 
-const petsDogs = pets
-.filter(({type}) => type === 'Dog')
-.map(({name, age, gender, type}) => ({ name, age: age * 7, gender, type }))
-
-console.log(petsDogs)
 
 /*
   09
@@ -155,17 +109,7 @@ console.log(petsDogs)
   - Considerando o array topBrazilmovies, através do map ou do reduce, insira 
     os nomes dos filmes na ul do index.html.
 */
-const ul = document.querySelector('.list-group')
 
-// topBrazilmovies.map(movie => {
-//   ul.innerHTML += `<li>${movie.title}</li>`
-// })
-
-const movie = topBrazilmovies.reduce((acc, {title}) =>
- acc + `<li>${title}</li>`
- ,'')
-
-ul.innerHTML = movie
   /*
   10
   
