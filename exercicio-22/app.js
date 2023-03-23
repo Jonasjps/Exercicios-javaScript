@@ -60,6 +60,10 @@ console.log(maiorQue50)
 
 const people = ['Cauã', 'Alfredo', 'Bruno']
 
+const peopleCopy = people.map(item => item).sort()
+peopleCopy.reverse()
+console.log(peopleCopy)
+
 
 
 
@@ -72,7 +76,14 @@ const people = ['Cauã', 'Alfredo', 'Bruno']
 */
 
 const ingredients = ['vinho', 'tomate', 'cebola', 'cogumelo']
-
+const ingredientsCozidoMensage = ingredients.reduce((acc, item, index, array) => {
+  const alterandoPalavra = /a$/.test(item)  ? 'cozida' : 'cozido'
+  if(index === array.length -1) {
+    return acc + `${item} ${alterandoPalavra} `  
+  }
+  return acc + `${item} ${alterandoPalavra}, `
+}, '')
+console.log(ingredientsCozidoMensage)
 /*
   07
   
