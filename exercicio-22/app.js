@@ -28,8 +28,10 @@ const characters = [
   { id: 04, name: 'Mufasa' }
 ]
 
-const charactersCopy = characters.map(item => ({id: item.id, name: item.name})).sort((item1, item2) => item1.id - item2.id)
-charactersCopy[1].name = 'Jonas'
+const charactersCopy = characters
+  .map(({id, name}) => ({id , name}))
+  .sort(({id: item1}, {name: item2}) => item1 - item2)
+
 console.log(charactersCopy,characters)
 
 
