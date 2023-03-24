@@ -45,7 +45,8 @@ console.log(charactersCopy,characters)
 
 const numbers = [41, 15, 63, 349, 25, 22, 143, 64, 59, 291]
 
-const numbersCopy = getCopyArray(numbers).sort((number1, number2) => number1 - number2)
+const numbersCopy = getCopyArray(numbers)
+  .sort((number1, number2) => number1 - number2)
 
 console.log(numbersCopy)
 /*
@@ -55,7 +56,9 @@ console.log(numbersCopy)
 */
 
 const randomNumbers = [10, 5, 0, 40, 60, 10, 20, 70]
+
 const maiorQue50 = randomNumbers.find(number => number > 50) 
+
 console.log(maiorQue50)
 /*
   05
@@ -67,8 +70,8 @@ console.log(maiorQue50)
 
 const people = ['Cauã', 'Alfredo', 'Bruno']
 
-const peopleCopy = getCopyArray(people).sort()
-peopleCopy.reverse()
+const peopleCopy = getCopyArray(people).sort().reverse()
+
 console.log(peopleCopy)
 
 
@@ -84,11 +87,16 @@ console.log(peopleCopy)
 
 const ingredients = ['vinho', 'tomate', 'cebola', 'cogumelo']
 const ingredientsCozidoMensage = ingredients.reduce((acc, item, index, array) => {
+
   const alterandoPalavra = /a$/.test(item)  ? 'cozida' : 'cozido'
-  if(index === array.length -1) {
-    return acc + `${item} ${alterandoPalavra} `  
-  }
-  return acc + `${item} ${alterandoPalavra}, `
+  return index === array.length -1 ? 
+    acc + `${item} ${alterandoPalavra} `: acc + `${item} ${alterandoPalavra}, `
+
+  // if(index === array.length -1) {
+  //   return acc + `${item} ${alterandoPalavra} `  
+  // }
+
+  // return acc + `${itemAtual} ${alterandoPalavra}, `
 }, '')
 console.log(ingredientsCozidoMensage)
 /*
