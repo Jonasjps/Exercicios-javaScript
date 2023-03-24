@@ -86,18 +86,15 @@ console.log(peopleCopy)
 */
 
 const ingredients = ['vinho', 'tomate', 'cebola', 'cogumelo']
+
 const ingredientsCozidoMensage = ingredients.reduce((acc, item, index, array) => {
 
   const alterandoPalavra = /a$/.test(item)  ? 'cozida' : 'cozido'
   return index === array.length -1 ? 
     acc + `${item} ${alterandoPalavra} `: acc + `${item} ${alterandoPalavra}, `
 
-  // if(index === array.length -1) {
-  //   return acc + `${item} ${alterandoPalavra} `  
-  // }
-
-  // return acc + `${itemAtual} ${alterandoPalavra}, `
 }, '')
+
 console.log(ingredientsCozidoMensage)
 /*
   07
@@ -120,10 +117,9 @@ const topBrazilmovies = [
 ]
 
 const peopleShowMovieDisney = topBrazilmovies
-  .filter(movie => movie.distributedBy === 'Disney')
-  .reduce((acc,item) => {
-  return acc + item.peopleAmount
-},0)
+  .filter(({distributedBy}) => distributedBy === 'Disney')
+  .reduce((acc,{peopleAmount}) =>  acc + peopleAmount ,0)
+
 console.log(peopleShowMovieDisney)
 /*
   08 
@@ -145,14 +141,9 @@ const pets = [
   { name: 'Chico', age: 6, gender: 'Male', type: 'Dog' }
 ]
 
-const petsDog = pets.filter(pet => pet.type === 'Dog')
-.map(item => 
-  ({
-    name: item.name, 
-    age: item.age * 7, 
-    gender: item.gender, 
-    type: item.type
-   }))
+const petsDog = pets.filter(({type}) => type === 'Dog')
+.map(({name, age, gender, type}) => ({ name, age: age * 7,  gender,  type }))
+
 console.log(petsDog,pets)
 /*
   09
@@ -162,9 +153,7 @@ console.log(petsDog,pets)
 */
 const ul = document.querySelector('.list-group')
 
-const movie = topBrazilmovies.reduce((acc, movie) => {
-  return acc + `<li>${movie.title}</li>`
-}, '')
+const movie = topBrazilmovies.reduce((acc, {title}) =>  acc + `<li>${title}</li>`, '')
 
 ul.innerHTML = movie
   /*
