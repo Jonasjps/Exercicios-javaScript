@@ -89,7 +89,7 @@ const ingredients = ['vinho', 'tomate', 'cebola', 'cogumelo']
 
 const ingredientsCozidoMensage = ingredients.reduce((acc, item, index, array) => {
 
-  const alterandoPalavra = /a$/.test(item)  ? 'cozida' : 'cozido'
+  const alterandoPalavra = /a$/.test(item)  ? 'cozida' : 'cozido' // tambem posso usar a sintaxe item[item.length - 1] === 'a'
   return index === array.length -1 ? 
     acc + `${item} ${alterandoPalavra} `: acc + `${item} ${alterandoPalavra}, `
 
@@ -118,7 +118,7 @@ const topBrazilmovies = [
 
 const peopleShowMovieDisney = topBrazilmovies
   .filter(({distributedBy}) => distributedBy === 'Disney')
-  .reduce((acc,{peopleAmount}) =>  acc + peopleAmount ,0)
+  .reduce((acc, {peopleAmount}) =>  acc + peopleAmount ,0)
 
 console.log(peopleShowMovieDisney)
 /*
