@@ -89,7 +89,7 @@ const ingredients = ['vinho', 'tomate', 'cebola', 'cogumelo']
 
 const ingredientsCozidoMensage = ingredients.reduce((acc, item, index, array) => {
 
-  const alterandoPalavra = /a$/.test(item)  ? 'cozida' : 'cozido' // tambem posso usar a sintaxe item[item.length - 1] === 'a'
+  const alterandoPalavra = /a$/.test(item)  ? 'cozida' : 'cozido' // tambem posso usar a sintaxe item[item.length - 1] === 'a' para obter o mesmo resultado
   return index === array.length -1 ? 
     acc + `${item} ${alterandoPalavra} `: acc + `${item} ${alterandoPalavra}, `
 
