@@ -7,6 +7,9 @@
 
 const myString = '    JS      '
 
+const espaço = myString.trim()
+
+console.log(espaço)
 /*
   02
 
