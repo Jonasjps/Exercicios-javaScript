@@ -26,6 +26,9 @@ const people = [
   { firstName: 'Eric', lastName: 'Silva', score: 82 }
 ]
 
+const peopleCopy = people
+  .map(({firstName, lastName, score}) => ({ firstName, lastName, score }))
+
 /*
   03
 
