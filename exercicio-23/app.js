@@ -42,9 +42,11 @@ const peopleCopy = people
 
 const animals = ['cão', 'gato', 'boi', 'leão', 'gnu', 'alce', 'ema']
 const animals3Letras = animals.filter(animal => {
-  if(animal.length === 3) {
-    return animal
-  }
+ return animal.length === 3 ? animal : //corrigir esse ternario
+ 
+  // if(animal.length === 3) {
+  //   return animal
+  // }
 })
 animals3Letras
 debugger
@@ -54,7 +56,6 @@ debugger
   - Baseado no array "animals", gere um novo array com a quantidade de letras do 
     nome de cada animal. Ex.: [6, 8, 2].
 */
-
 
 
 /*
