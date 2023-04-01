@@ -42,11 +42,11 @@ const peopleCopy = people
 
 const animals = ['cão', 'gato', 'boi', 'leão', 'gnu', 'alce', 'ema']
 const animals3Letras = animals.filter(animal => {
- return animal.length === 3 ? animal : //corrigir esse ternario
  
-  // if(animal.length === 3) {
-  //   return animal
-  // }
+  if(animal.length === 3) {
+    return animal
+  }
+  
 })
 animals3Letras
 debugger
