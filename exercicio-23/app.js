@@ -49,7 +49,7 @@ const animals3Letras = animals.filter(animal => {
   
 })
  animals3Letras
- debugger
+//  debugger
 
 
 
@@ -61,6 +61,11 @@ const animals3Letras = animals.filter(animal => {
     nome de cada animal. Ex.: [6, 8, 2].
 */
 
+const quantidaDeLetrasDeCadaNome =  animals.map(animal => animal.length)
+
+quantidaDeLetrasDeCadaNome
+
+// debugger
 
 /*
   05
