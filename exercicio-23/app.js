@@ -83,7 +83,11 @@ const friends = [
   { id: 5, name: 'Solange', nearMe: false }
 ]
 
-
+const friendsQueMoramPerto = friends.filter(friend => friend.nearMe === true)
+  .map(item => item.name )
+ 
+  friendsQueMoramPerto
+  debugger
 
 /*
   06
