@@ -46,7 +46,11 @@ const animals3Letras = animals.filter(animal => {
   if(animal.length === 3) {
     return animal
   }
+  
 })
+ animals3Letras
+ debugger
+
 
 
 //animals3Letras
