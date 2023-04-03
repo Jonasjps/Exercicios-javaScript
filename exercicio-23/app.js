@@ -87,7 +87,7 @@ const friendsQueMoramPerto = friends.filter(friend => friend.nearMe === true)
   .map(item => item.name )
  
   friendsQueMoramPerto
-  debugger
+  // debugger
 
 /*
   06
@@ -97,6 +97,13 @@ const friendsQueMoramPerto = friends.filter(friend => friend.nearMe === true)
 */
 
 const numbers = [46, 86, 212, 29, 51, 9, 25, 42, 81]
+
+const numbersImpares = numbers.filter(number => number % 2 === 1)
+  .reduce((acc, soma) =>  acc + soma, 0)
+ 
+  numbersImpares
+  // debugger
+// console.log(numbersImpares)
 
 /*
   07
