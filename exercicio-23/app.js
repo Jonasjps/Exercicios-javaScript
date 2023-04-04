@@ -125,3 +125,17 @@ const data = [{
   country: 'Indonesia',
   population: 263991379
 }]
+
+const dataCopy = data.map(item => {
+  for(let c = 0; c < item.length; c++) {
+    console.log(item[c])
+   
+  }
+  return item
+})
+
+
+
+  // .reduce((acc, totalPopulation) => acc + totalPopulation.population, 0)
+  
+
