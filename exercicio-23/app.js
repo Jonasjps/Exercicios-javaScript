@@ -126,13 +126,13 @@ const data = [{
   population: 263991379
 }]
 
-const dataCopy = data.map(item => {
-  for(let c = 0; c < item.length; c++) {
-    console.log(item[c])
+// const dataCopy = data.map(item => {
+//   for(let c = 0; c < item.length; c++) {
+//     console.log(item[c])
    
-  }
-  return item
-})
+//   }
+//   return item
+// })
 
 
 
