@@ -98,12 +98,12 @@ const friendsQueMoramPerto = friends.filter(friend => friend.nearMe === true)
 
 const numbers = [46, 86, 212, 29, 51, 9, 25, 42, 81]
 
-const numbersImpares = numbers.filter(number => number % 2 === 1)
+const numbersImpares = numbers.filter(number => number % 2 !== 0)
   .reduce((acc, soma) =>  acc + soma, 0)
  
   numbersImpares
   // debugger
-// console.log(numbersImpares)
+console.log(numbersImpares)
 
 /*
   07
@@ -126,10 +126,10 @@ const data = [{
   population: 263991379
 }]
 
-const dataCopy = data.filter(item => item.country !== 'China')
-  .reduce((acc, totalPopulation) => {
-     console.log(` População: ${acc} + ${totalPopulation.population} ` )
-     return totalPopulation.population
+const dataCopy = data.filter(({country}) => country !== 'China')
+  .reduce((acc, {population}) => {
+     console.log(` População: ${acc} + ${population} ` )
+     return population
   },0)
 
 
