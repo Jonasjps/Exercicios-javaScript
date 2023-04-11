@@ -31,7 +31,11 @@ const people = [
   { firstName: 'Eric', lastName: 'Silva', score: 82 }
 ]
 
+const peopleCopy = people.map(item => 
+  ({firstName: item.firstName, lastName: item.lastName, score: item.score}))
+  .sort((number1, number2) => number1.score - number2.score)
 
+console.log(peopleCopy, people)
 /*
   03
 
