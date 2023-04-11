@@ -3,13 +3,12 @@
 
   - Exiba no console apenas as letras que a "myString" contém;
   - Não modifique a string manualmente.
+
 */
 
 const myString = '    JS      '
 
-const espaço = myString.trim()
 
-console.log(espaço)
 /*
   02
 
@@ -26,10 +25,7 @@ const people = [
   { firstName: 'Eric', lastName: 'Silva', score: 82 }
 ]
 
-const peopleCopy = people
-  .map(({firstName, lastName, score}) => ({ firstName, lastName, score }))
-  .sort(({score: item1}, {score: item2}) => item1 - item2)  
-  console.log(peopleCopy, people)
+
 /*
   03
 
@@ -41,19 +37,6 @@ const peopleCopy = people
 */
 
 const animals = ['cão', 'gato', 'boi', 'leão', 'gnu', 'alce', 'ema']
-const animals3Letras = animals.filter(animal => {
- 
-  if(animal.length === 3) {
-    return animal
-  }
-  
-})
- animals3Letras
-//  debugger
-
-
-
-console.log(animals3Letras)
 /*
   04
 
@@ -61,11 +44,6 @@ console.log(animals3Letras)
     nome de cada animal. Ex.: [6, 8, 2].
 */
 
-const quantidaDeLetrasDeCadaNome =  animals.map(animal => animal.length)
-
-quantidaDeLetrasDeCadaNome
-
-// debugger
 
 /*
   05
@@ -83,12 +61,6 @@ const friends = [
   { id: 5, name: 'Solange', nearMe: false }
 ]
 
-const friendsQueMoramPerto = friends.filter(({nearMe}) => nearMe === true)
-  .map(({name})=> name )
- 
-  friendsQueMoramPerto
-  // debugger
-  console.log(friendsQueMoramPerto)
 
 /*
   06
@@ -99,12 +71,6 @@ const friendsQueMoramPerto = friends.filter(({nearMe}) => nearMe === true)
 
 const numbers = [46, 86, 212, 29, 51, 9, 25, 42, 81]
 
-const numbersImpares = numbers.filter(number => number % 2 !== 0)
-  .reduce((acc, soma) =>  acc + soma, 0)
- 
-  numbersImpares
-  // debugger
-console.log(numbersImpares)
 
 /*
   07
@@ -127,14 +93,6 @@ const data = [{
   population: 263991379
 }]
 
-const dataCopy = data.filter(({country}) => country !== 'China')
-  .reduce((acc, {population}) => {
-     console.log(` População: ${acc} + ${population} ` )
-     return population
-  },0)
-
-
-console.log(dataCopy)
 
   
 
