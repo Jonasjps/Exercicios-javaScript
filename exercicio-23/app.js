@@ -8,6 +8,12 @@
 
 const myString = '    JS      '
 
+const stringTranformada = myString.trim()
+
+
+console.log(stringTranformada)
+
+
 
 /*
   02
