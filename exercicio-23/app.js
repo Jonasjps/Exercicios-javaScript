@@ -1,6 +1,6 @@
 /*
   01
-
+  
   - Exiba no console apenas as letras que a "myString" contém;
   - Não modifique a string manualmente.
 
@@ -31,9 +31,9 @@ const people = [
   { firstName: 'Eric', lastName: 'Silva', score: 82 }
 ]
 
-const peopleCopy = people.map(item => 
-  ({firstName: item.firstName, lastName: item.lastName, score: item.score}))
-  .sort((number1, number2) => number1.score - number2.score)
+const peopleCopy = people.map(({firstName, lastName, score}) => 
+  ({ firstName, lastName, score }))
+  .sort(({score: number1}, {score: number2}) => number1 - number2)
 
 console.log(peopleCopy, people)
 /*
@@ -63,7 +63,6 @@ console.log(animalsCopy)
 
 const animalsNumbers = animals.map(number => number.length)
 
-
 console.log(animalsNumbers)
 
 animalsNumbers
@@ -84,8 +83,8 @@ const friends = [
   { id: 4, name: 'Nilson', nearMe: true },
   { id: 5, name: 'Solange', nearMe: false }
 ]
-const namesFriendsMoramPerto = friends.filter(item => item.nearMe === true)
-  .map(item => item.name)
+const namesFriendsMoramPerto = friends.filter(({nearMe}) => nearMe === true)
+  .map(({name}) => name)
 
 console.log(namesFriendsMoramPerto)
 
@@ -102,10 +101,12 @@ namesFriendsMoramPerto
 
 const numbers = [46, 86, 212, 29, 51, 9, 25, 42, 81]
 
-const numberImpares = numbers.filter(number => number % 2 !== 0)
+const numbersImpares = number => number % 2 !== 0 
+
+const numbersCopy = numbers.filter(numbersImpares)
   .reduce((acc, item) => acc + item, 0) 
 
-console.log(numberImpares)
+console.log(numbersCopy)
 
 
 /*
@@ -129,8 +130,10 @@ const data = [{
   population: 263991379
 }]
 
-const dataCopy = data.filter(item => item.country !== 'China')
-  .reduce((acc, item) => acc + item.population, 0)
+const removeChina = ({country}) => country !== 'China'
+
+const dataCopy = data.filter(removeChina)
+  .reduce((acc, {population}) => acc + population, 0)
 
 console.log(dataCopy)
   
