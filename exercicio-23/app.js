@@ -61,7 +61,14 @@ console.log(animalsCopy)
     nome de cada animal. Ex.: [6, 8, 2].
 */
 
+const animalsNumbers = animals.map(number => number.length)
 
+
+console.log(animalsNumbers)
+
+animalsNumbers
+
+// debugger
 /*
   05
 
@@ -77,7 +84,14 @@ const friends = [
   { id: 4, name: 'Nilson', nearMe: true },
   { id: 5, name: 'Solange', nearMe: false }
 ]
+const namesFriendsMoramPerto = friends.filter(item => item.nearMe === true)
+  .map(item => item.name)
 
+console.log(namesFriendsMoramPerto)
+
+namesFriendsMoramPerto
+
+// debugger
 
 /*
   06
@@ -87,6 +101,11 @@ const friends = [
 */
 
 const numbers = [46, 86, 212, 29, 51, 9, 25, 42, 81]
+
+const numberImpares = numbers.filter(number => number % 2 !== 0)
+  .reduce((acc, item) => acc + item, 0) 
+
+console.log(numberImpares)
 
 
 /*
