@@ -129,6 +129,9 @@ const data = [{
   population: 263991379
 }]
 
+const dataCopy = data.filter(item => item.country !== 'China')
+  .reduce((acc, item) => acc + item.population, 0)
 
+console.log(dataCopy)
   
 
