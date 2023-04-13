@@ -87,7 +87,7 @@ const friends = [
   { id: 4, name: 'Nilson', nearMe: true },
   { id: 5, name: 'Solange', nearMe: false }
 ]
-const namesFriendsMoramPerto = friends.filter(({nearMe}) => nearMe === true)
+const namesFriendsMoramPerto = friends.filter(({nearMe}) => nearMe)
   .map(({name}) => name)
 
 console.log(namesFriendsMoramPerto)
