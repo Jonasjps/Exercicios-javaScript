@@ -105,7 +105,7 @@ namesFriendsMoramPerto
 
 const numbers = [46, 86, 212, 29, 51, 9, 25, 42, 81]
 
-const numbersImpares = number => number % 2 !== 0 
+const numbersImpares = number => number % 2 === 1 
 
 const numbersCopy = numbers.filter(numbersImpares)
   .reduce((acc, item) => acc + item, 0) 
