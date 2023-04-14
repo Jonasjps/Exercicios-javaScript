@@ -48,7 +48,7 @@ console.log(peopleCopy, people)
 
 const animals = ['cão', 'gato', 'boi', 'leão', 'gnu', 'alce', 'ema']
 
-const animalsCopy = animals.filter(item => item.length !== 4 )
+const animalsCopy = animals.filter(({length}) => length !== 4 )
 
 animalsCopy
 
