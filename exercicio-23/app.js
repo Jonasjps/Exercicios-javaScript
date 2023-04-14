@@ -83,7 +83,8 @@ const friends = [
   { id: 4, name: 'Nilson', nearMe: true },
   { id: 5, name: 'Solange', nearMe: false }
 ]
-const namesFriendsMoramPerto = friends.filter(({nearMe}) => nearMe)
+const namesFriendsMoramPerto = friends
+  .filter(({nearMe}) => nearMe)
   .map(({name}) => name)
 
 console.log(namesFriendsMoramPerto)
@@ -103,7 +104,8 @@ const numbers = [46, 86, 212, 29, 51, 9, 25, 42, 81]
 
 const numbersImpares = number => number % 2 === 1 
 
-const numbersCopy = numbers.filter(numbersImpares)
+const numbersCopy = numbers
+  .filter(numbersImpares)
   .reduce((acc, item) => acc + item, 0) 
 
 console.log(numbersCopy)
@@ -132,7 +134,8 @@ const data = [{
 
 const removeChina = ({country}) => country !== 'China'
 
-const dataCopy = data.filter(removeChina)
+const dataCopy = data
+  .filter(removeChina)
   .reduce((acc, {population}) => acc + population, 0)
 
 console.log(dataCopy)
