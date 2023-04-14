@@ -61,7 +61,7 @@ console.log(animalsCopy)
     nome de cada animal. Ex.: [6, 8, 2].
 */
 
-const animalsNumbers = animals.map(number => number.length)
+const animalsNumbers = animals.map(({length}) => length)
 
 console.log(animalsNumbers)
 
