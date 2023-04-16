@@ -27,5 +27,21 @@ todosContainer.addEventListener('click', event => {
 })
 
 formSearch.addEventListener('input', event => {
-    
-})
+    const todoList = event.target.value.toLowerCase()
+     Array.from(todosContainer.children)
+        .filter(todo => !todo.textContent.toLowerCase().includes(todoList))
+        .forEach(todo => {
+            todo.classList.remove('d-flex')
+            todo.classList.add('hedden')
+        })
+
+        Array.from(todosContainer.children)
+        .filter(todo => todo.textContent.toLocaleLowerCase().includes(todoList))
+        .forEach(todo => {
+            todo.classList.remove('hedden')
+            todo.classList.add('d-flex')
+        })
+
+        
+        
+    })
