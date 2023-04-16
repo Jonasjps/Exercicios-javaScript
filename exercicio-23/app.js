@@ -33,7 +33,7 @@ const people = [
 
 const peopleCopy = people
   .map(({firstName, lastName, score}) => ({ firstName, lastName, score }))
-  .sort(({score: number1}, {score: number2}) => number1 - number2)
+  .sort((number1, number2) => number1.score - number2.score)
 
 console.log(peopleCopy, people)
 /*
