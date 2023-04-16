@@ -1,6 +1,6 @@
 const formTodoList = document.querySelector('.form-add-todo')
 const todosContainer = document.querySelector('.todos-container')
-
+const formSearch = document.querySelector('.form-search input')
 
 formTodoList.addEventListener('submit', event => {
     event.preventDefault()
@@ -24,4 +24,8 @@ todosContainer.addEventListener('click', event => {
    if(Array.from(valueDoInput.classList).includes('delete')) {
         valueDoInput.parentElement.remove()
    }
+})
+
+formSearch.addEventListener('input', event => {
+    
 })
