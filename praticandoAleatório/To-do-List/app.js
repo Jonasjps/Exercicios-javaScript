@@ -15,3 +15,11 @@ formAddTodo.addEventListener('submit', event => {
     }
     formAddTodo.reset()
 } )
+
+
+todosContainer.addEventListener('click', event => {
+    const clicked = event.target
+   console.log( Array.from(todosContainer.children))
+
+   
+})
