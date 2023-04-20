@@ -27,5 +27,7 @@ todosContainer.addEventListener('click', event => {
 })
 
 formSearch.addEventListener('input', event => {
-    console.log(event.target.value.trim())
+    const buscaDoInput = event.target.value.trim()
+    console.log(Array.from(todosContainer.children).includes(buscaDoInput))
+
 })
