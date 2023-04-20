@@ -21,7 +21,5 @@ todosContainer.addEventListener('click', event => {
     const clicked = event.target
     if(Array.from(clicked.classList).includes('delete')) {
        return clicked.parentElement.remove()
-    }
-
-   
+    } 
 })
