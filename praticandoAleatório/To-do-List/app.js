@@ -25,3 +25,7 @@ todosContainer.addEventListener('click', event => {
        return clicked.parentElement.remove()
     } 
 })
+
+formSearch.addEventListener('input', event => {
+    console.log(event.target.value.trim())
+})
