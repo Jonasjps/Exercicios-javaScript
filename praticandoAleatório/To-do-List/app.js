@@ -15,7 +15,7 @@ formAddTodo.addEventListener('submit', event => {
             </li>`    
 
     }
-    formAddTodo.reset()
+    evento.target.reset()
 } )
 
 
