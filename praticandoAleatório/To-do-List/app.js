@@ -1,5 +1,6 @@
 const formTodo = document.querySelector('.form-add-todo')
 const todosContainer = document.querySelector('.todos-container')
+const formSearch = document.querySelector('.form-search input')
 
 formTodo.addEventListener('submit', event => {
     event.preventDefault()
@@ -21,4 +22,24 @@ todosContainer.addEventListener('click', event => {
     if(Array.from(clicked.classList).includes('delete')) {
         clicked.parentElement.remove()
     }
+})
+
+formSearch.addEventListener('input', event => {
+    const filtrando = event.target.value.toLowerCase()
+    
+    
+    
+ Array.from(todosContainer.children)
+    .filter(todo => !todo.textContent.toLocaleLowerCase().includes(filtrando))
+    .forEach(todo => {
+        todo.classList.remove('d-flex')
+        todo.classList.add('hedden')
+    })
+
+    Array.from(todosContainer.children)
+    .filter(todo => todo.textContent.toLocaleLowerCase().includes(filtrando))
+    .forEach(todo => {
+        todo.classList.remove('hedden')
+        todo.classList.add('d-flex')
+    })
 })
