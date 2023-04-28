@@ -7,6 +7,8 @@
 
 const message = 'Próxima etapa: 10'
 
+console.log(message.includes(':'))
+
 /*
   02
 
