@@ -17,7 +17,7 @@ console.log(message.includes(':'))
 */
 
 const numbers = [979, 2673, 41, 77, 276, 554, 399, 385, 65, 726, 635, 833, 462]
-
+console.log(numbers.includes(635))
 /*
   A partir daqui, vamos treinar nossas skills de refatoração.
 
