@@ -35,19 +35,26 @@ todosContainer.addEventListener('click', event => {
 
 })
 
-formSearch.addEventListener('input', event => {
-    const filtrando = event.target.value.toLowerCase()
-    const todos = Array.from(todosContainer.children)
+const hiDetodos = (todos, filtrando) => {
     todos
     .filter(todo => !todo.textContent.toLowerCase().includes(filtrando))
     .forEach(todo => {
         todo.classList.add('hedden')
         todo.classList.remove('d-flex')
     })
+}
+
+const showTodos = (todos, filtrando) => {
     todos
     .filter(todo => todo.textContent.toLowerCase().includes(filtrando))
     .forEach(todo => {
         todo.classList.add('d-flex')
         todo.classList.remove('hedden')
     })
-})
+}
+formSearch.addEventListener('input', event => {
+    const filtrando = event.target.value.toLowerCase()
+    const todos = Array.from(todosContainer.children)
+    hiDetodos(todos, filtrando)
+    showTodos(todos, filtrando)
+    })
