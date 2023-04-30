@@ -37,13 +37,14 @@ todosContainer.addEventListener('click', event => {
 
 formSearch.addEventListener('input', event => {
     const filtrando = event.target.value.toLowerCase()
-    Array.from(todosContainer.children)
+    const todos = Array.from(todosContainer.children)
+    todos
     .filter(todo => !todo.textContent.toLowerCase().includes(filtrando))
     .forEach(todo => {
         todo.classList.add('hedden')
         todo.classList.remove('d-flex')
     })
-    Array.from(todosContainer.children)
+    todos
     .filter(todo => todo.textContent.toLowerCase().includes(filtrando))
     .forEach(todo => {
         todo.classList.add('d-flex')
