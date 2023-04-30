@@ -12,9 +12,9 @@ formAddTodo.addEventListener('submit', event => {
                 <span>${valueInput}</span>
                 <i class="far fa-trash-alt delete"></i>
             </li>`
-
+            
+        event.target.reset()
     }
-    event.target.reset()
 })
 
 todosContainer.addEventListener('click', event => {
