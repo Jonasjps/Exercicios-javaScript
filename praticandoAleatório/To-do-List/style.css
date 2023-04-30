@@ -14,7 +14,7 @@
     background: #484E53;
   }
   
-  .delete {
+  i[data-trash] {
     cursor: pointer;
   }
 
