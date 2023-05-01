@@ -35,9 +35,15 @@ todosContainer.addEventListener('click', event => {
     removeTodo(clickedElement)
 })
 
+const fintrandoTodos = (todos, filtrando, returnMethedValue) => todos
+    .filter(todo => {
+        const methedTodos = todo.textContent.toLowerCase().includes(filtrando)
+        return returnMethedValue ? methedTodos : !methedTodos
+    })
+
+
 const hiDeTodos = (todos, filtrando) => {
-    todos
-    .filter(todo => !todo.textContent.toLowerCase().includes(filtrando))
+    fintrandoTodos(todos, filtrando, false)
     .forEach(todo => {
         todo.classList.add('hedden')
         todo.classList.remove('d-flex')
@@ -45,8 +51,7 @@ const hiDeTodos = (todos, filtrando) => {
 }
 
 const showTodos = (todos, filtrando) => {
-    todos
-    .filter(todo => todo.textContent.toLowerCase().includes(filtrando))
+   fintrandoTodos(todos, filtrando, true)
     .forEach(todo => {
         todo.classList.add('d-flex')
         todo.classList.remove('hedden')
