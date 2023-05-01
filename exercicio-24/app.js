@@ -27,6 +27,7 @@ console.log(numbers.includes(635))
 */
 
 /*
+
   03
 
   - Refatore a implementação da remoção do to-do (li) da tela;
