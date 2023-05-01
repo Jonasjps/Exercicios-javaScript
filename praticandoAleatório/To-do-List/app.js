@@ -41,21 +41,21 @@ const fintrandoTodos = (todos, filtrando, returnMethedValue) => todos
         return returnMethedValue ? methedTodos : !methedTodos
     })
 
-
-const hiDeTodos = (todos, filtrando) => {
-    fintrandoTodos(todos, filtrando, false)
-    .forEach(todo => {
-        todo.classList.add('hedden')
-        todo.classList.remove('d-flex')
+const alterandoClassList = (todos, classAdd, classRemove) => {
+    todos.forEach(todo => {
+        todo.classList.add(classAdd)
+        todo.classList.remove(classRemove)
     })
 }
 
+const hiDeTodos = (todos, filtrando) => {
+    const todosAdd = fintrandoTodos(todos, filtrando, false)
+    alterandoClassList(todosAdd, 'hedden', 'd-flex')
+}
+
 const showTodos = (todos, filtrando) => {
-   fintrandoTodos(todos, filtrando, true)
-    .forEach(todo => {
-        todo.classList.add('d-flex')
-        todo.classList.remove('hedden')
-    })
+   const todosRemove = fintrandoTodos(todos, filtrando, true)
+   alterandoClassList(todosRemove, 'd-flex', 'hedden')
 }
 
 formSearch.addEventListener('input', event => {
