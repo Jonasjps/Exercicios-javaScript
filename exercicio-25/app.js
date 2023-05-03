@@ -29,7 +29,9 @@ console.log(indexDoMes)
   - Crie um objeto de data que represente o momento presente;
   - Exiba o objeto no console.
 */
+const present = new Date()
 
+console.log(present)
 /*
   03
 
