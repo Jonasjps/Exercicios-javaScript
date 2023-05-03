@@ -19,6 +19,7 @@ const months = [
   'Novembro',
   'Dezembro'
 ]
+console.log(months.indexOf('Fevereiro'))
 
 /*
   02
