@@ -1,4 +1,4 @@
-const present = new Date()
+const presentoOne = new Date()
 
 console.log(typeof present, present)
 console.log(present.getTime())
@@ -18,7 +18,7 @@ console.log(present.toLocaleTimeString())
 console.log(present.toString())
 
 const past = new Date('apr 1 2023 7:30:50')
-const present = new Date()
+const presentDois = new Date()
 
 console.log(present.getTime(), past.getTime())
 
