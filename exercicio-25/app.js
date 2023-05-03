@@ -37,7 +37,7 @@ console.log(present)
 
   - Baseado no objeto que você acabou de criar, exiba o ano atual no console.
 */
-
+console.log(present.getFullYear())
 /*
   04
 
