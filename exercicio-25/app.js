@@ -58,7 +58,9 @@ console.log(passado.getHours())
   - Crie um objeto de data que represente um momento futuro;
   - Exiba o objeto no console.
 */
+const futuro = new Date('december 01 2023 08:00:00')
 
+console.log(futuro)
 /*
   07
 
