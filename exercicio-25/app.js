@@ -44,7 +44,7 @@ console.log(present.getFullYear())
   - Crie um objeto de data que represente um momento passado;
   - Exiba o objeto no console.
 */
-const passado = new Date('april 29 1995 18:50:00')
+const passado = new Date('april 05 2023 18:50:00')
 console.log(passado)
 /*
   05
@@ -58,7 +58,7 @@ console.log(passado.getHours())
   - Crie um objeto de data que represente um momento futuro;
   - Exiba o objeto no console.
 */
-const futuro = new Date('december 01 2023 08:00:00')
+const futuro = new Date('may 05 2023 08:00:00')
 
 console.log(futuro)
 /*
@@ -66,7 +66,23 @@ console.log(futuro)
 
   - Exiba no console a quantidade de dias entre o momento futuro e o passado.
 */
+const diference = futuro.getTime() - passado.getTime()
 
+const secondes = Math.round(diference / 1000 )
+
+// console.log(secondes)
+
+const minutes = Math.round(secondes / 60)
+
+// console.log(minutes)
+
+const hours = Math.round(minutes / 60)
+
+// console.log(hours)
+
+const day = Math.round(hours / 24)
+
+console.log(day)
 /*
   08
   
