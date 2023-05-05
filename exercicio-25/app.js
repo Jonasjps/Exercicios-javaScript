@@ -51,7 +51,7 @@ console.log(passado)
 
   - Exiba, no console, a hora do objeto que você acabou de criar.
 */
-
+console.log(passado.getHours())
 /*
   06
 
