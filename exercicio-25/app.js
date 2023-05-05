@@ -44,7 +44,8 @@ console.log(present.getFullYear())
   - Crie um objeto de data que represente um momento passado;
   - Exiba o objeto no console.
 */
-
+const passado = new Date('april 29 1995 18:50:00')
+console.log(passado)
 /*
   05
 
