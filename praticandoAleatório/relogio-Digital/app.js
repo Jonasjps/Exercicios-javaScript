@@ -8,13 +8,12 @@ const clockSeconds = () => {
     const minutes = present.getMinutes()
     const seconds = present.getSeconds()
    
-    const clock = `
+    const clockHTML = `
     <span>${hours}</span>
     <span>${minutes}</span>
     <span>${seconds}</span>
     `
-    
-    console.log(clock)
+    clockContainer.innerHTML = clockHTML
 }
 
 const time = setInterval(clockSeconds, 1000)
