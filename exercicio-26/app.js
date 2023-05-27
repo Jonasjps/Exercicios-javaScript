@@ -29,22 +29,28 @@ dataDeNascimento(present)
     data na formatação: "03:07 - domingo, 7 de junho de 2020";
   - Não utilize a date-fns.
 */
-const horarioEdata = present => {
-  const hours = present.getHours()
-  const minutes = present.getMinutes()
-  const diaDaSemana = present.getDay()
-  const diaHoje = present.getDate() 
-  const mesDoAnoCorrente = present.getMonth()
-  const anoAtual = present.getFullYear()
+const past = new Date('may 27 2023 14:01:00')
+const horarioEdata = past => {
+  const hours = past.getHours()
+  const minutes = past.getMinutes()
+  const diaDaSemana = past.getDay()
+  const diaHoje = past.getDate() 
+  const mesDoAnoCorrente = past.getMonth()
+  const anoAtual = past.getFullYear()
 
 
   const nomesDaSemana = ['Segundo', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabado', 'Domingo']
   const mesesDoAno = ['Janeiro', 'Fefereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'outubro', 'Novembro', 'Dezembro' ]
-  
-  console.log(`${hours}:${minutes} - ${nomesDaSemana[diaDaSemana]}, ${diaHoje} de ${mesesDoAno[mesDoAnoCorrente]} de ${anoAtual}`)
+  const horasRefactoring = String(hours).length === 1 ? `0${hours}` : hours 
+  const minutesRefactoring =
+   String(minutes).length === 1 ? `0${minutes}` : minutes
+
+  const hora = `${horasRefactoring}:${minutesRefactoring} `
+  const horaEdataRefactoring = `${hora} - ${nomesDaSemana[diaDaSemana]}, ${diaHoje} de ${mesesDoAno[mesDoAnoCorrente]} de ${anoAtual}` 
+  console.log(horaEdataRefactoring)
 }
 
-horarioEdata(present)
+horarioEdata(past)
 /*
   03
 
