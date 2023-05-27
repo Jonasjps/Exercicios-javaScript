@@ -4,8 +4,24 @@
   - Crie uma função que recebe uma data por parâmetro e retorna a data na 
     formatação "DD/MM/AAAA". Exemplo: 03/07/2021;
   - Não utilize a date-fns.
-*/
+  */
+ const present = new Date()
+ 
+ const dataDeNascimento = present => {
+    const dia = present.getDate()
+    const mes = present.getMonth()
+    const ano = present.getFullYear()
 
+    const diaAtual = String(dia).length === 1 ? `0${dia}` : dia
+    const mesAtual = String(mes).length === 1 ? `0${mes}` : mes
+    const anoAtual = String(ano).length === 1 ? `0${ano}` : ano
+
+    const dataAtual = `${diaAtual}/${mesAtual}/${anoAtual}`
+    
+    console.log(dataAtual)
+  }
+
+dataDeNascimento(present)
 /*
   02
 
