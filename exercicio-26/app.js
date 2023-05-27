@@ -41,12 +41,16 @@ const horarioEdata = past => {
 
   const nomesDaSemana = ['Segundo', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabado', 'Domingo']
   const mesesDoAno = ['Janeiro', 'Fefereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'outubro', 'Novembro', 'Dezembro' ]
+  
   const horasRefactoring = String(hours).length === 1 ? `0${hours}` : hours 
-  const minutesRefactoring =
-   String(minutes).length === 1 ? `0${minutes}` : minutes
+  const minutesRefactoring = String(minutes).length === 1 ?
+   `0${minutes}` : minutes
 
   const hora = `${horasRefactoring}:${minutesRefactoring} `
-  const horaEdataRefactoring = `${hora} - ${nomesDaSemana[diaDaSemana]}, ${diaHoje} de ${mesesDoAno[mesDoAnoCorrente]} de ${anoAtual}` 
+  const diaDeHoje = `${nomesDaSemana[diaDaSemana]}, ${diaHoje}`
+  const mesEano = `${mesesDoAno[mesDoAnoCorrente]} de ${anoAtual}`
+  const horaEdataRefactoring = `${hora} - ${diaDeHoje} de ${mesEano}` 
+
   console.log(horaEdataRefactoring)
 }
 
