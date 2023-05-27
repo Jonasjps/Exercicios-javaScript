@@ -33,8 +33,15 @@ const horarioEdata = present => {
   const hours = present.getHours()
   const minutes = present.getMinutes()
   const diaDaSemana = present.getDay()
+  const diaHoje = present.getDate() 
+  const mesDoAnoCorrente = present.getMonth()
+  const anoAtual = present.getFullYear()
+
+
   const nomesDaSemana = ['Segundo', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabado', 'Domingo']
-  console.log(`${hours}:${minutes} - ${nomesDaSemana[diaDaSemana]}`)
+  const mesesDoAno = ['Janeiro', 'Fefereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'outubro', 'Novembro', 'Dezembro' ]
+  
+  console.log(`${hours}:${minutes} - ${nomesDaSemana[diaDaSemana]}, ${diaHoje} de ${mesesDoAno[mesDoAnoCorrente]} de ${anoAtual}`)
 }
 
 horarioEdata(present)
