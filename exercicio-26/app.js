@@ -32,7 +32,9 @@ dataDeNascimento(present)
 const horarioEdata = present => {
   const hours = present.getHours()
   const minutes = present.getMinutes()
-  console.log(hours,minutes)
+  const diaDaSemana = present.getDay()
+  const nomesDaSemana = ['Segundo', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabado', 'Domingo']
+  console.log(`${hours}:${minutes} - ${nomesDaSemana[diaDaSemana]}`)
 }
 
 horarioEdata(present)
