@@ -17,7 +17,7 @@
     const anoAtual = String(ano).length === 1 ? `0${ano}` : ano
 
     const dataAtual = `${diaAtual}/${mesAtual}/${anoAtual}`
-    
+
     console.log(dataAtual)
   }
 
@@ -29,7 +29,13 @@ dataDeNascimento(present)
     data na formatação: "03:07 - domingo, 7 de junho de 2020";
   - Não utilize a date-fns.
 */
+const horarioEdata = present => {
+  const hours = present.getHours()
+  const minutes = present.getMinutes()
+  console.log(hours,minutes)
+}
 
+horarioEdata(present)
 /*
   03
 
