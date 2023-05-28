@@ -62,8 +62,9 @@ horarioEdata(past)
   - Exiba os valores lado a lado, no console;
   - Não modifique a declaração da const user.
 */
-
 const user = { id: 42, isVerified: true }
+const userCopy = user.map(item => ({id: item, isVerified: item}))
+console.log(userCopy)
 
 /*
   04
