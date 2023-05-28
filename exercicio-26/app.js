@@ -6,15 +6,17 @@
   - Não utilize a date-fns.
   */
  const present = new Date()
-  console.log(present.getDay())
+
+  const manitupando = unit => String(unit).length === 1 ? `0${unit}` : unit
+
  const dataDeNascimento = present => {
     const dia = present.getDate()
     const mes = present.getMonth() + 1
     const ano = present.getFullYear()
 
-    const diaAtual = String(dia).length === 1 ? `0${dia}` : dia
-    const mesAtual = String(mes).length === 1 ? `0${mes}` : mes
-    const anoAtual = String(ano).length === 1 ? `0${ano}` : ano
+    const diaAtual = manitupando(dia)
+    const mesAtual = manitupando(mes)
+    const anoAtual = manitupando(ano)
 
     const dataAtual = `${diaAtual}/${mesAtual}/${anoAtual}`
 
@@ -42,8 +44,7 @@ const horarioEdata = present => {
   const mesesDoAno = ['Janeiro', 'Fefereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'outubro', 'Novembro', 'Dezembro' ]
   
   const horasRefactoring = String(hours).length === 1 ? `0${hours}` : hours 
-  const minutesRefactoring = String(minutes).length === 1 ?
-   `0${minutes}` : minutes
+  const minutesRefactoring = manitupando(minutes)
 
   const hora = `${horasRefactoring}:${minutesRefactoring} `
   const diaDeHoje = `${nomesDaSemana[diaDaSemana]}, ${diaHoje}`
@@ -164,9 +165,9 @@ const updateClock = () => {
   const seconds = present.getSeconds()
 
   const clockHTML = `
-    <span>${String(hours).length === 1 ? `0${hours}` : hours}</span> :
-    <span>${String(minutes).length === 1 ? `0${minutes}` : minutes}</span> :
-    <span>${String(seconds).length === 1 ? `0${seconds}` : seconds}</span>
+    <span>${manitupando(hours)}</span> :
+    <span>${manitupando(minutes)}</span> :
+    <span>${manitupando(seconds)}</span>
   `
 
   clockContainer.innerHTML = clockHTML
