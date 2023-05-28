@@ -109,7 +109,7 @@ const tvShows = [
   { name: 'House M.D.', releaseYear: 2004 },
   { name: 'Watchmen', releaseYear: 2019 }
 ]
-const listNamesJogos = tvShows.map(({name}) => name)
+const listNamesJogos = tvShows.map( ({name}) => name)
 
 console.log(listNamesJogos)
 
