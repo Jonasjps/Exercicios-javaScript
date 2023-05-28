@@ -9,7 +9,7 @@
  
  const dataDeNascimento = present => {
     const dia = present.getDate()
-    const mes = present.getMonth()
+    const mes = present.getMonth() + 1
     const ano = present.getFullYear()
 
     const diaAtual = String(dia).length === 1 ? `0${dia}` : dia
@@ -62,6 +62,7 @@ horarioEdata(present)
   - Não modifique a declaração da const user.
 */
 const user = { id: 42, isVerified: true }
+
 
 
 /*
