@@ -6,7 +6,7 @@
   - Não utilize a date-fns.
   */
  const present = new Date()
- 
+  console.log(present.getDay())
  const dataDeNascimento = present => {
     const dia = present.getDate()
     const mes = present.getMonth() + 1
@@ -48,6 +48,8 @@ const horarioEdata = present => {
   const hora = `${horasRefactoring}:${minutesRefactoring} `
   const diaDeHoje = `${nomesDaSemana[diaDaSemana]}, ${diaHoje}`
   const mesEano = `${mesesDoAno[mesDoAnoCorrente]} de ${anoAtual}`
+
+
   const horaEdataRefactoring = `${hora} - ${diaDeHoje} de ${mesEano}` 
 
   console.log(horaEdataRefactoring)
