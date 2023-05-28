@@ -110,23 +110,21 @@ console.log(alfatbeto)
   - Refatore o código abaixo.
 */
 
-const useDataSomewhereElse = value => {
-  console.log(value)
-}
+const useDataSomewhereElse = value => console.log(value)
 
-const updateSomething = (data = {}) => {
-  const target = data.target
-  const property = data.property
-  let willChange = data.willChange
 
-  if (willChange === 'valor indesejado') {
-    willChange = 'valor desejado'
+const updateSomething = ({target, property, willChange} ) => {
+  const messageIndesejavel = willChange === 'valor indesejado'
+  const messageDesejavel = willChange = 'valor desejado'
+  
+  if (messageIndesejavel) {
+    messageDesejavel
   }
 
   useDataSomewhereElse({
-    target: target,
-    property: property,
-    willChange: willChange
+    target,
+    property,
+    willChange
   })
 }
 
