@@ -64,8 +64,9 @@ horarioEdata(present)
   - Não modifique a declaração da const user.
 */
 const user = { id: 42, isVerified: true }
+const {id, isVerified} = user
 
-
+console.log(id,isVerified)
 
 /*
   04
