@@ -29,17 +29,16 @@ dataDeNascimento(present)
     data na formatação: "03:07 - domingo, 7 de junho de 2020";
   - Não utilize a date-fns.
 */
-const past = new Date('may 27 2023 14:01:00')
-const horarioEdata = past => {
-  const hours = past.getHours()
-  const minutes = past.getMinutes()
-  const diaDaSemana = past.getDay()
-  const diaHoje = past.getDate() 
-  const mesDoAnoCorrente = past.getMonth()
-  const anoAtual = past.getFullYear()
+const horarioEdata = present => {
+  const hours = present.getHours()
+  const minutes = present.getMinutes()
+  const diaDaSemana = present.getDay()
+  const diaHoje = present.getDate() 
+  const mesDoAnoCorrente = present.getMonth()
+  const anoAtual = present.getFullYear()
 
 
-  const nomesDaSemana = ['Segundo', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabado', 'Domingo']
+  const nomesDaSemana = ['Domingo','Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabado']
   const mesesDoAno = ['Janeiro', 'Fefereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'outubro', 'Novembro', 'Dezembro' ]
   
   const horasRefactoring = String(hours).length === 1 ? `0${hours}` : hours 
@@ -54,7 +53,7 @@ const horarioEdata = past => {
   console.log(horaEdataRefactoring)
 }
 
-horarioEdata(past)
+horarioEdata(present)
 /*
   03
 
@@ -63,8 +62,7 @@ horarioEdata(past)
   - Não modifique a declaração da const user.
 */
 const user = { id: 42, isVerified: true }
-const userCopy = user.map(item => ({id: item, isVerified: item}))
-console.log(userCopy)
+
 
 /*
   04
