@@ -100,6 +100,10 @@ const a = 'a'
 const b = 'b'
 const c = 'c'
 
+const alfatbeto = {a, b, c}
+
+console.log(alfatbeto)
+
 /*
   06
 
