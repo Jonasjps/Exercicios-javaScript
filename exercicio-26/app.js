@@ -100,7 +100,7 @@ const a = 'a'
 const b = 'b'
 const c = 'c'
 
-const alfatbeto = {a, b, c}
+const alfatbeto = {a, b ,c}
 
 console.log(alfatbeto)
 
@@ -110,26 +110,44 @@ console.log(alfatbeto)
   - Refatore o código abaixo.
 */
 
+// const useDataSomewhereElse = value => {
+//   console.log(value)
+// }
+
+// const updateSomething = (data = {}) => {
+//   const target = data.target
+//   const property = data.property
+//   let willChange = data.willChange
+
+//   if (willChange === 'valor indesejado') {
+//     willChange = 'valor desejado'
+//   }
+
+//   useDataSomewhereElse({
+//     target: target,
+//     property: property,
+//     willChange: willChange
+//   })
+// }
+
+// updateSomething({ target: '1', property: '2', willChange: 'valor indesejado' })
+
 const useDataSomewhereElse = value => console.log(value)
 
 
-const updateSomething = ({target, property, willChange} ) => {
+const updateSomething = ({target, property, willChange = {}}) => {
+  
   const messageIndesejavel = willChange === 'valor indesejado'
   const messageDesejavel = willChange = 'valor desejado'
-  
+
   if (messageIndesejavel) {
     messageDesejavel
   }
 
-  useDataSomewhereElse({
-    target,
-    property,
-    willChange
-  })
+  useDataSomewhereElse({target, property, willChange})
 }
 
 updateSomething({ target: '1', property: '2', willChange: 'valor indesejado' })
-
 /*
   07
 
