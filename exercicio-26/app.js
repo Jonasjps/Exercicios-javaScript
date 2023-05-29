@@ -1,10 +1,36 @@
 /*
-  01
+01
 
-  - Crie uma função que recebe uma data por parâmetro e retorna a data na 
-    formatação "DD/MM/AAAA". Exemplo: 03/07/2021;
-  - Não utilize a date-fns.
-  */
+- Crie uma função que recebe uma data por parâmetro e retorna a data na 
+formatação "DD/MM/AAAA". Exemplo: 03/07/2021;
+- Não utilize a date-fns.
+*/
+ const nomesDaSemana = 
+ [
+   'Domingo',
+   'Segunda', 
+   'Terça', 
+   'Quarta', 
+   'Quinta', 
+   'Sexta', 
+   'Sabado'
+ ]
+ const mesesDoAno = 
+ [
+ 'Janeiro', 
+ 'Fefereiro', 
+ 'Março', 
+ 'Abril', 
+ 'Maio', 
+ 'Junho', 
+ 'Julho', 
+ 'Agosto', 
+ 'Setembro', 
+ 'outubro', 
+ 'Novembro', 
+ 'Dezembro' 
+ ]
+
  const present = new Date()
 
   const manitupando = unit => String(unit).length === 1 ? `0${unit}` : unit
@@ -40,8 +66,6 @@ const horarioEdata = present => {
   const anoAtual = present.getFullYear()
 
 
-  const nomesDaSemana = ['Domingo','Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabado']
-  const mesesDoAno = ['Janeiro', 'Fefereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'outubro', 'Novembro', 'Dezembro' ]
   
   const horasRefactoring = String(hours).length === 1 ? `0${hours}` : hours 
   const minutesRefactoring = manitupando(minutes)
@@ -157,6 +181,14 @@ updateSomething({ target: '1', property: '2', willChange: 'valor indesejado' })
 */
 
 const clockContainer = document.querySelector('.clock-container')
+const updateClockHTML = (hours, minutes, seconds) => {
+  clockContainer.innerHTML = `
+    <span>${manitupando(hours)}</span> :
+    <span>${manitupando(minutes)}</span> :
+    <span>${manitupando(seconds)}</span>
+  `
+
+}
 
 const updateClock = () => {
   const present = new Date()
@@ -164,13 +196,9 @@ const updateClock = () => {
   const minutes = present.getMinutes()
   const seconds = present.getSeconds()
 
-  const clockHTML = `
-    <span>${manitupando(hours)}</span> :
-    <span>${manitupando(minutes)}</span> :
-    <span>${manitupando(seconds)}</span>
-  `
+  updateClockHTML(hours, minutes, seconds)
 
-  clockContainer.innerHTML = clockHTML
+ 
 }
 
 setInterval(updateClock, 1000)
