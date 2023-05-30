@@ -65,6 +65,10 @@ console.log(id, isVerified)
 const robotA = { name: 'Bender' }
 const robotB = { name: 'HAL 9000' }
 
+const {name: nameA} = robotA
+const {name: nameB} = robotB 
+
+console.log(nameA, nameB)
 /*
   05
 
