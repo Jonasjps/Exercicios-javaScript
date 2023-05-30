@@ -197,8 +197,6 @@ const updateClock = () => {
   const seconds = present.getSeconds()
 
   updateClockHTML(hours, minutes, seconds)
-
- 
 }
 
 setInterval(updateClock, 1000)
