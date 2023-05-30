@@ -10,11 +10,11 @@ const present = new Date()
 const manipulando = unit => String(unit).length === 1 ? `0${unit}`: unit
 
 const manipulandoData = data => {
-  const day = data.getDate()
-  const month = data.getMonth() + 1
-  const year = data.getFullYear()
+  const day = manipulando(data.getDate())
+  const month = manipulando(data.getMonth() + 1)
+  const year = manipulando(data.getFullYear())
 
-  return `${manipulando(day) }/${manipulando(month)}/${manipulando(year)}`
+  return `${day}/${month}/${year}`
 }
 
 console.log(manipulandoData(present))
@@ -128,10 +128,9 @@ const showData = () => {
 
   transformData(hours, minutes, seconds)
 }
+
 const updateClock = () => {
   showData()
-
-  
 }
 
 setInterval(updateClock, 1000)
