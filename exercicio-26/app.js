@@ -112,20 +112,26 @@ updateSomething({ target: '1', property: '2', willChange: 'valor indesejado' })
 */
 
 const clockContainer = document.querySelector('.clock-container')
-
-const updateClock = () => {
+const transformData = (hours, minutes, seconds) => {
+  
+  clockContainer.innerHTML = `
+    <span>${manipulando(hours)}</span> :
+    <span>${manipulando(minutes)}</span> :
+    <span>${manipulando(seconds)}</span>
+  `
+}
+const showData = () => {
   const present = new Date()
   const hours = present.getHours()
   const minutes = present.getMinutes()
   const seconds = present.getSeconds()
 
-  const clockHTML = `
-    <span>${String(hours).length === 1 ? `0${hours}` : hours}</span> :
-    <span>${String(minutes).length === 1 ? `0${minutes}` : minutes}</span> :
-    <span>${String(seconds).length === 1 ? `0${seconds}` : seconds}</span>
-  `
+  transformData(hours, minutes, seconds)
+}
+const updateClock = () => {
+  showData()
 
-  clockContainer.innerHTML = clockHTML
+  
 }
 
 setInterval(updateClock, 1000)
