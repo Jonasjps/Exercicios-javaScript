@@ -35,6 +35,7 @@ const present = new Date()
 const manipulando = unit => String(unit).length === 1 ? `0${unit}`: unit
 
 const manipulandoData = data => {
+  
   const day = manipulando(data.getDate())
   const month = manipulando(data.getMonth() + 1)
   const year = manipulando(data.getFullYear())
@@ -51,7 +52,7 @@ console.log(manipulandoData(present))
   - Não utilize a date-fns.
 */
 const manipulandoHoraEdata = data => {
-  
+
   const hours = manipulando(data.getHours())
   const minutes = manipulando(data.getMinutes())
   const daySemana = manipulando(nomesDaSemana[data.getDay()])
@@ -138,19 +139,20 @@ updateSomething({ target: '1', property: '2', willChange: 'valor indesejado' })
 */
 
 const clockContainer = document.querySelector('.clock-container')
+
 const transformData = (hours, minutes, seconds) => {
   
   clockContainer.innerHTML = `
-    <span>${manipulando(hours)}</span> :
-    <span>${manipulando(minutes)}</span> :
-    <span>${manipulando(seconds)}</span>
+    <span>${hours}</span> :
+    <span>${minutes}</span> :
+    <span>${seconds}</span>
   `
 }
 const showData = () => {
   const present = new Date()
-  const hours = present.getHours()
-  const minutes = present.getMinutes()
-  const seconds = present.getSeconds()
+  const hours = manipulando(present.getHours())
+  const minutes = manipulando(present.getMinutes())
+  const seconds = manipulando(present.getSeconds())
 
   transformData(hours, minutes, seconds)
 }
