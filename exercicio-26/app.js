@@ -1,10 +1,35 @@
 /*
-  01
+01
 
-  - Crie uma função que recebe uma data por parâmetro e retorna a data na 
-    formatação "DD/MM/AAAA". Exemplo: 03/07/2021;
-  - Não utilize a date-fns.
+- Crie uma função que recebe uma data por parâmetro e retorna a data na 
+formatação "DD/MM/AAAA". Exemplo: 03/07/2021;
+- Não utilize a date-fns.
 */
+
+  const nomesDaSemana = [
+    'Domingo', 
+    'Segunda-feira', 
+    'Terça-feira', 
+    'Quarta-Feira', 
+    'Quinta-feira', 
+    'Sexta-feira', 
+    'Sabado'
+  ]
+  const monthOfYear = [
+    'Janeiro', 
+    'Fevereiro', 
+    'Março', 
+    'Abril', 
+    'Maio', 
+    'Junho', 
+    'Julho', 
+    'Agosto', 
+    'Setembro', 
+    'Outubro', 
+    'Novembro', 
+    'Dezembro'
+  ]
+
 const present = new Date()
 
 const manipulando = unit => String(unit).length === 1 ? `0${unit}`: unit
@@ -26,17 +51,18 @@ console.log(manipulandoData(present))
   - Não utilize a date-fns.
 */
 const manipulandoHoraEdata = data => {
-  const hours = data.getHours()
-  const minutes = data.getMinutes()
-  const dayDaSemana = data.getDay()
-  const dayMonth = data.getDate()
-  const month = data.getMonth()
-  const year = data.getFullYear()
-
-  const nomesDaSemana = ['Domingom', 'Segunda-feira', 'Terça-feira', 'Quarta-Feira', 'Quinta-feira', 'Sexta-feira', 'Sabado']
-  const monthOfYear = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
   
-  return `${manipulando(hours)}:${manipulando(minutes)} - ${manipulando(nomesDaSemana[dayDaSemana])}, ${manipulando(dayMonth)} de ${manipulando(monthOfYear[month]) } de ${year}`
+  const hours = manipulando(data.getHours())
+  const minutes = manipulando(data.getMinutes())
+  const daySemana = manipulando(nomesDaSemana[data.getDay()])
+  const dayMonth = manipulando(data.getDate())
+  const month = manipulando(monthOfYear[data.getMonth()])
+  const year = manipulando(data.getFullYear())
+  
+  const hoursOfMinut = `${hours}:${minutes}`
+
+  return `${hoursOfMinut} - ${daySemana}, ${dayMonth} de ${month} de ${year}`
+
 }
 
 console.log(manipulandoHoraEdata(present))
