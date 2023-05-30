@@ -7,12 +7,14 @@
 */
 const present = new Date()
 
+const manipulando = unit => String(unit).length === 1 ? `0${unit}`: unit
+
 const manipulandoData = data => {
   const day = data.getDate()
   const month = data.getMonth() + 1
   const year = data.getFullYear()
 
-  return `${String(day).length === 1 ? `0${day}`: day }/${String(month).length === 1 ? `0${month}`: month }/${String(year).length === 1 ? `0${year}`: year }`
+  return `${manipulando(day) }/${manipulando(month)}/${manipulando(year)}`
 }
 
 console.log(manipulandoData(present))
@@ -23,7 +25,21 @@ console.log(manipulandoData(present))
     data na formatação: "03:07 - domingo, 7 de junho de 2020";
   - Não utilize a date-fns.
 */
+const manipulandoHoraEdata = data => {
+  const hours = data.getHours()
+  const minutes = data.getMinutes()
+  const dayDaSemana = data.getDay()
+  const dayMonth = data.getDate()
+  const month = data.getMonth()
+  const year = data.getFullYear()
 
+  const nomesDaSemana = ['Domingom', 'Segunda-feira', 'Terça-feira', 'Quarta-Feira', 'Quinta-feira', 'Sexta-feira', 'Sabado']
+  const monthOfYear = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
+  
+  return `${manipulando(hours)}:${manipulando(minutes)} - ${manipulando(nomesDaSemana[dayDaSemana])}, ${manipulando(dayMonth)} de ${manipulando(monthOfYear[month]) } de ${year}`
+}
+
+console.log(manipulandoHoraEdata(present))
 /*
   03
 
