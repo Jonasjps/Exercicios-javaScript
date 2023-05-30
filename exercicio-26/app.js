@@ -49,7 +49,9 @@ console.log(manipulandoHoraEdata(present))
 */
 
 const user = { id: 42, isVerified: true }
+const {id, isVerified} = user
 
+console.log(id, isVerified)
 /*
   04
 
