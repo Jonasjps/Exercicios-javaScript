@@ -1,55 +1,11 @@
 /*
-01
+  01
 
-- Crie uma função que recebe uma data por parâmetro e retorna a data na 
-formatação "DD/MM/AAAA". Exemplo: 03/07/2021;
-- Não utilize a date-fns.
+  - Crie uma função que recebe uma data por parâmetro e retorna a data na 
+    formatação "DD/MM/AAAA". Exemplo: 03/07/2021;
+  - Não utilize a date-fns.
 */
- const nomesDaSemana = 
- [
-   'Domingo',
-   'Segunda', 
-   'Terça', 
-   'Quarta', 
-   'Quinta', 
-   'Sexta', 
-   'Sabado'
- ]
- const mesesDoAno = 
- [
- 'Janeiro', 
- 'Fefereiro', 
- 'Março', 
- 'Abril', 
- 'Maio', 
- 'Junho', 
- 'Julho', 
- 'Agosto', 
- 'Setembro', 
- 'outubro', 
- 'Novembro', 
- 'Dezembro' 
- ]
 
- const present = new Date()
-
-  const manitupando = unit => String(unit).length === 1 ? `0${unit}` : unit
-
- const dataDeNascimento = present => {
-    const dia = present.getDate()
-    const mes = present.getMonth() + 1
-    const ano = present.getFullYear()
-
-    const diaAtual = manitupando(dia)
-    const mesAtual = manitupando(mes)
-    const anoAtual = manitupando(ano)
-
-    const dataAtual = `${diaAtual}/${mesAtual}/${anoAtual}`
-
-    console.log(dataAtual)
-  }
-
-dataDeNascimento(present)
 /*
   02
 
@@ -57,30 +13,7 @@ dataDeNascimento(present)
     data na formatação: "03:07 - domingo, 7 de junho de 2020";
   - Não utilize a date-fns.
 */
-const horarioEdata = present => {
-  const hours = present.getHours()
-  const minutes = present.getMinutes()
-  const diaDaSemana = present.getDay()
-  const diaHoje = present.getDate() 
-  const mesDoAnoCorrente = present.getMonth()
-  const anoAtual = present.getFullYear()
 
-
-  
-  const horasRefactoring = String(hours).length === 1 ? `0${hours}` : hours 
-  const minutesRefactoring = manitupando(minutes)
-
-  const hora = `${horasRefactoring}:${minutesRefactoring} `
-  const diaDeHoje = `${nomesDaSemana[diaDaSemana]}, ${diaHoje}`
-  const mesEano = `${mesesDoAno[mesDoAnoCorrente]} de ${anoAtual}`
-
-
-  const horaEdataRefactoring = `${hora} - ${diaDeHoje} de ${mesEano}` 
-
-  console.log(horaEdataRefactoring)
-}
-
-horarioEdata(present)
 /*
   03
 
@@ -88,10 +21,8 @@ horarioEdata(present)
   - Exiba os valores lado a lado, no console;
   - Não modifique a declaração da const user.
 */
-const user = { id: 42, isVerified: true }
-const {id, isVerified} = user
 
-console.log(id,isVerified)
+const user = { id: 42, isVerified: true }
 
 /*
   04
@@ -106,12 +37,6 @@ console.log(id,isVerified)
 const robotA = { name: 'Bender' }
 const robotB = { name: 'HAL 9000' }
 
-const {name: nameA} = robotA
-const {name: nameB} = robotB
-
-console.log(nameA)
-console.log(nameB)
-
 /*
   05
 
@@ -125,54 +50,34 @@ const a = 'a'
 const b = 'b'
 const c = 'c'
 
-const alfatbeto = {a, b, c}
-
-console.log(alfatbeto)
-
 /*
   06
 
   - Refatore o código abaixo.
 */
 
-// const useDataSomewhereElse = value => {
-//   console.log(value)
-// }
+const useDataSomewhereElse = value => {
+  console.log(value)
+}
 
-// const updateSomething = (data = {}) => {
-//   const target = data.target
-//   const property = data.property
-//   let willChange = data.willChange
+const updateSomething = (data = {}) => {
+  const target = data.target
+  const property = data.property
+  let willChange = data.willChange
 
-//   if (willChange === 'valor indesejado') {
-//     willChange = 'valor desejado'
-//   }
-
-//   useDataSomewhereElse({
-//     target: target,
-//     property: property,
-//     willChange: willChange
-//   })
-// }
-
-// updateSomething({ target: '1', property: '2', willChange: 'valor indesejado' })
-
-const useDataSomewhereElse = value => console.log(value)
-
-
-const updateSomething = ({target, property, willChange = {}}) => {
-  
-  const messageIndesejavel = willChange === 'valor indesejado'
-  const messageDesejavel = willChange = 'valor desejado'
-
-  if (messageIndesejavel) {
-    messageDesejavel
+  if (willChange === 'valor indesejado') {
+    willChange = 'valor desejado'
   }
 
-  useDataSomewhereElse({target, property, willChange})
+  useDataSomewhereElse({
+    target: target,
+    property: property,
+    willChange: willChange
+  })
 }
 
 updateSomething({ target: '1', property: '2', willChange: 'valor indesejado' })
+
 /*
   07
 
@@ -181,14 +86,6 @@ updateSomething({ target: '1', property: '2', willChange: 'valor indesejado' })
 */
 
 const clockContainer = document.querySelector('.clock-container')
-const updateClockHTML = (hours, minutes, seconds) => {
-  clockContainer.innerHTML = `
-    <span>${manitupando(hours)}</span> :
-    <span>${manitupando(minutes)}</span> :
-    <span>${manitupando(seconds)}</span>
-  `
-
-}
 
 const updateClock = () => {
   const present = new Date()
@@ -196,7 +93,13 @@ const updateClock = () => {
   const minutes = present.getMinutes()
   const seconds = present.getSeconds()
 
-  updateClockHTML(hours, minutes, seconds)
+  const clockHTML = `
+    <span>${String(hours).length === 1 ? `0${hours}` : hours}</span> :
+    <span>${String(minutes).length === 1 ? `0${minutes}` : minutes}</span> :
+    <span>${String(seconds).length === 1 ? `0${seconds}` : seconds}</span>
+  `
+
+  clockContainer.innerHTML = clockHTML
 }
 
 setInterval(updateClock, 1000)
