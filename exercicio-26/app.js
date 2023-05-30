@@ -5,7 +5,17 @@
     formatação "DD/MM/AAAA". Exemplo: 03/07/2021;
   - Não utilize a date-fns.
 */
+const present = new Date()
 
+const manipulandoData = data => {
+  const day = data.getDate()
+  const month = data.getMonth() + 1
+  const year = data.getFullYear()
+
+  return `${String(day).length === 1 ? `0${day}`: day }/${String(month).length === 1 ? `0${month}`: month }/${String(year).length === 1 ? `0${year}`: year }`
+}
+
+console.log(manipulandoData(present))
 /*
   02
 
