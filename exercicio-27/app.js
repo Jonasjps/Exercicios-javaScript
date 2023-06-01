@@ -29,7 +29,11 @@ function logGreeting (name) {
   console.log(`olá, ${name}`)
 }
 
-// x(logGreeting)
+const log = () => {
+  logGreeting('Jonas')
+} 
+
+log()
 
 /*
   03
