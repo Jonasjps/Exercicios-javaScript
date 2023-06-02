@@ -44,7 +44,7 @@ log()
 const numbers = [3, 4, 10, 20]
 
 const numbersTrue = numbers => {
-  numbers.filter(num => num < 5)
+  return numbers.filter(num => num < 5)
 }
 
 const lesserThanFive = numbersTrue(numbers)
