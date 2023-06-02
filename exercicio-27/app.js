@@ -42,7 +42,12 @@ log()
 */
 
 const numbers = [3, 4, 10, 20]
-const lesserThanFive = numbers.filter(num => num < 5)
+
+const numbersTrue = numbers => {
+  numbers.filter(num => num < 5)
+}
+
+const lesserThanFive = numbersTrue(numbers)
 
 console.log(lesserThanFive)
 
