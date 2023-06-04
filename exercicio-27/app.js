@@ -28,6 +28,10 @@ console.log('Linha 8')
 function logGreeting (name) {
   console.log(`olá, ${name}`)
 }
+
+const x = callback => {
+  callback('Jonas')
+}
 x(logGreeting)
 
 /*
@@ -69,7 +73,6 @@ console.log(`Preço total: ${totalPrice}`)
 */
 
 let car = { color: 'amarelo' }
-console.log(car['color:azul'])
 
 /*
   06
