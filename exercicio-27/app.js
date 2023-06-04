@@ -64,7 +64,10 @@ console.log(`Preço total: ${totalPrice}`)
 */
 
 let car = { color: 'amarelo' }
+const secondCar = car
 
+secondCar.color = 'Azul'
+console.log(car.color ,secondCar.color)
 /*
   06
 
