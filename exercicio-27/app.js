@@ -112,3 +112,11 @@ let booksBox = {
   spaces: 5,
   booksIn: 0
 }
+
+booksBox.ShowBox = () => {
+  console.log(booksBox)
+}
+
+booksBox.ShowBox()
+
+
