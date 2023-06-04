@@ -4,19 +4,19 @@
   - Implemente um código assíncrono entre os console.log() abaixo.
 */
 
-console.log('Linha 1')
-console.log('Linha 2')
-console.log('Linha 3')
-console.log('Linha 4')
+// console.log('Linha 1')
+// console.log('Linha 2')
+// console.log('Linha 3')
+// console.log('Linha 4')
 
-setTimeout(() => {
-  console.log('A função foi de callback foi executada! ')
-}, 5000)
+// setTimeout(() => {
+//   console.log('A função foi de callback foi executada! ')
+// }, 5000)
 
-console.log('Linha 5')
-console.log('Linha 6')
-console.log('Linha 7')
-console.log('Linha 8')
+// console.log('Linha 5')
+// console.log('Linha 6')
+// console.log('Linha 7')
+// console.log('Linha 8')
 
 /*
   02
@@ -77,7 +77,13 @@ console.log(car.color ,secondCar.color)
   - Se todos os argumentos forem passados, retorne a string 'A função foi 
     invocada com 3 argumentos'.
 */
-
+const myFunc = (paramete1, paramete2, paramete3) => {
+   if([paramete1, paramete2, paramete3].includes(undefined) ) {
+     return 'A função deve ser invocada com 3 argumentos'
+  }
+  return 'A função foi invocada com 3 argumentos'
+}
+console.log(myFunc(() => {}, {}))
 /*
   07
 
