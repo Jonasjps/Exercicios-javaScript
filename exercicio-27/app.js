@@ -75,6 +75,10 @@ console.log(`Preço total: ${totalPrice}`)
 
 let car = { color: 'amarelo' }
 
+let newColor = car.splice('azul')
+
+console.log(newColor)
+
 /*
   06
 
