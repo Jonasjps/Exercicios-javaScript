@@ -78,11 +78,13 @@ console.log(car.color ,secondCar.color)
     invocada com 3 argumentos'.
 */
 const myFunc = (paramete1, paramete2, paramete3) => {
-   if([paramete1, paramete2, paramete3].includes(undefined) ) {
-     return 'A função deve ser invocada com 3 argumentos'
-  }
-  return 'A função foi invocada com 3 argumentos'
+  const validadParamet = [paramete1, paramete2, paramete3].includes(undefined)  
+  return validadParamet 
+    ? 'A função deve ser invocada com 3 argumentos'
+    : 'A função foi invocada com 3 argumentos'
+
 }
+
 console.log(myFunc(() => {}, {}))
 /*
   07
