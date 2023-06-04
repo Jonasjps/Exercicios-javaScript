@@ -28,12 +28,7 @@ console.log('Linha 8')
 function logGreeting (name) {
   console.log(`olá, ${name}`)
 }
-
-const log = () => {
-  logGreeting('Jonas')
-} 
-
-log()
+x(logGreeting)
 
 /*
   03
@@ -74,10 +69,7 @@ console.log(`Preço total: ${totalPrice}`)
 */
 
 let car = { color: 'amarelo' }
-
-let newColor = car.splice('azul')
-
-console.log(newColor)
+console.log(car['color:azul'])
 
 /*
   06
