@@ -115,9 +115,21 @@ let booksBox = {
 
 booksBox.ShowBox = (boxQuantity) => {
   booksBox.booksIn += boxQuantity
-  return `Já há '${booksBox.booksIn}' livros na caixa`
+
+  if(booksBox.booksIn === booksBox.spaces) {
+    return `A caixa já está cheia`
+  }
+  
+  if(booksBox.spaces - boxQuantity) {
+    return `Só cabem mais ${booksBox.spaces - boxQuantity} livros`
+  }
+
+  
+  return `Já há '${boxQuantity}' livros na caixa`
 }
-console.log(booksBox)
 console.log(booksBox.ShowBox(2))
+console.log(booksBox.ShowBox(2))
+console.log(booksBox.ShowBox(1))
+console.log(booksBox)
 
 
