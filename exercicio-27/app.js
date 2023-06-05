@@ -113,5 +113,15 @@ let booksBox = {
   booksIn: 0
 }
 
+booksBox.addBooks = (booksQuantity) => {
+  // if(booksBox.booksIn) {
+  //   return `Já há '${booksBox.booksIn}' livros na caixa`
+  // }
+  booksBox.booksIn += booksQuantity
+  
+  console.log(booksBox)
+   
+}
 
-
+booksBox.addBooks(2)
+booksBox.addBooks(2)
