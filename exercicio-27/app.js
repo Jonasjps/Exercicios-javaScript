@@ -113,10 +113,11 @@ let booksBox = {
   booksIn: 0
 }
 
-booksBox.ShowBox = () => {
-  console.log(booksBox)
+booksBox.ShowBox = (boxQuantity) => {
+  booksBox.booksIn += boxQuantity
+  return `Já há '${booksBox.booksIn}' livros na caixa`
 }
-
-booksBox.ShowBox()
+console.log(booksBox)
+console.log(booksBox.ShowBox(2))
 
 
