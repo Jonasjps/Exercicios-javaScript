@@ -124,11 +124,12 @@ booksBox.addBooks = booksQuantity => {
     return `Só ${valideMensage} mais ${booksBox.spaces - booksBox.booksIn} ${pluralValide}`
   }
   booksBox.booksIn += booksQuantity
-  return `Já há ${booksBox.booksIn} livros na caixa`
+  const pluralValid = booksBox.booksIn === 1 ? 'livro' : 'livros'
+  return `Já há ${booksBox.booksIn} ${pluralValid} na caixa`
 }
 
 // console.log(booksBox.addBooks(7))
-console.log(booksBox.addBooks(4))
-console.log(booksBox.addBooks(2))
+// console.log(booksBox.addBooks(4))
+console.log(booksBox.addBooks(1))
 // console.log(booksBox.addBooks(1))
 console.log(booksBox)
