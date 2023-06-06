@@ -120,8 +120,8 @@ booksBox.addBooks = booksQuantity => {
   if(booksBox.booksIn + booksQuantity > booksBox.spaces) {
     const valid = booksBox.spaces - booksBox.booksIn 
     const valideMensage = valid === 1 ? 'cabe' : 'cabem'
-    const pluralValide = booksBox.spaces - booksBox.booksIn === 1 ? 'livro' : 'livros'
-    return `Só ${valideMensage} mais ${booksBox.spaces - booksBox.booksIn} ${pluralValide}`
+    const pluralValide = valid === 1 ? 'livro' : 'livros'
+    return `Só ${valideMensage} mais ${valid} ${pluralValide}`
   }
   booksBox.booksIn += booksQuantity
   const pluralValid = booksBox.booksIn === 1 ? 'livro' : 'livros'
