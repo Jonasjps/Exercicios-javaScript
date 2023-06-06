@@ -113,3 +113,10 @@ let booksBox = {
   booksIn: 0
 }
 
+booksBox.addBooks = booksQuantity => {
+  booksBox.booksIn += booksQuantity
+  return `Já há ${booksBox.booksIn} livros na caixa`
+}
+
+console.log(booksBox.addBooks(2))
+console.log(booksBox)
