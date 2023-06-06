@@ -118,14 +118,17 @@ booksBox.addBooks = booksQuantity => {
     return `A caixa já está cheia`
   }
   if(booksBox.booksIn + booksQuantity > booksBox.spaces) {
-    return `Só cabem mais ${booksBox.spaces - booksBox.booksIn} livros`
+    const valid = booksBox.spaces - booksBox.booksIn 
+    const valideMensage = valid === 1 ? 'cabe' : 'cabem'
+    const pluralValide = booksBox.spaces - booksBox.booksIn === 1 ? 'livro' : 'livros'
+    return `Só ${valideMensage} mais ${booksBox.spaces - booksBox.booksIn} ${pluralValide}`
   }
   booksBox.booksIn += booksQuantity
   return `Já há ${booksBox.booksIn} livros na caixa`
 }
 
-console.log(booksBox.addBooks(2))
+// console.log(booksBox.addBooks(7))
 console.log(booksBox.addBooks(4))
-// console.log(booksBox.addBooks(1))
+console.log(booksBox.addBooks(2))
 // console.log(booksBox.addBooks(1))
 console.log(booksBox)
