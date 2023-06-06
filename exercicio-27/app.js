@@ -114,14 +114,17 @@ let booksBox = {
 }
 
 booksBox.addBooks = (booksQuantity) => {
-  if(booksBox.booksIn) {
-    return `Já há '${booksBox.booksIn}' livros na caixa`
-  }
   booksBox.booksIn += booksQuantity
-  
+  if(booksBox.booksIn === booksBox.spaces) {
+    return 'A caixa já está cheia'
+  }
+
+  return `Já há '${booksBox.booksIn}' livros na caixa`
   
 }
 
-booksBox.addBooks(2)
-booksBox.addBooks(2)
+console.log(booksBox.addBooks(2))
+console.log(booksBox.addBooks(2))
+console.log(booksBox.addBooks(1))
+
 console.log(booksBox)
