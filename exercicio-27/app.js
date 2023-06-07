@@ -53,11 +53,7 @@ console.log(lesserThanFive)
 */
 
 const prices = [12, 19, 7, 209]
-let totalPrice = 0
-
-for (let i = 0; i < prices.length; i++) {
-  totalPrice += prices[i]
-}
+const totalPrice = prices.reduce((acc, price) => acc + price ,0)
 
 console.log(`Preço total: ${totalPrice}`)
 
