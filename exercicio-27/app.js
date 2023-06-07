@@ -9,7 +9,9 @@ console.log('Linha 2')
 console.log('Linha 3')
 console.log('Linha 4')
 
-
+setTimeout(() => {
+  console.log('A função de callback foi executada.')
+}, 3000)
 
 console.log('Linha 5')
 console.log('Linha 6')
