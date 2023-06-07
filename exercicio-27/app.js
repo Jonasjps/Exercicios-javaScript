@@ -118,14 +118,20 @@ let booksBox = {
   spaces: 5,
   booksIn: 0
 }
+
 const validPluralOrSingula = (amount, plural, singular) => {
   return amount === 1 ? plural : singular
-} 
+}
+
 booksBox.addBooks = booksQuantity => {
-  if(booksBox.booksIn === booksBox.spaces) {
+  const checKingBox = booksBox.booksIn === booksBox.spaces
+
+  if(checKingBox) {
     return 'A caixa já está cheia'
   }
-  if(booksBox.booksIn + booksQuantity > booksBox.spaces) {
+  const returnAmountBoxAvalilable = booksBox.booksIn + booksQuantity > booksBox.spaces
+
+  if(returnAmountBoxAvalilable) {
     const valid = booksBox.spaces - booksBox.booksIn
     const validMensage = validPluralOrSingula(valid, 'cabe', 'cabem')
     const pluralValid = validPluralOrSingula(valid, 'livro', 'livros')
