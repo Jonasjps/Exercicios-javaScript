@@ -127,13 +127,13 @@ booksBox.addBooks = booksQuantity => {
   }
   if(booksBox.booksIn + booksQuantity > booksBox.spaces) {
     const valid = booksBox.spaces - booksBox.booksIn
-    const validMensage = valid === 1 ? 'cabe' : 'cabem'
-    const pluralValid = valid === 1 ? 'livro' : 'livros'
+    const validMensage = validPluralOrSingula(valid, 'cabe', 'cabem')
+    const pluralValid = validPluralOrSingula(valid, 'livro', 'livros')
     return `Só ${validMensage} mais ${valid} ${pluralValid}`
   }
 
   booksBox.booksIn += booksQuantity
-  const pluralValid = booksBox.booksIn === 1 ? 'livro' : 'livros'
+  const pluralValid = validPluralOrSingula(booksBox.booksIn, 'livro', 'livros')
   return `Já há ${booksBox.booksIn} ${pluralValid} na caixa`
 }
 
