@@ -80,6 +80,17 @@ console.log(secondCar.color, car.color)
   - Se todos os argumentos forem passados, retorne a string 'A função foi 
     invocada com 3 argumentos'.
 */
+const newFunc = (paramete1, paramete2, paramete3) => {
+
+  const validadeDEundeFined = [paramete1, paramete2, paramete3].includes(undefined)
+
+  return validadeDEundeFined 
+    ? `A função deve ser invocada com 3 argumentos` 
+    : 'A função foi invocada com 3 argumentos'
+
+}
+
+console.log(newFunc(()=>{},[],{}))
 
 /*
   07
