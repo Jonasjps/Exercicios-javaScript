@@ -4,19 +4,19 @@
   - Implemente um código assíncrono entre os console.log() abaixo.
 */
 
-console.log('Linha 1')
-console.log('Linha 2')
-console.log('Linha 3')
-console.log('Linha 4')
+// console.log('Linha 1')
+// console.log('Linha 2')
+// console.log('Linha 3')
+// console.log('Linha 4')
 
 setTimeout(() => {
   console.log('A função de callback foi executada.')
 }, 3000)
 
-console.log('Linha 5')
-console.log('Linha 6')
-console.log('Linha 7')
-console.log('Linha 8')
+// console.log('Linha 5')
+// console.log('Linha 6')
+// console.log('Linha 7')
+// console.log('Linha 8')
 
 /*
   02
@@ -118,3 +118,24 @@ let booksBox = {
   spaces: 5,
   booksIn: 0
 }
+
+booksBox.addBooks = booksQuantity => {
+  if(booksBox.booksIn === booksBox.spaces) {
+    return 'A caixa já está cheia'
+  }
+  if(booksBox.booksIn + booksQuantity > booksBox.spaces) {
+    const valid = booksBox.spaces - booksBox.booksIn
+    const validMensage = valid === 1 ? 'cabe' : 'cabem'
+    const pluralValid = valid === 1 ? 'livro' : 'livros'
+    return `Só ${validMensage} mais ${valid} ${pluralValid}`
+  }
+
+  booksBox.booksIn += booksQuantity
+  return `Já há ${booksBox.booksIn} livros na caixa`
+}
+
+// console.log(booksBox.addBooks(6))
+console.log(booksBox.addBooks(4))
+console.log(booksBox.addBooks(2))
+// console.log(booksBox.addBooks(1))
+console.log(booksBox)
