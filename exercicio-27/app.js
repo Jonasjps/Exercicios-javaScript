@@ -118,7 +118,9 @@ let booksBox = {
   spaces: 5,
   booksIn: 0
 }
-
+const validPluralOrSingula = (amount, plural, singular) => {
+  return amount === 1 ? plural : singular
+} 
 booksBox.addBooks = booksQuantity => {
   if(booksBox.booksIn === booksBox.spaces) {
     return 'A caixa já está cheia'
