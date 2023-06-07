@@ -4,19 +4,17 @@
   - Implemente um código assíncrono entre os console.log() abaixo.
 */
 
-// console.log('Linha 1')
-// console.log('Linha 2')
-// console.log('Linha 3')
-// console.log('Linha 4')
+console.log('Linha 1')
+console.log('Linha 2')
+console.log('Linha 3')
+console.log('Linha 4')
 
-// setTimeout(() => {
-//   console.log('A função foi de callback foi executada! ')
-// }, 5000)
 
-// console.log('Linha 5')
-// console.log('Linha 6')
-// console.log('Linha 7')
-// console.log('Linha 8')
+
+console.log('Linha 5')
+console.log('Linha 6')
+console.log('Linha 7')
+console.log('Linha 8')
 
 /*
   02
@@ -29,10 +27,7 @@ function logGreeting (name) {
   console.log(`olá, ${name}`)
 }
 
-const x = callback => {
-  callback('Jonas')
-}
-x(logGreeting)
+// x(logGreeting)
 
 /*
   03
@@ -52,7 +47,11 @@ console.log(lesserThanFive)
 */
 
 const prices = [12, 19, 7, 209]
-const totalPrice = prices.reduce((acc, price) => acc + price, 0)
+let totalPrice = 0
+
+for (let i = 0; i < prices.length; i++) {
+  totalPrice += prices[i]
+}
 
 console.log(`Preço total: ${totalPrice}`)
 
@@ -61,13 +60,11 @@ console.log(`Preço total: ${totalPrice}`)
 
   - Abaixo da declaração do objeto "car", modifique a cor do carro para 'azul';
   - Não insira `car.color = azul`.
+  - Não insira `car['color'] = azul`.
 */
 
 let car = { color: 'amarelo' }
-const secondCar = car
 
-secondCar.color = 'Azul'
-console.log(car.color ,secondCar.color)
 /*
   06
 
@@ -77,15 +74,7 @@ console.log(car.color ,secondCar.color)
   - Se todos os argumentos forem passados, retorne a string 'A função foi 
     invocada com 3 argumentos'.
 */
-const myFunc = (paramete1, paramete2, paramete3) => {
-  const validadParamet = [paramete1, paramete2, paramete3].includes(undefined)  
-  return validadParamet 
-    ? 'A função deve ser invocada com 3 argumentos'
-    : 'A função foi invocada com 3 argumentos'
 
-}
-
-console.log(myFunc(() => {}, {}))
 /*
   07
 
@@ -112,24 +101,3 @@ let booksBox = {
   spaces: 5,
   booksIn: 0
 }
-
-booksBox.addBooks = booksQuantity => {
-  if(booksBox.booksIn === booksBox.spaces) {
-    return `A caixa já está cheia`
-  }
-  if(booksBox.booksIn + booksQuantity > booksBox.spaces) {
-    const valid = booksBox.spaces - booksBox.booksIn 
-    const valideMensage = valid === 1 ? 'cabe' : 'cabem'
-    const pluralValide = valid === 1 ? 'livro' : 'livros'
-    return `Só ${valideMensage} mais ${valid} ${pluralValide}`
-  }
-  booksBox.booksIn += booksQuantity
-  const pluralValid = booksBox.booksIn === 1 ? 'livro' : 'livros'
-  return `Já há ${booksBox.booksIn} ${pluralValid} na caixa`
-}
-
-// console.log(booksBox.addBooks(7))
-// console.log(booksBox.addBooks(4))
-console.log(booksBox.addBooks(1))
-// console.log(booksBox.addBooks(1))
-console.log(booksBox)
