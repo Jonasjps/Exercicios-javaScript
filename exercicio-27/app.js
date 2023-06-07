@@ -28,8 +28,11 @@ console.log('Linha 8')
 function logGreeting (name) {
   console.log(`olá, ${name}`)
 }
+const x = callback => {
+  callback('Jonas, tudo bem?')
+}
 
-// x(logGreeting)
+x(logGreeting)
 
 /*
   03
@@ -38,7 +41,8 @@ function logGreeting (name) {
 */
 
 const numbers = [3, 4, 10, 20]
-const lesserThanFive = numbers.filter(num => num < 5)
+const numbersMaior =  num => num < 5
+const lesserThanFive = numbers.filter(numbersMaior)
 
 console.log(lesserThanFive)
 
