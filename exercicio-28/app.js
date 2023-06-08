@@ -18,7 +18,10 @@
 const request = new XMLHttpRequest()
 
 request.addEventListener('readystatechange', () => {
-  console.log(request)
+  if(request.readyState === 4) {
+    console.log(request)
+    console.log(request.responseText)
+  }
 })
 request.open('GET', 'https://pokeapi.co/api/v2/pokemon/pikachu')
 request.send()
