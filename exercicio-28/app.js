@@ -111,7 +111,14 @@ personalInformation.addMetros(3)
     - Se a quantidade de metros caminhados for 1, substitua "metros" por 
       "metro", no singular.
 */
-
+const validpluralOrSingular = (quantity, plural, singular) => quantity === 1 ? plural : singular
+personalInformation.addMessage = () => {
+   const message =  `Oi. Eu sou o ${personalInformation.Nome} ${personalInformation.Sobrenome}, tenho ${personalInformation.Idade} anos, ${personalInformation.Altura} metros de altura, 
+      peso ${personalInformation.Peso} quilos e, só hoje, eu já caminhei ${personalInformation.MetrosCaminhado} 
+      metros.`
+  return message
+}
+console.log(personalInformation.addMessage())
 /*
   06
 
