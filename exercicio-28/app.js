@@ -45,7 +45,15 @@ request.send()
     - Se você está andando (boolean iniciado em false);
     - Quantos metros você caminhou (number iniciado em 0).
 */
-
+const personalInformation  = {
+  Nome: 'Jonas',
+  Sobrenome: 'Pessoa', 
+  Sexo: 'Masculino',
+  Altura: 1.75 ,
+  Peso: 68 ,
+  VoceEstaAndando: false ,
+  MetrosCaminhado: 0
+}
 /*
   03
 
