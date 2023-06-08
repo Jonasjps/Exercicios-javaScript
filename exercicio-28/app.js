@@ -81,7 +81,17 @@ console.log(personalInformation)
   - Após criar o método, faça a pessoa caminhar alguns metros, invocando o 
     método 4x, com diferentes metragens passadas por parâmetro.
 */
+personalInformation.addMetros = (metros = 0) => {
+  personalInformation.MetrosCaminhado += metros
+  
+  if(personalInformation.MetrosCaminhado > 0) {
+     personalInformation.VoceEstaAndando = true
+  }
+  
+  return personalInformation.MetrosCaminhado
+}
 
+console.log(personalInformation.addMetros(10))
 /*
   05
 
