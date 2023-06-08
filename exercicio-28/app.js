@@ -68,9 +68,9 @@ personalInformation.addAge = (age = 1 ) => {
   return personalInformation.Idade
 }
 
-console.log(personalInformation.addAge())
-console.log(personalInformation.addAge())
-console.log(personalInformation.addAge())
+console.log(personalInformation.addAge(5))
+console.log(personalInformation)
+// console.log(personalInformation.addAge())
 /*
   04
 
