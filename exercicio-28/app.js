@@ -18,12 +18,18 @@
 const request = new XMLHttpRequest()
 
 request.addEventListener('readystatechange', () => {
-  if(request.readyState === 4) {
+  console.log(request.readyState)
+  if(request.readyState === 4 && request.status === 200) {
     console.log(request)
-    console.log(request.responseText)
   }
+
+  // if(!request.readyState === 4 && !request.status === 200) {
+  //   return console.log(`Não foi possível obter os dados do pokémon`)
+  // }
+  
 })
-request.open('GET', 'https://pokeapi.co/api/v2/pokemon/pikachu')
+
+request.open('GET', 'https://pokeapi.co/api/v2/')
 request.send()
 /*
   02
