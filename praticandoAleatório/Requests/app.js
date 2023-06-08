@@ -8,5 +8,5 @@ request.addEventListener('readystatechange', () => {
 })
 
 
-request.open('GET', 'https://jsonplaceholder.typicode.com/todoss' )
+request.open('GET', 'https://jsonplaceholder.typicode.com/todos' )
 request.send()
