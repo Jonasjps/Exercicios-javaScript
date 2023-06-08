@@ -68,7 +68,7 @@ personalInformation.addAge = (age = 1 ) => {
   return personalInformation.Idade
 }
 
-console.log(personalInformation.addAge(5))
+personalInformation.addAge(5)
 console.log(personalInformation)
 // console.log(personalInformation.addAge())
 /*
@@ -91,7 +91,10 @@ personalInformation.addMetros = (metros = 0) => {
   return personalInformation.MetrosCaminhado
 }
 
-console.log(personalInformation.addMetros(10))
+personalInformation.addMetros(10)
+personalInformation.addMetros(5)
+personalInformation.addMetros(2)
+personalInformation.addMetros(3)
 /*
   05
 
