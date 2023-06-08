@@ -49,9 +49,10 @@ const personalInformation  = {
   Nome: 'Jonas',
   Sobrenome: 'Pessoa', 
   Sexo: 'Masculino',
-  Altura: 1.75 ,
+  Idade: 28,
+  Altura: 1.75,
   Peso: 68 ,
-  VoceEstaAndando: false ,
+  VoceEstaAndando: false,
   MetrosCaminhado: 0
 }
 /*
@@ -62,7 +63,14 @@ const personalInformation  = {
   - A cada vez que o método é invocado, 1 deve ser somado à idade atual;
   - Após criar o método, adicione 5 anos à idade do objeto.
 */
+personalInformation.addAge = (age = 1 ) => {
+  personalInformation.Idade += age
+  return personalInformation.Idade
+}
 
+console.log(personalInformation.addAge())
+console.log(personalInformation.addAge())
+console.log(personalInformation.addAge())
 /*
   04
 
