@@ -134,10 +134,19 @@ personalInformation.addMessage = () => {
 const isFalse = value => Boolean(value)
 
 const valuesFalsys = [false, null, undefined, 0, NaN, '']
+const valuesTruthys = [true, {}, [], 42, "foo", new Date(), -42]
 
 valuesFalsys.forEach(valueFalse => {
   console.log(isFalse(valueFalse))
 })
+
+
+const isTruthy = value => Boolean(value)
+
+valuesTruthys.forEach(valuetruthy => {
+  console.log(isTruthy(valuetruthy))
+})
+
 
 /*
   07
