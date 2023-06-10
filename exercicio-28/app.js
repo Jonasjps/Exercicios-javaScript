@@ -19,7 +19,7 @@ const request  = new XMLHttpRequest()
 
 request.addEventListener('readystatechange', () => {
   if(request.readyState === 4 && request.status === 200){
-    console.log(request)
+    // console.log(request)
     return
   }
 
@@ -69,7 +69,7 @@ personalInformation.addAge = (age = 1 ) => {
 }
 
 personalInformation.addAge(5)
-console.log(personalInformation)
+// console.log(personalInformation)
 // console.log(personalInformation.addAge())
 /*
   04
@@ -118,7 +118,7 @@ personalInformation.addMessage = () => {
       metros.`
   return message
 }
-console.log(personalInformation.addMessage())
+// console.log(personalInformation.addMessage())
 /*
   06
 
@@ -130,7 +130,13 @@ console.log(personalInformation.addMessage())
     valor truthy;
     - Faça isso até que 7 valores truthy sejam passados.
 */
+const valueBooleans = value => {
+  if(value) {
+   return  value
+  }
+}
 
+console.log(valueBooleans(null))
 /*
   07
 
