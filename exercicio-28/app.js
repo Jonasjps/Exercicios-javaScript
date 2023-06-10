@@ -130,13 +130,15 @@ personalInformation.addMessage = () => {
     valor truthy;
     - Faça isso até que 7 valores truthy sejam passados.
 */
-const valueBooleans = value => {
-  if(value) {
-   return  value
-  }
-}
 
-console.log(valueBooleans(null))
+const isFalse = value => Boolean(value)
+
+const valuesFalsys = [false, null, undefined, 0, NaN, '']
+
+valuesFalsys.forEach(valueFalse => {
+  console.log(isFalse(valueFalse))
+})
+
 /*
   07
 
