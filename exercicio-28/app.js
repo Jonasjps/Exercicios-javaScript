@@ -166,3 +166,20 @@ valuesTruthys.forEach(valuetruthy => {
 
   Dica: propriedades de objetos podem ser declaradas como strings.
 */
+const SaudeIlustrado = {
+  jonas: {paginas: 851, autor: 'Jonas', editora: 'Jeová'},
+  mateus: {paginas: 851, autor: 'Jonas', editora: 'Jeová'},
+  proverbios: {paginas: 851, autor: 'Jonas', editora: 'Jeová'}
+}
+
+const books = SaudeIlustrado => {
+   SaudeIlustrado = {
+    jonas: {paginas: 851, autor: 'Jonas', editora: 'Jeová'},
+    mateus: {paginas: 851, autor: 'Jonas', editora: 'Jeová'},
+    proverbios: {paginas: 851, autor: 'Jonas', editora: 'Jeová'}
+  }
+  return SaudeIlustrado
+}
+
+console.log(books(SaudeIlustrado.jonas.autor))
+// console.log(SaudeIlustrado)
