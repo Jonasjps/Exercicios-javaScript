@@ -93,10 +93,10 @@ personalInformation.addMetros = (metros = 0) => {
   return personalInformation.MetrosCaminhado
 }
 
-personalInformation.addMetros(10)
-personalInformation.addMetros(5)
-personalInformation.addMetros(2)
-personalInformation.addMetros(3)
+// personalInformation.addMetros(0)
+// personalInformation.addMetros(5)
+// personalInformation.addMetros(2)
+personalInformation.addMetros(1)
 /*
   05
 
@@ -117,10 +117,11 @@ const validpluralOrSingular = (quantity, plural, singular) => quantity === 1 ? p
 personalInformation.addMessage = () => {
    const message =  `Oi. Eu sou o ${personalInformation.Nome} ${personalInformation.Sobrenome}, tenho ${personalInformation.Idade} anos, ${personalInformation.Altura} metros de altura, 
       peso ${personalInformation.Peso} quilos e, só hoje, eu já caminhei ${personalInformation.MetrosCaminhado} 
-      metros.`
+      ${validpluralOrSingular(personalInformation.MetrosCaminhado, 'metro', 'metros')}.`
   return message
 }
-// console.log(personalInformation.addMessage())
+  console.log(personalInformation.addMessage())
+
 /*
   06
 
