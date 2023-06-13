@@ -55,6 +55,8 @@ const personalInformation  = {
   VoceEstaAndando: false,
   MetrosCaminhado: 0
 }
+
+console.log(personalInformation)
 /*
   03
 
