@@ -57,20 +57,7 @@ personalInformation.addAge(5)
   - Após criar o método, faça a pessoa caminhar alguns metros, invocando o 
     método 4x, com diferentes metragens passadas por parâmetro.
 */
-personalInformation.addMetros = (metros = 0) => {
-  personalInformation.MetrosCaminhado += metros
-  
-  if(personalInformation.MetrosCaminhado > 0) {
-     personalInformation.VoceEstaAndando = true
-  }
-  
-  return personalInformation.MetrosCaminhado
-}
 
-// personalInformation.addMetros(0)
-// personalInformation.addMetros(5)
-// personalInformation.addMetros(2)
-personalInformation.addMetros(1)
 /*
   05
 
@@ -87,14 +74,7 @@ personalInformation.addMetros(1)
     - Se a quantidade de metros caminhados for 1, substitua "metros" por 
       "metro", no singular.
 */
-const validpluralOrSingular = (quantity, plural, singular) => quantity === 1 ? plural : singular
-personalInformation.addMessage = () => {
-   const message =  `Oi. Eu sou o ${personalInformation.Nome} ${personalInformation.Sobrenome}, tenho ${personalInformation.Idade} ${validpluralOrSingular(personalInformation.Idade, 'ano','anos')}, ${personalInformation.Altura} metros de altura, 
-      peso ${personalInformation.Peso} quilos e, só hoje, eu já caminhei ${personalInformation.MetrosCaminhado} 
-      ${validpluralOrSingular(personalInformation.MetrosCaminhado, 'metro', 'metros')}.`
-  return message
-}
-  console.log(personalInformation.addMessage())
+
 
 /*
   06
@@ -108,21 +88,7 @@ personalInformation.addMessage = () => {
     - Faça isso até que 7 valores truthy sejam passados.
 */
 
-const isFalse = value => Boolean(value)
 
-const valuesFalsys = [false, null, undefined, 0, NaN, '']
-const valuesTruthys = [true, {}, [], 42, "foo", new Date(), -42]
-
-valuesFalsys.forEach(valueFalse => {
-  console.log(isFalse(valueFalse))
-})
-
-
-const isTruthy = value => Boolean(value)
-
-valuesTruthys.forEach(valuetruthy => {
-  console.log(isTruthy(valuetruthy))
-})
 
 
 /*
@@ -143,20 +109,4 @@ valuesTruthys.forEach(valuetruthy => {
 
   Dica: propriedades de objetos podem ser declaradas como strings.
 */
-const SaudeIlustrado = {
-  jonas: {paginas: 851, autor: 'Jonas', editora: 'Jeová'},
-  mateus: {paginas: 851, autor: 'Jonas', editora: 'Jeová'},
-  proverbios: {paginas: 851, autor: 'Jonas', editora: 'Jeová'}
-}
 
-const books = SaudeIlustrado => {
-   SaudeIlustrado = {
-    jonas: {paginas: 851, autor: 'Jonas', editora: 'Jeová'},
-    mateus: {paginas: 851, autor: 'Jonas', editora: 'Jeová'},
-    proverbios: {paginas: 851, autor: 'Jonas', editora: 'Jeová'}
-  }
-  return SaudeIlustrado
-}
-
-console.log(books(SaudeIlustrado.jonas.autor))
-// console.log(SaudeIlustrado)
