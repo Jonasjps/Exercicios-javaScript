@@ -15,7 +15,10 @@
     obter os dados do pokémon';
   - Teste também a verificação do item acima.
 */
-
+const request = new XMLHttpRequest()
+console.log(request)
+request.open('GET','https://pokeapi.co/api/v2/pokemon/pikachu' )
+request.send()
 /*
   02
 
