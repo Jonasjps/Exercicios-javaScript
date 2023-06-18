@@ -45,7 +45,11 @@ request.send()
 */
 const infoPerson = {
   name: 'Jonas',
-  lastName: 'Pessoa'
+  lastName: 'Pessoa',
+  sex: 'Masculino',
+  idade: 28,
+  altura: 1.75
+
 }
 /*
   03
