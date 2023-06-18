@@ -47,9 +47,11 @@ const infoPerson = {
   name: 'Jonas',
   lastName: 'Pessoa',
   sex: 'Masculino',
-  idade: 28,
-  altura: 1.75
-
+  age: 28,
+  heigth: 1.75,
+  weigth:  68,
+  walking: false,
+  metersWalked : 0
 }
 /*
   03
