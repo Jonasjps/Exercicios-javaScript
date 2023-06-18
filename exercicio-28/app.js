@@ -91,8 +91,13 @@ infoPerson.addMeters = meters => {
 
 const meters = [5, 10, 20, 30]
 
+meters.forEach(meter => {
+  infoPerson.addMeters(meter)
+})
+
+infoPerson.addMeters(5)
 console.log(infoPerson)
-console.log(infoPerson.addMeters(10), infoPerson.walking)
+console.log(infoPerson.metersWalked, infoPerson.walking)
 /*
   05
 
