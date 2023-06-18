@@ -84,7 +84,15 @@ const infoPerson = {
   - Após criar o método, faça a pessoa caminhar alguns metros, invocando o 
     método 4x, com diferentes metragens passadas por parâmetro.
 */
+infoPerson.addMeters = meters => {
+  infoPerson.metersWalked += meters
+  infoPerson.walking = true
+}
 
+const meters = [5, 10, 20, 30]
+
+console.log(infoPerson)
+console.log(infoPerson.addMeters(10), infoPerson.walking)
 /*
   05
 
