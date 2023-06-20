@@ -43,18 +43,7 @@ request.send()
     - Se você está andando (boolean iniciado em false);
     - Quantos metros você caminhou (number iniciado em 0).
 */
-const infoPerson = {
-  name: 'Jonas',
-  lastName: 'Pessoa',
-  sex: 'Masculino',
-  age: 28,
-  heigth: 1.75,
-  weigth:  68,
-  walking: false,
-  metersWalked : 0
-}
 
- console.log(infoPerson)
 /*
   03
 
