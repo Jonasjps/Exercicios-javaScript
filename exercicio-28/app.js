@@ -55,6 +55,7 @@ const infoPerson = {
   walking: false,
   metersWalked: 0
 }
+console.log(infoPerson)
 /*
   03
 
@@ -63,8 +64,14 @@ const infoPerson = {
   - A cada vez que o método é invocado, 1 deve ser somado à idade atual;
   - Após criar o método, adicione 5 anos à idade do objeto.
 */
+  infoPerson.increment = () => {
+    infoPerson.age++
+  }
+  for(let c = 0; c < 5; c++) {
+    infoPerson.increment()
+  }
   
-  
+  console.log(infoPerson.age)
 /*
   04
 
