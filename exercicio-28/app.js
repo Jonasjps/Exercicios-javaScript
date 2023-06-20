@@ -24,7 +24,7 @@ request.addEventListener('readystatechange', () => {
   }
 
   if(request.readyState === 4) {
-    return console.log('Não foi possível obter os dados do pokémon')    
+    console.log('Não foi possível obter os dados do pokémon')    
   }
 })
 
