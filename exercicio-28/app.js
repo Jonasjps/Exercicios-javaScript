@@ -15,20 +15,7 @@
     obter os dados do pokémon';
   - Teste também a verificação do item acima.
 */
-const request = new XMLHttpRequest()
 
-request.addEventListener('readystatechange', () => {
-  if(request.readyState === 4 && request.status === 200) {
-    // console.log(request.responseText)
-    return
-  }
-
-  if(request.readyState === 4) {
-    console.log('Não foi possível obter os dados do pokémon')
-  }
-})
-request.open('GET','https://pokeapi.co/api/v2/pokemon/pikachu' )
-request.send()
 /*
   02
 
