@@ -52,16 +52,7 @@ request.send()
   - A cada vez que o método é invocado, 1 deve ser somado à idade atual;
   - Após criar o método, adicione 5 anos à idade do objeto.
 */
-  infoPerson.addAge = () => {
-    infoPerson.age++
-  }
   
-  for(let i = 0; i < 5; i++) {
-    infoPerson.addAge()
-  }
-
-  console.log(infoPerson.age)
-
   
 /*
   04
