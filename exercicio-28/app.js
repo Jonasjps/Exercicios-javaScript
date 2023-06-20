@@ -52,7 +52,8 @@ const infoPerson = {
   age: 28,
   heigth: 1.75,
   weigth: 68,
-
+  walking: false,
+  metersWalked: 0
 }
 /*
   03
