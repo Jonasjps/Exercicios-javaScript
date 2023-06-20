@@ -51,7 +51,8 @@ const infoPerson = {
   sex: 'Masculino',
   age: 28,
   heigth: 1.75,
-  
+  weigth: 68,
+
 }
 /*
   03
