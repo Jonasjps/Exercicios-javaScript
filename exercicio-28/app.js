@@ -135,12 +135,17 @@ infoPerson.returnMessage = () => {
     valor truthy;
     - Faça isso até que 7 valores truthy sejam passados.
 */
-const booleanFalsy = value => Boolean(value)
+const valloresFalsy = value => Boolean(value)
 
 const valueFalsy = [null, undefined, false, NaN, 0, -0, 0n, '']
+const valueThuthy = [true, {}, [], -42, '0', new Date(), 3.14]
+
+valueThuthy.forEach(value => {
+  console.log(valloresFalsy(value))
+})
 
 valueFalsy.forEach(value => {
-  console.log(booleanFalsy(value))
+  console.log(valloresFalsy(value))
 })
 
 
