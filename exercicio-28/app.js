@@ -109,7 +109,13 @@ console.log(infoPerson.metersWalked, infoPerson.walking)
     - Se a quantidade de metros caminhados for 1, substitua "metros" por 
       "metro", no singular.
 */
+  infoPerson.returnMessage = () => {
+    return `Oi. Eu sou o NOME_COMPLETO, tenho IDADE anos, ALTURA metros de altura, 
+    peso PESO quilos e, só hoje, eu já caminhei QUANTIDADE_DE_METROS_CAMINHADOS 
+    metros.`
+  }
 
+  console.log(infoPerson.returnMessage())
 
 /*
   06
