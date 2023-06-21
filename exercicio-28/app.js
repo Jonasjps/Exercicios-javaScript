@@ -187,8 +187,9 @@ const booksFavoritos = nameBooks => {
       autor: 'jean jackison',
       editora: 'Maria maria'
     }
+    
   }
-  return books[nameBooks]
+  return books[nameBooks] ? books[nameBooks] : books
 }
 
-console.log(booksFavoritos('Marley e Eu'))
+console.log(booksFavoritos('Historias Biblicas'))
