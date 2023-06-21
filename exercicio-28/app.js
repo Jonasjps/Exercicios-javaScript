@@ -110,7 +110,9 @@ console.log(infoPerson.metersWalked, infoPerson.walking)
       "metro", no singular.
 */
   infoPerson.returnMessage = () => {
-    return `Oi. Eu sou o ${infoPerson.name} ${infoPerson.lasName}, tenho ${infoPerson.age} anos, ${infoPerson.heigth} metros de altura, 
+    const nameFeminino =  infoPerson.sex === 'Feminino' ? 'a' : 'o'
+
+    return `Oi. Eu sou ${nameFeminino} ${infoPerson.name} ${infoPerson.lasName}, tenho ${infoPerson.age} anos, ${infoPerson.heigth} metros de altura, 
     peso ${infoPerson.weigth} quilos e, só hoje, eu já caminhei ${infoPerson.metersWalked} 
     metros.`
   }
