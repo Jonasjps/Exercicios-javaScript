@@ -168,8 +168,8 @@ valueFalsy.forEach(value => {
 
   Dica: propriedades de objetos podem ser declaradas como strings.
 */
-const books = nameBooks => {
-  return {
+const booksFavoritos = nameBooks => {
+  const books = {
     'Historias Biblicas': {
       paginas: 190,
       autor: 'Betel',
@@ -187,6 +187,8 @@ const books = nameBooks => {
       autor: 'jean jackison',
       editora: 'Maria maria'
     }
-
   }
+  return books[nameBooks]
 }
+
+console.log(booksFavoritos('Marley e Eu'))
