@@ -111,10 +111,12 @@ console.log(infoPerson.metersWalked, infoPerson.walking)
 */
 
 const silgularOfPlural = (infoPerson, unit, singular, plural) => infoPerson === unit ? singular : plural
-  infoPerson.returnMessage = () => {
+
+infoPerson.returnMessage = () => {
     const nameFeminino =  infoPerson.sex === 'Feminino' ? 'a' : 'o'
     const chekingAgeSingularOfPlural = silgularOfPlural(infoPerson.age, 1, 'ano', 'anos')
     const checkingMetersSingularofPlural = silgularOfPlural(infoPerson.metersWalked, 1, 'metro', 'metros')
+
     return `Oi. Eu sou ${nameFeminino} ${infoPerson.name} ${infoPerson.lasName}, tenho ${infoPerson.age} ${chekingAgeSingularOfPlural}, ${infoPerson.heigth} metros de altura, 
     peso ${infoPerson.weigth} quilos e, só hoje, eu já caminhei ${infoPerson.metersWalked} 
     ${checkingMetersSingularofPlural}.`
@@ -133,7 +135,9 @@ const silgularOfPlural = (infoPerson, unit, singular, plural) => infoPerson === 
     valor truthy;
     - Faça isso até que 7 valores truthy sejam passados.
 */
-
+const booleanFalsy = value => Boolean(value)
+const 
+console.log(booleanFalsy())
 
 
 
