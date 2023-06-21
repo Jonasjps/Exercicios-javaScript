@@ -111,8 +111,9 @@ console.log(infoPerson.metersWalked, infoPerson.walking)
 */
   infoPerson.returnMessage = () => {
     const nameFeminino =  infoPerson.sex === 'Feminino' ? 'a' : 'o'
+    const chekingAge = infoPerson.age === 1 ? 'ano' : 'anos'
 
-    return `Oi. Eu sou ${nameFeminino} ${infoPerson.name} ${infoPerson.lasName}, tenho ${infoPerson.age} anos, ${infoPerson.heigth} metros de altura, 
+    return `Oi. Eu sou ${nameFeminino} ${infoPerson.name} ${infoPerson.lasName}, tenho ${infoPerson.age} ${chekingAge}, ${infoPerson.heigth} metros de altura, 
     peso ${infoPerson.weigth} quilos e, só hoje, eu já caminhei ${infoPerson.metersWalked} 
     metros.`
   }
