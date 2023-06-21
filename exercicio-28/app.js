@@ -85,9 +85,12 @@ console.log(infoPerson)
 infoPerson.Walked = meters => {
   infoPerson.metersWalked += meters
   infoPerson.walking = true
-  
 }
-infoPerson.Walked(10)
+const metersWalked = [10, 20 , 30, 5]
+ 
+metersWalked.forEach(meter => {
+  infoPerson.Walked(meter)
+})
 
 console.log(infoPerson.metersWalked, infoPerson.walking)
 /*
