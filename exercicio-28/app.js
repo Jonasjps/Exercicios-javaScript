@@ -109,13 +109,15 @@ console.log(infoPerson.metersWalked, infoPerson.walking)
     - Se a quantidade de metros caminhados for 1, substitua "metros" por 
       "metro", no singular.
 */
+
+const silgularOfPlural = (infoPerson, unit, singular, plural) => infoPerson === unit ? singular : plural
   infoPerson.returnMessage = () => {
     const nameFeminino =  infoPerson.sex === 'Feminino' ? 'a' : 'o'
-    const chekingAge = infoPerson.age === 1 ? 'ano' : 'anos'
-
-    return `Oi. Eu sou ${nameFeminino} ${infoPerson.name} ${infoPerson.lasName}, tenho ${infoPerson.age} ${chekingAge}, ${infoPerson.heigth} metros de altura, 
+    const chekingAgeSingularOfPlural = silgularOfPlural(infoPerson.age, 1, 'ano', 'anos')
+    const checkingMetersSingularofPlural = silgularOfPlural(infoPerson.metersWalked, 1, 'metro', 'metros')
+    return `Oi. Eu sou ${nameFeminino} ${infoPerson.name} ${infoPerson.lasName}, tenho ${infoPerson.age} ${chekingAgeSingularOfPlural}, ${infoPerson.heigth} metros de altura, 
     peso ${infoPerson.weigth} quilos e, só hoje, eu já caminhei ${infoPerson.metersWalked} 
-    metros.`
+    ${checkingMetersSingularofPlural}.`
   }
 
   console.log(infoPerson.returnMessage())
