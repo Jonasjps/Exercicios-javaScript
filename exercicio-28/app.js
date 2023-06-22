@@ -86,15 +86,14 @@ console.log(infoPerson.age)
     método 4x, com diferentes metragens passadas por parâmetro.
 */
 infoPerson.Meters = meter => {
-   infoPerson.walkedMeters += meter
-   infoPerson.walking = true
-   return
-}
-
-infoPerson.Meters(5)
-infoPerson.Meters(5)
-infoPerson.Meters(5)
-infoPerson.Meters(5)
+  infoPerson.walkedMeters += meter
+ }
+  const quantatyMetesWalked = [15, 21, 33, 12, 3]
+  
+  quantatyMetesWalked.forEach(meter => {
+    infoPerson.walkedMeters += meter
+    infoPerson.walking = true
+})
 
 console.log(infoPerson.walkedMeters, infoPerson.walking)
 /*
@@ -114,7 +113,12 @@ console.log(infoPerson.walkedMeters, infoPerson.walking)
       "metro", no singular.
 */
 
+infoPerson.stringMessage = () => {
+  return `Oi. Eu sou o ${infoPerson.name} ${infoPerson.lasName}, tenho ${infoPerson.age} anos, ${infoPerson.heigth} metros de altura, 
+  peso ${infoPerson.weigth} quilos e, só hoje, eu já caminhei ${infoPerson.walkedMeters} metros.`
+}
 
+console.log(infoPerson.stringMessage())
 
 /*
   06
