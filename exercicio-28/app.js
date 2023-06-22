@@ -112,9 +112,9 @@ console.log(infoPerson.walkedMeters, infoPerson.walking)
     - Se a quantidade de metros caminhados for 1, substitua "metros" por 
       "metro", no singular.
 */
-
 infoPerson.stringMessage = () => {
-  return `Oi. Eu sou o ${infoPerson.name} ${infoPerson.lasName}, tenho ${infoPerson.age} anos, ${infoPerson.heigth} metros de altura, 
+  const checkingGender = infoPerson.gender === 'Feminino' ? 'a' : 'o'
+  return `Oi. Eu sou ${checkingGender} ${infoPerson.name} ${infoPerson.lasName}, tenho ${infoPerson.age} anos, ${infoPerson.heigth} metros de altura, 
   peso ${infoPerson.weigth} quilos e, só hoje, eu já caminhei ${infoPerson.walkedMeters} metros.`
 }
 
