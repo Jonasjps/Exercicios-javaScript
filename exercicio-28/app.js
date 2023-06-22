@@ -68,10 +68,13 @@ console.log(infoPerson)
   - Após criar o método, adicione 5 anos à idade do objeto.
 */
  infoPerson.incrementAge = () => {
-  infoPerson.
+  return infoPerson.age++
+}
+for(let i = 0; i < 5; i++) {
+  infoPerson.incrementAge()
 }
 
- infoPerson.incrementAge()
+console.log(infoPerson.age)
 /*
   04
 
