@@ -92,6 +92,9 @@ infoPerson.Meters = meter => {
 }
 
 infoPerson.Meters(5)
+infoPerson.Meters(5)
+infoPerson.Meters(5)
+infoPerson.Meters(5)
 
 console.log(infoPerson.walkedMeters, infoPerson.walking)
 /*
