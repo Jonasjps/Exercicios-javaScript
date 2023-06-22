@@ -51,6 +51,7 @@ const infoPerson = {
   name: 'Jonas', 
   lasName: 'Pessoa',
   gender: 'Masculino',
+  age: 28,
   heigth: 1.75,
   weigth: 68,
   walking: false,
@@ -66,7 +67,11 @@ console.log(infoPerson)
   - A cada vez que o método é invocado, 1 deve ser somado à idade atual;
   - Após criar o método, adicione 5 anos à idade do objeto.
 */
- 
+ infoPerson.incrementAge = () => {
+  infoPerson.
+}
+
+ infoPerson.incrementAge()
 /*
   04
 
