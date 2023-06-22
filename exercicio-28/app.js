@@ -85,7 +85,15 @@ console.log(infoPerson.age)
   - Após criar o método, faça a pessoa caminhar alguns metros, invocando o 
     método 4x, com diferentes metragens passadas por parâmetro.
 */
+infoPerson.Meters = meter => {
+   infoPerson.walkedMeters += meter
+   infoPerson.walking = true
+   return
+}
 
+infoPerson.Meters(5)
+
+console.log(infoPerson.walkedMeters, infoPerson.walking)
 /*
   05
 
