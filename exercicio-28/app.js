@@ -20,7 +20,7 @@ const request = new XMLHttpRequest()
 request.addEventListener('readystatechange', () => {
 
   if(request.readyState === 4 && request.status === 200) {
-    console.log(request.responseText)
+    // console.log(request.responseText)
     return
   }
 
@@ -47,7 +47,17 @@ request.send()
     - Se você está andando (boolean iniciado em false);
     - Quantos metros você caminhou (number iniciado em 0).
 */
+const infoPerson = {
+  name: 'Jonas', 
+  lasName: 'Pessoa',
+  gender: 'Masculino',
+  heigth: 1.75,
+  weigth: 68,
+  walking: false,
+  walkedMeters: 0
+}
 
+console.log(infoPerson)
 /*
   03
 
