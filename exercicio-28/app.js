@@ -18,13 +18,15 @@
 const request = new XMLHttpRequest()
 
 request.addEventListener('readystatechange', () => {
-
-  if(request.readyState === 4 && request.status === 200) {
+  const validandoReadyState = request.readyState === 4 && request.status === 200
+  const checkingStatus = request.readyState === 4
+  
+  if(validandoReadyState) {
     // console.log(request.responseText)
     return
   }
-
-  if(request.readyState === 4) {
+  
+  if(checkingStatus) {
     console.log('Não foi possível obter os dados do pokémon')
   }
 
