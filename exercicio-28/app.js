@@ -167,3 +167,25 @@ valuetruthy.forEach(value => {
 
   Dica: propriedades de objetos podem ser declaradas como strings.
 */
+
+const library = nameBooks => {
+  const books = {
+    'Seja feliz para sempre': {
+      paginas: 156,
+      autor: 'Associação torre de vigia e tratados',
+      editora: 'Betel'
+    },
+    'O maior homem que ja viveu': {
+      paginas: 198,
+      autor: 'Jesus Cristo',
+      editora: 'Betel'
+    },
+    'Revelação': {
+      paginas: 215,
+      autor: 'Apostolo João', 
+      editora: 'Betel'
+    }
+  }
+  return books[nameBooks] ? books[nameBooks] : books
+}
+console.log(library())
