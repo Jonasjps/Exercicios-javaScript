@@ -18,9 +18,10 @@
 const request = new XMLHttpRequest()
 
 request.addEventListener('readystatechange', () => {
+  
   const validandoReadyState = request.readyState === 4 && request.status === 200
   const checkingStatus = request.readyState === 4
-  
+
   if(validandoReadyState) {
     // console.log(request.responseText)
     return
@@ -59,6 +60,16 @@ const infoPerson = {
   walking: false,
   walkedMeters: 0
 }
+let {
+  name, 
+  lasName, 
+  gender, 
+  age, 
+  heigth, 
+  weigth, 
+  walking, 
+  walkedMeters
+} = infoPerson
 
 console.log(infoPerson)
 /*
@@ -70,13 +81,13 @@ console.log(infoPerson)
   - Após criar o método, adicione 5 anos à idade do objeto.
 */
  infoPerson.incrementAge = () => {
-  return infoPerson.age++
+  return age++
 }
 for(let i = 0; i < 5; i++) {
   infoPerson.incrementAge()
 }
 
-console.log(infoPerson.age)
+console.log(age)
 /*
   04
 
@@ -88,16 +99,16 @@ console.log(infoPerson.age)
     método 4x, com diferentes metragens passadas por parâmetro.
 */
 infoPerson.Meters = meter => {
-  infoPerson.walkedMeters += meter
+  walkedMeters += meter
  }
   const quantatyMetesWalked = [15, 21, 33, 12, 3]
   
   quantatyMetesWalked.forEach(meter => {
-    infoPerson.walkedMeters += meter
-    infoPerson.walking = true
+    walkedMeters += meter
+    walking = true
 })
 
-console.log(infoPerson.walkedMeters, infoPerson.walking)
+console.log(walkedMeters, walking)
 /*
   05
 
@@ -114,13 +125,16 @@ console.log(infoPerson.walkedMeters, infoPerson.walking)
     - Se a quantidade de metros caminhados for 1, substitua "metros" por 
       "metro", no singular.
 */
-infoPerson.stringMessage = () => {
-  const checkingGender = infoPerson.gender === 'Feminino' ? 'a' : 'o'
-  const checkingAge = infoPerson.age === 1 ? 'ano' : 'anos'
-  const checkingWalkedMeters = infoPerson.walkedMeters === 1 ? 'metro' : 'metros'
+const checkingSingularOfPlural = (dados, unit, singular, plural) => 
+  dados === unit ? singular : plural
+
+  infoPerson.stringMessage = () => {
+  const checkingGender = gender === 'Feminino' ? 'a' : 'o'
+  const checkingAge = checkingSingularOfPlural(age, 1, 'ano', 'anos')
+  const checkingWalkedMeters = checkingSingularOfPlural(walkedMeters, 1, 'metro', 'metros')
  
-  return `Oi. Eu sou ${checkingGender} ${infoPerson.name} ${infoPerson.lasName}, tenho ${infoPerson.age} ${checkingAge}, ${infoPerson.heigth} metros de altura, 
-  peso ${infoPerson.weigth} quilos e, só hoje, eu já caminhei ${infoPerson.walkedMeters} ${checkingWalkedMeters}.`
+  return `Oi. Eu sou ${checkingGender} ${name} ${lasName}, tenho ${age} ${checkingAge}, ${heigth} metros de altura, 
+  peso ${weigth} quilos e, só hoje, eu já caminhei ${walkedMeters} ${checkingWalkedMeters}.`
 }
 
 console.log(infoPerson.stringMessage())
