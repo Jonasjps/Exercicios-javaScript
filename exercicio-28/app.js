@@ -112,7 +112,6 @@ console.log(infoPerson.walkedMeters, infoPerson.walking)
     - Se a quantidade de metros caminhados for 1, substitua "metros" por 
       "metro", no singular.
 */
-infoPerson.walkedMeters = 1
 infoPerson.stringMessage = () => {
   const checkingGender = infoPerson.gender === 'Feminino' ? 'a' : 'o'
   const checkingAge = infoPerson.age === 1 ? 'ano' : 'anos'
@@ -136,7 +135,18 @@ console.log(infoPerson.stringMessage())
     - Faça isso até que 7 valores truthy sejam passados.
 */
 
+const valueBoolean = value => Boolean(value)
 
+const valueFalsy = [undefined, null, false, NaN, 0, -0, 0n, '']
+const valuetruthy = [true, [], {}, 1, 3.14, new Date(), Infinity]
+
+valueFalsy.forEach(value => {
+  console.log(valueBoolean(value))
+})
+
+valuetruthy.forEach(value => {
+  console.log(valueBoolean(value))
+}) 
 
 
 /*
