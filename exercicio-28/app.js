@@ -100,13 +100,13 @@ console.log(age)
 */
 infoPerson.Meters = meter => {
   walkedMeters += meter
- }
+}
 
-  const quantatyMetesWalked = [15, 21, 33, 12, 3]
+const quantatyMetesWalked = [15, 21, 33, 12, 3]
   
-  quantatyMetesWalked.forEach(meter => {
-    walkedMeters += meter
-    walking = true
+quantatyMetesWalked.forEach(meter => {
+  walkedMeters += meter
+  walking = true
 })
 
 console.log(walkedMeters, walking)
@@ -198,13 +198,14 @@ const library = nameBooks => {
       autor: 'Jesus Cristo',
       editora: 'Betel'
     },
-    
+
     'Revelação': {
       paginas: 215,
       autor: 'Apostolo João', 
       editora: 'Betel'
     }
   }
+
   return books[nameBooks] ? books[nameBooks] : books
 }
 console.log(library())
