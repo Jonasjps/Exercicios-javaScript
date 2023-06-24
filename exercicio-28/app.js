@@ -101,7 +101,7 @@ console.log(age)
 infoPerson.Meters = meter => {
   walkedMeters += meter
  }
- 
+
   const quantatyMetesWalked = [15, 21, 33, 12, 3]
   
   quantatyMetesWalked.forEach(meter => {
@@ -192,11 +192,13 @@ const library = nameBooks => {
       autor: 'Associação torre de vigia e tratados',
       editora: 'Betel'
     },
+
     'O maior homem que ja viveu': {
       paginas: 198,
       autor: 'Jesus Cristo',
       editora: 'Betel'
     },
+    
     'Revelação': {
       paginas: 215,
       autor: 'Apostolo João', 
