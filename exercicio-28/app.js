@@ -101,6 +101,7 @@ console.log(age)
 infoPerson.Meters = meter => {
   walkedMeters += meter
  }
+ 
   const quantatyMetesWalked = [15, 21, 33, 12, 3]
   
   quantatyMetesWalked.forEach(meter => {
