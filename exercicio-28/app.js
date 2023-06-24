@@ -83,6 +83,7 @@ console.log(infoPerson)
  infoPerson.incrementAge = () => {
   return age++
 }
+
 for(let i = 0; i < 5; i++) {
   infoPerson.incrementAge()
 }
