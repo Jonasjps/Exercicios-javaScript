@@ -19,13 +19,15 @@
 const request = new XMLHttpRequest()
 
 request.addEventListener('readystatechange', () => {
-  
-  if(request.readyState === 4 && request.status === 200) {
+  const isRequestOk = request.readyState === 4 && request.status === 200 
+  const isRequestNotOk = request.readyState === 4
+
+  if(isRequestOk) {
     // console.log(request.responseText)
     return
   }
 
-  if(request.readyState === 4) {
+  if(isRequestNotOk) {
    console.log( `Não foi possível obter os dados do pokémon`)
   }
 
@@ -86,6 +88,16 @@ console.log(person.age)
   - Após criar o método, faça a pessoa caminhar alguns metros, invocando o 
     método 4x, com diferentes metragens passadas por parâmetro.
 */
+person.quantety = meters => {
+  person.metersWalked += meters
+  person.isWalking = true
+}
+const quantetyMetersWalked = [ 11, 13, 45, 6]
+
+quantetyMetersWalked.forEach(meter => person.quantety(meter))
+
+console.log(person.metersWalked, person.isWalking)
+
 
 /*
   05
@@ -103,8 +115,18 @@ console.log(person.age)
     - Se a quantidade de metros caminhados for 1, substitua "metros" por 
       "metro", no singular.
 */
+const puralOrSingular = (quantety, singular, plural) => quantety === 1 ? singular : plural 
 
+person.messageString = () => {
+  const {name, lastName, gender, age, heigth, weigth, isWalking, metersWalked} = person
+  const genderCorrectPluralOrSingular = gender === 'Feminino' ? 'a' : 'o'
+  const ageCorrectPluralOrSingular = puralOrSingular(age, 'ano', 'anos')
+  const heigthCorrectOrPluralSingular = puralOrSingular(heigth, 'metro', 'metros')
+  const walkedCorrectPluralOrSingular = puralOrSingular(metersWalked, 'metro', 'metros')
 
+  return `Oi. Eu sou ${genderCorrectPluralOrSingular} ${name} ${lastName}, tenho ${age} ${ageCorrectPluralOrSingular}, ${heigth} ${heigthCorrectOrPluralSingular} de altura, peso ${weigth} quilos e, só hoje, eu já caminhei ${metersWalked} ${walkedCorrectPluralOrSingular}.`
+}
+console.log(person.messageString())
 /*
   06
 
@@ -118,7 +140,15 @@ console.log(person.age)
 */
 
 
+const falsyValues = [false, undefined, null, '', NaN, 0]
+const truthyValues = [true, () => {}, 'false', [], {}, '0', -1]
 
+const isTruthy = value => Boolean(value)
+const checkingValuesTruthy = truthyValue => console.log(isTruthy(truthyValue))
+const checkingValuesFalsy = falsyValue => console.log(isTruthy(falsyValue))
+
+truthyValues.forEach(checkingValuesTruthy)
+falsyValues.forEach(checkingValuesFalsy)
 
 /*
   07
@@ -139,3 +169,25 @@ console.log(person.age)
   Dica: propriedades de objetos podem ser declaradas como strings.
 */
 
+const getBook = nameBook => {
+  const books = {
+    'O que a Biblia realmente ensina' : {
+      Paginas: 352,
+      Autor: 'Betel',
+      Editora: 'Torre de vigia e tratados'
+    },
+    'Meu Grande Instrutor': {
+      Paginas: 564,
+      Autor: 'Cesario lange',
+      Editora: 'Torre de vigia e tratados'
+    },
+    'Meu Livro de historias Biblicas': {
+      Paginas: 754,
+      Autor: 'Brooklyn',
+      Editora: 'Torre de vigia e tratados'
+    } 
+  }
+  return  books[nameBook] || books
+}
+
+console.log(getBook())
