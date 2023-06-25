@@ -130,6 +130,7 @@ const checkingSingularOfPlural = (dados, unit, singular, plural) =>
   dados === unit ? singular : plural
 
   infoPerson.stringMessage = () => {
+    
   const checkingGender = gender === 'Feminino' ? 'a' : 'o'
   const checkingAge = checkingSingularOfPlural(age, 1, 'ano', 'anos')
   const checkingWalkedMeters = checkingSingularOfPlural(walkedMeters, 1, 'metro', 'metros')
