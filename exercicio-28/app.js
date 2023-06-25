@@ -130,7 +130,7 @@ const checkingSingularOfPlural = (dados, unit, singular, plural) =>
   dados === unit ? singular : plural
 
   infoPerson.stringMessage = () => {
-    
+
   const checkingGender = gender === 'Feminino' ? 'a' : 'o'
   const checkingAge = checkingSingularOfPlural(age, 1, 'ano', 'anos')
   const checkingWalkedMeters = checkingSingularOfPlural(walkedMeters, 1, 'metro', 'metros')
@@ -158,13 +158,9 @@ const valueBoolean = value => Boolean(value)
 const valueFalsy = [undefined, null, false, NaN, 0, -0, 0n, '']
 const valuetruthy = [true, [], {}, 1, 3.14, new Date(), Infinity]
 
-valueFalsy.forEach(value => {
-  console.log(valueBoolean(value))
-})
+valueFalsy.forEach(value => console.log(valueBoolean(value)))
 
-valuetruthy.forEach(value => {
-  console.log(valueBoolean(value))
-}) 
+valuetruthy.forEach(value => console.log(valueBoolean(value))) 
 
 
 /*
