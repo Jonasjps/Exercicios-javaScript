@@ -1,4 +1,4 @@
-const getTodos = () => {
+const getTodos = callback => {
     const request = new XMLHttpRequest()
     
     request.addEventListener('readystatechange', () => {
@@ -6,19 +6,28 @@ const getTodos = () => {
         const isRequetNotOK = request.readyState === 4
         
         if (isRequestOk) {
-            console.log(request, request.responseText)
-            return
+            callback(null, request.responseText)
+            return 
         }
     
         if(isRequetNotOK) {
-            console.log('Não foi possivel obter dados da Api')
+            callback('Não foi possivel obter dados da API', null)
         }
     })
     
     
-    request.open('GET', 'https://jsonplaceholder.typicode.com/todos' )
+    request.open('GET', 'https://jsonplaceholder.typicode.com/todosl' )
     request.send()
 
 }
 
-getTodos()
+getTodos((erro, data) => {
+    console.log('callback executada')
+
+    if(erro) {
+        console.log(erro)
+        return
+    }
+
+    console.log(data)
+})
