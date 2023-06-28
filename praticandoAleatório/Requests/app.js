@@ -16,18 +16,13 @@ const getTodos = callback => {
     })
     
     
-    request.open('GET', 'https://jsonplaceholder.typicode.com/todosl' )
+    request.open('GET', 'https://jsonplaceholder.typicode.com/todos' )
     request.send()
 
 }
 
 getTodos((erro, data) => {
     console.log('callback executada')
-
-    if(erro) {
-        console.log(erro)
-        return
-    }
-
-    console.log(data)
+    console.log(erro, data)
+    
 })
