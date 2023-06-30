@@ -12,7 +12,9 @@
     - Os requests devem ser sequenciais. Ou seja, um request só deve ser 
       executado quando o request anterior for finalizado.
 */
+const Request = new XMLHttpRequest()
 
+console.log(Request)
 /*
   02
 
