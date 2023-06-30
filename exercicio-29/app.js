@@ -14,11 +14,28 @@
 */
 
 const pokemon = (url, callback) => {
-   const Request = new XMLHttpRequest()
+   const request = new XMLHttpRequest()
+
+   if(request.readyState === 4 && request.status === 200) {
+    callback(request.responseText, null)
+    return
+   }
+
+   if(request.readyState === 4) {
+    callback(null, url)
+   }
+
+   request.open('GET', url)
+   request.send()
+
+   console.log(request)
   
 }
-pokemon()
-console.log(pokemon())
+pokemon('https://pokeapi.co/api/v2/pokemon/bulbasaur', (erro, data) => {
+  console.log(data)
+})
+
+// console.log(pokemon())
 
 /*
   02
