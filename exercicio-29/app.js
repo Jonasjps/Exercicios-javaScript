@@ -18,12 +18,12 @@ const pokemon = (url, callback) => {
 
   request.addEventListener('readystatechange', () => {
     if(request.readyState === 4 && request.status === 200) {
-      callback(request.responseText)
+      callback(null, request.responseText)
       return
     }
 
     if(request.readyState === 4) {
-      callback('Não foi possível obter pokemon.')
+      callback( 'Não foi possível obter pokemon.', null)
     }
 
   })
@@ -33,8 +33,14 @@ const pokemon = (url, callback) => {
   
 }
 
-pokemon('https://pokeapi.co/api/v2/pokemon/bulbasaur', (bulbasaur, charmander, squirtle) => {
-  console.log(bulbasaur)
+pokemon('https://pokeapi.co/api/v2/pokemon/bulbasaur', (erro, data) => {
+  console.log(erro, data)
+  pokemon('https://pokeapi.co/api/v2/pokemon/charmander', (erro, data) => {
+    console.log(erro, data)
+    pokemon('https://pokeapi.co/api/v2/pokemon/squirtle', (erro, data) => {
+      console.log(erro, data)
+    })
+  })
 })
 
 
