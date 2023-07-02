@@ -70,8 +70,9 @@ pokemon('https://pokeapi.co/api/v2/pokemon/bulbasaur', (erro, data) => {
 
 const map = (array, callback) => {
   for(let c = 0; c < array.length; c++) {
+    let numbers = []
     if(callback(array[c])) {
-      return array[c] 
+      return numbers.push(array[c]) 
     }
   }
 }
