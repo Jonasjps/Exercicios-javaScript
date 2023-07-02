@@ -17,6 +17,7 @@ const pokemon = (url, callback) => {
   const request = new XMLHttpRequest()
 
   request.addEventListener('readystatechange', () => {
+    
     const isRequestOk = request.readyState === 4 && request.status === 200
     const isRequestNotOk = request.readyState === 4
 
