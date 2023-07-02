@@ -18,13 +18,14 @@ const pokemon = (url, callback) => {
 
   request.addEventListener('readystatechange', () => {
     const isRequestOk = request.readyState === 4 && request.status === 200
+    const isRequestNotOk = request.readyState === 4
 
     if(isRequestOk) {
       callback(null, request.responseText)
       return
     }
 
-    if(request.readyState === 4) {
+    if(isRequestNotOk) {
       callback( 'Não foi possível obter pokemon.', null)
     }
 
