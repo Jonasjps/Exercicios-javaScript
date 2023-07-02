@@ -13,17 +13,22 @@
       executado quando o request anterior for finalizado.
 */
 
-const pokemon = () => {
-   const request = new XMLHttpRequest()
+const pokemon = (url, callback) => {
+  const request = new XMLHttpRequest()
 
-   request.addEventListener('readystatechange', () => {
-    console.log(request)
-   })
+  request.addEventListener('readystatechange', () => {
+    if(request.readyState === 4 && request.status === 200) {
+      console.log(request)
+    }
 
-  //  console.log(request)
+  })
+
+  request.open('GET', url)
+  request.send()
   
 }
-pokemon()
+
+pokemon('https://pokeapi.co/api/v2/pokemon/bulbasaur')
 
 
 /*
@@ -85,7 +90,7 @@ const getFullName = (user) => {
   return `${firstName} ${lastName}`
 }
 
-console.log(getFullName({ firstName: 'Afonso', lastName: 'Solano' }))
+// console.log(getFullName({ firstName: 'Afonso', lastName: 'Solano' }))
 
 /*
   06
