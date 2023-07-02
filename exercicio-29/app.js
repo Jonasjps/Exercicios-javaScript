@@ -22,7 +22,8 @@ const pokemon = (url, callback) => {
     const isRequestNotOk = request.readyState === 4
 
     if(isRequestOk) {
-      callback(null, request.responseText)
+      const data = JSON.parse(request.responseText)
+      callback(null, data)
       return
     }
 
