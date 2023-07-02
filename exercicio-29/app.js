@@ -68,6 +68,15 @@ pokemon('https://pokeapi.co/api/v2/pokemon/bulbasaur', (erro, data) => {
     2) Pesquisar no MDN.
 */
 
+const map = (array, callback) => {
+  for(let c = 0; c < array.length; c++) {
+    if(callback(array[c])) {
+      return array[c] 
+    }
+  }
+}
+console.log(map([1, 2, 3], number => number * 2))
+console.log(map([1, 2, 3], number => number * 3))
 /*
   03
 
