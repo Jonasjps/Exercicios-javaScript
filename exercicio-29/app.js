@@ -13,8 +13,22 @@
       executado quando o request anterior for finalizado.
 */
 
+const getPokemon = (url, callback) => {
+  const request = new XMLHttpRequest()
+  request.addEventListener('readystatechange', () => {
+    if(request.readyState === 4 && request.status === 200) {
+      return callback(null, request.responseText)
 
+    }
+  })
 
+  request.open('GET', url)
+  request.send()
+}
+
+getPokemon('https://pokeapi.co/api/v2/pokemon/1', (erro, data) => {
+  console.log(data)
+})
 /*
   02
 
