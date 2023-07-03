@@ -29,12 +29,19 @@ const getPokemon = (url, callback) => {
   request.open('GET', url)
   request.send()
 }
-
-getPokemon('https://pokeapi.co/api/v2/pokemon/1', (erro, data) => {
+const pokemonErro = (erro, data) => {
   if(erro) {
     return console.log(erro)
   }
+}
+
+getPokemon('https://pokeapi.co/api/v2/pokemon/1', (erro, data) => {
+  pokemonErro(erro, data)
   console.log(`Pokémon obtido: ${data.name}`)
+  getPokemon('https://pokeapi.co/api/v2/pokemon/4', (erro, data) => {
+    pokemonErro(erro, data) 
+    console.log(`Pokémon obtido: ${data.name}`)
+  })
 })
 /*
   02
