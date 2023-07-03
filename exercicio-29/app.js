@@ -13,40 +13,6 @@
       executado quando o request anterior for finalizado.
 */
 
-const pokemon = (url, callback) => {
-  const request = new XMLHttpRequest()
-
-  request.addEventListener('readystatechange', () => {
-    
-    const isRequestOk = request.readyState === 4 && request.status === 200
-    const isRequestNotOk = request.readyState === 4
-
-    if(isRequestOk) {
-      const data = JSON.parse(request.responseText)
-      callback(null, data)
-      return
-    }
-
-    if(isRequestNotOk) {
-      callback( 'Não foi possível obter pokemon.', null)
-    }
-
-  })
-
-  request.open('GET', url)
-  request.send()
-  
-}
-
-pokemon('https://pokeapi.co/api/v2/pokemon/bulbasaur', (erro, data) => {
-  console.log(erro, data)
-  pokemon('https://pokeapi.co/api/v2/pokemon/charmander', (erro, data) => {
-    console.log(erro, data)
-    pokemon('https://pokeapi.co/api/v2/pokemon/squirtle', (erro, data) => {
-      console.log(erro, data)
-    })
-  })
-})
 
 
 /*
@@ -68,16 +34,7 @@ pokemon('https://pokeapi.co/api/v2/pokemon/bulbasaur', (erro, data) => {
     2) Pesquisar no MDN.
 */
 
-const map = (array, callback) => {
-  for(let c = 0; c < array.length; c++) {
-    let numbers = []
-    if(callback(array[c])) {
-      return numbers.push(array[c]) 
-    }
-  }
-}
-console.log(map([1, 2, 3], number => number * 2))
-console.log(map([1, 2, 3], number => number * 3))
+
 /*
   03
 
