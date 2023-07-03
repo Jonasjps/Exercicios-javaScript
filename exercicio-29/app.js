@@ -17,8 +17,12 @@ const getPokemon = (url, callback) => {
   const request = new XMLHttpRequest()
   request.addEventListener('readystatechange', () => {
     if(request.readyState === 4 && request.status === 200) {
-      return callback(null, request.responseText)
+      const data = JSON.parse(request.responseText)
+      return callback(null, data)
+    }
 
+    if(request.readyState === 4) {
+      return callback('Não foi possível obter o Pokémon', null)
     }
   })
 
@@ -27,7 +31,10 @@ const getPokemon = (url, callback) => {
 }
 
 getPokemon('https://pokeapi.co/api/v2/pokemon/1', (erro, data) => {
-  console.log(data)
+  if(erro) {
+    return console.log(erro)
+  }
+  console.log(`Pokémon obtido: ${data.name}`)
 })
 /*
   02
