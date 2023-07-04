@@ -16,12 +16,16 @@
 const getPokemon = (url, callback) => {
   const request = new XMLHttpRequest()
   request.addEventListener('readystatechange', () => {
-    if(request.readyState === 4 && request.status === 200) {
+
+    const isRequestOk = request.readyState === 4 && request.status === 200
+    const isRequestNotOk = request.readyState === 4
+
+    if(isRequestOk) {
       const data = JSON.parse(request.responseText)
       return callback(null, data)
     }
 
-    if(request.readyState === 4) {
+    if(isRequestNotOk) {
       return callback('Não foi possível obter o Pokémon', null)
     }
   })
