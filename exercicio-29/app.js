@@ -30,10 +30,7 @@ const getPokemon = (url, callback) => {
   request.send()
 }
 const pokemonErro = (erro, data) => {
- return erro ? console.log(erro) : console.log(data)
-  // if(erro) {
-  //   return console.log(erro)
-  // }
+ return erro ? console.log(erro) : console.log(`Pokémon obtido: ${data.name}`)
 }
 const urlPokemon = pokemon => `https://pokeapi.co/api/v2/pokemon/${pokemon}`
 const bulbasaur = urlPokemon(1)
@@ -42,14 +39,9 @@ const squirtle = urlPokemon(7)
 
 getPokemon(bulbasaur, (erro, data) => {
   pokemonErro(erro, data)
-  console.log(`Pokémon obtido: ${data.name}`)
   getPokemon(charmander, (erro, data) => {
-    pokemonErro(erro, data) 
-    console.log(`Pokémon obtido: ${data.name}`)
-    getPokemon(squirtle, (erro, data) => {
-      pokemonErro(erro, data)
-      console.log(`Pokémon obtido: ${data.name}`)
-    })
+    pokemonErro(erro, data)
+    getPokemon(squirtle, pokemonErro )
   })
 })
 /*
