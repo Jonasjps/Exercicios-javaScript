@@ -34,13 +34,21 @@ const pokemonErro = (erro, data) => {
     return console.log(erro)
   }
 }
+const urlPokemon = pokemon => `https://pokeapi.co/api/v2/pokemon/${pokemon}`
+const bulbasaur = urlPokemon(1)
+const charmander = urlPokemon(4)
+const squirtle = urlPokemon(7)
 
-getPokemon('https://pokeapi.co/api/v2/pokemon/1', (erro, data) => {
+getPokemon(bulbasaur, (erro, data) => {
   pokemonErro(erro, data)
   console.log(`Pokémon obtido: ${data.name}`)
-  getPokemon('https://pokeapi.co/api/v2/pokemon/4', (erro, data) => {
+  getPokemon(charmander, (erro, data) => {
     pokemonErro(erro, data) 
     console.log(`Pokémon obtido: ${data.name}`)
+    getPokemon(squirtle, (erro, data) => {
+      pokemonErro(erro, data)
+      console.log(`Pokémon obtido: ${data.name}`)
+    })
   })
 })
 /*
