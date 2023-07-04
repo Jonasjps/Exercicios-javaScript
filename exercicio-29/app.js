@@ -71,13 +71,17 @@ getPokemon(bulbasaur, (erro, data) => {
 */
 const map = (array, callback) => {
   let newArray = []
-  array.forEach(number => {
+
+  const addNewArray = number => {
     newArray.push(callback(number))
-  })
+  }
+  
+  array.forEach(addNewArray)
   return newArray
 }
 
 console.log(map([1, 2, 3], number => number * 2))
+console.log(map([4, 5, 6], number => number * 3))
 
 /*
   03
