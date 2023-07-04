@@ -13,44 +13,7 @@
       executado quando o request anterior for finalizado.
 */
 
-const getPokemon = (url, callback) => {
-  const request = new XMLHttpRequest()
-  request.addEventListener('readystatechange', () => {
 
-    const isRequestOk = request.readyState === 4 && request.status === 200
-    const isRequestNotOk = request.readyState === 4
-
-    if(isRequestOk) {
-      const data = JSON.parse(request.responseText)
-      return callback(null, data)
-    }
-
-    if(isRequestNotOk) {
-      return callback('Não foi possível obter o Pokémon', null)
-    }
-  })
-
-  request.open('GET', url)
-  request.send()
-}
-
-const pokemonErro = (erro, data) => {
- return erro ? console.log(erro) : console.log(`Pokémon obtido: ${data.name}`)
-}
-
-const urlPokemon = pokemon => `https://pokeapi.co/api/v2/pokemon/${pokemon}`
-
-const bulbasaur = urlPokemon(1)
-const charmander = urlPokemon(4)
-const squirtle = urlPokemon(7)
-
-getPokemon(bulbasaur, (erro, data) => {
-  pokemonErro(erro, data)
-  getPokemon(charmander, (erro, data) => {
-    pokemonErro(erro, data)
-    getPokemon(squirtle, pokemonErro )
-  })
-})
 /*
   02
 
@@ -69,19 +32,6 @@ getPokemon(bulbasaur, (erro, data) => {
         08;
     2) Pesquisar no MDN.
 */
-const map = (array, callback) => {
-  let newArray = []
-
-  const addNewArray = number => {
-    newArray.push(callback(number))
-  }
-  
-  array.forEach(addNewArray)
-  return newArray
-}
-
-console.log(map([1, 2, 3], number => number * 2))
-console.log(map([4, 5, 6], number => number * 3))
 
 /*
   03
