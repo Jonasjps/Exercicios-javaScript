@@ -17,6 +17,11 @@ const getPokemon = (url, callback) => {
   request.addEventListener('readystatechange', () => {
     if(request.readyState === 4 && request.status === 200) {
       callback(null, request.responseText)
+      return
+    }
+
+    if(request.readyState === 4) {
+      callback('Não foi possível obter o Pokémon', null)
     }
   })
   request.open('GET', url)
@@ -24,6 +29,9 @@ const getPokemon = (url, callback) => {
 }
 
 getPokemon('https://pokeapi.co/api/v2/pokemon/1', (erro, data) => {
+  if(erro) {
+    return console.log(erro)
+  }
   console.log(data)
 })
 /*
