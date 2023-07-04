@@ -15,12 +15,17 @@
 const getPokemon = (url, callback) => {
   const request = new XMLHttpRequest()
   request.addEventListener('readystatechange', () => {
-    if(request.readyState === 4 && request.status === 200) {
-      callback(null, request.responseText)
+    
+    const isResquestOk = request.readyState === 4 && request.status === 200
+    const isRequestNotOk = request.readyState === 4
+
+    if(isResquestOk) {
+      const data = JSON.parse(request.responseText)
+      callback(null, data)
       return
     }
 
-    if(request.readyState === 4) {
+    if(isRequestNotOk) {
       callback('Não foi possível obter o Pokémon', null)
     }
   })
@@ -28,11 +33,22 @@ const getPokemon = (url, callback) => {
   request.send()
 }
 
-getPokemon('https://pokeapi.co/api/v2/pokemon/1', (erro, data) => {
-  if(erro) {
-    return console.log(erro)
-  }
-  console.log(data)
+const pokemonErro = (erro, data) =>  erro 
+  ? console.log(erro)
+  : console.log(`Pokémon obtido: ${data.name}`)
+
+  const urlPokemonId = id => `https://pokeapi.co/api/v2/pokemon/${id}`
+  
+  const Bulbasaur = urlPokemonId(1)
+  const Charmander = urlPokemonId(4)
+  const Squirtle = urlPokemonId(7)
+
+getPokemon(Bulbasaur, (erro, data) => {
+  pokemonErro(erro, data)
+  getPokemon(Charmander, (erro, data) => {
+    pokemonErro(erro, data)
+    getPokemon(Squirtle, pokemonErro)
+  })
 })
 /*
   02
