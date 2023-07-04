@@ -30,9 +30,10 @@ const getPokemon = (url, callback) => {
   request.send()
 }
 const pokemonErro = (erro, data) => {
-  if(erro) {
-    return console.log(erro)
-  }
+ return erro ? console.log(erro) : console.log(data)
+  // if(erro) {
+  //   return console.log(erro)
+  // }
 }
 const urlPokemon = pokemon => `https://pokeapi.co/api/v2/pokemon/${pokemon}`
 const bulbasaur = urlPokemon(1)
