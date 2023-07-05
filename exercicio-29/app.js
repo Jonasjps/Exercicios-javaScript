@@ -100,9 +100,14 @@ console.log(person.getName())
   - Faça as duas const x coexistirem, sem modificar o nome de qualquer uma 
     delas.
 */
+const constX = () => {
+  const x = 'y'
+  return x
+}
 
 const x = 'x'
-// const x = 'y'
+
+console.log(x, constX())
 
 /*
   05
