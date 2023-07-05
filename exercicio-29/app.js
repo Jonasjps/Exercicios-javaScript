@@ -87,9 +87,7 @@ console.log(map([3, 4, 5], number => number * 3))
 
 const person = {
   name: 'Roger',
-  getName () {
-   return this.name
-  }
+  getName:  () =>  person.name
 }
 
 console.log(person.getName())
