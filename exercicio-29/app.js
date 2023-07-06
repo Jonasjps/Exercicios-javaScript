@@ -137,18 +137,17 @@ const convertToHex = (cor) => {
 
   const colors = ['Preto',  'Azul', 'Branco', 'Verde', 'Vermelho' ]
   
-  if(colors.includes(cor)) {
+  if(cor === '#000000'|| cor === '#0000FF' ) {
 
-    const colorsHex = ['#000000',  '#0000FF', '#FFFFFF', '#008000', '#FF0000' ]
 
-    console.log(`O hexadecimal para a cor ${cor} é ${colorsHex}`)
+    console.log(`O hexadecimal para a cor ${cor} é ${cor}`)
     return
   }
 
   console.log(`Não temos o equivalente hexadecimal para ${cor}`)
 }
 
-convertToHex('Preto')
+convertToHex('#000000')
 
 /*
   07
