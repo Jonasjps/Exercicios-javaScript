@@ -70,6 +70,21 @@ getPokemon(bulbasaur, (error, data) => {
         08;
     2) Pesquisar no MDN.
 */
+const map = (array, func) => {
+  let newArray = []
+  
+  const creatingMetodoMap = number => {
+    const mapNewArray = func(number)
+    newArray.push(mapNewArray)
+  }
+
+  array.forEach(creatingMetodoMap)
+  
+  return newArray
+}
+
+console.log(map([2, 3, 4], number => number * 2))
+console.log(map([1, 2, 3], number => number * 3))
 
 /*
   03
