@@ -140,6 +140,7 @@ const convertToHex = color => {
     black: '#000000', 
     pink: '#FFC0CB'
   }
+
   return colors[color] 
     ? `O hexadecimal para a cor ${color} é ${colors[color]}`
     :  `Não temos o equivalente hexadecimal para ${color}`
@@ -180,3 +181,10 @@ const people = [
   { id: 9 , name: 'Gabriel', age: 20, federativeUnit: 'São Paulo' },
   { id: 73, name: 'Aline', age: 19, federativeUnit: 'Brasília' }
 ]
+
+const frequenceAges = people.reduce((acc, person) => {
+  acc[person.age] = acc[person.age] + 1 || 1
+  return acc
+}, {})
+
+console.log(frequenceAges)
