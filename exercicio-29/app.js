@@ -4,7 +4,44 @@
   - Faça requests para a https://pokeapi.co/, da seguinte forma:
     - Encapsule o código do request em uma função que recebe os parâmetros 
       "url" e "callback";
-    - Se o request estiver ok, exiba no console 'Pokémon obtido: 
+    - Se o request estiver ok, exiba no coconst getPokemon = (url, callback) => {
+//   const request = new XMLHttpRequest()
+//   request.addEventListener('readystatechange', () => {
+    
+//     const isResquestOk = request.readyState === 4 && request.status === 200
+//     const isRequestNotOk = request.readyState === 4
+
+//     if(isResquestOk) {
+//       const data = JSON.parse(request.responseText)
+//       callback(null, data)
+//       return
+//     }
+
+//     if(isRequestNotOk) {
+//       callback('Não foi possível obter o Pokémon', null)
+//     }
+//   })
+//   request.open('GET', url)
+//   request.send()
+// }
+
+// const pokemonErro = (erro, data) =>  erro 
+//   ? console.log(erro)
+//   : console.log(`Pokémon obtido: ${data.name}`)
+
+//   const urlPokemonId = id => `https://pokeapi.co/api/v2/pokemon/${id}`
+  
+//   const Bulbasaur = urlPokemonId(1)
+//   const Charmander = urlPokemonId(4)
+//   const Squirtle = urlPokemonId(7)
+
+// getPokemon(Bulbasaur, (erro, data) => {
+//   pokemonErro(erro, data)
+//   getPokemon(Charmander, (erro, data) => {
+//     pokemonErro(erro, data)
+//     getPokemon(Squirtle, pokemonErro)
+//   })
+// })nsole 'Pokémon obtido: 
       NOME_DO_POKEMON';
     - Se o request não estiver ok, exiba no console 'Não foi possível obter o 
       Pokémon';
@@ -12,44 +49,7 @@
     - Os requests devem ser sequenciais. Ou seja, um request só deve ser 
       executado quando o request anterior for finalizado.
 */
-const getPokemon = (url, callback) => {
-  const request = new XMLHttpRequest()
-  request.addEventListener('readystatechange', () => {
-    
-    const isResquestOk = request.readyState === 4 && request.status === 200
-    const isRequestNotOk = request.readyState === 4
-
-    if(isResquestOk) {
-      const data = JSON.parse(request.responseText)
-      callback(null, data)
-      return
-    }
-
-    if(isRequestNotOk) {
-      callback('Não foi possível obter o Pokémon', null)
-    }
-  })
-  request.open('GET', url)
-  request.send()
-}
-
-const pokemonErro = (erro, data) =>  erro 
-  ? console.log(erro)
-  : console.log(`Pokémon obtido: ${data.name}`)
-
-  const urlPokemonId = id => `https://pokeapi.co/api/v2/pokemon/${id}`
-  
-  const Bulbasaur = urlPokemonId(1)
-  const Charmander = urlPokemonId(4)
-  const Squirtle = urlPokemonId(7)
-
-getPokemon(Bulbasaur, (erro, data) => {
-  pokemonErro(erro, data)
-  getPokemon(Charmander, (erro, data) => {
-    pokemonErro(erro, data)
-    getPokemon(Squirtle, pokemonErro)
-  })
-})
+// 
 /*
   02
 
@@ -133,21 +133,36 @@ console.log(getFullName({ firstName: 'Afonso', lastName: 'Solano' }))
     a mensagem 'Não temos o equivalente hexadecimal para COR';
   - Exiba o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-const convertToHex = (cor) => {
-
-  const colors = ['Preto',  'Azul', 'Branco', 'Verde', 'Vermelho' ]
-  
-  if(cor === '#000000'|| cor === '#0000FF' ) {
-
-
-    console.log(`O hexadecimal para a cor ${cor} é ${cor}`)
-    return
+const convertToHex = (color) => { 
+  const  colors = {
+    blue: '#0000ff',
+    green: '#008000',
+    red: '#ff0000',
+    black: '#000000',
+    yellow: '#ffff00'
   }
 
-  console.log(`Não temos o equivalente hexadecimal para ${cor}`)
+  const colorsHex = [
+    'blue', 
+    'green', 
+    'red', 
+    'black', 
+    'yellow', 
+    'pink', 
+    'orange', 
+    'white'
+  ]
+
+  const checkingColors = color => colors[color] 
+    ? console.log(`O hexadecimal para a cor ${color} é ${colors[color]}`)
+    : console.log(`Não temos o equivalente hexadecimal para ${color}`)
+
+  colorsHex.forEach(checkingColors)
+
+  return colors[color]
 }
 
-convertToHex('#000000')
+convertToHex('blue')
 
 /*
   07
@@ -172,3 +187,10 @@ const people = [
   { id: 9 , name: 'Gabriel', age: 20, federativeUnit: 'São Paulo' },
   { id: 73, name: 'Aline', age: 19, federativeUnit: 'Brasília' }
 ]
+
+const peopleAge = people.reduce((acc, person) => {
+   acc[person.age] =  acc[person.age] + 1 || 1
+   return acc
+}, {})
+
+console.log(peopleAge)
