@@ -127,12 +127,7 @@ console.log(ConstX(), x)
     conseguir.
 */
 
-const getFullName = (user) => {
-  const firstName = user.firstName
-  const lastName = user.lastName
-
-  return `${firstName} ${lastName}`
-}
+const getFullName = ({firstName, lastName}) => `${firstName} ${lastName}`
 
 console.log(getFullName({ firstName: 'Afonso', lastName: 'Solano' }))
 
