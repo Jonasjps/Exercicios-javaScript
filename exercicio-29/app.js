@@ -90,11 +90,10 @@ console.log(map([2, 3, 4], number => number * 3))
 
 const person = {
   name: 'Roger',
-  getName: () => this.name
+  getName: () => person.name
 }
 
-// console.log(person.getName())
-
+console.log(person.getName())
 /*
   04
 
