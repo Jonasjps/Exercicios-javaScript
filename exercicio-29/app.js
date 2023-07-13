@@ -4,44 +4,7 @@
   - Faça requests para a https://pokeapi.co/, da seguinte forma:
     - Encapsule o código do request em uma função que recebe os parâmetros 
       "url" e "callback";
-    - Se o request estiver ok, exiba no coconst getPokemon = (url, callback) => {
-//   const request = new XMLHttpRequest()
-//   request.addEventListener('readystatechange', () => {
-    
-//     const isResquestOk = request.readyState === 4 && request.status === 200
-//     const isRequestNotOk = request.readyState === 4
-
-//     if(isResquestOk) {
-//       const data = JSON.parse(request.responseText)
-//       callback(null, data)
-//       return
-//     }
-
-//     if(isRequestNotOk) {
-//       callback('Não foi possível obter o Pokémon', null)
-//     }
-//   })
-//   request.open('GET', url)
-//   request.send()
-// }
-
-// const pokemonErro = (erro, data) =>  erro 
-//   ? console.log(erro)
-//   : console.log(`Pokémon obtido: ${data.name}`)
-
-//   const urlPokemonId = id => `https://pokeapi.co/api/v2/pokemon/${id}`
-  
-//   const Bulbasaur = urlPokemonId(1)
-//   const Charmander = urlPokemonId(4)
-//   const Squirtle = urlPokemonId(7)
-
-// getPokemon(Bulbasaur, (erro, data) => {
-//   pokemonErro(erro, data)
-//   getPokemon(Charmander, (erro, data) => {
-//     pokemonErro(erro, data)
-//     getPokemon(Squirtle, pokemonErro)
-//   })
-// })nsole 'Pokémon obtido: 
+    - Se o request estiver ok, exiba no console 'Pokémon obtido: 
       NOME_DO_POKEMON';
     - Se o request não estiver ok, exiba no console 'Não foi possível obter o 
       Pokémon';
@@ -49,7 +12,7 @@
     - Os requests devem ser sequenciais. Ou seja, um request só deve ser 
       executado quando o request anterior for finalizado.
 */
-// 
+
 /*
   02
 
@@ -68,16 +31,7 @@
         08;
     2) Pesquisar no MDN.
 */
-const map = (array, callback) => {
-  let newArray = []
-  array.forEach(number => {
-    newArray.push(callback(number))
-  })
-  return newArray
-}
 
-console.log(map([1, 2, 3], number => number * 2))
-console.log(map([3, 4, 5], number => number * 3))
 /*
   03
 
@@ -87,10 +41,10 @@ console.log(map([3, 4, 5], number => number * 3))
 
 const person = {
   name: 'Roger',
-  getName:  () =>  person.name
+  getName: () => this.name
 }
 
-console.log(person.getName())
+// console.log(person.getName())
 
 /*
   04
@@ -100,14 +54,9 @@ console.log(person.getName())
   - Faça as duas const x coexistirem, sem modificar o nome de qualquer uma 
     delas.
 */
-const constX = () => {
-  const x = 'y'
-  return x
-}
 
 const x = 'x'
-
-console.log(x, constX())
+// const x = 'y'
 
 /*
   05
@@ -116,7 +65,12 @@ console.log(x, constX())
     conseguir.
 */
 
-const getFullName = ({firstName, lastName}) => `${firstName} ${lastName}`
+const getFullName = (user) => {
+  const firstName = user.firstName
+  const lastName = user.lastName
+
+  return `${firstName} ${lastName}`
+}
 
 console.log(getFullName({ firstName: 'Afonso', lastName: 'Solano' }))
 
@@ -133,36 +87,7 @@ console.log(getFullName({ firstName: 'Afonso', lastName: 'Solano' }))
     a mensagem 'Não temos o equivalente hexadecimal para COR';
   - Exiba o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-const convertToHex = (color) => { 
-  const  colors = {
-    blue: '#0000ff',
-    green: '#008000',
-    red: '#ff0000',
-    black: '#000000',
-    yellow: '#ffff00'
-  }
 
-  const colorsHex = [
-    'blue', 
-    'green', 
-    'red', 
-    'black', 
-    'yellow', 
-    'pink', 
-    'orange', 
-    'white'
-  ]
-
-  const checkingColors = color => colors[color] 
-    ? console.log(`O hexadecimal para a cor ${color} é ${colors[color]}`)
-    : console.log(`Não temos o equivalente hexadecimal para ${color}`)
-
-  colorsHex.forEach(checkingColors)
-
-  return colors[color]
-}
-
-convertToHex('blue')
 
 /*
   07
@@ -187,10 +112,3 @@ const people = [
   { id: 9 , name: 'Gabriel', age: 20, federativeUnit: 'São Paulo' },
   { id: 73, name: 'Aline', age: 19, federativeUnit: 'Brasília' }
 ]
-
-const peopleAge = people.reduce((acc, person) => {
-   acc[person.age] =  acc[person.age] + 1 || 1
-   return acc
-}, {})
-
-console.log(peopleAge)
