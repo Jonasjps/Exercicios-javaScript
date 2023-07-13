@@ -12,45 +12,6 @@
     - Os requests devem ser sequenciais. Ou seja, um request só deve ser 
       executado quando o request anterior for finalizado.
 */
-const getPokemon = (url, callback) => {
-  const request = new XMLHttpRequest()
-
-  request.addEventListener('readystatechange', () => {
-    const isResquetOk = request.readyState === 4 && request.status === 200
-    const isRequestNotOk = request.readyState === 4
-    
-    if(isResquetOk) {
-      const data = JSON.parse(request.responseText)
-      callback(null, data)
-      return
-    }
-
-    if(isRequestNotOk) {
-      callback('Não foi possível obter o pokémon', null)
-    }
-  })
-
-  request.open('GET', url)
-  request.send()
-}
-
-const logPokemonData = (error, data) =>  error 
-? console.log(error) 
-: console.log(`Pokémon obtido: ${data.name}`)
-
-const idPokemon = id => `https://pokeapi.co/api/v2/pokemon/${id}`
-
-const bulbasaur = idPokemon(1)
-const charmander = idPokemon(4)
-const squirtle = idPokemon(7)
-
-getPokemon(bulbasaur, (error, data) => {
-  logPokemonData(error, data)
-    getPokemon(charmander, (error, data) => {
-    logPokemonData(error, data)
-    getPokemon(squirtle, logPokemonData)
-  })
-})
 
 /*
   02
@@ -70,21 +31,6 @@ getPokemon(bulbasaur, (error, data) => {
         08;
     2) Pesquisar no MDN.
 */
-const map = (array, func) => {
-  let newArray = []
-  
-  const creatingMetodoMap = number => {
-    const mapNewArray = func(number)
-    newArray.push(mapNewArray)
-  }
-
-  array.forEach(creatingMetodoMap)
-
-  return newArray
-}
-
-console.log(map([2, 3, 4], number => number * 2))
-console.log(map([1, 2, 3], number => number * 3))
 
 /*
   03
@@ -93,14 +39,12 @@ console.log(map([1, 2, 3], number => number * 3))
     objeto person.
 */
 
-const person = { //fazer novamente
+const person = {
   name: 'Roger',
-  getName: () =>  person.name
-  
+  getName: () => this.name
 }
 
-console.log(person.getName())
-
+// console.log(person.getName())
 
 /*
   04
@@ -110,15 +54,9 @@ console.log(person.getName())
   - Faça as duas const x coexistirem, sem modificar o nome de qualquer uma 
     delas.
 */
-const ConstX = () => {
-  const x = 'x'
-  return x
-}
 
-const x = 'y'
-
-console.log(ConstX(), x)
-
+const x = 'x'
+// const x = 'y'
 
 /*
   05
@@ -127,7 +65,12 @@ console.log(ConstX(), x)
     conseguir.
 */
 
-const getFullName = ({firstName, lastName}) => `${firstName} ${lastName}`
+const getFullName = (user) => {
+  const firstName = user.firstName
+  const lastName = user.lastName
+
+  return `${firstName} ${lastName}`
+}
 
 console.log(getFullName({ firstName: 'Afonso', lastName: 'Solano' }))
 
@@ -145,31 +88,6 @@ console.log(getFullName({ firstName: 'Afonso', lastName: 'Solano' }))
   - Exiba o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
 
-const convertToHex = color => {
-  const colors = {
-    blue: '#0000FF', 
-    white: '#FFFFFF',
-    black: '#000000',
-    green: '#008000',
-    yellow: '#FFFF00'
-  }
-  return  colors[color] 
-    ? `O hexadecimal para a cor ${color} é ${colors[color]}`
-    : `Não temos o equivalente hexadecimal para ${color}`
-}
-
-const colors = [
-  'blue', 
-  'white', 
-  'black', 
-  'green', 
-  'yellow', 
-  'red', 
-  'orange', 
-  'pink'
-]
-const colorMessage = color => console.log(convertToHex(color))
-colors.forEach(colorMessage)
 
 /*
   07
