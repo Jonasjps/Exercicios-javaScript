@@ -145,6 +145,31 @@ console.log(getFullName({ firstName: 'Afonso', lastName: 'Solano' }))
   - Exiba o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
 
+const convertToHex = color => {
+  const colors = {
+    blue: '#0000FF', 
+    white: '#FFFFFF',
+    black: '#000000',
+    green: '#008000',
+    yellow: '#FFFF00'
+  }
+  return  colors[color] 
+    ? `O hexadecimal para a cor ${color} é ${colors[color]}`
+    : `Não temos o equivalente hexadecimal para ${color}`
+}
+
+const colors = [
+  'blue', 
+  'white', 
+  'black', 
+  'green', 
+  'yellow', 
+  'red', 
+  'orange', 
+  'pink'
+]
+const colorMessage = color => console.log(convertToHex(color))
+colors.forEach(colorMessage)
 
 /*
   07
