@@ -79,7 +79,7 @@ const map = (array, func) => {
   }
 
   array.forEach(creatingMetodoMap)
-  
+
   return newArray
 }
 
@@ -93,12 +93,14 @@ console.log(map([1, 2, 3], number => number * 3))
     objeto person.
 */
 
-const person = {
+const person = { //fazer novamente
   name: 'Roger',
-  getName: () => this.name
+  getName: () =>  person.name
+  
 }
 
-// console.log(person.getName())
+console.log(person.getName())
+
 
 /*
   04
