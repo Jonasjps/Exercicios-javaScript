@@ -12,7 +12,43 @@
     - Os requests devem ser sequenciais. Ou seja, um request só deve ser 
       executado quando o request anterior for finalizado.
 */
+const getPokemon = (url, callback) => {
+  const request = new XMLHttpRequest()
+  request.addEventListener('readystatechange', () => {
+    const isRequestOk = request.readyState === 4 && request.status === 200
+    const isRequestNotOK = request.readyState === 4
 
+    if(isRequestOk) {
+      const data = JSON.parse(request.responseText)
+      callback(null, data)
+      return
+    }
+
+    if(isRequestNotOK) {
+      callback('Não foi possível obter o Pokémon', null)
+    }
+  })
+
+  request.open('GET', url)
+  request.send()
+}
+
+const logPokemon = (error, data) => error 
+  ? console.log(error) 
+  : console.log(`Pokémon obtido: ${data.name}`)
+
+const idPokemonData = id => `https://pokeapi.co/api/v2/pokemon/${id}`
+const bulbasaur = idPokemonData(1)
+const charmander = idPokemonData(4)
+const squirtle = idPokemonData(7)
+
+getPokemon(bulbasaur, (error, data) => {
+  logPokemon(error, data)
+  getPokemon(charmander, (error, data) => {
+    logPokemon(error, data)
+    getPokemon(squirtle, logPokemon)
+  })
+})
 /*
   02
 
