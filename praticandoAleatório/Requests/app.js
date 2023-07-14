@@ -1,4 +1,4 @@
-const getTodos = (url, callback) => {
+const getTodos = url => new Promise((resolve, reject) => {
     const request = new XMLHttpRequest()
     
     request.addEventListener('readystatechange', () => {
@@ -7,28 +7,31 @@ const getTodos = (url, callback) => {
         
         if (isRequestOk) {
             const data = JSON.parse(request.responseText)
-            callback(null, data)
-            return 
+            resolve(data)
         }
     
         if(isRequetNotOK) {
-            callback('Não foi possivel obter dados da API', null)
+            reject('Não foi possivel obter dados da API')
         }
     })
     
     
     request.open('GET', url)
     request.send()
-
-}
-
-getTodos('./json/todos.JSON', (erro, data) => {
-    console.log(data)
-    getTodos('./json/todos-02.JSON', (erro, data) => {
-        console.log(data)
-        getTodos('./json/todos-03.JSON', (erro, data) => {
-            console.log(data)
-        })
-    })
-    
 })
+
+getTodos('https://pokeapi.co/api/v2/pokemon/25')
+    .then(pokemon => console.log(pokemon))
+    .catch(error => console.log(error))
+
+
+// getTodos('./json/todos.JSON', (erro, data) => {
+//     console.log(data)
+//     getTodos('./json/todos-02.JSON', (erro, data) => {
+//         console.log(data)
+//         getTodos('./json/todos-03.JSON', (erro, data) => {
+//             console.log(data)
+//         })
+//     })
+    
+// })
