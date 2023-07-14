@@ -79,7 +79,21 @@ console.log(test(2, 3))
   - Crie um novo array chamado `newSul`, que recebe somente os estados do sul,
     pegando do array `brasil`. Não remova esses itens de `brasil`.
 */
+let sul = ['parana', 'santa catarina', 'rio grande do sul']
+let sudeste = ['são paulo', 'minas gerais', 'esperito santo', 'rio de janeiro']
 
+const brasil = sul.concat(sudeste)
+
+brasil.unshift('amazonas', 'acre', 'rondonia')
+brasil.shift()
+
+let newSul = []
+
+newSul.push(brasil.slice(2,5))
+
+
+console.log(newSul)
+console.log(brasil)
 /*
   04
 
