@@ -6,7 +6,29 @@
 - Se o request não estiver ok, exiba no console "Não foi possível obter os 
   dados dos usuários."
 */
+const getTodos = url => new Promise((resolve, reject) => {
+  const request = new XMLHttpRequest()
 
+  request.addEventListener('readystatechange', () => {
+    const isResquestOk = request.readyState === 4 && request.status === 200
+    const isRequestNotOk = request.readyState === 4
+    if(isResquestOk) {
+      const data = JSON.parse(request.responseText)
+      resolve(data)
+    }
+  
+    if(isRequestNotOk) {
+      reject('Não foi possível obter os dados dos usuários.')
+    }
+  })
+  
+  request.open('GET', url)
+  request.send()
+})
+
+getTodos('https://jsonplaceholder.typicode.com/users')
+  .then(value => console.log(value))
+  .catch(error => console.log(error))
 /*
   02
 
