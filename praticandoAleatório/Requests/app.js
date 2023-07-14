@@ -1,4 +1,4 @@
-const getTodos = url => new Promise((resolve, reject) => {
+const getPokemon = url => new Promise((resolve, reject) => {
     const request = new XMLHttpRequest()
     
     request.addEventListener('readystatechange', () => {
@@ -20,16 +20,24 @@ const getTodos = url => new Promise((resolve, reject) => {
     request.send()
 })
 
-getTodos('https://pokeapi.co/api/v2/pokemon/25')
-    .then(pokemon => console.log(pokemon))
+getPokemon('https://pokeapi.co/api/v2/pokemon/1')
+    .then(bulbasaur => {
+        console.log(bulbasaur)
+        return getPokemon('https://pokeapi.co/api/v2/pokemon/4')
+    })
+    .then(charmender => {
+        console.log(charmender)
+        return getPokemon('https://pokeapi.co/api/v2/pokemon/7')
+    })
+    .then(console.log)
     .catch(error => console.log(error))
 
 
-// getTodos('./json/todos.JSON', (erro, data) => {
+// getPokemon('./json/todos.JSON', (erro, data) => {
 //     console.log(data)
-//     getTodos('./json/todos-02.JSON', (erro, data) => {
+//     getPokemon('./json/todos-02.JSON', (erro, data) => {
 //         console.log(data)
-//         getTodos('./json/todos-03.JSON', (erro, data) => {
+//         getPokemon('./json/todos-03.JSON', (erro, data) => {
 //             console.log(data)
 //         })
 //     })
