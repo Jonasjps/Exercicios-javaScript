@@ -43,7 +43,29 @@ getTodos('https://jsonplaceholder.typicode.com/users')
     mensagem: "Resultado da operação: NUMERO_1 OPERADOR NUMERO_2 = RESULTADO."
   - Se o operador não for válido, retorne a mensagem "Operação inválida."
 */
+const operaçãoMat = (num1, operator, num2, operetion) => 
+   `Resultado da operação: ${num1} ${operator} ${num2} = ${operetion}.`
 
+const calculator = operetor => (num1, num2) => {
+  const operetions =( {
+    '+': operaçãoMat(num1, operetor, num2, num1 + num2),
+    '-': operaçãoMat(num1, operetor, num2, num1 - num2),
+    '*': operaçãoMat(num1, operetor, num2, num1 * num2),
+    '/': operaçãoMat(num1, operetor, num2, num1 / num2)   
+  })
+  return operetions[operetor] || 'Operação inválida'
+}
+
+const sum = calculator('+')
+const subtração = calculator('-')
+const division = calculator('/')
+const multiplicação = calculator('*')
+const test = calculator('y')
+console.log(sum(1, 1))
+console.log(subtração(4,1))
+console.log(division(10, 2))
+console.log(multiplicação(4, 6))
+console.log(test(2, 3))
 /*
   03
 
