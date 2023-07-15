@@ -160,7 +160,13 @@ const checkingEstadoBrasilMessage = checkingEstadoBrasil
 
   console.log(checkingEstadoBrasilMessage)
 
-  const newBrasilDeEstados = newBrasil.map(({id, index}) => ({id: id + 1 , estado: `${index.toUpperCase()} pertence ao Brasil.`}))
+  const newBrasilDeEstados = newBrasil.map(({id, index}) => 
+    ({id: id + 1 , estado: `${index.toUpperCase()} pertence ao Brasil.`}))
 
-  console.log(newBrasil)
-  console.log(newBrasilDeEstados)
+    console.log(newBrasil)
+    console.log(newBrasilDeEstados)
+
+    const fintrandoEstadosComIdPares = newBrasilDeEstados
+      .filter(({id}) => id % 2 === 0)
+      
+    console.log(fintrandoEstadosComIdPares)
