@@ -82,7 +82,7 @@ console.log(test(2, 3))
 let sul = ['parana', 'santa catarina', 'rio grande do sul']
 let sudeste = ['são paulo', 'minas gerais', 'esperito santo', 'rio de janeiro']
 
-const brasil = sul.concat(sudeste)
+let brasil = sul.concat(sudeste)
 
 brasil.unshift('amazonas', 'acre', 'rondonia')
 brasil.shift()
@@ -112,6 +112,28 @@ console.log(brasil)
     console: "Nem todos os estados tem mais de 7 letras.". Pesquise pelo método 
     every.
 */
+let nordeste = [
+  'maranhão', 
+  'piaui', 
+  'ceara', 
+  'rio grande do norte', 
+  'paraiba', 
+  'pernambuco', 
+  'alagoas', 
+  'sergipe',
+  'bahia'
+]
+
+console.log(nordeste)
+
+const newSudeste = brasil.splice(5)
+console.log(newSudeste)
+
+brasil = brasil.concat(nordeste)
+
+console.log(brasil)
+
+
 
 /*
   05
