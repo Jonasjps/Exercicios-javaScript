@@ -130,11 +130,12 @@ console.log(nordeste)
 brasil = brasil.concat(nordeste)
 console.log(brasil)
 
-const newBrasil = brasil.map((index, id )=> ({id: id, estado: index }))
+const newBrasil = brasil.map((index, id)=> ({ id: id, index }))
 const checkingEstadosMaisDe7Letras = newBrasil.every(estado => estado > 7)
 const menssage = checkingEstadosMaisDe7Letras 
   ? 'Sim, todos os estados tem mais de 7 letras.' 
   : 'Nem todos os estados tem mais de 7 letras.'
+console.log(newBrasil)  
 console.log(menssage)
 
 /*
