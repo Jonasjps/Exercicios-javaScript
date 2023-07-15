@@ -50,7 +50,8 @@ const calculator = operetor => (number1, number2) => {
     '+': messageOperetion(number1,operetor, number2, number1 + number2) ,
     '-': messageOperetion(number1, operetor, number2, number1 - number2),
     '/': messageOperetion(number1, operetor, number2, number1 / number2),
-    '*': messageOperetion(number1, operetor, number2, number1 * number2)
+    '*': messageOperetion(number1, operetor, number2, number1 * number2),
+    '%': messageOperetion(number1, operetor, number2, number1 % number2)
   }
 
   return operetions[operetor] || 'Operação inválida.'
@@ -60,12 +61,14 @@ const sum = calculator('+')
 const subtraction = calculator('-')
 const multiplication = calculator('*')
 const division = calculator('/')
+const modulo = calculator('%')
 const test = calculator('t')
 
 console.log(sum(2, 4))
 console.log(subtraction(20, 3))
 console.log(division(36, 4))
 console.log(multiplication(15, 6))
+console.log(modulo(13, 6))
 console.log(test(3, 5))
 /*
 
@@ -163,10 +166,10 @@ const checkingEstadoBrasilMessage = checkingEstadoBrasil
   const newBrasilDeEstados = newBrasil.map(({id, index}) => 
     ({id: id + 1 , estado: `${index.toUpperCase()} pertence ao Brasil.`}))
 
-    console.log(newBrasil)
-    console.log(newBrasilDeEstados)
+  console.log(newBrasil)
+  console.log(newBrasilDeEstados)
 
-    const fintrandoEstadosComIdPares = newBrasilDeEstados
-      .filter(({id}) => id % 2 === 0)
-      
-    console.log(fintrandoEstadosComIdPares)
+  const fintrandoEstadosComIdPares = newBrasilDeEstados
+    .filter(({id}) => id % 2 === 0)
+
+  console.log(fintrandoEstadosComIdPares)
