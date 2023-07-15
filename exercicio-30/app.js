@@ -42,8 +42,32 @@ getUsers('https://jsonplaceholder.typicode.com/users')
     mensagem: "Resultado da operação: NUMERO_1 OPERADOR NUMERO_2 = RESULTADO."
   - Se o operador não for válido, retorne a mensagem "Operação inválida."
 */
+const messageOperetion = (number1, operetor, number2, operetion) =>
+   `Resultado da operação: ${number1} ${operetor} ${number2} = ${operetion}.`
 
+const calculator = operetor => (number1, number2) => {
+  const operetions = {
+    '+': messageOperetion(number1,operetor, number2, number1 + number2) ,
+    '-': messageOperetion(number1, operetor, number2, number1 - number2),
+    '/': messageOperetion(number1, operetor, number2, number1 / number2),
+    '*': messageOperetion(number1, operetor, number2, number1 * number2)
+  }
+
+  return operetions[operetor] || 'Operação inválida.'
+}
+const sum = calculator('+')
+const subtraction = calculator('-')
+const multiplication = calculator('*')
+const division = calculator('/')
+const test = calculator('t')
+
+console.log(sum(2, 4))
+console.log(subtraction(20, 3))
+console.log(division(36, 4))
+console.log(multiplication(15, 6))
+console.log(test(3, 5))
 /*
+
   03
 
   - Crie 2 arrays, `sul` e `sudeste`, que serão as regiões do Brasil. Cada 
