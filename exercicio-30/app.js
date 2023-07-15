@@ -151,3 +151,11 @@ console.log(menssage)
   - Filtre o array criado acima, retornando somente os estados que tiverem ID 
     par. Atribua este novo array à uma constante.
 */
+
+const checkingEstadoBrasil = brasil.includes('ceara')
+
+const checkingEstadoBrasilMessage = checkingEstadoBrasil 
+  ? 'Ceará está incluído.' 
+  : 'Ceará não foi incluído =/'
+
+  console.log(checkingEstadoBrasilMessage)
