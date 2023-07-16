@@ -86,7 +86,7 @@ console.log(test(3,2))
 
 const sul = ['parana', 'santa catarina', 'rio grande do sul']
 const sudeste = ['São paulo', 'Rio de Janeiro', 'Minas gerais', 'Espirito santo',]
-const brasil = sul.concat(sudeste)
+let brasil = sul.concat(sudeste)
 
 brasil.unshift('Amazônas', 'Acre', 'Rondônia')
 
@@ -114,7 +114,33 @@ console.log(newSul)
     console: "Nem todos os estados tem mais de 7 letras.". Pesquise pelo método 
     every.
 */
+const nordeste = [
+  'Maranhão', 
+  'Bahia', 
+  'Ceara', 
+  'Piaui', 
+  'Sergipe', 
+  'Paraiba', 
+  'Alagoas', 
+  'Pernambuco', 
+  'Rio grande do Norte'
+]
+const newSudeste = brasil.splice(5)
 
+console.log(newSudeste)
+brasil = brasil.concat(nordeste)
+
+console.log(brasil)
+
+const newBrasil = brasil.map((item, id) => ({id: id, estado: item}))
+
+const checkingEstadosMaisDe7Letras = newBrasil.every(item => item.length > 7) 
+const checkingEstadosMaisDe7LetrasMessage = checkingEstadosMaisDe7Letras 
+  ? 'Sim, todos os estados tem mais de 7 letras.'
+  : 'Nem todos os estados tem mais de 7 letras.'
+
+console.log(newBrasil)
+console.log(checkingEstadosMaisDe7LetrasMessage)
 
 /*
   05
