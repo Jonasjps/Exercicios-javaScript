@@ -7,6 +7,24 @@
   - Implemente uma segunda função que exibe, no console, seus dados de usuário 
     do GitHub.
 */
+const userGithub = async () => {
+ const response = await fetch('https://api.github.com/users/jonasjps')
+ return await response.json()
+}
+
+const user = async () => {
+  const git = await userGithub()
+  console.log(git)
+}
+
+user()
+// console.log(1)
+// console.log(2)
+// user()
+// console.log(3)
+// console.log(4)
+
+
 
 /*
   02
@@ -17,6 +35,10 @@
 */
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+const numbersDivisionPor2 = numbers.filter(number => number % 2 === 0)
+
+console.log(numbersDivisionPor2)
 
 /*
   03
@@ -31,7 +53,9 @@ const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     - Natália => "PNaPtáPlia";
     - Rafaela => "PRaPfaPePla".
 */
+const nameSilaba = ['', 'Jo', 'nas' ]
 
+console.log(nameSilaba.join('P'))
 /*
   04
 
@@ -46,7 +70,9 @@ const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
   Dica: pesquise pelo método split.
 */
+const name = 'Jonas'
 
+// console.log(`${name}: "LETRA" é a POSIÇÃOª letra do meu nome. `)
 /*
   05
 
@@ -59,7 +85,13 @@ const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
   Dica: pesquise pelo método Object.keys().
 */
+const diferentesValues = { 
+  name: 'Jonas',
+  lastName: 'Pessoa',
+  age: 28
+}
 
+console.log(diferentesValues)
 /*
   06
 
