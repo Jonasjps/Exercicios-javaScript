@@ -84,8 +84,17 @@ console.log(test(3,2))
     pegando do array `brasil`. Não remova esses itens de `brasil`.
 */
 
+const sul = ['parana', 'santa catarina', 'rio grande do sul']
+const sudeste = ['São paulo', 'Rio de Janeiro', 'Minas gerais', 'Espirito santo',]
+const brasil = sul.concat(sudeste)
 
+brasil.unshift('Amazônas', 'Acre', 'Rondônia')
 
+console.log(brasil.shift())
+console.log(brasil)
+
+const newSul = brasil.slice(2,5)
+console.log(newSul)
 
 /*
   04
