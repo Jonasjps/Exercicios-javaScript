@@ -6,7 +6,28 @@
 - Se o request não estiver ok, exiba no console "Não foi possível obter os 
   dados dos usuários."
 */
+const getUsers = url => new Promise((resolve, reject) => {
+  const request = new XMLHttpRequest() 
+  request.addEventListener('readystatechange', () => {
+    const isRequestOk = request.readyState === 4 && request.status === 200
+    const isRequestNotOk = request.readyState === 4
 
+    if(isRequestOk) {
+      const data = JSON.parse(request.responseText)
+      resolve(data)
+    }
+
+    if(isRequestNotOk) {
+      reject('Não foi possível obter os dados dos usuários.')
+    }
+
+  })
+  request.open('GET', url)
+  request.send()
+}) 
+getUsers('https://jsonplaceholder.typicode.com/users')
+  .then(console.log)
+  .catch(console.log)
 /*
   02
 
@@ -20,7 +41,34 @@
     mensagem: "Resultado da operação: NUMERO_1 OPERADOR NUMERO_2 = RESULTADO."
   - Se o operador não for válido, retorne a mensagem "Operação inválida."
 */
+const messageOperetion = (number1, operator, number2, operetion) =>
+   `Resultado da operação: ${number1} ${operator} ${number2} = ${operetion}.`
 
+const calculator = operator => (number1, number2) => {
+  const operetions = {
+    '+': messageOperetion(number1, operator, number2, number1 + number2),
+    '-': messageOperetion(number1, operator, number2, number1 - number2),
+    '*': messageOperetion(number1, operator, number2, number1 * number2),
+    '/': messageOperetion(number1, operator, number2, number1 / number2),
+    '%': messageOperetion(number1, operator, number2, number1 % number2)
+  }
+  return operetions[operator] || 'Operação inválida'
+}
+
+const sum = calculator('+')
+const subtraction = calculator('-')
+const mutiplication = calculator('*')
+const division = calculator('/')
+const percent = calculator('%')
+const test = calculator('t')
+
+
+console.log(sum(3, 9))
+console.log(subtraction(40, 23))
+console.log(mutiplication(23, 12))
+console.log(division(34, 2))
+console.log(percent(22, 10))
+console.log(test(3,2))
 /*
 
   03
