@@ -156,4 +156,23 @@ console.log(checkingEstadosMaisDe7LetrasMessage)
     par. Atribua este novo array à uma constante.
 */
 
+const estadoBrasil = brasil.includes('Ceara')
+
+const checkingEstadoNordest = estadoBrasil 
+  ? 'Ceará está incluído.' 
+  : 'Ceará não foi incluído =/'
+
+console.log(checkingEstadoNordest)
+
+const newNewBrasil = newBrasil.map(({id, estado}) => ({
+    id: id + 1,
+    estado: `${estado} pertence ao Brasil.`
+  }))
+
+    console.log(newNewBrasil)
+
+    const newBrasillIdsPares = newNewBrasil.filter(({id}) => id % 2 === 0)
+
+    console.log(newBrasillIdsPares)
+
 
