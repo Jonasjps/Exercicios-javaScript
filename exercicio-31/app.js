@@ -67,7 +67,14 @@ console.log(myNameMessage(myName3))
 
   Dica: pesquise pelo método split.
 */
+const name = 'Jonas'
+const nameName = name.split('')
+const nameLetterMessage = (item, index) =>
+console.log(`"${item}" é a ${index + 1}ª letra do meu nome.`)
 
+const nameMessage = nameName.forEach(nameLetterMessage) 
+
+   console.log(nameName)
 /*
   05
 
