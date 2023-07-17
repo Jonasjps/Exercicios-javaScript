@@ -12,10 +12,9 @@ const getUserGitHub = async userName => {
   return response.json()
 }
 
-const userGitHub = async () => {
-  const user = await getUserGitHub('jonasjps')
-  console.log(user) 
-}
+const userGitHub = async () => 
+  console.log(await getUserGitHub('jonasjps')) 
+
 
 userGitHub()
 /*
@@ -28,6 +27,10 @@ userGitHub()
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
+const numbersDivisibolOk2Ou3 = numbers
+  .filter(number => number % 2 === 0 || number % 3 === 0)
+
+console.log(numbersDivisibolOk2Ou3)
 /*
   03
 
