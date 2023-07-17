@@ -7,7 +7,16 @@
   - Implemente uma segunda função que exibe, no console, seus dados de usuário 
     do GitHub.
 */
+const getUserGitHub = async userName => {
+  const response = await fetch(`https://api.github.com/users/${userName}`)
+  return response.json()
+}
 
+const logGitHub = async () => 
+  console.log(await getUserGitHub('Jonasjps'))
+
+
+logGitHub()
 
 
 /*
