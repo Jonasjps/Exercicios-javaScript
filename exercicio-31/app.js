@@ -7,16 +7,6 @@
   - Implemente uma segunda função que exibe, no console, seus dados de usuário 
     do GitHub.
 */
-const getUserGitHub = async userName => {
-  const response = await fetch(`https://api.github.com/users/${userName}`)
-  return response.json()
-}
-
-const logGitHub = async () => 
-  console.log(await getUserGitHub('Jonasjps'))
-
-
-logGitHub()
 
 
 /*
@@ -28,10 +18,6 @@ logGitHub()
 */
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-const NumbersDiviboOf2Ou3 = number => number
-  .filter(number => number % 2 === 0 || number % 3 === 0)
-
-  console.log(NumbersDiviboOf2Ou3(numbers))
 
 /*
   03
@@ -46,15 +32,6 @@ const NumbersDiviboOf2Ou3 = number => number
     - Natália => "PNaPtáPlia";
     - Rafaela => "PRaPfaPePla".
 */
-const myName = ['Jo', 'nas']
-const myName2 = ['Na', 'ta', 'lia']
-const myName3 = ['Ra', 'fa', 'e', 'la']
-
-const myNameLength = name => name.reduce((acc, item) => `${acc}P${item}`, '')
-
-console.log(myNameLength(myName))
-console.log(myNameLength(myName2))
-console.log(myNameLength(myName3))
 
 
 /*
