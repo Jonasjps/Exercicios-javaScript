@@ -44,8 +44,15 @@ console.log(numbersDivisibolOk2Ou3(numbers))
     - Natália => "PNaPtáPlia";
     - Rafaela => "PRaPfaPePla".
 */
+const myName = ['Jo', 'nas']
+const myName2 = ['Na', 'tá', 'lia']
+const myName3 = ['Ra', 'fa', 'e', 'la']
 
+const myNameMessage = name => name.reduce((acc, item) => `${acc}P${item}`, '')
 
+console.log(myNameMessage(myName))
+console.log(myNameMessage(myName2))
+console.log(myNameMessage(myName3))
 /*
   04
 
