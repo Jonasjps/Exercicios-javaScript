@@ -87,6 +87,15 @@ const nameMessage = nameName.forEach(nameLetterMessage)
 
   Dica: pesquise pelo método Object.keys().
 */
+const person = {
+  name: 'Jonas',
+  lastName: 'Pessoa',
+  age: 28
+}
+
+const arrayDePropiedades = Object.keys(person)
+console.log(arrayDePropiedades)
+
 
 /*
   06
