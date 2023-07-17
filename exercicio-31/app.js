@@ -53,9 +53,10 @@ console.log(numbersDivisionPor2)
     - Natália => "PNaPtáPlia";
     - Rafaela => "PRaPfaPePla".
 */
-const nameSilaba = ['', 'Jo', 'nas' ]
+const nameSilaba = ['Jo', 'nas' ]
+const myNameP = nameSilaba.reduce((acc, item) => `${acc}P${item}`, '')
 
-console.log(nameSilaba.join('P'))
+console.log(myNameP)
 /*
   04
 
