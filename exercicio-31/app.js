@@ -46,6 +46,16 @@ const NumbersDiviboOf2Ou3 = number => number
     - Natália => "PNaPtáPlia";
     - Rafaela => "PRaPfaPePla".
 */
+const myName = ['Jo', 'nas']
+const myName2 = ['Na', 'ta', 'lia']
+const myName3 = ['Ra', 'fa', 'e', 'la']
+
+const myNameLength = name => name.reduce((acc, item) => `${acc}P${item}`, '')
+
+console.log(myNameLength(myName))
+console.log(myNameLength(myName2))
+console.log(myNameLength(myName3))
+
 
 /*
   04
