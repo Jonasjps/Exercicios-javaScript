@@ -111,12 +111,6 @@ console.log(arrayDePropiedades)
 */
 
 const scores = [100, 90, 85, 100, 60, 85, 100, 90, 55, 75, 60]
-const frequenseNumbers = (array, value) => array
-  .reduce((acc, item) => value === item ? acc + 1 : acc ,0)
-
-
-
-console.log(frequenseNumbers(scores, 100))
 /*
   07
 
@@ -140,22 +134,3 @@ console.log(frequenseNumbers(scores, 100))
   Dica: lembre-se que o método filter inclui o item em questão no novo array 
   que está sendo gerado **apenas** se a função retorna um valor truthy.
 */
-const filte = (array, func) => {
-  let newArray = []
-
-  array.forEach((item, index) => {
-    if(func(item, index, array)) {
-      newArray.push(item)
-    }
-  }) 
-
-  return newArray
-}
-
-console.log(filte([1, 2, 3], item => item))
-console.log(filte([0, 1, 2], item => item))
-console.log(filte([1, 2, 3], item => item < 2))
-console.log(filte([1, 2, 3, 5], (item, index) => item === index + 1))
-console.log(filte([1, 2, 3, 2, 1, 5], (item, index, array) => 
-  index === array.indexOf(item)))
-
