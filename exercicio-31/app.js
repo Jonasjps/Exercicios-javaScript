@@ -7,6 +7,15 @@
   - Implemente uma segunda função que exibe, no console, seus dados de usuário 
     do GitHub.
 */
+const userGitHub = async (userName) => {
+  const user = await fetch(`https://api.github.com/users/${userName}`)
+  return user.json()
+} 
+
+const userGit = async () => 
+  console.log(await userGitHub('jonasjps'))
+  
+userGit()
 
 /*
   02
@@ -17,6 +26,11 @@
 */
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+const numbersDivisibouOf2Ou3 = numbers
+  .filter(item => item % 2 === 0 || item % 3 === 0)
+
+console.log(numbersDivisibouOf2Ou3)
 
 /*
   03
@@ -31,7 +45,15 @@ const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     - Natália => "PNaPtáPlia";
     - Rafaela => "PRaPfaPePla".
 */
+const letterMyName = ['Jo', 'nas']
+const letterMyName2 = ['Na', 'ta',  'lia']
+const letterMyName3 = ['Ra', 'fa', 'e', 'la']
 
+const stringMyName = name => name.reduce((acc, item) => `${acc}P${item}`, '')
+
+console.log(stringMyName(letterMyName))
+console.log(stringMyName(letterMyName2))
+console.log(stringMyName(letterMyName3))
 /*
   04
 
