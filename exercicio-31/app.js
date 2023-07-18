@@ -46,7 +46,11 @@ const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
   Dica: pesquise pelo método split.
 */
+const name = 'Jonas'
 
+const myName = name.split('')
+const myNameMessage = myName.forEach((item, index) =>
+   console.log(`"${item}" é a ${index + 1}ª letra do meu nome.`))
 /*
   05
 
