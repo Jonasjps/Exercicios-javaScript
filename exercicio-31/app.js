@@ -138,24 +138,3 @@ console.log(frenquenciaDenumber(scores, 100))
   Dica: lembre-se que o método filter inclui o item em questão no novo array 
   que está sendo gerado **apenas** se a função retorna um valor truthy.
 */
-const filter = (array, func) => {
-  let newArray = []
-  
-  const funcItem = (item,index) => {
-    const funcMethodFilter = func(item,index, array)
-    if(funcMethodFilter) {
-      newArray.push(item)
-    }
-  }
-
-  array.forEach(funcItem)
-
-  return newArray
-}
-
-console.log(filter([1, 2, 3], item => item))
-console.log(filter([0, 1, 2], item => item))
-console.log(filter([1, 2, 3], item => item < 2))
-console.log(filter([1, 2, 3, 5], (item, index) => item === index + 1))
-console.log(filter([1, 2, 3, 2, 1, 5], (item, index, array) =>
-index === array.indexOf(item)))
