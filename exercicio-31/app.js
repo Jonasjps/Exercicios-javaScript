@@ -7,16 +7,7 @@
   - Implemente uma segunda função que exibe, no console, seus dados de usuário 
     do GitHub.
 */
-const getUserGitHub = async userName => {
-  const response = await fetch(`https://api.github.com/users/${userName}`)
-  return response.json()
-}
 
-const userGitHub = async () => 
-  console.log(await getUserGitHub('jonasjps')) 
-
-
-userGitHub()
 /*
   02
 
@@ -27,10 +18,6 @@ userGitHub()
 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-const numbersDivisibolOk2Ou3 = number => number
-  .filter(number => number % 2 === 0 || number % 3 === 0)
-
-console.log(numbersDivisibolOk2Ou3(numbers))
 /*
   03
 
@@ -44,15 +31,7 @@ console.log(numbersDivisibolOk2Ou3(numbers))
     - Natália => "PNaPtáPlia";
     - Rafaela => "PRaPfaPePla".
 */
-const myName = ['Jo', 'nas']
-const myName2 = ['Na', 'tá', 'lia']
-const myName3 = ['Ra', 'fa', 'e', 'la']
 
-const myNameMessage = name => name.reduce((acc, item) => `${acc}P${item}`, '')
-
-console.log(myNameMessage(myName))
-console.log(myNameMessage(myName2))
-console.log(myNameMessage(myName3))
 /*
   04
 
@@ -67,14 +46,7 @@ console.log(myNameMessage(myName3))
 
   Dica: pesquise pelo método split.
 */
-const name = 'Jonas'
-const nameName = name.split('')
-const nameLetterMessage = (item, index) =>
-console.log(`"${item}" é a ${index + 1}ª letra do meu nome.`)
 
-const nameMessage = nameName.forEach(nameLetterMessage) 
-
-   console.log(nameName)
 /*
   05
 
@@ -87,14 +59,7 @@ const nameMessage = nameName.forEach(nameLetterMessage)
 
   Dica: pesquise pelo método Object.keys().
 */
-const person = {
-  name: 'Jonas',
-  lastName: 'Pessoa',
-  age: 28
-}
 
-const arrayDePropiedades = Object.keys(person)
-console.log(arrayDePropiedades)
 
 
 /*
@@ -111,10 +76,7 @@ console.log(arrayDePropiedades)
 */
 
 const scores = [100, 90, 85, 100, 60, 85, 100, 90, 55, 75, 60]
-const frenquenciaDenumber = (array, value) => array
-  .reduce((acc, item) => value === item ? acc + 1 : acc, 0)
 
-console.log(frenquenciaDenumber(scores, 100))
 /*
   07
 
