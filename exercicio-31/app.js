@@ -60,7 +60,13 @@ const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   Dica: pesquise pelo método Object.keys().
 */
 
+const person = {
+  name: 'Jonas', 
+  lastName: 'Pessoa',
+  age: 28
+}
 
+console.log(Object.keys(person))
 
 /*
   06
