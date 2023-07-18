@@ -76,6 +76,10 @@ const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 */
 
 const scores = [100, 90, 85, 100, 60, 85, 100, 90, 55, 75, 60]
+const quantatyOcorrencias = (array, value) => array
+  .reduce((acc, item) => value === item ? acc + 1 : acc, 0)
+
+  console.log(quantatyOcorrencias(scores, 85))
 
 /*
   07
@@ -104,7 +108,7 @@ const filter = (array, callback) => {
   let newArrray = []
   const funcFilter = (item, index) => {
     const funcCallback = callback(item, index, array)
-    
+
     if(funcCallback) {
       newArrray.push(item)
     }
