@@ -111,6 +111,10 @@ console.log(arrayDePropiedades)
 */
 
 const scores = [100, 90, 85, 100, 60, 85, 100, 90, 55, 75, 60]
+const frenquenciaDenumber = (array, value) => array
+  .reduce((acc, item) => value === item ? acc + 1 : acc, 0)
+  
+console.log(frenquenciaDenumber(scores, 100))
 /*
   07
 
