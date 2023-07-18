@@ -111,7 +111,12 @@ console.log(arrayDePropiedades)
 */
 
 const scores = [100, 90, 85, 100, 60, 85, 100, 90, 55, 75, 60]
+const frequenseNumbers = (array, value) => array
+  .reduce((acc, item) => value === item ? acc + 1 : acc ,0)
 
+
+
+console.log(frequenseNumbers(scores, 100))
 /*
   07
 
