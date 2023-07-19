@@ -39,7 +39,7 @@ form.addEventListener('submit', async event => {
     }
 
     const GIFData = await response.json()
-    console.log(GIFData)
+    console.log(GIFData.data[0].images.downsized.url)
   } catch (error) {
     alert(`Erro: ${error.message}`)
   }
