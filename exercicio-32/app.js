@@ -22,16 +22,3 @@
 
 */
 
-const search = document.querySelector('#search')
-const buttonBtnSearch = document.querySelector('#btnsearch')
-const out = document.querySelector('.out')
-
-const gifs = async () => {
-  search.addEventListener('submit', event => {
-    const GIPHY =  fetch(`https://api.giphy.com/v1/gifs/search?api_key=[https://api.giphy.com/v1/gifs/search?api_key=[QR0wHsfz9dl9pdBhaKHu52LzzTHyiH7R]&limit=1&q=[${search}]]&limit=1&q=[VALOR_INSERIDO_NO_INPUT]`)
-    return  GIPHY
-
-
-  })
-
-}
