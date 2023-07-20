@@ -23,6 +23,7 @@
 */
 
 const form = document.querySelector('form')
+const GIFSContainer = document.querySelector('div')  
 
 form.addEventListener('submit', async event => {
   event.preventDefault()
@@ -39,7 +40,16 @@ form.addEventListener('submit', async event => {
     }
 
     const GIFData = await response.json()
-    console.log(GIFData.data[0].images.downsized.url)
+    const downsizedGIFUrl = GIFData.data[0].images.downsized.url
+    const img = document.createElement('img')
+
+
+    img.setAttribute('src', downsizedGIFUrl)
+    img.setAttribute('alt', GIFData.data[0].title)
+
+    GIFSContainer.insertAdjacentElement('afterbegin', img)
+
+    event.target.reset()
   } catch (error) {
     alert(`Erro: ${error.message}`)
   }
