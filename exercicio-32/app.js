@@ -22,3 +22,23 @@
 
 */
 
+const form = document.querySelector('form')
+
+form.addEventListener('submit', async event => {
+  event.preventDefault()
+  const valueDoInput = event.target.search.value
+  const APIkey = 'QR0wHsfz9dl9pdBhaKHu52LzzTHyiH7R'
+  const url = `https://api.giphy.com/v1/gifs/search?apikey=${APIkey}&limit=1&q=${valueDoInput}]`
+  
+  try {
+    const response = await fetch(url)
+
+    if(!response.ok) {
+      throw new Error('Não foi possível obter dados da API.')
+    }
+  } catch (error) {
+    alert(`Erro: ${error.message}`)
+  }
+
+  console.log(url)
+})
