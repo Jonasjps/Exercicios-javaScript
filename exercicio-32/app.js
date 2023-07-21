@@ -25,14 +25,11 @@
 const form = document.querySelector('form')
 const GifsContainer = document.querySelector('div')
 
-form.addEventListener('submit', async event => {
-  event.preventDefault() 
-  const inputValue = event.target.search.value
-  const APIkey = 'QR0wHsfz9dl9pdBhaKHu52LzzTHyiH7R'
-  const url = `https://api.giphy.com/v1/gifs/search?api_key=${APIkey}&limit=1&q=${inputValue}`
-  
-  try {
-    const response = await fetch(url) 
+const ApiUrl = (APIkey, inputValue) =>
+  `https://api.giphy.com/v1/gifs/search?api_key=${APIkey}&limit=1&q=${inputValue}`
+
+const getOfSetandoGifs = async url => {
+  const response = await fetch(url) 
     const GIF = await response.json()
     
     if(!response.ok) {
@@ -47,7 +44,17 @@ form.addEventListener('submit', async event => {
     
     GifsContainer.insertAdjacentElement('afterbegin', img)
 
-    console.log(img)
+}
+
+form.addEventListener('submit', async event => {
+  event.preventDefault() 
+  
+  const inputValue = event.target.search.value
+  const APIkey = 'QR0wHsfz9dl9pdBhaKHu52LzzTHyiH7R'
+  const url = ApiUrl(APIkey, inputValue)
+  
+  try {
+    getOfSetandoGifs(url)
   } catch (error) {
     alert(`Erro: ${error.message}`)
   }
