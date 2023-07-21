@@ -23,6 +23,7 @@
 */
 
 const form = document.querySelector('form')
+const GifsContainer = document.querySelector('div')
 
 form.addEventListener('submit', async event => {
   event.preventDefault() 
@@ -33,11 +34,20 @@ form.addEventListener('submit', async event => {
   try {
     const response = await fetch(url) 
     const GIF = await response.json()
-    const GIFsUrl = GIF.data[0].images.downsized_small.mp4
+    
     if(!response.ok) {
       throw new Error('Não foi possível obter dados da API.')
     }
-    console.log(GIFsUrl)
+
+    const GIFsUrl = GIF.data[0].images.downsized.url
+    const img = document.createElement('img')
+    
+    img.setAttribute('src', GIFsUrl)
+    img.setAttribute('alt', GIF.data[0].title)
+    
+    GifsContainer.insertAdjacentElement('afterbegin', img)
+
+    console.log(img)
   } catch (error) {
     alert(`Erro: ${error.message}`)
   }
