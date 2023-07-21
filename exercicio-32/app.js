@@ -27,6 +27,7 @@ const GIFSContainer = document.querySelector('div')
 
 form.addEventListener('submit',async event => {
   event.preventDefault() 
+  
   const inputValue = event.target.search.value
   const APIkey = 'QR0wHsfz9dl9pdBhaKHu52LzzTHyiH7R'
   const url = ` https://api.giphy.com/v1/gifs/search?api_key=${APIkey}&limit=1&q=${inputValue}`
