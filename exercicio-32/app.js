@@ -29,25 +29,44 @@ const APIkey = 'QR0wHsfz9dl9pdBhaKHu52LzzTHyiH7R'
 const urlAPIGIF = GIFName => 
   `https://api.giphy.com/v1/gifs/search?api_key=${APIkey}&limit=1&q=${GIFName}`
 
-form.addEventListener('submit', async event => {
-  event.preventDefault()
-  const inputValue = event.target.search.value
-  const APIGIF = urlAPIGIF(inputValue)
+  const fetchAPIUrl = async inputValue => {
   try {
+    const APIGIF = urlAPIGIF(inputValue)
     const response = await fetch(APIGIF)
 
     if(!response.ok) {
       throw new Error('Não foi possível obter dados da API.')
     }
-    
-    const GIFsAPI = await response.json()
+    return await response.json()
+  } catch (error) {
+    alert(`Erro: ${error.message}`)
+  }  
+}
+
+const insertInToDom = async inputValue => {
+  const GIFsAPI = await fetchAPIUrl(inputValue)
+  
+  if(GIFsAPI) {
     const GIFsUrl = GIFsAPI.data[0].images.downsized.url
-    const img = document.createElement('img')
+    setImageGIF(GIFsUrl,GIFsAPI)
+  }
+  
+}
+
+const setImageGIF = (GIFsUrl, GIFsAPI) => {
+  const img = document.createElement('img')
 
     img.setAttribute('src', GIFsUrl)
     img.setAttribute('alt', GIFsAPI.data[0].title)
     GIFSContainer.insertAdjacentElement('afterbegin', img)
-  } catch (error) {
-    alert(`Erro: ${error.message}`)
-  }
+    return img
+}
+  
+ 
+form.addEventListener('submit', async event => {
+  event.preventDefault()
+  const inputValue = event.target.search.value
+  
+
+  insertInToDom(inputValue)
 })
