@@ -25,14 +25,16 @@
 const form = document.querySelector('form') 
 const GIFSContainer = document.querySelector('div')
 
+const APIkey = 'QR0wHsfz9dl9pdBhaKHu52LzzTHyiH7R'
+const urlAPIGIF = GIFName => 
+  `https://api.giphy.com/v1/gifs/search?api_key=${APIkey}&limit=1&q=${GIFName}`
+
 form.addEventListener('submit', async event => {
   event.preventDefault()
   const inputValue = event.target.search.value
-  const APIkey = 'QR0wHsfz9dl9pdBhaKHu52LzzTHyiH7R'
-  const url = `https://api.giphy.com/v1/gifs/search?api_key=${APIkey}&limit=1&q=${inputValue}`
-
+  const APIGIF = urlAPIGIF(inputValue)
   try {
-    const response = await fetch(url)
+    const response = await fetch(APIGIF)
 
     if(!response.ok) {
       throw new Error('Não foi possível obter dados da API.')
@@ -45,7 +47,6 @@ form.addEventListener('submit', async event => {
     img.setAttribute('src', GIFsUrl)
     img.setAttribute('alt', GIFsAPI.data[0].title)
     GIFSContainer.insertAdjacentElement('afterbegin', img)
-    console.log(img)
   } catch (error) {
     alert(`Erro: ${error.message}`)
   }
