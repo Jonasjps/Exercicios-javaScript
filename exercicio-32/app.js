@@ -49,6 +49,7 @@ const insertInToDom = async inputValue => {
   if(GIFsAPI) {
     const GIFsUrl = GIFsAPI.data[0].images.downsized.url
     setImageGIF(GIFsUrl,GIFsAPI)
+    form.reset()
   }
   
 }
@@ -62,11 +63,9 @@ const setImageGIF = (GIFsUrl, GIFsAPI) => {
     return img
 }
   
- 
 form.addEventListener('submit', async event => {
   event.preventDefault()
   const inputValue = event.target.search.value
   
-
   insertInToDom(inputValue)
 })
