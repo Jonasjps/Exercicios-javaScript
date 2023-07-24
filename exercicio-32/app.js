@@ -40,17 +40,21 @@ const insertApiInToDOM = async inputValue => {
 
     const GIFsData = await response.json()
     const GIFsUrlAPI = GIFsData.data[0].images.downsized.url
-    const img = document.createElement('img')
-
-    img.setAttribute('src', GIFsUrlAPI)
-    img.setAttribute('alt', GIFsData.data[0].title)
-
-    GIFsContainer.insertAdjacentElement('afterbegin', img)
-
-    form.reset()
+    setElementImg(GIFsData, GIFsUrlAPI)
   } catch (error) {
     alert(`Erro: ${error.message}`)
   }
+}
+
+const setElementImg = (GIFsData, GIFsUrlAPI) => {
+  const img = document.createElement('img')
+  img.setAttribute('src', GIFsUrlAPI)
+  img.setAttribute('alt', GIFsData.data[0].title)
+
+  GIFsContainer.insertAdjacentElement('afterbegin', img)
+
+  form.reset()
+  return img
 }
 
 form.addEventListener('submit', async event => {
