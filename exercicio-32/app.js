@@ -22,11 +22,10 @@
 
 */
 
-const form = document.querySelector('div')
+const form = document.querySelector('form')
 
 form.addEventListener('submit', event => {
   event.preventDefault()
-
-  console.log(event.target.search.value
-    )
+  const inputValue = event.target.search.value 
+   console.log(inputValue)
 })
