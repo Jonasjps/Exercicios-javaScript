@@ -22,3 +22,11 @@
 
 */
 
+const form = document.querySelector('div')
+
+form.addEventListener('submit', event => {
+  event.preventDefault()
+
+  console.log(event.target.search.value
+    )
+})
