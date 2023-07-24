@@ -23,9 +23,34 @@
 */
 
 const form = document.querySelector('form')
+const GIFsContainer = document.querySelector('div')
 
-form.addEventListener('submit', event => {
+form.addEventListener('submit', async event => {
   event.preventDefault()
   const inputValue = event.target.search.value 
-   console.log(inputValue)
+  const APIKey = 'QR0wHsfz9dl9pdBhaKHu52LzzTHyiH7R'
+  const url = `https://api.giphy.com/v1/gifs/search?api_key=${APIKey}&limit=1&q=${inputValue}`
+
+  try {
+    const response = await fetch(url)
+
+    if(!response.ok) {
+      throw new Error('Não foi possível obter dados da API.')
+    }
+
+    const GIFsData = await response.json()
+    const GIFsUrlAPI = GIFsData.data[0].images.downsized.url
+    const img = document.createElement('img')
+
+    img.setAttribute('src', GIFsUrlAPI)
+    img.setAttribute('alt', GIFsData.data[0].title)
+
+    GIFsContainer.insertAdjacentElement('afterbegin', img)
+
+    event.target.reset()
+  } catch (error) {
+    alert(`Erro: ${error.message}`)
+  }
+   
+
 })
