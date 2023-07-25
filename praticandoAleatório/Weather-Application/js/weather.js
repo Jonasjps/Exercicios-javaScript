@@ -13,7 +13,7 @@ const getCityData = async cityName => {
         }
 
         const [cityData] = await response.json()
-        console.log(cityData)
+        return cityData
     }catch ({name, message}) {
         alert(`${name} ${message}`)
     }
