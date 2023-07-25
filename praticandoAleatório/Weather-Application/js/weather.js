@@ -30,7 +30,6 @@ const getCityWeatherUrl = async (cityName) => {
         }
 
         const [cityWeatherData] = await response.json()
-        debugger
         return cityWeatherData
     }catch ({name, message}) {
         alert(`${name} ${message}`)
