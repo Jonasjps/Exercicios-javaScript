@@ -32,7 +32,6 @@ const topics = [
 ]
 
 const [,,{name}] = topics
-debugger
 /*
   04
 
@@ -42,7 +41,8 @@ debugger
 */
 
 const colors = ['#FF00FF', ['#FF0D0D', '#0AFA00', '#011EFA'], '#7BF0FF']
-
+const [,[red, green, blue]] = colors
+console.log(red, green, blue)
 /*
   05
 
