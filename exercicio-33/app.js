@@ -31,6 +31,8 @@ const topics = [
   { id: 3, name: 'Carreiras'}
 ]
 
+const [,,{name}] = topics
+debugger
 /*
   04
 
