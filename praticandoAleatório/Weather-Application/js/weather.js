@@ -22,7 +22,7 @@ const getCityData = async cityName => {
 const getCityWeatherUrl = async (cityName) => {
     try {
         const {Key} = await getCityData(cityName)
-        const cityWeatherUrl = `http://dataservice.accuweather.com/currentconditions/v1/${Key}?apikey=${APIKey}`
+        const cityWeatherUrl = `http://dataservice.accuweather.com/currentconditions/v1/${Key}?apikey=${APIKey}&language=pt-Br`
         const response = await fetch(cityWeatherUrl)
 
         if(!response.ok) {
@@ -30,6 +30,7 @@ const getCityWeatherUrl = async (cityName) => {
         }
 
         const [cityWeatherData] = await response.json()
+        debugger
         return cityWeatherData
     }catch ({name, message}) {
         alert(`${name} ${message}`)
