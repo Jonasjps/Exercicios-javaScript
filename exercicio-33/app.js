@@ -56,9 +56,12 @@ console.log(red, green, blue)
     - Atribua "desconhecido" como valor default da const do destructuring;
     - Faça a função retornar "Olá, meu nome é [NOME]!".
 */
-
-// console.log(greet({ name: 'Roger' }, 'name'))
-// console.log(greet({}, 'personName'))
+const greet = ( obj, dynamicName) => {
+  const {[dynamicName]: name = 'desconhecido'} = obj 
+  return `Olá, meu nome é ${name}!`
+}
+console.log(greet({ name: 'Roger' }, 'name'))
+console.log(greet({}, 'personName'))
 
 /*
   06
