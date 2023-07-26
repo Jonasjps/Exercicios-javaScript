@@ -16,9 +16,8 @@ console.log(book)
     - O 2º item é o 1º item do array recebido por argumento;
   - Implemente a função da forma mais concisa que você conseguir.
 */
-const numbers = (array, item) => array.reverse(item => item)
-
-console.log(numbers(1, 2, 3))
+const numbers = ([one, ,thue]) => [thue, one]
+console.log(numbers([1, 2, 3]))
 /*
   03
 
