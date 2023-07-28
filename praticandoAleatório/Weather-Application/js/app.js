@@ -15,6 +15,8 @@ cityForm.addEventListener('submit', async event => {
          getCityWeather(Key)
     const timeIcon = `<img src="./src/icons/${WeatherIcon}.svg"/>`
 
+
+
     if(cityCard.classList.contains('d-none')) {
         cityCard.classList.remove('d-none')
     }
