@@ -29,5 +29,3 @@ const getCityWeather = async cityName => {
   return await fetchData(getCityWeatherDataUrl(cityData))
 }
 
-getCityWeather('Bahia')
-  .then(console.log)
