@@ -25,6 +25,11 @@ const getCityWeather = async cityName => {
     const {Key} = await getCityData(cityName) 
     const weatherUrl = `http://dataservice.accuweather.com/currentconditions/v1/${Key}?apikey=${APIkey}&language=pt-br`
     const response = await fetch(weatherUrl)
+    
+    if(!response.ok) {
+      throw new Error('Não foi possível obter dados.')
+    }
+    
     const [weatherData] = await response.json()
     return weatherData
   } catch ({name, message}) {
