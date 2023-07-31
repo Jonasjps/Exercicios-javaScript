@@ -5,7 +5,7 @@
   - Solucione esse problema sem declarar uma constante "book".
 */
 
-// console.log(book)
+console.log(book)
 
 /*
   02
@@ -16,7 +16,9 @@
     - O 2º item é o 1º item do array recebido por argumento;
   - Implemente a função da forma mais concisa que você conseguir.
 */
-
+const numbers = ([dez, , trinta]) => [trinta, dez]
+const destructuringArray = numbers([10, 20, 30])
+console.log(destructuringArray)
 /*
   03
 
@@ -55,8 +57,8 @@ const colors = ['#FF00FF', ['#FF0D0D', '#0AFA00', '#011EFA'], '#7BF0FF']
     - Faça a função retornar "Olá, meu nome é [NOME]!".
 */
 
-console.log(greet({ name: 'Roger' }, 'name'))
-console.log(greet({}, 'personName'))
+// console.log(greet({ name: 'Roger' }, 'name'))
+// console.log(greet({}, 'personName'))
 
 /*
   06
