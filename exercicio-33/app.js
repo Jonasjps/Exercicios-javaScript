@@ -5,7 +5,7 @@
   - Solucione esse problema sem declarar uma constante "book".
 */
 
-console.log(book)
+// console.log(book)
 
 /*
   02
@@ -16,9 +16,7 @@ console.log(book)
     - O 2º item é o 1º item do array recebido por argumento;
   - Implemente a função da forma mais concisa que você conseguir.
 */
-const numbers = ([dez, , trinta]) => [trinta, dez]
-const destructuringArray = numbers([10, 20, 30])
-console.log(destructuringArray)
+
 /*
   03
 
@@ -31,6 +29,7 @@ const topics = [
   { id: 2, name: 'Negócios & finanças'},
   { id: 3, name: 'Carreiras'}
 ]
+
 
 /*
   04
