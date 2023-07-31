@@ -2,7 +2,7 @@ const APIKey = 'EvzSjxNGDc36JaOA7MxsbG8xAypXXHBW'
 const baseUrl = 'http://dataservice.accuweather.com/'
 
 const getCityUrl = cityName =>
-   `${baseUrl}locations/v1/cities/search?apikey=${APIKey}&q=${cityName}`
+  `${baseUrl}locations/v1/cities/search?apikey=${APIKey}&q=${cityName}`
 
 const getCityWeatherUrl = (cityKey) => 
   `${baseUrl}currentconditions/v1/${cityKey}?apikey=${APIKey}&language=pt-br`
