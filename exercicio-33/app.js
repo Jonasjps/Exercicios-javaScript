@@ -5,7 +5,7 @@
   - Solucione esse problema sem declarar uma constante "book".
 */
 
-// console.log(book)
+console.log(book)
 
 /*
   02
@@ -16,7 +16,8 @@
     - O 2º item é o 1º item do array recebido por argumento;
   - Implemente a função da forma mais concisa que você conseguir.
 */
-
+const log = ([doze, , catoze]) => [catoze, doze]
+console.log(log([12, 13, 14]))
 /*
   03
 
@@ -30,7 +31,8 @@ const topics = [
   { id: 3, name: 'Carreiras'}
 ]
 
-
+const [, , {name}] = topics
+debugger
 /*
   04
 
@@ -40,6 +42,7 @@ const topics = [
 */
 
 const colors = ['#FF00FF', ['#FF0D0D', '#0AFA00', '#011EFA'], '#7BF0FF']
+
 
 
 /*
