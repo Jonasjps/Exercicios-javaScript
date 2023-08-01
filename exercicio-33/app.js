@@ -32,7 +32,7 @@ const topics = [
 ]
 
 const [, , {name}] = topics
-debugger
+// debugger
 /*
   04
 
