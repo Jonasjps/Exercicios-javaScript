@@ -5,7 +5,7 @@
   - Solucione esse problema sem declarar uma constante "book".
 */
 
-// console.log(book)
+console.log(book)
 
 /*
   02
@@ -16,6 +16,11 @@
     - O 2º item é o 1º item do array recebido por argumento;
   - Implemente a função da forma mais concisa que você conseguir.
 */
+
+const three = ([quinze, , quarentaEcinco]) => [quarentaEcinco, quinze]
+
+console.log(three([15, 30, 45]))
+
 /*
   03
 
@@ -28,7 +33,9 @@ const topics = [
   { id: 2, name: 'Negócios & finanças'},
   { id: 3, name: 'Carreiras'}
 ]
+const [, , {name}] = topics
 
+console.log(name)
 /*
   04
 
@@ -38,7 +45,8 @@ const topics = [
 */
 
 const colors = ['#FF00FF', ['#FF0D0D', '#0AFA00', '#011EFA'], '#7BF0FF']
-
+const [, [red, green, blue]] = colors
+console.log(red, green, blue)
 /*
   05
 
@@ -53,10 +61,13 @@ const colors = ['#FF00FF', ['#FF0D0D', '#0AFA00', '#011EFA'], '#7BF0FF']
     - Faça a função retornar "Olá, meu nome é [NOME]!".
 */
 
+const greet = (obj, dynamicName) => {
+  const {[dynamicName]: name = 'desconhecido'} = obj
+  return `Olá, meu nome é ${name}!`
+}
 
-
-// console.log(greet({ name: 'Roger' }, 'name'))
-// console.log(greet({}, 'personName'))
+console.log(greet({ name: 'Roger' }, 'name'))
+console.log(greet({}, 'personName'))
 
 /*
   06
