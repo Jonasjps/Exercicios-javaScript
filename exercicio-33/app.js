@@ -5,7 +5,7 @@
   - Solucione esse problema sem declarar uma constante "book".
 */
 
-console.log(book)
+// console.log(book)
 
 /*
   02
@@ -16,8 +16,6 @@ console.log(book)
     - O 2º item é o 1º item do array recebido por argumento;
   - Implemente a função da forma mais concisa que você conseguir.
 */
-const log = ([doze, , catoze]) => [catoze, doze]
-console.log(log([12, 13, 14]))
 /*
   03
 
@@ -31,8 +29,6 @@ const topics = [
   { id: 3, name: 'Carreiras'}
 ]
 
-const [, , {name}] = topics
-// debugger
 /*
   04
 
@@ -42,9 +38,6 @@ const [, , {name}] = topics
 */
 
 const colors = ['#FF00FF', ['#FF0D0D', '#0AFA00', '#011EFA'], '#7BF0FF']
-const [,[red, green, blue]] = colors
-
-console.log(red, green, blue)
 
 /*
   05
@@ -59,14 +52,11 @@ console.log(red, green, blue)
     - Atribua "desconhecido" como valor default da const do destructuring;
     - Faça a função retornar "Olá, meu nome é [NOME]!".
 */
-const greet = (obj, dynamicName) => {
-  const {[dynamicName]: name = 'desconhecido'} = obj
-  // console.log(obj)
-  return `Olá, meu nome é ${name}!` 
-}
 
-console.log(greet({ name: 'Roger' }, 'name'))
-console.log(greet({}, 'personName'))
+
+
+// console.log(greet({ name: 'Roger' }, 'name'))
+// console.log(greet({}, 'personName'))
 
 /*
   06
