@@ -18,8 +18,6 @@ const inverted = value => {
     .join('')
   
 }
-
-
 console.log(inverted('Jonas'))
 /*
   02
