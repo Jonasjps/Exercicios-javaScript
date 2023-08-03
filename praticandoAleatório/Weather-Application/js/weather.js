@@ -10,8 +10,9 @@ const getCityWeatherUrl = (cityKey) =>
 const fetchData = async url => {
     try {
         const response = await fetch(url)
-       
-        if(!response.ok) {
+        const checkingResquestOk = !response.ok
+        
+        if(checkingResquestOk) {
             throw new Error('Não foi possível obter dados.')
         }
 
