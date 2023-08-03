@@ -16,9 +16,7 @@ cityForm.addEventListener('submit', async event => {
 
     const checkingClassOk = cityCard.classList.contains('d-none')
 
-    if(checkingClassOk) {
-        cityCard.classList.remove('d-none')
-    }
+    checkingClassOk && cityCard.classList.remove('d-none')
     
     timeIcon.innerHTML = ImgIcon
     cityNameContainer.textContent = LocalizedName
@@ -26,9 +24,9 @@ cityForm.addEventListener('submit', async event => {
     cityTemperatureContainer.textContent = Temperature.Metric.Value
 
     cityForm.reset()
-
+    
     return IsDayTime 
-        ? imageTime.src = `./src/day.svg` 
-        : imageTime.src = `./src/night.svg`
-
+    ? imageTime.src = `./src/day.svg` 
+    : imageTime.src = `./src/night.svg`
+    
 })
