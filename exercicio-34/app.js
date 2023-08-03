@@ -12,10 +12,11 @@
     versão deve fazer o mesmo que a função anterior faz, mas de forma diferente.
 */
 const inverted = value => {
-  let splitString = value.split('')
-  let reverseString = splitString.reverse()
-  let joinString = reverseString.join('')
-  return joinString
+  return value
+    .split('')
+    .reverse()
+    .join('')
+  
 }
 
 
