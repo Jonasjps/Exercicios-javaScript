@@ -28,7 +28,8 @@ const reverseString = (str) => {
   return newString
 }
 let name = 'Maria'
-console.log(name.length -1s)
+name = name.length -1
+console.log(name.length -1)
 
 console.log(reverseString('12345'))
 
