@@ -32,7 +32,6 @@ name = name.length -1
 console.log(name.length -1)
 
 console.log(reverseString('12345'))
-
 console.log(inverted('Jonas'))
 /*
   02
@@ -43,11 +42,11 @@ console.log(inverted('Jonas'))
 const numbers = [5, 20, 7, 32, 47, 15, 83, 91, 27, 33]
 let foundNumber = false
 
-numbers.forEach(number => {
-  if (number === 15) {
-    foundNumber = true
-  }
-})
+const checkingNumber = number => number === 15 
+? foundNumber = true 
+: foundNumber
+
+numbers.forEach(checkingNumber)
 
 console.log(foundNumber)
 
