@@ -7,6 +7,8 @@ const imageTime = document.querySelector('[data-js="time"]')
 const timeIcon = document.querySelector('[data-js="time-icon"]')
 
 
+
+
 cityForm.addEventListener('submit', async event => {
     event.preventDefault()
     const inputValue = event.target.city.value
