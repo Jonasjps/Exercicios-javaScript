@@ -6,9 +6,6 @@ const cityCard = document.querySelector('[data-js="city-card"]')
 const imageTime = document.querySelector('[data-js="time"]')
 const timeIcon = document.querySelector('[data-js="time-icon"]')
 
-const icon = WeatherIcon =>
-    `<img src =./src/icons/${WeatherIcon}.svg />`
-
 cityForm.addEventListener('submit', async event => {
     event.preventDefault()
     const inputValue = event.target.city.value
@@ -31,3 +28,6 @@ cityForm.addEventListener('submit', async event => {
     : imageTime.src = `./src/night.svg`
     
 })
+
+const icon = WeatherIcon =>
+`<img src =./src/icons/${WeatherIcon}.svg />`
