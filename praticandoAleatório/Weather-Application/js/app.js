@@ -6,10 +6,6 @@ const cityCard = document.querySelector('[data-js="city-card"]')
 const imageTime = document.querySelector('[data-js="time"]')
 const timeIcon = document.querySelector('[data-js="time-icon"]')
 
-const weatherData = async (Key) => {
-    return [{WeatherText, Temperature, IsDayTime, WeatherIcon}] = await getCityWeather(Key)
-}
-
 const icon = WeatherIcon =>
     `<img src =./src/icons/${WeatherIcon}.svg />`
 
@@ -17,8 +13,7 @@ cityForm.addEventListener('submit', async event => {
     event.preventDefault()
     const inputValue = event.target.city.value
     const [{Key, LocalizedName}] = await getCityData(inputValue)
-    weatherData(Key)
-    const ImgIcon = icon(WeatherIcon)
+    const ImgIcon = icon(Key)
 
     const checkingClassOk = cityCard.classList.contains('d-none')
 
