@@ -17,7 +17,9 @@ const manipulateDom = async cityName => {
     const [{WeatherText, Temperature, IsDayTime, WeatherIcon}] = await getCityWeather(Key)
     const icon = `<img src = ./src/icons/${WeatherIcon}.svg />`
 
-    IsDayTime ? iconTime.src= './src/day.svg':iconTime.src='./src/night.svg'
+    IsDayTime 
+        ? iconTime.src= './src/day.svg'
+        :iconTime.src= './src/night.svg'
 
     iconWeather.innerHTML = icon
     cityNameConteiners.textContent = LocalizedName
