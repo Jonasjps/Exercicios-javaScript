@@ -34,17 +34,20 @@ console.log(invertedString('Jonas'))
 */
 
 const numbers = [5, 20, 7, 32, 47, 15, 83, 91, 27, 33]
-let foundNumber = false
 
-numbers.forEach(number => {
-  if (number === 15) {
-    foundNumber = true
-  }
-})
+console.log(numbers.includes(15))
+
+// let foundNumber = false
+
+// numbers.forEach(number => {
+//   if (number === 15) {
+//     foundNumber = true
+//   }
+// })
 
 
 
-console.log(foundNumber)
+// console.log(foundNumber)
 
 /*
   03
