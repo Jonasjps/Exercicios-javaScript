@@ -11,21 +11,19 @@
   - Após implementar a função, implemente outra versão da função. Essa 2ª 
     versão deve fazer o mesmo que a função anterior faz, mas de forma diferente.
 */
-const invertedString = value => value.split('').reverse().join('')
+const stringInvertida = value => value.split('').reverse().join('')
 
-const invertedLoop = item => {
-  let newString = '' 
+const stringInvertidaLoop = value => {
+  let newString = ''
 
-  for(let c = item.length -1; c >= 0; c--) {
-    newString += item[c]
+  for(let i = value.length -1; i >= 0; i-- ) {
+    newString += value[i]
   }
   return newString
-}
+} 
 
-
-console.log(invertedLoop('456'))
-console.log(invertedString('Jonas'))
-
+console.log(stringInvertida('Virgínia'))
+console.log(stringInvertidaLoop('Jonas'))
 
 /*
   02
@@ -35,19 +33,17 @@ console.log(invertedString('Jonas'))
 
 const numbers = [5, 20, 7, 32, 47, 15, 83, 91, 27, 33]
 
-console.log(numbers.includes(15))
+let foundNumber = false
 
-// let foundNumber = false
-
-// numbers.forEach(number => {
-//   if (number === 15) {
-//     foundNumber = true
-//   }
-// })
+numbers.forEach(number => {
+  if (number === 15) {
+    foundNumber = true
+  }
+})
 
 
 
-// console.log(foundNumber)
+console.log(foundNumber)
 
 /*
   03
