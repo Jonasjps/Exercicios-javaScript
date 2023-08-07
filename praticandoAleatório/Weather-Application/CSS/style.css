@@ -10,3 +10,11 @@ body {
     font-size: 2.2rem;
   }
 
+.time-icon {
+  position: relative;
+  top: -50px;
+  border-radius: 50px;
+  max-width: 100%;
+  margin-bottom: -50px;
+  
+}
