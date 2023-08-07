@@ -13,6 +13,17 @@
 */
 const invertedString = value => value.split('').reverse().join('')
 
+const invertedLoop = item => {
+  let newString = '' 
+
+  for(let c = item.length -1; c >= 0; c--) {
+    newString += item[c]
+  }
+  return newString
+}
+
+
+console.log(invertedLoop('456'))
 console.log(invertedString('Jonas'))
 
 
