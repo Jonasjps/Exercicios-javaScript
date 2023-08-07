@@ -12,7 +12,7 @@ const checkingClass = () => {
     }
 }
 
-const manipulateDom = async (cityName) => {
+const manipulateDom = async cityName => {
     const [{Key, LocalizedName}] = await getCityData(cityName)
     const [{WeatherText, Temperature, IsDayTime, WeatherIcon}] = await getCityWeather(Key)
     const icon = `<img src = ./src/icons/${WeatherIcon}.svg />`
@@ -26,7 +26,7 @@ const manipulateDom = async (cityName) => {
 
 }
 
-cityForm.addEventListener('submit', async event => {
+cityForm.addEventListener('submit', event => {
     event.preventDefault()
     const inputValue = event.target.city.value
     checkingClass()
