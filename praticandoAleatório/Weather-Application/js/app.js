@@ -5,6 +5,7 @@ const cityWeatherContainers = document.querySelector('[data-js="city-weather"]')
 const cityTemperatureContainers = document.querySelector('[data-js="city-temperature"]')
 const timeIcon = document.querySelector('[data-js="time"]')
 const WetherIconIcon = document.querySelector('[data-js="time-icon"]')
+const img = document.createElement('img')
 
 const checkingClass = () => {
     if(cityCard.classList.contains('d-none')){
@@ -16,13 +17,13 @@ const manipulandoDOM = async cityName => {
     
     const [{Key, LocalizedName}] = await getCityData(cityName) 
     const [{WeatherText, Temperature, IsDayTime, WeatherIcon}] = await getCityWeather(Key)
-    const icon = `<img src = ./src/icons/${WeatherIcon}.svg />`
+    img.setAttribute('src',`./src/icons/${WeatherIcon}.svg`)
+    WetherIconIcon.insertAdjacentElement('afterbegin',img)
 
     IsDayTime
         ? timeIcon.src = './src/day.svg'
         : timeIcon.src = './src/night.svg'
 
-    WetherIconIcon.innerHTML = icon
     cityNameContainers.textContent = LocalizedName
     cityWeatherContainers.textContent = WeatherText
     cityTemperatureContainers.textContent = Temperature.Metric.Value
