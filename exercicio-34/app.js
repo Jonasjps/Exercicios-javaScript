@@ -11,7 +11,9 @@
   - Após implementar a função, implemente outra versão da função. Essa 2ª 
     versão deve fazer o mesmo que a função anterior faz, mas de forma diferente.
 */
+const istringInvertida = value => value.split('').reverse().join('')
 
+console.log(istringInvertida('Jonas'))
 /*
   02
   
