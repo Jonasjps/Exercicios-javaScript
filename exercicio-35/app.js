@@ -4,11 +4,7 @@
   - Implemente uma função que recebe o nome da key de um item da localStorage 
     e retorna o valor da key parseado para objeto javascript.
 */
-const local = myName => {
-  return  myName = localStorage.key
-}
 
-console.log('Jonas')
 
 /*
   02
