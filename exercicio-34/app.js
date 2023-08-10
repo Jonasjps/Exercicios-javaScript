@@ -23,6 +23,7 @@ const inverted = str => {
 }
 
 console.log(inverted('Marley'))
+
 console.log(istringInvertida('Jonas'))
 /*
   02
