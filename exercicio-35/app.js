@@ -5,8 +5,6 @@
     e retorna o valor da key parseado para objeto javascript.
 */
 
-
-
 /*
   02
 
