@@ -22,7 +22,7 @@ console.log(getKeyLocalStorage('myObj'))
   - Mesmo com um input type="number", a expressão `event.target.value` abaixo 
     resulta em uma string;
   - Exiba, no console, o valor que foi inserido no input;
-  - O exibido valor deve ser do tipo number;
+  - O valor exibido  deve ser do tipo number;
   - Não utilize a invocação da Number() ou qualquer outro método que converta 
     strings em number.
 
@@ -32,7 +32,7 @@ console.log(getKeyLocalStorage('myObj'))
 const input = document.querySelector('[data-js="input"]')
 
 input.addEventListener('input', event => {
-  console.log(event.target.value)
+  console.log(typeof event.target.valueAsNumber)
 })
 
 /*
