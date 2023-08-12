@@ -4,9 +4,12 @@
   - Implemente uma função que recebe o nome da key de um item da localStorage 
     e retorna o valor da key parseado para objeto javascript.
 */
+const names = {name: 'Jonas' , lastName: 'Pessoa'}
+
+console.log(JSON.stringify(names))
 
 /*
-  02
+  02  
 
   - Mesmo com um input type="number", a expressão `event.target.value` abaixo 
     resulta em uma string;
