@@ -9,6 +9,13 @@ const names = {name: 'Jonas' , lastName: 'Pessoa'}
 const stringObj = JSON.stringify(names)
 
 localStorage.setItem('myObj', stringObj)
+
+const getKeyLocalStorage = keyName => {
+  const nameKey = localStorage.getItem(keyName)
+  return JSON.parse(nameKey)
+}
+
+console.log(getKeyLocalStorage('myObj'))
 /*
   02  
 
