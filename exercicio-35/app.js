@@ -6,8 +6,9 @@
 */
 const names = {name: 'Jonas' , lastName: 'Pessoa'}
 
-console.log(JSON.stringify(names))
+const stringObj = JSON.stringify(names)
 
+localStorage.setItem('myObj', stringObj)
 /*
   02  
 
