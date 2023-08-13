@@ -107,7 +107,7 @@ const searchAlbum = {
 }
 const seachAlbumInSome = albums
   .some(album => album.id === searchAlbum.id)
-  
+
 if (seachAlbumInSome) {
   console.log(`${JSON.stringify(searchAlbum)} existe no array albums.`)
 }
@@ -128,6 +128,14 @@ const obj = {
   prop7: 7,
   prop8: { a: 'x', b: 'y' },
 }
+localStorage.clear()
+localStorage.setItem('newObj', JSON.stringify(obj))
+
+const newObject = localStorage.getItem('newObj')
+
+const newObj = JSON.parse(newObject)
+
+console.log(newObj, obj)
 
 /*
   06
