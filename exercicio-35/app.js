@@ -32,7 +32,7 @@ console.log(getKeyLocalStorage('myObj'))
 const input = document.querySelector('[data-js="input"]')
 
 input.addEventListener('input', event => {
-  console.log(typeof event.target.valueAsNumber)
+  console.log(event.target.valueAsNumber)
 })
 
 /*
@@ -68,6 +68,10 @@ function multiplyFive (num) {
 
 function addTen (num) {
   return num + 10
+}
+
+const combineOperations = (number, array) => {
+  array
 }
 
 // console.log(combineOperations(0, [add100, divByFive, multiplyByThree]))
