@@ -119,6 +119,7 @@ if (seachAlbumInSome) {
 */
 
 const obj = {
+  prop0: () => {},
   prop1: 'a',
   prop2: 'b',
   prop3: null,
@@ -128,14 +129,29 @@ const obj = {
   prop7: 7,
   prop8: { a: 'x', b: 'y' },
 }
-localStorage.clear()
-localStorage.setItem('newObj', JSON.stringify(obj))
+/*
+OBS: usando o JSON.stringify e JSON.parse é uma das opções 
+  de fazer uma copia de um objeto, não é muito recomendada pois é
+  um método lento!
 
-const newObject = localStorage.getItem('newObj')
+const objStringfy = JSON.stringify(obj,null, 2)
+const newObj = JSON.parse(objStringfy)
+*/
 
-const newObj = JSON.parse(newObject)
+const copyObj = {
+  ...obj,
+    prop0: () => {},
+    prop6: [
+      obj.prop6[0],
+       {...obj.prop6[1]}
+    ],
+    prop8: {
+      ...obj.prop8
+    }
+  
+}
 
-console.log(newObj, obj)
+console.log(copyObj, obj)
 
 /*
   06
@@ -147,7 +163,12 @@ console.log(newObj, obj)
 
   Dica: pesquise por Object.entries.
 */
+const H1 = (element) => {
+  const title = document.createElement(`${element}`)
+  return Object.entries(title)
+}
 
+// console.log(H1('H1'))
 /*
   07
 
