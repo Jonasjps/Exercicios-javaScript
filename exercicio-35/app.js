@@ -51,9 +51,13 @@ input.addEventListener('input', event => {
 */
 
 const add100 = num =>  num + 100
+
 const divByFive = num =>  num / 5
+
 const multiplyByThree = num =>  num * 3
+
 const multiplyFive = num =>  num * 5
+
 const addTen = num =>  num + 10
 
 const combineOperations = (number, arrFunc) =>
