@@ -50,32 +50,18 @@ input.addEventListener('input', event => {
     retornar 60 e a segunda invocação, 10.
 */
 
-function add100 (num) {
-  return num + 100
-}
+const add100 = num =>  num + 100
+const divByFive = num =>  num / 5
+const multiplyByThree = num =>  num * 3
+const multiplyFive = num =>  num * 5
+const addTen = num =>  num + 10
 
-function divByFive (num) {
-  return num / 5
-}
+const combineOperations = (number, arrFunc) =>
+  arrFunc.reduce((acc, func) => func(acc), number)
 
-function multiplyByThree (num) {
-  return num * 3
-}
 
-function multiplyFive (num) {
-  return num * 5
-}
-
-function addTen (num) {
-  return num + 10
-}
-
-const combineOperations = (number, array) => {
-  array
-}
-
-// console.log(combineOperations(0, [add100, divByFive, multiplyByThree]))
-// console.log(combineOperations(0, [divByFive, multiplyFive, addTen]))
+console.log(combineOperations(0, [add100, divByFive, multiplyByThree]))
+console.log(combineOperations(0, [divByFive, multiplyFive, addTen]))
 
 /*
   04
