@@ -107,7 +107,7 @@ const searchAlbum = {
 }
 const getAlbumIsSome = albums
   .some(item => item.id === searchAlbum.id)
-  
+
 if (getAlbumIsSome) {
   console.log(`${JSON.stringify(searchAlbum)} existe no array albums.`)
 }
@@ -119,6 +119,7 @@ if (getAlbumIsSome) {
 */
 
 const obj = {
+  prop0: () => {},
   prop1: 'a',
   prop2: 'b',
   prop3: null,
@@ -128,6 +129,24 @@ const obj = {
   prop7: 7,
   prop8: { a: 'x', b: 'y' },
 }
+/*
+const stringObj = JSON.stringify(obj, null, 2)
+const objCopy = JSON.parse(stringObj)
+*/
+const copyObj = {
+  ...obj,
+  prop0: () => {},
+  prop6: [
+    obj.prop6[0],
+    {...obj.prop6[1]}
+  ],
+  prop8: {
+    ...obj.prop8
+  }
+}
+
+copyObj.prop0.prop1 = 'Nova propriedade add'
+console.log(copyObj, obj)
 
 /*
   06
