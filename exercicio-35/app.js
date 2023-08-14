@@ -105,8 +105,10 @@ const searchAlbum = {
   price: 81.00,
   genre: 'Rock'
 }
-
-if (albums.includes(searchAlbum)) {
+const getAlbumIsSome = albums
+  .some(item => item.id === searchAlbum.id)
+  
+if (getAlbumIsSome) {
   console.log(`${JSON.stringify(searchAlbum)} existe no array albums.`)
 }
 
