@@ -160,6 +160,7 @@ console.log(copyObj, obj)
 */
 const elementHTM = (element, attibutes) => {
   const elem = document.createElement(`${element}`)
+  
   const elementArray = Object.entries(attibutes)
   elementArray.forEach(([arr]) => {
     elem.setAttribute(arr,arr)
