@@ -4,25 +4,14 @@
   - Implemente uma função que recebe o nome da key de um item da localStorage 
     e retorna o valor da key parseado para objeto javascript.
 */
-const names = {name: 'Jonas' , lastName: 'Pessoa'}
 
-const stringObj = JSON.stringify(names)
-
-localStorage.setItem('myObj', stringObj)
-
-const getKeyLocalStorage = keyName => {
-  const nameKey = localStorage.getItem(keyName)
-  return JSON.parse(nameKey)
-}
-
-console.log(getKeyLocalStorage('myObj'))
 /*
-  02  
+  02
 
   - Mesmo com um input type="number", a expressão `event.target.value` abaixo 
     resulta em uma string;
   - Exiba, no console, o valor que foi inserido no input;
-  - O valor exibido  deve ser do tipo number;
+  - O exibido valor deve ser do tipo number;
   - Não utilize a invocação da Number() ou qualquer outro método que converta 
     strings em number.
 
@@ -32,7 +21,7 @@ console.log(getKeyLocalStorage('myObj'))
 const input = document.querySelector('[data-js="input"]')
 
 input.addEventListener('input', event => {
-  console.log(event.target.valueAsNumber)
+  console.log(event.target.value)
 })
 
 /*
@@ -50,22 +39,28 @@ input.addEventListener('input', event => {
     retornar 60 e a segunda invocação, 10.
 */
 
-const add100 = num =>  num + 100
+function add100 (num) {
+  return num + 100
+}
 
-const divByFive = num =>  num / 5
+function divByFive (num) {
+  return num / 5
+}
 
-const multiplyByThree = num =>  num * 3
+function multiplyByThree (num) {
+  return num * 3
+}
 
-const multiplyFive = num =>  num * 5
+function multiplyFive (num) {
+  return num * 5
+}
 
-const addTen = num =>  num + 10
+function addTen (num) {
+  return num + 10
+}
 
-const combineOperations = (number, arrFunc) =>
-  arrFunc.reduce((acc, func) => func(acc), number)
-
-
-console.log(combineOperations(0, [add100, divByFive, multiplyByThree]))
-console.log(combineOperations(0, [divByFive, multiplyFive, addTen]))
+// console.log(combineOperations(0, [add100, divByFive, multiplyByThree]))
+// console.log(combineOperations(0, [divByFive, multiplyFive, addTen]))
 
 /*
   04
@@ -105,10 +100,8 @@ const searchAlbum = {
   price: 81.00,
   genre: 'Rock'
 }
-const seachAlbumInSome = albums
-  .some(album => album.id === searchAlbum.id)
 
-if (seachAlbumInSome) {
+if (albums.includes(searchAlbum)) {
   console.log(`${JSON.stringify(searchAlbum)} existe no array albums.`)
 }
 
@@ -119,7 +112,6 @@ if (seachAlbumInSome) {
 */
 
 const obj = {
-  prop0: () => {},
   prop1: 'a',
   prop2: 'b',
   prop3: null,
@@ -129,29 +121,6 @@ const obj = {
   prop7: 7,
   prop8: { a: 'x', b: 'y' },
 }
-/*
-OBS: usando o JSON.stringify e JSON.parse é uma das opções 
-  de fazer uma copia de um objeto, não é muito recomendada pois é
-  um método lento!
-
-const objStringfy = JSON.stringify(obj,null, 2)
-const newObj = JSON.parse(objStringfy)
-*/
-
-const copyObj = {
-  ...obj,
-    prop0: () => {},
-    prop6: [
-      obj.prop6[0],
-       {...obj.prop6[1]}
-    ],
-    prop8: {
-      ...obj.prop8
-    }
-  
-}
-
-console.log(copyObj, obj)
 
 /*
   06
@@ -163,12 +132,7 @@ console.log(copyObj, obj)
 
   Dica: pesquise por Object.entries.
 */
-const H1 = (element) => {
-  const title = document.createElement(`${element}`)
-  return Object.entries(title)
-}
 
-// console.log(H1('H1'))
 /*
   07
 
