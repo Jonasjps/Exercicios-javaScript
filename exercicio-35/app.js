@@ -4,7 +4,18 @@
   - Implemente uma função que recebe o nome da key de um item da localStorage 
     e retorna o valor da key parseado para objeto javascript.
 */
+const alfabeto = { a: 'a', b: 'b', c: 'c', d: 'd'}
+const stringAlfabeto = JSON.stringify(alfabeto)
 
+localStorage.setItem('myAlfabeto',stringAlfabeto)
+
+const getKeyLocal = keyName => {
+  const keyLocal = localStorage.getItem(keyName)
+  return JSON.parse(keyLocal)
+  
+}
+console.log(getKeyLocal('myAlfabeto'))
+console.log(stringAlfabeto)
 /*
   02
 
