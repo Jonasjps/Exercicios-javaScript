@@ -36,11 +36,11 @@ console.log(local('myKey'))
   Dica: pesquise por valueAsNumber.
 */
 
-const input = document.querySelector('[data-js="input"]')
+// const input = document.querySelector('[data-js="input"]')
 
-input.addEventListener('input', event => {
-  console.log(event.target.valueAsNumber)
-})
+// input.addEventListener('input', event => {
+//   console.log(event.target.valueAsNumber)
+// })
 
 /*
   03
@@ -163,7 +163,27 @@ console.log(copyObj,obj)
 
   Dica: pesquise por Object.entries.
 */
+const createElement = (elementName, attibutes) => {
+  const element = document.createElement(elementName)
+  const arrayDePares = Object.entries(attibutes)
 
+  arrayDePares.forEach(([key, value]) => {
+    element.setAttribute(key, value)
+  })
+  return element
+}
+
+const input = createElement('input', {
+  type: 'Number',
+  form: 'form',
+  name: 'city',
+  autofocus: 'autofocus',
+  placeholder: 'placeholder',
+  list: 'list',
+  'data-js': 'data'
+})
+
+console.log(input)
 /*
   07
 
