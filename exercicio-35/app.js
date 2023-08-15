@@ -112,6 +112,7 @@ const searchAlbum = {
   genre: 'Rock'
 }
 const comparandoIds = albums.some(item => item.id === searchAlbum.id)
+console.log(comparandoIds)
 
 if (comparandoIds) {
   console.log(`${JSON.stringify(searchAlbum)} existe no array albums.`)
@@ -124,6 +125,7 @@ if (comparandoIds) {
 */
 
 const obj = {
+  prop0: () => {},
   prop1: 'a',
   prop2: 'b',
   prop3: null,
@@ -134,6 +136,22 @@ const obj = {
   prop8: { a: 'x', b: 'y' },
 }
 
+/**
+ const stringObj = JSON.stringify(obj, null, 2)
+ const copyObj = JSON.parse(stringObj)
+ */
+const copyObj = {
+  ...obj,
+  prop6: [
+    obj.prop6[0],{
+      ...obj.prop6[1]
+    }
+  ],
+  prop8: {
+    ...obj.prop8
+  }
+}
+console.log(copyObj,obj)
 /*
   06
 
