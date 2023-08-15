@@ -158,24 +158,7 @@ console.log(copyObj, obj)
 
   Dica: pesquise por Object.entries.
 */
-const elementHTM = (element, attibutes) => {
-  const elem = document.createElement(`${element}`)
-  
-  const elementArray = Object.entries(attibutes)
-  elementArray.forEach(([arr]) => {
-    elem.setAttribute(arr,arr)
-  })
-  console.log(elem)
-}
 
-elementHTM('input', {
-  type: 'type',
-  'data-js': 'data-js',
-  number: 'number',
-  radio: 'radio',
-  text: 'text', 
-  time: 'time'
-})
 /*
   07
 
