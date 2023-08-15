@@ -4,18 +4,25 @@
   - Implemente uma função que recebe o nome da key de um item da localStorage 
     e retorna o valor da key parseado para objeto javascript.
 */
-const alfabeto = { a: 'a', b: 'b', c: 'c', d: 'd'}
-const stringAlfabeto = JSON.stringify(alfabeto)
-
-localStorage.setItem('myAlfabeto',stringAlfabeto)
-
-const getKeyLocal = keyName => {
-  const keyLocal = localStorage.getItem(keyName)
-  return JSON.parse(keyLocal)
-  
+const myKey = {
+  name: 'Jonas',
+  lastName:  'Pessoa', 
+  age: 28,
+  gender: 'Masculino',
+  height: 1.75
 }
-console.log(getKeyLocal('myAlfabeto'))
-console.log(stringAlfabeto)
+
+const stringMyKey = JSON.stringify(myKey,null,2)
+localStorage.setItem('myKey', stringMyKey)
+ 
+const local = keyName => {
+  const getKey = localStorage.getItem(keyName)
+  const objetoParse = JSON.parse(getKey)
+  return objetoParse
+}
+
+console.log(local('myKey'))
+
 /*
   02
 
@@ -33,20 +40,10 @@ console.log(stringAlfabeto)
 */
 
 
-
-// const input = document.querySelector('[data-js="input"]')
-
-// input.addEventListener('input', event => {
-//   console.log(event.target.valueAsNumber)
-// })
-
 /*
   03
 
-  -
-  
-  
-  Implemente uma função 'combineOperations' que recebe 2 parâmetros:
+  -Implemente uma função 'combineOperations' que recebe 2 parâmetros:
     - Um valor inicial, do tipo number;
     - Um array de funções.
   - A combineOperations deve: 
@@ -58,22 +55,28 @@ console.log(stringAlfabeto)
     retornar 60 e a segunda invocação, 10.
 */
 
-const add100 = num => num + 100
+function add100 (num) {
+  return num + 100
+}
 
-const divByFive = num => num / 5
+function divByFive (num) {
+  return num / 5
+}
 
-const multiplyByThree = num => num * 3
+function multiplyByThree (num) {
+  return num * 3
+}
 
-const multiplyFive = num => num * 5
+function multiplyFive (num) {
+  return num * 5
+}
 
-const addTen = num => num + 10
+function addTen (num) {
+  return num + 10
+}
 
-const combineOperations = (initValue, arrFunc ) => 
-  arrFunc.reduce((acc, func) => func(acc), initValue)
-
-
-console.log(combineOperations(0, [add100, divByFive, multiplyByThree]))
-console.log(combineOperations(0, [divByFive, multiplyFive, addTen]))
+// console.log(combineOperations(0, [add100, divByFive, multiplyByThree]))
+// console.log(combineOperations(0, [divByFive, multiplyFive, addTen]))
 
 /*
   04
@@ -113,13 +116,10 @@ const searchAlbum = {
   price: 81.00,
   genre: 'Rock'
 }
-const getAlbumIsSome = albums
-  .some(item => item.id === searchAlbum.id)
 
-if (getAlbumIsSome) {
+if (albums.includes(searchAlbum)) {
   console.log(`${JSON.stringify(searchAlbum)} existe no array albums.`)
 }
-
 /*
   05
 
@@ -127,7 +127,6 @@ if (getAlbumIsSome) {
 */
 
 const obj = {
-  prop0: () => {},
   prop1: 'a',
   prop2: 'b',
   prop3: null,
@@ -137,24 +136,6 @@ const obj = {
   prop7: 7,
   prop8: { a: 'x', b: 'y' },
 }
-/*
-const stringObj = JSON.stringify(obj, null, 2)
-const objCopy = JSON.parse(stringObj)
-*/
-const copyObj = {
-  ...obj,
-  prop0: () => {},
-  prop6: [
-    obj.prop6[0],
-    {...obj.prop6[1]}
-  ],
-  prop8: {
-    ...obj.prop8
-  }
-}
-
-copyObj.prop0.prop1 = 'Nova propriedade add'
-console.log(copyObj, obj)
 
 /*
   06
@@ -166,25 +147,7 @@ console.log(copyObj, obj)
 
   Dica: pesquise por Object.entries.
 */
-const createElement = (elementName, attribute) => {
-  const element = document.createElement(elementName)
-  const elementsArrays = Object.entries(attribute)
-  elementsArrays.forEach(([key, value]) => {
-    element.setAttribute(key, value)
-  })
-  return element
-}
- 
-const input = createElement('input', {
-  type: 'Text',
-  name: 'lastName',
-  form: 'form',
-  placehoder: 'placeName',
-  autofocus: 'autofucos',
-  list: 'list'
-})
 
-console.log(input)
 /*
   07
 
