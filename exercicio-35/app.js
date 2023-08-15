@@ -142,6 +142,7 @@ const obj = {
  */
 const copyObj = {
   ...obj,
+  prop0: () => {},
   prop6: [
     obj.prop6[0],{
       ...obj.prop6[1]
