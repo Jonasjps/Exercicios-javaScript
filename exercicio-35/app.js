@@ -26,19 +26,27 @@ console.log(stringAlfabeto)
   - Não utilize a invocação da Number() ou qualquer outro método que converta 
     strings em number.
 
-  Dica: pesquise por valueAsNumber.
+  Dic
+  
+  
+  a: pesquise por valueAsNumber.
 */
 
-const input = document.querySelector('[data-js="input"]')
 
-input.addEventListener('input', event => {
-  console.log(event.target.valueAsNumber)
-})
+
+// const input = document.querySelector('[data-js="input"]')
+
+// input.addEventListener('input', event => {
+//   console.log(event.target.valueAsNumber)
+// })
 
 /*
   03
 
-  - Implemente uma função 'combineOperations' que recebe 2 parâmetros:
+  -
+  
+  
+  Implemente uma função 'combineOperations' que recebe 2 parâmetros:
     - Um valor inicial, do tipo number;
     - Um array de funções.
   - A combineOperations deve: 
@@ -158,7 +166,25 @@ console.log(copyObj, obj)
 
   Dica: pesquise por Object.entries.
 */
+const createElement = (elementName, attribute) => {
+  const element = document.createElement(elementName)
+  const elementsArrays = Object.entries(attribute)
+  elementsArrays.forEach(([key, value]) => {
+    element.setAttribute(key, value)
+  })
+  return element
+}
+ 
+const input = createElement('input', {
+  type: 'Text',
+  name: 'lastName',
+  form: 'form',
+  placehoder: 'placeName',
+  autofocus: 'autofucos',
+  list: 'list'
+})
 
+console.log(input)
 /*
   07
 
