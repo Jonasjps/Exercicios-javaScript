@@ -27,13 +27,23 @@ const manipulandoDOM = async cityName => {
     cityNameContainers.textContent = LocalizedName
     cityWeatherContainers.textContent = WeatherText
     cityTemperatureContainers.textContent = Temperature.Metric.Value
+    
+    checkingClass()
+}
 
+const showLocalStorageCity = () => {
+    const city = localStorage.getItem('city')
+    if(city) {
+        manipulandoDOM(city)
+    }
 }
 
 cityForm.addEventListener('submit', event => {
     event.preventDefault()
     const inputValue = event.target.city.value
-    checkingClass()
     manipulandoDOM(inputValue)
+    localStorage.setItem('city', inputValue)
     cityForm.reset()
 }) 
+
+showLocalStorageCity()
