@@ -14,7 +14,7 @@ const myKey = {
 
 const stringMyKey = JSON.stringify(myKey,null,2)
 localStorage.setItem('myKey', stringMyKey)
- 
+
 const local = keyName => {
   const getKey = localStorage.getItem(keyName)
   const objetoParse = JSON.parse(getKey)
@@ -33,12 +33,14 @@ console.log(local('myKey'))
   - Não utilize a invocação da Number() ou qualquer outro método que converta 
     strings em number.
 
-  Dic
-  
-  
-  a: pesquise por valueAsNumber.
+  Dica: pesquise por valueAsNumber.
 */
 
+const input = document.querySelector('[data-js="input"]')
+
+input.addEventListener('input', event => {
+  console.log(event.target.valueAsNumber)
+})
 
 /*
   03
