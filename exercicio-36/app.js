@@ -40,10 +40,10 @@ const randomNumber = Math.round(Math.random() * 100)
 
 const obj = {
   a: 1,
-  b: 2
+  b: 2,
+  ...(randomNumber > 50 ? {c: 3} : {d: 4})
 }
 
-const result = randomNumber > 50 ? obj.c = 3 : obj.d = 4
 
 console.log(obj)
 
@@ -64,9 +64,6 @@ const v = { k: 't' }
 
 i(v)
 console.log(v)
-
-
-
 
 
 // const h = w => {
