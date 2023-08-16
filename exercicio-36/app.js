@@ -54,22 +54,37 @@ console.log(obj)
     criado permaneça intacto.
 */
 
-const h = w => {
-  w.d = 3
-}
+const h = w => w.d = 3
 
-const q = f => {
-  h(f)
-}
+const q = f => h(f)
 
-const i = b => {
-  q(b)
-}
+const i = b => q(b)
 
 const v = { k: 't' }
 
 i(v)
 console.log(v)
+
+
+
+
+
+// const h = w => {
+//   w.d = 3
+// }
+
+// const q = f => {
+//   h(f)
+// }
+
+// const i = b => {
+//   q(b)
+// }
+
+// const v = { k: 't' }
+
+// i(v)
+// console.log(v)
 
 /*
   05
