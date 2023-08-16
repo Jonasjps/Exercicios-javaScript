@@ -43,7 +43,7 @@ const obj = {
   b: 2
 }
 
-randomNumber > 50 ? obj.c = 3 : obj.d = 4
+const result = randomNumber > 50 ? obj.c = 3 : obj.d = 4
 
 console.log(obj)
 
