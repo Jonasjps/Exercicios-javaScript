@@ -54,34 +54,19 @@ console.log(obj)
     criado permaneça intacto.
 */
 
-const h = w => w.d = 3
-
-const q = f => h(f)
-
-const i = b => q(b)
-
-const v = { k: 't' }
-
-i(v)
-console.log(v)
+const third = obj => ({
+  ...obj,
+  d: 3
+})
 
 
-// const h = w => {
-//   w.d = 3
-// }
+const second = obj => third(obj)
+const first = obj => second(obj)
 
-// const q = f => {
-//   h(f)
-// }
+const object = { k: 't' }
+const object2 = first(object)
 
-// const i = b => {
-//   q(b)
-// }
-
-// const v = { k: 't' }
-
-// i(v)
-// console.log(v)
+console.log(object, object2)
 
 /*
   05
@@ -114,6 +99,12 @@ const timestamps = [
   }
 ]
 
+const values = timestamps.reduce((acc, timestamps) => {
+  acc[timestamps.date] = timestamps.value
+  return acc 
+}, {})
+
+console.log(values)
 /*
   06
 
