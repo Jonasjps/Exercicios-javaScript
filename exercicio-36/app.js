@@ -128,6 +128,19 @@ console.log(values)
 let accumulator = 0
 const oddNumbers = [51, 97, 65, 23]
 
+const forEach = (arr, func) => {
+  
+  for(let i = 0; i < arr.length; i++) {
+    console.log(`"${arr[i]}" é o ${i + 1}º item do array [${arr}]`)
+    func(arr[i])
+  }
+  console.log(accumulator)
+}
+
+forEach(oddNumbers, (item) => {
+  accumulator += item
+})
+
 /*
   07
 
