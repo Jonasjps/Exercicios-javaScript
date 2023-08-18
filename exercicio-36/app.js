@@ -54,25 +54,18 @@ console.log(obj)
 
 const third = obj => {
  return {
-  ...obj,
+    ...obj,
     d: 3
  }
-  
-  
 }
 
-const second = obj => {
-  return third(obj)
-}
-
-const first = obj => {
-  return second(obj)
-}
+const second = obj => third(obj)
+const first = obj => second(obj)
 
 const object = { k: 't' }
-const object2 = first(object)
-
-console.log(object, object2)
+// const object2 = first(object)
+first(object)
+console.log(object)
 
 /*
   05
