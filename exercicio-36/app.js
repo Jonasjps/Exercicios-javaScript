@@ -52,22 +52,27 @@ console.log(obj)
     criado permaneça intacto.
 */
 
-const h = w => {
-  w.d = 3
+const third = obj => {
+ return {
+  ...obj,
+    d: 3
+ }
+  
+  
 }
 
-const q = f => {
-  h(f)
+const second = obj => {
+  return third(obj)
 }
 
-const i = b => {
-  q(b)
+const first = obj => {
+  return second(obj)
 }
 
-const v = { k: 't' }
+const object = { k: 't' }
+const object2 = first(object)
 
-i(v)
-console.log(v)
+console.log(object, object2)
 
 /*
   05
