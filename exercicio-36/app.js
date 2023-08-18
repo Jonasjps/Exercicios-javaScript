@@ -22,7 +22,10 @@ console.log(sum(...numbers))
   - Utilizando (também) o spread operator, exiba no console o seu nome com 
     apenas a primeira letra maiúscula.
 */
+const myName = 'jonas'
+const alterandoStringInSpread = [myName[0].toUpperCase(), ...myName.slice(1)].join('')
 
+console.log(alterandoStringInSpread)
 /*
   03
 
