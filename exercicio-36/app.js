@@ -12,7 +12,7 @@ const numbers = [50, 100, 50]
 
 const sum = (x, y, z) => x + y + z
 
-console.log(sum(...numbers))
+console.log(sum(numbers))
 
 /*
   02
@@ -22,12 +22,7 @@ console.log(sum(...numbers))
   - Utilizando (também) o spread operator, exiba no console o seu nome com 
     apenas a primeira letra maiúscula.
 */
-const myName = 'jonas'
 
-const AlterandoMyNameInSpread = [myName[0].toUpperCase(),
-   ...myName.slice(1)].join('')
-
-console.log(AlterandoMyNameInSpread)
 /*
   03
 
@@ -41,8 +36,7 @@ const randomNumber = Math.round(Math.random() * 100)
 
 const obj = {
   a: 1,
-  b: 2,
-  ...randomNumber > 50 ? {c: 3} : {d: 4}
+  b: 2
 }
 
 console.log(obj)
@@ -54,14 +48,22 @@ console.log(obj)
     criado permaneça intacto.
 */
 
-const third = obj =>  ({ ...obj,d: 3 })
-const second = obj => third(obj)
-const first = obj => second(obj)
+const h = w => {
+  w.d = 3
+}
 
-const object = { k: 't' }
-const object2 = first(object)
+const q = f => {
+  h(f)
+}
 
-console.log(object, object2)
+const i = b => {
+  q(b)
+}
+
+const v = { k: 't' }
+
+i(v)
+console.log(v)
 
 /*
   05
@@ -93,13 +95,6 @@ const timestamps = [
     value: 17
   }
 ]
-
-const value = timestamps.reduce((acc, timestamps) => {
-  acc[timestamps.date] = timestamps.value
-  return acc
-}, {})
-
-console.log(value)
 
 /*
   06
