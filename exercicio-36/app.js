@@ -139,15 +139,15 @@ const forEach = (arr, func) => {
 const logMessage = (item, index, array) =>
   `"${item}" é o ${index + 1}º item do array [${array}]`
 
-  const sumAccumulator = item => accumulator += item
+const sumAccumulator = item => accumulator += item
   
-  const funcIterandoArray = (item, index, array) => {
-    console.log(logMessage(item, index, array))
-    sumAccumulator(item)
-  }
+const funcIterandoArray = (item, index, array) => {
+  console.log(logMessage(item, index, array))
+  sumAccumulator(item)
+}
   
-  forEach(oddNumbers, funcIterandoArray)
-  console.log(accumulator)
+forEach(oddNumbers, funcIterandoArray)
+console.log(accumulator)
 /*
   07
 
