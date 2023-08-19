@@ -105,6 +105,7 @@ const value = timestamps.reduce((acc, timestamps) => {
   acc[timestamps.date] = timestamps.value
   return acc
 }, {})
+
 console.log(value)
 /*
   06
@@ -129,6 +130,24 @@ console.log(value)
 let accumulator = 0
 const oddNumbers = [51, 97, 65, 23]
 
+const forEach = (arr, func) => {
+  for (let i = 0; i < arr.length; i ++) {
+    func(arr[i], i, arr)
+  }
+}
+
+const logMessage = (item, index, array) =>
+  `"${item}" é o ${index + 1}º item do array [${array}]`
+
+  const sumAccumulator = item => accumulator += item
+  
+  const funcIterandoArray = (item, index, array) => {
+    console.log(logMessage(item, index, array))
+    sumAccumulator(item)
+  }
+  
+  forEach(oddNumbers, funcIterandoArray)
+  console.log(accumulator)
 /*
   07
 
