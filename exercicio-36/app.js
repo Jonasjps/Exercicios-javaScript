@@ -101,6 +101,11 @@ const timestamps = [
   }
 ]
 
+const value = timestamps.reduce((acc, timestamps) => {
+  acc[timestamps.date] = timestamps.value
+  return acc
+}, {})
+console.log(value)
 /*
   06
 
