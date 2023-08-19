@@ -12,7 +12,7 @@ const numbers = [50, 100, 50]
 
 const sum = (x, y, z) => x + y + z
 
-console.log(sum(numbers))
+console.log(sum(...numbers))
 
 /*
   02
@@ -22,7 +22,11 @@ console.log(sum(numbers))
   - Utilizando (também) o spread operator, exiba no console o seu nome com 
     apenas a primeira letra maiúscula.
 */
+const myName = 'jonas'
+const alterandoMyNameInSpread = [myName[0].toUpperCase(),
+   ...myName.slice(1)].join('')
 
+console.log(alterandoMyNameInSpread)
 /*
   03
 
