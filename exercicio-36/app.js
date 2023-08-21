@@ -148,6 +148,7 @@ const funcIterandoArray = (item, index, array) => {
   
 forEach(oddNumbers, funcIterandoArray)
 console.log(accumulator)
+
 /*
   07
 
