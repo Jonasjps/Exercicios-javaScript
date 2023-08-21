@@ -8,11 +8,11 @@
   - Não use a sintaxe item[index].
 */
 
-const numbers = [50, 100, 50]
+// const numbers = [50, 100, 50]
 
-const sum = (x, y, z) => x + y + z
+// const sum = (x, y, z) => x + y + z
 
-console.log(sum(...numbers))
+// console.log(sum(...numbers))
 
 /*
   02
@@ -22,10 +22,10 @@ console.log(sum(...numbers))
   - Utilizando (também) o spread operator, exiba no console o seu nome com 
     apenas a primeira letra maiúscula.
 */
-const myName = 'jonas'
-const alterandoStringInSpreatoOperetor = [myName[0].toUpperCase(), ...myName.slice(1)].join('')
+// const myName = 'jonas'
+// const alterandoStringInSpreatoOperetor = [myName[0].toUpperCase(), ...myName.slice(1)].join('')
 
-console.log(alterandoStringInSpreatoOperetor)
+// console.log(alterandoStringInSpreatoOperetor)
 /*
   03
 
@@ -35,15 +35,15 @@ console.log(alterandoStringInSpreatoOperetor)
   - Não utilize as estruturas condicionais if ou switch.
 */
 
-const randomNumber = Math.round(Math.random() * 100)
+// const randomNumber = Math.round(Math.random() * 100)
 
-const obj = {
-  a: 1,
-  b: 2,
-  ...randomNumber > 50 ? { c: 3 } : { d: 4 } 
-}
+// const obj = {
+//   a: 1,
+//   b: 2,
+//   ...randomNumber > 50 ? { c: 3 } : { d: 4 } 
+// }
 
-console.log(obj)
+// console.log(obj)
 
 /*
   04
@@ -52,20 +52,20 @@ console.log(obj)
     criado permaneça intacto.
 */
 
-const third = obs => {
-  return {
-    ...obs,
-    d: 3
-  }
-}
+// const third = obs => {
+//   return {
+//     ...obs,
+//     d: 3
+//   }
+// }
 
-const second = obs =>  third(obs)
-const first = obs =>  second(obs)
+// const second = obs =>  third(obs)
+// const first = obs =>  second(obs)
 
-const object = { k: 't' }
-const object2 =  first(object)
+// const object = { k: 't' }
+// const object2 =  first(object)
 
-console.log(object, object2)
+// console.log(object, object2)
 
 /*
   05
@@ -83,26 +83,26 @@ console.log(object, object2)
   }
 */
 
-const timestamps = [
-  {
-    date: '3242348-9842340234',
-    value: 6
-  },
-  {
-    date: '99e89-499958',
-    value: 31
-  },
-  {
-    date: '8596646656666r488',
-    value: 17
-  }
-]
-const value = timestamps.reduce((acc, timestamps) => {
-  acc[timestamps.date] = timestamps.value
-  return acc
-}, {})
+// const timestamps = [
+//   {
+//     date: '3242348-9842340234',
+//     value: 6
+//   },
+//   {
+//     date: '99e89-499958',
+//     value: 31
+//   },
+//   {
+//     date: '8596646656666r488',
+//     value: 17
+//   }
+// ]
+// const value = timestamps.reduce((acc, timestamps) => {
+//   acc[timestamps.date] = timestamps.value
+//   return acc
+// }, {})
 
-console.log(value)
+// console.log(value)
 /*
   06
 
@@ -123,30 +123,30 @@ console.log(value)
   Dica 2: o método forEach nunca retorna um valor.
 */
 
-let accumulator = 0
-const oddNumbers = [51, 97, 65, 23]
+// let accumulator = 0
+// const oddNumbers = [51, 97, 65, 23]
 
-const forEach = (array, func) => {
-  for(let index = 0; index < array.length; index++ ) {
-    const item = array[index]
-    func(item, index, array)
-  }
-}
+// const forEach = (array, func) => {
+//   for(let index = 0; index < array.length; index++ ) {
+//     const item = array[index]
+//     func(item, index, array)
+//   }
+// }
 
-const logMessage  =  (item, index, array) => {
-  const message = 
-    `"${item}" é o ${index + 1}º item do array [${array.join(', ')}]`
+// const logMessage  =  (item, index, array) => {
+//   const message = 
+//     `"${item}" é o ${index + 1}º item do array [${array.join(', ')}]`
   
-  console.log(message)
-}
+//   console.log(message)
+// }
 
-const showSumItem = item => {
-  accumulator += item
-}
+// const showSumItem = item => {
+//   accumulator += item
+// }
 
-forEach(oddNumbers,logMessage)
-forEach(oddNumbers, showSumItem)
-console.log(accumulator)
+// forEach(oddNumbers,logMessage)
+// forEach(oddNumbers, showSumItem)
+// console.log(accumulator)
 
 /*
   07
@@ -176,3 +176,20 @@ console.log(accumulator)
     3 No passo 3.4, se o slide exibido atualmente não corresponder ao index do 
       1º slide, o slide anterior deve ser exibido.
 */
+const buttonNext = document.querySelector('[data-js="carousel__button--next"]')
+const slides = document.querySelectorAll('[data-js="carousel__item"]')
+
+let accumulator = 0
+buttonNext.addEventListener('click', () => {
+  if(accumulator === slides.length -1) {
+    accumulator = 0
+  }else {
+    accumulator++
+  }
+  
+  slides.forEach(slide => {
+    slide.classList.remove('carousel__item--visible')
+    
+  })
+  slides[accumulator].classList.add('carousel__item--visible')
+})
