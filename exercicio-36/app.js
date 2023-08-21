@@ -36,8 +36,7 @@ const randomNumber = Math.round(Math.random() * 100)
 
 const obj = {
   a: 1,
-  b: 2,
-
+  b: 2
 }
 
 console.log(obj)
@@ -49,6 +48,22 @@ console.log(obj)
     criado permaneça intacto.
 */
 
+const h = w => {
+  w.d = 3
+}
+
+const q = f => {
+  h(f)
+}
+
+const i = b => {
+  q(b)
+}
+
+const v = { k: 't' }
+
+i(v)
+console.log(v)
 
 /*
   05
@@ -80,6 +95,7 @@ const timestamps = [
     value: 17
   }
 ]
+
 /*
   06
 
@@ -102,7 +118,6 @@ const timestamps = [
 
 let accumulator = 0
 const oddNumbers = [51, 97, 65, 23]
-
 
 /*
   07
