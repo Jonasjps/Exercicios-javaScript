@@ -39,7 +39,8 @@ const randomNumber = Math.round(Math.random() * 100)
 
 const obj = {
   a: 1,
-  b: 2
+  b: 2,
+  ...randomNumber > 50 ? { c: 3 } : { d: 4 } 
 }
 
 console.log(obj)
@@ -51,22 +52,20 @@ console.log(obj)
     criado permaneça intacto.
 */
 
-const h = w => {
-  w.d = 3
+const third = obs => {
+  return {
+    ...obs,
+    d: 3
+  }
 }
 
-const q = f => {
-  h(f)
-}
+const second = obs =>  third(obs)
+const first = obs =>  second(obs)
 
-const i = b => {
-  q(b)
-}
+const object = { k: 't' }
+const object2 =  first(object)
 
-const v = { k: 't' }
-
-i(v)
-console.log(v)
+console.log(object, object2)
 
 /*
   05
