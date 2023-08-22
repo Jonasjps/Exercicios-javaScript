@@ -180,24 +180,22 @@ const buttonNext = document.querySelector('[data-js="carousel__button--next"]')
 const slides = document.querySelectorAll('[data-js="carousel__item"]')
 const buttonPrev = document.querySelector('[data-js="carousel__button--prev"]')
 
-let indexIncrement = 0
 const ultimoItem = slides.length -1
+let indexIncrement = 0
 
-const manipulandoClass = indexIncrement => {
-  slides.forEach(slide => {
-    slide.classList.remove('carousel__item--visible')
-  })
-  slides[indexIncrement].classList.add('carousel__item--visible')
+const manipulandoClass = correctSlideIndex => {
+  slides.forEach(slide => slide.classList.remove('carousel__item--visible'))
+  slides[correctSlideIndex].classList.add('carousel__item--visible')
 }
 
 buttonNext.addEventListener('click', () => {
   const chekingItem = indexIncrement === ultimoItem
 
-  chekingItem 
+  const correctSlideIndex = chekingItem 
     ? indexIncrement = 0 
     : ++indexIncrement
 
-  manipulandoClass(indexIncrement)
+  manipulandoClass(correctSlideIndex)
 
 })
 
@@ -205,11 +203,12 @@ buttonNext.addEventListener('click', () => {
 buttonPrev.addEventListener('click', () => {
   const getUltimoItem = indexIncrement === 0
   
-  getUltimoItem 
+ const correctSlideIndex =  getUltimoItem 
     ? indexIncrement = ultimoItem
-    : --indexIncrement 
+    : --indexIncrement
 
- manipulandoClass(indexIncrement)
+ manipulandoClass(correctSlideIndex)
+ debugger
   
 })
 
