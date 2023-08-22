@@ -181,31 +181,35 @@ const slides = document.querySelectorAll('[data-js="carousel__item"]')
 const buttonPrev = document.querySelector('[data-js="carousel__button--prev"]')
 
 let indexIncrement = 0
+const ultimoItem = slides.length -1
 
-buttonNext.addEventListener('click', () => {
-  if(indexIncrement === slides.length -1){
-    indexIncrement = 0
-  }else {
-    indexIncrement++
-  }
-
+const manipulandoClass = indexIncrement => {
   slides.forEach(slide => {
     slide.classList.remove('carousel__item--visible')
   })
   slides[indexIncrement].classList.add('carousel__item--visible')
+}
+
+buttonNext.addEventListener('click', () => {
+  const chekingItem = indexIncrement === ultimoItem
+
+  chekingItem 
+    ? indexIncrement = 0 
+    : ++indexIncrement
+
+  manipulandoClass(indexIncrement)
+
 })
 
 
 buttonPrev.addEventListener('click', () => {
-  if(indexIncrement === 0){
-    indexIncrement = slides.length -1
-  }else {
-    indexIncrement--
-  }
-  slides.forEach(slide => {
-    slide.classList.remove('carousel__item--visible')
-  })
-  slides[indexIncrement].classList.add('carousel__item--visible')
+  const getUltimoItem = indexIncrement === 0
+  
+  getUltimoItem 
+    ? indexIncrement = ultimoItem
+    : --indexIncrement 
+
+ manipulandoClass(indexIncrement)
   
 })
 
