@@ -176,41 +176,35 @@
     3 No passo 3.4, se o slide exibido atualmente não corresponder ao index do 
       1º slide, o slide anterior deve ser exibido.
 */
-const buttonNext = document.querySelector('[data-js="carousel__button--next"]')
+const nextButton = document.querySelector('[data-js="carousel__button--next"]')
 const slides = document.querySelectorAll('[data-js="carousel__item"]')
-const buttonPrev = document.querySelector('[data-js="carousel__button--prev"]')
+const prevButton = document.querySelector('[data-js="carousel__button--prev"]')
 
-const ultimoItem = slides.length -1
 let indexIncrement = 0
 
-const manipulandoClass = correctSlideIndex => {
-  slides.forEach(slide => slide.classList.remove('carousel__item--visible'))
-  slides[correctSlideIndex].classList.add('carousel__item--visible')
-}
+nextButton.addEventListener('click', () => {
+  if(indexIncrement === slides.length -1) {
+    indexIncrement = 0
+  }else {
+    indexIncrement++
+  }
 
-buttonNext.addEventListener('click', () => {
-  const chekingItem = indexIncrement === ultimoItem
-
-  const correctSlideIndex = chekingItem 
-    ? indexIncrement = 0 
-    : ++indexIncrement
-
-  manipulandoClass(correctSlideIndex)
-
+  slides.forEach(slide => {
+    slide.classList.remove('carousel__item--visible')
+  })
+  slides[indexIncrement].classList.add('carousel__item--visible')
 })
 
+prevButton.addEventListener('click', () => {
+  if(indexIncrement === 0) {
+    indexIncrement = slides.length -1
+  }else {
+    indexIncrement--
+  }
 
-buttonPrev.addEventListener('click', () => {
-  const getUltimoItem = indexIncrement === 0
-  
- const correctSlideIndex =  getUltimoItem 
-    ? indexIncrement = ultimoItem
-    : --indexIncrement
-
- manipulandoClass(correctSlideIndex)
- debugger
-  
+  slides.forEach(slide => {
+    slide.classList.remove('carousel__item--visible')
+  })
+  slides[indexIncrement].classList.add('carousel__item--visible')
 })
-
-
 
