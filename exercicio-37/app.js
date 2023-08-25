@@ -18,7 +18,7 @@ class Rabbit extends Animal {
   }
 }
 
-// let rabbit = new Rabbit('White Rabbit')
+let rabbit = new Rabbit('White Rabbit')
 
 /*
   02
