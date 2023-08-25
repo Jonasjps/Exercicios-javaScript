@@ -13,13 +13,14 @@ class Animal {
 
 class Rabbit extends Animal {
   constructor (name) {
+    super()
     this.name = name
     this.created = new Date()
   }
 }
 
 let rabbit = new Rabbit('White Rabbit')
-
+console.log(rabbit)
 /*
   02
 
