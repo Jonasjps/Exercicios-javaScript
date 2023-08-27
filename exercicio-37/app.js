@@ -28,11 +28,11 @@ console.log(rabbit)
     funcione.
 */
 
-// const counter = new Counter()
+const counter = new Counter()
 
-// counter.getValue()
-// counter.increment()
-// counter.getValue()
+counter.getValue()
+counter.increment()
+counter.getValue()
 
 /*
   03
