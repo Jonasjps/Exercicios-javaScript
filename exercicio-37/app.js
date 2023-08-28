@@ -23,16 +23,15 @@ let rabbit = new Rabbit('White Rabbit')
 console.log(rabbit)
 /*
   02
-
   - Descomente o código abaixo e implemente o que está faltando para que ele 
     funcione.
 */
 
-const counter = new Counter()
+// const counter = new Counter()
 
-counter.getValue()
-counter.increment()
-counter.getValue()
+// counter.getValue()
+// counter.increment()
+// counter.getValue()
 
 /*
   03
