@@ -68,6 +68,15 @@ const values = [
   () => {}
 ]
 
+class ValueTruthy {
+  resultValueTruthy () {
+    const truthyValue = values.filter(truthy => truthy ? true : false)
+    return truthyValue
+  }
+}
+
+const valueTruthy = new ValueTruthy()
+console.log(valueTruthy.resultValueTruthy())
 /*
   04
 
