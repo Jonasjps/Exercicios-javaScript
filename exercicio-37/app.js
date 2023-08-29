@@ -88,14 +88,14 @@ console.log(valueTruthy.resultValueTruthy())
 */
 
 class Clock {
-  constructor (template) {
+  constructor ({template}) {
     this.template = template
   }
 
   render () {
     const date = new Date()
     let hours = date.getHours()
-    let minutes = date.getMonth()
+    let minutes = date.getMinutes()
     let seconds = date.getSeconds()
 
     if (hours < 10) {
@@ -129,7 +129,7 @@ class Clock {
 }
 
 class ExtendedClock extends Clock {
-  constructor ({ options }) {
+  constructor (options) {
     super(options)
     
     let { precision = 1000 } = options
@@ -146,6 +146,7 @@ class ExtendedClock extends Clock {
 const clock = new ExtendedClock({ template: 'h:m:s', precision: 1000 })
 
 clock.start()
+clock.stop()
 
 /*
   05
