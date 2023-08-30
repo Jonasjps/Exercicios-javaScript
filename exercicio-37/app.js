@@ -13,43 +13,25 @@ class Animal {
 
 class Rabbit extends Animal {
   constructor (name) {
-    super(name)
     this.name = name
     this.created = new Date()
   }
 }
 
-let rabbit = new Rabbit('White Rabbit')
-console.log(rabbit)
+// let rabbit = new Rabbit('White Rabbit')
+
 /*
   02
+
   - Descomente o código abaixo e implemente o que está faltando para que ele 
     funcione.
 */
-class Counter {
-  constructor (lasName) {
-    this.lasName = lasName
-  }
 
-  getValue () { 
+// const counter = new Counter()
 
-  }
-
-  increment () {
-  }
-
-  getValue () {
-
-  }
-}
-
-const counter = new Counter('Pessoa')
-
-counter.getValue()
-counter.increment()
-counter.getValue()
-
-console.log(counter)
+// counter.getValue()
+// counter.increment()
+// counter.getValue()
 
 /*
   03
@@ -68,15 +50,6 @@ const values = [
   () => {}
 ]
 
-class ValueTruthy {
-  resultValueTruthy () {
-    const truthyValue = values.filter(truthy => truthy ? true : false)
-    return truthyValue
-  }
-}
-
-const valueTruthy = new ValueTruthy()
-console.log(valueTruthy.resultValueTruthy())
 /*
   04
 
@@ -87,66 +60,64 @@ console.log(valueTruthy.resultValueTruthy())
     funcione.
 */
 
-class Clock {
-  constructor ({template}) {
-    this.template = template
-  }
+// class Clock {
+//   constructor ({ template }) {
+//     this.template = template
+//   }
 
-  render () {
-    const date = new Date()
-    let hours = date.getHours()
-    let minutes = date.getMinutes()
-    let seconds = date.getSeconds()
+//   render () {
+//     const date = new Date()
+//     let hours = date.getHours()
+//     let minutes = date.getMonth()
+//     let seconds = date.getSeconds()
 
-    if (hours < 10) {
-      hours = `0${hours}`
-    }
+//     if (hours < 10) {
+//       hours = `0${hours}`
+//     }
 
-    if (minutes < 10) {
-      minutes = `0${minutes}`
-    }
+//     if (minutes < 10) {
+//       minutes = `0${minutes}`
+//     }
 
-    if (seconds < 10) {
-      seconds = `0${seconds}`
-    }
+//     if (seconds < 10) {
+//       seconds = `0${seconds}`
+//     }
 
-    const formattedTime = this.template
-      .replace('h', hours)
-      .replace('m', minutes)
-      .replace('s', seconds)
+//     const formattedTime = this.template
+//       .replace('h', hours)
+//       .replace('m', minutes)
+//       .replace('s', seconds)
 
-    console.log(formattedTime)
-  }
+//     console.log(formattedTime)
+//   }
 
-  start () {
-    this.render()
-    this.timer = setInterval(() => this.render(), 1000)
-  }
+//   start () {
+//     this.render()
+//     this.timer = setInterval(() => this.render(), 1000)
+//   }
 
-  stop () {
-    clearInterval(this.timer)
-  }
-}
+//   stop () {
+//     clearInterval(this.timer)
+//   }
+// }
 
-class ExtendedClock extends Clock {
-  constructor (options) {
-    super(options)
+// class ExtendedClock extends Clock {
+//   constructor ({ options }) {
+//     super(options)
     
-    let { precision = 1000 } = options
-    this.precision = precision
-  }
+//     let { precision = 1000 } = options
+//     this.precision = precision
+//   }
 
-  start () {
-    this.render()
-    this.timer = setInterval(() => this.render(), this.precision)
-  }
-}
+//   start () {
+//     this.render()
+//     this.timer = setInterval(() => this.render(), this.precision)
+//   }
+// }
 
+// const clock = ExtendedClock({ template: 'h:m:s', precision: 1000 })
 
-const clock = new ExtendedClock({ template: 'h:m:s', precision: 1000 })
-
-clock.start()
-clock.stop()
+// clock.start()
 
 /*
   05
