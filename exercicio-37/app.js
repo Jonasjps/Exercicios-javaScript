@@ -27,12 +27,24 @@ console.log(rabbit)
   - Descomente o código abaixo e implemente o que está faltando para que ele 
     funcione.
 */
+class Counter {
+  constructor () {
+    this.number = 0
+  }
+   get value () {
+    return this.number
+  }
 
-// const counter = new Counter()
+  increment () {
+  return this.number++
+  }
+}
 
-// counter.getValue()
-// counter.increment()
-// counter.getValue()
+const counter = new Counter()
+
+console.log(counter.value)
+counter.increment
+console.log(counter.value)
 
 /*
   03
