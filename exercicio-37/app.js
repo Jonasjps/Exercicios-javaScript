@@ -13,38 +13,25 @@ class Animal {
 
 class Rabbit extends Animal {
   constructor (name) {
-    super(name)
+    this.name = name
     this.created = new Date()
   }
 }
 
-let rabbit = new Rabbit('White Rabbit')
+// let rabbit = new Rabbit('White Rabbit')
 
-console.log(rabbit)
 /*
   02
 
   - Descomente o código abaixo e implemente o que está faltando para que ele 
     funcione.
 */
-class Counter {
-  constructor () {
-    this.number = 0
-  }
-   get value () {
-    return this.number
-  }
 
-  increment () {
-  return this.number++
-  }
-}
+// const counter = new Counter()
 
-const counter = new Counter()
-
-console.log(counter.value)
-counter.increment
-console.log(counter.value)
+// counter.getValue()
+// counter.increment()
+// counter.getValue()
 
 /*
   03
