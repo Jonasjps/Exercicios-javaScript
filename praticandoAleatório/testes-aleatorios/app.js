@@ -2,22 +2,25 @@ const getRelogioHours = document.querySelector('[data-js="hours"]')
 const getRelogioMinutes = document.querySelector('[data-js="minutes"]')
 const getRelogioSeconds = document.querySelector('[data-js="seconds"]')
 
-const data = new Date()
 let counter = 0
 
 const setRelogioDigital = () => {
-    const hours = data.getHours()
-    const minutes = data.getMinutes()
-    const seconds = data.getSeconds()
+    const data = new Date()
+    let hours = data.getHours()
+    let minutes = data.getMinutes()
+    let seconds = data.getSeconds()
 
-    const time = setInterval(() => {
-        console.log(seconds)
-    },1000)
-    console.log(hours, minutes, seconds)
+   
+    getRelogioHours.innerHTML = hours
+    getRelogioMinutes.innerHTML = minutes
+    getRelogioSeconds.innerHTML = seconds
+   
 
-    clearInterval(time)
+                
+    // clearInterval(time)
 
 }
 
+setInterval(setRelogioDigital, 1000)
 
 console.log(setRelogioDigital())
