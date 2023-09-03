@@ -10,13 +10,10 @@ const setRelogioDigital = () => {
     let minutes = data.getMinutes()
     let seconds = data.getSeconds()
 
-   
     getRelogioHours.innerHTML = hours
     getRelogioMinutes.innerHTML = minutes
     getRelogioSeconds.innerHTML = seconds
-   
-
-                
+       
     // clearInterval(time)
 
 }
