@@ -1,21 +1,18 @@
-const getRelogioHours = document.querySelector('[data-js="hours"]')
-const getRelogioMinutes = document.querySelector('[data-js="minutes"]')
-const getRelogioSeconds = document.querySelector('[data-js="seconds"]')
+const clockContainer = document.querySelector('[data-js="clock"]')
 
-let counter = 0
 
 const setRelogioDigital = () => {
     const data = new Date()
     let hours = data.getHours()
     let minutes = data.getMinutes()
     let seconds = data.getSeconds()
-
-    getRelogioHours.innerHTML = hours
-    getRelogioMinutes.innerHTML = minutes
-    getRelogioSeconds.innerHTML = seconds
-       
-    // clearInterval(time)
-
+    
+    const clock = ` 
+    <span>${hours}</span>
+    <span>${minutes}</span>
+    <span>${seconds}</span>
+    `
+    clockContainer.innerHTML = clock
 }
 
 setInterval(setRelogioDigital, 1000)
