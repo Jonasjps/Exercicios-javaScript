@@ -1,10 +1,10 @@
 const clockContainer = document.querySelector('[data-js="clock"]')
 
 const setRelogioDigital = () => {
-    const data = new Date()
-    let hours = data.getHours()
-    let minutes = data.getMinutes()
-    let seconds = data.getSeconds()
+    const present = new Date()
+    let hours = present.getHours()
+    let minutes = present.getMinutes()
+    let seconds = present.getSeconds()
 
     const clock = ` 
     <span>${String(hours).length === 1 ? `0${hours}` : hours }</span>:
