@@ -27,6 +27,7 @@ console.log(rabbit)
   - Descomente o código abaixo e implemente o que está faltando para que ele 
     funcione.
 */
+
 class Counter {
   constructor() {
     this.value = 0
@@ -67,6 +68,7 @@ const values = [
   () => {}
 ]
 
+console.log(values.filter((value) => Boolean(value)))
 /*
   04
 
