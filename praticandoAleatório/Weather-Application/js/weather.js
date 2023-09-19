@@ -21,23 +21,23 @@ const getCityWeather = async cityName => {
     }
 }
 
-const getCityWeatherData = async cityName => {
-    try {
-        const cityKey = await getCityWeather(cityName)
-        const weatherUrl = `${baseUrl}/currentconditions/v1/${cityKey.Key}?apikey=${apiKey}&q=${cityName}&language=pt-br`
-        const response  = await fetch(weatherUrl)
+// const getCityWeatherData = async cityName => {
+//     try {
+//         const cityKey = await getCityWeather(cityName)
+//         const weatherUrl = `${baseUrl}/currentconditions/v1/${cityKey.Key}?apikey=${apiKey}&q=${cityName}&language=pt-br`
+//         const response  = await fetch(weatherUrl)
 
-        if(!response.ok) {
-            throw Error('Não foi possível obter dados da API.')
-        }
+//         if(!response.ok) {
+//             throw Error('Não foi possível obter dados da API.')
+//         }
 
-        const [weatherData] = await response.json()
-        return weatherData        
+//         const [weatherData] = await response.json()
+//         return weatherData        
         
-    }catch ({name, message}) {
-        alert(`${name}: ${message}`)
-    }
-}
+//     }catch ({name, message}) {
+//         alert(`${name}: ${message}`)
+//     }
+// }
 
-getCityWeatherData('São Paulo')
+getCityWeather('São Paulo')
     .then(console.log)
