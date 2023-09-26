@@ -6,7 +6,6 @@ const cityUrl = cityName =>
 
 const fetchData = async url => {
     try {
-
         const response = await fetch(url)
 
         if(!response.ok) {
@@ -21,6 +20,13 @@ const fetchData = async url => {
 }
 
 const getCityWeather = cityName => fetchData(cityUrl(cityName))
+
+const getCityWeatherData = async cityName => {
+    const [cityKey] = await getCityWeather(cityName)
+    const weatherUrl = `${baseUrl}/currentconditions/v1/${cityKey.Key}?apikey=${apiKey}&q=${cityName}&language=pt-br`
+    return await fetchData(weatherUrl)
+    
+}
 
 // const getCityWeatherData = async cityName => {
 //     try {
@@ -40,5 +46,5 @@ const getCityWeather = cityName => fetchData(cityUrl(cityName))
 //     }
 // }
 
-getCityWeather('São Paulo')
+getCityWeatherData('São Paulo')
     .then(console.log)
