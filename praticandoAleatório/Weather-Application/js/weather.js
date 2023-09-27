@@ -5,7 +5,7 @@ const cityUrl = cityName =>
     `${baseUrl}/locations/v1/cities/search?apikey=${apiKey}&q=${cityName}&language=pt-br`
 
 const weatherUrl = cityKey =>
-    `${baseUrl}/currentconditions/v1/${cityKey.Key}?apikey=${apiKey}&q=${cityKey.LocalizedName}&language=pt-br`
+    `${baseUrl}/currentconditions/v1/${cityKey}?apikey=${apiKey}&q=${cityKey.LocalizedName}&language=pt-br`
 
 const fetchData = async url => {
     try {
@@ -23,8 +23,4 @@ const fetchData = async url => {
 }
 
 const getCityWeather = cityName => fetchData(cityUrl(cityName))
-
-const getCityWeatherData = async cityName => {
-    const [cityKey] = await getCityWeather(cityName)
-    return await fetchData(weatherUrl(cityKey))
-}
+const getCityWeatherData = cityKey =>  fetchData(weatherUrl(cityKey))
