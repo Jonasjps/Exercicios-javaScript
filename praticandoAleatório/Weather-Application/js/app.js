@@ -1,4 +1,7 @@
 const form = document.querySelector('[data-js="change-location"]')
+const containersName = document.querySelector('[data-js="cityName"]')
+const containersWeather = document.querySelector('[data-js="cityWeather"]')
+const containersTemperature = document.querySelector('[data-js="cityTemperature"]')
 
 form.addEventListener('submit', async event => {
     event.preventDefault()
@@ -6,6 +9,7 @@ form.addEventListener('submit', async event => {
     const [{Key, LocalizedName}] = await getCityWeather(inputValue)
     const [{weatherData, WeatherText, Temperature}] = await getCityWeatherData(Key)
 
-    console.log(LocalizedName, WeatherText, Temperature.Metric.Value )
-
+    containersName.innerHTML = LocalizedName
+    containersWeather.innerHTML = WeatherText
+    containersTemperature.innerHTML = Temperature.Metric.Value
 })
