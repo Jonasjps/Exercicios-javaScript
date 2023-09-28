@@ -7,7 +7,7 @@ form.addEventListener('submit', async event => {
     event.preventDefault()
     const inputValue = event.target.city.value
     const [{Key, LocalizedName}] = await getCityWeather(inputValue)
-    const [{weatherData, WeatherText, Temperature}] = await getCityWeatherData(Key)
+    const [{WeatherText, Temperature}] = await getCityWeatherData(Key)
 
     containersName.innerHTML = LocalizedName
     containersWeather.innerHTML = WeatherText
