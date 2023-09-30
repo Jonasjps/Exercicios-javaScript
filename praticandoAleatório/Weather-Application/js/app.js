@@ -2,6 +2,7 @@ const form = document.querySelector('[data-js="change-location"]')
 const containersName = document.querySelector('[data-js="cityName"]')
 const containersWeather = document.querySelector('[data-js="cityWeather"]')
 const containersTemperature = document.querySelector('[data-js="cityTemperature"]')
+const time = document.querySelector('[data-js="time"]')
 
 form.addEventListener('submit', async event => {
     event.preventDefault()
