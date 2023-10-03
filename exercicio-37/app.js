@@ -146,8 +146,13 @@ const clock = new ExtendedClock({ template: 'h:m:s', precision: 1000 })
     caracteres que o textarea contém.
 */
 
+const element = document.querySelector('[data-js="textarea"]')
+// debugger
 
-
+element.addEventListener('submit', event => {
+  event.preventDefault()
+  console.log(element.value)
+})
 /*
   06
 
