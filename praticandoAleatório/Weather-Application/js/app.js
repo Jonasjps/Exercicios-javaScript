@@ -8,8 +8,15 @@ form.addEventListener('submit', async event => {
     event.preventDefault()
     const inputValue = event.target.city.value
     const [{Key, LocalizedName}] = await getCityWeather(inputValue)
-    const [{WeatherText, Temperature}] = await getCityWeatherData(Key)
+    const [{WeatherText, Temperature, isDayTime}] = await getCityWeatherData(Key)
 
+    if(isDayTime) {
+        time.src = `./icons/day.svg"`
+    } else {
+        time.src = `./icons/nigth.svg"`
+    }
+
+    
     containersName.innerHTML = LocalizedName
     containersWeather.innerHTML = WeatherText
     containersTemperature.innerHTML = Temperature.Metric.Value
