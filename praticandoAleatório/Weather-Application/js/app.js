@@ -13,10 +13,9 @@ form.addEventListener('submit', async event => {
     if(isDayTime) {
         time.src = `./icons/day.svg"`
     } else {
-        time.src = `./icons/nigth.svg"`
+        time.src = `./icons/night.svg"`
     }
 
-    
     containersName.innerHTML = LocalizedName
     containersWeather.innerHTML = WeatherText
     containersTemperature.innerHTML = Temperature.Metric.Value
