@@ -11,9 +11,9 @@ form.addEventListener('submit', async event => {
     const [{WeatherText, Temperature, isDayTime}] = await getCityWeatherData(Key)
 
     if(isDayTime) {
-        time.src = `./src/icons/day.svg"`
+        time.src = `./src/day.svg`
     } else {
-        time.src = `./src/icons/night.svg"`
+        time.src = `./src/night.svg`
     }
 
     containersName.innerHTML = LocalizedName
