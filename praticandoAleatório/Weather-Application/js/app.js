@@ -9,14 +9,14 @@ form.addEventListener('submit', async event => {
     event.preventDefault()
     const inputValue = event.target.city.value
     const [{Key, LocalizedName}] = await getCityWeather(inputValue)
-    const [{WeatherText, Temperature, isDayTime}] = await getCityWeatherData(Key)
+    const [{WeatherText, Temperature, IsDayTime}] = await getCityWeatherData(Key)
 
     if(cityCard.classList.contains('d-none')) {
         cityCard.classList.remove('d-none')
     }
     
     
-    if(isDayTime) {
+    if(IsDayTime) {
         time.src = `./src/day.svg`
     } else {
         time.src = `./src/night.svg`
