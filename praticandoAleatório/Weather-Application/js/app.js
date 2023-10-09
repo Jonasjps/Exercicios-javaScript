@@ -9,7 +9,7 @@ form.addEventListener('submit', async event => {
     event.preventDefault()
     const inputValue = event.target.city.value
     const [{Key, LocalizedName}] = await getCityWeather(inputValue)
-    const [{WeatherText, Temperature, IsDayTime}] = await getCityWeatherData(Key)
+    const [{WeatherText, Temperature, IsDayTime, WeatherIcon}] = await getCityWeatherData(Key)
 
     if(cityCard.classList.contains('d-none')) {
         cityCard.classList.remove('d-none')

@@ -5,7 +5,7 @@ const cityUrl = cityName =>
     `${baseUrl}/locations/v1/cities/search?apikey=${apiKey}&q=${cityName}&language=pt-br`
 
 const weatherUrl = cityKey =>
-    `${baseUrl}/currentconditions/v1/${cityKey}?apikey=${apiKey}&q=${cityKey.LocalizedName}&language=pt-br`
+    `${baseUrl}/currentconditions/v1/${cityKey}?apikey=${apiKey}&language=pt-br`
 
 const fetchData = async url => {
     try {
