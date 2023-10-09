@@ -3,6 +3,7 @@ const containersName = document.querySelector('[data-js="cityName"]')
 const containersWeather = document.querySelector('[data-js="cityWeather"]')
 const containersTemperature = document.querySelector('[data-js="cityTemperature"]')
 const time = document.querySelector('[data-js="time"]')
+const cityCard = document.querySelector('[data-js="city-card"]')
 
 form.addEventListener('submit', async event => {
     event.preventDefault()
@@ -10,6 +11,10 @@ form.addEventListener('submit', async event => {
     const [{Key, LocalizedName}] = await getCityWeather(inputValue)
     const [{WeatherText, Temperature, isDayTime}] = await getCityWeatherData(Key)
 
+    if(cityCard.classList.contains('d-none')) {
+        cityCard.classList.remove('d-none')
+    }
+    
     if(isDayTime) {
         time.src = `./src/day.svg`
     } else {
