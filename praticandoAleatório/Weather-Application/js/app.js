@@ -15,6 +15,7 @@ form.addEventListener('submit', async event => {
         cityCard.classList.remove('d-none')
     }
     
+    
     if(isDayTime) {
         time.src = `./src/day.svg`
     } else {
