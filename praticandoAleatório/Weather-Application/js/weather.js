@@ -5,8 +5,20 @@ const cityUrl = cityName =>
 
 const getCityData = async cityName => {
     try{
+        const url = cityUrl(cityName)
+        const response = await fetch(url)
 
-    }catch ({name, mensage}) {
-        alert(`${name}: ${mensage}`)
+        if(!response.ok) {
+            throw Error('Não foi possível obter dados da api.')
+        }
+
+        const [cityData] = await response.json()
+        return cityData
+
+    }catch ({name, mesage}) {
+        alert(`${name}: ${mesage}`)
     }
 }
+
+getCityData('Brasília')
+    .then(console.log)
