@@ -22,8 +22,8 @@ const getCityData = async cityName => {
 
 const getCityWeather = async cityName => {
     try {
-        const [{Key, LocalizedName}] = await getCityData(cityName)
-        const weatherUrl = `http://dataservice.accuweather.com/currentconditions/v1/${Key}?apikey=${APIKey}`
+        const [cityWeatherData] = await getCityData(cityName)
+        const weatherUrl = `http://dataservice.accuweather.com/currentconditions/v1/${cityWeatherData.Key}?apikey=${APIKey}&language=pt-br`
         const response = await fetch(weatherUrl)
 
         if(!response.ok) {
