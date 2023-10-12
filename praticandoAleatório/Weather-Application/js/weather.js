@@ -30,7 +30,7 @@ const getCityWeather = async cityName => {
             throw Error('Não foi possível obter dados da api!')
         }
 
-        const weatherData = await response.json()
+        const [weatherData] = await response.json()
         return weatherData
         
     } catch ({name , mesage}) {
