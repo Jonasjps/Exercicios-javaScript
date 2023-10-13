@@ -17,11 +17,8 @@ formInput.addEventListener('submit', async event => {
         cityCard.classList.remove('d-none')
     }
 
-    if(IsDayTime) {
-        cityImg.src ='./src/day.svg'
-    } else {
-        cityImg.src ='./src/night.svg'
-    }
+    IsDayTime ? cityImg.src ='./src/day.svg': cityImg.src ='./src/night.svg'
+
     timeIcon.innerHTML = imgIcon
     cityNameContainers.innerHTML = LocalizedName
     cityWeatherContainers.innerHTML = WeatherText
