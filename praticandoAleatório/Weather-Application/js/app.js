@@ -6,16 +6,20 @@ const cityCard = document.querySelector('[data-js="cityCard"]')
 const cityImg = document.querySelector('[data-js="time"]')
 const timeIcon = document.querySelector('[data-js="time-icon"]')
 
-formInput.addEventListener('submit', async event => {
-    event.preventDefault()
-    const inputValue = event.target.city.value
+const checkingClass = inputValue => {
+    
+    if(inputValue.length) {
+        if (cityCard.classList.contains('d-none')) {
+            cityCard.classList.remove('d-none')
+        }
+    }
+
+}
+
+const manipulationInToDom = async inputValue => {
     const [{Key, LocalizedName}] = await getCityData(inputValue)
     const [{WeatherText, Temperature, IsDayTime, WeatherIcon}] = await getCityWeatherData(Key)
     const imgIcon = `<img src="./src/icons/${WeatherIcon}.svg">`
-
-    if (cityCard.classList.contains('d-none')) {
-        cityCard.classList.remove('d-none')
-    }
 
     IsDayTime 
         ? cityImg.src ='./src/day.svg'
@@ -25,6 +29,16 @@ formInput.addEventListener('submit', async event => {
     cityNameContainers.innerHTML = LocalizedName
     cityWeatherContainers.innerHTML = WeatherText
     cityTemperatureContainers.innerHTML = Temperature.Metric.Value
-    
+
+}
+
+
+formInput.addEventListener('submit', async event => {
+    event.preventDefault()
+    const inputValue = event.target.city.value
+
+    manipulationInToDom(inputValue)
+    checkingClass(inputValue)
+
     formInput.reset()
 })
