@@ -22,8 +22,8 @@ const manipulationInToDom = async inputValue => {
     const imgIcon = `<img src="./src/icons/${WeatherIcon}.svg">`
 
     IsDayTime 
-        ? cityImg.src ='./src/day.svg'
-        : cityImg.src ='./src/night.svg'
+        ? cityImg.src = './src/day.svg'
+        : cityImg.src = './src/night.svg'
 
     timeIcon.innerHTML = imgIcon
     cityNameContainers.innerHTML = LocalizedName
