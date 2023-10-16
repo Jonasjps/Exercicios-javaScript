@@ -9,7 +9,7 @@ const timeIcon = document.querySelector('[data-js="time-icon"]')
 const checkingClass = inputValue => {
     
     if(inputValue.length) {
-        if (cityCard.classList.contains('d-none')) {
+        if (cityCard.classList.contains('d-none')){
             cityCard.classList.remove('d-none')
         }
     }
