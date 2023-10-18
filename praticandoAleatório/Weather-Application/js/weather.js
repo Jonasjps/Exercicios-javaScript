@@ -23,7 +23,6 @@ const fetchData = async url => {
 }
 
 const getCityData = cityName => fetchData(cityUrl(cityName))
-
 const getCityWeatherData = cityKey => fetchData(cityWeatherUrl(cityKey))
 
 
