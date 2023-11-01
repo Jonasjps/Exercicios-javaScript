@@ -12,8 +12,3 @@ console.log(result)
  */
 
 
-  let names = {name: 'Jonas', lastName: 'Pessoa', gender: 'Masculino', age: 28}
-
-  const namesAlterados = names.map(item => item)
-
-  console.log(namesAlterados)
