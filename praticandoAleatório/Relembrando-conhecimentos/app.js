@@ -12,7 +12,7 @@ console.log(result)
  */
 
 
-let dobleNumbers = [2, 4, 10, 23, 45]
+let dobleNumbers = [2, 3, 5, 12]
 
 const resultNumbers = dobleNumbers.map(item => item * 5)
 
