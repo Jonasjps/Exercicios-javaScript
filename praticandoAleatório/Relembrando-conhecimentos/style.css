@@ -1,0 +1,12 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgba(128, 128, 128, 0.562);
+}
+h1 {
+    background-color: rgb(0, 238, 255);
+    padding: 10px;
+    text-align: center;
+    border-radius: 20px;
+    width: 400px;
+    margin: auto;
+}
