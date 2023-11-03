@@ -18,6 +18,7 @@ todosContainer.addEventListener('click', event => {
     const clickedElement = event.target
     const totoElement = clickedElement.dataset.trash
     const referenciaLi = document.querySelector(`[data-todo="${totoElement}"]`)
+    
     if(totoElement) {
         referenciaLi.remove()
     }
