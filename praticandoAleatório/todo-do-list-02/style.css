@@ -17,3 +17,7 @@
   .delete {
     cursor: pointer;
   }
+
+  .hidden {
+    display: none;
+  }
