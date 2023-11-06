@@ -13,7 +13,7 @@ formAddTodo.addEventListener('submit', event => {
         `
             <li class="list-group-item d-flex justify-content-between align-items-center" data-todo="${inputValue}">
                 <span>${inputValue}</span>
-                <i class="far fa-trash-alt delete " data-trash="${inputValue}"></i>
+                <i class="far fa-trash-alt " data-trash="${inputValue}"></i>
             </li>
         `
     }
@@ -26,11 +26,7 @@ todosContainer.addEventListener('click', event => {
     if(clickedElement.dataset.trash){
         document.querySelector(`[data-todo="${clickedElement.dataset.trash}"]`).remove()
     }
-        // if(Array.from(clickedElement.classList).includes('delete')) {
-        //     const todo = document.querySelector(`[data-todo]`)
-        //     console.log(Array.from(clickedElement.classList).includes('delete'))
-        //     todo.remove()
-        // }
+
 })
 
 formSearch.addEventListener('input', event => {
