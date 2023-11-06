@@ -31,20 +31,20 @@ todosContainer.addEventListener('click', event => {
 
 formSearch.addEventListener('input', event => {
     const inputSearch = event.target.value
-    Array.from(todosContainer.children).filter(todo => {
-        if(!todo.textContent.toLowerCase().includes(inputSearch)) {
+    Array.from(todosContainer.children)
+        .filter(todo => !todo.textContent.toLowerCase().includes(inputSearch)) 
+        .forEach(todo => {
             todo.classList.remove('d-flex')
             todo.classList.add('hidden')
-        }
+        })
 
-    })
-
-    Array.from(todosContainer.children).filter(todo => {
-        if(todo.textContent.toLowerCase().includes(inputSearch)) {
+        Array.from(todosContainer.children)
+        .filter(todo => todo.textContent.toLowerCase().includes(inputSearch)) 
+        .forEach(todo => {
             todo.classList.remove('hidden')
             todo.classList.add('d-flex')
-        }
+        })
 
-    })
+    
 })
 
