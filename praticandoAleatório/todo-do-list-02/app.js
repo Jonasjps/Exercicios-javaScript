@@ -25,7 +25,8 @@ todosContainer.addEventListener('click', event => {
     const clickedElement = event.target
 
         if(Array.from(clickedElement.classList).includes('delete')) {
-            clickedElement.parentElement.remove()
+            // const todo = document.querySelector(`[data-todo]`)
+            todo.remove()
         }
 })
 
@@ -45,6 +46,5 @@ formSearch.addEventListener('input', event => {
             todo.classList.add('d-flex')
         })
 
-    
 })
 
