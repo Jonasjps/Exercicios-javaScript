@@ -45,19 +45,21 @@ const hideTodos = (todos, inputSearch) => {
             todo.classList.remove('d-flex')
             todo.classList.add('hidden')
         })
+}
 
+const showTodos = (todos, inputSearch) => {
+    todos
+    .filter(todo => todo.textContent.toLowerCase().includes(inputSearch)) 
+    .forEach(todo => {
+        todo.classList.remove('hidden')
+        todo.classList.add('d-flex')
+    })
 }
 
 formSearch.addEventListener('input', event => {
     const inputSearch = event.target.value.trim().toLowerCase()
     const todos = Array.from(todosContainer.children)
         hideTodos(todos, inputSearch)
-        todos
-        .filter(todo => todo.textContent.toLowerCase().includes(inputSearch)) 
-        .forEach(todo => {
-            todo.classList.remove('hidden')
-            todo.classList.add('d-flex')
-        })
-
+        showTodos(todos, inputSearch)
 })
 
