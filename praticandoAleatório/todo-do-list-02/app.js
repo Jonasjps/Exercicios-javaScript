@@ -23,24 +23,36 @@ formAddTodo.addEventListener('submit', event => {
     event.target.reset()
 } )
 
+const removeInTodo = (clickedElement) => {
+
+    const clickedInTodo = clickedElement.dataset.trash
+    const todo = document.querySelector(`[data-todo="${clickedElement.dataset.trash}"]`) 
+    
+    if(clickedInTodo){
+        todo.remove()
+    }
+}
+
 todosContainer.addEventListener('click', event => {
     const clickedElement = event.target
-    if(clickedElement.dataset.trash){
-        document.querySelector(`[data-todo="${clickedElement.dataset.trash}"]`).remove()
-    }
-
+    removeInTodo(clickedElement)
 })
 
-formSearch.addEventListener('input', event => {
-    const inputSearch = event.target.value.trim().toLowerCase()
-    Array.from(todosContainer.children)
+const hideTodos = (todos, inputSearch) => {
+    todos
         .filter(todo => !todo.textContent.toLowerCase().includes(inputSearch)) 
         .forEach(todo => {
             todo.classList.remove('d-flex')
             todo.classList.add('hidden')
         })
 
-        Array.from(todosContainer.children)
+}
+
+formSearch.addEventListener('input', event => {
+    const inputSearch = event.target.value.trim().toLowerCase()
+    const todos = Array.from(todosContainer.children)
+        hideTodos(todos, inputSearch)
+        todos
         .filter(todo => todo.textContent.toLowerCase().includes(inputSearch)) 
         .forEach(todo => {
             todo.classList.remove('hidden')
