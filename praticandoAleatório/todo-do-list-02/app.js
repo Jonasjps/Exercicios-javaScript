@@ -38,9 +38,16 @@ todosContainer.addEventListener('click', event => {
     removeInTodo(clickedElement)
 })
 
+const filteringLis = (todos, inputSearch, returnMetchTodo) => {
+    return todos
+        .filter(todo => {
+            const matchInLis = todo.textContent.toLowerCase().includes(inputSearch) 
+            return returnMetchTodo ? matchInLis : !matchInLis
+        }) 
+} 
+
 const hideTodos = (todos, inputSearch) => {
-    todos
-        .filter(todo => !todo.textContent.toLowerCase().includes(inputSearch)) 
+   filteringLis(todos, inputSearch, false)
         .forEach(todo => {
             todo.classList.remove('d-flex')
             todo.classList.add('hidden')
@@ -48,8 +55,7 @@ const hideTodos = (todos, inputSearch) => {
 }
 
 const showTodos = (todos, inputSearch) => {
-    todos
-    .filter(todo => todo.textContent.toLowerCase().includes(inputSearch)) 
+   filteringLis(todos, inputSearch, true)
     .forEach(todo => {
         todo.classList.remove('hidden')
         todo.classList.add('d-flex')
