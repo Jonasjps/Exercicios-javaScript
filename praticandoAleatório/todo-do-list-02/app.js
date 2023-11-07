@@ -30,7 +30,7 @@ todosContainer.addEventListener('click', event => {
 })
 
 formSearch.addEventListener('input', event => {
-    const inputSearch = event.target.value
+    const inputSearch = event.target.value.trim().toLowerCase()
     Array.from(todosContainer.children)
         .filter(todo => !todo.textContent.toLowerCase().includes(inputSearch)) 
         .forEach(todo => {
