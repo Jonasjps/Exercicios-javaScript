@@ -15,13 +15,6 @@ const addTodo = (inputValue) => {
     }
 }
 
-formAddTodo.addEventListener('submit', event => {
-    event.preventDefault()
-    const inputValue = event.target.add.value.trim()
-    addTodo(inputValue)    
-
-    event.target.reset()
-} )
 
 const removeInTodo = (clickedElement) => {
 
@@ -33,17 +26,13 @@ const removeInTodo = (clickedElement) => {
     }
 }
 
-todosContainer.addEventListener('click', event => {
-    const clickedElement = event.target
-    removeInTodo(clickedElement)
-})
 
 const filteringLis = (todos, inputSearch, returnMetchTodo) => {
     return todos
-        .filter(todo => {
-            const matchInLis = todo.textContent.toLowerCase().includes(inputSearch) 
-            return returnMetchTodo ? matchInLis : !matchInLis
-        }) 
+    .filter(todo => {
+        const matchInLis = todo.textContent.toLowerCase().includes(inputSearch) 
+        return returnMetchTodo ? matchInLis : !matchInLis
+    }) 
 } 
 
 const showRemoveTodos = (todos, classRemove, classAdd) => {
@@ -54,20 +43,33 @@ const showRemoveTodos = (todos, classRemove, classAdd) => {
 }
 
 const hideTodos = (todos, inputSearch) => {
-   const returnArrayFilter = filteringLis(todos, inputSearch, false)
+    const returnArrayFilter = filteringLis(todos, inputSearch, false)
     showRemoveTodos(returnArrayFilter, 'd-flex' , 'hidden')
-
+    
 }
 
 const showTodos = (todos, inputSearch) => {
-   const returnArrayTodos = filteringLis(todos, inputSearch, true)
-   showRemoveTodos(returnArrayTodos, 'hidden', 'd-flex') 
+    const returnArrayTodos = filteringLis(todos, inputSearch, true)
+    showRemoveTodos(returnArrayTodos, 'hidden', 'd-flex') 
 }
+
+
+formAddTodo.addEventListener('submit', event => {
+    event.preventDefault()
+    const inputValue = event.target.add.value.trim()
+    addTodo(inputValue)    
+    
+    event.target.reset()
+} )
+
+todosContainer.addEventListener('click', event => {
+    const clickedElement = event.target
+    removeInTodo(clickedElement)
+})
 
 formSearch.addEventListener('input', event => {
     const inputSearch = event.target.value.trim().toLowerCase()
     const todos = Array.from(todosContainer.children)
-        hideTodos(todos, inputSearch)
-        showTodos(todos, inputSearch)
+    hideTodos(todos, inputSearch)
+    showTodos(todos, inputSearch)
 })
-
