@@ -46,20 +46,22 @@ const filteringLis = (todos, inputSearch, returnMetchTodo) => {
         }) 
 } 
 
+const showRemoveTodos = (todos, classRemove, classAdd) => {
+    todos.forEach(todo => {
+        todo.classList.remove(classRemove)
+        todo.classList.add(classAdd)
+    })
+}
+
 const hideTodos = (todos, inputSearch) => {
-   filteringLis(todos, inputSearch, false)
-        .forEach(todo => {
-            todo.classList.remove('d-flex')
-            todo.classList.add('hidden')
-        })
+   const returnArrayFilter = filteringLis(todos, inputSearch, false)
+    showRemoveTodos(returnArrayFilter, 'd-flex' , 'hidden')
+
 }
 
 const showTodos = (todos, inputSearch) => {
-   filteringLis(todos, inputSearch, true)
-    .forEach(todo => {
-        todo.classList.remove('hidden')
-        todo.classList.add('d-flex')
-    })
+   const returnArrayTodos = filteringLis(todos, inputSearch, true)
+   showRemoveTodos(returnArrayTodos, 'hidden', 'd-flex') 
 }
 
 formSearch.addEventListener('input', event => {
