@@ -15,6 +15,12 @@ formInput.addEventListener('submit', event => {
     event.target.reset()
 })
 
+todosContainer.addEventListener('click', event => {
+    const inputValue = event.target
+    Array.from(todosContainer.children)
+    console.log(Array.from(todosContainer.children))
+})
+
 
 
 
