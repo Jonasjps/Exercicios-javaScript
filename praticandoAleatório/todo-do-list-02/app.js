@@ -1,4 +1,5 @@
 const formInput = document.querySelector('.form-add-todo')
+const formSearch = document.querySelector('.form-search')
 const todosContainer = document.querySelector('.todos-container')
 
 formInput.addEventListener('submit', event => {
@@ -24,3 +25,6 @@ todosContainer.addEventListener('click', event => {
         clickedElement.parentElement.remove()
     }
 })
+
+
+
