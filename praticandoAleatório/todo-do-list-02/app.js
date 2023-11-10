@@ -23,11 +23,18 @@ formInput.addEventListener('submit', event => {
     event.target.reset()
 })
 
-todosContainer.addEventListener('click', event => {
-    const clickedElement = event.target
-    if((Array.from(clickedElement.classList)).includes('delete')) {
+const removeTodo = clickedElement => {
+    const checkingClassElement = Array.from(clickedElement.classList).includes('delete')
+    
+    if(checkingClassElement) {
         clickedElement.parentElement.remove()
     }
+
+}
+
+todosContainer.addEventListener('click', event => {
+    const clickedElement = event.target
+    removeTodo(clickedElement)
 })
 
 formSearch.addEventListener('input', event => {
