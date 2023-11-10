@@ -2,10 +2,7 @@ const formInput = document.querySelector('.form-add-todo')
 const formSearch = document.querySelector('.form-search input')
 const todosContainer = document.querySelector('.todos-container')
 
-formInput.addEventListener('submit', event => {
-    event.preventDefault() 
-    const inputValue = event.target.add.value
-
+const addTodo = inputValue => {
     if(inputValue.length) {
         todosContainer.innerHTML += 
             `
@@ -14,8 +11,15 @@ formInput.addEventListener('submit', event => {
                 <i class="far fa-trash-alt delete" ></i>
             </li>
             `
-
+    
     }
+
+}
+
+formInput.addEventListener('submit', event => {
+    event.preventDefault() 
+    const inputValue = event.target.add.value
+    addTodo(inputValue)
     event.target.reset()
 })
 
