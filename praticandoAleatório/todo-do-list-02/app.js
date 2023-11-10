@@ -28,8 +28,13 @@ todosContainer.addEventListener('click', event => {
 
 formSearch.addEventListener('input', event => {
     const inputValue = event.target.value.trim()
+    Array.from(todosContainer.children)
+        .filter(todo => !todo.textContent.includes(inputValue))
+        .forEach(todo => {
+            todo.classList.remove('d-flex')
+            todo.classList.add('hidden')
+        })
 
-    console.log(inputValue)
 })
 
 
