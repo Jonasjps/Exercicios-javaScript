@@ -24,8 +24,6 @@ formInput.addEventListener('submit', event => {
 })
 
 const removeTodo = clickedElement => {
-    // const checkingClassElement = Array.from(clickedElement.classList).includes('delete')
-    
     if(clickedElement.dataset.trash) {
         document.querySelector(`[data-todo="${clickedElement.dataset.trash}"]`).remove()
     }
@@ -36,21 +34,31 @@ todosContainer.addEventListener('click', event => {
     removeTodo(clickedElement)
 })
 
-formSearch.addEventListener('input', event => {
-    const inputValue = event.target.value.toLowerCase().trim()
-    Array.from(todosContainer.children)
+const hideTodos = (todos, inputValue) => {
+    todos
         .filter(todo => !todo.textContent.toLowerCase().includes(inputValue))
         .forEach(todo => {
             todo.classList.remove('d-flex')
             todo.classList.add('hidden')
         })
+}
 
-        Array.from(todosContainer.children)
-        .filter(todo => todo.textContent.toLowerCase().includes(inputValue))
-        .forEach(todo => {
-            todo.classList.remove('hidden')
-            todo.classList.add('d-flex')
-        })
+const showTodos = (todos, inputValue) => {
+    todos
+    .filter(todo => todo.textContent.toLowerCase().includes(inputValue))
+    .forEach(todo => {
+        todo.classList.remove('hidden')
+        todo.classList.add('d-flex')
+    })
+
+}
+
+
+formSearch.addEventListener('input', event => {
+    const inputValue = event.target.value.toLowerCase().trim()
+    const todos = Array.from(todosContainer.children)
+    hideTodos(todos, inputValue)
+    showTodos(todos, inputValue)
 })
 
 
