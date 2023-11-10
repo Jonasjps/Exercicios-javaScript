@@ -10,19 +10,19 @@ const addTodo = inputValue => {
                 <span>${inputValue}</span>
                 <i class="far fa-trash-alt delete" data-trash="${inputValue}" ></i>
             </li>
-            `
-    
+            `    
     }
 
 }
-
 
 const removeTodo = clickedElement => {
-    if(clickedElement.dataset.trash) {
-        document.querySelector(`[data-todo="${clickedElement.dataset.trash}"]`).remove()
+    const elementTodo = clickedElement.dataset.trash
+    const todo = document.querySelector(`[data-todo="${clickedElement.dataset.trash}"]`) 
+
+    if(elementTodo) {
+        todo.remove()
     }
 }
-
 
 const filteringTodo = (todos, inputValue, returnMatchValue) => {
     return todos
