@@ -16,12 +16,6 @@ const addTodo = inputValue => {
 
 }
 
-formInput.addEventListener('submit', event => {
-    event.preventDefault() 
-    const inputValue = event.target.add.value
-    addTodo(inputValue)
-    event.target.reset()
-})
 
 const removeTodo = clickedElement => {
     if(clickedElement.dataset.trash) {
@@ -29,30 +23,45 @@ const removeTodo = clickedElement => {
     }
 }
 
+
+const filteringTodo = (todos, inputValue, returnMatchValue) => {
+    return todos
+    .filter(todo => {
+            const checkingTodos = todo.textContent.toLowerCase().includes(inputValue)
+            return returnMatchValue ? checkingTodos : !checkingTodos
+        })
+    }
+    
+    const manipulateClass = (todos, removeClass, addClass) => {
+        todos.forEach(todo => {
+            todo.classList.remove(removeClass)
+            todo.classList.add(addClass)
+        })
+    } 
+    
+    const hideTodos = (todos, inputValue) => {
+        filteringTodo(todos, inputValue, false)
+        manipulateClass(todos, 'd-flex', 'hidden')
+    }
+
+    const showTodos = (todos, inputValue) => {
+        const todosFiltering = filteringTodo(todos, inputValue, true)
+        manipulateClass(todosFiltering, 'hidden', 'd-flex')
+    }
+
+    
+    
+    formInput.addEventListener('submit', event => {
+    event.preventDefault() 
+    const inputValue = event.target.add.value
+    addTodo(inputValue)
+    event.target.reset()
+})
+
 todosContainer.addEventListener('click', event => {
     const clickedElement = event.target
     removeTodo(clickedElement)
 })
-
-const hideTodos = (todos, inputValue) => {
-    todos
-        .filter(todo => !todo.textContent.toLowerCase().includes(inputValue))
-        .forEach(todo => {
-            todo.classList.remove('d-flex')
-            todo.classList.add('hidden')
-        })
-}
-
-const showTodos = (todos, inputValue) => {
-    todos
-    .filter(todo => todo.textContent.toLowerCase().includes(inputValue))
-    .forEach(todo => {
-        todo.classList.remove('hidden')
-        todo.classList.add('d-flex')
-    })
-
-}
-
 
 formSearch.addEventListener('input', event => {
     const inputValue = event.target.value.toLowerCase().trim()
@@ -60,6 +69,3 @@ formSearch.addEventListener('input', event => {
     hideTodos(todos, inputValue)
     showTodos(todos, inputValue)
 })
-
-
-
