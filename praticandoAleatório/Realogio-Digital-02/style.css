@@ -27,14 +27,17 @@ h1 {
 }
 
 footer {
-    text-align: center;
+    margin: auto;
+    padding: 8px;
     background-color: white;
     color: black;
     font-family: Arial, Helvetica, sans-serif;
-    padding: 8px;
     border-radius: 8px;
+    max-width: 1444px;
+    min-width: 300px;
 }
 
 p {
     margin: 0px;
+    text-align: center;
 }
