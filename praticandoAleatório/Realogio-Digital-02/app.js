@@ -7,9 +7,9 @@ const clock = () => {
     const seconds = present.getSeconds()
 
     const clockHTML =  `
-        <span>${hours}</span>
-        <span>${minutes}</span>
-        <span>${seconds}</span>
+        <span>${String(hours).length === 1 ? `0${hours}`:hours}</span> :
+        <span>${String(minutes).length === 1 ? `0${minutes} `:minutes}</span> :
+        <span>${String(seconds).length === 1 ? `0${seconds}`:seconds}</span>
     `
        clockContainer.innerHTML = clockHTML
 }
