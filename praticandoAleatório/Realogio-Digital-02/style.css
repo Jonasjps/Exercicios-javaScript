@@ -25,3 +25,16 @@ h1 {
    
     
 }
+
+footer {
+    text-align: center;
+    background-color: white;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+p {
+    margin: 0px;
+}
