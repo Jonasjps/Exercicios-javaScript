@@ -11,7 +11,7 @@ const clock = () => {
         <span>${minutes}</span>
         <span>${seconds}</span>
     `
-    console.log(clockHTML)
+       clockContainer.innerHTML = clockHTML
 }
 
 setInterval(clock, 1000)
