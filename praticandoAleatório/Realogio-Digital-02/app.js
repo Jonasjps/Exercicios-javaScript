@@ -12,7 +12,7 @@ const clock = () => {
         <span>${minutes}<span>:
         <span>${seconds}<span>
     `
-    return clockContainer.innerHTML = clockTikTok
+     clockContainer.innerHTML = clockTikTok
 }
 
 
