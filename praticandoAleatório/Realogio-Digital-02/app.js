@@ -8,14 +8,16 @@ const clock = () => {
     const seconds = time.getSeconds()
 
     const clockTikTok = `
-    <span>${hours}<span>:
-    <span>${minutes}<span>:
-    <span>${seconds}<span>
+        <span>${hours}<span>:
+        <span>${minutes}<span>:
+        <span>${seconds}<span>
     `
     return clockContainer.innerHTML = clockTikTok
 }
 
 
 
-setInterval(clock,1000)
+setInterval(() => {
+    clock()
+},1000)
 
