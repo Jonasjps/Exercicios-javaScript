@@ -35,9 +35,20 @@ footer {
     border-radius: 8px;
     max-width: 1444px;
     min-width: 300px;
+    box-shadow: 3px 3px 10px #006CE6;
 }
+
 
 p {
     margin: 0px;
     text-align: center;
+}
+
+a {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }

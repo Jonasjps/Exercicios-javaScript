@@ -11,7 +11,7 @@ const clock = () => {
         <span>${String(minutes).length === 1 ? `0${minutes} `:minutes}</span> :
         <span>${String(seconds).length === 1 ? `0${seconds}`:seconds}</span>
     `
-       clockContainer.innerHTML = clockHTML
+    clockContainer.innerHTML = clockHTML
 }
 
 setInterval(clock, 1000)
