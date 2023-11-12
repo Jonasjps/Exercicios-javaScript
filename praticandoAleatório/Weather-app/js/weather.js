@@ -22,10 +22,4 @@ const fetchData = async url => {
 }
 
 const cityWeather = cityName => fetchData(getCityUrl(cityName))
-const cityWeatherData = async cityName => {
-    const [{Key}] = await cityWeather(cityName)
-    return fetchData(getCityWeatherUrl(Key))
-}
-
-    cityWeatherData('Brasília')
-        .then(console.log)
+const cityWeatherData =  cityKey =>  fetchData(getCityWeatherUrl(cityKey))

@@ -1,31 +1,23 @@
-const APIKey = 'jeX3bizd50163PRC3spxhyFJThOEvCYp'
-const baseUrl = 'http://dataservice.accuweather.com'
+const inputForm = document.querySelector('[data-js="change-location"]')
+const cityNameContainer = document.querySelector('[data-js="name"]')
+const cityWeatherContainer = document.querySelector('[data-js="weather"]')
+const cityTemperatureContainer = document.querySelector('[data-js="temperature"]')
+const img = document.querySelector('[data-js="time"]')
 
-const getCityUrl = cityName =>
-     `${baseUrl}/locations/v1/cities/search?apikey=${APIKey}&q=${cityName}`
 
-const getCityWeatherUrl = (Key) =>
-     `${baseUrl}/currentconditions/v1/${Key}?apikey=${APIKey}&language=pt-br`
-
-const fetchData = async url => {
-    try {
-        const response = await fetch(url)
-        
-        if(!response.ok) {
-            throw Erro('Não foi possível obter dados da api.')
-        }
-        return await response.json()
-
-    }catch ({name, mensage}) {
-        alert(`${name}: ${mensage}`)
+inputForm.addEventListener('submit', async event => {
+    event.preventDefault()
+    const inputValue = event.target.city.value.trim()
+    const [{Key, LocalizedName}] = await cityWeather(inputValue)
+    const [{WeatherText, Temperature, IsDayTime}] =  await cityWeatherData(Key)
+    
+    if(IsDayTime) {
+        img.src ='./src/day.svg'
+    } else {
+        img.src ='./src/night.svg'
     }
-}
 
-const cityWeather = cityName => fetchData(getCityUrl(cityName))
-const cityWeatherData = async cityName => {
-    const [{Key}] = await cityWeather(cityName)
-    return fetchData(getCityWeatherUrl(Key))
-}
-
-    cityWeatherData('Brasília')
-        .then(console.log)
+    cityNameContainer.textContent = LocalizedName
+    cityWeatherContainer.textContent = WeatherText
+    cityTemperatureContainer.textContent = Temperature.Metric.Value
+})
