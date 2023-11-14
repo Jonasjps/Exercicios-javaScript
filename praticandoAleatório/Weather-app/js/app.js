@@ -4,13 +4,16 @@ const cityWeatherContainer = document.querySelector('[data-js="cityWeather"]')
 const cityTemperatureContainer = document.querySelector('[data-js="cityTemperature"]')
 const time = document.querySelector('[data-js="time"]')
 const card = document.querySelector('.card')
+const timeIcon = document.querySelector('[data-js="time-icon"]')
+
 
 formInput.addEventListener('submit', async event => {
     event.preventDefault() 
 
     const inputValue = event.target.city.value
     const [{Key, LocalizedName}] = await cityWeather(inputValue)
-    const [{WeatherText, Temperature, IsDayTime}] = await cityWeatherData(Key)
+    const [{WeatherText, Temperature, IsDayTime, WeatherIcon}] = await cityWeatherData(Key)
+    const icon = `<img src=./src/icons/${WeatherIcon}.svg>`
 
     if(card.classList.contains('d-none')) {
         card.classList.remove('d-none')
@@ -22,7 +25,7 @@ formInput.addEventListener('submit', async event => {
         time.src = './src/night.svg'
     }
 
-
+    timeIcon.innerHTML = icon
     cityNameContainer.textContent = LocalizedName
     cityWeatherContainer.textContent = WeatherText
     cityTemperatureContainer.textContent = Temperature.Metric.Value
