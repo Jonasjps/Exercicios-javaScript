@@ -12,3 +12,11 @@ h1 {
 .hide {
   display:none
 }
+
+.hidden {
+  position: relative;
+  top: -50px;
+  border-radius: 50%;
+  width: 100px;
+  margin-bottom: -50px;
+}
