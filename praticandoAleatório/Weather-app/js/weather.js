@@ -30,5 +30,3 @@ const cityWeatherData = async cityName => {
     return fetchData(getCityWeatherData(weatherData))    
 }
 
-cityWeatherData('Brasília')
-    .then(console.log)
