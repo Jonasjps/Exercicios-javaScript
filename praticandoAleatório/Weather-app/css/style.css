@@ -18,3 +18,20 @@ h1 {
   margin-bottom: -50px;
   
 }
+
+footer {
+  background: white;
+  border-radius: 4px;
+  margin:auto;
+  margin-top: 20px;
+
+ 
+}
+
+p {
+  margin:
+    0px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+  
+}
