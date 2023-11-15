@@ -32,4 +32,5 @@ formInput.addEventListener('submit', event => {
     const inputValue = event.target.city.value
     addClass()
     manipulateDOM(inputValue)
+    formInput.reset()
 })
