@@ -6,7 +6,12 @@ const time = document.querySelector('[data-js="time"]')
 const card = document.querySelector('.card')
 const timeIcon = document.querySelector('[data-js="time-icon"]')
 
+const addClass = () => {
+    if(card.classList.contains('d-none')) {
+        card.classList.remove('d-none')
+    }
 
+}
 formInput.addEventListener('submit', async event => {
     event.preventDefault() 
 
@@ -15,10 +20,8 @@ formInput.addEventListener('submit', async event => {
     const [{WeatherText, Temperature, IsDayTime, WeatherIcon}] = await cityWeatherData(Key)
     const icon = `<img src=./src/icons/${WeatherIcon}.svg>`
 
-    if(card.classList.contains('d-none')) {
-        card.classList.remove('d-none')
-    }
-
+    addClass()
+    
     if(IsDayTime) {
         time.src = './src/day.svg'
     } else {
