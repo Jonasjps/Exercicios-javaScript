@@ -13,22 +13,25 @@ const addClass = () => {
 
 }
 
-formInput.addEventListener('submit', async event => {
-    event.preventDefault() 
-
-    const inputValue = event.target.city.value
+const manipulateDOM =  async (inputValue) => {
     const [{Key, LocalizedName}] = await cityWeather(inputValue)
     const [{WeatherText, Temperature, IsDayTime, WeatherIcon}] = await cityWeatherData(Key)
     const icon = `<img src=./src/icons/${WeatherIcon}.svg>`
 
-    addClass()
-
     IsDayTime 
         ? time.src = './src/day.svg'
         : time.src = './src/night.svg' 
-
+    
     timeIcon.innerHTML = icon
     cityNameContainer.textContent = LocalizedName
     cityWeatherContainer.textContent = WeatherText
     cityTemperatureContainer.textContent = Temperature.Metric.Value
+}
+
+formInput.addEventListener('submit', event => {
+    event.preventDefault() 
+    const inputValue = event.target.city.value
+    addClass()
+    manipulateDOM(inputValue)
+
 })
