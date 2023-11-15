@@ -24,14 +24,18 @@ footer {
   border-radius: 4px;
   margin:auto;
   margin-top: 20px;
+  box-shadow: 2px 2px 5px rgb(0, 195, 255);
 
  
 }
 
 p {
-  margin:
-    0px;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-  
+  margin: 0px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+color: black;
+
 }
