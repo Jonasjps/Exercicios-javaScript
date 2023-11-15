@@ -12,6 +12,7 @@ const addClass = () => {
     }
 
 }
+
 formInput.addEventListener('submit', async event => {
     event.preventDefault() 
 
@@ -21,12 +22,10 @@ formInput.addEventListener('submit', async event => {
     const icon = `<img src=./src/icons/${WeatherIcon}.svg>`
 
     addClass()
-    
-    if(IsDayTime) {
-        time.src = './src/day.svg'
-    } else {
-        time.src = './src/night.svg'
-    }
+
+    IsDayTime 
+        ? time.src = './src/day.svg'
+        : time.src = './src/night.svg' 
 
     timeIcon.innerHTML = icon
     cityNameContainer.textContent = LocalizedName
