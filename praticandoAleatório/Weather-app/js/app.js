@@ -10,10 +10,9 @@ const addClass = () => {
     if(card.classList.contains('d-none')) {
         card.classList.remove('d-none')
     }
-
 }
 
-const manipulateDOM =  async (inputValue) => {
+const manipulateDOM =  async inputValue => {
     const [{Key, LocalizedName}] = await cityWeather(inputValue)
     const [{WeatherText, Temperature, IsDayTime, WeatherIcon}] = await cityWeatherData(Key)
     const icon = `<img src=./src/icons/${WeatherIcon}.svg>`
@@ -33,5 +32,4 @@ formInput.addEventListener('submit', event => {
     const inputValue = event.target.city.value
     addClass()
     manipulateDOM(inputValue)
-
 })
