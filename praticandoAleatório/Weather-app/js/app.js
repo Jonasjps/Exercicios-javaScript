@@ -37,5 +37,5 @@ formInput.addEventListener('submit', event => {
     
     removedClass()
     manipulationInToDOM(inputValue)
-    formInput.target.reset()
+    formInput.reset()
 }) 
