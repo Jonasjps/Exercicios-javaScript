@@ -7,27 +7,35 @@ const card = document.querySelector('.card')
 const timeIcon = document.querySelector('[data-js="time-icon"]')
 
 
+const removedClass = () => {
+    const checkingClass = card.classList.contains('d-none')
+    
+    if(checkingClass) {
+        card.classList.remove('d-none')
+    }
 
-formInput.addEventListener('submit', async event => {
-    event.preventDefault()
-    const inputValue = event.target.city.value.trim()
+} 
+
+const manipulationInToDOM = async inputValue => {
     const [{Key, LocalizedName}] = await cityWeather(inputValue)
     const [{WeatherText, Temperature, IsDayTime, WeatherIcon}] = await cityWeatherData(Key)
     const icon = `<img src="./src/icons/${WeatherIcon}.svg">`
 
-    if(card.classList.contains('d-none')) {
-        card.classList.remove('d-none')
-    }
-
-    if(IsDayTime) {
-        time.src = './src/day.svg'
-    }else{
-        time.src = './src/night.svg'
-    }
+    IsDayTime 
+        ? time.src = './src/day.svg'
+        : time.src = './src/night.svg'
+    
     timeIcon.innerHTML = icon
     cityNameContainers.textContent = LocalizedName
     cityWeatherContainers.textContent = WeatherText
     cityTemperatureContainers.textContent = Temperature.Metric.Value
+}
 
-    event.target.reset()
+formInput.addEventListener('submit', event => {
+    event.preventDefault()
+    const inputValue = event.target.city.value.trim()
+    
+    removedClass()
+    manipulationInToDOM(inputValue)
+    formInput.target.reset()
 }) 
