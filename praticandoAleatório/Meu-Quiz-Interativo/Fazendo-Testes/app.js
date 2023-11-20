@@ -21,11 +21,11 @@ form.addEventListener('submit', event => {
             score += 25
         }
     })
-    
+    //rolando pagina
     scrollTo(0,0)
 
     finalResult.classList.remove('d-none')
-    
+    //animando a pontuação
     let counter = 0
     
     const time = setInterval(() => {
