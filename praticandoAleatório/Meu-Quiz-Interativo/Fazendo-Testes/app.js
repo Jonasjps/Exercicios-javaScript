@@ -3,11 +3,9 @@ const finalResult = document.querySelector('.result')
 
 const correctAlternatives = ['D','D','D','D']
 
-form.addEventListener('submit', event => {
-    event.preventDefault() 
-    // obtendo resposta do usuario.
-    let score = 0
+let score = 0
 
+const getUserAnswers = () => {
     const userAnswers = [
         form.inputQuestion1.value,
         form.inputQuestion2.value,
@@ -15,12 +13,25 @@ form.addEventListener('submit', event => {
         form.inputQuestion4.value,
     ]
 
-    //inserindo pontuação
+    return userAnswers
+}
+
+calculeteUserScore = userAnswers => {
     userAnswers.forEach((userAnswer, index)=> {
         if(userAnswer === correctAlternatives[index]) {
             score += 25
         }
     })
+}
+
+form.addEventListener('submit', event => {
+    event.preventDefault() 
+    // obtendo resposta do usuario.
+    
+    const userAnswers = getUserAnswers() 
+
+    //inserindo pontuação
+    calculeteUserScore(userAnswers)
     //rolando pagina
     scrollTo(0,0)
 
