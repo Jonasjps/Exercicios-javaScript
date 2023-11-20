@@ -12,7 +12,6 @@ const getUserAnswers = () => {
         form.inputQuestion3.value,
         form.inputQuestion4.value,
     ]
-
     return userAnswers
 }
 
@@ -23,20 +22,12 @@ calculeteUserScore = userAnswers => {
         }
     })
 }
-
-form.addEventListener('submit', event => {
-    event.preventDefault() 
-    // obtendo resposta do usuario.
-    
-    const userAnswers = getUserAnswers() 
-
-    //inserindo pontuação
-    calculeteUserScore(userAnswers)
-    //rolando pagina
+const showContainerResult = () => {
     scrollTo(0,0)
-
     finalResult.classList.remove('d-none')
-    //animando a pontuação
+}
+
+const showAnimationScore = () => {
     let counter = 0
     
     const time = setInterval(() => {
@@ -46,4 +37,15 @@ form.addEventListener('submit', event => {
         finalResult.querySelector('span').textContent = `${counter}%`
         counter++
     },10)
+
+}
+
+form.addEventListener('submit', event => {
+    event.preventDefault() 
+    
+    const userAnswers = getUserAnswers() 
+
+    calculeteUserScore(userAnswers)
+    showContainerResult()
+    showAnimationScore()
 })
