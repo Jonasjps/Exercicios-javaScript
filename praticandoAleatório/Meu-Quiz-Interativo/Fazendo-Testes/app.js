@@ -20,8 +20,12 @@ quizForm.addEventListener('submit', event => {
             score += 25
         }
     })
+    
+    scrollTo(0,0)
+
     finalResult.querySelector('span').textContent = `${score}%`
     finalResult.classList.remove('d-none')
+
 
     console.log(score)
 })
