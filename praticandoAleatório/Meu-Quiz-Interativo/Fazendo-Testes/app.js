@@ -3,17 +3,22 @@ const finalResult = document.querySelector('.result')
 
 const correctAnswers = ['D', 'D', 'D', 'D']
 
-quizForm.addEventListener('submit', event => {
-    event.preventDefault() 
-    
-    let score = 0
-
+const getUserAnswers = () => {
     const userAnswers = [
         quizForm.inputQuestion1.value,
         quizForm.inputQuestion2.value,
         quizForm.inputQuestion3.value,
         quizForm.inputQuestion4.value,
     ]
+    return userAnswers
+}
+
+quizForm.addEventListener('submit', event => {
+    event.preventDefault() 
+    
+    let score = 0
+
+    const userAnswers = getUserAnswers()
 
     userAnswers.forEach((userAnswer, index)=> {
         if(userAnswer === correctAnswers[index]) {
