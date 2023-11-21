@@ -6,13 +6,17 @@ const correctAlternatives = ['D','D','D','D']
 let score = 0
 
 const getUserAnswers = () => {
-    const userAnswers = [
-        form.inputQuestion1.value,
-        form.inputQuestion2.value,
-        form.inputQuestion3.value,
-        form.inputQuestion4.value,
-    ]
-    return userAnswers
+    let userAnswers = []
+    for(let i = 0; i < correctAlternatives.length; i ++) {
+        userAnswers.push(correctAnshwers[i])
+    }
+    // const userAnswers = [
+    //     form.inputQuestion1.value,
+    //     form.inputQuestion2.value,
+    //     form.inputQuestion3.value,
+    //     form.inputQuestion4.value,
+    // ]
+    return console.log(userAnswers)
 }
 
 calculeteUserScore = userAnswers => {
