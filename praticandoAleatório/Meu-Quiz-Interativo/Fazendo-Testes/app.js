@@ -3,33 +3,39 @@ const finalResult = document.querySelector('.result')
 
 const correctAnswers = ['D', 'D', 'D', 'D']
 
+let score = 0
+
 const getUserAnswers = () => {
-    const userAnswers = [
-        quizForm.inputQuestion1.value,
-        quizForm.inputQuestion2.value,
-        quizForm.inputQuestion3.value,
-        quizForm.inputQuestion4.value,
-    ]
+    let userAnswers = []
+    correctAnswers.forEach((_, index) => {
+        userAnswers.push(quizForm[`inputQuestion${index + 1}`].value)
+    })
+    // for(let i = 0; i < correctAnswers.length; i++) {
+    //     console.log(quizForm[`inputQuestion${i + 1}`].value)
+    // }
+    // const userAnswers = [
+    //     quizForm.inputQuestion1.value,
+    //     quizForm.inputQuestion2.value,
+    //     quizForm.inputQuestion3.value,
+    //     quizForm.inputQuestion4.value,
+    // ]
     return userAnswers
 }
 
-quizForm.addEventListener('submit', event => {
-    event.preventDefault() 
-    
-    let score = 0
-
-    const userAnswers = getUserAnswers()
-
+const calculateUserScore = userAnswers => {
     userAnswers.forEach((userAnswer, index)=> {
         if(userAnswer === correctAnswers[index]) {
             score += 25
         }
     })
+}
 
-    scrollTo(0,0)
-
+const showUserScore = () => {
+    scrollTo(0,0)    
     finalResult.classList.remove('d-none')
-    
+}
+
+const calculeteUserScore = () => {
     let counter = 0 
     
     const timer = setInterval(() => {
@@ -40,7 +46,14 @@ quizForm.addEventListener('submit', event => {
         counter++
     
     }, 10)
+}
 
+quizForm.addEventListener('submit', event => {
+    event.preventDefault() 
+    
+    const userAnswers = getUserAnswers()
 
-    console.log(score)
+    calculateUserScore(userAnswers)
+    showUserScore()
+    calculeteUserScore()
 })
