@@ -8,15 +8,18 @@ let score = 0
 const getUserAnswers = () => {
     let userAnswers = []
     for(let i = 0; i < correctAlternatives.length; i ++) {
-        userAnswers.push(correctAnshwers[i])
+        console.log(form[`inputQuestion${i + 1}`].value)
     }
+    // correctAlternatives.forEach((alternative, index) => {
+    //     userAnswers.push(alternative[index])
+    // })
     // const userAnswers = [
-    //     form.inputQuestion1.value,
-    //     form.inputQuestion2.value,
-    //     form.inputQuestion3.value,
-    //     form.inputQuestion4.value,
+    //     // form.inputQuestion1.value,
+    //     // form.inputQuestion2.value,
+    //     // form.inputQuestion3.value,
+    //     // form.inputQuestion4.value,
     // ]
-    return console.log(userAnswers)
+        return userAnswers
 }
 
 calculeteUserScore = userAnswers => {
