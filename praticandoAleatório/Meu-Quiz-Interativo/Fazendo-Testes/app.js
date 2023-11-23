@@ -22,6 +22,11 @@ const calculateUserScore = userAnswers => {
     })
 }
 
+const hideUserScore = () => {
+    scrollTo(0,0)
+    finalResult.classList.remove('d-none')
+}
+
 quizForm.addEventListener('submit', event => {
     event.preventDefault()
 
@@ -31,9 +36,7 @@ quizForm.addEventListener('submit', event => {
     //Calculando resposta do usuario
   calculateUserScore(userAnswers)
     //deixando visivel a resposta do usuario
-    scrollTo(0,0)
-
-    finalResult.classList.remove('d-none')
+    hideUserScore()
 
     // animando pontuação do usuario
     let counter = 0 
