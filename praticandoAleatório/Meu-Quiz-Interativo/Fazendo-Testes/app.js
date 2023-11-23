@@ -27,18 +27,11 @@ const hideUserScore = () => {
     finalResult.classList.remove('d-none')
 }
 
-quizForm.addEventListener('submit', event => {
-    event.preventDefault()
+// const finishingScore = () => {
+//     score = 0
+// }
 
-    // obetendo respota de usuario
-    const userAnswers = getUserAnswers()
-
-    //Calculando resposta do usuario
-  calculateUserScore(userAnswers)
-    //deixando visivel a resposta do usuario
-    hideUserScore()
-
-    // animando pontuação do usuario
+const animateUserScore = () => {
     let counter = 0 
     
     const timer = setInterval(() => {
@@ -48,6 +41,21 @@ quizForm.addEventListener('submit', event => {
         finalResult.querySelector('span').textContent = `${counter}%`
         counter++
     }, 10)
+}
 
+
+quizForm.addEventListener('submit', event => {
+    event.preventDefault()
+
+    // obetendo respota de usuario
+    const userAnswers = getUserAnswers()
+
+    //Calculando resposta do usuario
+    calculateUserScore(userAnswers)
+    //deixando visivel a resposta do usuario
+    hideUserScore()
+    // finishingScore()
+    // animando pontuação do usuario
+    animateUserScore()
 
 })
