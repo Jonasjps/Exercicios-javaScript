@@ -3,6 +3,8 @@ const finalResult = document.querySelector('.result')
 
 const correctAlternatives = ['D', 'A', 'C', 'B']
 
+let score = 0
+
 const getUserAnswers = () => {
     const userAnswers = [
         quizForm.inputQuestion1.value,
@@ -12,20 +14,22 @@ const getUserAnswers = () => {
     ]
     return userAnswers
 }
-
-quizForm.addEventListener('submit', event => {
-    event.preventDefault()
-
-    let score = 0
-    // obetendo respota de usuario
-    const userAnswers = getUserAnswers()
-    
-    //Calculando resposta do usuario
+const calculateUserScore = userAnswers => {
     userAnswers.forEach((userAnswer, index)=> {
         if(userAnswer === correctAlternatives[index]) {
             score += 25
         }
     })
+}
+
+quizForm.addEventListener('submit', event => {
+    event.preventDefault()
+
+    // obetendo respota de usuario
+    const userAnswers = getUserAnswers()
+
+    //Calculando resposta do usuario
+  calculateUserScore(userAnswers)
     //deixando visivel a resposta do usuario
     scrollTo(0,0)
 
