@@ -3,14 +3,14 @@ const scoreFinalResult = document.querySelector('.result-container-score')
 
 const correctAnswers = ['D', 'D', 'D', 'D']
 
-let score = 0
-
 const getUserAnswers = () =>  correctAnswers.map((_, index) =>
      quizForm[`inputQuestion${index + 1}`].value)
     
-
+     
+let score = 0
 
 const calculateUserScore = userAnswers => {
+    score = 0
     userAnswers.forEach((userAnswer, index)=> {
         const checkingAnswers = userAnswer === correctAnswers[index] 
 
