@@ -7,24 +7,25 @@ quizForm.addEventListener('submit', event => {
     event.preventDefault()
 
     let score = 0
-
+    // obetendo respota de usuario
     const userAnswers = [
         quizForm.inputQuestion1.value,
         quizForm.inputQuestion2.value,
         quizForm.inputQuestion3.value,
         quizForm.inputQuestion4.value,
     ]
-
+    //Calculando resposta do usuario
     userAnswers.forEach((userAnswer, index)=> {
         if(userAnswer === correctAlternatives[index]) {
             score += 25
         }
     })
-
+    //deixando visivel resposta do usuario
     scrollTo(0,0)
 
     finalResult.classList.remove('d-none')
-    
+
+    // animando pontuação do usuario
     let counter = 0 
     
     const timer = setInterval(() => {
