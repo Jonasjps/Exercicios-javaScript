@@ -1,7 +1,7 @@
 const quizForm = document.querySelector('.quiz-form')
 const finalResult = document.querySelector('.result')
 
-const correctAlternatives = ['D', 'A', 'C', 'B']
+const correctAlternatives = ['D', 'D', 'D', 'D']
 
 let score = 0
 
@@ -14,6 +14,7 @@ const getUserAnswers = () => {
     ]
     return userAnswers
 }
+
 const calculateUserScore = userAnswers => {
     userAnswers.forEach((userAnswer, index)=> {
         if(userAnswer === correctAlternatives[index]) {
@@ -22,7 +23,7 @@ const calculateUserScore = userAnswers => {
     })
 }
 
-const hideUserScore = () => {
+const showUserScore = () => {
     scrollTo(0,0)
     finalResult.classList.remove('d-none')
 }
@@ -35,8 +36,7 @@ const animateUserScore = () => {
         if(counter === score) {
             clearInterval(timer)
         }
-        finalResult.querySelector('span').textContent = `${counter}%`
-        counter++
+        finalResult.querySelector('span').textContent = `${counter++}%`
     }, 10)
 }
 
@@ -47,7 +47,7 @@ quizForm.addEventListener('submit', event => {
     const userAnswers = getUserAnswers()
         
     calculateUserScore(userAnswers)
-    hideUserScore()
+    showUserScore()
     animateUserScore()
 
 })
