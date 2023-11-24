@@ -27,9 +27,6 @@ const hideUserScore = () => {
     finalResult.classList.remove('d-none')
 }
 
-// const finishingScore = () => {
-//     score = 0
-// }
 
 const animateUserScore = () => {
     let counter = 0 
