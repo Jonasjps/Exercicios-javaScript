@@ -47,15 +47,10 @@ const animateUserScore = () => {
 quizForm.addEventListener('submit', event => {
     event.preventDefault()
 
-    // obetendo respota de usuario
     const userAnswers = getUserAnswers()
-
-    //Calculando resposta do usuario
+        
     calculateUserScore(userAnswers)
-    //deixando visivel a resposta do usuario
     hideUserScore()
-    // finishingScore()
-    // animando pontuação do usuario
     animateUserScore()
 
 })
