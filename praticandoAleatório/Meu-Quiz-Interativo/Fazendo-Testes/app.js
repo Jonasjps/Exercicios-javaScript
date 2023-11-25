@@ -15,6 +15,9 @@ const getUserAnswers = () => {
 
     return userAnswers
 }
+const finishingScore = () => {
+    score = 0
+}
 
 const calculateUserScore = userAnswers => {
     userAnswers.forEach((userAnswer, index)=>  {
@@ -45,10 +48,9 @@ const animateUserScore = () => {
 
 quizForm.addEventListener('submit', event => {
     event.preventDefault()
-    
 
     const userAnswers = getUserAnswers()
-
+    finishingScore()
     calculateUserScore(userAnswers)
     showUserScore()
     animateUserScore()
