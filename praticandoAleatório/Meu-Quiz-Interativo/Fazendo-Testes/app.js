@@ -8,7 +8,7 @@ quizForm.addEventListener('submit', event => {
     event.preventDefault()
     
     let score = 0
-    
+
     const userAnswers = [
         quizForm.inputQuestion1.value,
         quizForm.inputQuestion2.value,
@@ -21,9 +21,17 @@ quizForm.addEventListener('submit', event => {
             score += 25
         }
     })
-    finalResult.querySelector('span').textContent = `${score}%`
+    scrollTo(0,0)
     finalResult.classList.remove('d-none')
-
-
+    
+    let counter = 0 
+    
+    const timer = setInterval(() => {
+        if(counter === score) {
+            clearInterval(timer)
+        }
+        finalResult.querySelector('span').textContent = `${counter}%`
+        counter++    
+    }, 10)
     
 })
