@@ -1,14 +1,11 @@
 const quizForm = document.querySelector('.quiz-form')
 const finalResult = document.querySelector('.result')
 
+let score = 0
+
 const correctAnswers = ['B', 'C', 'B', 'D']
 
-
-quizForm.addEventListener('submit', event => {
-    event.preventDefault()
-    
-    let score = 0
-
+const getUserAnswers = () => {
     const userAnswers = [
         quizForm.inputQuestion1.value,
         quizForm.inputQuestion2.value,
@@ -16,11 +13,23 @@ quizForm.addEventListener('submit', event => {
         quizForm.inputQuestion4.value,
     ]
 
+    return userAnswers
+}
+
+const calculateUserScore = userAnswers => {
     userAnswers.forEach((userAnswer, index)=>  {
         if(userAnswer === correctAnswers[index]) {
             score += 25
         }
     })
+}
+
+quizForm.addEventListener('submit', event => {
+    event.preventDefault()
+    
+
+    const userAnswers = getUserAnswers()
+    calculateUserScore(userAnswers)
     scrollTo(0,0)
     finalResult.classList.remove('d-none')
     
