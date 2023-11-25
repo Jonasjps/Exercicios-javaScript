@@ -28,7 +28,11 @@ const calculateUserScore = userAnswers => {
 }
 
 const showUserScore = () => {
-    scrollTo(0,0)
+    scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    })
     finalResult.classList.remove('d-none')
 
 }
