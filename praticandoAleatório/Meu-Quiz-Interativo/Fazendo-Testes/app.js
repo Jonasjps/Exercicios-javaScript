@@ -24,15 +24,13 @@ const calculateUserScore = userAnswers => {
     })
 }
 
-quizForm.addEventListener('submit', event => {
-    event.preventDefault()
-    
-
-    const userAnswers = getUserAnswers()
-    calculateUserScore(userAnswers)
+const showUserScore = () => {
     scrollTo(0,0)
     finalResult.classList.remove('d-none')
-    
+
+}
+
+const animateUserScore = () => {
     let counter = 0 
     
     const timer = setInterval(() => {
@@ -42,5 +40,17 @@ quizForm.addEventListener('submit', event => {
         finalResult.querySelector('span').textContent = `${counter}%`
         counter++    
     }, 10)
+
+}
+
+quizForm.addEventListener('submit', event => {
+    event.preventDefault()
+    
+
+    const userAnswers = getUserAnswers()
+
+    calculateUserScore(userAnswers)
+    showUserScore()
+    animateUserScore()
     
 })
