@@ -1,5 +1,5 @@
 const quizForm = document.querySelector('.quiz-form')
-const finalResult = document.querySelector('.result')
+const finalResultScore = document.querySelector('.result-container-score')
 
 let score = 0
 
@@ -9,9 +9,6 @@ const getUserAnswers = () => {
     const userAnswers = correctAnswers.map((_, index) => 
         quizForm[`inputQuestion${index + 1}`].value)
     
-    // correctAnswers.forEach()
-    
-
     return userAnswers
 }
 const finishingScore = () => {
@@ -20,7 +17,9 @@ const finishingScore = () => {
 
 const calculateUserScore = userAnswers => {
     userAnswers.forEach((userAnswer, index)=>  {
-        if(userAnswer === correctAnswers[index]) {
+        const checkingUserAnswers = userAnswer === correctAnswers[index]
+
+        if(checkingUserAnswers) {
             score += 25
         }
     })
@@ -32,7 +31,8 @@ const showUserScore = () => {
         left: 0,
         behavior: 'smooth'
     })
-    finalResult.classList.remove('d-none')
+
+    finalResultScore.classList.remove('d-none')
 
 }
 
@@ -43,8 +43,7 @@ const animateUserScore = () => {
         if(counter === score) {
             clearInterval(timer)
         }
-        finalResult.querySelector('span').textContent = `${counter}%`
-        counter++    
+        finalResultScore.querySelector('span').textContent = `${counter++}%`    
     }, 10)
 
 }
@@ -53,6 +52,7 @@ quizForm.addEventListener('submit', event => {
     event.preventDefault()
 
     const userAnswers = getUserAnswers()
+
     finishingScore()
     calculateUserScore(userAnswers)
     showUserScore()
