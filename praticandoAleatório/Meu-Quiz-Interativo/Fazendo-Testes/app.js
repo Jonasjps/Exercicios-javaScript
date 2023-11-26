@@ -11,6 +11,7 @@ const getUserAnswers = () => {
     
     return userAnswers
 }
+
 const finishingScore = () => {
     score = 0
 }
