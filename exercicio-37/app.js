@@ -61,7 +61,9 @@ const values = [
   NaN,
   () => {}
 ]
+const valuesTruthy = values.filter(value => Boolean(value))
 
+console.log(valuesTruthy)
 /*
   04
 
