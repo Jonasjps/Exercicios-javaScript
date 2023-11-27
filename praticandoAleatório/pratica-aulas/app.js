@@ -1,5 +1,6 @@
-class animmal {
-    constructor (species, name, age ) {
+//herança entre classes
+class Mammal {
+    constructor (species, name, age) {
         this.species = species
         this.name = name
         this.age = age
@@ -9,25 +10,19 @@ class animmal {
         this.age++
     }
 }
-
-
-class Lion extends animmal {
+// A palavra extendes é usada para criar uma class filha de outra class.
+class Lion extends Mammal {
     constructor (species, name, age, manEater) {
+        // A palavra chave super é usada aqui para referênciar o contructor da class pai (superior) que no caso é  Mammal.
         super(species, name, age)
         this.manEater = manEater
     }
-
-   eatZebras (animals) {
-    return this.animals = animals.filter(animal => animal.species !== 'zebra')
-    
-   }
 }
 
-const zeca = new animmal('zebra', 'zeca', 6)
-const gango = new animmal('gnu', 'gango', 4)
-const timão = new animmal('javali', 'timão', 7)
-const munfasa = new Lion('leão', 'munfaza', 8, false)
+const bumba = new Mammal('bovino', 'bumba', 3)
+const mickey = new Mammal('urso', 'mickey', 10)
+const pumpa = new Mammal('suricato', 'pumpa', 8)
+const munfasa = new Lion('leão', 'munfasa', 7 , false)
 
-const animals = [zeca, gango, timão]
 
-console.log(munfasa, gango)
+console.log(munfasa, bumba)
