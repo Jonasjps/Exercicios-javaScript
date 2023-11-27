@@ -21,7 +21,7 @@ class Rabbit extends Animal {
 
 let rabbit = new Rabbit('White Rabbit')
 
-console.log(rabbit)
+// console.log(rabbit)
 
 /*
   02
@@ -29,12 +29,21 @@ console.log(rabbit)
   - Descomente o código abaixo e implemente o que está faltando para que ele 
     funcione.
 */
+class Counter {
 
-// const counter = new Counter()
+  getValue () {
 
-// counter.getValue()
-// counter.increment()
-// counter.getValue()
+  }
+  increment () {
+
+  }
+}
+
+const counter = new Counter()
+
+counter.getValue()
+counter.increment()
+counter.getValue()
 
 /*
   03
