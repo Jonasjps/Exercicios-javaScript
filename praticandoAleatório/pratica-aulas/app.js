@@ -15,6 +15,7 @@ class Lion extends Mammal {
     constructor (species, name, age, manEater) {
         // A palavra chave super é usada aqui para referênciar o contructor da class pai (superior) que no caso é  Mammal.
         super(species, name, age)
+        // o this nessa classe sempre vai referênciar o objeto criado.
         this.manEater = manEater
     }
 }
