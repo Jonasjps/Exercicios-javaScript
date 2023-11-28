@@ -61,7 +61,7 @@ const values = [
   NaN,
   () => {}
 ]
-const valuesTruthy = values.filter(value => Boolean(value))
+const valuesTruthy = values.filter(Boolean)
 
 // console.log(valuesTruthy)
 /*
