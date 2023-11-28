@@ -75,14 +75,14 @@ const valuesTruthy = values.filter(value => Boolean(value))
 */
 
 class Clock {
-  constructor ( template ) {
+  constructor ( {template} ) {
     this.template = template
   }
 
   render () {
     const date = new Date()
     let hours = date.getHours()
-    let minutes = date.getMonth()
+    let minutes = date.getMinutes()
     let seconds = date.getSeconds()
 
     if (hours < 10) {
@@ -116,9 +116,9 @@ class Clock {
 }
 
 class ExtendedClock extends Clock {
-  constructor ( {template} ) {
-    super(template)
-    let { precision = 1000 } = template
+  constructor ( options ) {
+    super(options)
+    let { precision = 1000 } = options
     this.precision = precision
   }
 
@@ -128,9 +128,9 @@ class ExtendedClock extends Clock {
   }
 }
 
-// const clock = new ExtendedClock({ template: 'h:m:s', precision: 1000 })
+const clock = new ExtendedClock({ template: 'h:m:s', precision: 1000 })
 
-// clock.start()
+clock.start()
 
 /*
   05
@@ -139,9 +139,11 @@ class ExtendedClock extends Clock {
     caractere for inserido no textarea, exiba no parágrafo a quantidade de 
     caracteres que o textarea contém.
 */
+const textArea = document.querySelector('[data-js="textarea"]')
+const paragraph = document.querySelector('[data-js="paragraph"]')
 
-
-
+// const result = textArea
+// paragraph.innerHTML = result
 /*
   06
 
@@ -168,3 +170,8 @@ class ExtendedClock extends Clock {
     vídeo de correção dos exercícios um link para a aula de introdução ao 
     reduce e um link para a documentação do método no MDN.
 */
+const reduce = (arr, func, number) => {
+  arr
+}
+
+// console.log(reduce([1, 2, 3], (acc, item) => acc + item, 0))
