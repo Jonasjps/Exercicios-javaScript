@@ -25,12 +25,22 @@ console.log(rabbit)
   - Descomente o código abaixo e implemente o que está faltando para que ele 
     funcione.
 */
+class Counter {
+getValue () {
 
-// const counter = new Counter()
+}
 
-// counter.getValue()
-// counter.increment()
-// counter.getValue()
+increment () {
+
+}
+
+}
+
+const counter = new Counter()
+
+counter.getValue()
+counter.increment()
+counter.getValue()
 
 /*
   03
