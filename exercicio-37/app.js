@@ -26,21 +26,25 @@ console.log(rabbit)
     funcione.
 */
 class Counter {
-getValue () {
+constructor() {
+  this.value = 0
+}
 
+getValue () {
+    return this.value
 }
 
 increment () {
-
+  return  this.value++
 }
 
 }
 
 const counter = new Counter()
 
-counter.getValue()
+console.log(counter.getValue())
 counter.increment()
-counter.getValue()
+console.log(counter.getValue())
 
 /*
   03
