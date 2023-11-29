@@ -27,25 +27,28 @@ console.log(rabbit)
 */
 class Counter {
 constructor() {
-  this.value = 0
+  this.count = 0
 }
 
-getValue () {
-    return this.value
+get value () {
+    return this.count
 }
 
 increment () {
-  return  this.value++
+  return  this.count++
 }
 
+set newValue (number) {
+  this.count = number
+}
 }
 
 const counter = new Counter()
 
-console.log(counter.getValue())
+console.log(counter.value)
 counter.increment()
-console.log(counter.getValue())
-
+counter.newValue = 7
+console.log(counter.value)
 /*
   03
 
@@ -54,7 +57,7 @@ console.log(counter.getValue())
   - Não invoque o construtor.
 */
 
-const values = [
+const counts = [
   0,
   {},
   '',
