@@ -83,9 +83,9 @@ class Clock {
 
   render () {
     const date = new Date()
-    let hours = date.getHours()
-    let minutes = date.getMinutes()
-    let seconds = date.getSeconds()
+    const hours = date.getHours()
+    const minutes = date.getMinutes()
+    const seconds = date.getSeconds()
 
     const formattedHours = hours < 10 ? `0${hours}` : hours
     const formattedMinutes = hours < 10 ? `0${minutes}` : minutes
