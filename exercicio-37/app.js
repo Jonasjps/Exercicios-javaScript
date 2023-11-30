@@ -87,22 +87,14 @@ class Clock {
     let minutes = date.getMinutes()
     let seconds = date.getSeconds()
 
-    if (hours < 10) {
-      hours = `0${hours}`
-    }
-
-    if (minutes < 10) {
-      minutes = `0${minutes}`
-    }
-
-    if (seconds < 10) {
-      seconds = `0${seconds}`
-    }
-
+    const formattedHours = hours < 10 ? `0${hours}` : hours
+    const formattedMinutes = hours < 10 ? `0${minutes}` : minutes
+    const formattedSeconds = seconds < 10 ? `0{seconds}` : seconds
+    
     const formattedTime = this.template
-      .replace('h', hours)
-      .replace('m', minutes)
-      .replace('s', seconds)
+      .replace('h', formattedHours)
+      .replace('m', formattedMinutes)
+      .replace('s', formattedSeconds)
 
     console.log(formattedTime)
   }
@@ -122,8 +114,7 @@ class ExtendedClock extends Clock {
     super(options)
     
     let { precision = 1000 } = options
-    this.precision = precision
-  }
+    this.precision = precision  }
 
   start () {
     this.render()
