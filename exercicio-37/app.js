@@ -42,10 +42,10 @@ class Counter {
 
 const counter = new Counter()
 
-console.log(counter.value)
+// console.log(counter.value)
 counter.increment()
 counter.newValue = 8
-console.log(counter.value)
+// console.log(counter.value)
 /*
   03
 
@@ -64,7 +64,7 @@ const values = [
 ]
 
 const truthyValues = values.filter(Boolean)
-console.log(truthyValues)
+// console.log(truthyValues)
 
 /*
   04
@@ -75,6 +75,9 @@ console.log(truthyValues)
   - Descomente o código e conserte os erros que estão impedindo que ele 
     funcione.
 */
+
+const formattedClock = units => 
+  units.map(unit => unit < 10 ? `0${unit}` : unit)
 
 class Clock {
   constructor ({ template }) {
@@ -87,9 +90,10 @@ class Clock {
     const minutes = date.getMinutes()
     const seconds = date.getSeconds()
 
-    const formattedHours = hours < 10 ? `0${hours}` : hours
-    const formattedMinutes = hours < 10 ? `0${minutes}` : minutes
-    const formattedSeconds = seconds < 10 ? `0{seconds}` : seconds
+    const elementsClock = [hours, minutes, seconds]
+
+    const [formattedHours, formattedMinutes, formattedSeconds] =
+       formattedClock(elementsClock)
     
     const formattedTime = this.template
       .replace('h', formattedHours)
