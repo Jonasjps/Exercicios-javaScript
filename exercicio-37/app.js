@@ -78,7 +78,21 @@ const truthyValues = values.filter(Boolean)
 const formattedUnitTime = units => units
   .map( unit => unit < 10 ? `0${unit}` : unit)
  
+const getFormattedTime = template => {
+  const date = new Date()
+  const  hours = date.getHours()
+  const minutes = date.getMinutes()
+  const seconds = date.getSeconds()
+  
+  const [formattedHours, formattedMinutes, formattedSeconds] = 
+    formattedUnitTime([hours, minutes, seconds]) 
+  
+  return  template
+    .replace('h', formattedHours)
+    .replace('m', formattedMinutes)
+    .replace('s', formattedSeconds)
 
+}
 
 class Clock {
   constructor ({ template }) {
@@ -86,20 +100,8 @@ class Clock {
   }
 
   render () {
-    const date = new Date()
-    const  hours = date.getHours()
-    const minutes = date.getMinutes()
-    const seconds = date.getSeconds()
-
-    const [formattedHours, formattedMinutes, formattedSeconds] = 
-      formattedUnitTime([hours, minutes, seconds]) 
-
-    const formattedTime = this.template
-      .replace('h', formattedHours)
-      .replace('m', formattedMinutes)
-      .replace('s', formattedSeconds)
-
-    console.log(formattedTime)
+    const formattedTime = getFormattedTime(this.template)
+    console.log(formattedTime) 
   }
 
   start () {
