@@ -75,6 +75,10 @@ const truthyValues = values.filter(Boolean)
   - Descomente o código e conserte os erros que estão impedindo que ele 
     funcione.
 */
+const formattedUnitTime = units => units
+  .map( unit => unit < 10 ? `0${unit}` : unit)
+ 
+
 
 class Clock {
   constructor ({ template }) {
@@ -84,12 +88,11 @@ class Clock {
   render () {
     const date = new Date()
     const  hours = date.getHours()
-    const minutes = date.getMonth()
+    const minutes = date.getMinutes()
     const seconds = date.getSeconds()
 
-    const formattedHours = hours < 10 ? `0${hours}` : hours
-    const formattedMinutes = minutes < 10 ?  `0${minutes}` : minutes
-    const formattedSeconds = seconds < 10 ? `0${seconds}` : seconds
+    const [formattedHours, formattedMinutes, formattedSeconds] = 
+      formattedUnitTime([hours, minutes, seconds]) 
 
     const formattedTime = this.template
       .replace('h', formattedHours)
