@@ -76,59 +76,64 @@ const truthyValues = values.filter(Boolean)
     funcione.
 */
 
-const formattedClock = units => 
-  units.map(unit => unit < 10 ? `0${unit}` : unit)
+// class Clock {
+//   constructor ({ template }) {
+//     this.template = template
+//   }
 
-class Clock {
-  constructor ({ template }) {
-    this.template = template
-  }
+//   render () {
+//     const date = new Date()
+//     let hours = date.getHours()
+//     let minutes = date.getMonth()
+//     let seconds = date.getSeconds()
 
-  render () {
-    const date = new Date()
-    const hours = date.getHours()
-    const minutes = date.getMinutes()
-    const seconds = date.getSeconds()
+//     if (hours < 10) {
+//       hours = `0${hours}`
+//     }
 
-    const elementsClock = [hours, minutes, seconds]
+//     if (minutes < 10) {
+//       minutes = `0${minutes}`
+//     }
 
-    const [formattedHours, formattedMinutes, formattedSeconds] =
-       formattedClock(elementsClock)
+//     if (seconds < 10) {
+//       seconds = `0${seconds}`
+//     }
+
+//     const formattedTime = this.template
+//       .replace('h', hours)
+//       .replace('m', minutes)
+//       .replace('s', seconds)
+
+//     console.log(formattedTime)
+//   }
+
+//   start () {
+//     this.render()
+//     this.timer = setInterval(() => this.render(), 1000)
+//   }
+
+//   stop () {
+//     clearInterval(this.timer)
+//   }
+// }
+
+// class ExtendedClock extends Clock {
+//   constructor ({ options }) {
+//     super(options)
     
-    const formattedTime = this.template
-      .replace('h', formattedHours)
-      .replace('m', formattedMinutes)
-      .replace('s', formattedSeconds)
+//     let { precision = 1000 } = options
+//     this.precision = precision
+//   }
 
-    console.log(formattedTime)
-  }
+//   start () {
+//     this.render()
+//     this.timer = setInterval(() => this.render(), this.precision)
+//   }
+// }
 
-  start () {
-    this.render()
-    this.timer = setInterval(() => this.render(), 1000)
-  }
+// const clock = ExtendedClock({ template: 'h:m:s', precision: 1000 })
 
-  stop () {
-    clearInterval(this.timer)
-  }
-}
-
-class ExtendedClock extends Clock {
-  constructor (options) {
-    super(options)
-    
-    let { precision = 1000 } = options
-    this.precision = precision  }
-
-  start () {
-    this.render()
-    this.timer = setInterval(() => this.render(), this.precision)
-  }
-}
-
-const clock = new ExtendedClock({ template: 'h:m:s', precision: 1000 })
-
-clock.start()
+// clock.start()
 
 /*
   05
