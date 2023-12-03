@@ -153,7 +153,7 @@ TextArea.addEventListener('input' , event => {
   const valueTextArea = event.target.value
   const totalCaracter =  valueTextArea.length
   const maxCaracter = TextArea.maxLength
-  
+
   paragraph.textContent = `${totalCaracter}/${maxCaracter}`
 }) 
 
@@ -184,3 +184,13 @@ TextArea.addEventListener('input' , event => {
     vídeo de correção dos exercícios um link para a aula de introdução ao 
     reduce e um link para a documentação do método no MDN.
 */
+const reduce = (arr, func, number) => {
+  let acc = number
+
+  arr.forEach(item => {
+  acc = func(acc, item)
+  })
+  return acc
+}
+
+console.log(reduce([1, 2, 3], (acc, item) => acc + item, 0))
