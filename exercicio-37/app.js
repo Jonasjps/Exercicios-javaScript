@@ -76,6 +76,7 @@ const truthyValues = values.filter(Boolean)
     funcione.
 */
 
+
 class Clock {
   constructor ({ template }) {
     this.template = template
@@ -87,22 +88,25 @@ class Clock {
     let minutes = date.getMinutes()
     let seconds = date.getSeconds()
 
-    if (hours < 10) {
-      hours = `0${hours}`
-    }
+    const formattedTimeHours = hours < 10 ? `0${hours}` : hours
+    const formattedTimeMinutes = minutes < 10 ? `0${minutes}` : minutes
+    const formattedTimeSeconds = seconds < 10 ? `0${seconds}` : seconds
+    // if (hours < 10) {
+    //   hours = `0${hours}`
+    // }
 
-    if (minutes < 10) {
-      minutes = `0${minutes}`
-    }
+    // if (minutes < 10) {
+    //   minutes = `0${minutes}`
+    // }
 
-    if (seconds < 10) {
-      seconds = `0${seconds}`
-    }
+    // if (seconds < 10) {
+    //   seconds = `0${seconds}`
+    // }
 
     const formattedTime = this.template
-      .replace('h', hours)
-      .replace('m', minutes)
-      .replace('s', seconds)
+      .replace('h', formattedTimeHours)
+      .replace('m', formattedTimeMinutes)
+      .replace('s', formattedTimeSeconds)
 
     console.log(formattedTime)
   }
