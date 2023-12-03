@@ -78,19 +78,24 @@ const truthyValues = values.filter(Boolean)
 const formattedHours = units => units
   .map(unit => unit < 10 ? `0${unit}` : unit) 
 
-const getFormattedTimer = template => {
+const formattedTimer = () => {
   const date = new Date()
-    const hours = date.getHours()
-    const minutes = date.getMinutes()
-    const seconds = date.getSeconds()
+  const hours = date.getHours()
+  const minutes = date.getMinutes()
+  const seconds = date.getSeconds()
+  
+  return [hours, minutes, seconds]
+}
 
-    const [formattedTimerHours, formattedTimerMinutes, formattedTimerSeconds] =
-       formattedHours([hours, minutes, seconds])
+const getFormattedTimer = template => {
+
+    const [hours, minutes, seconds] = formattedTimer()
+    const formattedClock = formattedHours([hours, minutes, seconds])
 
       return template
-      .replace('h', formattedTimerHours)
-      .replace('m', formattedTimerMinutes)
-      .replace('s', formattedTimerSeconds)
+        .split(':')
+        .map((_, index) => formattedClock[index])
+        .join(':')
 }
 
 class Clock {
@@ -104,8 +109,10 @@ class Clock {
   }
 
   start () {
+    const oneSeconds = 1000
+
     this.render()
-    this.timer = setInterval(() => this.render(), 1000)
+    this.timer = setInterval(() => this.render(), oneSeconds)
   }
 
   stop () {
@@ -117,7 +124,7 @@ class ExtendedClock extends Clock {
   constructor (options) {
     super(options)
     
-    let { precision = 1000 } = options
+   const { precision = 1000 } = options
     this.precision = precision
   }
 
