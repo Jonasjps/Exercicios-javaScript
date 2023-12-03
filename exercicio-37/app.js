@@ -118,7 +118,7 @@ class Clock {
 }
 
 class ExtendedClock extends Clock {
-  constructor ({ options }) {
+  constructor (options) {
     super(options)
     
     let { precision = 1000 } = options
