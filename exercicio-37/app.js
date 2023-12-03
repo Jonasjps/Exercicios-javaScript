@@ -88,9 +88,9 @@ class Clock {
     let minutes = date.getMinutes()
     let seconds = date.getSeconds()
 
-    const formattedTimeHours = hours < 10 ? `0${hours}` : hours
-    const formattedTimeMinutes = minutes < 10 ? `0${minutes}` : minutes
-    const formattedTimeSeconds = seconds < 10 ? `0${seconds}` : seconds
+    // const formattedTimeHours = hours < 10 ? `0${hours}` : hours
+    // const formattedTimeMinutes = minutes < 10 ? `0${minutes}` : minutes
+    // const formattedTimeSeconds = seconds < 10 ? `0${seconds}` : seconds
 
     const formattedTime = this.template
       .replace('h', formattedTimeHours)
