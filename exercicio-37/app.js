@@ -131,7 +131,7 @@ class ExtendedClock extends Clock {
   }
 }
 
-const clock = ExtendedClock({ template: 'h:m:s', precision: 1000 })
+const clock = new ExtendedClock({ template: 'h:m:s', precision: 1000 })
 
 clock.start()
 
