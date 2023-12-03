@@ -134,9 +134,9 @@ class ExtendedClock extends Clock {
   }
 }
 
-const clock = new ExtendedClock({ template: 'h:m:s', precision: 1000 })
+// const clock = new ExtendedClock({ template: 'h:m:s', precision: 1000 })
 
-clock.start()
+// clock.start()
 
 /*
   05
@@ -145,7 +145,17 @@ clock.start()
     caractere for inserido no textarea, exiba no parágrafo a quantidade de 
     caracteres que o textarea contém.
 */
+const TextArea = document.querySelector('[data-js="textarea"]')
+const paragraph = document.querySelector('[data-js="paragraph"]')
 
+TextArea.addEventListener('input' , event => {
+
+  const valueTextArea = event.target.value
+  const totalCaracter =  valueTextArea.length
+  const maxCaracter = TextArea.maxLength
+  
+  paragraph.textContent = `${totalCaracter}/${maxCaracter}`
+}) 
 
 
 /*
