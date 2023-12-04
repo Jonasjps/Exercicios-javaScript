@@ -206,6 +206,7 @@ const reduce = (arr, func, initionValue) => {
 
 const createComputerObjectPropyter = (acc, item) => {
   acc['number-' + item] = item
+
   return acc
 }
 
