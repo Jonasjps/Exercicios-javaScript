@@ -80,6 +80,31 @@ console.log(truthyValues)
   - Descomente o código e conserte os erros que estão impedindo que ele 
     funcione.
 */
+const formattedTimerClock = units => units
+  .map(unit => unit < 10 ? `0${unit}` : unit)  
+
+const getTimer = () => {
+  const date = new Date()
+  let hours = date.getHours()
+  let minutes = date.getMinutes()
+  let seconds = date.getSeconds()
+
+  return [hours, minutes, seconds]
+
+}
+
+const getFormattedTimer = template => {
+  
+  const [hours, minutes, seconds] = getTimer()
+
+  const formattedTimer = formattedTimerClock([hours, minutes, seconds])
+  
+  return template
+    .split(':')
+    .map((item, index )=> formattedTimer[index])
+    .join(':')
+
+}
 
 class Clock {
   constructor ({ template }) {
@@ -87,28 +112,7 @@ class Clock {
   }
 
   render () {
-    const date = new Date()
-    let hours = date.getHours()
-    let minutes = date.getMinutes()
-    let seconds = date.getSeconds()
-
-    if (hours < 10) {
-      hours = `0${hours}`
-    }
-
-    if (minutes < 10) {
-      minutes = `0${minutes}`
-    }
-
-    if (seconds < 10) {
-      seconds = `0${seconds}`
-    }
-
-    const formattedTime = this.template
-      .replace('h', hours)
-      .replace('m', minutes)
-      .replace('s', seconds)
-
+    const formattedTime = getFormattedTimer(this.template)
     console.log(formattedTime)
   }
 
