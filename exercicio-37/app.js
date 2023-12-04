@@ -153,7 +153,17 @@ class ExtendedClock extends Clock {
     caractere for inserido no textarea, exiba no parágrafo a quantidade de 
     caracteres que o textarea contém.
 */
+const textArea = document.querySelector('[data-js="textarea"]')
+const paragraph = document.querySelector('[data-js="paragraph"]')
 
+textArea.addEventListener('input', event => {
+  const valueTextArea = event.target.value
+  const quantatyCaracter = valueTextArea.length
+  const maxCaracter = textArea.maxLength
+  
+  paragraph.textContent = `${ quantatyCaracter }/${maxCaracter}`
+
+})
 
 
 /*
