@@ -85,9 +85,9 @@ const formattedTimerClock = units => units
 
 const getTimer = () => {
   const date = new Date()
-  let hours = date.getHours()
-  let minutes = date.getMinutes()
-  let seconds = date.getSeconds()
+  const hours = date.getHours()
+  const minutes = date.getMinutes()
+  const seconds = date.getSeconds()
 
   return [hours, minutes, seconds]
 
@@ -101,7 +101,7 @@ const getFormattedTimer = template => {
   
   return template
     .split(':')
-    .map((item, index )=> formattedTimer[index])
+    .map((_, index ) => formattedTimer[index])
     .join(':')
 
 }
@@ -117,8 +117,10 @@ class Clock {
   }
 
   start () {
+    const oneSeconds = 1000
+
     this.render()
-    this.timer = setInterval(() => this.render(), 1000)
+    this.timer = setInterval(() => this.render(), oneSeconds)
   }
 
   stop () {
@@ -130,7 +132,7 @@ class ExtendedClock extends Clock {
   constructor (options) {
     super(options)
     
-    let { precision = 1000 } = options
+    const { precision = 1000 } = options
     this.precision = precision
   }
 
@@ -140,9 +142,9 @@ class ExtendedClock extends Clock {
   }
 }
 
-const clock = new ExtendedClock({ template: 'h:m:s', precision: 1000 })
+// const clock = new ExtendedClock({ template: 'h:m:s', precision: 1000 })
 
-clock.start()
+// clock.start()
 
 /*
   05
