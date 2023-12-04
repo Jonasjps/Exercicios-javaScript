@@ -67,6 +67,10 @@ const values = [
   () => {}
 ]
 
+const truthyValues = values.filter(Boolean)
+
+console.log(truthyValues)
+
 /*
   04
 
