@@ -201,5 +201,6 @@ const transformArrayOfObect =
 console.log(reduce([1, 2, 3], (acc, item) => acc + item, 0))
 console.log(reduce([2, 3, 4], (acc, item) => acc + item, 0))
 console.log(reduce([1, 2],transformArrayOfObect,{}))
+console.log(reduce([1, 2], (acc, item, index) => acc + index, 0))
 console.log(reduce([1, 2], (acc, item, index, array) => acc + array[index], 0))
 
