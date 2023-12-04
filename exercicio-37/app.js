@@ -187,23 +187,28 @@ TextArea.addEventListener('input' , event => {
 const reduce = (arr, func, number) => {
   let acc = number
 
-  arr.forEach((item, index, array) => {
+  const accumulatorArray = (item, index, array) => {
     acc = func(acc, item, index, array)
-  })
+  }
+
+  arr.forEach(accumulatorArray)
+
   return acc
 }
 
 const transformArrayOfObect = 
-(acc, item) => {
- acc['number-' + item] = item
- return acc
-}
+  (acc, item) => {
+   acc['number-' + item] = item
+   return acc
+  }
 
 const sumItems =  (acc, item) => acc + item
+const sumItemsPlusIndex = (acc, _, index) => acc + index
+const sumItemsArrayParam =  (acc, _, index, array) => acc + array[index]
 
 console.log(reduce([1, 2, 3],sumItems, 0))
 console.log(reduce([2, 3, 4],sumItems, 0))
 console.log(reduce([1, 2],transformArrayOfObect,{}))
-console.log(reduce([1, 2], (acc, _, index) => acc + index, 0))
-console.log(reduce([1, 2], (acc, _, index, array) => acc + array[index], 0))
+console.log(reduce([1, 2], sumItemsPlusIndex, 0))
+console.log(reduce([1, 2], sumItemsArrayParam, 0))
 
