@@ -192,15 +192,18 @@ const reduce = (arr, func, number) => {
   })
   return acc
 }
+
 const transformArrayOfObect = 
 (acc, item) => {
  acc['number-' + item] = item
  return acc
 }
 
-console.log(reduce([1, 2, 3], (acc, item) => acc + item, 0))
-console.log(reduce([2, 3, 4], (acc, item) => acc + item, 0))
+const sumItems =  (acc, item) => acc + item
+
+console.log(reduce([1, 2, 3],sumItems, 0))
+console.log(reduce([2, 3, 4],sumItems, 0))
 console.log(reduce([1, 2],transformArrayOfObect,{}))
-console.log(reduce([1, 2], (acc, item, index) => acc + index, 0))
-console.log(reduce([1, 2], (acc, item, index, array) => acc + array[index], 0))
+console.log(reduce([1, 2], (acc, _, index) => acc + index, 0))
+console.log(reduce([1, 2], (acc, _, index, array) => acc + array[index], 0))
 
