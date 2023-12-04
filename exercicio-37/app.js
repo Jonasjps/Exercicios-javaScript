@@ -160,8 +160,8 @@ textArea.addEventListener('input', event => {
   const valueTextArea = event.target.value
   const quantatyCaracter = valueTextArea.length
   const maxCaracter = textArea.maxLength
-  
-  paragraph.textContent = `${ quantatyCaracter }/${maxCaracter}`
+
+  paragraph.textContent = `${quantatyCaracter}/${maxCaracter}`
 
 })
 
@@ -192,3 +192,29 @@ textArea.addEventListener('input', event => {
     vídeo de correção dos exercícios um link para a aula de introdução ao 
     reduce e um link para a documentação do método no MDN.
 */
+const reduce = (arr, func, initionValue) => {
+  let acc = initionValue
+  
+  const accumulatorArray = (item, index, array) => {
+    acc = func(acc, item, index, array)
+  }
+
+  arr.forEach(accumulatorArray)
+
+  return acc
+}
+
+const createComputerObjectPropyter = (acc, item) => {
+  acc['number-' + item] = item
+  return acc
+}
+
+const sumItems = (acc, item) => acc + item
+const sumItemsPlusIndex = (acc,_, index) => acc + index
+const sumItemsparamyterArray = (acc,_, index, array) => acc + array[index] 
+
+console.log(reduce([1, 2, 3], sumItems, 0))
+console.log(reduce([2, 3, 4], sumItems, 0))
+console.log(reduce([1, 2], createComputerObjectPropyter, {}))
+console.log(reduce([1, 2], sumItemsPlusIndex, 0))
+console.log(reduce([1, 2], sumItemsparamyterArray, 0))
