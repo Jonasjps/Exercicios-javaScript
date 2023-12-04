@@ -12,40 +12,27 @@ class Animal {
 }
 
 class Rabbit extends Animal {
-  created = new Date()
+  constructor (name) {
+    this.name = name
+    this.created = new Date()
+  }
 }
 
-let rabbit = new Rabbit('White Rabbit')
-// console.log(rabbit)
+// let rabbit = new Rabbit('White Rabbit')
+
 /*
   02
 
   - Descomente o código abaixo e implemente o que está faltando para que ele 
     funcione.
 */
-class Counter {
-  constructor () {
-    this.count = 0
-  } 
-   get value () {
-    return this.count
-  }
 
-  increment () {
-    return this.count++
-  }
+// const counter = new Counter()
 
-  set newValue (aNumber) {
-    this.count = aNumber
-  }
-}
+// counter.getValue()
+// counter.increment()
+// counter.getValue()
 
-const counter = new Counter()
-
-// console.log(counter.value)
-counter.increment()
-counter.newValue = 8
-// console.log(counter.value)
 /*
   03
 
@@ -63,9 +50,6 @@ const values = [
   () => {}
 ]
 
-const truthyValues = values.filter(Boolean)
-// console.log(truthyValues)
-
 /*
   04
 
@@ -75,66 +59,63 @@ const truthyValues = values.filter(Boolean)
   - Descomente o código e conserte os erros que estão impedindo que ele 
     funcione.
 */
-const formattedHours = units => units
-  .map(unit => unit < 10 ? `0${unit}` : unit) 
 
-const formattedTimer = () => {
-  const date = new Date()
-  const hours = date.getHours()
-  const minutes = date.getMinutes()
-  const seconds = date.getSeconds()
-  
-  return [hours, minutes, seconds]
-}
+// class Clock {
+//   constructor ({ template }) {
+//     this.template = template
+//   }
 
-const getFormattedTimer = template => {
+//   render () {
+//     const date = new Date()
+//     let hours = date.getHours()
+//     let minutes = date.getMonth()
+//     let seconds = date.getSeconds()
 
-    const [hours, minutes, seconds] = formattedTimer()
-    const formattedClock = formattedHours([hours, minutes, seconds])
+//     if (hours < 10) {
+//       hours = `0${hours}`
+//     }
 
-      return template
-        .split(':')
-        .map((_, index) => formattedClock[index])
-        .join(':')
-}
+//     if (minutes < 10) {
+//       minutes = `0${minutes}`
+//     }
 
-class Clock {
-  constructor ({ template }) {
-    this.template = template
-  }
+//     if (seconds < 10) {
+//       seconds = `0${seconds}`
+//     }
 
-  render () {
-    const formattedTime = getFormattedTimer(this.template)
-    console.log(formattedTime)
-  }
+//     const formattedTime = this.template
+//       .replace('h', hours)
+//       .replace('m', minutes)
+//       .replace('s', seconds)
 
-  start () {
-    const oneSeconds = 1000
+//     console.log(formattedTime)
+//   }
 
-    this.render()
-    this.timer = setInterval(() => this.render(), oneSeconds)
-  }
+//   start () {
+//     this.render()
+//     this.timer = setInterval(() => this.render(), 1000)
+//   }
 
-  stop () {
-    clearInterval(this.timer)
-  }
-}
+//   stop () {
+//     clearInterval(this.timer)
+//   }
+// }
 
-class ExtendedClock extends Clock {
-  constructor (options) {
-    super(options)
+// class ExtendedClock extends Clock {
+//   constructor ({ options }) {
+//     super(options)
     
-   const { precision = 1000 } = options
-    this.precision = precision
-  }
+//     let { precision = 1000 } = options
+//     this.precision = precision
+//   }
 
-  start () {
-    this.render()
-    this.timer = setInterval(() => this.render(), this.precision)
-  }
-}
+//   start () {
+//     this.render()
+//     this.timer = setInterval(() => this.render(), this.precision)
+//   }
+// }
 
-// const clock = new ExtendedClock({ template: 'h:m:s', precision: 1000 })
+// const clock = ExtendedClock({ template: 'h:m:s', precision: 1000 })
 
 // clock.start()
 
@@ -145,17 +126,7 @@ class ExtendedClock extends Clock {
     caractere for inserido no textarea, exiba no parágrafo a quantidade de 
     caracteres que o textarea contém.
 */
-const TextArea = document.querySelector('[data-js="textarea"]')
-const paragraph = document.querySelector('[data-js="paragraph"]')
 
-TextArea.addEventListener('input' , event => {
-
-  const valueTextArea = event.target.value
-  const totalCaracter =  valueTextArea.length
-  const maxCaracter = TextArea.maxLength
-
-  paragraph.textContent = `${totalCaracter}/${maxCaracter}`
-}) 
 
 
 /*
@@ -184,31 +155,3 @@ TextArea.addEventListener('input' , event => {
     vídeo de correção dos exercícios um link para a aula de introdução ao 
     reduce e um link para a documentação do método no MDN.
 */
-const reduce = (arr, func, number) => {
-  let acc = number
-
-  const accumulatorArray = (item, index, array) => {
-    acc = func(acc, item, index, array)
-  }
-
-  arr.forEach(accumulatorArray)
-
-  return acc
-}
-
-const transformArrayOfObect = 
-  (acc, item) => {
-   acc['number-' + item] = item
-   return acc
-  }
-
-const sumItems =  (acc, item) => acc + item
-const sumItemsPlusIndex = (acc, _, index) => acc + index
-const sumItemsArrayParam =  (acc, _, index, array) => acc + array[index]
-
-console.log(reduce([1, 2, 3],sumItems, 0))
-console.log(reduce([2, 3, 4],sumItems, 0))
-console.log(reduce([1, 2],transformArrayOfObect,{}))
-console.log(reduce([1, 2], sumItemsPlusIndex, 0))
-console.log(reduce([1, 2], sumItemsArrayParam, 0))
-
