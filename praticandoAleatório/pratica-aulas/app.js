@@ -28,16 +28,22 @@ const munfasa = new Lion('leão', 'munfasa', 7 , false)
 
 // console.log(munfasa, bumba)
 
-class Studant {
-    constructor (name, email) {
+// class Student {
+//     constructor (name, email) {
+//         this.name = name
+//         this.email = email
+//     }
+
+//     login () {
+//         return `${this.name} fez o login`
+//     }
+// }
+
+    function Student (name, email) {
         this.name = name
         this.email = email
     }
 
-    login () {
-        return `${this.name} fez o login`
-    }
-}
-
-const JonasPessoa = new Studant('Jonas', 'jonaspsjw@hotmail.com')
-console.log(JonasPessoa.login())
+const JonasPessoa = new Student('Jonas', 'jonaspsjw@hotmail.com')
+console.log(JonasPessoa)
+// console.log(JonasPessoa)
