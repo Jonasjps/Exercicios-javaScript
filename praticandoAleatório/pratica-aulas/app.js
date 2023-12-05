@@ -26,4 +26,18 @@ const pumpa = new Mammal('suricato', 'pumpa', 8)
 const munfasa = new Lion('leão', 'munfasa', 7 , false)
 
 
-console.log(munfasa, bumba)
+// console.log(munfasa, bumba)
+
+class Studant {
+    constructor (name, email) {
+        this.name = name
+        this.email = email
+    }
+
+    login () {
+        return `${this.name} fez o login`
+    }
+}
+
+const JonasPessoa = new Studant('Jonas', 'jonaspsjw@hotmail.com')
+console.log(JonasPessoa.login())
