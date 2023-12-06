@@ -42,10 +42,15 @@ const munfasa = new Lion('leão', 'munfasa', 7 , false)
     function Student (name, email) {
         this.name = name
         this.email = email
+
     }
 
-    Student.prototype.login
+    Student.prototype.login = function () {
+        return `${this.name} fez login`
+    }
+    
 
 const JonasPessoa = new Student('Jonas', 'jonaspsjw@hotmail.com')
-console.log(JonasPessoa)
+const Virginia = new Student('Vivi', 'Virginijfsb@gmail.com')
+console.log(JonasPessoa, Virginia)
 // console.log(JonasPessoa)
