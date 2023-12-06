@@ -44,6 +44,8 @@ const munfasa = new Lion('leão', 'munfasa', 7 , false)
         this.email = email
     }
 
+    Student.prototype.login
+
 const JonasPessoa = new Student('Jonas', 'jonaspsjw@hotmail.com')
 console.log(JonasPessoa)
 // console.log(JonasPessoa)
