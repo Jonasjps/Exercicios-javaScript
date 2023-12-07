@@ -37,6 +37,12 @@ const munfasa = new Lion('leão', 'munfasa', 7 , false)
 //     login () {
 //         return `${this.name} fez o login`
 //     }
+
+//     static formatToDataBase (aString) {
+//         return aString
+//         .toUpperCase()
+//         .replaceAll(' ', '_')
+//     }
 // }
 
     function Student (name, email) {
@@ -45,11 +51,8 @@ const munfasa = new Lion('leão', 'munfasa', 7 , false)
 
     }
 
-    Student.prototype.login = function () {
-        return `${this.name} fez login`
-    }
     //método statico em função contrutora...
-    Student.formatToDataBase = function (aString) {
+    Student.formatToDataBase = function formatToDataBase  (aString) {
         return aString 
             .toUpperCase()
             .replaceAll(' ', '_')
@@ -60,3 +63,4 @@ const JonasPessoa = new Student('Jonas', 'jonaspsjw@hotmail.com')
 const Virginia = new Student('Vivi', 'Virginijfsb@gmail.com')
 console.log(JonasPessoa, Virginia)
 console.log(Student.formatToDataBase('String para o banco de dados'))
+console.dir(Student.formatToDataBase)
