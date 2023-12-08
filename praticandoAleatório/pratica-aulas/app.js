@@ -64,11 +64,12 @@ const munfasa = new Lion('leão', 'munfasa', 7 , false)
         this.scheduledWeekPost = scheduledWeekPost 
     }
     
+    teacherAssistent.prototype = Object.create(Student.prototype)
+
     teacherAssistent.prototype.giveBadge = function giveBadge ({name}) {
         return `${this.name} deu uma medalha para ${name}`
     }
     
-    // teacherAssistent.prototype = Object.create(Student.prototype)
 
     //método statico em função contrutora...
     // Student.formatToDataBase = function formatToDataBase  (aString) {
@@ -85,3 +86,5 @@ const ArthurSilva = new teacherAssistent('Arthur Silva', 'arthurSilva@JonasPesso
 console.log(JonasPessoa, ArthurSilva)
 // console.log(Student.formatToDataBase('String para o banco de dados'))
 // console.dir(Student.formatToDataBase)
+console.log(ArthurSilva.login())
+console.log(ArthurSilva.login === JonasPessoa.login)
