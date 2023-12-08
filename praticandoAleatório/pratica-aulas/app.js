@@ -63,17 +63,25 @@ const munfasa = new Lion('leão', 'munfasa', 7 , false)
         Student.call(this, name, email)
         this.scheduledWeekPost = scheduledWeekPost 
     }
+    
+    teacherAssistent.prototype.giveBadge = function giveBadge ({name}) {
+        return `${this.name} deu uma medalha para ${name}`
+    }
+    
+    // teacherAssistent.prototype = Object.create(Student.prototype)
+
     //método statico em função contrutora...
     // Student.formatToDataBase = function formatToDataBase  (aString) {
     //     return aString 
     //         .toUpperCase()
     //         .replaceAll(' ', '_')
     // }
-    
+
 
 const JonasPessoa = new Student('Jonas', 'jonaspsjw@hotmail.com')
 // const Virginia = new Student('Vivi', 'Virginijfsb@gmail.com')
 const ArthurSilva = new teacherAssistent('Arthur Silva', 'arthurSilva@JonasPessoa.com', false)
-console.log(JonasPessoa ,ArthurSilva)
+// console.log(ArthurSilva.giveBadge(JonasPessoa))
+console.log(JonasPessoa, ArthurSilva)
 // console.log(Student.formatToDataBase('String para o banco de dados'))
 // console.dir(Student.formatToDataBase)
