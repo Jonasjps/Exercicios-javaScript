@@ -59,6 +59,10 @@ const munfasa = new Lion('leão', 'munfasa', 7 , false)
         return `${this.name} comentou`
     }
 
+    function teacherAssistent (name, email, scheduledWeekPost) {
+        Student.call(this, name, email)
+        this.scheduledWeekPost = scheduledWeekPost 
+    }
     //método statico em função contrutora...
     // Student.formatToDataBase = function formatToDataBase  (aString) {
     //     return aString 
@@ -68,8 +72,8 @@ const munfasa = new Lion('leão', 'munfasa', 7 , false)
     
 
 const JonasPessoa = new Student('Jonas', 'jonaspsjw@hotmail.com')
-const Virginia = new Student('Vivi', 'Virginijfsb@gmail.com')
-console.log(Student.prototype.comment())
-console.log(JonasPessoa, Virginia)
+// const Virginia = new Student('Vivi', 'Virginijfsb@gmail.com')
+const ArthurSilva = new teacherAssistent('Arthur Silva', 'arthurSilva@JonasPessoa.com', false)
+console.log(JonasPessoa ,ArthurSilva)
 // console.log(Student.formatToDataBase('String para o banco de dados'))
 // console.dir(Student.formatToDataBase)
