@@ -69,6 +69,16 @@ const munfasa = new Lion('leão', 'munfasa', 7 , false)
     teacherAssistent.prototype.giveBadge = function giveBadge ({name}) {
         return `${this.name} deu uma medalha para ${name}`
     }
+
+    const createUser = (name, email) => {
+        let counter = 0 
+
+        return {
+            name, 
+            email,
+            incrementCounter: () => {}
+        }
+    }
     
 
     //método statico em função contrutora...
@@ -88,3 +98,4 @@ console.log(JonasPessoa, ArthurSilva)
 // console.dir(Student.formatToDataBase)
 console.log(ArthurSilva.login())
 console.log(ArthurSilva.login === JonasPessoa.login)
+console.log(createUser('Jonas Pessoa', 'jonaspessoa@hotmail.com'))
