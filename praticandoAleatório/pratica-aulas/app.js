@@ -69,14 +69,14 @@ const munfasa = new Lion('leão', 'munfasa', 7 , false)
     teacherAssistent.prototype.giveBadge = function giveBadge ({name}) {
         return `${this.name} deu uma medalha para ${name}`
     }
-
+    //crigando objects com fatory functions 
     const createUser = (name, email) => {
         let counter = 0 
 
         return {
             name, 
             email,
-            incrementCounter: () => {}
+            incrementCounter: () => ++counter
         }
     }
     
@@ -98,4 +98,8 @@ console.log(JonasPessoa, ArthurSilva)
 // console.dir(Student.formatToDataBase)
 console.log(ArthurSilva.login())
 console.log(ArthurSilva.login === JonasPessoa.login)
-console.log(createUser('Jonas Pessoa', 'jonaspessoa@hotmail.com'))
+const user = createUser('Jonas Pessoa', 'jonaspessoa@hotmail.com')
+
+console.log(user)
+console.log(user.incrementCounter())
+console.log(user.incrementCounter())
