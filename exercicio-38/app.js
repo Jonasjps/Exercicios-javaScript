@@ -26,10 +26,15 @@
     return this.color
  } 
 
-const color = new Colors('Amarelo')
+// const color = new Colors('Amarelo')
+const siena = new Colors('vermelho')
+const tucson = new Colors('Black')
 
-console.log(color)
-console.log(color.getColors())
+// console.log(color)
+console.log(siena)
+console.log(tucson)
+
+// console.log(siena === tucson)
 /*
   02
 
