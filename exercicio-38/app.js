@@ -9,7 +9,10 @@
     diferentes para a propriedade color de cada carro;
   - Teste o método getColor do prototype dos carros.
 */
-
+function Colors (color) {
+  return this.color = color
+}
+console.log(new Colors('vermelho'))
 
 
 /*
