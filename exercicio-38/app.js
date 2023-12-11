@@ -10,18 +10,21 @@
   - Teste o método getColor do prototype dos carros.
 */
 function Colors (color) {
-  return this.color = color
+   this.color = color
+
+  this.getColors = function () {
+    return this.color
+  }
+
 }
 
-Colors.getColors = function getColors () {
-  return this.color
-}
+
 
 const red = new Colors('vermelho') 
 
 
 console.log(red)
-console.log(Colors.getColors())
+console.log(red.getColors())
 
 /*
   02
