@@ -9,31 +9,7 @@
     diferentes para a propriedade color de cada carro;
   - Teste o método getColor do prototype dos carros.
 */
-// function Colors (color) {
-//    this.color = color
 
-//   this.getColors = function () {
-//     return this.color
-//   }
-
-// }
-
-class Colors {
-  constructor (color)  {
-    this.color = color
-  }
-
-  getColors () {
-    return this.color
-  }
-}
-
-
-const red = new Colors('vermelho') 
-
-
-console.log(red)
-console.log(red.getColors())
 
 /*
   02
