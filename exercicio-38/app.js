@@ -12,8 +12,16 @@
 function Colors (color) {
   return this.color = color
 }
-console.log(new Colors('vermelho'))
 
+Colors.getColors = function getColors () {
+  return this.color
+}
+
+const red = new Colors('vermelho') 
+
+
+console.log(red)
+console.log(Colors.getColors())
 
 /*
   02
