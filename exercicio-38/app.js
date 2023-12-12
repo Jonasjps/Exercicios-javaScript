@@ -20,21 +20,21 @@
 // }
  function Colors (color) {
   this.color = color
+  
  }
 
- Colors.prototype.getColors = function getColors () {
+Colors.prototype.getColor = function getColor () {
     return this.color
- } 
+}
 
-// const color = new Colors('Amarelo')
+
+
 const siena = new Colors('vermelho')
 const tucson = new Colors('Black')
 
-// console.log(color)
 console.log(siena)
 console.log(tucson)
-
-// console.log(siena === tucson)
+console.log(Colors.prototype.getColor() === Colors.prototype.getColor())
 /*
   02
 
