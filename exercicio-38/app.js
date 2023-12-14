@@ -27,8 +27,6 @@ Colors.prototype.getColor = function getColor () {
     return this.color
 }
 
-
-
 const siena = new Colors('vermelho')
 const tucson = new Colors('Black')
 
