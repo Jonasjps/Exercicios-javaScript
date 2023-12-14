@@ -20,7 +20,6 @@
 // }
  function Colors (color) {
   this.color = color
-  
  }
 
 Colors.prototype.getColor = function getColor () {
