@@ -18,8 +18,7 @@
 //     return this.color
 //   }
 // }
- function Colors (color) {
-  this.color = color
+ function Colors () {
  }
 
 Colors.prototype.getColor = function getColor () {
@@ -31,7 +30,7 @@ const tucson = new Colors('Black')
 
 console.log(siena)
 console.log(tucson)
-console.log(Colors.prototype.getColor() === Colors.prototype.getColor())
+// console.log(Colors.prototype.getColor() === Colors.prototype.getColor())
 /*
   02
 
