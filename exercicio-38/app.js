@@ -25,11 +25,15 @@ Colors.prototype.getColor = function getColor () {
     return this.color
 }
 
-const siena = new Colors('vermelho')
-const tucson = new Colors('Black')
+function Siena () {
+  return this.color = 'greem'
+}
+const siena = new Colors()
+const tucson = new Colors()
 
-console.log(siena)
+console.log(siena.getColor('red'))
 console.log(tucson)
+console.log(new Siena())
 // console.log(Colors.prototype.getColor() === Colors.prototype.getColor())
 /*
   02
