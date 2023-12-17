@@ -18,6 +18,7 @@
 //     return this.color
 //   }
 // }
+
  function Colors () {
  }
 
@@ -35,6 +36,7 @@ console.log(siena.getColor('red'))
 console.log(tucson)
 console.log(new Siena())
 // console.log(Colors.prototype.getColor() === Colors.prototype.getColor())
+
 /*
   02
 
