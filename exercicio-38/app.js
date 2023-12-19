@@ -9,32 +9,6 @@
     diferentes para a propriedade color de cada carro;
   - Teste o método getColor do prototype dos carros.
 */
-// class Colors {
-//   constructor (color) {
-//     this.color = color
-//   }
-
-//   getColor () {
-//     return this.color
-//   }
-// }
-
- function Colors () {
- }
-
-Colors.prototype.getColor = function getColor () {
-    return this.color
-}
-
-function Siena () {
-  return this.color = 'greem'
-}
-const siena = new Colors()
-const tucson = new Colors()
-
-console.log(siena.getColor('red'))
-console.log(tucson)
-console.log(new Siena())
 
 /*
   02
