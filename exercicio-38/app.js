@@ -9,8 +9,13 @@
     diferentes para a propriedade color de cada carro;
   - Teste o método getColor do prototype dos carros.
 */
+const color = () => {
+  return {
+    color: 'black',
+  }
+} 
 
-
+console.log(color())
 /*
   02
 
