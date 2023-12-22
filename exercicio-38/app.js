@@ -9,13 +9,14 @@
     diferentes para a propriedade color de cada carro;
   - Teste o método getColor do prototype dos carros.
 */
-const color = () => {
+const color = color => {
   return {
-    color: 'black',
+    color,
   }
 } 
 
-console.log(color())
+const siena  = color('brack')
+console.log(siena)
 /*
   02
 
