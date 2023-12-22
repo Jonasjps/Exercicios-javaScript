@@ -15,7 +15,7 @@ const color = color => {
   }
 } 
 
-const siena  = color('brack')
+const siena  = color('black')
 console.log(siena)
 /*
   02
