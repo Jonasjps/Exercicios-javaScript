@@ -16,6 +16,7 @@ const color = color => {
 } 
 
 const siena  = color('black')
+const palio = color('Vermelho')
 
 console.log(siena)
 /*
