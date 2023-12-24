@@ -19,6 +19,7 @@ const siena  = color('black')
 const palio = color('Vermelho')
 
 console.log(siena)
+console.log(palio)
 /*
   02
 
