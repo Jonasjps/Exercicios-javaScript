@@ -18,8 +18,8 @@ const color = color => {
 const siena  = color('black')
 const palio = color('Vermelho')
 
-console.log(siena)
-console.log(palio)
+console.log(siena, palio)
+
 /*
   02
 
