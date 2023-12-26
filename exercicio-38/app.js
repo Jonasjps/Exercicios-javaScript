@@ -9,16 +9,16 @@
     diferentes para a propriedade color de cada carro;
   - Teste o método getColor do prototype dos carros.
 */
-const color = color => {
-  return {
-    color,
-  }
-} 
+// const color = color => {
+//   return {
+//     color,
+//   }
+// } 
 
-const siena  = color('black')
-const palio = color('Vermelho')
+// const siena  = color('black')
+// const palio = color('Vermelho')
 
-console.log(siena, palio)
+// console.log(siena, palio)
 
 /*
   02
