@@ -9,7 +9,16 @@
     diferentes para a propriedade color de cada carro;
   - Teste o método getColor do prototype dos carros.
 */
+const carProto = {
+  getColor () {
+    return this.color
+  }
+}
 
+
+
+
+console.log(carProto.getColor())
 
 /*
   02
