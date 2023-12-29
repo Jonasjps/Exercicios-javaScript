@@ -22,8 +22,8 @@ siena.color = 'black'
 palio.color = 'Vermelho'
 
 console.log(siena, palio)
-
 console.log(siena.isPrototypeOf(carProto) === palio.isPrototypeOf(carProto))
+
 
 /*
   02
