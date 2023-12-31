@@ -9,20 +9,6 @@
     diferentes para a propriedade color de cada carro;
   - Teste o método getColor do prototype dos carros.
 */
-const carProto = {
-  getColor () {
-    return this.color
-  }
-}
-
-const siena = Object.create(carProto)
-const palio = Object.create(carProto)
-
-siena.color = 'black'
-palio.color = 'Vermelho'
-
-console.log(siena, palio)
-// console.log(siena.isPrototypeOf(carProto) === palio.isPrototypeOf(carProto))
 
 
 /*
