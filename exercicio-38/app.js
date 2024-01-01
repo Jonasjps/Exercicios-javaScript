@@ -9,8 +9,18 @@
     diferentes para a propriedade color de cada carro;
   - Teste o método getColor do prototype dos carros.
 */
+const carProto = {
+  getColor () {
+    return this.color
+  }
+}
 
+const mercedes = Object.create(carProto)
+const audio = Object.create(carProto)
 
+//O método Object.create() cria um novo objeto, usando um objeto existente como prototype do obeto recem criado.
+
+console.log(mercedes, audio)
 /*
   02
 
