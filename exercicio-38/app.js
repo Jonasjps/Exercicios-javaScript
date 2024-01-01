@@ -18,7 +18,11 @@ const carProto = {
 const mercedes = Object.create(carProto)
 const audio = Object.create(carProto)
 
+console.log(mercedes.isPrototypeOf(carProto) === audio.isPrototypeOf(carProto))
+
 //O método Object.create() cria um novo objeto, usando um objeto existente como prototype do obeto recem criado.
+//O isPrototypeOf() método de Object intâncias verifica se este objeto existe na cadeia de prototypes de outro objeto.  
+
 
 console.log(mercedes, audio)
 /*
