@@ -47,15 +47,16 @@ const movie = {
   starringRole: 'Tom Hanks'
 }
 
-function getSummary () {
-  return `${this.title} foi dirigido por ${this.director} e tem ${this.starringRole} no papel principal.`
+function getSummary (number1, number2) {
+  const {title, director, starringRole} = this /* essa é uma expressão de
+   destruacting assignment, para evita a sintade de objeto ponto propriedade.*/ 
+  return `${title} foi dirigido por ${director} e tem ${starringRole} no papel principal.`
   
 }
 
-movie.getSummary = getSummary
 
-console.log(movie.getSummary())
-console.log(movie)
+// getSummary.call(movie, 1, 2)
+console.log(getSummary.apply(movie, [1, 2]))
 
 /*
   03
