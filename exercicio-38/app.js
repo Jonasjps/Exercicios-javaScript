@@ -67,13 +67,12 @@ console.log(getSummary.apply(movie, [1, 2]))
     }
   - Descomente o código e crie a função.
 */
-
-const createObj = (acc, [key, value]) =>  {
+const createObj = (acc,[key, value]) => {
   acc[key] = value
-  return acc
+ return acc  
 }
 
-const arrayToObj = (arr) => arr.reduce(createObj, {})
+const arrayToObj = (arr) => arr.reduce(createObj,{}) 
 
 console.log(
   arrayToObj([
