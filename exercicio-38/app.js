@@ -49,9 +49,13 @@ const movie = {
 
 function getSummary () {
   return `${this.title} foi dirigido por ${this.director} e tem ${this.starringRole} no papel principal.`
+  
 }
 
-console.log(getSummary())
+movie.getSummary = getSummary
+
+console.log(movie.getSummary())
+console.log(movie)
 
 /*
   03
