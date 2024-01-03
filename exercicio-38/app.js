@@ -111,27 +111,31 @@ const getFormattedTime = template => {
     .join(':')
 }
 
-class Clock {
-  constructor ({ template }) {
-    this.template = template
-  }
-
-  render () {
-    const formattedTime = getFormattedTime(this.template)
-    console.log(formattedTime)
-  }
-
-  start () {
-    const oneSecond = 1000
-
-    this.render()
-    this.timer = setInterval(() => this.render(), oneSecond)
-  }
-
-  stop () {
-    clearInterval(this.timer)
-  }
+const Clock = ({template}) => {
+  
 }
+
+// class Clock {
+//   constructor ({ template }) {
+//     this.template = template
+//   }
+
+//   render () {
+//     const formattedTime = getFormattedTime(this.template)
+//     console.log(formattedTime)
+//   }
+
+//   start () {
+//     const oneSecond = 1000
+
+//     this.render()
+//     this.timer = setInterval(() => this.render(), oneSecond)
+//   }
+
+//   stop () {
+//     clearInterval(this.timer)
+//   }
+// }
 
 class ExtendedClock extends Clock {
   constructor (options) {
