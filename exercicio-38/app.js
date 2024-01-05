@@ -131,7 +131,7 @@ const Clock = ({template}) => {
   }
 }
 
-console.log(Clock())
+// console.log(Clock())
 
 // class Clock {
 //   constructor ({ template }) {
@@ -155,6 +155,20 @@ console.log(Clock())
 //   }
 // }
 
+
+const ExtendeClock = function (options) {
+  const { precision = 1000 } = options
+    this.precision = precision
+
+    function start () {
+      this.render()
+      this.timer = setInterval(() => this.render(), this.precision)
+    }
+}
+
+const clock = ExtendeClock({template: 'h:m:s', precision: 1000})
+console.log(clock)
+Clock.start()
 // class ExtendedClock extends Clock {
 //   constructor (options) {
 //     super(options)
