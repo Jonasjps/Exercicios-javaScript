@@ -155,7 +155,6 @@ const Clock = ({template}) => {
 //   }
 // }
 
-
 const ExtendeClock = function (options) {
   const { precision = 1000 } = options
     this.precision = precision
