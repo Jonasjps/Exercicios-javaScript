@@ -168,6 +168,8 @@ const ExtendeClock = function (options) {
 const clock = ExtendeClock({template: 'h:m:s', precision: 1000})
 console.log(clock)
 Clock.start()
+
+
 // class ExtendedClock extends Clock {
 //   constructor (options) {
 //     super(options)
