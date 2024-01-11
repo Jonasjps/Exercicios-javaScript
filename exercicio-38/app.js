@@ -111,8 +111,6 @@ const getFormattedTime = template => {
     .join(':')
 }
 
-
-
 class Clock {
   constructor ({ template }) {
     this.template = template
