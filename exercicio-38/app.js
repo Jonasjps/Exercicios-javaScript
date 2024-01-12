@@ -110,7 +110,7 @@ const getFormattedTime = template => {
     .map((_, index) => formattedTime[index])
     .join(':')
 }
-
+// vamos refatorar essas classes usando factory functions
 class Clock {
   constructor ({ template }) {
     this.template = template
