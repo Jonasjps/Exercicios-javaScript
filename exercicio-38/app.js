@@ -120,7 +120,6 @@ class Clock {
     const formattedTime = getFormattedTime(this.template)
     console.log(formattedTime)
   }
-
   start () {
     const oneSecond = 1000
 
