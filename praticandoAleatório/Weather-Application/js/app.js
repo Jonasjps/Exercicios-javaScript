@@ -9,7 +9,11 @@ form.addEventListener('submit', async event => {
     const [{Key, LocalizedName}] = await getCityWeather(inputForm)
     const [{WeatherText, Temperature, IsDayTime}] = await getCityWeatherData(Key)    
     
-    console.log(LocalizedName, WeatherText, IsDayTime, Temperature.Metric.Value)
+    cityNameContainers.innerHTML = LocalizedName
+    cityWeatherContainers.innerHTML = WeatherText
+    cityTemperatureContainers.innerHTML = Temperature.Metric.Value
+
+    
 })
 
 
