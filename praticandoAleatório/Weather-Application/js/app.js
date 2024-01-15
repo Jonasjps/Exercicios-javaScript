@@ -3,9 +3,10 @@ const form = document.querySelector('[data-js="change-location"]')
 form.addEventListener('submit', async event => {
     event.preventDefault()
     const inputForm = event.target.city.value.trim()
-    const [cityData] = await getCityWeather(inputForm)
+    const [{Key, LocalizedName}] = await getCityWeather(inputForm)
+    const [{WeatherText, Temperature, IsDayTime}] = await getCityWeatherData(Key)    
     
-    console.log(cityData)
+    console.log(LocalizedName, WeatherText, IsDayTime, Temperature.Metric.Value)
 })
 
 
