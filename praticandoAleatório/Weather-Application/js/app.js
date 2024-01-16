@@ -11,6 +11,7 @@ form.addEventListener('submit', async event => {
     const inputForm = event.target.city.value.trim()
     const [{Key, LocalizedName}] = await getCityWeather(inputForm)
     const [{WeatherText, Temperature, IsDayTime, WeatherIcon}] = await getCityWeatherData(Key) 
+    const icon = `<src = "./src/icons/${WeatherIcon}.svg">`
 
     if(cityCard.classList.contains('d-none')) {
         cityCard.classList.remove('d-none')
@@ -21,7 +22,8 @@ form.addEventListener('submit', async event => {
     }else {
         cityImg.src = './src/night.svg'
     }
-    
+
+    timeIcon.textContent = icon
     cityNameContainers.innerHTML = LocalizedName
     cityWeatherContainers.innerHTML = WeatherText
     cityTemperatureContainers.innerHTML = Temperature.Metric.Value
