@@ -137,6 +137,22 @@ const makeClock = ({template }) => ({
  clock.stop()
 
 
+ const makeExtends = ( {template, precision = 1000}) => ({
+  precision,
+
+  ...makeClock({template}),
+
+  start () {
+    this.render()
+    this.timer = setInterval(() => this.render(), this.precision)
+  }
+ })
+
+
+ const extendClock = makeExtends({template: 'h:m:s', precison: 1000})
+ extendClock.start()
+ extendClock.stop()
+
 // class Clock {
 //   constructor ({ template }) {
 //     this.template = template
