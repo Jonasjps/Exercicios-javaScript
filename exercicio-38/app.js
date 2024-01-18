@@ -111,44 +111,70 @@ const getFormattedTime = template => {
     .join(':')
 }
 
-class Clock {
-  constructor ({ template }) {
-    this.template = template
-  }
+const makeClock = ({template }) => ({
+  template,
 
   render () {
     const formattedTime = getFormattedTime(this.template)
     console.log(formattedTime)
-  }
+  },
+
   start () {
-    const oneSecond = 1000
+    const oneSegund = 1000
 
     this.render()
-    this.timer = setInterval(() => this.render(), oneSecond)
-  }
+    this.timer = setInterval(() => this.render(), oneSegund)
+  }, 
 
   stop () {
     clearInterval(this.timer)
   }
-}
 
-class ExtendedClock extends Clock {
-  constructor (options) {
-    super(options)
+})
+
+ const clock = makeClock({template: 'h:m:s'})
+ clock.start()
+ clock.stop()
+
+
+// class Clock {
+//   constructor ({ template }) {
+//     this.template = template
+//   }
+
+//   render () {
+//     const formattedTime = getFormattedTime(this.template)
+//     console.log(formattedTime)
+//   }
+//   start () {
+//     const oneSecond = 1000
+
+//     this.render()
+//     this.timer = setInterval(() => this.render(), oneSecond)
+//   }
+
+//   stop () {
+//     clearInterval(this.timer)
+//   }
+// }
+
+// class ExtendedClock extends Clock {
+//   constructor (options) {
+//     super(options)
     
-    const { precision = 1000 } = options
-    this.precision = precision
-  }
+//     const { precision = 1000 } = options
+//     this.precision = precision
+//   }
 
-  start () {
-    this.render()
-    this.timer = setInterval(() => this.render(), this.precision)
-  }
-}
+//   start () {
+//     this.render()
+//     this.timer = setInterval(() => this.render(), this.precision)
+//   }
+// }
 
-const clock = new ExtendedClock({ template: 'h:m:s', precision: 1000 })
+// cons clock = new ExtendedClock({ template: 'h:m:s', precision: 1000 })
 
-clock.start()
+// clock.start()
 
 /*
   05
