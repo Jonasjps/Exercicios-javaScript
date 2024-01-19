@@ -112,11 +112,13 @@ const getFormattedTime = template => {
 }
 
 const makeClock = ({ template }) => ({
+  
   template,
 
   render () {
     const formattedTime = getFormattedTime(this.template)
     console.log(formattedTime)
+    
   },
 
   start () {
@@ -133,30 +135,23 @@ const makeClock = ({ template }) => ({
 
 })
 
-const clock = makeClock({template: 'h:m:s'})
+const clock = makeClock({template: 'h:m:s', oneSecond: 1000})
 clock.start()
 clock.stop()
-// class Clock {
-//   constructor ({ template }) {
-//     this.template = template
-//   }
 
-//   render () {
-//     const formattedTime = getFormattedTime(this.template)
-//     console.log(formattedTime)
-//   }
-//   start () {
-//     const oneSecond = 1000
+const makeExtendClock = ({ template, precision = 1000 }) => ({
+precision,
+...makeClock({ template }),
+start () {
+  this.render()
+  this.timer = setInterval(() => this.render(), this.precision)
+}
 
-//     this.render()
-//     this.timer = setInterval(() => this.render(), oneSecond)
-//   }
+})
 
-//   stop () {
-//     clearInterval(this.timer)
-//   }
-// }
-
+const extendsClock = makeExtendClock({template: 'h:m:s', precision: 1000})
+extendsClock.start()
+extendsClock.stop()
 // class ExtendedClock extends Clock {
 //   constructor (options) {
 //     super(options)
