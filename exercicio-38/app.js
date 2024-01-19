@@ -111,10 +111,31 @@ const getFormattedTime = template => {
     .join(':')
 }
 
-const makeClock = () => {
-  
-}
+const makeClock = ({ template }) => ({
+  template,
 
+  render () {
+    const formattedTime = getFormattedTime(this.template)
+    console.log(formattedTime)
+  },
+
+  start () {
+
+    const oneSecond = 1000 
+
+    this.render()
+    this.timer  =  setInterval(() => this.render(), oneSecond)
+  },
+
+  stop () {
+    clearInterval(this.timer)
+  }
+
+})
+
+const clock = makeClock({template: 'h:m:s'})
+clock.start()
+clock.stop()
 // class Clock {
 //   constructor ({ template }) {
 //     this.template = template
