@@ -226,8 +226,15 @@ extendsClock.stop()
           CSV que você criou;
         - download, com o valor 'table.csv'.
 */
+const tr = document.querySelector('tbody')
+const button = document.querySelector('[data-js="export-table-btn"]')
 
-
+button.addEventListener('click', event => {
+  event.preventDefault()
+  const tagsTrs = Array.from(tr.children)
+  console.log(tagsTrs)
+  
+})
 
 /*
   06
