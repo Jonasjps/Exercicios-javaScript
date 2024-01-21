@@ -110,7 +110,7 @@ const getFormattedTime = template => {
     .map((_, index) => formattedTime[index])
     .join(':')
 }
-
+ 
 const makeClock = ({template}) => ({
   template, 
   render () {
