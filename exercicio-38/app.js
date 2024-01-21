@@ -228,11 +228,14 @@ extendsClock.stop()
 */
 const tr = document.querySelector('tbody')
 const button = document.querySelector('[data-js="export-table-btn"]')
+const valueTr = document.querySelector('.value-tr')
+
 
 button.addEventListener('click', event => {
   event.preventDefault()
   const tagsTrs = Array.from(tr.children)
-  console.log(tagsTrs)
+  tagsTrs
+  debugger
   
 })
 
