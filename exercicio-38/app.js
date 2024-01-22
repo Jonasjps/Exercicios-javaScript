@@ -225,46 +225,8 @@ extendsClock.stop()
           encodeURIComponent é um método do window que precisa receber a string 
           CSV que você criou;
         - download, com o valor 'table.csv'.
-*/
-const tr = document.querySelectorAll('tr')
-const button = document.querySelector('[data-js="export-table-btn"]')
-const valueTr = document.querySelector('.value-tr')
+*/    
 
-// button.addEventListener('click', event => {
-//   event.preventDefault()
-//   const tagsTrs = Array.from(tr.children)
-//   console.log(tagsTrs)
-//   // return tagsTrs.reduce((acc, item) => {
-//   //   Array.from(item.cells).forEach(item => {
-//   //    console.log(item.textContent)
-//   //   })
-
-
-
-//   // }, '')
-  
-// })
-
-button.addEventListener('click', event => {
-  console.log(tr)
-  
-  // event.preventDefault()
-  // const tagsTrs = Array.from(tr.children)
-
-  // return tagsTrs.map(str => {
-  //   let tagOfString = ''
-
-  //   const tagsFilhas = Array.from(str.cells)
-
-  //   tagsFilhas.forEach(item => {
-  //     const string = item.textContent
-      
-  //     console.log(`${string}`)
-  //   })
-  // })
-    
-  
-})
 
 /*
   06
