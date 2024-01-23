@@ -226,7 +226,14 @@ extendsClock.stop()
           CSV que você criou;
         - download, com o valor 'table.csv'.
 */    
+const tr = document.querySelectorAll('tr')
+const exportTable = document.querySelector('[data-js="export-table-btn"]')
 
+exportTable.addEventListener('click', () => {
+  console.log(
+    Array.from(tr).map(item => Array.from(item.cells).map(cell => cell.textContent)).join('\n')
+    )
+})
 /*
   06
   
