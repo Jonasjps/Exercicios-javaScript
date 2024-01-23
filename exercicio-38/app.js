@@ -226,24 +226,6 @@ extendsClock.stop()
           CSV que você criou;
         - download, com o valor 'table.csv'.
 */    
-const button = document.querySelector(`[data-js="export-table-btn"]`)
-const tr = document.querySelectorAll('tr')
-
-button.addEventListener('click', () => {
-  const   CSVString = Array.from(tr)
-      .map(item =>  Array.from(item.cells)
-        .map(item => item.textContent)
-        .join(',')
-    )
-    .join('\n')
-
-  button.setAttribute(
-    'href',
-    `data:text/csvcharset=utf-8,${encodeURIComponent(CSVString)}`
-    )
-
-  button.setAttribute('download', 'table.csv')
-})
 
 /*
   06
