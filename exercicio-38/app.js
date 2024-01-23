@@ -230,9 +230,14 @@ const tr = document.querySelectorAll('tr')
 const exportTable = document.querySelector('[data-js="export-table-btn"]')
 
 exportTable.addEventListener('click', () => {
-  console.log(
-    Array.from(tr).map(item => Array.from(item.cells).map(cell => cell.textContent)).join('\n')
-    )
+  const CSVString = Array.from(tr)
+    .map(item => Array.from(item.cells)
+      .map(cell => cell.textContent))
+        .join('\n')
+    
+  console.log(CSVString)
+  exportTable.setAttribute('href', `data:text/csvcharset=utf-8,${encodeURIComponent(CSVString)}`)
+  exportTable.setAttribute('download', 'table.csv')
 })
 /*
   06
