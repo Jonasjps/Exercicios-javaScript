@@ -227,18 +227,25 @@ extendsClock.stop()
         - download, com o valor 'table.csv'.
 */    
 const tr = document.querySelectorAll('tr')
-const exportTable = document.querySelector('[data-js="export-table-btn"]')
+const exportBtn = document.querySelector('[data-js="export-table-btn"]')
 
-exportTable.addEventListener('click', () => {
-  const CSVString = Array.from(tr)
-    .map(item => Array.from(item.cells)
-      .map(cell => cell.textContent))
-        .join('\n')
+const tableTr = () => cell => cell.textContent
+
+const  tableRow = item => Array.from(item.cells)
+      .map(tableTr).join('')
+
+const refactoring = () =>
+   Array.from(tr).map(tableRow).join('\n')
+
+const exportTable = () => {
+  const CSVString = refactoring()
     
   console.log(CSVString)
-  exportTable.setAttribute('href', `data:text/csvcharset=utf-8,${encodeURIComponent(CSVString)}`)
-  exportTable.setAttribute('download', 'table.csv')
-})
+  exportBtn.setAttribute('href', `data:text/csvcharset=utf-8,${encodeURIComponent(CSVString)}`)
+  exportBtn.setAttribute('download', 'table.csv')
+}
+
+exportBtn.addEventListener('click', exportTable)
 /*
   06
   
