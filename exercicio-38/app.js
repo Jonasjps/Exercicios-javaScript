@@ -229,23 +229,30 @@ extendsClock.stop()
 const stringTable = document.querySelectorAll('tr')
 const exportBtn = document.querySelector('[data-js="export-table-btn"]')
 
-const exportTable =  () => {
-  const CSVString = 
-  Array.from(stringTable)
-  .map(item => Array.from(item.cells)
-  .map(cell => cell.textContent)
-  .join(',')
-  )
-  .join('\n')
-  console.log(CSVString)
-  
-    exportBtn.setAttribute(
-      'href',
-      `data:textcsvcharset=utf-8,${encodeURIComponent(CSVString)}`)
+const celulasText = ({textContent}) => textContent
 
-    exportBtn.setAttribute('download', 'table.csv')
-          
+const stringCSVFormated = ({cells}) => 
+  Array.from(cells)
+    .map(celulasText)
+    .join(',')
+
+const createCSVString = 
+  Array.from(stringTable)
+    .map(stringCSVFormated)
+    .join('\n')
+
+const CSVDownload = CSVString => {
+  console.log(CSVString)
+  const downloadCSV = `data:textcsvcharset=utf-8,${encodeURIComponent(CSVString)}` 
+
+  exportBtn.setAttribute('href', downloadCSV)
+  exportBtn.setAttribute('download', 'table.csv')
+}
+
+const exportTable =  () => {
+  const CSVString = createCSVString
   
+  CSVDownload(CSVString)
 }
 
 exportBtn.addEventListener('click', exportTable)
