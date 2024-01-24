@@ -29,13 +29,20 @@ const manipulationInToDOM = async inputValue => {
     cityNameContainers.textContent = LocalizedName
     cityWeatherContainers.textContent = WeatherText
     cityTemperatureContainers.textContent = Temperature.Metric.Value
+    removedClass()
 }
 
 formInput.addEventListener('submit', event => {
     event.preventDefault()
     const inputValue = event.target.city.value.trim()
     
-    removedClass()
     manipulationInToDOM(inputValue)
+    localStorage.setItem('city', inputValue)
     formInput.reset()
 }) 
+
+const city = localStorage.getItem('city')
+if(city) {
+    removedClass()
+    manipulationInToDOM(city)
+}
