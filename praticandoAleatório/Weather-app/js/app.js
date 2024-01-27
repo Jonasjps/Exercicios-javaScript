@@ -16,11 +16,18 @@ const removedClass = () => {
 
 } 
 
+const fetchWeatherInfo = async inputValue => {
+    const [{Key, LocalizedName}] = await cityWeather(inputValue)
+    const [{WeatherText, Temperature, IsDayTime, WeatherIcon}] = await cityWeatherData(Key)
+    
+    return {LocalizedName, WeatherText, Temperature, IsDayTime, WeatherIcon}
+}
 
 
 const manipulationInToDOM = async inputValue => {
-    const [{Key, LocalizedName}] = await cityWeather(inputValue)
-    const [{WeatherText, Temperature, IsDayTime, WeatherIcon}] = await cityWeatherData(Key)
+    const { LocalizedName, WeatherText, Temperature, IsDayTime, WeatherIcon } =
+       await fetchWeatherInfo(inputValue)
+      
     const icon = `<img src="./src/icons/${WeatherIcon}.svg">`
 
     IsDayTime 
