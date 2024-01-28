@@ -251,7 +251,7 @@ const exportTable =  () => {
       
 }
 
-exportBtn.addEventListener('click', exportTable)
+// exportBtn.addEventListener('click', exportTable)
 
 /*
   06
