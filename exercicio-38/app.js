@@ -324,8 +324,10 @@ try {
     throw Error('Não foi possivel obter dados da api.')
   }
   const {conversion_rates} = await response.json()
+
   resultConversionMoney.textContent = conversion_rates.USD .toFixed(2)
-  console.log(conversion_rates.BRL)
+
+  console.log(conversion_rates.USD)
 }catch ({name, mensage}) {
  alert(`${name}: ${mensage}`)
 }
