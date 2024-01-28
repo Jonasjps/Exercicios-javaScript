@@ -307,4 +307,5 @@ const exportTable =  () => {
   
   PS: o desafio aqui é você implementar essa aplicação sozinho(a), antes 
   de ver as próximas aulas, ok? =)
+  
 */
