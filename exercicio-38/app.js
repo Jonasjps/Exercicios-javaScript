@@ -320,8 +320,8 @@ try {
   const dataUrl = getUrl(moneyName)
   const response = await fetch(dataUrl)
   
-  if(!response.ok) {
-    throw Error('Não foi possivel obter dados da api.')
+  if( response.result === 'error') {
+    throw new Error('Não foi possivel obter dados da api.')
   }
   const {conversion_rates} = await response.json()
 
@@ -333,6 +333,6 @@ try {
 }
 }
 
-conversionMoney('BRL')
+conversionMoney('kkk')
 
 
