@@ -309,30 +309,6 @@ const exportTable =  () => {
   de ver as próximas aulas, ok? =)
   
 */
-const resultConversionMoney = document.querySelector('[data-js="converted-value"]')
 
-const APIkEY = '04cf6b5908dbe464ff892035'
-
-const getUrl = moneyName =>  `https://v6.exchangerate-api.com/v6/04cf6b5908dbe464ff892035/latest/${moneyName}`
-
-const conversionMoney = async moneyName => {
-try {
-  const dataUrl = getUrl(moneyName)
-  const response = await fetch(dataUrl)
-  
-  if( response.result === 'error') {
-    throw new Error('Não foi possivel obter dados da api.')
-  }
-  const {conversion_rates} = await response.json()
-
-  resultConversionMoney.textContent = conversion_rates.USD .toFixed(2)
-
-  console.log(conversion_rates.USD)
-}catch ({name, mensage}) {
- alert(`${name}: ${mensage}`)
-}
-}
-
-conversionMoney('kkk')
 
 
