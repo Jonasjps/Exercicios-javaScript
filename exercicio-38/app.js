@@ -314,7 +314,7 @@ const currencyTwoEl = document.querySelector('[data-js="currency-two"]')
 const currenciesEl = document.querySelector('[data-js="currecies-container"]')
 const alertClose = document.querySelector('.btn-close')
 
-const url = 'https://v6.exchangerate-api.com/v6/04cf6b5908dbe464ff892035/latest/KKK'
+const url = 'https://v6.exchangerate-api.com/v6/04cf6b5908dbe464ff892035/latest/USD'
 
 const getErrorMessage = errorType => ({
   'unsupported-code': 'A moeda não existe em nosso banco de dados.',
@@ -327,11 +327,12 @@ const getErrorMessage = errorType => ({
 const fetchExchangeRate =  async () => {
   try {
     const response = await fetch(url)
-
+    
     if(!response.ok) {
       throw new Error('Sua conexão falhou. Não foi possível obter as informações.')
     }
     const exchangeRateData = await response.json()
+    console.log(exchangeRateData)
     
     if(exchangeRateData.result === 'error') {
       throw new Error(getErrorMessage(exchangeRateData['error-type']))
