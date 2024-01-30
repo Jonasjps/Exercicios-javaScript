@@ -311,6 +311,8 @@ const exportTable =  () => {
 */
 const currencyOneEl = document.querySelector('[data-js="currency-one"]')
 const currencyTwoEl = document.querySelector('[data-js="currency-two"]')
+const currenciesEl = document.querySelector('[data-js="currecies-container"]')
+const alertClose = document.querySelector('.btn-close')
 
 const url = 'https://v6.exchangerate-api.com/v6/04cf6b5908dbe464ff892035/latest/KKK'
 
@@ -320,18 +322,44 @@ const getErrorMessage = errorType => ({
   'invalid-key': 'A chave da api não é válida.',
   'inaction-account': 'O seu endereço de email não foi confirmado',
   'quota-reached': 'Sua conta alcançou o limite de requests permitidos em seu plano atual.' 
-})[errorType] 
+})[errorType] || '  Não foi possível obter as informações.'
 
 const fetchExchangeRate =  async () => {
   try {
     const response = await fetch(url)
+
+    if(!response.ok) {
+      throw new Error('Sua conexão falhou. Não foi possível obter as informações.')
+    }
     const exchangeRateData = await response.json()
     
     if(exchangeRateData.result === 'error') {
       throw new Error(getErrorMessage(exchangeRateData['error-type']))
     }
   }catch (err) {
-  alert(err.message)
+    const div = document.createElement('div')
+    const button = document.createElement('button')
+
+    div.textContent = err.message
+    div.classList.add('alert', 'alert-warning', 'alert-dismissible', 'fade', 'show')
+    div.setAttribute('role', 'alert')
+    button.classList.add('btn-close')
+    button.setAttribute('arial-label', 'close')
+    
+    button.addEventListener('click', () => {
+      div.remove()
+    })
+    div.appendChild(button)
+    currenciesEl.insertAdjacentElement('afterend', div)
+
+      
+
+    /*
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      Mensagem do error
+      <button type="button" class="btn-close"  aria-label="Close"></button>
+    </div>
+  */
   }
 }
 
