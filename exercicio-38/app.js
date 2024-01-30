@@ -171,10 +171,10 @@ extendsClock.stop()
 // }
 
 // class ExtendedClock extends Clock {
-//   constructor (options) {
-//     super(options)
+//   constructor (option) {
+//     super(option)
     
-//     const { precision = 1000 } = options
+//     const { precision = 1000 } = option
 //     this.precision = precision
 //   }
 
@@ -309,6 +309,45 @@ const exportTable =  () => {
   de ver as próximas aulas, ok? =)
   
 */
+const currencyOneEl = document.querySelector('[data-js="currency-one"]')
+const currencyTwoEl = document.querySelector('[data-js="currency-two"]')
+
+const url = 'https://v6.exchangerate-api.com/v6/04cf6b5908dbe464ff892035/latest/KKK'
+
+const getErrorMessage = errorType => ({
+  'unsupported-code': 'A moeda não existe em nosso banco de dados.',
+  'malformed-request': 'O endpoint do seu resquest precisa seguir a estrutura a seguir: https://v6.exchangerate-api.com/v6/YOUR-API-KEY/latest/USD ',
+  'invalid-key': 'A chave da api não é válida.',
+  'inaction-account': 'O seu endereço de email não foi confirmado',
+  'quota-reached': 'Sua conta alcançou o limite de requests permitidos em seu plano atual.' 
+})[errorType] 
+
+const fetchExchangeRate =  async () => {
+  try {
+    const response = await fetch(url)
+    const exchangeRateData = await response.json()
+    
+    if(exchangeRateData.result === 'error') {
+      throw new Error(getErrorMessage(exchangeRateData['error-type']))
+    }
+  }catch (err) {
+  alert(err.message)
+  }
+}
+
+fetchExchangeRate()
+
+const option = `<option>oi</option>` 
+
+currencyOneEl.innerHTML = option
+currencyTwoEl.innerHTML = option
+
+
+console.log(currencyOneEl, currencyTwoEl)
+
+
+
+
 
 
 
