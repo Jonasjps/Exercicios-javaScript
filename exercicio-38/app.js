@@ -315,7 +315,7 @@ const currencyTwoEl = document.querySelector('[data-js="currency-two"]')
 const currencyAlertEl = document.querySelector('[data-js="currencies-container"]')
 
 
-const url = 'https://v6.exchangerate-api.com/v6/04cf6b5908dbe464ff892035/latest/kkk'
+const url = 'https://v6.exchangerate-api.com/v6/04cf6b5908dbe464ff892035/latest/Usd'
 
 const messageErrorCurrencies = errorType => ({
   'unsupported-code': 'A moeda não existe em nosso banco de dados.',
@@ -323,11 +323,16 @@ const messageErrorCurrencies = errorType => ({
   'invalid-key': 'A chave da api não é válida.',
   'inaction-account': 'O seu endereço de email não foi confirmado',
   'quota-reached': 'Sua conta alcançou o limite de requests permitidos em seu plano atual.' 
-})[errorType]
+})[errorType] || 'Não foi possível obter informaçoes da moeda.'
 
 const getFetchCurrency = async () => { 
   try{
     const response = await fetch(url) 
+
+    if(!response.ok){
+      throw new Error('Sua conexão falhou. Não foi possível obter as informações.')
+    }
+
     const getConversionRates = await response.json()
 
     if(getConversionRates.result === 'error') {
