@@ -312,8 +312,10 @@ const exportTable =  () => {
 
 const currencyOneEl = document.querySelector('[data-js="currency-one"]')
 const currencyTwoEl = document.querySelector('[data-js="currency-two"]')
+const currencyAlertEl = document.querySelector('[data-js="currencies-container"]')
 
-const url = 'https://v6.exchangerate-api.com/v6/04cf6b5908dbe464ff892035/latest/KKK'
+
+const url = 'https://v6.exchangerate-api.com/v6/04cf6b5908dbe464ff892035/latest/kkk'
 
 const messageErrorCurrencies = errorType => ({
   'unsupported-code': 'A moeda não existe em nosso banco de dados.',
@@ -334,7 +336,30 @@ const getFetchCurrency = async () => {
 
     console.log( getConversionRates)
   }catch (err) {
-    alert(err.message)
+    // alert(err.message)
+      const div = document.createElement('div')
+      const button = document.createElement('button')
+
+      div.textContent = err.message
+      div.classList.add('alert', 'alert-warning', 'alert-dismissible', 'fade', 'show')
+      div.setAttribute('role', 'alert')
+      button.classList.add('btn-close')
+      button.setAttribute('arial-label', 'close')
+
+      button.addEventListener('click', () => {
+        div.remove()
+      })
+
+      div.appendChild(button)
+      currencyAlertEl.insertAdjacentElement('afterend', div)
+
+    /*
+    
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      mensagen error
+      <button type="button" class="btn-close"  aria-label="Close"></button>
+      </div>
+    */
   }
 }
 getFetchCurrency()
