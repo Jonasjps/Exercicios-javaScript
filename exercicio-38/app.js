@@ -341,7 +341,6 @@ const getFetchCurrency = async () => {
 
     console.log( getConversionRates)
   }catch (err) {
-    // alert(err.message)
       const div = document.createElement('div')
       const button = document.createElement('button')
 
