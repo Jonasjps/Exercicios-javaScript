@@ -310,6 +310,9 @@ const exportTable =  () => {
   
 */
 
+const currencyOneEl = document.querySelector('[data-js="currency-one"]')
+const currencyTwoEl = document.querySelector('[data-js="currency-two"]')
+
 const exchangeUrl = coin => `https://v6.exchangerate-api.com/v6/04cf6b5908dbe464ff892035/latest/${coin}`
 
 const messageError = errorType => ({
@@ -335,6 +338,11 @@ try {
 }
 
 exchangeRates()
+
+const option = `<option>oi</option>`
+
+currencyOneEl.innerHTML = option
+currencyTwoEl.innerHTML = option
 
 
 
