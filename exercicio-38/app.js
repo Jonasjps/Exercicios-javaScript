@@ -310,3 +310,20 @@ const exportTable =  () => {
   
 */
 
+const url = coin => `https://v6.exchangerate-api.com/v6/04cf6b5908dbe464ff892035/latest/${coin}`
+
+const exchangeRates = async () => {
+  try {
+   const getConversionRates = await fetch(url('kkk'))
+   const conversionRates = await getConversionRates.json() 
+    console.log(conversionRates)
+  }catch (error) {
+  alert(error.message)
+  }
+}
+
+exchangeRates()
+
+
+
+
