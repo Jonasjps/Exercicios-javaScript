@@ -311,6 +311,7 @@ const exportTable =  () => {
 */
  const currencyOneEl = document.querySelector('[data-js="currency-one"]')
  const currencyTwoEl = document.querySelector('[data-js="currency-two"]')
+ const  currencyContainerEl = document.querySelector('[data-js="currency-container"]')
 
  const getCurrencyUrl = currency => 
   `https://v6.exchangerate-api.com/v6/04cf6b5908dbe464ff892035/latest/${currency}`
@@ -325,22 +326,48 @@ const messageError = errorType => ({
 
 const getExchangeRates = async () => { 
   try{ 
-    const response = await fetch(getCurrencyUrl('BRL'))
+    const response = await fetch(getCurrencyUrl('kkk'))
+
+    if(!response.ok) {
+      throw new Error('Sua conexão falhou. Não foi possível obter as informações.')
+    }
+
     const conversionRates = await response.json()
 
     if (conversionRates.result === 'error') {
       throw new Error(messageError(conversionRates['error-type']))
     }
+
     console.log(conversionRates)
   }catch (err) {
-    alert(err.message)
+    
+    const div = document.createElement('div')
+    const button = document.createElement('button')
+
+    div.textContent = err.message
+    div.classList.add('alert', 'alert-warning', 'alert-dismissible', 'fade', 'show')
+    div.setAttribute('role', 'alert')
+    button.classList.add('btn-close')
+    button.setAttribute('aria-label', 'close')
+    div.appendChild(button)
+
+    currencyContainerEl.insertAdjacentElement('afterend', div)
+    
+    button.addEventListener('click', () => {
+      div.remove()
+    })
+    console.log(div)
+
+    /**
+     <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        Mensagem do erro 
+     <button type="button" class="btn-close" aria-label="Close"></button>
+      </div>
+     */
   }
 }
 
 getExchangeRates()
-
-
-
 
  const option = `<option>oi</option>`
 
