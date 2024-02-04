@@ -326,7 +326,7 @@ const messageError = errorType => ({
 
 const getExchangeRates = async () => { 
   try{ 
-    const response = await fetch(getCurrencyUrl('kkk'))
+    const response = await fetch(getCurrencyUrl('KKK'))
 
     if(!response.ok) {
       throw new Error('Sua conexão falhou. Não foi possível obter as informações.')
@@ -348,22 +348,19 @@ const getExchangeRates = async () => {
     div.classList.add('alert', 'alert-warning', 'alert-dismissible', 'fade', 'show')
     div.setAttribute('role', 'alert')
     button.classList.add('btn-close')
+    button.setAttribute('type', 'button')
     button.setAttribute('aria-label', 'close')
-    div.appendChild(button)
-
-    currencyContainerEl.insertAdjacentElement('afterend', div)
+    
     
     button.addEventListener('click', () => {
       div.remove()
     })
-    console.log(div)
+    
+    div.appendChild(button)
 
-    /**
-     <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        Mensagem do erro 
-     <button type="button" class="btn-close" aria-label="Close"></button>
-      </div>
-     */
+    currencyContainerEl.insertAdjacentElement('afterend', div)
+    // console.log(div)
+
   }
 }
 
