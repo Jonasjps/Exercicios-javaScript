@@ -309,3 +309,31 @@ const exportTable =  () => {
   de ver as próximas aulas, ok? =)
   
 */
+ const currencyOneEl = document.querySelector('[data-js="currency-one"]')
+ const currencyTwoEl = document.querySelector('[data-js="currency-two"]')
+
+ const getCurrencyUrl = currency => 
+  `https://v6.exchangerate-api.com/v6/04cf6b5908dbe464ff892035/latest/${currency}`
+  
+const getExchangeRates = async () => { 
+  try{ 
+    const response = await fetch(getCurrencyUrl('USD'))
+    const conversionRates = await response.json()
+    console.log(conversionRates)
+  }catch (err) {
+    alert(err.message)
+  }
+}
+
+getExchangeRates()
+
+
+
+
+ const option = `<option>oi</option>`
+
+currencyOneEl.innerHTML = option
+currencyTwoEl.innerHTML = option
+
+
+
