@@ -402,6 +402,7 @@ currencyOneEl.addEventListener('input', async e => {
   valuePrecisionEl.textContent = `1 ${currencyOneEl.value} = ${1 * internalExchangeRates.conversion_rates[currencyTwoEl.value]} ${currencyTwoEl.value}`
 })
 init()
+debugger
 
 
 
