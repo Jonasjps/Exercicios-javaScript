@@ -374,11 +374,13 @@ const init = async () => {
 }
 
 timesCurrencyOneEl.addEventListener('input', e => {
-
   convertedValueEl.textContent = (e.target.value * internalExchangeRates.conversion_rates[currencyTwoEl.value]).toFixed(2)
-  
-  
 })
+
+currencyTwoEl.addEventListener('input', e => {
+  console.log('oi')
+})
+
 
 init()
 
