@@ -384,6 +384,7 @@ const init = async () => {
     valuePrecisionEl.textContent = `1 USD = ${internalExchangeRates.conversion_rates.BRL} BRL`
     
 }
+// debugger
 
 timesCurrencyOneEl.addEventListener('input', e => {
   convertedValueEl.textContent = (e.target.value * internalExchangeRates.conversion_rates[currencyTwoEl.value]).toFixed(2)
@@ -402,7 +403,6 @@ currencyOneEl.addEventListener('input', async e => {
   valuePrecisionEl.textContent = `1 ${currencyOneEl.value} = ${1 * internalExchangeRates.conversion_rates[currencyTwoEl.value]} ${currencyTwoEl.value}`
 })
 init()
-debugger
 
 
 
