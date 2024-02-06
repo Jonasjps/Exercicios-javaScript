@@ -312,8 +312,10 @@ const exportTable =  () => {
 const currencyOneEl = document.querySelector('[data-js="currency-one"]')
 const currencyTwoEl = document.querySelector('[data-js="currency-two"]')
 const currencyContaineEl = document.querySelector('[data-js="currency-container"]')
+const convertedValueEl = document.querySelector('[data-js="converted-value"]')
+const conversionPrecisionEl = document.querySelector('[data-js="conversion-precision"]')
 
-const url = 'https://v6.exchangerate-api.com/v6/04cf6b5908dbe464ff892035/latest/kkk'
+const url = 'https://v6.exchangerate-api.com/v6/04cf6b5908dbe464ff892035/latest/USD'
 
 const messageError = errorType => ({
   'unsupported-code': 'A moeda não existe em nosso banco de dados.',
@@ -335,7 +337,7 @@ const fetchExchangeRates = async () => {
    if(exchangeRatesData.result === 'error') {
     throw new Error(messageError(exchangeRatesData['error-type']))
    }
-    console.log(exchangeRatesData)
+    return exchangeRatesData
   }catch (err) {
     const div = document.createElement('div')
     const button = document.createElement('button')
@@ -352,13 +354,21 @@ const fetchExchangeRates = async () => {
   }
 }
 
-fetchExchangeRates()
+const init = async () => {
+  const exchangeRatesData = await fetchExchangeRates()
+  const getOptions = currencySelected => Object.keys(exchangeRatesData.conversion_rates)
+  .map(currency => `<option ${currency === currencySelected ? 'selected' : '' }>${currency}</option>`)
+  .join('')
 
+  convertedValueEl.textContent = exchangeRatesData.conversion_rates.BRL.toFixed(2)
+  conversionPrecisionEl.textContent = `1 USD = ${exchangeRatesData.conversion_rates.BRL} ${currencyTwoEl.value} BRL`
 
-const option = '<option>oi</option>'
- 
-currencyOneEl.innerHTML = option
-currencyTwoEl.innerHTML = option
+  currencyOneEl.innerHTML = getOptions('USD')
+  currencyTwoEl.innerHTML = getOptions('BRL')
+}
+
+init()
+
 
 
 
