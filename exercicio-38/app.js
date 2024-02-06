@@ -314,6 +314,10 @@ const currencyTwoEl = document.querySelector('[data-js="currency-two"]')
 const currencyContaineEl = document.querySelector('[data-js="currency-container"]')
 const convertedValueEl = document.querySelector('[data-js="converted-value"]')
 const conversionPrecisionEl = document.querySelector('[data-js="conversion-precision"]')
+const timesCurrencyOneEl = document.querySelector('[data-js="currency-one-times"]')
+
+let internalExchangeRates = {}
+
 
 const url = 'https://v6.exchangerate-api.com/v6/04cf6b5908dbe464ff892035/latest/USD'
 
@@ -356,6 +360,8 @@ const fetchExchangeRates = async () => {
 
 const init = async () => {
   const exchangeRatesData = await fetchExchangeRates()
+  internalExchangeRates = {...exchangeRatesData}
+
   const getOptions = currencySelected => Object.keys(exchangeRatesData.conversion_rates)
   .map(currency => `<option ${currency === currencySelected ? 'selected' : '' }>${currency}</option>`)
   .join('')
@@ -366,6 +372,13 @@ const init = async () => {
   currencyOneEl.innerHTML = getOptions('USD')
   currencyTwoEl.innerHTML = getOptions('BRL')
 }
+
+timesCurrencyOneEl.addEventListener('input', e => {
+
+  convertedValueEl.textContent = (e.target.value * internalExchangeRates.conversion_rates[currencyTwoEl.value]).toFixed(2)
+  
+  
+})
 
 init()
 
