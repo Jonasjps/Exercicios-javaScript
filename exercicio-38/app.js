@@ -358,16 +358,16 @@ const fetchExchangeRates = async () => {
   }
 }
 
-const init = async () => {
-  const exchangeRatesData = await fetchExchangeRates()
-  internalExchangeRates = {...exchangeRatesData}
+const init = async () => { 
+  
+  internalExchangeRates = {...(await fetchExchangeRates())}
 
-  const getOptions = currencySelected => Object.keys(exchangeRatesData.conversion_rates)
+  const getOptions = currencySelected => Object.keys(internalExchangeRates.conversion_rates)
   .map(currency => `<option ${currency === currencySelected ? 'selected' : '' }>${currency}</option>`)
   .join('')
-
-  convertedValueEl.textContent = exchangeRatesData.conversion_rates.BRL.toFixed(2)
-  conversionPrecisionEl.textContent = `1 USD = ${exchangeRatesData.conversion_rates.BRL} ${currencyTwoEl.value} BRL`
+  console.log(internalExchangeRates)
+  convertedValueEl.textContent = internalExchangeRates.conversion_rates.BRL.toFixed(2)
+  conversionPrecisionEl.textContent = `1 USD = ${internalExchangeRates.conversion_rates.BRL} ${currencyTwoEl.value} BRL`
 
   currencyOneEl.innerHTML = getOptions('USD')
   currencyTwoEl.innerHTML = getOptions('BRL')
@@ -379,10 +379,12 @@ timesCurrencyOneEl.addEventListener('input', e => {
 
 currencyTwoEl.addEventListener('input', e => {
   convertedValueEl.textContent = internalExchangeRates.conversion_rates[currencyTwoEl.value].toFixed(2)
-  // debugger
+  conversionPrecisionEl.textContent = `1 ${currencyOneEl.value} = ${internalExchangeRates.conversion_rates[currencyTwoEl.value]} ${currencyTwoEl.value}`
 })
 
-
+currencyOneEl.addEventListener('input', e => {
+  
+})
 init()
 
 
