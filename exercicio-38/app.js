@@ -378,7 +378,8 @@ timesCurrencyOneEl.addEventListener('input', e => {
 })
 
 currencyTwoEl.addEventListener('input', e => {
-  console.log('oi')
+  convertedValueEl.textContent = internalExchangeRates.conversion_rates[currencyTwoEl.value].toFixed(2)
+  // debugger
 })
 
 
