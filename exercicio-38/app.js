@@ -319,7 +319,7 @@ const timesCurrencyOneEl = document.querySelector('[data-js="currency-one-times"
 let internalExchangeRates = {}
 
 
-const url = 'https://v6.exchangerate-api.com/v6/04cf6b5908dbe464ff892035/latest/USD'
+const getUrl = currency => `https://v6.exchangerate-api.com/v6/04cf6b5908dbe464ff892035/latest/${currency}`
 
 const messageError = errorType => ({
   'unsupported-code': 'A moeda não existe em nosso banco de dados.',
@@ -329,7 +329,7 @@ const messageError = errorType => ({
   'quota-reached': 'Sua conta alcançou o limite de requests permitidos em seu plano atual.' 
 })[errorType] || 'Não foi possível obter os dados da moeda fornecida.'
 
-const fetchExchangeRates = async () => {
+const fetchExchangeRates = async (url) => {
   try{
    const response = await fetch(url)
 
@@ -360,7 +360,7 @@ const fetchExchangeRates = async () => {
 
 const init = async () => { 
 
-  internalExchangeRates = {...(await fetchExchangeRates())}
+  internalExchangeRates = {...(await fetchExchangeRates(getUrl('USD')))}
 
   const getOptions = currencySelected => Object.keys(internalExchangeRates.conversion_rates)
   .map(currency => `<option ${currency === currencySelected ? 'selected' : '' }>${currency}</option>`)
@@ -384,12 +384,10 @@ currencyTwoEl.addEventListener('input', e => {
 
 currencyOneEl.addEventListener('input', async e => {
   
-  internalExchangeRates = {...(await fetchExchangeRates())}
-  
-  const exchangeRates = internalExchangeRates.conversion_rates[currencyOneEl.value]
-  convertedValueEl.textContent = exchangeRates
-  conversionPrecisionEl.textContent = `1 ${currencyOneEl.value} = ${internalExchangeRates.conversion_rates[currencyTwoEl.value]} ${currencyTwoEl.value}`
-  console.log(exchangeRates)
+  internalExchangeRates = {...(await fetchExchangeRates(getUrl(e.target.value)))}
+
+  convertedValueEl.textContent = (timesCurrencyOneEl.value * internalExchangeRates.conversion_rates[currencyTwoEl.value]).toFixed(2)
+  conversionPrecisionEl.textContent = `1 ${currencyOneEl.value} = ${1 * internalExchangeRates.conversion_rates[currencyTwoEl.value]} ${currencyTwoEl.value}`
 })
 init()
 
