@@ -359,13 +359,22 @@ const fetchExchangeRates = async () => {
 
 const init = async () => {
   const exchangeRates = await fetchExchangeRates() 
+  internalExchangeRates = {...exchangeRates}
+
   const getOptions = selectedCurrency => Object.keys(exchangeRates.conversion_rates)
     .map(currency => `<option ${currency === selectedCurrency ? 'selected' : ''}>${currency}</option>`) 
     .join('')
 
     currencyOneEl.innerHTML = getOptions('USD')
-  currencyTwoEl.innerHTML = getOptions('BRL')
-}
+    currencyTwoEl.innerHTML = getOptions('BRL')
+
+    convertedValueEl.textContent = exchangeRates.conversion_rates[currencyTwoEl.value].toFixed(2)
+    conversionPrecisionEl.textContent = `1 USD ${exchangeRates.conversion_rates.BRL} BRL`
+  }
+
+  timesCurrencyOneEl.addEventListener('input', e => {
+    convertedValueEl.textContent = (e.target.value * internalExchangeRates.conversion_rates[currencyTwoEl.value]).toFixed(2)
+  })
 
 init()
 
