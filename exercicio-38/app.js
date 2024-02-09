@@ -353,44 +353,11 @@ const fetchExchangeRates = async (url) => {
     button.setAttribute('aria-label', 'close')
     currencyContaineEl.insertAdjacentElement('afterend', div)
     div.appendChild(button)
-    console.log(div)
     
   }
 }
 
-const init = async () => { 
-
-  internalExchangeRates = {...(await fetchExchangeRates(getUrl('USD')))}
-
-  const getOptions = currencySelected => Object.keys(internalExchangeRates.conversion_rates)
-  .map(currency => `<option ${currency === currencySelected ? 'selected' : '' }>${currency}</option>`)
-  .join('')
-  console.log(internalExchangeRates)
-  convertedValueEl.textContent = internalExchangeRates.conversion_rates.BRL.toFixed(2)
-  conversionPrecisionEl.textContent = `1 USD = ${internalExchangeRates.conversion_rates.BRL} ${currencyTwoEl.value} BRL`
-
-  currencyOneEl.innerHTML = getOptions('USD')
-  currencyTwoEl.innerHTML = getOptions('BRL')
-}
-
-timesCurrencyOneEl.addEventListener('input', e => {
-  convertedValueEl.textContent = (e.target.value * internalExchangeRates.conversion_rates[currencyTwoEl.value]).toFixed(2)
-})
-
-currencyTwoEl.addEventListener('input', e => {
-  convertedValueEl.textContent = internalExchangeRates.conversion_rates[currencyTwoEl.value].toFixed(2)
-  conversionPrecisionEl.textContent = `1 ${currencyOneEl.value} = ${internalExchangeRates.conversion_rates[currencyTwoEl.value]} ${currencyTwoEl.value}`
-})
-
-currencyOneEl.addEventListener('input', async e => {
-  
-  internalExchangeRates = {...(await fetchExchangeRates(getUrl(e.target.value)))}
-
-  convertedValueEl.textContent = (timesCurrencyOneEl.value * internalExchangeRates.conversion_rates[currencyTwoEl.value]).toFixed(2)
-  conversionPrecisionEl.textContent = `1 ${currencyOneEl.value} = ${1 * internalExchangeRates.conversion_rates[currencyTwoEl.value]} ${currencyTwoEl.value}`
-})
-init()
-
+fetchExchangeRates()
 
 
 
