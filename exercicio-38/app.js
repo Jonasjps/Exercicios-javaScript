@@ -319,7 +319,7 @@ const timesCurrencyOneEl = document.querySelector('[data-js="currency-one-times"
 let internalExchangeRates = {}
 
 
-const getUrl = currency => `https://v6.exchangerate-api.com/v6/04cf6b5908dbe464ff892035/latest/${currency}`
+const url = 'https://v6.exchangerate-api.com/v6/04cf6b5908dbe464ff892035/latest/USD'
 
 const messageError = errorType => ({
   'unsupported-code': 'A moeda não existe em nosso banco de dados.',
@@ -329,7 +329,7 @@ const messageError = errorType => ({
   'quota-reached': 'Sua conta alcançou o limite de requests permitidos em seu plano atual.' 
 })[errorType] || 'Não foi possível obter os dados da moeda fornecida.'
 
-const fetchExchangeRates = async (url) => {
+const fetchExchangeRates = async () => {
   try{
    const response = await fetch(url)
 
@@ -357,7 +357,16 @@ const fetchExchangeRates = async (url) => {
   }
 }
 
-fetchExchangeRates()
+const init = async () => {
+  const exchangeRates = await fetchExchangeRates() 
+  const getOptions = selectedCurrency => Object.keys(exchangeRates.conversion_rates)
+    .map(currency => `<option ${currency === selectedCurrency ? 'selected' : ''}>${currency}</option>`) 
+    .join('')
 
+    currencyOneEl.innerHTML = getOptions('USD')
+  currencyTwoEl.innerHTML = getOptions('BRL')
+}
+
+init()
 
 
