@@ -328,7 +328,7 @@ const messageError = typeError => ({
   'invalid-key': 'A chave da api não é válida.',
   'inaction-account': 'O seu endereço de email não foi confirmado',
   'quota-reached': 'Sua conta alcançou o limite de requests permitidos em seu plano atual.' 
-  })[typeError]
+  })[typeError] || 'Não foi possível obter dados da moeda.'
 
 const fetchExchangeRates = async url => {
   try{
@@ -341,7 +341,7 @@ const fetchExchangeRates = async url => {
     const conversionRatesData = await response.json()
 
     if(conversionRatesData.result === 'error') {
-      throw new Error(messageError(conversionRatesData['error-type']))
+      throw new Error(messageError(conversionRatesData['oi']))
     }
    return conversionRatesData
   }catch (err) {
@@ -355,6 +355,10 @@ const fetchExchangeRates = async url => {
     div.setAttribute('role', 'alert')
     button.setAttribute('aria-label', 'close')
     button.classList.add('btn-close')
+
+    button.addEventListener('click', () => {
+      div.remove()
+    })
     currencyContainer.insertAdjacentElement('afterend', div)
   }
 
@@ -388,7 +392,7 @@ currencyOneEl.addEventListener('input', async e => {
   internalExchangeRates = {...(await fetchExchangeRates(getUrl(e.target.value)))}
 
   convertedValueEl.textContent = (timesCurrencyOneEl.value * internalExchangeRates.conversion_rates[currencyTwoEl.value]).toFixed(2)
-  conversionPrecisionEl.textContent = `1 ${currencyOneEl.value} = ${1 * internalExchangeRates.conversion_rates[currencyTwoEl.value]} ${currencyTwoEl.value}`
+  conversionPrecisionEl.textContent = `1 ${currencyOneEl.value} = ${internalExchangeRates.conversion_rates[currencyTwoEl.value]} ${currencyTwoEl.value}`
   
 })
 
