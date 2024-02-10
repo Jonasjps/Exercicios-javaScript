@@ -318,6 +318,8 @@ const convertedValueEl = document.querySelector('[data-js="converted-value"]')
 const conversionPrecisionEl = document.querySelector('[data-js="conversion-precision"]')
 const timesCurrencyOneEl = document.querySelector('[data-js="currency-one-times"]')
 
+let internalExchangeRates = {}
+
 const url = 'https://v6.exchangerate-api.com/v6/04cf6b5908dbe464ff892035/latest/USD'
 const messageError = typeError => ({
   'unsupported-code': 'A moeda não existe em nosso banco de dados.',
@@ -359,6 +361,8 @@ const fetchExchangeRates = async () => {
 
 const unit = async () => {
   const exchangeRates = await fetchExchangeRates()
+  internalExchangeRates = {...exchangeRates}
+
   const getOption = currencySelected => Object.keys(exchangeRates.conversion_rates)
     .map(currency => `<option ${currency === currencySelected ? 'selected' : ''}>${currency}</option>`)
     .join('')
@@ -367,9 +371,17 @@ const unit = async () => {
   currencyTwoEl.innerHTML = getOption('BRL')
   
   convertedValueEl.textContent = exchangeRates.conversion_rates.BRL.toFixed(2)
-  conversionPrecisionEl.textContent = `1 USD ${exchangeRates.conversion_rates[currencyTwoEl.value]} BRL`
+  conversionPrecisionEl.textContent = `1 USD = ${exchangeRates.conversion_rates[currencyTwoEl.value]} BRL`
 }
 
+timesCurrencyOneEl.addEventListener('input', e => {
+  convertedValueEl.textContent = (e.target.value * internalExchangeRates.conversion_rates[currencyTwoEl.value]).toFixed(2)
+}) 
+
+currencyTwoEl.addEventListener('input', e => {
+  convertedValueEl.textContent = (timesCurrencyOneEl.value * internalExchangeRates.conversion_rates[e.target.value]).toFixed(2)
+  conversionPrecisionEl.textContent = `1 ${currencyOneEl.value} = ${internalExchangeRates.conversion_rates[currencyTwoEl.value]} ${currencyTwoEl.value}`
+})
 
 unit()
 
