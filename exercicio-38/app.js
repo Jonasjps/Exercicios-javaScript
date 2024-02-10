@@ -314,8 +314,11 @@ const exportTable =  () => {
 const currencyOneEl = document.querySelector('[data-js="currency-one"]')
 const currencyTwoEl = document.querySelector('[data-js="currency-two"]')
 const currencyContainer = document.querySelector('[data-js=" currency-container"]')
+const convertedValueEl = document.querySelector('[data-js="converted-value"]')
+const conversionPrecisionEl = document.querySelector('[data-js="conversion-precision"]')
+const timesCurrencyOneEl = document.querySelector('[data-js="currency-one-times"]')
 
-const url = 'https://v6.exchangerate-api.com/v6/04cf6b5908dbe464ff892035/latest/KKK'
+const url = 'https://v6.exchangerate-api.com/v6/04cf6b5908dbe464ff892035/latest/USD'
 const messageError = typeError => ({
   'unsupported-code': 'A moeda não existe em nosso banco de dados.',
   'malformed-request': 'O endpoint do seu resquest precisa seguir a estrutura a seguir: https://v6.exchangerate-api.com/v6/YOUR-API-KEY/latest/USD ',
@@ -332,12 +335,12 @@ const fetchExchangeRates = async () => {
       throw new Error('Sua conexão falhou. Não foi possível obter informações .')
     }
 
-    const exchangeRatesData = await response.json()
+    const conversionRatesData = await response.json()
 
-    if(exchangeRatesData.result === 'error') {
-      throw new Error(messageError(exchangeRatesData['error-type']))
+    if(conversionRatesData.result === 'error') {
+      throw new Error(messageError(conversionRatesData['error-type']))
     }
-     console.log(exchangeRatesData)    
+   return conversionRatesData
   }catch (err) {
 
     const div = document.createElement('div')
@@ -350,14 +353,25 @@ const fetchExchangeRates = async () => {
     button.setAttribute('aria-label', 'close')
     button.classList.add('btn-close')
     currencyContainer.insertAdjacentElement('afterend', div)
-    console.log(div)
-
   }
 
 } 
 
-fetchExchangeRates()
-const option = `<option>oi</option>`
+const unit = async () => {
+  const exchangeRates = await fetchExchangeRates()
+  const getOption = currencySelected => Object.keys(exchangeRates.conversion_rates)
+    .map(currency => `<option ${currency === currencySelected ? 'selected' : ''}>${currency}</option>`)
+    .join('')
 
-currencyOneEl.innerHTML = option
-currencyTwoEl.innerHTML = option
+  currencyOneEl.innerHTML = getOption('USD')
+  currencyTwoEl.innerHTML = getOption('BRL')
+  
+  convertedValueEl.textContent = exchangeRates.conversion_rates.BRL.toFixed(2)
+  conversionPrecisionEl.textContent = `1 USD ${exchangeRates.conversion_rates[currencyTwoEl.value]} BRL`
+}
+
+
+unit()
+
+
+
