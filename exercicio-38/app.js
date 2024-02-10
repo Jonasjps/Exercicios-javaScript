@@ -320,7 +320,8 @@ const timesCurrencyOneEl = document.querySelector('[data-js="currency-one-times"
 
 let internalExchangeRates = {}
 
-const url = 'https://v6.exchangerate-api.com/v6/04cf6b5908dbe464ff892035/latest/USD'
+const getUrl = currency => `https://v6.exchangerate-api.com/v6/04cf6b5908dbe464ff892035/latest/${currency}`
+
 const messageError = typeError => ({
   'unsupported-code': 'A moeda não existe em nosso banco de dados.',
   'malformed-request': 'O endpoint do seu resquest precisa seguir a estrutura a seguir: https://v6.exchangerate-api.com/v6/YOUR-API-KEY/latest/USD ',
@@ -329,7 +330,7 @@ const messageError = typeError => ({
   'quota-reached': 'Sua conta alcançou o limite de requests permitidos em seu plano atual.' 
   })[typeError]
 
-const fetchExchangeRates = async () => {
+const fetchExchangeRates = async url => {
   try{
     const response = await fetch(url)
 
@@ -360,18 +361,18 @@ const fetchExchangeRates = async () => {
 } 
 
 const unit = async () => {
-  const exchangeRates = await fetchExchangeRates()
-  internalExchangeRates = {...exchangeRates}
 
-  const getOption = currencySelected => Object.keys(exchangeRates.conversion_rates)
+  internalExchangeRates = {...(await fetchExchangeRates(getUrl('USD')))}
+
+  const getOption = currencySelected => Object.keys(internalExchangeRates.conversion_rates)
     .map(currency => `<option ${currency === currencySelected ? 'selected' : ''}>${currency}</option>`)
     .join('')
 
   currencyOneEl.innerHTML = getOption('USD')
   currencyTwoEl.innerHTML = getOption('BRL')
   
-  convertedValueEl.textContent = exchangeRates.conversion_rates.BRL.toFixed(2)
-  conversionPrecisionEl.textContent = `1 USD = ${exchangeRates.conversion_rates[currencyTwoEl.value]} BRL`
+  convertedValueEl.textContent = internalExchangeRates.conversion_rates.BRL.toFixed(2)
+  conversionPrecisionEl.textContent = `1 USD = ${internalExchangeRates.conversion_rates[currencyTwoEl.value]} BRL`
 }
 
 timesCurrencyOneEl.addEventListener('input', e => {
@@ -381,6 +382,14 @@ timesCurrencyOneEl.addEventListener('input', e => {
 currencyTwoEl.addEventListener('input', e => {
   convertedValueEl.textContent = (timesCurrencyOneEl.value * internalExchangeRates.conversion_rates[e.target.value]).toFixed(2)
   conversionPrecisionEl.textContent = `1 ${currencyOneEl.value} = ${internalExchangeRates.conversion_rates[currencyTwoEl.value]} ${currencyTwoEl.value}`
+})
+
+currencyOneEl.addEventListener('input', async e => {
+  internalExchangeRates = {...(await fetchExchangeRates(getUrl(e.target.value)))}
+
+  convertedValueEl.textContent = (timesCurrencyOneEl.value * internalExchangeRates.conversion_rates[currencyTwoEl.value]).toFixed(2)
+  conversionPrecisionEl.textContent = `1 ${currencyOneEl.value} = ${1 * internalExchangeRates.conversion_rates[currencyTwoEl.value]} ${currencyTwoEl.value}`
+  
 })
 
 unit()
