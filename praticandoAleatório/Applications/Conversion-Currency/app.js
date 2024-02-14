@@ -87,13 +87,14 @@ const showUpdatedRates = exchangeRate => {
   valuePrecisionEl.textContent = getMultiplicationNotRoundRate(exchangeRate)
 }
 
+const getOptions =(currencySelect, exchangeRate) => Object.keys(exchangeRate.conversion_rates)
+    .map(currency => `<option ${currency === currencySelect ? 'selected' : ''}>${currency}</option>`) 
+    .join('')
+
 const showInitalInfo = exchangeRate => {
-  const getOptions = currencySelect => Object.keys(exchangeRate.conversion_rates)
-      .map(currency => `<option ${currency === currencySelect ? 'selected' : ''}>${currency}</option>`) 
-      .join('')
     
-      currencyOneEl.innerHTML = getOptions('USD')
-      currencyTwoEl.innerHTML = getOptions('BRL')
+      currencyOneEl.innerHTML = getOptions('USD', exchangeRate)
+      currencyTwoEl.innerHTML = getOptions('BRL', exchangeRate)
     
       convertedValueEl.textContent = exchangeRate.conversion_rates.BRL.toFixed(2)
       valuePrecisionEl.textContent = `1 USD = ${exchangeRate.conversion_rates.BRL} BRL`
