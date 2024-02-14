@@ -74,6 +74,18 @@ const fetchExchangeRates = async (url) => {
   }
   
 }
+const multiplicationRoundCurrencyRate = exchangeRate => {
+  convertedValueEl.textContent = (timesCurrencyOneEl.value * exchangeRate.conversion_rates[currencyTwoEl.value]).toFixed(2)
+}
+
+const multiplicationNotRoundRate = exchangeRate => {
+  return `1 ${currencyOneEl.value} = ${1 * exchangeRate.conversion_rates[currencyTwoEl.value]} ${currencyTwoEl.value}`
+}
+
+const showUpdatedRates = exchangeRate => {
+  convertedValueEl.textContent = multiplicationRoundCurrencyRate(exchangeRate)
+  valuePrecisionEl.textContent = multiplicationNotRoundRate(exchangeRate)
+}
 
 const showInitalInfo = exchangeRate => {
   const getOptions = currencySelect => Object.keys(exchangeRate.conversion_rates)
@@ -88,30 +100,26 @@ const showInitalInfo = exchangeRate => {
 }
 
 const init = async () => {
-const exchangeRate = state.setExchangeRate(await fetchExchangeRates(getUrl('USD')))
+  const exchangeRate = state.setExchangeRate(await fetchExchangeRates(getUrl('USD')))
 
-if(exchangeRate.conversion_rates) {
-    showInitalInfo(exchangeRate)
+  if(exchangeRate.conversion_rates) {
+      showInitalInfo(exchangeRate)
   }
-
-}
-
-const showUpdatedRates = () => {
-  convertedValueEl.textContent = (timesCurrencyOneEl.value * internalExchangeRates.conversion_rates[currencyTwoEl.value]).toFixed(2)
-  valuePrecisionEl.textContent = `1 ${currencyOneEl.value} = ${1 * internalExchangeRates.conversion_rates[currencyTwoEl.value]} ${currencyTwoEl.value}`
 }
 
 timesCurrencyOneEl.addEventListener('input', e => {
-  convertedValueEl.textContent = (e.target.value * internalExchangeRates.conversion_rates[currencyTwoEl.value]).toFixed(2)
+  const exchangeRate = state.getExchangeRate()
+  convertedValueEl.textContent = multiplicationRoundCurrencyRate(exchangeRate)
 })
 
-currencyTwoEl.addEventListener('input', e => {
-  showUpdatedRates()
+currencyTwoEl.addEventListener('input', () => {
+  const exchangeRate = state.getExchangeRate()
+  showUpdatedRates(exchangeRate)
 })
 
 currencyOneEl.addEventListener('input', async e => {
-  internalExchangeRates = {...(await fetchExchangeRates(getUrl(e.target.value)))}
-  showUpdatedRates()
+  const exchangeRate = state.setExchangeRate(await fetchExchangeRates(getUrl(e.target.value)))
+  showUpdatedRates(exchangeRate)
 })
 
 init()
