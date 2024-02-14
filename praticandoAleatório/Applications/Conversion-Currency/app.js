@@ -74,17 +74,17 @@ const fetchExchangeRates = async (url) => {
   }
   
 }
-const multiplicationRoundCurrencyRate = exchangeRate => {
+const getMultiplicationRoundCurrencyRate = exchangeRate => {
   convertedValueEl.textContent = (timesCurrencyOneEl.value * exchangeRate.conversion_rates[currencyTwoEl.value]).toFixed(2)
 }
 
-const multiplicationNotRoundRate = exchangeRate => {
+const getMultiplicationNotRoundRate = exchangeRate => {
   return `1 ${currencyOneEl.value} = ${1 * exchangeRate.conversion_rates[currencyTwoEl.value]} ${currencyTwoEl.value}`
 }
 
 const showUpdatedRates = exchangeRate => {
-  convertedValueEl.textContent = multiplicationRoundCurrencyRate(exchangeRate)
-  valuePrecisionEl.textContent = multiplicationNotRoundRate(exchangeRate)
+  convertedValueEl.textContent = getMultiplicationRoundCurrencyRate(exchangeRate)
+  valuePrecisionEl.textContent = getMultiplicationNotRoundRate(exchangeRate)
 }
 
 const showInitalInfo = exchangeRate => {
@@ -109,7 +109,7 @@ const init = async () => {
 
 timesCurrencyOneEl.addEventListener('input', e => {
   const exchangeRate = state.getExchangeRate()
-  convertedValueEl.textContent = multiplicationRoundCurrencyRate(exchangeRate)
+  convertedValueEl.textContent = getMultiplicationRoundCurrencyRate(exchangeRate)
 })
 
 currencyTwoEl.addEventListener('input', () => {
