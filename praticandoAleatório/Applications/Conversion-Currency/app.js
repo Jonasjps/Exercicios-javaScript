@@ -38,7 +38,9 @@ const fetchExchangeRates = async (url) => {
     const button = document.createElement('button')
 
     div.textContent = err.message
-    div.classList.add('alert', 'alert-warning', 'alert-dismissible', 'fade', 'show')
+    div.classList.add('width','alert', 'alert-warning', 'alert-dismissible', 'fade', 'show')
+    div.style.width = '500px'
+    div.style.margin = 'auto'
     div.setAttribute('role', 'alert')
     button.classList.add('btn-close')
     button.setAttribute('type', 'button')
