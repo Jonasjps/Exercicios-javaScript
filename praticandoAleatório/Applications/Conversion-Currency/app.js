@@ -96,15 +96,19 @@ const init = async () => {
     showInitialInfo(exchangeRate)
   }
 }
-
+const getMultipliedExchangeRaate = ( conversion_rates ) => {
+  
+  const currencyTwo = conversion_rates[currencyTwoEl.value]
+  return (timesCurrencyOneEl.value * currencyTwo).toFixed(2)
+}
 const showUpdatedRates = ({ conversion_rates }) => {
-  convertedValueEl.textContent = (timesCurrencyOneEl.value * conversion_rates[currencyTwoEl.value]).toFixed(2)
+  convertedValueEl.textContent = getMultipliedExchangeRaate(conversion_rates)
   valuePrecisionEl.textContent = `1 ${currencyOneEl.value} = ${1 * conversion_rates[currencyTwoEl.value]} ${currencyTwoEl.value}`
 }
 
-timesCurrencyOneEl.addEventListener('input', e => {
+timesCurrencyOneEl.addEventListener('input', () => {
   const { conversion_rates } = state.getExchangeRate()
-  convertedValueEl.textContent = (e.target.value * conversion_rates[currencyTwoEl.value]).toFixed(2)
+  convertedValueEl.textContent = getMultipliedExchangeRaate(conversion_rates)
 })
 
 currencyTwoEl.addEventListener('input', () => {
@@ -113,7 +117,9 @@ currencyTwoEl.addEventListener('input', () => {
 })
 
 currencyOneEl.addEventListener('input', async e => {
-  const exchangeRate = state.setExchangeRate(await fetchExchangeRates(getUrl(e.target.value)))
+  const url = getUrl(e.target.value)
+  const newExchangeRate = await fetchExchangeRates(url)
+  const exchangeRate = state.setExchangeRate(newExchangeRate)
   showUpdatedRates(exchangeRate)
 })
 
