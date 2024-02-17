@@ -76,13 +76,14 @@ const fetchExchangeRates = async (url) => {
   
 }
 
-const showInitialInfo = ({ conversion_rates }) => {
-  const getOptions = currencySelect => Object.keys(conversion_rates)
-  .map(currency => `<option ${currency === currencySelect ? 'selected' : ''}>${currency}</option>`) 
-  .join('')
+const getOptions = (currencySelect, conversion_rates ) => Object.keys(conversion_rates)
+.map(currency => `<option ${currency === currencySelect ? 'selected' : ''}>${currency}</option>`) 
+.join('')
 
-  currencyOneEl.innerHTML = getOptions('USD')
-  currencyTwoEl.innerHTML = getOptions('BRL')
+const showInitialInfo = ({ conversion_rates }) => {
+
+  currencyOneEl.innerHTML = getOptions('USD', conversion_rates )
+  currencyTwoEl.innerHTML = getOptions('BRL', conversion_rates )
 
   convertedValueEl.textContent = conversion_rates.BRL.toFixed(2)
   valuePrecisionEl.textContent = `1 USD = ${conversion_rates.BRL} BRL`
@@ -90,7 +91,9 @@ const showInitialInfo = ({ conversion_rates }) => {
 }
 
 const init = async () => {
-  const exchangeRate = state.setExchangeRate(await fetchExchangeRates(getUrl('USD')))
+  const url = getUrl('USD')
+  const newExchangeRate = await fetchExchangeRates(url)
+  const exchangeRate = state.setExchangeRate(newExchangeRate)
 
   if(exchangeRate && exchangeRate.conversion_rates) {
     showInitialInfo(exchangeRate)
