@@ -84,7 +84,6 @@ const showInitialInfo = ({ conversion_rates }) => {
 
   currencyOneEl.innerHTML = getOptions('USD', conversion_rates )
   currencyTwoEl.innerHTML = getOptions('BRL', conversion_rates )
-
   convertedValueEl.textContent = conversion_rates.BRL.toFixed(2)
   valuePrecisionEl.textContent = `1 USD = ${conversion_rates.BRL} BRL`
 
@@ -100,13 +99,17 @@ const init = async () => {
   }
 }
 const getMultipliedExchangeRaate = ( conversion_rates ) => {
-  
   const currencyTwo = conversion_rates[currencyTwoEl.value]
   return (timesCurrencyOneEl.value * currencyTwo).toFixed(2)
 }
+const getNotRoundExchangeRate = conversion_rates  => {
+  const currencyTwo = conversion_rates[currencyTwoEl.value] 
+  return  `1 ${currencyOneEl.value} = ${1 * currencyTwo} ${currencyTwoEl.value}`
+}
+
 const showUpdatedRates = ({ conversion_rates }) => {
-  convertedValueEl.textContent = getMultipliedExchangeRaate(conversion_rates)
-  valuePrecisionEl.textContent = `1 ${currencyOneEl.value} = ${1 * conversion_rates[currencyTwoEl.value]} ${currencyTwoEl.value}`
+  convertedValueEl.textContent = getMultipliedExchangeRaate( conversion_rates )
+  valuePrecisionEl.textContent = getNotRoundExchangeRate( conversion_rates )
 }
 
 timesCurrencyOneEl.addEventListener('input', () => {
