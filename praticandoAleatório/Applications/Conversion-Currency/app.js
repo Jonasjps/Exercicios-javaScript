@@ -102,6 +102,7 @@ const getMultipliedExchangeRaate = ( conversion_rates ) => {
   const currencyTwo = conversion_rates[currencyTwoEl.value]
   return (timesCurrencyOneEl.value * currencyTwo).toFixed(2)
 }
+
 const getNotRoundExchangeRate = conversion_rates  => {
   const currencyTwo = conversion_rates[currencyTwoEl.value] 
   return  `1 ${currencyOneEl.value} = ${1 * currencyTwo} ${currencyTwoEl.value}`
