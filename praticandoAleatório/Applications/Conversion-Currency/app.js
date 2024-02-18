@@ -35,8 +35,11 @@ const currencyOneEl = document.querySelector('[data-js="currency-one"]')
   return {
     getExchangeRate: () => exchangeRate,
     setExchangeRate: newExchangeRate => {
+      
       if(!newExchangeRate.conversion_rates) {
-        return showAlert({message: 'O objeto precisa conter uma propriedade conversion_rates.'})
+        return showAlert({
+          message: 'O objeto precisa conter uma propriedade conversion_rates.'
+        })
       }
       return exchangeRate = newExchangeRate
     }
@@ -44,8 +47,9 @@ const currencyOneEl = document.querySelector('[data-js="currency-one"]')
  })()
 
 
+ const APIKey = 'c26590d4fd7236521a51fca0'
 
- const getUrl = currency => `https://v6.exchangerate-api.com/v6/c26590d4fd7236521a51fca0/latest/${currency}`
+ const getUrl = currency => `https://v6.exchangerate-api.com/v6/${APIKey}/latest/${currency}`
   
 const messageError = errorType => ({
   'unsupported-code': 'A moeda não existe em nosso banco de dados.',
@@ -66,7 +70,8 @@ const fetchExchangeRates = async (url) => {
     const conversionRates = await response.json()
 
     if (conversionRates.result === 'error') {
-      throw new Error(messageError(conversionRates['error-type']))
+      const getMessageError = messageError(conversionRates['error-type'])
+      throw new Error(messageError(getMessageError))
     }
 
     return conversionRates
@@ -76,28 +81,13 @@ const fetchExchangeRates = async (url) => {
   
 }
 
-const getOptions = (currencySelect, conversion_rates ) => Object.keys(conversion_rates)
-.map(currency => `<option ${currency === currencySelect ? 'selected' : ''}>${currency}</option>`) 
-.join('')
-
-const showInitialInfo = ({ conversion_rates }) => {
-
-  currencyOneEl.innerHTML = getOptions('USD', conversion_rates )
-  currencyTwoEl.innerHTML = getOptions('BRL', conversion_rates )
-  convertedValueEl.textContent = conversion_rates.BRL.toFixed(2)
-  valuePrecisionEl.textContent = `1 USD = ${conversion_rates.BRL} BRL`
-
+const getOptions = (currencySelect, conversion_rates ) => {
+  const setSelectAttribute = currency => currency === currencySelect ? 'selected' : ''
+  return Object.keys(conversion_rates)
+  .map(currency => `<option ${setSelectAttribute(currency)}>${currency}</option>`) 
+  .join('')
 }
 
-const init = async () => {
-  const url = getUrl('USD')
-  const newExchangeRate = await fetchExchangeRates(url)
-  const exchangeRate = state.setExchangeRate(newExchangeRate)
-
-  if(exchangeRate && exchangeRate.conversion_rates) {
-    showInitialInfo(exchangeRate)
-  }
-}
 const getMultipliedExchangeRaate = ( conversion_rates ) => {
   const currencyTwo = conversion_rates[currencyTwoEl.value]
   return (timesCurrencyOneEl.value * currencyTwo).toFixed(2)
@@ -111,6 +101,24 @@ const getNotRoundExchangeRate = conversion_rates  => {
 const showUpdatedRates = ({ conversion_rates }) => {
   convertedValueEl.textContent = getMultipliedExchangeRaate( conversion_rates )
   valuePrecisionEl.textContent = getNotRoundExchangeRate( conversion_rates )
+}
+
+const showInitialInfo = ({ conversion_rates }) => {
+  currencyOneEl.innerHTML = getOptions('USD', conversion_rates )
+  currencyTwoEl.innerHTML = getOptions('BRL', conversion_rates )
+  convertedValueEl.textContent = getMultipliedExchangeRaate( conversion_rates )
+  valuePrecisionEl.textContent = getNotRoundExchangeRate( conversion_rates )
+
+}
+
+const init = async () => {
+  const url = getUrl('USD')
+  const newExchangeRate = await fetchExchangeRates(url)
+  const exchangeRate = state.setExchangeRate(newExchangeRate)
+
+  if(exchangeRate && exchangeRate.conversion_rates) {
+    showInitialInfo(exchangeRate)
+  }
 }
 
 timesCurrencyOneEl.addEventListener('input', () => {
