@@ -2,8 +2,10 @@ const currencyOneEl = document.querySelector('[data-js="currency-one"]')
  const currencyTwoEl = document.querySelector('[data-js="currency-two"]')
  const  currencyContainerEl = document.querySelector('[data-js="currency-container"]')
  const convertedValueEl = document.querySelector('[data-js="converted-value"]')
- const valuePrecisionEl = document.querySelector('[data-js="conversion-precision"]')
- const timesCurrencyOneEl = document.querySelector('[data-js="currency-one-times"]')
+ const valuePrecisionEl = document
+  .querySelector('[data-js="conversion-precision"]')
+ const timesCurrencyOneEl = document
+  .querySelector('[data-js="currency-one-times"]')
 
  const showAlert = err => {
   
@@ -19,10 +21,11 @@ const currencyOneEl = document.querySelector('[data-js="currency-one"]')
   button.setAttribute('type', 'button')
   button.setAttribute('aria-label', 'close')
   
-  
-  button.addEventListener('click', () => {
+  const removeAlert =  () => {
     div.remove()
-  })
+  }
+
+  button.addEventListener('click', removeAlert)
   
   div.appendChild(button)
 
@@ -57,15 +60,15 @@ const messageError = errorType => ({
   'invalid-key': 'A chave da api não é válida.',
   'inaction-account': 'O seu endereço de email não foi confirmado',
   'quota-reached': 'Sua conta alcançou o limite de requests permitidos em seu plano atual.' 
-})[errorType] || 'Não foi obter dados da moeda informada.'
+})[errorType] || 'Não foi possível obter dados da moeda informada.'
 
-const fetchExchangeRates = async (url) => { 
+const fetchExchangeRates = async url => { 
   try{ 
     const response = await fetch(url)
 
-    if(!response.ok) {
-      throw new Error('Sua conexão falhou. Não foi possível obter as informações.')
-    }
+    // if(!response.ok) {
+    //   throw new Error('Sua conexão falhou. Não foi possível obter as informações.')
+    // }
 
     const conversionRates = await response.json()
 
@@ -74,7 +77,8 @@ const fetchExchangeRates = async (url) => {
       throw new Error(messageError(getMessageError))
     }
 
-    return conversionRates
+    return state.setExchangeRate(conversionRates)
+
   }catch (err) {
     showAlert(err)
   }
@@ -85,13 +89,13 @@ const getOptions = (currencySelect, conversion_rates ) => {
   const setSelectAttribute = currency => currency === currencySelect ? 'selected' : ''
   const getOptionsFromOfArray = currency =>
     `<option ${setSelectAttribute(currency)}>${currency}</option>`
-    
+
   return Object.keys(conversion_rates)
   .map(currency => getOptionsFromOfArray(currency)) 
   .join('')
 }
 
-const getMultipliedExchangeRaate = ( conversion_rates ) => {
+const getMultipliedExchangeRaate = conversion_rates => {
   const currencyTwo = conversion_rates[currencyTwoEl.value]
   return (timesCurrencyOneEl.value * currencyTwo).toFixed(2)
 }
@@ -116,29 +120,30 @@ const showInitialInfo = ({ conversion_rates }) => {
 
 const init = async () => {
   const url = getUrl('USD')
-  const newExchangeRate = await fetchExchangeRates(url)
-  const exchangeRate = state.setExchangeRate(newExchangeRate)
+  const exchangeRate = await fetchExchangeRates(url)
 
   if(exchangeRate && exchangeRate.conversion_rates) {
     showInitialInfo(exchangeRate)
   }
 }
-
-timesCurrencyOneEl.addEventListener('input', () => {
+const handleTimesCurrencyOneInput =  () => {
   const { conversion_rates } = state.getExchangeRate()
   convertedValueEl.textContent = getMultipliedExchangeRaate(conversion_rates)
-})
+}
 
-currencyTwoEl.addEventListener('input', () => {
-  const exchangeRate = state.getExchangeRate()
-  showUpdatedRates(exchangeRate)
-})
+const handleCurrencyTwoElInput = () => {
+  const {conversion_rates} = state.getExchangeRate()
+  showUpdatedRates({conversion_rates})
+}
 
-currencyOneEl.addEventListener('input', async e => {
+const handleCurrencyOneElInput = async e => {
   const url = getUrl(e.target.value)
-  const newExchangeRate = await fetchExchangeRates(url)
-  const exchangeRate = state.setExchangeRate(newExchangeRate)
-  showUpdatedRates(exchangeRate)
-})
+  const {conversion_rates} = await fetchExchangeRates(url)
+  showUpdatedRates({ conversion_rates })
+}
+
+timesCurrencyOneEl.addEventListener('input', handleTimesCurrencyOneInput)
+currencyTwoEl.addEventListener('input',  handleCurrencyTwoElInput)
+currencyOneEl.addEventListener('input', handleCurrencyOneElInput)
 
 init()
