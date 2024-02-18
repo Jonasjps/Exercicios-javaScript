@@ -83,8 +83,11 @@ const fetchExchangeRates = async (url) => {
 
 const getOptions = (currencySelect, conversion_rates ) => {
   const setSelectAttribute = currency => currency === currencySelect ? 'selected' : ''
+  const getOptionsFromOfArray = currency =>
+    `<option ${setSelectAttribute(currency)}>${currency}</option>`
+    
   return Object.keys(conversion_rates)
-  .map(currency => `<option ${setSelectAttribute(currency)}>${currency}</option>`) 
+  .map(currency => getOptionsFromOfArray(currency)) 
   .join('')
 }
 
