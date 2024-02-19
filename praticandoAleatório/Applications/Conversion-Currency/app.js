@@ -66,9 +66,9 @@ const fetchExchangeRates = async url => {
   try{ 
     const response = await fetch(url)
 
-    // if(!response.ok) {
-    //   throw new Error('Sua conexão falhou. Não foi possível obter as informações.')
-    // }
+    if(!response.ok) {
+      throw new Error('Sua conexão falhou. Não foi possível obter as informações.')
+    }
 
     const conversionRates = await response.json()
 
