@@ -7,6 +7,21 @@ const currencyContainer = document.querySelector('[data-js="currency-container"]
 
 let internalExchangeRates = {}
 
+// const state = (() => {
+//     let exchangeRate = {}
+
+//     return {
+//         getExchangeRate: () => exchangeRate,
+//         setExchangeRate: newExchangeRate => {
+//             if(!newExchangeRate.conversion_rates) {
+//                 return console.log('O objeto Precisa ter uma propriedade conversion_rates')
+//             }
+//             return exchangeRate = newExchangeRate
+//         }
+//     }
+// })()
+
+
 const getUrl = currency => `https://v6.exchangerate-api.com/v6/c26590d4fd7236521a51fca0/latest/${currency}`
 
 const messageError = errorType => ({
@@ -17,24 +32,8 @@ const messageError = errorType => ({
     'quota-reached': 'Sua conta alcançou o limite de requests permitidos em seu plano atual.' 
 })[errorType] || 'Não foi possível obter dados das moeda informada.'
 
-const fetchExchangeRates = async url => {
-    try{
-        const response = await fetch(url) 
-
-        if(!response.ok) {
-            throw new Error('Sua conexão falhou. Não foi possível obter informações.')
-        }
-        
-        const exchangeRateData = await response.json()
-
-        if(exchangeRateData.result === 'error') {
-            throw new Error(messageError(exchangeRateData['error-type' ]))
-        }
-
-        return exchangeRateData
-
-    }catch (err) {
-        const div = document.createElement('div')
+const showAlert = err => {
+    const div = document.createElement('div')
         const button = document.createElement('button')
 
         div.textContent = err.message
@@ -52,41 +51,64 @@ const fetchExchangeRates = async url => {
             div.remove()
         })
 
+}
+
+const fetchExchangeRates = async url => {
+    try{
+        const response = await fetch(url) 
+
+        if(!response.ok) {
+            throw new Error('Sua conexão falhou. Não foi possível obter informações.')
+        }
+        
+        const exchangeRateData = await response.json()
+
+        if(exchangeRateData.result === 'error') {
+            throw new Error(messageError(exchangeRateData['error-type' ]))
+        }
+
+         return exchangeRateData
+
+    }catch (err) {
+        showAlert(err)
     }
 } 
 
-const init = async () => {
-    const exchangeRateData = await fetchExchangeRates(getUrl('USD'))
-        internalExchangeRates = {...exchangeRateData}
-
+const showIntialInfo = () => {
     const getOptions = currencySelect => Object.keys(internalExchangeRates.conversion_rates)
         .map(currency => `<option ${currency === currencySelect ? 'selected' : ''}>${currency}</option>`)
         .join('')
-       
+        
         currencyOneEl.innerHTML = getOptions('USD')
         currencyTwoEl.innerHTML = getOptions('BRL')
 
         convertedValueEl.textContent = internalExchangeRates.conversion_rates.BRL.toFixed(2)
         conversionPrecisionEl.textContent = `1 USD = ${1 * internalExchangeRates.conversion_rates.BRL} BRL`
+
+}
+
+const init = async () => {
+    internalExchangeRates = {...await fetchExchangeRates(getUrl('USD'))}
+
+    if(internalExchangeRates.conversion_rates) {
+        showIntialInfo()
+    }
+}
+
+showUpdatedRates = () => {
+    convertedValueEl.textContent = (timesCurrencyOneEl.value * internalExchangeRates.conversion_rates[currencyTwoEl.value]).toFixed(2)
+    conversionPrecisionEl.textContent = `1 ${currencyOneEl.value} = ${1 * internalExchangeRates.conversion_rates[currencyTwoEl.value]} ${currencyTwoEl.value}`
 }
 
 timesCurrencyOneEl.addEventListener('input', e => {
     convertedValueEl.textContent = (e.target.value * internalExchangeRates.conversion_rates[currencyTwoEl.value].toFixed(2))
 })
 
-currencyTwoEl.addEventListener('input', e =>  {
-    const currencyTwo = internalExchangeRates.conversion_rates[e.target.value]
+currencyTwoEl.addEventListener('input', showUpdatedRates)
 
-   convertedValueEl.textContent = (timesCurrencyOneEl.value * currencyTwo).toFixed(2) 
-   conversionPrecisionEl.textContent = `1 ${currencyOneEl.value} = ${1 * internalExchangeRates.conversion_rates[currencyTwoEl.value]} ${currencyTwoEl.value}`
-})
-
-currencyOneEl.addEventListener('input', async e => {
-    const exchangeRateData = await fetchExchangeRates(getUrl(e.target.value))
-    internalExchangeRates = {...exchangeRateData}
-
-    convertedValueEl.textContent = (timesCurrencyOneEl.value * internalExchangeRates.conversion_rates[currencyTwoEl.value]).toFixed(2)
-    conversionPrecisionEl.textContent = `1 ${currencyOneEl.value} = ${1 * internalExchangeRates.conversion_rates[currencyTwoEl.value]} ${currencyTwoEl.value}`
+currencyOneEl.addEventListener('input', async e => { 
+    internalExchangeRates = {...await fetchExchangeRates(getUrl(e.target.value))}
+    showUpdatedRates()
 })
 
 init()
