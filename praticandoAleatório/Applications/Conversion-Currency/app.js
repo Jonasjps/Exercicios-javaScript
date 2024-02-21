@@ -3,6 +3,7 @@ const currencyTwoEl = document.querySelector('[data-js="currency-two"]')
 const convertedValueEl = document.querySelector('[data-js="converted-value"]')
 const conversionPrecisionEl = document.querySelector('[data-js="conversion-precision"]')
 const timesCurrencyOneEl = document.querySelector('[data-js="currency-one-times"]')
+const currencyContainer = document.querySelector('[data-js="currency-container"]')
 
 let internalExchangeRates = {}
 
@@ -21,19 +22,36 @@ const fetchExchangeRates = async url => {
         const response = await fetch(url) 
 
         if(!response.ok) {
-            throw new Error('Sua conexão falhou. Não foi possível obter informações da moeda.')
+            throw new Error('Sua conexão falhou. Não foi possível obter informações.')
         }
         
         const exchangeRateData = await response.json()
 
         if(exchangeRateData.result === 'error') {
-            throw new Error(messageError(exchangeRateData['error-type']))
+            throw new Error(messageError(exchangeRateData['error-type' ]))
         }
 
         return exchangeRateData
 
     }catch (err) {
-        alert(err.message)
+        const div = document.createElement('div')
+        const button = document.createElement('button')
+
+        div.textContent = err.message
+        div.classList.add('alert', 'alert-warning', 'alert-dismissible',  'fade', 'show')
+        div.setAttribute('role', 'alert')
+        button.classList.add('btn-close')
+        button.setAttribute('aria-label', 'close')
+        div.appendChild(button)
+        div.style.textAlign = 'center'
+        div.style.margin = 'auto'
+        div.style.width = '500px'
+        currencyContainer.insertAdjacentElement('afterend', div)
+
+        button.addEventListener('click', () => {
+            div.remove()
+        })
+
     }
 } 
 
@@ -49,7 +67,7 @@ const init = async () => {
         currencyTwoEl.innerHTML = getOptions('BRL')
 
         convertedValueEl.textContent = internalExchangeRates.conversion_rates.BRL.toFixed(2)
-        conversionPrecisionEl.textContent = `1 USD = ${internalExchangeRates.conversion_rates.BRL} BRL`
+        conversionPrecisionEl.textContent = `1 USD = ${1 * internalExchangeRates.conversion_rates.BRL} BRL`
 }
 
 timesCurrencyOneEl.addEventListener('input', e => {
