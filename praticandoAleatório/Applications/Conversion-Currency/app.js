@@ -74,7 +74,7 @@ const fetchExchangeRates = async url => {
             throw new Error(messageTypeError)
         }
 
-         return state.setExchangeRate({})
+         return state.setExchangeRate(exchangeRateData)
 
     }catch ({message}) {
         showAlert(message)
@@ -132,8 +132,8 @@ const handleCurrencyTwoInput =  () => {
     showUpdatedRates({conversion_rates})
 }
 
-const handleCurrencyOneInput =  async e => { 
-    const url = getUrl(e.target.value)
+const handleCurrencyOneInput =  async ({target}) => { 
+    const url = getUrl(target.value)
     const {conversion_rates} = await fetchExchangeRates(url)
     showUpdatedRates({conversion_rates})
 }
