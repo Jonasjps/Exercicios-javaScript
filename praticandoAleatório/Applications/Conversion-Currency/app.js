@@ -8,11 +8,11 @@ const timesCurrencyOneEl = document
 const currencyContainer = document
     .querySelector('[data-js="currency-container"]')
 
-const showAlert = err => {
+const showAlert = message => {
     const div = document.createElement('div')
         const button = document.createElement('button')
 
-        div.textContent = err.message
+        div.textContent = message
         div.classList.add('alert', 'alert-warning', 'alert-dismissible',  'fade', 'show')
         div.setAttribute('role', 'alert')
         button.classList.add('btn-close')
@@ -36,9 +36,9 @@ const state = (() => {
         getExchangeRate: () => exchangeRate,
         setExchangeRate: newExchangeRate => {
             if(!newExchangeRate.conversion_rates) {
-                showAlert({
-                    message:'O objeto Precisa ter uma propriedade conversion_rates'
-                })
+                showAlert(
+                    message = 'O objeto Precisa ter uma propriedade conversion_rates'
+                )
                 return
             }
             exchangeRate = newExchangeRate
@@ -74,10 +74,10 @@ const fetchExchangeRates = async url => {
             throw new Error(messageTypeError)
         }
 
-         return state.setExchangeRate(exchangeRateData)
+         return state.setExchangeRate({})
 
-    }catch (err) {
-        showAlert(err)
+    }catch ({message}) {
+        showAlert(message)
     }
 } 
 
