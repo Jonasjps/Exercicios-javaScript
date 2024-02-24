@@ -114,7 +114,7 @@ const showIntialInfo = ({conversion_rates}) => {
 }
 
 const init = async () => {
-    const url = getUrl('USD')
+    const url = getUrl( 'USD' )
     const exchangeRate = await fetchExchangeRates(url)
 
     if(exchangeRate && exchangeRate.conversion_rates) {
