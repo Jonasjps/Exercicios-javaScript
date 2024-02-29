@@ -144,4 +144,4 @@ currencyOneEl.addEventListener('input', handleCurrencyOneInput)
 
 init()
 
-
+//app reafatorado
