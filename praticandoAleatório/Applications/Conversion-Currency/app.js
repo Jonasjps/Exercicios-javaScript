@@ -143,5 +143,3 @@ currencyTwoEl.addEventListener('input', handleCurrencyTwoInput)
 currencyOneEl.addEventListener('input', handleCurrencyOneInput)
 
 init()
-
-//app reafatorado
