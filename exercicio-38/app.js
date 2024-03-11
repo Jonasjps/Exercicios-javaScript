@@ -111,82 +111,47 @@ const getFormattedTime = template => {
     .join(':')
 }
  
-const makeClock = ({template}) => ({
-  template, 
+
+
+class Clock {
+  constructor ({ template }) {
+    this.template = template
+  }
+
   render () {
     const formattedTime = getFormattedTime(this.template)
     console.log(formattedTime)
-  },
+  }
 
   start () {
     const oneSecond = 1000
 
     this.render()
     this.timer = setInterval(() => this.render(), oneSecond)
-  },
+  }
 
   stop () {
     clearInterval(this.timer)
   }
-})
+}
 
-const clock = makeClock({template: 'h:m:s', oneSecond: 1000})
-clock.start()
-clock.stop()
+class ExtendedClock extends Clock {
+  constructor (option) {
+    super(option)
+    
+    const { precision = 1000 } = option
+    this.precision = precision
+  }
 
-const makeExtendes = ({template, precision = 1000}) => ({
-  precision,
-  ...makeClock({template}),
   start () {
     this.render()
-    this.timer = setInterval(() => this.render(), precision)
-  },
-})
+    this.timer = setInterval(() => this.render(), this.precision)
+  }
+}
 
-const extendsClock = makeExtendes({template: 'h:m:s', precision: 1000})
- 
-extendsClock.start()
-extendsClock.stop()
+const clock = new ExtendedClock({ template: 'h:m:s', precision: 1000 })
 
-// class Clock {
-//   constructor ({ template }) {
-//     this.template = template
-//   }
-
-//   render () {
-//     const formattedTime = getFormattedTime(this.template)
-//     console.log(formattedTime)
-//   }
-
-//   start () {
-//     const oneSecond = 1000
-
-//     this.render()
-//     this.timer = setInterval(() => this.render(), oneSecond)
-//   }
-
-//   stop () {
-//     clearInterval(this.timer)
-//   }
-// }
-
-// class ExtendedClock extends Clock {
-//   constructor (option) {
-//     super(option)
-    
-//     const { precision = 1000 } = option
-//     this.precision = precision
-//   }
-
-//   start () {
-//     this.render()
-//     this.timer = setInterval(() => this.render(), this.precision)
-//   }
-// }
-
-// const clock = new ExtendedClock({ template: 'h:m:s', precision: 1000 })
-
-// clock.start()
+clock.start()
 
 /*
   05
@@ -226,32 +191,7 @@ extendsClock.stop()
           CSV que você criou;
         - download, com o valor 'table.csv'.
 */
-const tableTr = document.querySelectorAll('tr')    
-const exportBtn = document.querySelector('[data-js="export-table-btn"]')
 
-const celulasRowText =  ({textContent}) => textContent
-
-const stringCSVFormatede = ({cells}) => Array.from(cells)
-  .map(celulasRowText).join('')
-
-const createCSVString = Array.from(tableTr)
-  .map(stringCSVFormatede).join('\n')
-
-const downloadCSVString = CSVString => {
-  const stringCSVDownload = `data:text/csvcharset=utf-8,${encodeURIComponent(CSVString)}`
-
-  exportBtn.setAttribute('href', stringCSVDownload)
-  exportBtn.setAttribute('download', 'table.csv')
-}
-
-const exportTable =  () => {
-  const CSVString =  createCSVString 
-  downloadCSVString(CSVString)
-  console.log(CSVString)
-      
-}
-
-// exportBtn.addEventListener('click', exportTable)
 
 /*
   06
