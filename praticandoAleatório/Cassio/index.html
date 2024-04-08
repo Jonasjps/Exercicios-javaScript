@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Texto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 200px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        input[type="number"] {
+            width: 100px;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #outputText {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gerador de Texto</h1>
+        <textarea id="inputText" placeholder="Digite o texto inicial..."></textarea>
+        <button onclick="generateText()">Gerar Texto</button>
+        <div id="outputText"></div>
+        <h2>Parâmetros de Treinamento</h2>
+        <label for="numEpochs">Número de Épocas:</label>
+        <input type="number" id="numEpochs" value="10"><br>
+        <label for="learningRate">Taxa de Aprendizado:</label>
+        <input type="number" id="learningRate" value="0.01"><br>
+        <label for="batchSize">Tamanho do Lote:</label>
+        <input type="number" id="batchSize" value="64"><br>
+        <label for="regularizationRate">Taxa de Regularização:</label>
+        <input type="number" id="regularizationRate" value="0.001"><br>
+        <button onclick="trainNeuralNetwork()">Treinar Rede Neural</button>
+    </div>
+
+    <script>
+        // Definição da classe Neuron
+        class Neuron {
+            constructor(numInputs, activationFunction) {
+                this.weights = new Array(numInputs).fill().map(() => Math.random() - 0.5);
+                this.bias = Math.random() - 0.5;
+                this.activationFunction = activationFunction || Neuron.sigmoid;
+            }
+
+            static sigmoid(x) {
+                return 1 / (1 + Math.exp(-x));
+            }
+
+            static relu(x) {
+                return Math.max(0, x);
+            }
+
+            activate(x) {
+                return this.activationFunction(x);
+            }
+
+            feedforward(inputs) {
+                const sum = inputs.reduce((acc, input, i) => acc + input * this.weights[i], 0);
+                const weightedSum = sum + this.bias;
+                return this.activate(weightedSum);
+            }
+        }
+
+        // Definição da classe Layer
+        class Layer {
+            constructor(numNeurons, numInputsPerNeuron, activationFunction) {
+                this.neurons = new Array(numNeurons).fill().map(() => new Neuron(numInputsPerNeuron, activationFunction));
+            }
+
+            feedforward(inputs) {
+                return this.neurons.map(neuron => neuron.feedforward(inputs));
+            }
+        }
+
+        // Definição da classe NeuralNetwork
+        class NeuralNetwork {
+            constructor(numInputs, numNeuronsPerLayer, numLayers, activationFunction) {
+                this.layers = [];
+                for (let i = 0; i < numLayers; i++) {
+                    this.layers.push(new Layer(numNeuronsPerLayer, numInputs, activationFunction));
+                    numInputs = numNeuronsPerLayer;
+                }
+                this.layers.push(new Layer(1, numNeuronsPerLayer, activationFunction)); // Camada de saída com um neurônio
+            }
+
+            feedforward(inputs) {
+                let outputs = inputs;
+                for (const layer of this.layers) {
+                    outputs = layer.feedforward(outputs);
+                }
+                return outputs[0]; // Saída da última camada (assumindo uma única saída)
+            }
+
+            // Método de treinamento
+            train(data, learningRate, epochs, batchSize, regularizationRate, validationData) {
+                const numExamples = data.length;
+                for (let epoch = 0; epoch < epochs; epoch++) {
+                    this.shuffle(data);
+                    for (let i = 0; i < numExamples; i += batchSize) {
+                        const batch = data.slice(i, i + batchSize);
+                        for (const example of batch) {
+                            const inputs = example.inputs;
+                            const target = example.target;
+                            const output = this.feedforward(inputs);
+                            const lossGradient = output - target;
+                            const regularization = this.calculateRegularization(regularizationRate);
+                            for (const layer of this.layers) {
+                                for (const neuron of layer.neurons) {
+                                    for (let i = 0; i < neuron.weights.length; i++) {
+                                        const weightGradient = neuron.inputs[i] * lossGradient / batchSize + regularization;
+                                        neuron.weights[i] -= learningRate * weightGradient;
+                                    }
+                                    const biasGradient = lossGradient / batchSize;
+                                    neuron.bias -= learningRate * biasGradient;
+                                }
+                            }
+                        }
+                    }
+                    if (validationData) {
+                        const validationLoss = this.calculateValidationLoss(validationData, regularizationRate);
+                        console.log(`Época ${epoch + 1}: Perda na Validação = ${validationLoss}`);
+                    }
+                }
+            }
+
+            // Função para calcular a perda de regularização L2
+            calculateRegularization(regularizationRate) {
+                let regularization = 0;
+                for (const layer of this.layers) {
+                    for (const neuron of layer.neurons) {
+                        for (const weight of neuron.weights) {
+                            regularization += 0.5 * regularizationRate * Math.pow(weight, 2);
+                        }
+                    }
+                }
+                return regularization;
+            }
+
+            // Função para calcular a perda média no conjunto de validação
+            calculateValidationLoss(validationData, regularizationRate) {
+                let totalLoss = 0;
+                for (const example of validationData) {
+                    const inputs = example.inputs;
+                    const target = example.target;
+                    const output = this.feedforward(inputs);
+                    const loss = Math.pow(output - target, 2) + this.calculateRegularization(regularizationRate);
+                    totalLoss += loss;
+                }
+                return totalLoss / validationData.length;
+            }
+
+            // Função para embaralhar um array
+            shuffle(array) {
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]];
+                }
+            }
+        }
+
+        // Definição da classe TextGenerator
+        class TextGenerator {
+            constructor() {
+                this.characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789,.!? ';
+                this.numCharacters = this.characters.length;
+                this.sequenceLength = 100;
+                this.neuralNetwork = this.createNeuralNetwork();
+            }
+
+            createNeuralNetwork() {
+                const numInputs = this.numCharacters * this.sequenceLength;
+                const numNeuronsPerLayer = 100;
+                const numLayers = 2;
+                return new NeuralNetwork(numInputs, numNeuronsPerLayer, numLayers);
+            }
+
+            generateText(seedText) {
+                let inputSequence = this.encodeText(seedText);
+                let outputText = seedText;
+
+                for (let i = 0; i < 200; i++) {
+                    const prediction = this.neuralNetwork.feedforward(inputSequence);
+                    const nextCharacterIndex = Math.floor(Math.random() * this.numCharacters);
+                    const nextCharacter = this.characters[nextCharacterIndex];
+                    outputText += nextCharacter;
+                    inputSequence = this.updateInputSequence(inputSequence, nextCharacterIndex);
+                }
+
+                return outputText;
+            }
+
+            encodeText(text) {
+                const encodedSequence = new Array(this.sequenceLength * this.numCharacters).fill(0);
+                for (let i = 0; i < text.length; i++) {
+                    const charIndex = this.characters.indexOf(text[i]);
+                    if (charIndex !== -1) {
+                        encodedSequence[i * this.numCharacters + charIndex] = 1;
+                    }
+                }
+                return encodedSequence;
+            }
+
+            updateInputSequence(inputSequence, nextCharacterIndex) {
+                const newSequence = inputSequence.slice(this.numCharacters);
+                const lastIndex = newSequence.length;
+                newSequence[lastIndex + nextCharacterIndex] = 1;
+                return newSequence;
+            }
+        }
+
+        // Função para gerar texto
+        function generateText() {
+            const inputText = document.getElementById('inputText').value;
+            const textGenerator = new TextGenerator();
+            const outputText = textGenerator.generateText(inputText);
+            document.getElementById('outputText').innerText = outputText;
+        }
+
+        // Função para treinar a rede neural
+        function trainNeuralNetwork() {
+            // Aqui é onde você deve definir ou carregar seus dados de treinamento
+            const data = []; // Defina seus dados de treinamento aqui
+
+            const inputText = document.getElementById('inputText').value;
+            const textGenerator = new TextGenerator();
+            const numEpochs = parseInt(document.getElementById('numEpochs').value);
+            const learningRate = parseFloat(document.getElementById('learningRate').value);
+            const batchSize = parseInt(document.getElementById('batchSize').value);
+            const regularizationRate = parseFloat(document.getElementById('regularizationRate').value);
+            const validationData = null; // Adicione dados de validação, se disponíveis
+            textGenerator.neuralNetwork.train(data, learningRate, numEpochs, batchSize, regularizationRate, validationData);
+            console.log('Treinamento concluído!');
+        }
+    </script>
+</body>
+</html>
