@@ -11,4 +11,13 @@ console.log(prim) //correnponde ao numero 1
 const obj = { a: 1, b: 2}
 const {a, b} = obj
 
-console.log(a,b) // tem como resultado os valores de 1 e 2
+console.log(a,b) // tem como resultado os valores de 1
+
+const personsFamily = ['Jonas', 'Virginia', 'Marley', 'Elizabeth', 'Jeferson', 'Jessica']
+
+console.log(personsFamily)
+
+
+const [Jonas, , Marley, , , Ultimo] = personsFamily
+
+console.log(Jonas, Marley, Ultimo)
