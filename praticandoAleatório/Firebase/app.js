@@ -13,11 +13,27 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app)
+
 getDocs(collection(db, 'games'))
     .then(querySnapshot => {
-        querySnapshot.docs.forEach(doc => console.log(doc.data()))
-        // querySnapshot.forEach(doc => console.log(doc.data())) 
-    })
+        const gamesLis = querySnapshot.docs.reduce((acc ,doc) => {
+          const {title, developerBy, creatrdAt} = doc.data()
+          acc += `<li class="my-4">
+            <h5>${title}</h5>
+
+            <ul>
+              <li>Desenvolvido por ${developerBy}</li>
+              <li>Adicinado no banco em ${creatrdAt}</li>
+            </ul>
+
+          </li>`
+            
+          return acc
+        }, '')
+
+        const gamesList = document.querySelector('[data-js="games-lis"]')
+        gamesList.innerHTML = gamesLis
+      })
     .catch(console.log)
 
 
