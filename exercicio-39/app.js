@@ -41,7 +41,16 @@ const sum = (...params) => params.reduce((acc, num) =>  acc + num, 0)
 */
 const accordion = document.querySelector('[data-js="accordion"]')
 
-accordion.addEventListener('click', event => {
+const closeAccordionItem = accordioHeaderToByCose => {
+  const accordionHeaderId = accordioHeaderToByCose.dataset.accordionHeader
+    const accordionBodyToByClose = 
+      document.querySelector(`[data-accodion-body="${accordionHeaderId}"]`)
+    
+    accordioHeaderToByCose.classList.toggle('active')
+    accordionBodyToByClose.classList.remove('active')
+}
+
+handleAccordionClick =  event => {
   const accordioHeaderId = event.target.dataset.accordionHeader
   const clickedAccordionHeader = 
     document.querySelector(`[data-accordion-header="${accordioHeaderId}"]`)
@@ -52,18 +61,19 @@ accordion.addEventListener('click', event => {
     .filter(accordionHeader => accordionHeader !== clickedAccordionHeader)
     .find(accordionHeader => accordionHeader.classList.contains('active') )
 
+  if(!event.target.dataset.accordionHeader) {
+    return 
+  }
+
   if(accordioHeaderToByCose) {
-    const accordionHeaderId = accordioHeaderToByCose.dataset.accordionHeader
-    const accordionBodyToByClose = 
-      document.querySelector(`[data-accodion-body="${accordionHeaderId}"]`)
-    
-    accordioHeaderToByCose.classList.toggle('active')
-    accordionBodyToByClose.classList.remove('active')
+    closeAccordionItem(accordioHeaderToByCose)
   }
 
     clickedAccordionHeader.classList.toggle('active')
     accordionItemToBeOpened.classList.toggle('active')
-})
+}
+
+accordion.addEventListener('click', handleAccordionClick)
 
 /*
   03
