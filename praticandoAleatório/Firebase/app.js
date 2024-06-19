@@ -17,13 +17,13 @@ const db = getFirestore(app)
 getDocs(collection(db, 'games'))
     .then(querySnapshot => {
         const gamesLis = querySnapshot.docs.reduce((acc ,doc) => {
-          const {title, developerBy, creatrdAt} = doc.data()
+          const {title, developedBy, createdAt} = doc.data()
           acc += `<li class="my-4">
             <h5>${title}</h5>
 
             <ul>
-              <li>Desenvolvido por ${developerBy}</li>
-              <li>Adicinado no banco em ${creatrdAt}</li>
+              <li>Desenvolvido por ${developedBy}</li>
+              <li>Adicinado no banco em ${createdAt.toDate()}</li>
             </ul>
 
           </li>`
