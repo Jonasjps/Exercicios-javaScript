@@ -39,41 +39,9 @@ const sum = (...params) => params.reduce((acc, num) =>  acc + num, 0)
   - Para que o item do accordion seja "ativado" ao clicar, faça um toogle 
     utilizando a classe "active".
 */
-const accordion = document.querySelector('[data-js="accordion"]')
 
-const closeAccordionItem = accordioHeaderToByCose => {
-  const accordionHeaderId = accordioHeaderToByCose.dataset.accordionHeader
-    const accordionBodyToByClose = 
-      document.querySelector(`[data-accodion-body="${accordionHeaderId}"]`)
-    
-    accordioHeaderToByCose.classList.toggle('active')
-    accordionBodyToByClose.classList.remove('active')
-}
+// Código do Accordion 
 
-handleAccordionClick =  event => {
-  const accordioHeaderId = event.target.dataset.accordionHeader
-  const clickedAccordionHeader = 
-    document.querySelector(`[data-accordion-header="${accordioHeaderId}"]`)
-  const accordionItemToBeOpened = 
-    document.querySelector(`[data-accodion-body="${accordioHeaderId}"]`)
-  const accordioHeaderToByCose = Array
-    .from(document.querySelectorAll('[data-js="accordion-header"]'))
-    .filter(accordionHeader => accordionHeader !== clickedAccordionHeader)
-    .find(accordionHeader => accordionHeader.classList.contains('active') )
-
-  if(!event.target.dataset.accordionHeader) {
-    return 
-  }
-
-  if(accordioHeaderToByCose) {
-    closeAccordionItem(accordioHeaderToByCose)
-  }
-
-    clickedAccordionHeader.classList.toggle('active')
-    accordionItemToBeOpened.classList.toggle('active')
-}
-
-accordion.addEventListener('click', handleAccordionClick)
 
 /*
   03
