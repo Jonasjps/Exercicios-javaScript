@@ -41,9 +41,31 @@ const sum = (...params) => params.reduce((acc, num) =>  acc + num, 0)
 */
 
 // Código do Accordion 
+const accordion = document.querySelector('[data-js="accordion"]')
 
+accordion.addEventListener('click', event => {
+  const accordionHeaderId = event.target.dataset.accordionHeader 
+  const cleckedAccordionHeader =
+    document.querySelector(`[data-accordion-header="${accordionHeaderId}"]`)
+  const accordionItemToByOpened = 
+    document.querySelector(`[data-accordion-body="${accordionHeaderId}"]`) 
+  const accordionHeaderToByClosed = Array
+    .from(document.querySelectorAll('[data-js="accordion-header"]'))
+    .filter(accordionHeader => accordionHeader !== cleckedAccordionHeader)
+    .find(accordionHeader => accordionHeader.classList.contains('active'))
 
+    if(accordionHeaderToByClosed) {
+      const accordionHeaderId = accordionHeaderToByClosed.dataset.accordionHeader
+      const accordionBodyToByClosed = document.querySelector(`[data-accodion-body="${accordionHeaderId}"]`)
 
+      accordionBodyToByClosed.classList.remove('active')
+      accordionHeaderToByClosed.classList.remove('active')
+    }
+
+    cleckedAccordionHeader.classList.toggle('active')
+    accordionItemToByOpened.classList.toggle('active')
+    console.log(accordionHeaderToByClosed)
+})
 
 /*
   03
