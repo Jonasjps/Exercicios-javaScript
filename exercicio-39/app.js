@@ -48,14 +48,14 @@ const closeAccordionItem = accordionHeaderToByClose => {
   const accordionBodyToByClose =
    document.querySelector(`[data-accodion-body="${accordionHeaderId}"]`)
   
-  accordionBodyToByClose.classList.toggle('active')
   accordionBodyToByClose.classList.remove('active')
+  accordionHeaderToByClose.classList.remove('active')
 }
 
 hendleAccordionClick =  event => {
   const accordionHeaderId = event.target.dataset.accordionHeader
   const clickedAccordionHeader = 
-    document.querySelector(`[data-accordion-header="${accordionHeaderId}"]`)
+    document.querySelector(`[data-accordion-header="${accordionHeaderId}"]`)//body
   const accordionItemToBeOpened = 
     document.querySelector(`[data-accodion-body="${accordionHeaderId}"]`)
   const accordionHeaderToByClose = Array
