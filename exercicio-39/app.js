@@ -40,31 +40,35 @@ const sum = (...params) => params.reduce((acc, num) =>  acc + num, 0)
     utilizando a classe "active".
 */
 
-// Código do Accordion 
-const accordion = document.querySelector('[data-js="accordion"]')
+// Código do Accordion, porem sem o refactoring
+const accordion = document.querySelector('[data-js="accordion"]')  
 
 accordion.addEventListener('click', event => {
-  const accordionHeaderId = event.target.dataset.accordionHeader 
-  const cleckedAccordionHeader =
+  const accordionHeaderId = event.target.dataset.accordionHeader
+  const clickedAccordionHeader = 
     document.querySelector(`[data-accordion-header="${accordionHeaderId}"]`)
-  const accordionItemToByOpened = 
-    document.querySelector(`[data-accordion-body="${accordionHeaderId}"]`) 
-  const accordionHeaderToByClosed = Array
-    .from(document.querySelectorAll('[data-js="accordion-header"]'))
-    .filter(accordionHeader => accordionHeader !== cleckedAccordionHeader)
+  const accordionItemToBeOpened = 
+    document.querySelector(`[data-accodion-body="${accordionHeaderId}"]`)
+  const accordionHeaderToByClose = Array
+    .from(document.querySelectorAll(`[data-js="accordion-header"]`))
+    .filter(accordionHeader => accordionHeader !== clickedAccordionHeader)
     .find(accordionHeader => accordionHeader.classList.contains('active'))
 
-    if(accordionHeaderToByClosed) {
-      const accordionHeaderId = accordionHeaderToByClosed.dataset.accordionHeader
-      const accordionBodyToByClosed = document.querySelector(`[data-accodion-body="${accordionHeaderId}"]`)
-
-      accordionBodyToByClosed.classList.remove('active')
-      accordionHeaderToByClosed.classList.remove('active')
+    if(!event.target.dataset.accordionHeader) {
+      return
     }
 
-    cleckedAccordionHeader.classList.toggle('active')
-    accordionItemToByOpened.classList.toggle('active')
-    console.log(accordionHeaderToByClosed)
+    if(accordionHeaderToByClose) {
+      const accordionHeaderId = accordionHeaderToByClose.dataset.accordionHeader
+      const accordionBodyToByClose =
+       document.querySelector(`[data-accodion-body="${accordionHeaderId}"]`)
+
+      accordionBodyToByClose.classList.remove('active')
+      accordionHeaderToByClose.classList.remove('active')
+    }
+
+  clickedAccordionHeader.classList.toggle('active')      
+  accordionItemToBeOpened.classList.toggle('active')
 })
 
 /*
