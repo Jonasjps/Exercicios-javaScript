@@ -41,62 +41,6 @@ const sum = (...params) => params.reduce((acc, num) =>  acc + num, 0)
 */
 
 // Código do Accordion, porem sem o refactoring
-
-
-
-
-
-
-
-
-
-const accordion = document.querySelector('[data-js="accordion"]')
-
-accordion.addEventListener('click', event => {
-  const accordionHeaderId = event.target.dataset.accordionHeader
-  console.log(accordionHeaderId)
-  const clickedAccordionHeader =
-    document.querySelector(`[data-accordion-header="${accordionHeaderId}"]`)
-    console.log(clickedAccordionHeader)
-  const accordionItemToByOpened =
-    document.querySelector(`[data-accordion-body="${accordionHeaderId}"]`)
-  const accordionHeaderToByClosed = Array
-    .from(document.querySelectorAll('[data-js="accordion-header"]'))
-    .filter(accordionHeader => accordionHeader !== clickedAccordionHeader)
-    .find(accordionHeader => accordionHeader.classList.contains('active'))
-
-    if(!event.target.dataset.accordionHeader) {
-      return
-    }
-
-    if(accordionHeaderToByClosed) {
-      const accordionHeaderId = accordionHeaderToByClosed.dataset.accordionHeader
-      const accordionBodyToByClosed = document.querySelector(`[data-accordion-body="${accordionHeaderId}"]`)
-
-      accordionHeaderToByClosed.classList.remove('active')
-      accordionBodyToByClosed.classList.remove('active')
-    }
-    console.log(accordionHeaderToByClosed)
-
-  clickedAccordionHeader.classList.toggle('active')
-  accordionItemToByOpened.classList.toggle('active')
-
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
   03
 
