@@ -41,21 +41,6 @@ const sum = (...params) => params.reduce((acc, num) =>  acc + num, 0)
 */
 
 // Código do Accordion, porem sem o refactoring
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const accordion = document.querySelector('[data-js="accordion"]')
 
 accordion.addEventListener('click', event => {
