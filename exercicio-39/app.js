@@ -49,7 +49,25 @@ accordion.addEventListener('click', event => {
     document.querySelector(`[data-accordion-body="${accordionHeaderId}"]`)
   const clickedAccordionToByclosed = 
     document.querySelector(`[data-accordion-header="${accordionHeaderId}"]`)
-    console.log(Array.from(document.querySelectorAll(`[data-js=accordion-header]`)))
+    const accordionHeaderToByClosed = Array
+      .from(document.querySelectorAll(`[data-js=accordion-header]`))
+      .filter(accordionHeader => accordionHeader !== clickedAccordionToByclosed)
+      .find(accordionHeader => accordionHeader.classList.contains('active'))
+
+      if(!event.target.dataset.accordionHeader) {
+        return
+      }
+
+      if(accordionHeaderToByClosed) {
+        const accordionHeaderId = accordionHeaderToByClosed.dataset.accordionHeader
+        console.log(accordionHeaderId)
+        const accordionBodyToBeClosed = document.querySelector(`[data-accordion-body="${accordionHeaderId}"]`)
+        console.log(accordionBodyToBeClosed)
+        
+        accordionHeaderToByClosed.classList.remove('active')
+        accordionBodyToBeClosed.classList.remove('active')
+      }
+
     accordionBodyToByOpened.classList.toggle('active')
     clickedAccordionToByclosed.classList.toggle('active')
 })
