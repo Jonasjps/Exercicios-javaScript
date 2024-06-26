@@ -42,8 +42,7 @@ const sum = (...params) => params.reduce((acc, num) =>  acc + num, 0)
 
 // Código do Accordion, porem sem o refactoring
 const accordion = document.querySelector('[data-js="accordion"]')
-
-accordion.addEventListener('click', event => {
+const handleAccordionHeader =  event => {
   const accordionHeaderId = event.target.dataset.accordionHeader 
   const accordionHeaderToByOpened =
     document.querySelector(`[data-accordion-body="${accordionHeaderId}"]`)
@@ -59,17 +58,23 @@ accordion.addEventListener('click', event => {
   }
 
   if(accordionHeaderToByClosed){
-    const accordionHeaderId = accordionHeaderToByClosed.dataset.accordionHeader
+    closeAccordioHeader(accordionHeaderToByClosed)
+  }
+
+  accordionHeaderToByOpened.classList.toggle('active')
+  clickedAccordionHeader.classList.toggle('active')
+}
+
+const closeAccordioHeader = accordionHeaderToByClosed => {
+  const accordionHeaderId = accordionHeaderToByClosed.dataset.accordionHeader
     const accordionBodyToByClosed = 
       document.querySelector(`[data-accordion-body="${accordionHeaderId}"]`)
     
     accordionBodyToByClosed.classList.remove('active')
     accordionHeaderToByClosed.classList.remove('active')
-  }
+}
 
-  accordionHeaderToByOpened.classList.toggle('active')
-  clickedAccordionHeader.classList.toggle('active')
-})
+accordion.addEventListener('click', handleAccordionHeader)
 
 
 
