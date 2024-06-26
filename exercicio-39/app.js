@@ -115,8 +115,29 @@ const volkswagenProto = {
   }
 }
 
-// const amarok = carMaker({ name: 'Amarok', color: 'preta' })
-// const jetta = carMaker({ name: 'Jetta', color: 'prata' })
+const corollaProto = {
+  logCarInfo () {
+    console.log(`Toyota ${this.name}, cor ${this.color}.`)
+  }
+}
+
+const carMaker = ({name, color}, carProto) => {
+  const car = Object.create(carProto)
+
+  car.name = name
+  car.color = color
+  return car
+}
+
+const amarok = carMaker({ name: 'Amarok', color: 'preta' }, volkswagenProto)
+const jetta = carMaker({ name: 'Jetta', color: 'prata' }, volkswagenProto)
+const corolla = carMaker({ name: 'Corolla', color: 'preta'}, corollaProto)
+
+console.log(volkswagenProto.isPrototypeOf(amarok) && volkswagenProto.isPrototypeOf(jetta))
+
+amarok.logCarInfo()
+jetta.logCarInfo()
+corolla.logCarInfo()
 
 /*
   04
