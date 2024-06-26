@@ -57,10 +57,11 @@ accordion.addEventListener('click', event => {
   if(!event.target.dataset.accordionHeader) {
     return
   }
-  
+
   if(accordionHeaderToByClosed){
     const accordionHeaderId = accordionHeaderToByClosed.dataset.accordionHeader
-    const accordionBodyToByClosed = document.querySelector(`[data-accordion-body="${accordionHeaderId}"]`)
+    const accordionBodyToByClosed = 
+      document.querySelector(`[data-accordion-body="${accordionHeaderId}"]`)
     
     accordionBodyToByClosed.classList.remove('active')
     accordionHeaderToByClosed.classList.remove('active')
