@@ -111,13 +111,13 @@ accordion.addEventListener('click', handleAccordionHeader)
 
 const volkswagenProto = {
   logCarInfo () {
-    console.log(`Volkswagen ${this.name}, cor ${this.color}.`)
+    // console.log(`Volkswagen ${this.name}, cor ${this.color}.`)
   }
 }
 
 const corollaProto = {
   logCarInfo () {
-    console.log(`Toyota ${this.name}, cor ${this.color}.`)
+    // console.log(`Toyota ${this.name}, cor ${this.color}.`)
   }
 }
 
@@ -133,7 +133,7 @@ const amarok = carMaker({ name: 'Amarok', color: 'preta' }, volkswagenProto)
 const jetta = carMaker({ name: 'Jetta', color: 'prata' }, volkswagenProto)
 const corolla = carMaker({ name: 'Corolla', color: 'preta'}, corollaProto)
 
-console.log(volkswagenProto.isPrototypeOf(amarok) && volkswagenProto.isPrototypeOf(jetta))
+// console.log(volkswagenProto.isPrototypeOf(amarok) && volkswagenProto.isPrototypeOf(jetta))
 
 amarok.logCarInfo()
 jetta.logCarInfo()
@@ -155,9 +155,12 @@ corolla.logCarInfo()
 
 const aString = 'O Curso de JavaScript Roger Melo funciona com turmas fechadas, abertas poucas vezes e é focado em quem ainda não é fluente em JS. Ou seja, quem não consegue construir aplicações web com JavaScript puro.'
 
+const getIndexesOfCharacter = (string, character) =>  
+    [...string].reduce((acc, item, index) => 
+      item.toLowerCase() === character.toLowerCase() ? [...acc, index] : acc,[])
 
-
-// console.log(getIndexesOfCharacter(aString, 'b'))
+console.log(getIndexesOfCharacter(aString, 'b'))
+console.log(getIndexesOfCharacter(aString, 'o'))
 
 /*
   05
