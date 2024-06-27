@@ -41,41 +41,41 @@ const sum = (...params) => params.reduce((acc, num) =>  acc + num, 0)
 */
 
 // Código do Accordion, porem sem o refactoring
-const accordion = document.querySelector('[data-js="accordion"]')
+// const accordion = document.querySelector('[data-js="accordion"]')
 
-const handleAccordionHeader =  event => {
-  const accordionHeaderId = event.target.dataset.accordionHeader 
-  const accordionHeaderToByOpened =
-    document.querySelector(`[data-accordion-body="${accordionHeaderId}"]`)
-   const clickedAccordionHeader =
-    document.querySelector(`[data-accordion-header="${accordionHeaderId}"]`)
-  const accordionHeaderToByClosed = Array
-    .from(document.querySelectorAll('[data-js="accordion-header"]'))
-    .filter(accordionHeader => accordionHeader !== clickedAccordionHeader)
-    .find(accordionHeader => accordionHeader.classList.contains('active'))
+// const handleAccordionHeader =  event => {
+//   const accordionHeaderId = event.target.dataset.accordionHeader 
+//   const accordionHeaderToByOpened =
+//     document.querySelector(`[data-accordion-body="${accordionHeaderId}"]`)
+//    const clickedAccordionHeader =
+//     document.querySelector(`[data-accordion-header="${accordionHeaderId}"]`)
+//   const accordionHeaderToByClosed = Array
+//     .from(document.querySelectorAll('[data-js="accordion-header"]'))
+//     .filter(accordionHeader => accordionHeader !== clickedAccordionHeader)
+//     .find(accordionHeader => accordionHeader.classList.contains('active'))
 
-  if(!event.target.dataset.accordionHeader) {
-    return
-  }
+//   if(!event.target.dataset.accordionHeader) {
+//     return
+//   }
 
-  if(accordionHeaderToByClosed){
-    closeAccordioHeader(accordionHeaderToByClosed)
-  }
+//   if(accordionHeaderToByClosed){
+//     closeAccordioHeader(accordionHeaderToByClosed)
+//   }
 
-  accordionHeaderToByOpened.classList.toggle('active')
-  clickedAccordionHeader.classList.toggle('active')
-}
+//   accordionHeaderToByOpened.classList.toggle('active')
+//   clickedAccordionHeader.classList.toggle('active')
+// }
 
-const closeAccordioHeader = accordionHeaderToByClosed => {
-  const accordionHeaderId = accordionHeaderToByClosed.dataset.accordionHeader
-    const accordionBodyToByClosed = 
-      document.querySelector(`[data-accordion-body="${accordionHeaderId}"]`)
+// const closeAccordioHeader = accordionHeaderToByClosed => {
+//   const accordionHeaderId = accordionHeaderToByClosed.dataset.accordionHeader
+//     const accordionBodyToByClosed = 
+//       document.querySelector(`[data-accordion-body="${accordionHeaderId}"]`)
     
-    accordionBodyToByClosed.classList.remove('active')
-    accordionHeaderToByClosed.classList.remove('active')
-}
+//     accordionBodyToByClosed.classList.remove('active')
+//     accordionHeaderToByClosed.classList.remove('active')
+// }
 
-accordion.addEventListener('click', handleAccordionHeader)
+// accordion.addEventListener('click', handleAccordionHeader)
 
 
 
@@ -159,8 +159,8 @@ const getIndexesOfCharacter = (string, character) =>
     [...string].reduce((acc, item, index) => 
       item.toLowerCase() === character.toLowerCase() ? [...acc, index] : acc,[])
 
-console.log(getIndexesOfCharacter(aString, 'b'))
-console.log(getIndexesOfCharacter(aString, 'o'))
+// console.log(getIndexesOfCharacter(aString, 'b'))
+// console.log(getIndexesOfCharacter(aString, 'o'))
 
 /*
   05
