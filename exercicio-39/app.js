@@ -204,37 +204,37 @@ const getIndexesOfCharacter = (string, character) =>
       Se essa condição for verdadeira, faça messageIndex receber o valor que 
       ela já tem + 1 e faça characterIndex receber 0.
 */
-const typing = document.querySelector('[data-js="typing"]')
+// const typing = document.querySelector('[data-js="typing"]')
 
-const messages = ['Sou fluente em JS', 'Construo aplicações web com JS puro.']
+// const messages = ['Sou fluente em JS', 'Construo aplicações web com JS puro.']
 
-let messageIndex = 0
-let characterIndex = 0
-let currentMessage = ''
-let currentCharacters = ''
+// let messageIndex = 0
+// let characterIndex = 0
+// let currentMessage = ''
+// let currentCharacters = ''
 
 
-const type = () => {
-  const shouldTypeFirstMessage = messageIndex === messages.length
+// const type = () => {
+//   const shouldTypeFirstMessage = messageIndex === messages.length
   
-  if(shouldTypeFirstMessage){
-    messageIndex = 0
-  }
+//   if(shouldTypeFirstMessage){
+//     messageIndex = 0
+//   }
 
-  currentMessage = messages[messageIndex]
-  currentCharacters = currentMessage.slice(0, characterIndex++)
-  typing.textContent = currentCharacters
+//   currentMessage = messages[messageIndex]
+//   currentCharacters = currentMessage.slice(0, characterIndex++)
+//   typing.textContent = currentCharacters
 
-  const shouldChangeMessageToBeTyped =
-    currentCharacters.length === currentMessage.length
+//   const shouldChangeMessageToBeTyped =
+//     currentCharacters.length === currentMessage.length
 
-  if( shouldChangeMessageToBeTyped ){
-    messageIndex++
-    characterIndex = 0
-  }
-}
+//   if( shouldChangeMessageToBeTyped ){
+//     messageIndex++
+//     characterIndex = 0
+//   }
+// }
 
-setInterval(type, 200)
+// setInterval(type, 200)
 
 
 /*
