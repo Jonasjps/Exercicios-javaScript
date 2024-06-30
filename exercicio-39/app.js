@@ -257,6 +257,7 @@ const wrongDataFormat = [
   'azul-XG',
   'azul-P'
 ]
+
 const conversionArrayOfObject = wrongDataFormat.reduce((acc, colorAndSize) => {
   const [color, size]= colorAndSize.split('-')
   acc[color] = acc[color] || {}
@@ -267,7 +268,7 @@ const conversionArrayOfObject = wrongDataFormat.reduce((acc, colorAndSize) => {
 }, {})
 
 
-console.log(conversionArrayOfObject)
+// console.log(conversionArrayOfObject)
 /*
   {
     preto: {
