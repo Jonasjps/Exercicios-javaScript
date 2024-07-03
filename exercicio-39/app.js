@@ -223,7 +223,7 @@ const type = () => {
   
   currentMessage = messages[messageIndex]
   currentCharacters = currentMessage.slice(0, characterIndex++)
-  typing.textContent = currentCharacters
+  // typing.textContent = currentCharacters
   
   const shouldChangeMessageToBeTyped =
     currentCharacters.length === currentMessage.length
@@ -255,10 +255,18 @@ const wrongDataFormat = [
   'azul-P'
 ]
 
+const conversionOfArrayForObject = wrongDataFormat.reduce((acc, colorAndSize) => {
+  const [color, size ]= colorAndSize.split('-')
+  acc[color] = acc[color] || {}
+  acc[color][size] = acc[color][size] || 0
+  acc[color][size] += 1
+  return acc
+}, {})
+
+console.log(conversionOfArrayForObject)
 
 
 
-// console.log(conversionArrayOfObject)
 /*
   {
     preto: {
