@@ -214,15 +214,21 @@ let currentMessage = ''
 let currentCharacters = ''
 
 const type = () => {
-  if(messageIndex === messages.length) {
+
+  const shouldTypeFirstMessage = messageIndex === messages.length
+  
+  if(shouldTypeFirstMessage ) {
     messageIndex = 0
   }
-
+  
   currentMessage = messages[messageIndex]
   currentCharacters = currentMessage.slice(0, characterIndex++)
   typing.textContent = currentCharacters
+  
+  const shouldChangeMessageToBeTyped =
+    currentCharacters.length === currentMessage.length
 
-  if(currentCharacters.length === currentMessage.length){
+  if(shouldChangeMessageToBeTyped){
     messageIndex += 1
     characterIndex = 0
   }
