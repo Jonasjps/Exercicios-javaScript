@@ -204,7 +204,25 @@ const getIndexesOfCharacter = (string, character) =>
       Se essa condição for verdadeira, faça messageIndex receber o valor que 
       ela já tem + 1 e faça characterIndex receber 0.
 */
+const typing = document.querySelector('[data-js="typing"]')
 
+const messages = ['sou fluente em JS.', 'construo aplicações web com JS puro.']
+
+let messageIndex = 0
+let characterIndex = 0
+let currentMessage = ''
+let currentCharacters = ''
+
+const type = () => {
+  if(messageIndex === messages.length) {
+    messageIndex = 0
+  }
+
+  currentMessage = messages[messageIndex]
+  currentCharacters = currentMessage.slice(0, characterIndex++)
+  typing.textContent = currentCharacters
+}
+setInterval(type, 200)
 /*
   06
 
