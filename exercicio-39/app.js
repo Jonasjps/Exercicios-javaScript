@@ -221,6 +221,11 @@ const type = () => {
   currentMessage = messages[messageIndex]
   currentCharacters = currentMessage.slice(0, characterIndex++)
   typing.textContent = currentCharacters
+
+  if(currentCharacters.length === currentMessage.length){
+    messageIndex += 1
+    characterIndex = 0
+  }
 }
 setInterval(type, 200)
 /*
