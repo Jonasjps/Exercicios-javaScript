@@ -1,5 +1,5 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.0.1/firebase-app.js'
-import { getFirestore, collection, getDocs, addDoc, serverTimestamp, doc, deleteDoc, updateDoc } from 'https://www.gstatic.com/firebasejs/9.0.1/firebase-firestore.js'
+import { getFirestore, collection, addDoc, serverTimestamp, doc, deleteDoc, onSnapshot } from 'https://www.gstatic.com/firebasejs/9.0.1/firebase-firestore.js'
 
 const firebaseConfig = {
   apiKey: 'AIzaSyCiJMFwrQkeNC6Iw8sDbnpJFP3WNAg8-6Q',
@@ -17,40 +17,41 @@ const collectionGames = collection(db, 'games')
 
 const formAddGame = document.querySelector('[data-js="add-game-form"]')
 const gamesList = document.querySelector('[data-js="games-lis"]')
+const buttonUnsub = document.querySelector('[data-js="unsub"]')
 
-getDocs(collectionGames)
-    .then(querySnapshot => {
-        const gamesLis = querySnapshot.docs.reduce((acc, doc) => {
-          const {title, developedBy, createdAt} = doc.data()
-          acc += `<li data-id="${doc.id}" class="my-4">
-            <h5>${title}</h5>
+const unsubscribe = onSnapshot(collectionGames, querySnapshot => {
+  console.log('CallBack do Snapshot foi executado.')
 
-            <ul>
-              <li>Desenvolvido por ${developedBy}</li>
-              <li>Adicinado no banco em ${createdAt.toDate()}</li>
-            </ul>
+  if (!querySnapshot.metadata.hasPendingWrites){
+    const gamesLis = querySnapshot.docs.reduce((acc, doc) => {
+      const {title, developedBy, createdAt} = doc.data()
 
-            <button data-remove="${doc.id}" class="btn btn-danger btn-sm">Remover</button>
-
-          </li>`
-            
-          return acc
-        }, '')
+      acc += `<li data-id="${doc.id}" class="my-4">
+        <h5>${title}</h5>
+  
+        <ul>
+          <li>Desenvolvido por ${developedBy}</li>
+          <li>Adcionado no banco em ${createdAt.toDate()} </li>
+        </ul>
+  
+        <button data-remove="${doc.id}" class="btn btn-danger btn-sm">Remover</button>
+      </li>`
         
-        gamesList.innerHTML = gamesLis
-      })
-    .catch(console.log)
+      return acc
+    }, '')
+    
+    gamesList.innerHTML = gamesLis
+    console.log('Manipulação de DOM Executada. ')
+
+  }
+})
+
   gamesList.addEventListener('click', event => {
     const idRemoveButton = event.target.dataset.remove
 
     if(idRemoveButton) {
-      
       deleteDoc(doc(db, 'games',idRemoveButton))
-        .then(() => {
-          const game = document.querySelector(`[data-id="${idRemoveButton}"]`)
-          game.remove()
-          console.log('Game removido')
-        })
+        .then(() => console.log('Game removido'))
         .catch(console.log)
     }
 
@@ -69,13 +70,7 @@ formAddGame.addEventListener('submit', event => {
   .catch(console.log())
 })
 
-const theLastOfUsRef = (doc(db, 'games', '5gUZzTYOvDaC7kMn4URe'))
+buttonUnsub.addEventListener('click', unsubscribe)
 
-updateDoc(theLastOfUsRef, {
-  title: 'The Last Of Us Part II',
-  developedBy: 'Valve'
- })
-  .then(() => console.log('Document atualizado'))
-  .catch(console.log)
 
 
