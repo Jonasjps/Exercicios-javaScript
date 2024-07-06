@@ -20,7 +20,9 @@ const numbers = [50, 100, 50]
 const numbers2 = [2, 4]
 const numbers3 = [2, 4, 5, 5]
 
+const sum = (x, y, z) => x + y + z
 
+console.log(sum(...numbers))
 /*
   02
 
