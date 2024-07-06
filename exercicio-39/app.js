@@ -20,12 +20,15 @@ const numbers = [50, 100, 50]
 const numbers2 = [2, 4]
 const numbers3 = [2, 4, 5, 5]
 
-const sum = (x, y, z) => x + y + z
+const sum = (...param) => param.reduce((acc, num) => acc + num, 0) 
 
 console.log(sum(...numbers))
+console.log(sum(...numbers2))
+console.log(sum(...numbers3))
 /*
   02
 
+console.log(sum(...numbers))
   - Descomente a div com a class "accordion", no index.html;
   - Quando um dos 3 itens do accordion for clicado exiba, abaixo do item, 
     o texto correspondente. Este é o resultado final:
@@ -60,13 +63,8 @@ const volkswagenProto = {
   }
 }
 
-const amarok = carMaker({ name: 'Amarok', color: 'preta' }, volkswagenProto)
-const jetta = carMaker({ name: 'Jetta', color: 'prata' }, volkswagenProto)
-
-
-amarok.logCarInfo()
-jetta.logCarInfo()
-
+// const amarok = carMaker({ name: 'Amarok', color: 'preta' }, volkswagenProto)
+// const jetta = carMaker({ name: 'Jetta', color: 'prata' }, volkswagenProto)
 /*
   04
 
