@@ -20,11 +20,6 @@ const numbers = [50, 100, 50]
 const numbers2 = [2, 4]
 const numbers3 = [2, 4, 5, 5]
 
-const sum = (...params) => params.reduce((acc, num) =>  acc + num, 0)
-
-// console.log( sum(...numbers))
-// console.log( sum(...numbers2))
-// console.log( sum(...numbers3))
 
 /*
   02
@@ -39,58 +34,6 @@ const sum = (...params) => params.reduce((acc, num) =>  acc + num, 0)
   - Para que o item do accordion seja "ativado" ao clicar, faça um toogle 
     utilizando a classe "active".
 */
-
-// Código do Accordion, porem sem o refactoring
-// const accordion = document.querySelector('[data-js="accordion"]')
-
-// const handleAccordionHeader =  event => {
-//   const accordionHeaderId = event.target.dataset.accordionHeader 
-//   const accordionHeaderToByOpened =
-//     document.querySelector(`[data-accordion-body="${accordionHeaderId}"]`)
-//    const clickedAccordionHeader =
-//     document.querySelector(`[data-accordion-header="${accordionHeaderId}"]`)
-//   const accordionHeaderToByClosed = Array
-//     .from(document.querySelectorAll('[data-js="accordion-header"]'))
-//     .filter(accordionHeader => accordionHeader !== clickedAccordionHeader)
-//     .find(accordionHeader => accordionHeader.classList.contains('active'))
-
-//   if(!event.target.dataset.accordionHeader) {
-//     return
-//   }
-
-//   if(accordionHeaderToByClosed){
-//     closeAccordioHeader(accordionHeaderToByClosed)
-//   }
-
-//   accordionHeaderToByOpened.classList.toggle('active')
-//   clickedAccordionHeader.classList.toggle('active')
-// }
-
-// const closeAccordioHeader = accordionHeaderToByClosed => {
-//   const accordionHeaderId = accordionHeaderToByClosed.dataset.accordionHeader
-//     const accordionBodyToByClosed = 
-//       document.querySelector(`[data-accordion-body="${accordionHeaderId}"]`)
-    
-//     accordionBodyToByClosed.classList.remove('active')
-//     accordionHeaderToByClosed.classList.remove('active')
-// }
-
-// accordion.addEventListener('click', handleAccordionHeader)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*
@@ -115,29 +58,12 @@ const volkswagenProto = {
   }
 }
 
-const corollaProto = {
-  logCarInfo () {
-    // console.log(`Toyota ${this.name}, cor ${this.color}.`)
-  }
-}
-
-const carMaker = ({name, color}, carProto) => {
-  const car = Object.create(carProto)
-
-  car.name = name
-  car.color = color
-  return car
-}
-
 const amarok = carMaker({ name: 'Amarok', color: 'preta' }, volkswagenProto)
 const jetta = carMaker({ name: 'Jetta', color: 'prata' }, volkswagenProto)
-const corolla = carMaker({ name: 'Corolla', color: 'preta'}, corollaProto)
 
-// console.log(volkswagenProto.isPrototypeOf(amarok) && volkswagenProto.isPrototypeOf(jetta))
 
 amarok.logCarInfo()
 jetta.logCarInfo()
-corolla.logCarInfo()
 
 /*
   04
@@ -153,14 +79,6 @@ corolla.logCarInfo()
     modificando o caractere que ela recebe como segundo argumento.
 */
 
-const aString = 'O Curso de JavaScript Roger Melo funciona com turmas fechadas, abertas poucas vezes e é focado em quem ainda não é fluente em JS. Ou seja, quem não consegue construir aplicações web com JavaScript puro.'
-
-const getIndexesOfCharacter = (string, character) =>  
-    [...string].reduce((acc, item, index) => 
-      item.toLowerCase() === character.toLowerCase() ? [...acc, index] : acc,[])
-
-// console.log(getIndexesOfCharacter(aString, 'b'))
-// console.log(getIndexesOfCharacter(aString, 'o'))
 
 /*
   05
@@ -204,36 +122,7 @@ const getIndexesOfCharacter = (string, character) =>
       Se essa condição for verdadeira, faça messageIndex receber o valor que 
       ela já tem + 1 e faça characterIndex receber 0.
 */
-const typing = document.querySelector('[data-js="typing"]')
 
-const messages = ['sou fluente em JS.', 'construo aplicações web com JS puro.']
-
-let messageIndex = 0
-let characterIndex = 0
-let currentMessage = ''
-let currentCharacters = ''
-
-const type = () => {
-
-  const shouldTypeFirstMessage = messageIndex === messages.length
-  
-  if(shouldTypeFirstMessage ) {
-    messageIndex = 0
-  }
-  
-  currentMessage = messages[messageIndex]
-  currentCharacters = currentMessage.slice(0, characterIndex++)
-  // typing.textContent = currentCharacters
-  
-  const shouldChangeMessageToBeTyped =
-    currentCharacters.length === currentMessage.length
-
-  if(shouldChangeMessageToBeTyped){
-    messageIndex += 1
-    characterIndex = 0
-  }
-}
-setInterval(type, 200)
 /*
   06
 
@@ -255,15 +144,7 @@ const wrongDataFormat = [
   'azul-P'
 ]
 
-const conversionOfArrayForObject = wrongDataFormat.reduce((acc, colorAndSize) => {
-  const [color, size ] = colorAndSize.split('-')
-  acc[color] = acc[color] || {}
-  acc[color][size] = acc[color][size] || 0
-  acc[color][size] += 1
-  return acc
-}, {})
 
-console.log(conversionOfArrayForObject)
 
 
 
