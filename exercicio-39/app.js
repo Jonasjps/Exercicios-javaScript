@@ -20,11 +20,10 @@ const numbers = [50, 100, 50]
 const numbers2 = [2, 4]
 const numbers3 = [2, 4, 5, 5]
 
-const sum = (...param) => param.reduce((acc, num) => acc + num, 0) 
+const sum = (x, y, b) => x + y + b
 
 console.log(sum(...numbers))
-console.log(sum(...numbers2))
-console.log(sum(...numbers3))
+
 /*
   02
 
