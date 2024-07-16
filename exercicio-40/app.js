@@ -5,6 +5,8 @@
   valores no console no decorrer dessa bateria de exercícios.
 */
 
+const log = (...value) => console.log(...value)
+
 
 
 /*
@@ -26,13 +28,14 @@ const propToRemove = 'b'
 
 
 const removeProp = () => {
+  const propToRemove = objs.filter(item => item !== item.b)
+  return propToRemove
+} 
 
-}
-
-console.log(removeProp(propToRemove, objs))
 
 removeProp(propToRemove, objs)
 
+console.log(removeProp(propToRemove, objs))
 /*
 [
   {
