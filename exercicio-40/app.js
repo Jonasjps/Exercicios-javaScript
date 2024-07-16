@@ -25,8 +25,13 @@ const objs = [
 const propToRemove = 'b'
 
 
+const removeProp = () => {
 
-// removeProp(propToRemove, objs)
+}
+
+console.log(removeProp(propToRemove, objs))
+
+removeProp(propToRemove, objs)
 
 /*
 [
@@ -54,7 +59,7 @@ const propToRemove = 'b'
     multi-linha abaixo.
 */
 
-const orders = [
+ const orders = [
   { username: 'f_gazi', status: 'pending', price: 63.97 },
   { username: 'heitordp', status: 'cancelled', price: 79 },
   { username: 'a_campos', status: 'shipped', price: 97.63 },
