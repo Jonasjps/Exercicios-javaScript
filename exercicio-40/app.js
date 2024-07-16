@@ -27,15 +27,17 @@ const objs = [
 const propToRemove = 'b'
 
 
-const removeProp = () => {
-  const propToRemove = objs.filter(item => item !== item.b)
-  return propToRemove
+const removeProp = (propToRemove, objs) => {
+  return objs.map(({[propToRemove]:_, ...obj}) => {
+    log(propToRemove)
+    return obj
+  })
+
 } 
 
 
-removeProp(propToRemove, objs)
+log(removeProp(propToRemove, objs))
 
-console.log(removeProp(propToRemove, objs))
 /*
 [
   {
