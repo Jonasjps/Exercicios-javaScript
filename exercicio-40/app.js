@@ -67,9 +67,12 @@ log(removeProp(propToRemove, objs))
   { username: '_rick', status: 'shipped', price: 73.65 }
 ]
 
+const getStatusCount = orders => orders.reduce((acc, { status }) => ({
+  ...acc,
+  [status]: (acc[status] || 0) + 1
+}), {})
 
-
-// getStatusCount(orders)
+log(getStatusCount(orders))
 
 /*
 {
