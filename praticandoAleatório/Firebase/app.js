@@ -20,29 +20,18 @@ const gamesList = document.querySelector('[data-js="games-lis"]')
 const buttonUnsub = document.querySelector('[data-js="unsub"]')
 
 const unsubscribe = onSnapshot(collectionGames, querySnapshot => {
-  console.log('CallBack do Snapshot foi executado.')
 
   if (!querySnapshot.metadata.hasPendingWrites){
     const gamesLis = querySnapshot.docs.reduce((acc, doc) => {
       const {title, developedBy, createdAt} = doc.data()
 
-      const options = {
-        year: "numeric",
-        month: "numeric",
-        day: "numeric",
-        hour: "numeric",
-        minute: "numeric",
-        second: "numeric",
-        hour12: false,
-        timeZone: "America/Los_Angeles",
-      }
 
       acc += `<li data-id="${doc.id}" class="my-4">
         <h5>${title}</h5>
   
         <ul>
           <li>Desenvolvido por ${developedBy}</li>
-          <li>Adcionado no banco em ${ Intl.DateTimeFormat('pt-BR', options).format(createdAt.toDate()) } </li>
+          <li>Adcionado no banco em ${new Intl.DateTimeFormat('pt-BR',{ dateStyle: 'short', timeStyle: 'short'}).format(createdAt.toDate()) } </li>
         </ul>
   
         <button data-remove="${doc.id}" class="btn btn-danger btn-sm">Remover</button>
@@ -52,7 +41,6 @@ const unsubscribe = onSnapshot(collectionGames, querySnapshot => {
     }, '')
     
     gamesList.innerHTML = gamesLis
-    console.log('Manipulação de DOM Executada. ')
 
   }
 })
