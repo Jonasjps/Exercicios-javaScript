@@ -26,15 +26,11 @@ const objs = [
 
 const propToRemove = 'b'
 
-
 const removeProp = (propToRemove, objs) => {
   return objs.map(({[propToRemove]:_, ...obj}) => {
-    log(propToRemove)
     return obj
   })
-
-} 
-
+}
 
 log(removeProp(propToRemove, objs))
 
