@@ -121,13 +121,15 @@ const unsubscribe = onSnapshot(collectionGames, querySnapshot => {
   if (!querySnapshot.metadata.hasPendingWrites){
     const gamesLis = querySnapshot.docs.reduce((acc, doc) => {
       const {title, developedBy, createdAt} = doc.data()
+      const hoursLocales = new Intl.DateTimeFormat('pt-BR',
+        { dateStyle: 'short', timeStyle: 'short'}).format(createdAt.toDate())
 
       acc += `<li data-id="${doc.id}" class="my-4">
         <h5>${title}</h5>
   
         <ul>
           <li>Desenvolvido por ${developedBy}</li>
-          <li>Adcionado no banco em ${new Intl.DateTimeFormat('pt-BR',{ dateStyle: 'short', timeStyle: 'short'}).format(createdAt.toDate()) } </li>
+          <li>Adcionado no banco em ${hoursLocales} </li>
         </ul>
   
         <button data-remove="${doc.id}" class="btn btn-danger btn-sm">Remover</button>
