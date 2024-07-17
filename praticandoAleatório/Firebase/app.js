@@ -26,12 +26,23 @@ const unsubscribe = onSnapshot(collectionGames, querySnapshot => {
     const gamesLis = querySnapshot.docs.reduce((acc, doc) => {
       const {title, developedBy, createdAt} = doc.data()
 
+      const options = {
+        year: "numeric",
+        month: "numeric",
+        day: "numeric",
+        hour: "numeric",
+        minute: "numeric",
+        second: "numeric",
+        hour12: false,
+        timeZone: "America/Los_Angeles",
+      }
+
       acc += `<li data-id="${doc.id}" class="my-4">
         <h5>${title}</h5>
   
         <ul>
           <li>Desenvolvido por ${developedBy}</li>
-          <li>Adcionado no banco em ${createdAt.toDate()} </li>
+          <li>Adcionado no banco em ${ Intl.DateTimeFormat('pt-BR', options).format(createdAt.toDate()) } </li>
         </ul>
   
         <button data-remove="${doc.id}" class="btn btn-danger btn-sm">Remover</button>
