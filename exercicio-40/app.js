@@ -30,8 +30,8 @@ const removeProp = (propToRemove, objs) =>
   objs.map(({[propToRemove]:_, ...obj}) =>  obj)
 
 
-log(removeProp(propToRemove, objs)[0] === objs[0])
-log(removeProp(propToRemove, objs))
+// log(removeProp(propToRemove, objs)[0] === objs[0])
+// log(removeProp(propToRemove, objs))
 
 /*
 [
@@ -67,7 +67,17 @@ log(removeProp(propToRemove, objs))
   { username: '_rick', status: 'shipped', price: 73.65 }
 ]
 
-
+const getStatusCount = orders => {
+  return orders.reduce((acc, order) => {
+    const obj = {
+      ...acc,
+      [order.status]: (acc[order.status] || 0) + 1
+    }
+    return obj
+    
+    
+  }, {})
+}
 
 log(getStatusCount(orders))
 
