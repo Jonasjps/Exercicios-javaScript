@@ -122,7 +122,7 @@ const unsubscribe = onSnapshot(collectionGames, querySnapshot => {
     const gamesLis = querySnapshot.docs.reduce((acc, doc) => {
       const {title, developedBy, createdAt} = doc.data()
       const hoursLocales = new Intl.DateTimeFormat('pt-BR',
-        { dateStyle: 'short', timeStyle: 'short'}).format(createdAt.toDate())
+        { dateStyle: 'short', timeStyle: 'short'}).format(createdAt.toDate()) 
 
       acc += `<li data-id="${doc.id}" class="my-4">
         <h5>${title}</h5>
@@ -163,7 +163,12 @@ formAddGame.addEventListener('submit', event => {
     developedBy: event.target.developer.value,
     createdAt: serverTimestamp()
   })
-  .then(doc => console.log('Document criado com ID', doc.id))
+  .then(doc => {
+    console.log('Document criado com ID', doc.id)
+    event.target.reset()
+    event.target.title.focus()
+
+  })
   .catch(console.log())
 })
 
