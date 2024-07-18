@@ -116,62 +116,63 @@ const formAddGame = document.querySelector('[data-js="add-game-form"]')
 const gamesList = document.querySelector('[data-js="games-lis"]')
 const buttonUnsub = document.querySelector('[data-js="unsub"]')
 
-const unsubscribe = onSnapshot(collectionGames, querySnapshot => {
+const getFormattedDate = createdAt =>  new Intl
+  .DateTimeFormat('pt-BR',{ dateStyle: 'short', timeStyle: 'short'})
+  .format(createdAt.toDate()) 
 
+const renderGamesList = querySnapshot => {
   if (!querySnapshot.metadata.hasPendingWrites){
-    const gamesLis = querySnapshot.docs.reduce((acc, doc) => {
-      const {title, developedBy, createdAt} = doc.data()
-      const hoursLocales = new Intl.DateTimeFormat('pt-BR',
-        { dateStyle: 'short', timeStyle: 'short'}).format(createdAt.toDate()) 
+    gamesList.innerHTML  = querySnapshot.docs.reduce((acc, doc) => {
 
-      acc += `<li data-id="${doc.id}" class="my-4">
+      const [id, {title, developedBy, createdAt}] = [doc.id, doc.data()] //Um destruoct de array esta sendo feito junto com um destruoct de objeto. 
+
+      return `${acc}<li data-id="${id}" class="my-4">
         <h5>${title}</h5>
   
         <ul>
           <li>Desenvolvido por ${developedBy}</li>
-          <li>Adcionado no banco em ${hoursLocales} </li>
+          <li>Adcionado no banco em ${getFormattedDate(createdAt)} </li>
         </ul>
   
-        <button data-remove="${doc.id}" class="btn btn-danger btn-sm">Remover</button>
+        <button data-remove="${id}" class="btn btn-danger btn-sm">Remover</button>
       </li>`
         
-      return acc
     }, '')
     
-    gamesList.innerHTML = gamesLis
-
   }
-})
+}
 
-  gamesList.addEventListener('click', event => {
-    const idRemoveButton = event.target.dataset.remove
-
-    if(idRemoveButton) {
-      deleteDoc(doc(db, 'games',idRemoveButton))
-        .then(() => console.log('Game removido'))
-        .catch(console.log)
-    }
-
-  })
-
-
-formAddGame.addEventListener('submit', event => {
+const addGame = event => {
   event.preventDefault()
-
+  
   addDoc(collectionGames, {
     title:event.target.title.value,
     developedBy: event.target.developer.value,
     createdAt: serverTimestamp()
   })
   .then(doc => {
-    console.log('Document criado com ID', doc.id)
+    log('Document criado com ID', doc.id)
     event.target.reset()
     event.target.title.focus()
 
   })
-  .catch(console.log())
-})
+  .catch(log())
+}
 
+const deleteGame = event => {
+  const idRemoveButton = event.target.dataset.remove
+  
+    if(idRemoveButton) {
+      deleteDoc(doc(db, 'games',idRemoveButton))
+        .then(() => log('Game removido'))
+        .catch(log)
+    }
+  
+}
+
+const unsubscribe = onSnapshot(collectionGames, renderGamesList)
+gamesList.addEventListener('click', deleteGame)
+formAddGame.addEventListener('submit', addGame)
 buttonUnsub.addEventListener('click', unsubscribe)
 
 /*
