@@ -142,35 +142,51 @@ const renderGamesList = querySnapshot => {
   }
 }
 
-const addGame = event => {
+
+const to = promise => promise
+  .then(result => [null, result])
+  .catch(error => [error])
+
+
+const addGame = async event => {
   event.preventDefault()
   
-  addDoc(collectionGames, {
+  const [error, doc] = await to(addDoc(collection(db, 'games'), {
     title:event.target.title.value,
     developedBy: event.target.developer.value,
     createdAt: serverTimestamp()
-  })
-  .then(doc => {
-    log('Document criado com ID', doc.id)
-    event.target.reset()
-    event.target.title.focus()
+  }))
 
-  })
-  .catch(log())
+  if(error) {
+    return log(error)
+  }
+
+  log('Document criado com ID', doc.id)
+  event.target.reset()
+  event.target.title.focus()
+
 }
 
-const deleteGame = event => {
+const deleteGame = async event => {
   const idRemoveButton = event.target.dataset.remove
   
-    if(idRemoveButton) {
-      deleteDoc(doc(db, 'games',idRemoveButton))
-        .then(() => log('Game removido'))
-        .catch(log)
-    }
+  if(!idRemoveButton) {
+    return
+  }      
+
+  const [ error ] = await to(deleteDoc(doc(db, 'games',idRemoveButton)))
+
+  if(error) {
+    return log(error)
+  }
+
+  log('Game removido')
   
 }
 
-const unsubscribe = onSnapshot(collectionGames, renderGamesList)
+const handleSnapShotError = e => log(e)
+
+const unsubscribe = onSnapshot(collectionGames, renderGamesList, handleSnapShotError)
 gamesList.addEventListener('click', deleteGame)
 formAddGame.addEventListener('submit', addGame)
 buttonUnsub.addEventListener('click', unsubscribe)
