@@ -167,7 +167,7 @@ const to = promise => promise
 const addGame = async event => {
   event.preventDefault()
   
-  const [error, doc] = await to(addDoc(collection(db, 'games'), {
+  const [error, doc] = await to(addDoc(collection(db, 'games'),{
     title:event.target.title.value,
     developedBy: event.target.developer.value,
     createdAt: serverTimestamp()
@@ -206,7 +206,6 @@ const unsubscribe = onSnapshot(collectionGames, renderGamesList, handleSnapShotE
 gamesList.addEventListener('click', deleteGame)
 formAddGame.addEventListener('submit', addGame)
 buttonUnsub.addEventListener('click', unsubscribe)
-
 /*
   05
 
