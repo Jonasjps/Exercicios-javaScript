@@ -122,42 +122,54 @@ const getFormattedDate = createdAt =>  new Intl
 
 const sanitize = string => DOMPurify.sanitize(string)
 
-const renderGamesList = querySnapshot => {
-  if (!querySnapshot.metadata.hasPendingWrites){
-    const games = querySnapshot.docs.map(doc => {
-      const [id, {title, developedBy, createdAt}] = [doc.id, doc.data()] //Um destruoct de array esta sendo feito junto com um destruoct de objeto. 
+const renderGamer = docChange => {
+  const [id, { title, developedBy, createdAt }] = [docChange.doc.id, docChange.doc.data(),] //Um destruoct de array esta sendo feito junto com um destruoct de objeto.
 
-      const liGame = document.createElement('li')
-      liGame.setAttribute('data-id', id)
-      liGame.setAttribute('class', 'my-4')
+    const liGame = document.createElement("li");
+    liGame.setAttribute("data-id", id);
+    liGame.setAttribute("class", "my-4");
 
-      const h5 = document.createElement('h5')
-      h5.textContent = sanitize(title)
+    const h5 = document.createElement("h5");
+    h5.textContent = sanitize(title);
 
-      const ul = document.createElement('ul')
-      
-      const liDevelopedBy = document.createElement('li')
-      liDevelopedBy.textContent = `Desenvolvido por ${sanitize(developedBy)}`
-      
-      if (createdAt) {
-        const liDate = document.createElement('li')
-        liDate.textContent = `Adcionado no banco em ${getFormattedDate(createdAt)}`
-        ul.append(liDate)
-      }
+    const ul = document.createElement("ul");
 
-      const button = document.createElement('li')
-      button.textContent = 'Remover'
-      button.setAttribute('data-remove', id)
-      button.setAttribute('class', 'btn btn-danger btn-sm')
+    const liDevelopedBy = document.createElement("li");
+    liDevelopedBy.textContent = `Desenvolvido por ${sanitize(developedBy)}`;
 
-      ul.append(liDevelopedBy)
-      liGame.append(h5, ul, button)         
-      
-      return liGame
-    })
+    if (createdAt) {
+      const liDate = document.createElement("li");
+      liDate.textContent = `Adcionado no banco em ${getFormattedDate(
+        createdAt
+      )}`;
+      ul.append(liDate);
+    }
 
-    games.forEach(game => gamesList.append(game))
+    const button = document.createElement("li");
+    button.textContent = "Remover";
+    button.setAttribute("data-remove", id);
+    button.setAttribute("class", "btn btn-danger btn-sm");
+
+    ul.append(liDevelopedBy);
+    liGame.append(h5, ul, button);
+
+    gamesList.append(liGame);
+}
+
+const renderGamesList = snapshot => {
+  if (snapshot.metadata.hasPendingWrites){
+    return
   }
+  snapshot.docChanges().forEach((docChange) => {
+    if (docChange.type === "removed") {
+      const liGame = document.querySelector(`[data-id="${docChange.doc.id}"]`)
+      liGame.remove()
+      return
+    }
+    
+    renderGamer(docChange)
+    
+  });
 }
 
 
