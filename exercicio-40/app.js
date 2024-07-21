@@ -120,6 +120,8 @@ const getFormattedDate = createdAt =>  new Intl
   .DateTimeFormat('pt-BR',{ dateStyle: 'short', timeStyle: 'short'})
   .format(createdAt.toDate()) 
 
+const sanitize = string => DOMPurify.sanitize(string)
+
 const renderGamesList = querySnapshot => {
   if (!querySnapshot.metadata.hasPendingWrites){
     const games = querySnapshot.docs.map(doc => {
@@ -130,12 +132,12 @@ const renderGamesList = querySnapshot => {
       liGame.setAttribute('class', 'my-4')
 
       const h5 = document.createElement('h5')
-      h5.textContent = DOMPurify.sanitize(title)
+      h5.textContent = sanitize(title)
 
       const ul = document.createElement('ul')
       
       const liDevelopedBy = document.createElement('li')
-      liDevelopedBy.textContent = `Desenvolvido por ${DOMPurify.sanitize(developedBy)}`
+      liDevelopedBy.textContent = `Desenvolvido por ${sanitize(developedBy)}`
       
       if (createdAt) {
         const liDate = document.createElement('li')
@@ -167,9 +169,9 @@ const to = promise => promise
 const addGame = async event => {
   event.preventDefault()
   
-  const [error, doc] = await to(addDoc(collection(db, 'games'),{
-    title:event.target.title.value,
-    developedBy: event.target.developer.value,
+  const [error, doc] = await to(addDoc(collectionGames, {
+    title: sanitize(event.target.title.value),
+    developedBy: sanitize(event.target.developer.value),
     createdAt: serverTimestamp()
   }))
 
