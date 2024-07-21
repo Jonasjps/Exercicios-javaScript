@@ -195,6 +195,7 @@ const deleteGame = async event => {
   if(error) {
     return log(error)
   }
+  
   log('Game removido')
   
 }
