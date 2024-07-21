@@ -130,12 +130,12 @@ const renderGamesList = querySnapshot => {
       liGame.setAttribute('class', 'my-4')
 
       const h5 = document.createElement('h5')
-      h5.textContent = title
+      h5.textContent = DOMPurify.sanitize(title)
 
       const ul = document.createElement('ul')
       
       const liDevelopedBy = document.createElement('li')
-      liDevelopedBy.textContent = `Desenvolvido por ${developedBy}`
+      liDevelopedBy.textContent = `Desenvolvido por ${DOMPurify.sanitize(developedBy)}`
       
       if (createdAt) {
         const liDate = document.createElement('li')
