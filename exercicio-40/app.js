@@ -166,7 +166,6 @@ const renderGamesList = snapshot => {
       liGame.remove()
       return
     }
-    
     renderGamer(docChange)
     
   });
