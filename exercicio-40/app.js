@@ -72,7 +72,7 @@ const getStatusCount = orders => orders.reduce((acc, { status }) => ({
   [status]: (acc[status] || 0) + 1 //Computer Propeter Names
 }), {})
 
-log(getStatusCount(orders))
+// log(getStatusCount(orders))
 
 /*
 {
@@ -106,11 +106,13 @@ const firebaseConfig = {
   messagingSenderId: '954304361725',
   appId: '1:954304361725:web:770e66c05543e4fb223a94',
   measurementId: 'G-T3VHVYGEGZ'
+  
 };
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app)
 const collectionGames = collection(db, 'games')
+log(collectionGames)
 
 const formAddGame = document.querySelector('[data-js="add-game-form"]')
 const gamesList = document.querySelector('[data-js="games-lis"]')
