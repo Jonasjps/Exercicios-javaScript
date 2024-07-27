@@ -112,7 +112,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app)
 const collectionGames = collection(db, 'games')
-log(collectionGames)
 
 const formAddGame = document.querySelector('[data-js="add-game-form"]')
 const gamesList = document.querySelector('[data-js="games-lis"]')
