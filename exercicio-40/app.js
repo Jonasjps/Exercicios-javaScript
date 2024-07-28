@@ -80,6 +80,7 @@ const getStatusCount = orders => orders.reduce((acc, { status }) => ({
   cancelled: 1,
   shipped: 2
 }
+  
 */
 
 /*
