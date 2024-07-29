@@ -1,7 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app'
-import { getAuth } from 'firebase/auth'
-import { getFirestore } from 'firebase/firestore'
+import { getAuth, onAuthStateChanged } from 'firebase/auth'
 
 const firebaseApp = initializeApp({
   apiKey: "AIzaSyDRhIoZw_J8baJGsn71ezPnH05K8PVXaxg",
@@ -16,4 +15,11 @@ const firebaseApp = initializeApp({
 
 
 const auth = getAuth(firebaseApp)
-const db = getFirestore(firebaseApp)
+
+onAuthStateChanged(auth, user => {
+  if ( user !== null) {
+    console.log('looged in!')
+  } else {
+    console.log('No user')
+  }
+});
