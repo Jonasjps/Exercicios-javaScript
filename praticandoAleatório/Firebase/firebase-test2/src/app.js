@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app'
-import { getAuth, onAuthStateChanged } from 'firebase/auth'
+import { getDatabase } from 'firebase/database'
 
 const firebaseApp = initializeApp({
   apiKey: "AIzaSyDRhIoZw_J8baJGsn71ezPnH05K8PVXaxg",
@@ -14,12 +14,8 @@ const firebaseApp = initializeApp({
 });
 
 
-const auth = getAuth(firebaseApp)
+const database = getDatabase(firebaseApp)
 
-onAuthStateChanged(auth, user => {
-  if ( user !== null) {
-    console.log('looged in!')
-  } else {
-    console.log('No user')
-  }
-});
+const log = value => console.log(value)
+
+log(database)
