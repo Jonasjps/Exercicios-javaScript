@@ -19,9 +19,6 @@ const firebaseApp = initializeApp({
 const db = getDatabase(firebaseApp) 
 
 
-
-
-
 async function dados() {
     await getDatabase()
     .ref('nome')
