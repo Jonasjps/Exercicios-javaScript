@@ -172,16 +172,17 @@ const wrongDataFormat = [
   'azul-XG',
   'azul-P'
 ]
+const log = value => console.log(value)
 
-const convertionArrayForObject = wrongDataFormat.reduce((acc, colorAndSize) => {
+const conversionOfArrayForObject = wrongDataFormat.reduce((acc, colorAndSize) => {
   const [color, size] = colorAndSize.split('-')
   acc[color] = acc[color] || {}
   acc[color][size] = acc[color][size] || 0
   acc[color][size] += 1
   return acc
+}, {})
 
-}, {}) 
-console.log(convertionArrayForObject)
+log(conversionOfArrayForObject)
 
 
 
